@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.76cae083-6ab8-43f6-a054-bd0b7fff5767.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.c012a5c3-9fdd-46eb-bd68-4dafa184b651.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/release-notes/release-notes-lp';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -2504,35 +2504,58 @@ This means that node runners <strong>must upgrade</strong> their nodes before th
 <section id="testnet">
 <span id="rn-node-testnet"></span><h3>Testnet<a class="headerlink" href="#testnet" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>August 18, 2025</p>
-<p>Concordium node version 9.0.7 contains support for <a class="reference external" href="https://proposals.concordium.software/updates/P9.html">protocol version 9</a>.
-The new consensus protocol will take effect on the testnet on August 27, 2025.
-<strong>Node runners should upgrade to version 9.0.7 before the protocol update to ensure that their nodes do not shut down.</strong>
-Validators that do not upgrade before the protocol update may be suspended.</p>
-<p>Protocol version 9 introduces Protocol-Level Tokens (PLTs), which enable chain-native support for tokens other than CCD, without reliance on smart contracts.
-Protocol version 9 supports the following PLT functionality:</p>
+<div><p>February 4, 2026</p>
+<p>Concordium node version 10.0.4 contains support for <a class="reference external" href="https://proposals.concordium.software/updates/P10.html">protocol version 10</a>. This protocol version introduces support for sponsored transactions.
+The new consensus protocol will take effect on the testnet on February 11, 2026.
+<strong>Node runners should upgrade to version 10.0.4 before the protocol update to ensure that their nodes do not shut down.</strong></p>
+<blockquote>
+<div><p>Support for protocol version 10:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>creating new PLTs (through the CreatePLT chain update);</p></li>
-<li><p>transferring PLTs between accounts;</p></li>
-<li><p>minting and burning PLTs (limited to the nominated token governance account);</p></li>
-<li><p>managing permissions for which accounts can send and receive each PLT through an allow- or deny-list (limited to the governance account); and</p></li>
-<li><p>globally pausing or unpausing balance changing operations for a PLT (limited to the governance account).</p></li>
+<li><p>Send any account transaction as a sponsored transaction.</p></li>
 </ul>
 </div></blockquote>
-<p>The node API is updated to support PLTs as follows:</p>
+<p>Additionally, the following changes are included in the release</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">GetAccountInfo</span></code> reports information about PLTs associated with the account, including any balance.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GetTokenList</span></code> reports a list of the registered PLTs on the chain.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GetTokenInfo</span></code> gets the global state information for a particular PLT.</p></li>
+<li><p>Fix a bug (present in 8.1.0 - 10.0.1 versions) where a protocol update can be executed twice, resulting in a corrupted database. Means of recovery from the bug has also been added.</p></li>
+<li><p>Fix a bug where transactions are not reported as committed when they appear in live blocks.</p></li>
+<li><p>Fixed the <code class="docutils literal notranslate"><span class="pre">build_catchup_url</span></code> in the Ubuntu build release pipeline.</p></li>
 </ul>
 </div></blockquote>
-<p>Note: <strong>Ubuntu 20.04 LTS is no longer supported;</strong> the minimum supported version for this release is 22.04 LTS.</p>
+</div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">9.0.7 - August 18, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium node version 9.0.7 contains support for <a class="reference external" href="https://proposals.concordium.software/updates/P9.html">protocol version 9</a>.
+The new consensus protocol will take effect on the testnet on August 27, 2025.
+<strong>Node runners should upgrade to version 9.0.7 before the protocol update to ensure that their nodes do not shut down.</strong>
+Validators that do not upgrade before the protocol update may be suspended.</p>
+<p class="sd-card-text">Protocol version 9 introduces Protocol-Level Tokens (PLTs), which enable chain-native support for tokens other than CCD, without reliance on smart contracts.
+Protocol version 9 supports the following PLT functionality:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="sd-card-text">creating new PLTs (through the CreatePLT chain update);</p></li>
+<li><p class="sd-card-text">transferring PLTs between accounts;</p></li>
+<li><p class="sd-card-text">minting and burning PLTs (limited to the nominated token governance account);</p></li>
+<li><p class="sd-card-text">managing permissions for which accounts can send and receive each PLT through an allow- or deny-list (limited to the governance account); and</p></li>
+<li><p class="sd-card-text">globally pausing or unpausing balance changing operations for a PLT (limited to the governance account).</p></li>
+</ul>
+</div></blockquote>
+<p class="sd-card-text">The node API is updated to support PLTs as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">GetAccountInfo</span></code> reports information about PLTs associated with the account, including any balance.</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">GetTokenList</span></code> reports a list of the registered PLTs on the chain.</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">GetTokenInfo</span></code> gets the global state information for a particular PLT.</p></li>
+</ul>
+</div></blockquote>
+<p class="sd-card-text">Note: <strong>Ubuntu 20.04 LTS is no longer supported;</strong> the minimum supported version for this release is 22.04 LTS.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">8.0.3 - February 18, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Concordium node version 8.0.3 contains support for <a class="reference external" href="https://proposals.concordium.software/updates/P8.html">protocol version 8</a>.
@@ -3090,42 +3113,59 @@ and an additional node in Hong Kong (all running both baker and finalizer).</p>
 <section id="concordium-client">
 <span id="rn-client"></span><h3>Concordium Client<a class="headerlink" href="#concordium-client" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>August 18, 2025</p>
-<p>Concordium Client 9.1.4 adds support for node version 9.0.7 and protocol version 9.
-In particular, it supports the new protocol-level token (PLT) functionality with the following additions and changes:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">show</span></code> displays account info relating to PLTs (balances and list membership).</p></li>
-<li><p>New <code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">plt</span></code> commands:</p>
+<div><p>February 4, 2026</p>
+<p>Concordium Client 10.0.0 adds support for node version 10.0.4 and protocol version 10.
+In particular, it supports creating, signing, and submitting sponsored transactions by utilizing the extended transaction format.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">send</span></code>: transfer PLTs to a specified account.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">add-to-allow-list</span></code>: add an account to the allow-list of a PLT (governance operation).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">remove-from-allow-list</span></code>: remove an account from the allow-list of a PLT (governance operation).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">add-to-deny-list</span></code>: add an account to the deny-list of a PLT (governance operation).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">remove-from-deny-list</span></code>: remove an account from the deny-list of a PLT (governance operation).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mint</span></code>: mint new PLTs (governance operation).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">burn</span></code>: burn PLTs (governance operation).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pause</span></code>: suspend all balance-update operations for a PLT (governance operation).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">unpause</span></code>: resume all balance-update operations for a PLT (governance operation).</p></li>
+<li><p><cite>–extended</cite> transaction configuration option has been added as a means to submit a transaction in the v1 transaction format.</p></li>
+<li><p><cite>–unsigned</cite> transaction configuration option has been added to support constructing unsigned transactions. These can be signed at a later point by using <cite>transaction add-signature</cite>. This option can only be used when <cite>–out</cite> is also specified.</p></li>
+<li><p>All transaction commands can now be configured to construct sponsored transactions by using <cite>–sponsor &lt;ACCOUNT&gt;</cite> enabling a new set of optional configuration options:</p></li>
+<li><p><cite>–sponsor-keys</cite> to specify a file holding the sponsor keys to use for signing. Similar to <cite>–keys</cite>.</p></li>
+<li><p><cite>–sponsor-signers</cite> to specify the credential and key indices to sign with for the sponsor account. Similar to <cite>–signers</cite>.</p></li>
+<li><p><cite>–sponsor-sign</cite> to sign the transaction on behalf of the sponsor as part of transaction construction. Inverse of <cite>–unsigned</cite> for the transaction sender.</p></li>
+<li><p><cite>transaction add-signature</cite> now supports signing on behalf of a sponsor by specifying the <cite>–sponsor</cite> flag.</p></li>
 </ul>
 </div></blockquote>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">raw</span></code> commands:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">GetTokenList</span></code> gets a list of PLTs registered on the chain.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GetTokenInfo</span></code> gets information about a PLT.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GetAccountInfo</span></code> now includes information about PLTs related to the account.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GetNextUpdateSequenceNumbers</span></code> now includes the next update sequence number for PLT chain updates.</p></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">consensus</span> <span class="pre">chain-update</span></code> supports creating new PLTs.</p></li>
-</ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">9.1.4 - August 18, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium Client 9.1.4 adds support for node version 9.0.7 and protocol version 9.
+In particular, it supports the new protocol-level token (PLT) functionality with the following additions and changes:</p>
+<ul>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">show</span></code> displays account info relating to PLTs (balances and list membership).</p></li>
+<li><p class="sd-card-text">New <code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">plt</span></code> commands:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">send</span></code>: transfer PLTs to a specified account.</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">add-to-allow-list</span></code>: add an account to the allow-list of a PLT (governance operation).</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">remove-from-allow-list</span></code>: remove an account from the allow-list of a PLT (governance operation).</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">add-to-deny-list</span></code>: add an account to the deny-list of a PLT (governance operation).</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">remove-from-deny-list</span></code>: remove an account from the deny-list of a PLT (governance operation).</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">mint</span></code>: mint new PLTs (governance operation).</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">burn</span></code>: burn PLTs (governance operation).</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">pause</span></code>: suspend all balance-update operations for a PLT (governance operation).</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">unpause</span></code>: resume all balance-update operations for a PLT (governance operation).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">raw</span></code> commands:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">GetTokenList</span></code> gets a list of PLTs registered on the chain.</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">GetTokenInfo</span></code> gets information about a PLT.</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">GetAccountInfo</span></code> now includes information about PLTs related to the account.</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">GetNextUpdateSequenceNumbers</span></code> now includes the next update sequence number for PLT chain updates.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">consensus</span> <span class="pre">chain-update</span></code> supports creating new PLTs.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">8.1.0 - February 28, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Concordium Client 8.1.0 introduces a new <code class="docutils literal notranslate"><span class="pre">pool</span> <span class="pre">status</span></code> command and improves the display of <code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">status</span></code> and <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">show</span></code> commands.</p>
