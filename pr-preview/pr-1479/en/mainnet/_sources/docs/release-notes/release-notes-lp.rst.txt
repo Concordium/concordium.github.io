@@ -1667,8 +1667,8 @@ Testnet
 
                     - ``GetTokenInfo`` gets the global state information for a particular PLT.
 
-                Note: **Ubuntu 20.04 LTS is no longer supported;** the minimum supported version for this release is 22.04 LTS.           
-            
+                Note: **Ubuntu 20.04 LTS is no longer supported;** the minimum supported version for this release is 22.04 LTS.
+
         .. dropdown:: 8.0.3 - February 18, 2025
 
             Concordium node version 8.0.3 contains support for `protocol version 8 <https://proposals.concordium.software/updates/P8.html>`_.
