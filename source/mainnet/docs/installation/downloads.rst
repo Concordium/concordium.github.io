@@ -155,6 +155,34 @@ For usage instructions see :ref:`Concordium-client <concordium-client>`
       Concordium Client executable (``concordium-client.exe``) as well as other files
       that are required to run the client.
 
+Genesis Creator Tool |genesis-creator-version|
+==============================================
+
+.. dropdown:: Linux
+
+   -  `Download Genesis Creator Tool for Linux <https://github.com/Concordium/concordium-misc-tools/releases/download/0.8.1/genesis-creator-linux-amd64>`_
+
+         - SHA256 checksum of the download: :substitution-code:`|genesis-creator-checksum|`
+         - :ref:`Verification instructions <verification-genesis-creator-linux>`
+
+      Before you can use the downloaded Genesis Creator Tool on Linux you have to make the downloaded file executable. Run the following command to make the file you download executable:
+
+         .. code-block:: console
+
+            chmod +x genesis-creator-linux-amd64
+
+.. dropdown:: macOS
+
+   -  Download Genesis Creator Tool for macOS: `ARM <https://github.com/Concordium/concordium-misc-tools/releases/download/0.8.1/genesis-creator-macos-arm.pkg>`_ `Intel <https://github.com/Concordium/concordium-client/releases/download/0.8.1/genesis-creator-macos-intel.pkg>`_
+
+      The macOS distribution is an installer that places an alias to the binary
+      into the folder ``/usr/local/bin``. So after installing, you should have
+      ``genesis-creator`` on your path.
+
+.. dropdown:: Windows
+
+   -  `Download Genesis Creator Tool for Windows <https://github.com/Concordium/concordium-misc-tools/releases/download/0.8.1/genesis-creator-windows-amd64.exe>`_
+
 .. _cargo-concordium-testnet:
 
 cargo-concordium

@@ -19,6 +19,11 @@
 .. |client-version| replace:: 10.0.0
 .. |client-linux-checksum| replace:: 9179a950cf4b4526f8202712037de18b97fc2fe596f2255585cfcd3b2bf3cf94
 
+.. Genesis Creator Tool variables
+.. |genesis-creator-linux| replace:: genesis-creator-linux-amd64
+.. |genesis-creator-version| replace:: 0.8.1
+.. |genesis-creator-checksum| replace:: 5bc6b7772597b3167525dcd34c5bf767716ea97f30110f18966d209391521ff3
+
 .. Cargo verification variables
 .. |cargo-linux| replace:: cargo-concordium_2.8.0
 .. |cargo-version| replace:: 2.8.0
