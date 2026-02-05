@@ -1,7 +1,7 @@
 .. _select-identity-provider:
 
 ==========================
-Select identity provider
+Select Identity Provider
 ==========================
 
 To confirm that a digital credential corresponds to a real-world identity, it must be verified by an Identity Provider (IDP). These providers act as the bridge between off-chain legal documents and on-chain verification. Concordium currently supports three primary IDPs: Digital Trust Solutions, Notabene, and Global FinReg. Choosing the correct IDP is essential to ensure your business remains compliant while providing a smooth onboarding experience for your users. While most IDPs offer the same central service, some do specialise in certain areas.
@@ -11,16 +11,16 @@ Key considerations for selection
 
 While all IDPs on the network perform basic identity assertions, they are not identical. Your choice should be guided by your specific regulatory and geographic needs.
 
-**Regulatory Coverage:** IDPs vary in terms of the jurisdictions and regulatory frameworks they support. An IDP that satisfies AML (Anti-Money Laundering) requirements in one region may not meet the specific "Travel Rule" or KYC (Know Your Customer) standards required in another.
+**Regulatory coverage:** IDPs vary in terms of the jurisdictions and regulatory frameworks they support. An IDP that satisfies AML (Anti-Money Laundering) requirements in one region may not meet the specific "Travel Rule" or :term:`KYC (Know Your Customer)<KYC>` standards required in another.
 
-**Business Requirements:** You must ensure the IDP you select aligns with the legal obligations of your industry (e.g., MiCA in Europe or FinCEN regulations in the US).
+**Business requirements:** You must ensure the IDP you select aligns with the legal obligations of your industry (e.g., MiCA in Europe or FinCEN regulations in the US).
 
 Integration options
 ===================
 
 When integrating Concordium's Verify & Access solution, you have two primary ways to handle IDP selection:
 
-**Option 1: Universal Acceptance**
+**Option 1: Universal acceptance**
 
 In this configuration, you allow any of the supported IDPs to verify the user.
 
@@ -28,9 +28,9 @@ In this configuration, you allow any of the supported IDPs to verify the user.
 
 **Pro:** Lower friction for the user, as they can use any IDP they have already registered with.
 
-**Option 2: Specified Acceptance**
+**Option 2: Specified acceptance**
 
-You can programmatically specify a list of one or more "allowed" IDPs when requesting proof from a user.
+You can programmatically specify a list of one or more accepted IDPs when requesting proof from a user.
 
 **When to use it:** Use this when your business is bound by specific regulations that only certain IDPs satisfy.
 
@@ -38,7 +38,7 @@ You can programmatically specify a list of one or more "allowed" IDPs when reque
 
 **Con:** If a user has verified their identity through an IDP you do not support, they will be prompted to re-verify with one of your approved providers, creating additional friction.
 
-Current identity providers
+Current Identity Providers
 ===========================
 
 **Digital Trust Solutions:** Offers general-purpose, high-assurance identity verification for broad use cases.

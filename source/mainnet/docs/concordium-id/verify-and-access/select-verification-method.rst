@@ -14,7 +14,7 @@ Concordium provides two distinct verification checks. While your technical metho
 Option 1: Verification against an ID
 =====================================
 
-This check verifies a user's identity directly against an official ID object (like a passport or driver's license) that has been validated by an approved identity provider.
+This check verifies a user's identity directly against an official :term:`Identity Object` (like a passport or driver's license) that has been validated by an approved :term:`Identity Provider<Identity Provider (IDP)>`.
 
 **When to use it:** This method is best for simple identity-gating, such as verifying a user's attributes (e.g., "is over 18" or "is from X country") when the user has no payment or on-chain transaction to make.
 

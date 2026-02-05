@@ -4,11 +4,11 @@
 Verify and Access
 ==================
 
-This guide covers implementing zero-knowledge proof identity verification using Concordium's Verify and Access solution. It walks you through the verification process, configuration decisions, and technical integration requirements. Whether you're evaluating the solution or ready to begin implementation, this guide provides the foundation for privacy-preserving, compliant identity verification.
+This guide covers implementing :term:`zero-knowledge proof` identity verification using Concordium's Verify and Access solution. It walks you through the verification process, configuration decisions, and technical integration requirements. Whether you're evaluating the solution or ready to begin implementation, this guide provides the foundation for privacy-preserving, compliant identity verification.
 
 Privacy-preserving verification with ZKPs
 =========================================
-The demand for reliable user verification is rapidly intensifying across various sectors. However, traditional verification methods create significant liabilities; companies face steep financial penalties for data breaches, while users are increasingly concerned about their privacy and the oversharing of personal information. Compounding this, any system must meet the stringent requirement for auditable and consistently maintained checks.
+The demand for reliable user verification is rapidly intensifying across various sectors. However, traditional verification methods create significant liabilities; companies face steep financial penalties for data breaches, while users are increasingly concerned about their privacy and the oversharing of personal information. Furthermore, any system must meet the stringent requirement for auditable and consistently maintained checks.
 
 Zero-knowledge proofs resolve these issues. A zero-knowledge proof (ZKP) is a cryptographic method that allows one party (the "prover") to prove to another party (the "verifier") that a statement is true, without revealing any information beyond the validity of the statement itself. In the context of ID verification, a user can prove they are over 18 without ever disclosing their actual date of birth. This enables robust, verifiable identity checks that eliminate the need to store sensitive data and fully preserve user privacy.
 
@@ -17,7 +17,7 @@ Concordium is a science-backed, public, and permissionless Layer-1 blockchain de
 Concordium ZKP key features
 ===========================
 
-* **Fast verification times:** Concordium ensures rapid ZKP validation on-chain with a fast finality time of 4 seconds.
+* **Fast verification times:** Concordium ensures rapid ZKP validation :term:`on-chain` with a fast finality time of 4 seconds.
 
 * **Low cost:** Transaction fees for ZKP operations are pegged to a stable €0.02, making privacy-focused applications affordable to build and use.
 
@@ -43,7 +43,7 @@ This guide is structured to help you understand and implement Concordium's Verif
 
 * :ref:`manage-transaction-costs` explains how to manage a CCD account with sufficient funds for operations.
 
-* :ref:`integrate-with-verification-flow` provides technical integration guidance for integrating the verification flow into your platform.
+* :ref:`integrate-verification-flow` provides technical integration guidance for integrating the verification flow into your platform.
 
 * :ref:`access-the-concordium-network` covers connecting to the Concordium network through your own node or a hosted service.
 
@@ -56,6 +56,6 @@ This guide is structured to help you understand and implement Concordium's Verif
    select-verification-method
    select-identity-provider
    manage-transaction-costs
-   integrate-with-verification-flow
+   integrate-verification-flow
    access-the-concordium-network
 

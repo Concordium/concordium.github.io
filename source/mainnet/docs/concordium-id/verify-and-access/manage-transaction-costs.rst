@@ -4,7 +4,7 @@ Manage transaction costs
 =========================
 
 
-All transactions on Concordium require a small amount of CCD as fuel. CCD is stored securely in an on-chain wallet. This wallet is essential for holding the CCD required to pay for on-chain actions. For ZKPs, there is no charge for the user, but on-chain transactions are required for anchoring the ZKPs.
+All :term:`transactions <transaction>` on Concordium require a small amount of :term:`CCD` as :term:`gas`. CCD is stored securely in an on-chain wallet. This wallet is essential for holding the CCD required to pay for on-chain actions. For ZKPs, there is no charge for the user, but on-chain transactions are required for anchoring the :term:`zero-knowledge proofs (ZKPs)<Zero-knowledge proof>`.
 
 **What you need:**
 

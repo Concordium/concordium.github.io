@@ -308,7 +308,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       An object issued by the :term:`identity provider` to the user which allows the user to prove to third parties that their real life identity has been verified by a trusted third party.
 
-   Identity Provider
+   Identity Provider (IDP)
 
       A person or organization that performs off-chain identification of users. Users are required to obtain an identity object from an identity provider in order to open an account on the Concordium platform.
 

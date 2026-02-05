@@ -1,22 +1,22 @@
-.. _integrate-with-verification-flow:
+.. _integrate-verification-flow:
 
-================================
-Integrate with verification flow
-================================
+=============================
+Integrate verification flow
+=============================
 
 This page covers the technical components required to integrate Concordium's Verify and Access solution into your platform. The integration involves setting up the verification service, establishing wallet connections, implementing security measures, managing audit records, and building the user interface.
 
 Verifier service
 ================
 
-The technical foundation of the integration rests on two critical components: the Concordium Verifier Service and the gRPC V2 communication protocol. These elements ensure that your application can communicate securely with the blockchain and validate complex identity proofs without requiring specialized cryptographic expertise.
+The technical foundation of the integration rests on two critical components: the Concordium verifier service and the gRPC V2 communication protocol. These elements ensure that your application can communicate securely with the blockchain and validate complex identity proofs without requiring specialized cryptographic expertise.
 
-The Concordium Verifier Service
+The Concordium verifier service
 --------------------------------
 
 The verifier service is the core component of the integration - an open-source, self-hosted software package provided by Concordium.
 
-**Transparency & Customization:** Since the package is fully open-source, you have total visibility into the logic. You can inspect the code to perform independent security audits or even write your own version of the service to meet specific organizational requirements.
+**Transparency & customization:** Since the package is fully open-source, you have total visibility into the logic. You can inspect the code to perform independent security audits or even write your own version of the service to meet specific organizational requirements.
 
 **What it is:** A specialized middleware that acts as a translator between your standard web backend and zero-knowledge proof (ZKP) operations.
 
@@ -31,7 +31,7 @@ To verify a proof, the Verifier Service queries the blockchain to check that the
 
 **What it is:** gRPC (Google Remote Procedure Call) is a high-performance communication framework. Version 2 is the modern standard for Concordium, utilizing Protocol Buffers for faster, more reliable data transfer compared to traditional JSON-based APIs.
 
-**Port configuration:** By default, your service will connect to a node via Port 20000 (for the live Mainnet) or Port 20001 (for the Testnet development environment).
+**Port configuration:** By default, your service will connect to a node via Port 20000 (for the live :term:`mainnet`) or Port 20001 (for the :term:`testnet` development environment).
 
 **Node selection:** You require access to the Concordium network, see :ref:`access-the-concordium-network`.
 
@@ -67,7 +67,7 @@ The "one-click" experience is achieved through advanced deep-linking standards. 
 Automated key management (KMS)
 ===============================
 
-Unlike traditional SaaS, your backend acts as a blockchain participant. It must programmatically sign data to prove its authenticity. This requires a robust security layer for your private keys and a constant supply of gas (CCD) to pay for network updates.
+Unlike traditional SaaS, your backend acts as a blockchain participant. It must programmatically sign data to prove its authenticity. This requires a robust security layer for your private keys and a constant supply of :term:`gas` (:term:`CCD`) to pay for network updates.
 
 Security & identity management
 ------------------------------
@@ -85,7 +85,7 @@ CCD gas management
 
 Concordium transaction fees are pegged to the Euro, ensuring that your operational costs remain predictable regardless of the CCD token's market volatility.
 
-**Fixed unit cost:** Every on-chain anchor (VRA/VAA) costs approximately €0.02.
+**Fixed unit cost:** Every on-chain anchor (:term:`VRA<Verification Request Anchor>`/:term:`VAA<Verification Audit Anchor>`) costs approximately €0.02.
 
 **Payment currency:** Fees are paid in CCD (Concordium's native token), but the protocol automatically adjusts the CCD amount to match the Euro peg.
 
@@ -101,7 +101,7 @@ Unlike traditional systems where a database record is the final source of truth,
 Off-chain VAR storage
 ----------------------
 
-The Verification Audit Record (VAR) is the collection of metadata generated during a zero-knowledge proof (ZKP) session.
+The :term:`Verification Audit Record (VAR)<Verification Audit Record>` is the collection of metadata generated during a zero-knowledge proof (ZKP) session.
 
 **No PII storage:** The VAR does not contain raw Personally Identifiable Information (like names or passport numbers). Instead, it stores the record that a verification took place.
 
@@ -114,7 +114,7 @@ Tamper-proof linking
 
 To bridge the gap between your users and the blockchain, your database must act as a lookup table that connects internal identities to global transactions.
 
-**Mapping user IDs:** Every internal user ID must be explicitly linked to a Verification Audit Anchor (VAA) transaction hash.
+**Mapping user IDs:** Every internal user ID must be explicitly linked to a :term:`Verification Audit Anchor (VAA)<Verification Audit Anchor>` transaction hash.
 
 **The verification chain:** During an audit, an auditor will take your local VAR, run it through a hashing algorithm, and compare that hash to the one stored on the Concordium blockchain. If they match, the record is proven authentic.
 
