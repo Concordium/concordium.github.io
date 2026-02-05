@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.e547633d-ccf0-493a-9100-324b736f191c.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.f4cc671c-fb7d-4155-9d19-c96ed4d201de.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/release-notes/release-notes-lp';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -3118,13 +3118,13 @@ and an additional node in Hong Kong (all running both baker and finalizer).</p>
 In particular, it supports creating, signing, and submitting sponsored transactions by utilizing the extended transaction format.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><cite>–extended</cite> transaction configuration option has been added as a means to submit a transaction in the v1 transaction format.</p></li>
-<li><p><cite>–unsigned</cite> transaction configuration option has been added to support constructing unsigned transactions. These can be signed at a later point by using <cite>transaction add-signature</cite>. This option can only be used when <cite>–out</cite> is also specified.</p></li>
-<li><p>All transaction commands can now be configured to construct sponsored transactions by using <cite>–sponsor &lt;ACCOUNT&gt;</cite> enabling a new set of optional configuration options:</p></li>
-<li><p><cite>–sponsor-keys</cite> to specify a file holding the sponsor keys to use for signing. Similar to <cite>–keys</cite>.</p></li>
-<li><p><cite>–sponsor-signers</cite> to specify the credential and key indices to sign with for the sponsor account. Similar to <cite>–signers</cite>.</p></li>
-<li><p><cite>–sponsor-sign</cite> to sign the transaction on behalf of the sponsor as part of transaction construction. Inverse of <cite>–unsigned</cite> for the transaction sender.</p></li>
-<li><p><cite>transaction add-signature</cite> now supports signing on behalf of a sponsor by specifying the <cite>–sponsor</cite> flag.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--force-extended</span></code> transaction configuration option has been added as a means to submit a transaction in the v1 transaction format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--unsigned</span></code> transaction configuration option has been added to support constructing unsigned transactions. These can be signed at a later point by using <cite>transaction add-signature</cite>. This option can only be used when <cite>–out</cite> is also specified.</p></li>
+<li><p>All transaction commands can now be configured to construct sponsored transactions by using <code class="docutils literal notranslate"><span class="pre">--sponsor &lt;ACCOUNT&gt;</span></code> enabling a new set of optional configuration options:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--sponsor-keys</span></code> to specify a file holding the sponsor keys to use for signing. Similar to <code class="docutils literal notranslate"><span class="pre">--keys</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--sponsor-signers</span></code> to specify the credential and key indices to sign with for the sponsor account. Similar to <code class="docutils literal notranslate"><span class="pre">--signers</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--sponsor-sign</span></code> to sign the transaction on behalf of the sponsor as part of transaction construction. Inverse of <code class="docutils literal notranslate"><span class="pre">--unsigned</span></code> for the transaction sender.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">add-signature</span></code> now supports signing on behalf of a sponsor by specifying the <code class="docutils literal notranslate"><span class="pre">--sponsor</span></code> flag.</p></li>
 </ul>
 </div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -3190,9 +3190,10 @@ In particular, it supports the new protocol-level token (PLT) functionality with
 <li><p class="sd-card-text">From protocol version 8, raw command <code class="docutils literal notranslate"><span class="pre">GetPoolStatus</span></code> indicates if a validator is suspended and, if it is in the current committee, if it is primed for suspension and the current count of missed rounds.</p></li>
 </ul>
 </div>
-</details><p class="sd-card-text">..dropdown:: 7.0.1 - September 23, 2024</p>
-<blockquote>
-<div><p class="sd-card-text">Concordium Client 7.0.1 includes the following features and bug fixes:</p>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">7.0.1 - September 23, 2024</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium Client 7.0.1 includes the following features and bug fixes:</p>
 <ul class="simple">
 <li><p class="sd-card-text">Support node version 7 and protocol version 7.</p></li>
 <li><p class="sd-card-text">Display the “at disposal” balance in the account info output, which indicates the amount of CCD that can be spent or transferred, accounting for any lock-up from staking or scheduled transfers.</p></li>
@@ -3202,8 +3203,8 @@ In particular, it supports the new protocol-level token (PLT) functionality with
 <li><p class="sd-card-text">Fix a bug in correctly accounting for parsed events.</p></li>
 <li><p class="sd-card-text">Rename the <code class="docutils literal notranslate"><span class="pre">--out</span></code> flag for <code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">add</span></code> to <code class="docutils literal notranslate"><span class="pre">--validator-credentials-out</span></code> to fix the conflict with the <code class="docutils literal notranslate"><span class="pre">--out</span></code> flag used to write a partially-signed transaction to a file.</p></li>
 </ul>
-</div></blockquote>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">6.3.0 - June 07, 2024</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Concordium Client 6.3.0 includes support for the following:</p>
