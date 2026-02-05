@@ -97,7 +97,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :caption: Concordium ID
    :hidden:
 
-   What is Concordium ID <concordium-id/index>
    Verify and Access <concordium-id/verify-and-access/index>
 
 .. toctree::
