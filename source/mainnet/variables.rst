@@ -22,7 +22,7 @@
 .. Genesis Creator Tool variables
 .. |genesis-creator-linux| replace:: genesis-creator-linux-amd64
 .. |genesis-creator-version| replace:: 0.8.1
-.. |genesis-creator-checksum| replace:: 5bc6b7772597b3167525dcd34c5bf767716ea97f30110f18966d209391521ff3
+.. |genesis-creator-linux-checksum| replace:: 5bc6b7772597b3167525dcd34c5bf767716ea97f30110f18966d209391521ff3
 
 .. Cargo verification variables
 .. |cargo-linux| replace:: cargo-concordium_2.8.0

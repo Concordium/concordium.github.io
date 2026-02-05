@@ -57,7 +57,7 @@ Genesis Creator Tool
 Linux
 -----
 
-.. include::genesis-creator-verification-instructions/genesis-creator-linux.rst
+.. include:: genesis-creator-verification-instructions/genesis-creator-linux.rst
 
 Cargo Concordium
 ================

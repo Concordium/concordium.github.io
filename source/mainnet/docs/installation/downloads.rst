@@ -160,7 +160,7 @@ Genesis Creator Tool |genesis-creator-version|
 
 .. dropdown:: Linux
 
-   -  `Download Genesis Creator Tool for Linux <https://github.com/Concordium/concordium-misc-tools/releases/download/0.8.1/genesis-creator-linux-amd64>`_
+   -  `Download Genesis Creator Tool for Linux <https://github.com/Concordium/concordium-misc-tools/releases/download/genesis-creator%2F0.8.1/genesis-creator-linux-amd64>`_
 
          - SHA256 checksum of the download: :substitution-code:`|genesis-creator-checksum|`
          - :ref:`Verification instructions <verification-genesis-creator-linux>`
@@ -173,7 +173,7 @@ Genesis Creator Tool |genesis-creator-version|
 
 .. dropdown:: macOS
 
-   -  Download Genesis Creator Tool for macOS: `ARM <https://github.com/Concordium/concordium-misc-tools/releases/download/0.8.1/genesis-creator-macos-arm.pkg>`_ `Intel <https://github.com/Concordium/concordium-client/releases/download/0.8.1/genesis-creator-macos-intel.pkg>`_
+   -  Download Genesis Creator Tool for macOS: `arm_macOS <https://github.com/Concordium/concordium-misc-tools/releases/download/genesis-creator%2F0.8.1/genesis-creator-macos-arm.pkg>`_ `intel_macOS <https://github.com/Concordium/concordium-misc-tools/releases/download/genesis-creator%2F0.8.1/genesis-creator-macos-intel.pkg>`_
 
       The macOS distribution is an installer that places an alias to the binary
       into the folder ``/usr/local/bin``. So after installing, you should have
@@ -181,7 +181,7 @@ Genesis Creator Tool |genesis-creator-version|
 
 .. dropdown:: Windows
 
-   -  `Download Genesis Creator Tool for Windows <https://github.com/Concordium/concordium-misc-tools/releases/download/0.8.1/genesis-creator-windows-amd64.exe>`_
+   -  `Download Genesis Creator Tool for Windows <https://github.com/Concordium/concordium-misc-tools/releases/download/genesis-creator%2F0.8.1/genesis-creator-windows-amd64.exe>`_
 
 .. _cargo-concordium-testnet:
 
