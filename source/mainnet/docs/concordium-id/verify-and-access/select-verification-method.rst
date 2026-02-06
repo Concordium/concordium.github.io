@@ -45,3 +45,4 @@ This check verifies that the user has access to a given account and, by extensio
 * **Pro:** It creates a seamless, one-step process for any service that involves an on-chain transaction, removing the friction found in :ref:`Option 1 <verification-against-id>`.
 
 * **Con:** This method cannot be performed by a user who only has the standalone ID App. They must have a full wallet with an account created.
+
