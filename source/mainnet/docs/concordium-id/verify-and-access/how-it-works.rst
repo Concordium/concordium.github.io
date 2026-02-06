@@ -13,7 +13,7 @@ Before a user can verify themselves on your platform, they must create their reu
 
 * **Download & setup:** The user downloads a compatible digital ID app (e.g., a crypto wallet) and creates an account.
 
-* **Onboard with Identity Provider (IDP):** Through the app, the user submits their identity documents and a selfie to a trusted third-party :term:`Identity Provider (IDP)`.
+* **Onboard with Identity Provider (IDP):** Through the app, the user submits their identity documents and a selfie to a trusted third-party :term:`Identity Provider (IDP)<Identity Provider>`.
 
 * **Receive cryptographic ID:** The IDP validates the documents and issues a secure, cryptographic Identity Object to the user's app. This credential is now stored privately on the user's device.
 

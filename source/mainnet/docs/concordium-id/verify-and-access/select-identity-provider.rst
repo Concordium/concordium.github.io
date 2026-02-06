@@ -4,7 +4,7 @@
 Select Identity Provider
 ==========================
 
-To confirm that a digital credential corresponds to a real-world identity, it must be verified by an :term:`Identity Provider (IDP)`. These providers act as the bridge between off-chain legal documents and on-chain verification. Concordium currently supports three primary IDPs: Digital Trust Solutions, Notabene, and Global FinReg. Choosing the correct IDP is essential to ensure your business remains compliant while providing a smooth onboarding experience for your users. While most IDPs offer the same central service, some do specialise in certain areas.
+To confirm that a digital credential corresponds to a real-world identity, it must be verified by an :term:`Identity Provider (IDP)<Identity Provider>`. These providers act as the bridge between off-chain legal documents and on-chain verification. Concordium currently supports three primary IDPs: Digital Trust Solutions, Notabene, and Global FinReg. Choosing the correct IDP is essential to ensure your business remains compliant while providing a smooth onboarding experience for your users. While most IDPs offer the same central service, some do specialise in certain areas.
 
 Key considerations for selection
 =================================
