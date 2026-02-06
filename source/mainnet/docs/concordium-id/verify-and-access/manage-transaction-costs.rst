@@ -29,6 +29,7 @@ Manage your wallet actively
 
 Because CCD is required for all actions, you must treat this wallet as a form of operational capital that needs active management. You must consistently monitor your wallet's CCD balance and ensure it is topped up regularly.
 
+
 **Important:** If your CCD balance runs out, all your subsequent operations will fail. This could halt your compliance checks, disrupt your services, and prevent you from paying for network usage.
 
 
