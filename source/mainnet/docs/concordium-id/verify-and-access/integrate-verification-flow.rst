@@ -9,18 +9,18 @@ This page covers the technical components required to integrate Concordium's Ver
 Verifier service
 ================
 
-The technical foundation of the integration rests on two critical components: the Concordium verifier service and the gRPC V2 communication protocol. These elements ensure that your application can communicate securely with the blockchain and validate complex identity proofs without requiring specialized cryptographic expertise.
+The technical foundation of the integration rests on two critical components: the Concordium Verifier Service and the gRPC V2 communication protocol. These elements ensure that your application can communicate securely with the blockchain and validate complex identity proofs without requiring specialized cryptographic expertise.
 
-The Concordium verifier service
+The Concordium Verifier Service
 --------------------------------
 
-The verifier service is the core component of the integration - an open-source, self-hosted software package provided by Concordium.
+The Concordium Verifier Service is the core component of the integration - an open-source, self-hosted software package provided by Concordium.
 
 **Transparency & customization:** Since the package is fully open-source, you have total visibility into the logic. You can inspect the code to perform independent security audits or even write your own version of the service to meet specific organizational requirements.
 
 **What it is:** A specialized middleware that acts as a translator between your standard web backend and zero-knowledge proof (ZKP) operations.
 
-**Why you need it:** Instead of your backend manually calculating cryptographic hashes or validating ZKPs, it simply sends the user's proof to this service. The verifier service validates the proof against the blockchain's state and returns a simple "Verified" or "Failed" response.
+**Why you need it:** Instead of your backend manually calculating cryptographic hashes or validating ZKPs, it simply sends the user's proof to this service. The Verifier Service validates the proof against the blockchain's state and returns a simple "Verified" or "Failed" response.
 
 **Deployment (Docker):** To ensure a secure, isolated environment, this service is distributed as a Docker container. You host it within your own Virtual Private Cloud (VPC), meaning user proof data never leaves your controlled infrastructure until it has been anonymized and anchored.
 
@@ -87,7 +87,7 @@ Concordium transaction fees are pegged to the Euro, ensuring that your operation
 
 **Fixed unit cost:** Every on-chain anchor (:term:`VRA<Verification Request Anchor>`/:term:`VAA<Verification Audit Anchor>`) costs approximately €0.02.
 
-**Payment currency:** Fees are paid in CCD (Concordium's native token), but the protocol automatically adjusts the CCD amount to match the Euro peg.
+**Payment currency:** Fees are paid in :term:`CCD`, but the protocol automatically adjusts the CCD amount to match the Euro peg.
 
 **Operational risk:** If the account balance reaches zero, the backend cannot sign transactions. This results in an immediate halt of all user verifications.
 
@@ -158,9 +158,9 @@ Because the verification process involves external apps (wallets) and network co
 
 **Expired ID Credentials:** If a user's underlying government ID has expired within their Concordium wallet, the proof request will fail. Your UI should detect this and provide a deep link or instructions for the user to "Renew Identity" inside their wallet app.
 
-**User Rejection:** Users can manually decline the "Sign Request" or "Connection Request" in their wallet. Your frontend must catch these UserRejectedError exceptions to prevent the UI from freezing in a loading state.
+**User rejection:** Users can manually decline the "Sign Request" or "Connection Request" in their wallet. Your frontend must catch these UserRejectedError exceptions to prevent the UI from freezing in a loading state.
 
-**Connection Timeouts:** If the user takes too long to approve the request in their mobile wallet, the session may expire. Implement a countdown timer or a "Resend Request" button to recover the session.
+**Connection timeouts:** If the user takes too long to approve the request in their mobile wallet, the session may expire. Implement a countdown timer or a "Resend Request" button to recover the session.
 
-**Finalization Lag:** While Concordium is fast (finality in ~1–2 seconds), your UI should show a "Verifying on-chain..." state until the transaction hash is confirmed, rather than redirecting the user prematurely.
+**Finalization lag:** While Concordium is fast (finality in ~1–2 seconds), your UI should show a "Verifying on-chain..." state until the transaction hash is confirmed, rather than redirecting the user prematurely.
 

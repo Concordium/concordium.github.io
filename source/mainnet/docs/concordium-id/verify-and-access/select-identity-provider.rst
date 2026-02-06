@@ -4,7 +4,7 @@
 Select Identity Provider
 ==========================
 
-To confirm that a digital credential corresponds to a real-world identity, it must be verified by an Identity Provider (IDP). These providers act as the bridge between off-chain legal documents and on-chain verification. Concordium currently supports three primary IDPs: Digital Trust Solutions, Notabene, and Global FinReg. Choosing the correct IDP is essential to ensure your business remains compliant while providing a smooth onboarding experience for your users. While most IDPs offer the same central service, some do specialise in certain areas.
+To confirm that a digital credential corresponds to a real-world identity, it must be verified by an :term:`Identity Provider (IDP)`. These providers act as the bridge between off-chain legal documents and on-chain verification. Concordium currently supports three primary IDPs: Digital Trust Solutions, Notabene, and Global FinReg. Choosing the correct IDP is essential to ensure your business remains compliant while providing a smooth onboarding experience for your users. While most IDPs offer the same central service, some do specialise in certain areas.
 
 Key considerations for selection
 =================================
@@ -18,7 +18,7 @@ While all IDPs on the network perform basic identity assertions, they are not id
 Integration options
 ===================
 
-When integrating Concordium's Verify & Access solution, you have two primary ways to handle IDP selection:
+When integrating Concordium's Verify and Access solution, you have two primary ways to handle IDP selection:
 
 **Option 1: Universal acceptance**
 
@@ -36,7 +36,7 @@ You can programmatically specify a list of one or more accepted IDPs when reques
 
 **Pro:** Guarantees that every user interacting with your service meets your exact compliance threshold.
 
-**Con:** If a user has verified their identity through an IDP you do not support, they will be prompted to re-verify with one of your approved providers, creating additional friction.
+**Con:** If a user has verified their identity through an IDP you don't support, they will be prompted to re-verify with one of your approved providers, creating additional friction.
 
 Current Identity Providers
 ===========================

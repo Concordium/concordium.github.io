@@ -4,7 +4,7 @@
 Access the Concordium network
 =============================
 
-A Concordium node is the gateway to the blockchain. For a valid, verifiable audit record of your platform, on-chain transactions (VRA and VAA) must occur, requiring a connection with a Concordium node.
+A Concordium node is the gateway to the blockchain. For a valid, verifiable audit record of your platform, on-chain transactions (:term:`VRA<Verification Request Anchor>` and :term:`VAA<Verification Audit Anchor>`) must occur, requiring a connection with a Concordium node.
 
 Concordium nodes communicate exclusively via gRPC (gRPC Remote Procedure Calls). This framework exposes the blockchain's unique features, including its built-in identity layer and specific data structures for accounts and smart contracts. This page outlines the recommended architecture for establishing a robust and scalable gRPC connection to your node.
 

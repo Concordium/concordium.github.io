@@ -14,7 +14,7 @@ Concordium provides two distinct verification checks. While your technical metho
 Option 1: Verification against an ID
 =====================================
 
-This check verifies a user's identity directly against an official :term:`Identity Object` (like a passport or driver's license) that has been validated by an approved :term:`Identity Provider<Identity Provider (IDP)>`.
+This check verifies a user's identity directly against an official :term:`Identity Object` (like a passport or driver's license) that has been validated by an approved :term:`Identity Provider (IDP)`.
 
 **When to use it:** This method is best for simple identity-gating, such as verifying a user's attributes (e.g., "is over 18" or "is from X country") when the user has no payment or on-chain transaction to make.
 
@@ -22,7 +22,7 @@ This check verifies a user's identity directly against an official :term:`Identi
 
 **Pros and cons**
 
-* **Pro:** Offers high flexibility for the user, as they can verify from a "lite" ID-only app without needing to set up a full account.
+* **Pro:** Offers high flexibility for the user, as they can verify from a lite ID-only app without needing to set up a full account.
 
 * **Con:** If the user verifies with the standalone ID App, their account information is not stored. If that user later needs to make a payment (e.g., with a stablecoin), they will be forced to verify again with a wallet, creating a two-step process and significant friction.
 

@@ -15,7 +15,7 @@ Before a user can verify themselves on your platform, they must create their reu
 
 * **Onboard with Identity Provider (IDP):** Through the app, the user submits their identity documents and a selfie to a trusted third-party :term:`Identity Provider (IDP)`.
 
-* **Receive cryptographic ID:** The IDP validates the documents and issues a secure, cryptographic identity object to the user's app. This credential is now stored privately on the user's device.
+* **Receive cryptographic ID:** The IDP validates the documents and issues a secure, cryptographic Identity Object to the user's app. This credential is now stored privately on the user's device.
 
 * **Create on-chain account:** If the user is using a :term:`Concordium ID` compatible wallet, a privacy-preserving account is created for the user on the Concordium blockchain using only the ZKP, ensuring no personal information is ever public. If using the Concordium ID app directly, then no on-chainchain account is created at this time. The user is now ready to verify their identity on any platform using the Concordium ID.
 
