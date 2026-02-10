@@ -11,7 +11,7 @@ Key considerations for selection
 
 While all IDPs on the network perform basic identity assertions, they are not identical. Your choice should be guided by your specific regulatory and geographic needs.
 
-**Regulatory coverage:** IDPs vary in terms of the jurisdictions and regulatory frameworks they support. An IDP that satisfies AML (Anti-Money Laundering) requirements in one region may not meet the specific "Travel Rule" or :term:`KYC (Know Your Customer)<KYC>` standards required in another.
+**Regulatory coverage:** IDPs vary in terms of the jurisdictions and regulatory frameworks they support. An IDP that satisfies AML (Anti-Money Laundering) requirements in one region may not meet the specific :term:`Travel Rule` or :term:`KYC (Know Your Customer)<KYC>` standards required in another.
 
 **Business requirements:** You must ensure the IDP you select aligns with the legal obligations of your industry (e.g., MiCA in Europe or FinCEN regulations in the US).
 
