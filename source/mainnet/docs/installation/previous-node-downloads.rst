@@ -106,10 +106,11 @@ macOS - Mainnet and Testnet
 Ubuntu - Mainnet
 ================
 
-Default GRPC port is set to 20000
-Default listen port is set to 8888
+Default GRPC port is set to ``20000``
 
-`8.0.3 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_8.0.3-1_amd64.deb>`
+Default listen port is set to ``8888``
+
+`8.0.3 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_8.0.3-1_amd64.deb>`__
 
    - Verification instructions
 
@@ -200,6 +201,7 @@ Default listen port is set to 8888
       #. Verify that the output matches the SHA256 checksum ``579e77a873a46d9a19d058e2c0bacb027efdf46aec8a73cb2983f6d37513be4c``.
 
 `5.1.3 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_5.1.3-0_amd64.deb>`__
+
    - Verification instructions
 
       In a terminal:
@@ -209,6 +211,7 @@ Default listen port is set to 8888
       #. Verify that the output matches the SHA256 checksum ``be10622086fe1225480e68303aab05fcc806150c51327afa7f19c8289600fb6b``.
 
 `5.0.6 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_5.0.6-0_amd64.deb>`__
+
    - Verification instructions
 
       In a terminal:
@@ -218,6 +221,7 @@ Default listen port is set to 8888
       #. Verify that the output matches the SHA256 checksum ``f3a66a2ab5193682f3997c38c8b4e688bec85191f6cc5871dca63fb572fe5c18``.
 
 `4.4.4 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_4.4.4-1_amd64.deb>`__
+
    - Verification instructions
 
       In a terminal:
@@ -228,6 +232,7 @@ Default listen port is set to 8888
 
 
 `4.3.1 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_4.3.1_amd64.deb>`__
+
    - Verification instructions
 
       In a terminal:
@@ -238,6 +243,7 @@ Default listen port is set to 8888
 
 
 `4.2.3 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_4.2.3_amd64.deb>`__
+
    - Verification instructions
 
       In a terminal:
@@ -248,6 +254,7 @@ Default listen port is set to 8888
 
 
 `4.2.1 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_4.2.1_amd64.deb>`__
+
    - Verification instructions
 
       In a terminal:
@@ -258,6 +265,7 @@ Default listen port is set to 8888
 
 
 `4.1.1 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_4.1.1_amd64.deb>`__
+
    - Verification instructions
 
       In a terminal:
@@ -268,6 +276,7 @@ Default listen port is set to 8888
 
 
 `3.0.2 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_3.0.2_amd64.deb>`__
+
    - Verification instructions
 
       In a terminal:
@@ -279,10 +288,21 @@ Default listen port is set to 8888
 Ubuntu - Testnet
 ================
 
-Default GRPC port is set to 20001
-Default listen port is set to 8889
+Default GRPC port is set to ``20001``
 
-`8.0.3 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_8.0.3-1_amd64.deb>`
+Default listen port is set to ``8889``
+
+`9.0.7-3 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_9.0.7-3_amd64.deb>`_
+
+    - Verification instructions
+
+      In a terminal:
+
+      #. Navigate to the download.
+      #. Paste the following into the terminal: $sha256sum concordium-testnet-node_9.0.7-3_amd64.deb
+      #. Verify that the output matches the SHA256 checksum ``676644f4b07204a62d45f5b7dc38f3dd89bff125d2e34f7b6238c5323da0a0bf``
+
+`8.0.3 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_8.0.3-1_amd64.deb>`__
 
     - Verification instructions
 
@@ -292,7 +312,7 @@ Default listen port is set to 8889
       #. Paste the following into the terminal: $sha256sum concordium-testnet-node_8.0.3-1_amd64.deb
       #. Verify that the output matches the SHA256 checksum ``168a2991140f99845bb2289156d03d14eed8a441ba331f729d365f7220ffb869``
 
-`7.0.5 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_7.0.5-0_amd64.deb>`
+`7.0.5 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_7.0.5-0_amd64.deb>`_
 
    - Verification instructions
 
@@ -403,6 +423,7 @@ Default listen port is set to 8889
       #. Verify that the output matches the SHA256 checksum ``cf035d33784473b13afdf6d9a047c35f970ad9864f1134867eed00ed7baa2007``.
 
 `5.2.4 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_5.2.4-0_amd64.deb>`__
+
    - Verification instructions
 
       In a terminal:
@@ -412,6 +433,7 @@ Default listen port is set to 8889
       #. Verify that the output matches the SHA256 checksum ``51841534d17d7466f2ee1fb1b10d7d72bd009dd6c0cb53d414a632792a1a1b83``.
 
 `5.1.3 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_5.1.3-0_amd64.deb>`__
+
    - Verification instructions
 
       In a terminal:
@@ -421,6 +443,7 @@ Default listen port is set to 8889
       #. Verify that the output matches the SHA256 checksum ``7d496886db7efc7f71f25570e3042b68e9269cd4ec7a4fc612a330a12b13dc5e``.
 
 `5.0.6 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_5.0.6-0_amd64.deb>`__
+
    - Verification instructions
 
       In a terminal:
@@ -430,6 +453,7 @@ Default listen port is set to 8889
       #. Verify that the output matches the SHA256 checksum ``fa361845715991142c721b5ac0803d4fcc615b4a4fb865a48533d03ea9ba6a17``.
 
 `4.4.4 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.4.4-1_amd64.deb>`__
+
    - Verification instructions
 
       In a terminal:
@@ -439,6 +463,7 @@ Default listen port is set to 8889
       #. Verify that the output matches the SHA256 checksum ``2569e43d8f8e93e594882e5f8b934a1a20ca7674bebf349f85c07cb09e41da4a``.
 
 `4.3.1 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.3.1_amd64.deb>`__
+
    - Verification instructions
 
       In a terminal:
@@ -448,6 +473,7 @@ Default listen port is set to 8889
       #. Verify that the output matches the SHA256 checksum ``1f8650a01746617c10d9e8aeee01b1adbf1e8a005e5a246b6920437344c7f518``.
 
 `4.2.3 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.2.3_amd64.deb>`__
+
    - Verification instructions
 
       In a terminal:
@@ -457,6 +483,7 @@ Default listen port is set to 8889
       #. Verify that the output matches the SHA256 checksum ``66a54d77a8d6810a9d87b828ed3881105858609b9b921a700064b2719c861691``.
 
 `4.2.1 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.2.1_amd64.deb>`__
+
    - Verification instructions
 
       In a terminal:
@@ -466,6 +493,7 @@ Default listen port is set to 8889
       #. Verify that the output matches the SHA256 checksum ``ea17f5e192e77a1469ab9c4486892f1a6f63894de6ab54a86ea7b80cdecbbf17``.
 
 `4.1.1 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_4.1.1_amd64.deb>`__
+
    - Verification instructions
 
       In a terminal:
@@ -475,6 +503,7 @@ Default listen port is set to 8889
       #. Verify that the output matches the SHA256 checksum ``35c668769576e32d94f53b3c167b16ad7c74425737932f9b9f2837ea35fe3641``.
 
 `3.0.2 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_3.0.2_amd64.deb>`__
+
    - Verification instructions
 
       In a terminal:

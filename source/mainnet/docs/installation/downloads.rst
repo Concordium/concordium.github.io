@@ -126,7 +126,7 @@ For usage instructions see :ref:`Concordium-client <concordium-client>`
 
 .. dropdown:: Linux
 
-   -  `Download Concordium Client for Linux <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-linux>`_
+   -  `Download Concordium Client for Linux <https://github.com/Concordium/concordium-client/releases/download/10.0.0-0-rc/concordium-client-linux>`_
 
          - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
          - :ref:`Verification instructions <verification-client-linux>`
@@ -139,7 +139,7 @@ For usage instructions see :ref:`Concordium-client <concordium-client>`
 
 .. dropdown:: macOS
 
-   -  Download Concordium Client for macOS: `ARM <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-macos-arm.pkg>`_ `Intel <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-macos-intel.pkg>`_
+   -  Download Concordium Client for macOS: `ARM <https://github.com/Concordium/concordium-client/releases/download/10.0.0-0-rc/concordium-client-macos-arm.pkg>`_ `Intel <https://github.com/Concordium/concordium-client/releases/download/10.0.0-0-rc/concordium-client-macos-intel.pkg>`_
 
       The macOS distribution is an installer that places an alias to the binary
       into the folder ``/usr/local/bin``. So after installing, you should have
@@ -147,13 +147,41 @@ For usage instructions see :ref:`Concordium-client <concordium-client>`
 
 .. dropdown:: Windows
 
-   -  `Download Concordium Client for Windows <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-windows.zip>`_
+   -  `Download Concordium Client for Windows <https://github.com/Concordium/concordium-client/releases/download/10.0.0-0-rc/concordium-client-windows.zip>`_
 
       The Windows distribution is a zip file that must be extracted before use.
       To do this, in Windows Explorer, right-click the downloaded file and select
       "Extract All...". After extraction, you will have a folder containing the
       Concordium Client executable (``concordium-client.exe``) as well as other files
       that are required to run the client.
+
+Genesis Creator Tool |genesis-creator-version|
+==============================================
+
+.. dropdown:: Linux
+
+   -  `Download Genesis Creator Tool for Linux <https://github.com/Concordium/concordium-misc-tools/releases/download/genesis-creator%2F0.8.1/genesis-creator-linux-amd64>`_
+
+         - SHA256 checksum of the download: :substitution-code:`|genesis-creator-checksum|`
+         - :ref:`Verification instructions <verification-genesis-creator-linux>`
+
+      Before you can use the downloaded Genesis Creator Tool on Linux you have to make the downloaded file executable. Run the following command to make the file you download executable:
+
+         .. code-block:: console
+
+            chmod +x genesis-creator-linux-amd64
+
+.. dropdown:: macOS
+
+   -  Download Genesis Creator Tool for macOS: `arm_macOS <https://github.com/Concordium/concordium-misc-tools/releases/download/genesis-creator%2F0.8.1/genesis-creator-macos-arm.pkg>`_ `intel_macOS <https://github.com/Concordium/concordium-misc-tools/releases/download/genesis-creator%2F0.8.1/genesis-creator-macos-intel.pkg>`_
+
+      The macOS distribution is an installer that places an alias to the binary
+      into the folder ``/usr/local/bin``. So after installing, you should have
+      ``genesis-creator`` on your path.
+
+.. dropdown:: Windows
+
+   -  `Download Genesis Creator Tool for Windows <https://github.com/Concordium/concordium-misc-tools/releases/download/genesis-creator%2F0.8.1/genesis-creator-windows-amd64.exe>`_
 
 .. _cargo-concordium-testnet:
 
@@ -224,9 +252,9 @@ For the system requirements to run a node and installation instructions for each
 
    .. dropdown:: Ubuntu |testnet-node-version|
 
-      To run a node on a server with Ubuntu, `download a Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_9.0.7-3_amd64.deb>`_.
+      To run a node on a server with Ubuntu, `download a Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_10.0.4-1_amd64.deb>`_.
 
-      - SHA256 checksum of the download: ``676644f4b07204a62d45f5b7dc38f3dd89bff125d2e34f7b6238c5323da0a0bf``
+      - SHA256 checksum of the download: ``e6b598e3a8a1b024ec6c873f002b6ce5a4f97745ccc68098874bccc74c8d9709``
 
       To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
@@ -240,13 +268,13 @@ For the system requirements to run a node and installation instructions for each
 
    .. dropdown:: Windows |testnet-node-version|
 
-      To run a node on Windows, `download a Testnet Windows Installer package <https://distribution.concordium.software/windows/Node-9.0.7-3.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
+      To run a node on Windows, `download a Testnet Windows Installer package <https://distribution.concordium.software/windows/Node-10.0.4-1.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
       To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
    .. dropdown:: Mac |testnet-node-version|
 
-      To run a node on macOS, `download a Testnet macOS installer package <https://distribution.concordium.software/macos/concordium-node-9.0.7-3.pkg>`_.
+      To run a node on macOS, `download a Testnet macOS installer package <https://distribution.concordium.software/macos/concordium-node-10.0.4-1.pkg>`_.
 
       To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS <run-node-macos>`.
 

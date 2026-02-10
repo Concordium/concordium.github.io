@@ -56,6 +56,62 @@ This feature is enabled by default in all distributions since version 6.1, and o
 
 The speed of synchronization largely depends on the performance of your storage (NVMe drives are highly recommended).
 
+Checking the Node synchronization status
+----------------------------------------
+
+.. dropdown:: Using CCDScan
+
+   To verify whether a Concordium node is synchronized with the network, compare
+   the node’s finalized block height with the latest finalized block height
+   reported by CCDScan.
+
+   #. Open the **Blocks** page on `CCDScan <https://ccdscan.io/blocks>`_
+
+   #. Locate the **Height** column, which represents the height of finalized
+      blocks (the sequential position of each finalized block in the blockchain)
+      for the selected network. The highest value displayed corresponds to the latest finalized block height.
+
+   #. Note the highest **Height** value.
+
+   #. Open your node’s page on CCDScan and locate the parameter **Last Finalized Block Height**
+
+   #. Compare the node’s **Last Finalized Block Height** with the block height
+      obtained from the CCDScan **Blocks** page.
+
+   Interpretation:
+
+   - If the values are equal, the node is synchronized with the network.
+   - If the node’s **Last Finalized Block Height** is lower than the value shown on CCDScan, the node is still synchronizing.
+
+   .. note::
+
+      A difference of 1–2 blocks is generally not considered significant and may
+      occur due to normal network latency, block propagation delays, or delays in
+      updating the node’s local state. Since the block time on Concordium is
+      approximately 2 seconds, such a difference corresponds to only a few
+      seconds.
+
+.. dropdown:: Using Concordium-client
+
+   You can also verify the synchronization status of a node using the
+   ``concordium-client`` command-line tool.
+
+   Run the following command:
+
+   .. code-block:: bash
+
+      concordium-client raw GetPeerData
+
+   The command returns information about the node’s peers and their current
+   synchronization status.
+
+   Interpretation:
+
+   - If the output lists multiple peers and all of them have the status
+     ``Up to date``, the node is synchronized with the network.
+   - If one or more peers are not marked as ``Up to date``, the node may still
+     be in the process of synchronizing.
+
 .. toctree::
    :maxdepth: 1
    :hidden:
