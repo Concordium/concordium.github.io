@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/resources/glossary.e8bbdd17-f4fe-4d30-9b07-2880a4fa4fbb.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/resources/glossary.be080552-abb2-413b-b1e5-7a2d490943f6.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/resources/glossary';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/resources/glossary.html" />
@@ -528,6 +528,18 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../protocol/staking.html">Staking</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../protocol/how-to-become-a-validator.html">How to become a validator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../protocol/concepts-delegation.html">How to become a delegator</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Concordium ID</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../concordium-id/verify-and-access/index.html">Verify and Access</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../concordium-id/verify-and-access/how-it-works.html">How it works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concordium-id/verify-and-access/select-verification-method.html">Select verification method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concordium-id/verify-and-access/select-identity-provider.html">Select Identity Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concordium-id/verify-and-access/manage-transaction-costs.html">Manage transaction costs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concordium-id/verify-and-access/integrate-verification-flow.html">Integrate verification flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concordium-id/verify-and-access/access-the-concordium-network.html">Access the Concordium network</a></li>
 </ul>
 </details></li>
 </ul>
@@ -1105,6 +1117,8 @@ blocks on top of the longest chain), to incentivize blockchain users.</p></li>
 <dt id="term-Transfer-Memo">Transfer Memo<a class="headerlink" href="#term-Transfer-Memo" title="Link to this term">#</a></dt><dd><p>Additional data that a user can provide when making a transfer, or a transfer with schedule. The data will appear on chain as a bytestring. It is expected to be CBOR encoded and can therefore represent strings, numbers and JSON values, but this is not enforced.</p>
 </dd>
 <dt id="term-Transfer-with-schedule">Transfer with schedule<a class="headerlink" href="#term-Transfer-with-schedule" title="Link to this term">#</a></dt><dd><p>A special kind of transfer of CCD that makes the CCD amount available to the receiver only in a limited way until a specified point in time. The point in time is specified as part of a transfer. The CCD are immediately owned by the receiver account, and the transfer cannot be revoked, but the receiver cannot spend the CCD until the specified time.</p>
+</dd>
+<dt id="term-Travel-Rule">Travel Rule<a class="headerlink" href="#term-Travel-Rule" title="Link to this term">#</a></dt><dd><p>An anti-money laundering (AML) and counter-terrorist financing (CTF) requirement mandating that financial institutions and Virtual Asset Service Providers (VASPs) share specific, identifying information about the sender and recipient during transactions that exceed certain thresholds. This data must travel with the transaction, ensuring transparency across both fiat and crypto transfers.</p>
 </dd>
 <dt id="term-User-identity-certificate">User identity certificate<a class="headerlink" href="#term-User-identity-certificate" title="Link to this term">#</a></dt><dd><p>Issued to the individual or entity once their real-world identity has been verified and recorded by an identity provider. You cannot use the Concordium platform without a user identity certificate.
 The user identity certificate includes attributes such as name, age, and nationality. When the identity provider has validated the attributes, it issues a user identity certificate, which is basically the identity provider’s signature over some cryptographic keys of the user and the validated personal attributes. Unlike usual public key certificates such as X.509 certificates, the user identity certificate is private to the user; it is not submitted to the chain. Note that the identity provider also stores some information, but this is only used for a possible, subsequent investigation of the user’s activities (i.e. disclosing an identity). The identity provider is not involved in any subsequent use of the user identity certificate. The user identity certificate is signed using the Pointcheval-Sanders signature scheme.</p>
