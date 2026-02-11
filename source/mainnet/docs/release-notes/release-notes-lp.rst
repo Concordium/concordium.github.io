@@ -1598,7 +1598,7 @@ Testnet
 
     .. dropdown:: Previous releases
 
-        .. dropdown:: 10.0.5 - February 4, 2026
+        .. dropdown:: 10.0.4 - February 4, 2026
 
             Concordium node version 10.0.4 contains support for `protocol version 10 <https://proposals.concordium.software/updates/P10.html>`_. This protocol version introduces support for sponsored transactions.
             The new consensus protocol will take effect on the testnet on February 11, 2026.
