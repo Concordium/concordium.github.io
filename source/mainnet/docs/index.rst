@@ -94,6 +94,12 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Staking <protocol/staking>
 
 .. toctree::
+   :caption: Concordium ID
+   :hidden:
+
+   Verify and Access <concordium-id/verify-and-access/index>
+
+.. toctree::
    :caption: Protocol Level Tokens
    :hidden:
 
