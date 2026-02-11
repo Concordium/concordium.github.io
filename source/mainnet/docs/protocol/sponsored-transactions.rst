@@ -5,11 +5,11 @@
 Sponsored transactions
 ======================
 
-Sponsored transactions are :term:`on-chain` transactions where a third party can pay for the transaction fee. I.e. if party A is transferring :term:`CCD` to party B, party C pays for the :ref:`transaction fee <transaction-fees>` on behalf of party A.
+Sponsored transactions are :term:`on-chain` transactions where a third party can pay for the transaction fee. This means if party A is transferring :term:`CCD` to party B, party C pays for the :ref:`transaction fee <transaction-fees>` on behalf of party A.
 
 This feature operates at the protocol level, meaning it applies to all transaction types including :term:`Protocol-level token (PLT)` operations. This includes PLT and CCD transfers and :term:`Smart contract` operations such as deploying modules, initiating instances and updating contracts through the :term:`concordium-client<Concordium Client>`.
 
-**Example use case**
+**Example use case:**
 Bob is purchasing a bottle of wine from a wine merchant for 10 PLTs. In order to help facilitate, the wine merchant pays for all CCD transaction fees when a customer purchases wine using PLTs. When the transaction is submitted on chain and finalized, it will result in 10 PLTs being deducted from Bob’s account but the CCD transaction fee being deducted from the wine merchant’s account. Bob completes his purchase without needing to hold any CCD.
 
 Why use sponsored transactions?
@@ -68,8 +68,11 @@ Run a sponsor service
 
 Once you have been through the :term:`KYB` process and have created an account, you will need to export your keys. An example sponsor service where you can import your keys and use the service for facilitating transaction signing is available below.
 
-You can find out how to export your keys :ref:`here <export-key>`.
-You can find a tutorial on running a sponsor service in the 2nd pdf guide shared and an example implementation of a complete sponsored transactions dApp `here <https://github.com/Concordium/concordium-dapp-examples/tree/main/DevnetSponsoredTx>`__.
+Find out how to export your keys :ref:`here <export-key>`.
+
+Find a tutorial on running a sponsor service in the 2nd pdf guide shared.
+
+Find an example implementation of a complete sponsored transactions dApp `here <https://github.com/Concordium/concordium-dapp-examples/tree/main/DevnetSponsoredTx>`__.
 
 Next steps
 ==========
