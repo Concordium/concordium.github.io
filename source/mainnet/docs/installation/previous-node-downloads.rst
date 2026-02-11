@@ -292,6 +292,16 @@ Default GRPC port is set to ``20001``
 
 Default listen port is set to ``8889``
 
+`10.0.4 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_10.0.4-1_amd64.deb>`_
+
+      - Verification instructions
+
+         In a terminal:
+
+         #. Navigate to the download.
+         #. Paste the following into the terminal: $sha256sum concordium-testnet-node_10.0.4-1_amd64.deb
+         #. Verify that the output matches the SHA256 checksum ``e6b598e3a8a1b024ec6c873f002b6ce5a4f97745ccc68098874bccc74c8d9709``
+
 `9.0.7-3 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_9.0.7-3_amd64.deb>`_
 
     - Verification instructions
