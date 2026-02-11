@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.6cd3ce49-37a3-4555-ba52-eec024798b41.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.97037367-38db-4126-9d75-6b40d37a8462.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/release-notes/release-notes-lp';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -2516,30 +2516,38 @@ This means that node runners <strong>must upgrade</strong> their nodes before th
 <section id="testnet">
 <span id="rn-node-testnet"></span><h3>Testnet<a class="headerlink" href="#testnet" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>February 4, 2026</p>
-<p>Concordium node version 10.0.4 contains support for <a class="reference external" href="https://proposals.concordium.software/updates/P10.html">protocol version 10</a>. This protocol version introduces support for sponsored transactions.
-The new consensus protocol will take effect on the testnet on February 11, 2026.
-<strong>Node runners should upgrade to version 10.0.4 before the protocol update to ensure that their nodes do not shut down.</strong></p>
-<blockquote>
-<div><p>Support for protocol version 10:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Send any account transaction as a sponsored transaction.</p></li>
+<div><p>February 11, 2026</p>
+<p>Concordium node version 10.0.5 includes fixes to improve the security of gRPC endpoints.</p>
+<ul class="simple">
+<li><p>Disable administrative gRPC endpoints by default. These can be enabled by specifying a <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_GRPC2_ENDPOINT_CONFIG</span></code> that enables them explicitly.</p></li>
 </ul>
-</div></blockquote>
-<p>Additionally, the following changes are included in the release</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Fix a bug (present in 8.1.0 - 10.0.1 versions) where a protocol update can be executed twice, resulting in a corrupted database. Means of recovery from the bug has also been added.</p></li>
-<li><p>Fix a bug where transactions are not reported as committed when they appear in live blocks.</p></li>
-<li><p>Fixed the <code class="docutils literal notranslate"><span class="pre">build_catchup_url</span></code> in the Ubuntu build release pipeline.</p></li>
-</ul>
-</div></blockquote>
-</div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">10.0.4 - February 4, 2026</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium node version 10.0.4 contains support for <a class="reference external" href="https://proposals.concordium.software/updates/P10.html">protocol version 10</a>. This protocol version introduces support for sponsored transactions.
+The new consensus protocol will take effect on the testnet on February 11, 2026.
+<strong>Node runners should upgrade to version 10.0.4 before the protocol update to ensure that their nodes do not shut down.</strong></p>
+<blockquote>
+<div><p class="sd-card-text">Support for protocol version 10:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="sd-card-text">Send any account transaction as a sponsored transaction.</p></li>
+</ul>
+</div></blockquote>
+<p class="sd-card-text">Additionally, the following changes are included in the release</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="sd-card-text">Fix a bug (present in 8.1.0 - 10.0.1 versions) where a protocol update can be executed twice, resulting in a corrupted database. Means of recovery from the bug has also been added.</p></li>
+<li><p class="sd-card-text">Fix a bug where transactions are not reported as committed when they appear in live blocks.</p></li>
+<li><p class="sd-card-text">Fixed the <code class="docutils literal notranslate"><span class="pre">build_catchup_url</span></code> in the Ubuntu build release pipeline.</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">9.0.7 - August 18, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Concordium node version 9.0.7 contains support for <a class="reference external" href="https://proposals.concordium.software/updates/P9.html">protocol version 9</a>.
