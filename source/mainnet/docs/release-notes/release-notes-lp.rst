@@ -1590,25 +1590,31 @@ Mainnet
 Testnet
 -------
 
-    February 4, 2026
+    February 11, 2026
 
-    Concordium node version 10.0.4 contains support for `protocol version 10 <https://proposals.concordium.software/updates/P10.html>`_. This protocol version introduces support for sponsored transactions.
-    The new consensus protocol will take effect on the testnet on February 11, 2026.
-    **Node runners should upgrade to version 10.0.4 before the protocol update to ensure that their nodes do not shut down.**
+    Concordium node version 10.0.5 includes fixes to improve the security of gRPC endpoints.
 
-        Support for protocol version 10:
-
-            - Send any account transaction as a sponsored transaction.
-
-        Additionally, the following changes are included in the release
-
-            - Fix a bug (present in 8.1.0 - 10.0.1 versions) where a protocol update can be executed twice, resulting in a corrupted database. Means of recovery from the bug has also been added.
-
-            - Fix a bug where transactions are not reported as committed when they appear in live blocks.
-
-            - Fixed the ``build_catchup_url`` in the Ubuntu build release pipeline.
+    - Disable administrative gRPC endpoints by default. These can be enabled by specifying a ``CONCORDIUM_NODE_GRPC2_ENDPOINT_CONFIG`` that enables them explicitly.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 10.0.4 - February 4, 2026
+
+            Concordium node version 10.0.4 contains support for `protocol version 10 <https://proposals.concordium.software/updates/P10.html>`_. This protocol version introduces support for sponsored transactions.
+            The new consensus protocol will take effect on the testnet on February 11, 2026.
+            **Node runners should upgrade to version 10.0.4 before the protocol update to ensure that their nodes do not shut down.**
+
+                Support for protocol version 10:
+
+                    - Send any account transaction as a sponsored transaction.
+
+                Additionally, the following changes are included in the release
+
+                    - Fix a bug (present in 8.1.0 - 10.0.1 versions) where a protocol update can be executed twice, resulting in a corrupted database. Means of recovery from the bug has also been added.
+
+                    - Fix a bug where transactions are not reported as committed when they appear in live blocks.
+
+                    - Fixed the ``build_catchup_url`` in the Ubuntu build release pipeline.
 
         .. dropdown:: 9.0.7 - August 18, 2025
 

@@ -252,9 +252,9 @@ For the system requirements to run a node and installation instructions for each
 
    .. dropdown:: Ubuntu |testnet-node-version|
 
-      To run a node on a server with Ubuntu, `download a Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_10.0.4-1_amd64.deb>`_.
+      To run a node on a server with Ubuntu, `download a Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_10.0.5-0_amd64.deb>`_.
 
-      - SHA256 checksum of the download: ``e6b598e3a8a1b024ec6c873f002b6ce5a4f97745ccc68098874bccc74c8d9709``
+      - SHA256 checksum of the download: ``edc73d3cb42e57191a894ac5989887ea0c809606f67aae14baaa8a8f0ec517ba``
 
       To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
@@ -268,13 +268,13 @@ For the system requirements to run a node and installation instructions for each
 
    .. dropdown:: Windows |testnet-node-version|
 
-      To run a node on Windows, `download a Testnet Windows Installer package <https://distribution.concordium.software/windows/Node-10.0.4-1.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
+      To run a node on Windows, `download a Testnet Windows Installer package <https://distribution.concordium.software/windows/Node-10.0.5-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
       To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
    .. dropdown:: Mac |testnet-node-version|
 
-      To run a node on macOS, `download a Testnet macOS installer package <https://distribution.concordium.software/macos/concordium-node-10.0.4-1.pkg>`_.
+      To run a node on macOS, `download a Testnet macOS installer package <https://distribution.concordium.software/macos/concordium-node-10.0.5-0.pkg>`_.
 
       To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS <run-node-macos>`.
 
