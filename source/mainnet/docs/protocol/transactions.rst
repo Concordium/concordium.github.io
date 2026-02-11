@@ -62,3 +62,4 @@ For a complete list of all transaction types and information about which wallets
 
    transaction-reference
    transaction-fees
+   sponsored-transactions

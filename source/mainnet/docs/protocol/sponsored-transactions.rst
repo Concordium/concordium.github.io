@@ -1,0 +1,77 @@
+.. include:: ../../variables.rst
+.. _sponsored-transactions:
+
+======================
+Sponsored transactions
+======================
+
+Sponsored transactions are on-chain transactions where a third party can pay for the transaction fee. I.e. if party A is transferring CCD to party B, party C pays for the transaction fee on behalf of party A.
+
+This feature operates at the protocol level, meaning it applies to all transaction types including PLT operations. This includes PLT and CCD transfers and smart contract operations such as deploying modules, initiating instances and updating contracts through the concordium-client.
+
+**Example use case**
+Bob is purchasing a bottle of wine from a wine merchant for 10 Protocol Level Tokens. In order to help facilitate, the wine merchant pays for all CCD transaction fees when a customer purchases wine using Protocol Level Tokens. When the transaction is submitted on chain and finalized it will result in 10 Protocol Level Tokens being deducted from Bob’s account but the CCD transaction fee being deducted from the wine merchant’s account. Bob completes his purchase without needing to hold any CCD.
+
+Why use sponsored transactions?
+===============================
+
+Sponsored transactions improve a user’s journey when submitting transactions on-chain. In the case of Bob purchasing wine, it means he doesn’t have to make sure he has both PLTs and CCD in order to complete his purchase - which would have otherwise introduced friction into the process.
+
+It also unlocks potential for onboarding more Web2 users, businesses can get the benefits of Concordium’s blockchain without the user needing to interact with the chain or wallets - which can be intimidating to everyday users. 
+
+How it works
+============
+
+Sponsored transactions require coordination between two parties: the sender (the account initiating the transaction) and the sponsor (the account paying the fee).
+
+Signing flow
+------------
+1. The user connects their wallet and initiates an action (e.g. checkout or manually initiate transfer).
+2. The backend creates the transaction with pre-filled details and signs it with the sponsor key.
+3. The user reviews and signs to authorize the transfer.
+4. The sponsor's account pays the gas fee when the transaction is submitted.
+
+Both parties must sign the transaction before it can be submitted.
+
+Fee handling
+-------------
+When the transaction executes:
+
+* The chain validates signatures from both the sender and sponsor
+* The transaction fee is deducted from the sponsor’s account
+* The sender’s balance remains unaffected by fees
+* The transaction (CCD, PLT transfer) executes normally
+
+Rejected transactions
+----------------------
+The chain rejects the transaction if:
+
+* Any required signature is missing or invalid (sender or sponsor)
+* The sponsor account lacks sufficient CCD to cover the fee
+* The transaction expires before inclusion in a block
+
+
+Start creating sponsored transactions
+=====================================
+
+Prerequisites
+-------------
+Anyone can create sponsored transactions but you need to meet the following prerequisites before you can begin to construct and propose sponsored transactions:
+
+* Set up a Concordium wallet
+* Set up Concordium ID
+* Create an account on chain
+* Obtain sufficient CCD to cover transaction fees (as a sponsor)
+
+Run a sponsor service
+----------------------
+
+Once you have been through the KYB process and have created an account, you will need to export your keys. An example sponsor service where you can import your keys and use the service for facilitating transaction signing is available below.
+
+You can find out how to export your keys here.
+You can find a tutorial on running a sponsor service in the 2nd pdf guide shared and an example implementation of a complete sponsored transactions dApp here.
+
+Next steps
+==========
+Ready to implement sponsored transactions? You can follow the developer tutorial to set up your sponsor service. For a complete working example, check out the sponsored transactions dApp.
+
