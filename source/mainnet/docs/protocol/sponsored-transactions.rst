@@ -68,13 +68,10 @@ Run a sponsor service
 
 Once you have been through the :term:`KYB` process and have created an account, you will need to export your keys. An example sponsor service where you can import your keys and use the service for facilitating transaction signing is available below.
 
-Find out how to export your keys :ref:`here <export-key>`.
+To export your keys, follow :ref:`this guide <export-key>`.
 
-Find a tutorial on running a sponsor service in the 2nd pdf guide shared.
+To run a sponsor service, follow :ref:`this tutorial <protocol-level-sponsored-transactions>`.
 
-Find an example implementation of a complete sponsored transactions dApp `here <https://github.com/Concordium/concordium-dapp-examples/tree/main/DevnetSponsoredTx>`__.
+See an example implementation of a complete sponsored transactions dApp `here <https://github.com/Concordium/concordium-dapp-examples/tree/main/DevnetSponsoredTx>`__.
 
-Next steps
-==========
-Ready to implement sponsored transactions? You can follow the developer tutorial to set up your sponsor service. For a complete working example, check out the `sponsored transactions dApp <https://github.com/Concordium/concordium-dapp-examples/tree/main/DevnetSponsoredTx>`__.
 
