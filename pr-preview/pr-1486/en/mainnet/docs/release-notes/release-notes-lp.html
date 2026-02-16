@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.d112eb9e-d31e-435d-88ee-83875ad9d1a7.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.0408d8ac-150a-4218-b7c7-d0bee79d88fb.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/release-notes/release-notes-lp';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -1959,14 +1959,12 @@ delivering a more seamless and user-friendly experience while preserving all the
 <span id="rn-ledger-app"></span><h3>Concordium LEDGER app<a class="headerlink" href="#concordium-ledger-app" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>August 11, 2023 - version 4.1.2</p>
-<blockquote>
-<div><p>Concordium is pleased to announce support for the Concordium LEDGER app in LEDGER Live. You can install and update the Concordium LEDGER app from LEDGER Live. For details, see <a class="reference internal" href="../guides/overview-desktop.html#install-ledger"><span class="std std-ref">Install the Concordium LEDGER app</span></a>. In addition, Concordium’s LEDGER app now supports the LEDGER Nano X as well as the LEDGER Nano S and LEDGER Nano S Plus.</p>
+<p>Concordium is pleased to announce support for the Concordium LEDGER app in LEDGER Live. You can install and update the Concordium LEDGER app from LEDGER Live. For details, see <a class="reference internal" href="../guides/overview-desktop.html#install-ledger"><span class="std std-ref">Install the Concordium LEDGER app</span></a>. In addition, Concordium’s LEDGER app now supports the LEDGER Nano X as well as the LEDGER Nano S and LEDGER Nano S Plus.</p>
 <p>The following improvements are also included:</p>
 <ul class="simple">
 <li><p>Improved a number of user interface flows to require fewer clicks.</p></li>
 <li><p>Amounts are now prefixed with CCD to indicate the unit of the amount.</p></li>
 </ul>
-</div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -2026,20 +2024,16 @@ delivering a more seamless and user-friendly experience while preserving all the
 The new consensus protocol will take effect on the testnet on March 10, 2026.
 <strong>Node runners should upgrade to version 10.0.4 before the protocol update to ensure that their nodes do not shut down.</strong></p>
 <p>Support for protocol version 10:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>Send any account transaction as a sponsored transaction.</p></li>
 </ul>
-</div></blockquote>
 <p>Additionally, the following changes are included in the release</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>Fix a bug (present in 8.1.0 - 10.0.1 versions) where a protocol update can be executed twice, resulting in a corrupted database. Means of recovery from the bug has also been added.</p></li>
 <li><p>Fix a bug where transactions are not reported as committed when they appear in live blocks.</p></li>
 <li><p>Fixed the <code class="docutils literal notranslate"><span class="pre">build_catchup_url</span></code> in the Ubuntu build release pipeline.</p></li>
 <li><p>Disable administrative gRPC endpoints by default. These can be enabled by specifying a <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_GRPC2_ENDPOINT_CONFIG</span></code> that enables them explicitly.</p></li>
 </ul>
-</div></blockquote>
 <p>Note: <strong>Ubuntu 20.04 LTS is no longer supported;</strong> the minimum supported version for this release is 22.04 LTS.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -2053,23 +2047,19 @@ The new consensus protocol will take effect on the mainnet on September 23, 2025
 Validators that do not upgrade before the protocol update may be suspended.</p>
 <p class="sd-card-text">Protocol version 9 introduces Protocol-Level Tokens (PLTs), which enable chain-native support for tokens other than CCD, without reliance on smart contracts.
 Protocol version 9 supports the following PLT functionality:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p class="sd-card-text">creating new PLTs (through the CreatePLT chain update);</p></li>
 <li><p class="sd-card-text">transferring PLTs between accounts;</p></li>
 <li><p class="sd-card-text">minting and burning PLTs (limited to the nominated token governance account);</p></li>
 <li><p class="sd-card-text">managing permissions for which accounts can send and receive each PLT through an allow- or deny-list (limited to the governance account); and</p></li>
 <li><p class="sd-card-text">globally pausing or unpausing balance changing operations for a PLT (limited to the governance account).</p></li>
 </ul>
-</div></blockquote>
 <p class="sd-card-text">The node API is updated to support PLTs as follows:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">GetAccountInfo</span></code> reports information about PLTs associated with the account, including any balance.</p></li>
 <li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">GetTokenList</span></code> reports a list of the registered PLTs on the chain.</p></li>
 <li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">GetTokenInfo</span></code> gets the global state information for a particular PLT.</p></li>
 </ul>
-</div></blockquote>
 <p class="sd-card-text">Note: <strong>Ubuntu 20.04 LTS is no longer supported;</strong> the minimum supported version for this release is 22.04 LTS.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -2080,16 +2070,13 @@ The new consensus protocol will take effect on the mainnet on March 17, 2025.
 <strong>Node runners should upgrade to version 8.0.3 before the protocol update to ensure that their nodes do not shut down.</strong>
 Validators in particular are encouraged to update their nodes, as the new protocol introduces suspension of inactive validators, meaning that failing to update may result in your validator being suspended.</p>
 <p class="sd-card-text">Protocol version 8 introduces the following changes:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p class="sd-card-text">Validators are automatically suspended if they do not produce blocks for a certain number of rounds.</p></li>
 <li><p class="sd-card-text">The configure-validator transaction can suspend or resume a validator, including adding a validator in a suspended state.</p></li>
 <li><p class="sd-card-text">Suspended validators are paused from participating in the consensus algorithm.</p></li>
 </ul>
-</div></blockquote>
 <p class="sd-card-text">Additionally, the node release includes a number of fixes and improvements:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p class="sd-card-text">Add suspension info to <cite>BakerPoolStatus</cite> / <cite>CurrentPaydayBakerPoolStatus</cite> query results.</p></li>
 <li><p class="sd-card-text">Add <cite>GetConsensusDetailedStatus</cite> gRPC endpoint for getting detailed information on the status of the consensus, at consensus version 1.</p></li>
 <li><p class="sd-card-text">Update Rust version to 1.82.</p></li>
@@ -2100,7 +2087,6 @@ Validators in particular are encouraged to update their nodes, as the new protoc
 <li><p class="sd-card-text">Fix a bug where, after a protocol update in consensus version 1 (P6 onwards), a node may miscalculate the absolute height of blocks when it is restarted.</p></li>
 <li><p class="sd-card-text">Fix a bug where <cite>GetBlockInfo</cite> reports the parent block of a genesis block to be the last finalized block of the previous genesis index, instead of the terminal block.</p></li>
 </ul>
-</div></blockquote>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -2109,10 +2095,8 @@ Validators in particular are encouraged to update their nodes, as the new protoc
 The new consensus protocol will take effect on the mainnet on October 30, 2024.
 <strong>Node runners should upgrade to version 7.0.5 before the protocol update to ensure that their nodes do not shut down.</strong></p>
 <p class="sd-card-text">Protocol version 7 introduces the following changes:</p>
-<ul>
-<li><p class="sd-card-text">The cool-down behavior when the stake of a validator or delegator is reduced or removed is changed:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
+<li><p class="sd-card-text">The cool-down behavior when the stake of a validator or delegator is reduced or removed is changed:</p></li>
 <li><dl class="simple">
 <dt>When stake is reduced, the reduction is immediately effective for future stake calculations, and the amount of the reduction is locked for a cool-down period.</dt><dd><p class="sd-card-text">(Previously, the reduction was only effective after the cool-down period.)</p>
 </dd>
@@ -2123,9 +2107,6 @@ The new consensus protocol will take effect on the mainnet on October 30, 2024.
 (Previously, the account had to wait for the cool-down period to end before making further changes.)</p>
 </dd>
 </dl>
-</li>
-</ul>
-</div></blockquote>
 </li>
 <li><dl class="simple">
 <dt>Shielded transfers are no longer supported in the protocol.</dt><dd><p class="sd-card-text">It is still possible to unshield a previously shielded balance.</p>
@@ -2185,8 +2166,7 @@ The new consensus protocol will take effect on the mainnet on October 30, 2024.
 <span class="sd-summary-text">6.1.7 - October 23, 2023</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Concordium Node 6.1.7 contains bug fixes and improvements. <strong>This is the last release of the node that has support for V1 gRPC API.</strong></p>
 <p class="sd-card-text"><strong>Improvements</strong></p>
-<blockquote>
-<div><ul>
+<ul>
 <li><p class="sd-card-text">Out-of-band catchup is now enabled by default on all platforms.</p></li>
 <li><p class="sd-card-text">The node remembers peers across restarts. When starting up it will try to connect to stored peers in addition to any supplied bootstrap and given nodes. Use the new flag <code class="docutils literal notranslate"><span class="pre">--clear-persisted-peers</span></code> (environment variable <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_CLEAR_PERSISTED_PEERS</span></code>) to clear stored peers on startup.</p></li>
 <li><p class="sd-card-text">If the node is <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2">configured with TLS</a>, then <cite>CONCORDIUM_NODE_COLLECTOR_GRPC_HOST</cite> must be configured such that it uses the domain of the certificate, for example, <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000</span></code>.</p></li>
@@ -2207,7 +2187,6 @@ The new consensus protocol will take effect on the mainnet on October 30, 2024.
 </div></blockquote>
 </li>
 </ul>
-</div></blockquote>
 <p class="sd-card-text"><strong>Fixes</strong></p>
 <blockquote>
 <div><ul class="simple">
@@ -2555,19 +2534,15 @@ The new consensus protocol will take effect on the testnet on February 11, 2026.
 <strong>Node runners should upgrade to version 10.0.4 before the protocol update to ensure that their nodes do not shut down.</strong></p>
 <blockquote>
 <div><p class="sd-card-text">Support for protocol version 10:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p class="sd-card-text">Send any account transaction as a sponsored transaction.</p></li>
 </ul>
-</div></blockquote>
 <p class="sd-card-text">Additionally, the following changes are included in the release</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p class="sd-card-text">Fix a bug (present in 8.1.0 - 10.0.1 versions) where a protocol update can be executed twice, resulting in a corrupted database. Means of recovery from the bug has also been added.</p></li>
 <li><p class="sd-card-text">Fix a bug where transactions are not reported as committed when they appear in live blocks.</p></li>
 <li><p class="sd-card-text">Fixed the <code class="docutils literal notranslate"><span class="pre">build_catchup_url</span></code> in the Ubuntu build release pipeline.</p></li>
 </ul>
-</div></blockquote>
 </div></blockquote>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -2579,23 +2554,19 @@ The new consensus protocol will take effect on the testnet on August 27, 2025.
 Validators that do not upgrade before the protocol update may be suspended.</p>
 <p class="sd-card-text">Protocol version 9 introduces Protocol-Level Tokens (PLTs), which enable chain-native support for tokens other than CCD, without reliance on smart contracts.
 Protocol version 9 supports the following PLT functionality:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p class="sd-card-text">creating new PLTs (through the CreatePLT chain update);</p></li>
 <li><p class="sd-card-text">transferring PLTs between accounts;</p></li>
 <li><p class="sd-card-text">minting and burning PLTs (limited to the nominated token governance account);</p></li>
 <li><p class="sd-card-text">managing permissions for which accounts can send and receive each PLT through an allow- or deny-list (limited to the governance account); and</p></li>
 <li><p class="sd-card-text">globally pausing or unpausing balance changing operations for a PLT (limited to the governance account).</p></li>
 </ul>
-</div></blockquote>
 <p class="sd-card-text">The node API is updated to support PLTs as follows:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">GetAccountInfo</span></code> reports information about PLTs associated with the account, including any balance.</p></li>
 <li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">GetTokenList</span></code> reports a list of the registered PLTs on the chain.</p></li>
 <li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">GetTokenInfo</span></code> gets the global state information for a particular PLT.</p></li>
 </ul>
-</div></blockquote>
 <p class="sd-card-text">Note: <strong>Ubuntu 20.04 LTS is no longer supported;</strong> the minimum supported version for this release is 22.04 LTS.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -2606,16 +2577,13 @@ The new consensus protocol will take effect on the testnet on February 24, 2025.
 <strong>Node runners should upgrade to version 8.0.3 before the protocol update to ensure that their nodes do not shut down.</strong>
 Validators in particular are encouraged to update their nodes, as the new protocol introduces suspension of inactive validators, meaning that failing to update may result in your validator being suspended.</p>
 <p class="sd-card-text">Protocol version 8 introduces the following changes:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p class="sd-card-text">Validators are automatically suspended if they do not produce blocks for a certain number of rounds.</p></li>
 <li><p class="sd-card-text">The configure-validator transaction can suspend or resume a validator, including adding a validator in a suspended state.</p></li>
 <li><p class="sd-card-text">Suspended validators are paused from participating in the consensus algorithm.</p></li>
 </ul>
-</div></blockquote>
 <p class="sd-card-text">Additionally, the node release includes a number of fixes and improvements:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p class="sd-card-text">Add suspension info to <cite>BakerPoolStatus</cite> / <cite>CurrentPaydayBakerPoolStatus</cite> query results.</p></li>
 <li><p class="sd-card-text">Add <cite>GetConsensusDetailedStatus</cite> gRPC endpoint for getting detailed information on the status of the consensus, at consensus version 1.</p></li>
 <li><p class="sd-card-text">Update Rust version to 1.82.</p></li>
@@ -2626,7 +2594,6 @@ Validators in particular are encouraged to update their nodes, as the new protoc
 <li><p class="sd-card-text">Fix a bug where, after a protocol update in consensus version 1 (P6 onwards), a node may miscalculate the absolute height of blocks when it is restarted.</p></li>
 <li><p class="sd-card-text">Fix a bug where <cite>GetBlockInfo</cite> reports the parent block of a genesis block to be the last finalized block of the previous genesis index, instead of the terminal block.</p></li>
 </ul>
-</div></blockquote>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -2641,18 +2608,13 @@ Validators in particular are encouraged to update their nodes, as the new protoc
 The new consensus protocol will take effect on the testnet on September 30, 2024.
 <strong>Node runners should upgrade to version 7.0.4 before the protocol update to ensure that their nodes do not shut down.</strong></p>
 <p class="sd-card-text">Protocol version 7 introduces the following changes:</p>
-<ul>
-<li><p class="sd-card-text">The cool-down behavior when the stake of a validator or delegator is reduced or removed is changed:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
+<li><p class="sd-card-text">The cool-down behavior when the stake of a validator or delegator is reduced or removed is changed:</p></li>
 <li><p class="sd-card-text">When stake is reduced, the reduction is immediately effective for future stake calculations, and the amount of the reduction is locked for a cool-down period.
 (Previously, the reduction was only effective after the cool-down period.)</p></li>
 <li><p class="sd-card-text">Validators and delegators can make further changes to their stake while they already have stake in cooldown.
 This includes registering as a validator when the account was previously a delegator, or vice versa.
 (Previously, the account had to wait for the cool-down period to end before making further changes.)</p></li>
-</ul>
-</div></blockquote>
-</li>
 <li><p class="sd-card-text">Shielded transfers are no longer supported in the protocol.
 It is still possible to unshield a previously shielded balance.</p></li>
 <li><p class="sd-card-text">Smart contract execution costs are reduced.
@@ -2704,8 +2666,7 @@ This reflects a more efficient implementation of the smart contract execution en
 <span class="sd-summary-text">6.1.6 - October 10, 2023</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Concordium Node 6.1.6 contains bug fixes and improvements. <strong>This is the last release of the node that has support for V1 gRPC API.</strong></p>
 <p class="sd-card-text"><strong>Improvements</strong></p>
-<blockquote>
-<div><ul>
+<ul>
 <li><p class="sd-card-text">Out-of-band catchup is now enabled by default on all platforms.</p></li>
 <li><p class="sd-card-text">The node remembers peers across restarts. When starting up it will try to connect to stored peers in addition to any supplied bootstrap and given nodes. Use the new flag <code class="docutils literal notranslate"><span class="pre">--clear-persisted-peers</span></code> (environment variable <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_CLEAR_PERSISTED_PEERS</span></code>) to clear stored peers on startup.</p></li>
 <li><p class="sd-card-text">If the node is <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2">configured with TLS</a>, then <cite>CONCORDIUM_NODE_COLLECTOR_GRPC_HOST</cite> must be configured such that it uses the domain of the certificate, for example, <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000</span></code>.</p></li>
@@ -2726,10 +2687,8 @@ This reflects a more efficient implementation of the smart contract execution en
 </div></blockquote>
 </li>
 </ul>
-</div></blockquote>
 <p class="sd-card-text"><strong>Fixes</strong></p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p class="sd-card-text">An incorrect <code class="docutils literal notranslate"><span class="pre">peer_bucket_size</span></code> metric calculation exposed by the bootstrapper was fixed. What was counted was not the number of peers in the bucket, but rather, roughly, how many times peers that are in the bucket have reconnected.</p></li>
 <li><p class="sd-card-text">Fixed a bug where the block state hash was not returned properly for the genesis block.</p></li>
 <li><p class="sd-card-text">Fixed a bug where credential registration IDs for genesis accounts were not correctly recorded. As a result, the index of accounts by credential IDs was incorrect if the chain was started from genesis by node versions 5.1.3 up to and including 6.0. If a chain was started by an older node version and then the node was upgraded, the index is loaded correctly. This index is used when checking for duplicate credential registration IDs, and when looking up an account via a credential registration ID.</p></li>
@@ -2738,7 +2697,6 @@ This reflects a more efficient implementation of the smart contract execution en
 <li><p class="sd-card-text">Fixed a bug in how the last timeout certificate is recovered at start-up.</p></li>
 <li><p class="sd-card-text">Fixed the behavior of the block last finalized pointer in the <code class="docutils literal notranslate"><span class="pre">GetBlockInfo</span></code> so that it consistently returns the last finalized block at the time the block was baked.</p></li>
 </ul>
-</div></blockquote>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -3159,8 +3117,7 @@ and an additional node in Hong Kong (all running both baker and finalizer).</p>
 <div><p>February 4, 2026</p>
 <p>Concordium Client 10.0.0 adds support for node version 10.0.4 and protocol version 10.
 In particular, it supports creating, signing, and submitting sponsored transactions by utilizing the extended transaction format.</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--force-extended</span></code> transaction configuration option has been added as a means to submit a transaction in the v1 transaction format.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--unsigned</span></code> transaction configuration option has been added to support constructing unsigned transactions. These can be signed at a later point by using <cite>transaction add-signature</cite>. This option can only be used when <cite>–out</cite> is also specified.</p></li>
 <li><p>All transaction commands can now be configured to construct sponsored transactions by using <code class="docutils literal notranslate"><span class="pre">--sponsor &lt;ACCOUNT&gt;</span></code> enabling a new set of optional configuration options:</p></li>
@@ -3169,7 +3126,6 @@ In particular, it supports creating, signing, and submitting sponsored transacti
 <li><p><code class="docutils literal notranslate"><span class="pre">--sponsor-sign</span></code> to sign the transaction on behalf of the sponsor as part of transaction construction. Inverse of <code class="docutils literal notranslate"><span class="pre">--unsigned</span></code> for the transaction sender.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">add-signature</span></code> now supports signing on behalf of a sponsor by specifying the <code class="docutils literal notranslate"><span class="pre">--sponsor</span></code> flag.</p></li>
 </ul>
-</div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -3490,9 +3446,7 @@ It also adds a <code class="docutils literal notranslate"><span class="pre">--se
 <span id="rn-ccdscan"></span><h3>CCDScan<a class="headerlink" href="#ccdscan" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>August 16, 2023</p>
-<blockquote>
-<div><p>Version CCD frontend 1.4 and backend 1.6 contains support for <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt">protocol version 6</a> with Concordium BFT consensus which will be released August 21, 2023.</p>
-</div></blockquote>
+<p>Version CCD frontend 1.4 and backend 1.6 contains support for <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt">protocol version 6</a> with Concordium BFT consensus which will be released August 21, 2023.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
