@@ -30,7 +30,7 @@
 .. |cargo-linux-checksum| replace:: ea3f603e2a921181cdf323604066444378a955c55e82b206a7d169bf636fa75d
 
 .. Node version variables
-.. |mainnet-node-version| replace:: 9.0.7
+.. |mainnet-node-version| replace:: 10.0.5
 .. |testnet-node-version| replace:: 10.0.5
 
 .. Node debian package verification variables
