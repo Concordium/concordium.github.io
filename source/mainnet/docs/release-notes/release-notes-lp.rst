@@ -1082,37 +1082,59 @@ Nodes
 Mainnet
 -------
 
-    September 1, 2025
+    February 16, 2026
 
-    Concordium node version 9.0.7 contains support for `protocol version 9 <https://proposals.concordium.software/updates/P9.html>`_.
-    The new consensus protocol will take effect on the mainnet on September 23, 2025.
-    **Node runners should upgrade to version 9.0.7 before the protocol update to ensure that their nodes do not shut down.**
-    Validators that do not upgrade before the protocol update may be suspended.
+    Concordium node version 10.0.5 contains support for `protocol version 10 <https://proposals.concordium.software/updates/P10.html>`_. This protocol version introduces support for sponsored transactions.
+    The new consensus protocol will take effect on the testnet on March 10, 2026.
+    **Node runners should upgrade to version 10.0.4 before the protocol update to ensure that their nodes do not shut down.**
 
-    Protocol version 9 introduces Protocol-Level Tokens (PLTs), which enable chain-native support for tokens other than CCD, without reliance on smart contracts.
-    Protocol version 9 supports the following PLT functionality:
+    Support for protocol version 10:
 
-        - creating new PLTs (through the CreatePLT chain update);
+        - Send any account transaction as a sponsored transaction.
 
-        - transferring PLTs between accounts;
+    Additionally, the following changes are included in the release
 
-        - minting and burning PLTs (limited to the nominated token governance account);
+        - Fix a bug (present in 8.1.0 - 10.0.1 versions) where a protocol update can be executed twice, resulting in a corrupted database. Means of recovery from the bug has also been added.
 
-        - managing permissions for which accounts can send and receive each PLT through an allow- or deny-list (limited to the governance account); and
+        - Fix a bug where transactions are not reported as committed when they appear in live blocks.
 
-        - globally pausing or unpausing balance changing operations for a PLT (limited to the governance account).
+        - Fixed the ``build_catchup_url`` in the Ubuntu build release pipeline.
 
-    The node API is updated to support PLTs as follows:
-
-        - ``GetAccountInfo`` reports information about PLTs associated with the account, including any balance.
-
-        - ``GetTokenList`` reports a list of the registered PLTs on the chain.
-
-        - ``GetTokenInfo`` gets the global state information for a particular PLT.
+        - Disable administrative gRPC endpoints by default. These can be enabled by specifying a ``CONCORDIUM_NODE_GRPC2_ENDPOINT_CONFIG`` that enables them explicitly.
 
     Note: **Ubuntu 20.04 LTS is no longer supported;** the minimum supported version for this release is 22.04 LTS.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 9.0.7 - September 1, 2025
+
+            Concordium node version 9.0.7 contains support for `protocol version 9 <https://proposals.concordium.software/updates/P9.html>`_.
+            The new consensus protocol will take effect on the mainnet on September 23, 2025.
+            **Node runners should upgrade to version 9.0.7 before the protocol update to ensure that their nodes do not shut down.**
+            Validators that do not upgrade before the protocol update may be suspended.
+
+            Protocol version 9 introduces Protocol-Level Tokens (PLTs), which enable chain-native support for tokens other than CCD, without reliance on smart contracts.
+            Protocol version 9 supports the following PLT functionality:
+
+                - creating new PLTs (through the CreatePLT chain update);
+
+                - transferring PLTs between accounts;
+
+                - minting and burning PLTs (limited to the nominated token governance account);
+
+                - managing permissions for which accounts can send and receive each PLT through an allow- or deny-list (limited to the governance account); and
+
+                - globally pausing or unpausing balance changing operations for a PLT (limited to the governance account).
+
+            The node API is updated to support PLTs as follows:
+
+                - ``GetAccountInfo`` reports information about PLTs associated with the account, including any balance.
+
+                - ``GetTokenList`` reports a list of the registered PLTs on the chain.
+
+                - ``GetTokenInfo`` gets the global state information for a particular PLT.
+
+            Note: **Ubuntu 20.04 LTS is no longer supported;** the minimum supported version for this release is 22.04 LTS.
 
         .. dropdown:: 8.0.3 - March 3, 2025
 
