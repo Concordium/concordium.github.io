@@ -24,7 +24,7 @@ Before starting this tutorial, you should have:
 - Node.js and npm installed
 - A Concordium wallet with CCD funds for the sponsor account
 - Access to a Concordium node (gRPC endpoint)
-- ``@concordium/web-sdk`` version 12.0.0-devnet-p10.0 or later
+- ``@concordium/web-sdk`` version 12.0.0 or later
 
 How sponsored transactions work
 ===============================
