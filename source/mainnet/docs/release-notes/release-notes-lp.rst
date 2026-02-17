@@ -588,16 +588,23 @@ Wallets
 |bw|
 -------------------------
 
-    Dec 03, 2025
+    Feb 17, 2026
 
-    Version 2.7.0
+    Version 2.8.0
 
-    -   Updated onboarding flow, focusing on streamlining the user experience from landing screens to account setup.
-    -   Updated texts across the wallet to be FCA legally compliant.
-    -   Fixed accounts display under incorrect identities.
-    -   Fixed an issue where CBOR encoded objects passed in register data payloads would crash the application.
+    -   Added support for Sponsored Transactions handling. With new method `sendSponsoredTransaction` in wallet-api.
+    -   Removed preconfigured connection for DevNet, from network options list. Custom connection should be used instead.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.7.0 - Dec 03, 2025
+
+            Version 2.7.0 changes:
+
+            -   Updated onboarding flow, focusing on streamlining the user experience from landing screens to account setup.
+            -   Updated texts across the wallet to be FCA legally compliant.
+            -   Fixed accounts display under incorrect identities.
+            -   Fixed an issue where CBOR encoded objects passed in register data payloads would crash the application.
 
         .. dropdown:: |bw| 2.6.2 - Oct 27, 2025
 
