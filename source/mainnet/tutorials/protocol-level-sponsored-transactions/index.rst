@@ -14,7 +14,7 @@ This tutorial shows you how to implement a production-ready frontend/backend arc
 
 .. note::
 
-   For production use, keeping the sponsor private key on a secure backend is essential. The examples use ``@concordium/web-sdk`` version 12.0.0. Follow `this link <https://docs.concordium.com/concordium-node-sdk-js/12.0.0-devnet-p10.0/functions/transactions.Transaction.sponsor.html>`_ to see the function documentation.
+   For production use, keeping the sponsor private key on a secure backend is essential. The examples use ``@concordium/web-sdk`` version 12.0.0. Follow `this link <https://docs.concordium.com/concordium-node-sdk-js/12.0.0/functions/transactions.Transaction.sponsor.html>`_ to see the function documentation.
 
 Prerequisites
 =============
