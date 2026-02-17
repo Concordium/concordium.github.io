@@ -200,15 +200,26 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    1.17.0 - January 21, 2026
+    1.18.0 - February 11, 2026
 
-    Updates:
+    Added:
 
-    - Updated UI across the app with modernized UI components and the latest design system
-    - Added support for verifiable presentations (proofs) from identities and accounts
-    - Fixed inability to change validator pool ID
+    - Support for sponsored transactions
+    - Ability to buy CCD with Transak
+
+    Changed:
+
+    - Current account is selected by default for a WalletConnect session proposal, instead of the one with the highest balance
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.17.0 - January 21, 2026
+
+            Updates:
+
+            - Updated UI across the app with modernized UI components and the latest design system
+            - Added support for verifiable presentations (proofs) from identities and accounts
+            - Fixed inability to change validator pool ID
 
         .. dropdown:: 1.16.1 - December 9, 2025
 
