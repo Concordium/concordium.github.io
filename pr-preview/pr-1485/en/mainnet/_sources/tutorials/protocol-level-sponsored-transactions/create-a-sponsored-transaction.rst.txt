@@ -23,7 +23,7 @@ Set up the backend URL and token details. The backend URL points to your sponsor
 
    const BACKEND_URL = '<YOUR_BACKEND_URL>'
    const TOKEN_ID = '<YOUR_TOKEN_ID>'
-   const TOKEN_DECIMALS = <YOUR_TOKEN_DECIMALS>
+   const TOKEN_DECIMALS = '<YOUR_TOKEN_DECIMALS>'
 
 **Step 3: Create the function to send sponsored transfers**
 

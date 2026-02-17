@@ -1032,13 +1032,13 @@ Concordium LEDGER app
 
     August 11, 2023 - version 4.1.2
 
-        Concordium is pleased to announce support for the Concordium LEDGER app in LEDGER Live. You can install and update the Concordium LEDGER app from LEDGER Live. For details, see :ref:`Install the Concordium LEDGER app<install-ledger>`. In addition, Concordium's LEDGER app now supports the LEDGER Nano X as well as the LEDGER Nano S and LEDGER Nano S Plus.
+    Concordium is pleased to announce support for the Concordium LEDGER app in LEDGER Live. You can install and update the Concordium LEDGER app from LEDGER Live. For details, see :ref:`Install the Concordium LEDGER app<install-ledger>`. In addition, Concordium's LEDGER app now supports the LEDGER Nano X as well as the LEDGER Nano S and LEDGER Nano S Plus.
 
-        The following improvements are also included:
+    The following improvements are also included:
 
-        - Improved a number of user interface flows to require fewer clicks.
+    - Improved a number of user interface flows to require fewer clicks.
 
-        - Amounts are now prefixed with CCD to indicate the unit of the amount.
+    - Amounts are now prefixed with CCD to indicate the unit of the amount.
 
     .. dropdown:: Previous releases
 
@@ -1082,37 +1082,59 @@ Nodes
 Mainnet
 -------
 
-    September 1, 2025
+    February 16, 2026
 
-    Concordium node version 9.0.7 contains support for `protocol version 9 <https://proposals.concordium.software/updates/P9.html>`_.
-    The new consensus protocol will take effect on the mainnet on September 23, 2025.
-    **Node runners should upgrade to version 9.0.7 before the protocol update to ensure that their nodes do not shut down.**
-    Validators that do not upgrade before the protocol update may be suspended.
+    Concordium node version 10.0.5 contains support for `protocol version 10 <https://proposals.concordium.software/updates/P10.html>`_. This protocol version introduces support for sponsored transactions.
+    The new consensus protocol will take effect on the testnet on March 10, 2026.
+    **Node runners should upgrade to version 10.0.4 before the protocol update to ensure that their nodes do not shut down.**
 
-    Protocol version 9 introduces Protocol-Level Tokens (PLTs), which enable chain-native support for tokens other than CCD, without reliance on smart contracts.
-    Protocol version 9 supports the following PLT functionality:
+    Support for protocol version 10:
 
-        - creating new PLTs (through the CreatePLT chain update);
+    - Send any account transaction as a sponsored transaction.
 
-        - transferring PLTs between accounts;
+    Additionally, the following changes are included in the release
 
-        - minting and burning PLTs (limited to the nominated token governance account);
+    - Fix a bug (present in 8.1.0 - 10.0.1 versions) where a protocol update can be executed twice, resulting in a corrupted database. Means of recovery from the bug has also been added.
 
-        - managing permissions for which accounts can send and receive each PLT through an allow- or deny-list (limited to the governance account); and
+    - Fix a bug where transactions are not reported as committed when they appear in live blocks.
 
-        - globally pausing or unpausing balance changing operations for a PLT (limited to the governance account).
+    - Fixed the ``build_catchup_url`` in the Ubuntu build release pipeline.
 
-    The node API is updated to support PLTs as follows:
-
-        - ``GetAccountInfo`` reports information about PLTs associated with the account, including any balance.
-
-        - ``GetTokenList`` reports a list of the registered PLTs on the chain.
-
-        - ``GetTokenInfo`` gets the global state information for a particular PLT.
+    - Disable administrative gRPC endpoints by default. These can be enabled by specifying a ``CONCORDIUM_NODE_GRPC2_ENDPOINT_CONFIG`` that enables them explicitly.
 
     Note: **Ubuntu 20.04 LTS is no longer supported;** the minimum supported version for this release is 22.04 LTS.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 9.0.7 - September 1, 2025
+
+            Concordium node version 9.0.7 contains support for `protocol version 9 <https://proposals.concordium.software/updates/P9.html>`_.
+            The new consensus protocol will take effect on the mainnet on September 23, 2025.
+            **Node runners should upgrade to version 9.0.7 before the protocol update to ensure that their nodes do not shut down.**
+            Validators that do not upgrade before the protocol update may be suspended.
+
+            Protocol version 9 introduces Protocol-Level Tokens (PLTs), which enable chain-native support for tokens other than CCD, without reliance on smart contracts.
+            Protocol version 9 supports the following PLT functionality:
+
+            - creating new PLTs (through the CreatePLT chain update);
+
+            - transferring PLTs between accounts;
+
+            - minting and burning PLTs (limited to the nominated token governance account);
+
+            - managing permissions for which accounts can send and receive each PLT through an allow- or deny-list (limited to the governance account); and
+
+            - globally pausing or unpausing balance changing operations for a PLT (limited to the governance account).
+
+            The node API is updated to support PLTs as follows:
+
+            - ``GetAccountInfo`` reports information about PLTs associated with the account, including any balance.
+
+            - ``GetTokenList`` reports a list of the registered PLTs on the chain.
+
+            - ``GetTokenInfo`` gets the global state information for a particular PLT.
+
+            Note: **Ubuntu 20.04 LTS is no longer supported;** the minimum supported version for this release is 22.04 LTS.
 
         .. dropdown:: 8.0.3 - March 3, 2025
 
@@ -1123,31 +1145,31 @@ Mainnet
 
             Protocol version 8 introduces the following changes:
 
-                - Validators are automatically suspended if they do not produce blocks for a certain number of rounds.
+            - Validators are automatically suspended if they do not produce blocks for a certain number of rounds.
 
-                - The configure-validator transaction can suspend or resume a validator, including adding a validator in a suspended state.
+            - The configure-validator transaction can suspend or resume a validator, including adding a validator in a suspended state.
 
-                - Suspended validators are paused from participating in the consensus algorithm.
+            - Suspended validators are paused from participating in the consensus algorithm.
 
             Additionally, the node release includes a number of fixes and improvements:
 
-                - Add suspension info to `BakerPoolStatus` / `CurrentPaydayBakerPoolStatus` query results.
+            - Add suspension info to `BakerPoolStatus` / `CurrentPaydayBakerPoolStatus` query results.
 
-                - Add `GetConsensusDetailedStatus` gRPC endpoint for getting detailed information on the status of the consensus, at consensus version 1.
+            - Add `GetConsensusDetailedStatus` gRPC endpoint for getting detailed information on the status of the consensus, at consensus version 1.
 
-                - Update Rust version to 1.82.
+            - Update Rust version to 1.82.
 
-                - Update GHC version to 9.6.6 (LTS-22.39).
+            - Update GHC version to 9.6.6 (LTS-22.39).
 
-                - Add `GetScheduledReleaseAccounts` endpoint for querying the list of accounts that have scheduled releases.
+            - Add `GetScheduledReleaseAccounts` endpoint for querying the list of accounts that have scheduled releases.
 
-                - Add `GetCooldownAccounts`, `GetPreCooldownAccounts` and `GetPrePreCooldownAccounts` endpoints for querying the lists of accounts that have pending cooldowns in protocol version 7 onwards.
+            - Add `GetCooldownAccounts`, `GetPreCooldownAccounts` and `GetPrePreCooldownAccounts` endpoints for querying the lists of accounts that have pending cooldowns in protocol version 7 onwards.
 
-                - gRPC endpoints `DryRun`, `GetBlockItemStatus` and `GetBlockTransactionEvents` now report the parameter used to initialize a smart contract instance as part of a `ContractInitializedEvent`.
+            - gRPC endpoints `DryRun`, `GetBlockItemStatus` and `GetBlockTransactionEvents` now report the parameter used to initialize a smart contract instance as part of a `ContractInitializedEvent`.
 
-                - Fix a bug where, after a protocol update in consensus version 1 (P6 onwards), a node may miscalculate the absolute height of blocks when it is restarted.
+            - Fix a bug where, after a protocol update in consensus version 1 (P6 onwards), a node may miscalculate the absolute height of blocks when it is restarted.
 
-                - Fix a bug where `GetBlockInfo` reports the parent block of a genesis block to be the last finalized block of the previous genesis index, instead of the terminal block.
+            - Fix a bug where `GetBlockInfo` reports the parent block of a genesis block to be the last finalized block of the previous genesis index, instead of the terminal block.
 
         .. dropdown:: 7.0.5 - October 3, 2024
 
@@ -1159,12 +1181,12 @@ Mainnet
 
             - The cool-down behavior when the stake of a validator or delegator is reduced or removed is changed:
 
-                - When stake is reduced, the reduction is immediately effective for future stake calculations, and the amount of the reduction is locked for a cool-down period.
-                    (Previously, the reduction was only effective after the cool-down period.)
+            - When stake is reduced, the reduction is immediately effective for future stake calculations, and the amount of the reduction is locked for a cool-down period.
+                (Previously, the reduction was only effective after the cool-down period.)
 
-                - Validators and delegators can make further changes to their stake while they already have stake in cooldown.
-                    This includes registering as a validator when the account was previously a delegator, or vice versa.
-                    (Previously, the account had to wait for the cool-down period to end before making further changes.)
+            - Validators and delegators can make further changes to their stake while they already have stake in cooldown.
+                This includes registering as a validator when the account was previously a delegator, or vice versa.
+                (Previously, the account had to wait for the cool-down period to end before making further changes.)
 
             - Shielded transfers are no longer supported in the protocol.
                 It is still possible to unshield a previously shielded balance.
@@ -1219,33 +1241,33 @@ Mainnet
 
             **Improvements**
 
-                - Out-of-band catchup is now enabled by default on all platforms.
+            - Out-of-band catchup is now enabled by default on all platforms.
 
-                - The node remembers peers across restarts. When starting up it will try to connect to stored peers in addition to any supplied bootstrap and given nodes. Use the new flag ``--clear-persisted-peers`` (environment variable ``CONCORDIUM_NODE_CLEAR_PERSISTED_PEERS``) to clear stored peers on startup.
+            - The node remembers peers across restarts. When starting up it will try to connect to stored peers in addition to any supplied bootstrap and given nodes. Use the new flag ``--clear-persisted-peers`` (environment variable ``CONCORDIUM_NODE_CLEAR_PERSISTED_PEERS``) to clear stored peers on startup.
 
-                - If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate, for example, ``CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000``.
+            - If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate, for example, ``CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000``.
 
-                - Exposed the health check service via grpc-web when grpc-web is enabled.
+            - Exposed the health check service via grpc-web when grpc-web is enabled.
 
-                - Banned peers are no longer reset on startup by default. The flag ``--no-clear-bans`` has been renamed  to ``--clear-bans``; when set it will clear the banned peers on startup.
+            - Banned peers are no longer reset on startup by default. The flag ``--no-clear-bans`` has been renamed  to ``--clear-bans``; when set it will clear the banned peers on startup.
 
-                - Add debug-level logging when a round is advanced, either due to a quorum certificate or a timeout certificate.
+            - Add debug-level logging when a round is advanced, either due to a quorum certificate or a timeout certificate.
 
-                - Removed the concept of pending blocks.
+            - Removed the concept of pending blocks.
 
-                - ``GetPoolInfo`` now also returns the commission rates for the current reward period.
+            - ``GetPoolInfo`` now also returns the commission rates for the current reward period.
 
-                - Added a number of endpoints to the GRPCV2 API, including:
+            - Added a number of endpoints to the GRPCV2 API, including:
 
-                    - ``GetBakersRewardPeriod``: provided a block, then it returns information about bakers for the reward period of the block.
+                - ``GetBakersRewardPeriod``: provided a block, then it returns information about bakers for the reward period of the block.
 
-                    - ``GetBlockCertificates``: provided a block, then it returns quorum certificate, timeout certificate, and epoch finalization entry contained in the block (where present).
+                - ``GetBlockCertificates``: provided a block, then it returns quorum certificate, timeout certificate, and epoch finalization entry contained in the block (where present).
 
-                    - ``GetBakerEarliestWinTime``: provided a baker ID, it returns the earliest time at which the node projects that the baker could be required to bake a block.
+                - ``GetBakerEarliestWinTime``: provided a baker ID, it returns the earliest time at which the node projects that the baker could be required to bake a block.
 
-                    - ``GetFirstBlockEpoch``: returns the block hash of the first block in a given epoch.
+                - ``GetFirstBlockEpoch``: returns the block hash of the first block in a given epoch.
 
-                    - ``GetWinningBakersEpoch``: returns a list of the bakers that won rounds in a specified (finalized) epoch. This only supports consensus version 1.
+                - ``GetWinningBakersEpoch``: returns a list of the bakers that won rounds in a specified (finalized) epoch. This only supports consensus version 1.
 
             **Fixes**
 
@@ -1606,15 +1628,15 @@ Testnet
 
                 Support for protocol version 10:
 
-                    - Send any account transaction as a sponsored transaction.
+                - Send any account transaction as a sponsored transaction.
 
                 Additionally, the following changes are included in the release
 
-                    - Fix a bug (present in 8.1.0 - 10.0.1 versions) where a protocol update can be executed twice, resulting in a corrupted database. Means of recovery from the bug has also been added.
+                - Fix a bug (present in 8.1.0 - 10.0.1 versions) where a protocol update can be executed twice, resulting in a corrupted database. Means of recovery from the bug has also been added.
 
-                    - Fix a bug where transactions are not reported as committed when they appear in live blocks.
+                - Fix a bug where transactions are not reported as committed when they appear in live blocks.
 
-                    - Fixed the ``build_catchup_url`` in the Ubuntu build release pipeline.
+                - Fixed the ``build_catchup_url`` in the Ubuntu build release pipeline.
 
         .. dropdown:: 9.0.7 - August 18, 2025
 
@@ -1626,23 +1648,23 @@ Testnet
             Protocol version 9 introduces Protocol-Level Tokens (PLTs), which enable chain-native support for tokens other than CCD, without reliance on smart contracts.
             Protocol version 9 supports the following PLT functionality:
 
-                - creating new PLTs (through the CreatePLT chain update);
+            - creating new PLTs (through the CreatePLT chain update);
 
-                - transferring PLTs between accounts;
+            - transferring PLTs between accounts;
 
-                - minting and burning PLTs (limited to the nominated token governance account);
+            - minting and burning PLTs (limited to the nominated token governance account);
 
-                - managing permissions for which accounts can send and receive each PLT through an allow- or deny-list (limited to the governance account); and
+            - managing permissions for which accounts can send and receive each PLT through an allow- or deny-list (limited to the governance account); and
 
-                - globally pausing or unpausing balance changing operations for a PLT (limited to the governance account).
+            - globally pausing or unpausing balance changing operations for a PLT (limited to the governance account).
 
             The node API is updated to support PLTs as follows:
 
-                - ``GetAccountInfo`` reports information about PLTs associated with the account, including any balance.
+            - ``GetAccountInfo`` reports information about PLTs associated with the account, including any balance.
 
-                - ``GetTokenList`` reports a list of the registered PLTs on the chain.
+            - ``GetTokenList`` reports a list of the registered PLTs on the chain.
 
-                - ``GetTokenInfo`` gets the global state information for a particular PLT.
+            - ``GetTokenInfo`` gets the global state information for a particular PLT.
 
             Note: **Ubuntu 20.04 LTS is no longer supported;** the minimum supported version for this release is 22.04 LTS.
 
@@ -1655,31 +1677,31 @@ Testnet
 
             Protocol version 8 introduces the following changes:
 
-                - Validators are automatically suspended if they do not produce blocks for a certain number of rounds.
+            - Validators are automatically suspended if they do not produce blocks for a certain number of rounds.
 
-                - The configure-validator transaction can suspend or resume a validator, including adding a validator in a suspended state.
+            - The configure-validator transaction can suspend or resume a validator, including adding a validator in a suspended state.
 
-                - Suspended validators are paused from participating in the consensus algorithm.
+            - Suspended validators are paused from participating in the consensus algorithm.
 
             Additionally, the node release includes a number of fixes and improvements:
 
-                - Add suspension info to `BakerPoolStatus` / `CurrentPaydayBakerPoolStatus` query results.
+            - Add suspension info to `BakerPoolStatus` / `CurrentPaydayBakerPoolStatus` query results.
 
-                - Add `GetConsensusDetailedStatus` gRPC endpoint for getting detailed information on the status of the consensus, at consensus version 1.
+            - Add `GetConsensusDetailedStatus` gRPC endpoint for getting detailed information on the status of the consensus, at consensus version 1.
 
-                - Update Rust version to 1.82.
+            - Update Rust version to 1.82.
 
-                - Update GHC version to 9.6.6 (LTS-22.39).
+            - Update GHC version to 9.6.6 (LTS-22.39).
 
-                - Add `GetScheduledReleaseAccounts` endpoint for querying the list of accounts that have scheduled releases.
+            - Add `GetScheduledReleaseAccounts` endpoint for querying the list of accounts that have scheduled releases.
 
-                - Add `GetCooldownAccounts`, `GetPreCooldownAccounts` and `GetPrePreCooldownAccounts` endpoints for querying the lists of accounts that have pending cooldowns in protocol version 7 onwards.
+            - Add `GetCooldownAccounts`, `GetPreCooldownAccounts` and `GetPrePreCooldownAccounts` endpoints for querying the lists of accounts that have pending cooldowns in protocol version 7 onwards.
 
-                - gRPC endpoints `DryRun`, `GetBlockItemStatus` and `GetBlockTransactionEvents` now report the parameter used to initialize a smart contract instance as part of a `ContractInitializedEvent`.
+            - gRPC endpoints `DryRun`, `GetBlockItemStatus` and `GetBlockTransactionEvents` now report the parameter used to initialize a smart contract instance as part of a `ContractInitializedEvent`.
 
-                - Fix a bug where, after a protocol update in consensus version 1 (P6 onwards), a node may miscalculate the absolute height of blocks when it is restarted.
+            - Fix a bug where, after a protocol update in consensus version 1 (P6 onwards), a node may miscalculate the absolute height of blocks when it is restarted.
 
-                - Fix a bug where `GetBlockInfo` reports the parent block of a genesis block to be the last finalized block of the previous genesis index, instead of the terminal block.
+            - Fix a bug where `GetBlockInfo` reports the parent block of a genesis block to be the last finalized block of the previous genesis index, instead of the terminal block.
 
         .. dropdown:: 7.0.5 - September 30, 2024
 
@@ -1696,12 +1718,12 @@ Testnet
 
             - The cool-down behavior when the stake of a validator or delegator is reduced or removed is changed:
 
-                - When stake is reduced, the reduction is immediately effective for future stake calculations, and the amount of the reduction is locked for a cool-down period.
-                  (Previously, the reduction was only effective after the cool-down period.)
+            - When stake is reduced, the reduction is immediately effective for future stake calculations, and the amount of the reduction is locked for a cool-down period.
+              (Previously, the reduction was only effective after the cool-down period.)
 
-                - Validators and delegators can make further changes to their stake while they already have stake in cooldown.
-                  This includes registering as a validator when the account was previously a delegator, or vice versa.
-                  (Previously, the account had to wait for the cool-down period to end before making further changes.)
+            - Validators and delegators can make further changes to their stake while they already have stake in cooldown.
+              This includes registering as a validator when the account was previously a delegator, or vice versa.
+              (Previously, the account had to wait for the cool-down period to end before making further changes.)
 
             - Shielded transfers are no longer supported in the protocol.
               It is still possible to unshield a previously shielded balance.
@@ -1756,49 +1778,49 @@ Testnet
 
             **Improvements**
 
-                - Out-of-band catchup is now enabled by default on all platforms.
+            - Out-of-band catchup is now enabled by default on all platforms.
 
-                - The node remembers peers across restarts. When starting up it will try to connect to stored peers in addition to any supplied bootstrap and given nodes. Use the new flag ``--clear-persisted-peers`` (environment variable ``CONCORDIUM_NODE_CLEAR_PERSISTED_PEERS``) to clear stored peers on startup.
+            - The node remembers peers across restarts. When starting up it will try to connect to stored peers in addition to any supplied bootstrap and given nodes. Use the new flag ``--clear-persisted-peers`` (environment variable ``CONCORDIUM_NODE_CLEAR_PERSISTED_PEERS``) to clear stored peers on startup.
 
-                - If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate, for example, ``CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000``.
+            - If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate, for example, ``CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000``.
 
-                - Exposed the health check service via grpc-web when grpc-web is enabled.
+            - Exposed the health check service via grpc-web when grpc-web is enabled.
 
-                - Banned peers are no longer reset on startup by default. The flag ``--no-clear-bans`` has been renamed  to ``--clear-bans``; when set it will clear the banned peers on startup.
+            - Banned peers are no longer reset on startup by default. The flag ``--no-clear-bans`` has been renamed  to ``--clear-bans``; when set it will clear the banned peers on startup.
 
-                - Add debug-level logging when a round is advanced, either due to a quorum certificate or a timeout certificate.
+            - Add debug-level logging when a round is advanced, either due to a quorum certificate or a timeout certificate.
 
-                - Removed the concept of pending blocks.
+            - Removed the concept of pending blocks.
 
-                - ``GetPoolInfo`` now also returns the commission rates for the current reward period.
+            - ``GetPoolInfo`` now also returns the commission rates for the current reward period.
 
-                - Added a number of endpoints to the GRPCV2 API, including:
+            - Added a number of endpoints to the GRPCV2 API, including:
 
-                    - ``GetBakersRewardPeriod``: provided a block, then it returns information about bakers for the reward period of the block.
+                - ``GetBakersRewardPeriod``: provided a block, then it returns information about bakers for the reward period of the block.
 
-                    - ``GetBlockCertificates``: provided a block, then it returns quorum certificate, timeout certificate, and epoch finalization entry contained in the block (where present).
+                - ``GetBlockCertificates``: provided a block, then it returns quorum certificate, timeout certificate, and epoch finalization entry contained in the block (where present).
 
-                    - ``GetBakerEarliestWinTime``: provided a baker ID, it returns the earliest time at which the node projects that the baker could be required to bake a block.
+                - ``GetBakerEarliestWinTime``: provided a baker ID, it returns the earliest time at which the node projects that the baker could be required to bake a block.
 
-                    - ``GetFirstBlockEpoch``: returns the block hash of the first block in a given epoch.
+                - ``GetFirstBlockEpoch``: returns the block hash of the first block in a given epoch.
 
-                    - ``GetWinningBakersEpoch``: returns a list of the bakers that won rounds in a specified (finalized) epoch. This only supports consensus version 1.
+                - ``GetWinningBakersEpoch``: returns a list of the bakers that won rounds in a specified (finalized) epoch. This only supports consensus version 1.
 
             **Fixes**
 
-                - An incorrect ``peer_bucket_size`` metric calculation exposed by the bootstrapper was fixed. What was counted was not the number of peers in the bucket, but rather, roughly, how many times peers that are in the bucket have reconnected.
+            - An incorrect ``peer_bucket_size`` metric calculation exposed by the bootstrapper was fixed. What was counted was not the number of peers in the bucket, but rather, roughly, how many times peers that are in the bucket have reconnected.
 
-                - Fixed a bug where the block state hash was not returned properly for the genesis block.
+            - Fixed a bug where the block state hash was not returned properly for the genesis block.
 
-                - Fixed a bug where credential registration IDs for genesis accounts were not correctly recorded. As a result, the index of accounts by credential IDs was incorrect if the chain was started from genesis by node versions 5.1.3 up to and including 6.0. If a chain was started by an older node version and then the node was upgraded, the index is loaded correctly. This index is used when checking for duplicate credential registration IDs, and when looking up an account via a credential registration ID.
+            - Fixed a bug where credential registration IDs for genesis accounts were not correctly recorded. As a result, the index of accounts by credential IDs was incorrect if the chain was started from genesis by node versions 5.1.3 up to and including 6.0. If a chain was started by an older node version and then the node was upgraded, the index is loaded correctly. This index is used when checking for duplicate credential registration IDs, and when looking up an account via a credential registration ID.
 
-                - Fixed a bug in the ``InvokeInstance`` endpoint where the amount sent was used incorrectly. The consequence was that in some cases the calls would fail with an error indicating insufficient amount on the account where the amount was sufficient for the transaction.
+            - Fixed a bug in the ``InvokeInstance`` endpoint where the amount sent was used incorrectly. The consequence was that in some cases the calls would fail with an error indicating insufficient amount on the account where the amount was sufficient for the transaction.
 
-                - Applied fix for processing of chain parameter updates when they occur at the same time retroactively to all protocol versions. This may break compatibility with any local/private chains on which the bug occurs.
+            - Applied fix for processing of chain parameter updates when they occur at the same time retroactively to all protocol versions. This may break compatibility with any local/private chains on which the bug occurs.
 
-                - Fixed a bug in how the last timeout certificate is recovered at start-up.
+            - Fixed a bug in how the last timeout certificate is recovered at start-up.
 
-                - Fixed the behavior of the block last finalized pointer in the ``GetBlockInfo`` so that it consistently returns the last finalized block at the time the block was baked.
+            - Fixed the behavior of the block last finalized pointer in the ``GetBlockInfo`` so that it consistently returns the last finalized block at the time the block was baked.
 
         .. dropdown:: 6.0.4 - August 9, 2023
 
@@ -2219,19 +2241,19 @@ Concordium Client
     Concordium Client 10.0.0 adds support for node version 10.0.4 and protocol version 10.
     In particular, it supports creating, signing, and submitting sponsored transactions by utilizing the extended transaction format.
 
-        - ``--force-extended`` transaction configuration option has been added as a means to submit a transaction in the v1 transaction format.
+    - ``--force-extended`` transaction configuration option has been added as a means to submit a transaction in the v1 transaction format.
 
-        - ``--unsigned`` transaction configuration option has been added to support constructing unsigned transactions. These can be signed at a later point by using `transaction add-signature`. This option can only be used when `--out` is also specified.
+    - ``--unsigned`` transaction configuration option has been added to support constructing unsigned transactions. These can be signed at a later point by using `transaction add-signature`. This option can only be used when `--out` is also specified.
 
-        - All transaction commands can now be configured to construct sponsored transactions by using ``--sponsor <ACCOUNT>`` enabling a new set of optional configuration options:
+    - All transaction commands can now be configured to construct sponsored transactions by using ``--sponsor <ACCOUNT>`` enabling a new set of optional configuration options:
 
-        - ``--sponsor-keys`` to specify a file holding the sponsor keys to use for signing. Similar to ``--keys``.
+    - ``--sponsor-keys`` to specify a file holding the sponsor keys to use for signing. Similar to ``--keys``.
 
-        - ``--sponsor-signers`` to specify the credential and key indices to sign with for the sponsor account. Similar to ``--signers``.
+    - ``--sponsor-signers`` to specify the credential and key indices to sign with for the sponsor account. Similar to ``--signers``.
 
-        - ``--sponsor-sign`` to sign the transaction on behalf of the sponsor as part of transaction construction. Inverse of ``--unsigned`` for the transaction sender.
+    - ``--sponsor-sign`` to sign the transaction on behalf of the sponsor as part of transaction construction. Inverse of ``--unsigned`` for the transaction sender.
 
-        - ``transaction add-signature`` now supports signing on behalf of a sponsor by specifying the ``--sponsor`` flag.
+    - ``transaction add-signature`` now supports signing on behalf of a sponsor by specifying the ``--sponsor`` flag.
 
     .. dropdown:: Previous releases
 
@@ -2553,7 +2575,7 @@ CCDScan
 
     August 16, 2023
 
-        Version CCD frontend 1.4 and backend 1.6 contains support for `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023.
+    Version CCD frontend 1.4 and backend 1.6 contains support for `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023.
 
     .. dropdown:: Previous releases
 
