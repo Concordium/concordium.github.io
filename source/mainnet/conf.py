@@ -73,6 +73,7 @@ extlinks = {
 # sitemap config
 html_baseurl = "https://docs.concordium.com/en/mainnet/"
 sitemap_url_scheme = "{link}"
+sitemap_locales = [None]
 
 graphviz_fontname = "'Lato,proxima-nova,Helvetica Neue,Arial,sans-serif'"
 

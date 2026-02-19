@@ -1,7 +1,7 @@
 .. include:: ../../variables.rst
 
 .. |nano-s-firmware| replace:: **2.1.0**
-.. |nano-s-plus-firmware| replace:: **1.4.0**
+.. |nano-s-plus-firmware| replace:: **1.5.1**
 .. |ccd-governance-version| replace:: **1.3.0**
 .. _dl-nanos: https://github.com/Concordium/concordium-ledger-app/releases/download/governance-app%2F1.3.0/concordium-governance-ledger-app-1.3.0-nanos-2.1.0.zip
 .. _dl-nanosp: https://github.com/Concordium/concordium-ledger-app/releases/download/governance-app%2F1.3.0/concordium-governance-ledger-app-1.3.0-nanosplus.zip

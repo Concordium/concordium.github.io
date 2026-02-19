@@ -591,6 +591,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       A special kind of transfer of CCD that makes the CCD amount available to the receiver only in a limited way until a specified point in time. The point in time is specified as part of a transfer. The CCD are immediately owned by the receiver account, and the transfer cannot be revoked, but the receiver cannot spend the CCD until the specified time.
 
+   Travel Rule
+
+      An anti-money laundering (AML) and counter-terrorist financing (CTF) requirement mandating that financial institutions and Virtual Asset Service Providers (VASPs) share specific, identifying information about the sender and recipient during transactions that exceed certain thresholds. This data must travel with the transaction, ensuring transparency across both fiat and crypto transfers.
+
    User identity certificate
 
       Issued to the individual or entity once their real-world identity has been verified and recorded by an identity provider. You cannot use the Concordium platform without a user identity certificate.

@@ -429,64 +429,64 @@ The output is:
 
 .. code-block:: console
 
-# Parameters related to staking pools:
-  + minimum equity capital: 500000.000000 CCD
-  + maximum fraction of total stake a pool is allowed to hold: 5.0e-2
-  + maximum factor a pool may stake relative to the validator's stake: 6 % 1
-  + pool owner cooldown duration: 7d
-  + allowed range for finalization commission: [1.0, 1.0]
-  + allowed range for block reward commission: [0.0, 1.0]
-  + allowed range for transaction commission: [0.0, 1.0]
+  # Parameters related to staking pools:
+    + minimum equity capital: 500000.000000 CCD
+    + maximum fraction of total stake a pool is allowed to hold: 5.0e-2
+    + maximum factor a pool may stake relative to the validator's stake: 6 % 1
+    + pool owner cooldown duration: 7d
+    + allowed range for finalization commission: [1.0, 1.0]
+    + allowed range for block reward commission: [0.0, 1.0]
+    + allowed range for transaction commission: [0.0, 1.0]
 
-# Passive delegation parameters:
-  + finalization commission: 1.0
-  + block reward commission: 0.25
-  + transaction commission: 0.25
+  # Passive delegation parameters:
+    + finalization commission: 1.0
+    + block reward commission: 0.25
+    + transaction commission: 0.25
 
-# Parameters related to delegators:
-  + delegator cooldown duration: 7d
+  # Parameters related to delegators:
+    + delegator cooldown duration: 7d
 
-# Exchange rate parameters:
-  + EUR per CCD rate (approx): 0.0039
-  + EUR per Energy rate: 1 / 50000 (approx 2.0e-5)
-  + microCCD per EUR rate: 9309295728319683584 / 36703199911 (approx 2.5363716926299047e8)
+  # Exchange rate parameters:
+    + EUR per CCD rate (approx): 0.0039
+    + EUR per Energy rate: 1 / 50000 (approx 2.0e-5)
+    + microCCD per EUR rate: 9309295728319683584 / 36703199911 (approx 2.5363716926299047e8)
 
-# Parameters that affect rewards distribution:
-  + mint amount per reward period: 107459782e-12
-  + mint distribution:
-     * block reward: 0.9
-     * finalization reward: 0.0
-  + transaction fee distribution:
-     * validator: 0.45
-     * GAS account: 0.45
-  + GAS account distribution:
-     * producing a block: 0.25
-     * adding a finalization proof: N/A
-     * adding a credential deployment: 2.0e-2
-     * adding a chain update: 5.0e-3
+  # Parameters that affect rewards distribution:
+    + mint amount per reward period: 107459782e-12
+    + mint distribution:
+      * block reward: 0.9
+      * finalization reward: 0.0
+    + transaction fee distribution:
+      * validator: 0.45
+      * GAS account: 0.45
+    + GAS account distribution:
+      * producing a block: 0.25
+      * adding a finalization proof: N/A
+      * adding a credential deployment: 2.0e-2
+      * adding a chain update: 5.0e-3
 
-# Time parameters:
-  + reward period length: 24 epochs
+  # Time parameters:
+    + reward period length: 24 epochs
 
-# Consensus parameters:
-  + Timeout parameters:
-     * base timeout: 10000 ms.
-     * timeout increase: 6 / 5 (approx 1.2)
-     * timeout decrease: 3 / 4 (approx 0.75)
-  + minimum time between blocks: 2000 ms.
-  + block energy limit: 3000000
+  # Consensus parameters:
+    + Timeout parameters:
+      * base timeout: 10000 ms.
+      * timeout increase: 6 / 5 (approx 1.2)
+      * timeout decrease: 3 / 4 (approx 0.75)
+    + minimum time between blocks: 2000 ms.
+    + block energy limit: 3000000
 
-# Finalization committee parameters:
-  + minimum finalizers: 40
-  + maximum finalizers: 1000
-  + finalizer relative stake threshold: 5.0e-5
+  # Finalization committee parameters:
+    + minimum finalizers: 40
+    + maximum finalizers: 1000
+    + finalizer relative stake threshold: 5.0e-5
 
-# Validator score parameters:
-  + maximum missed rounds: 10
+  # Validator score parameters:
+    + maximum missed rounds: 10
 
-# Other parameters:
-  + foundation account index: 13
-  + maximum credential deployments per block: 10
+  # Other parameters:
+    + foundation account index: 13
+    + maximum credential deployments per block: 10
 
 .. list-table::
    :widths: 25 25 50

@@ -16,6 +16,7 @@ Getting Started
    Begin your journey by setting up your development environment and learning the fundamentals through hands-on tutorials.
 
    :ref:`Setup Guide → <setup-env>`
+   :ref:`Verify account ownership, signature proofs → <signature-proofs>`
 
 Basic Smart Contracts
 ---------------------
@@ -85,6 +86,7 @@ Additional Resources
    Hello World <./hello-world/hello-world>
    Counter <./counter/counter-contract>
    PiggyBank <./piggy-bank/index>
+   Verify account ownership, signature proofs <./verify-account-ownership-signature-proofs/signature-proofs>
    Using ID in dApps <./using-ID-in-dApps/index>
    Using the onReceivingCIS2 hook <./onReceivingCIS2/on-receivingCIS2>
    wCCD <./wCCD/index>

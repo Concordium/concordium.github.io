@@ -22,7 +22,7 @@ Before you start, make sure you’ve completed the following steps:
 
 .. dropdown:: Step 1: Set up the node
 
-    The Desktop Wallet must be connected to a running **trusted** node on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions. A default ``grpc.mainnet.concordium.software`` is provided. But you can run a node yourself using :ref:`Windows<run-node-windows>`, :ref:`macOS <run-node-macos>`, and :ref:`with Docker <run-a-node>` or :ref:`a Debian package <run-node-ubuntu>` on Linux. You can also have a third-party provider run a node for you.
+    The Desktop Wallet must be connected to a running **trusted** node on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions. A default ``grpc.mainnet.concordium.software`` is provided. Optionally, you can run a node yourself using :ref:`Windows<run-node-windows>`, :ref:`macOS <run-node-macos>`, :ref:`Docker <run-a-node>` or :ref:`a Debian package <run-node-ubuntu>` on Linux. You can also have a third-party provider run a node for you.
 
 .. dropdown:: Step 2: Install the Desktop Wallet
 
@@ -30,14 +30,17 @@ Before you start, make sure you’ve completed the following steps:
 
     #. Open the Desktop Wallet and create a password that contains at least 6 characters. Keep the password safe. You’ll need it to sign into the Desktop Wallet again.
 
-    #. If this is the first time you're opening the Desktop Wallet, you're asked to connect to a node. If you don't see this message, go to **Settings**, and then select **Node settings**. By default, ``grpc.mainnet.concordium.software`` is inserted, but you can change this to any other node that you prefer or the node provided by your third-party provider. Enter the **Address** and **Port** of the node you’re running. The address is the network address of the node.
+    #. If this is the first time you're opening the Desktop Wallet, you're asked to connect to a node. If you don't see this message, go to **Settings**, and then select **Node settings**. By default, ``grpc.mainnet.concordium.software`` with port ``20000`` is inserted. Optionally, you can change this to any other node that you prefer or the node provided by your third-party provider. Enter the **Address** and **Port** of the node you’re running. The address is the network address of the node.
 
-    - If you're running the mainnet version of the Desktop Wallet, you must connect to a mainnet node. In the **Address field**, enter *127.0.0.1*, and in the **Port field** enter *20000*.
+        - If you're running the mainnet version of the Desktop Wallet, you must connect to a mainnet node. In the **Address field**, enter *127.0.0.1*, and in the **Port field** enter *20000*.
 
-    - If you're running the testnet version of the Desktop Wallet, you must connect to a testnet node. In the **Address** field, enter *127.0.0.1*, and in the **Port field** enter *20001*.
+        - If you're running the testnet version of the Desktop Wallet, you must connect to a testnet node. In the **Address** field, enter *127.0.0.1*, and in the **Port field** enter *20001*.
 
-        .. image:: ../../docs/network/nodes/images/Node-setup-win-9.png
-            :width: 60%
+            .. image:: ../../docs/network/nodes/images/Node-setup-win-9.png
+                :width: 60%
+
+        .. Note::
+            The “Use SSL” checkbox should be enabled when connecting to a node running with TLS mode enabled. If you are connecting to your own node with TLS mode disabled, you should uncheck this box.
 
     #. Select **Set connection**. If the connection is working properly, there’s a message saying *Successfully connected*.
 
@@ -53,9 +56,11 @@ Before you start, make sure you’ve completed the following steps:
 
     #. The LEDGER says **Allow Ledger Manager**. Press both buttons simultaneously to allow the manager on your LEDGER.
 
-    #. Press the right button to navigate to **Install app**, and then press both buttons.
-
     #. Search for **Concordium Ledger App** in the App catalog in Ledger Live, and then select **Install**.
+
+    #. If the connection to the node is successfully established and the Concordium App is installed on your Ledger device and launched, you will see the connection status with two green check marks in the lower left corner when you launch Desktop Wallet:
+
+        .. image:: ../../docs/network/nodes/images/DW-successful-connection.png
 
     .. NOTE::
 

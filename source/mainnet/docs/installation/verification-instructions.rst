@@ -49,6 +49,16 @@ Linux
 
 .. include:: client-verification-instructions/client-linux.rst
 
+Genesis Creator Tool
+====================
+
+.. _verification-genesis-creator-linux:
+
+Linux
+-----
+
+.. include:: genesis-creator-verification-instructions/genesis-creator-linux.rst
+
 Cargo Concordium
 ================
 

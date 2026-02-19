@@ -16,8 +16,13 @@
 
 .. Client verification variables
 .. |client-linux| replace:: concordium-client-linux
-.. |client-version| replace:: 9.1.4
-.. |client-linux-checksum| replace:: 1b497f263f808e0821e270806fe68ce16e88bb67d48fcbfa0bc9729138416660
+.. |client-version| replace:: 10.0.0
+.. |client-linux-checksum| replace:: 9179a950cf4b4526f8202712037de18b97fc2fe596f2255585cfcd3b2bf3cf94
+
+.. Genesis Creator Tool variables
+.. |genesis-creator-linux| replace:: genesis-creator-linux-amd64
+.. |genesis-creator-version| replace:: 0.8.1
+.. |genesis-creator-linux-checksum| replace:: 5bc6b7772597b3167525dcd34c5bf767716ea97f30110f18966d209391521ff3
 
 .. Cargo verification variables
 .. |cargo-linux| replace:: cargo-concordium_2.8.0
@@ -25,12 +30,12 @@
 .. |cargo-linux-checksum| replace:: ea3f603e2a921181cdf323604066444378a955c55e82b206a7d169bf636fa75d
 
 .. Node version variables
-.. |mainnet-node-version| replace:: 9.0.7
-.. |testnet-node-version| replace:: 9.0.7
+.. |mainnet-node-version| replace:: 10.0.5
+.. |testnet-node-version| replace:: 10.0.5
 
 .. Node debian package verification variables
-.. |node-deb-package| replace:: concordium-mainnet-node_9.0.7-3_amd64.deb
-.. |node-deb-package-checksum| replace:: b92187715c435b551090f60e15846900a3c9b8de610ebc65464b72853ce3cf34
+.. |node-deb-package| replace:: concordium-mainnet-node_10.0.5-0_amd64.deb
+.. |node-deb-package-checksum| replace:: 7446d89219e4a05adb821cb6e5f5f9870c3a192ec63a5ae049e9540ad626de50
 
 .. Mainnet genesis block verification variables
 .. |mainnet-genesis-block| replace:: genesis.dat
