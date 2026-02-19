@@ -84,8 +84,13 @@ To:
 
 You can now generate the genesis data:
 
+.. note::
+
+   If you already have the ``genesis-creator`` binary installed (e.g., from the Docker guide), you still need a configuration TOML file to generate genesis data. You can download the example `genesis9.toml <https://github.com/Concordium/concordium-misc-tools/blob/main/genesis-creator/examples/genesis9.toml>`_ linked above and run ``genesis-creator generate --config ./genesis9.toml`` directly.
+
 .. code-block:: console
 
+   git clone --recurse-submodules https://github.com/Concordium/concordium-misc-tools.git
    cd concordium-misc-tools/genesis-creator
    cargo run -- generate --config ./examples/genesis9.toml
 
@@ -118,6 +123,7 @@ Here we describe how to build the `consensus part <https://github.com/Concordium
 
 .. code-block:: console
 
+   cd concordium-node
    stack build
 
 Step 4: Build and run the node
