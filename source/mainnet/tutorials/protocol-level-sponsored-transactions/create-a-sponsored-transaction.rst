@@ -5,15 +5,16 @@
 Create a sponsored transaction
 ==============================
 
-The frontend connects to the wallet, requests a sponsored transaction from the backend and sends it back to the user's wallet for signing.
+The frontend connects to the user's wallet, sends the transfer details to the sponsor service, and submits the sponsor-signed transaction back to the wallet for the user to review and sign.
 
-**Step 1: Import the wallet detection helper**
+**Step 1: Import dependencies**
 
-First, import ``detectConcordiumProvider`` which, as the name suggests, detects and connects to the Concordium wallet, in our case, the Concordium Wallet for Web:
+Import ``detectConcordiumProvider`` to connect to the Concordium Wallet for Web, ``Transaction`` to parse the sponsor-signed transaction, and ``AccountAddress`` to convert address strings into typed objects:
 
 .. code-block:: typescript
 
    import { detectConcordiumProvider } from '@concordium/browser-wallet-api-helpers'
+   import { AccountAddress, Transaction } from '@concordium/web-sdk'
 
 **Step 2: Define your configuration**
 
@@ -23,11 +24,11 @@ Set up the backend URL and token details. The backend URL points to your sponsor
 
    const BACKEND_URL = '<YOUR_BACKEND_URL>'
    const TOKEN_ID = '<YOUR_TOKEN_ID>'
-   const TOKEN_DECIMALS = '<YOUR_TOKEN_DECIMALS>'
+   const TOKEN_DECIMALS = <YOUR_TOKEN_DECIMALS>
 
-**Step 3: Create the function to send sponsored transfers**
+**Step 3: Request a sponsored transaction from the backend**
 
-Create a function that takes the connected account address and the transfer details:
+Create a function that takes the connected account address and transfer details, then requests a sponsored transaction from the :ref:`sponsor service <set-up-a-sponsor-service>`. The backend will create the transaction, sign it as a sponsor and return the sponsored transaction JSON:
 
 .. code-block:: typescript
 
@@ -36,13 +37,6 @@ Create a function that takes the connected account address and the transfer deta
        recipient: string,
        amount: string
    ) {
-
-**Step 4: Request a sponsored transaction from the backend**
-
-Inside the function, request a sponsored transaction from your backend, the sponsor service we built before. It will create the transaction, sign it as a sponsor and return the sponsored transaction JSON:
-
-.. code-block:: typescript
-
        const response = await fetch(`${BACKEND_URL}/sponsor`, {
            method: 'POST',
            headers: { 'Content-Type': 'application/json' },
@@ -61,18 +55,49 @@ Inside the function, request a sponsored transaction from your backend, the spon
 
        const { sponsoredTransaction } = await response.json()
 
-**Step 5: Send the transaction to the user's wallet**
+**Step 4: Send the transaction to the user's wallet**
 
-Get the wallet provider and send the sponsored transaction. This opens the wallet popup where the user can review the transaction details and sign to authorize and submit to the chain. The transaction hash will be returned, as it's useful data:
+Parse the JSON back into a signable transaction object, then send it to the wallet. This opens the wallet popup where the user can review the transaction details and sign to authorize and submit to the chain:
 
 .. code-block:: typescript
 
        const provider = await detectConcordiumProvider()
        const parsedTransaction = Transaction.signableFromJSON(sponsoredTransaction)
-       const txHash = await provider.sendSponsoredTransaction(account, parsedTransaction)
+       const txHash = await provider.sendSponsoredTransaction(
+           AccountAddress.fromBase58(account),
+           parsedTransaction
+       )
 
        return txHash
    }
+
+Usage example
+=============
+
+Call ``sendSponsoredTransfer`` after the user connects their wallet. The recipient and amount would typically come from a form or your application logic:
+
+.. code-block:: typescript
+
+   async function handleTransfer(recipientAddress: string, transferAmount: string) {
+       try {
+           const provider = await detectConcordiumProvider()
+           const account = await provider.connect()
+
+           const txHash = await sendSponsoredTransfer(
+               account,
+               recipientAddress,
+               transferAmount
+           )
+
+           console.log('Transaction submitted:', txHash)
+       } catch (error) {
+           console.error('Transfer failed:', error)
+       }
+   }
+
+.. note::
+
+   A full working example using ``@concordium/react-components`` for wallet management and ``WalletConnect`` support is available on `GitHub <https://github.com/Concordium/concordium-dapp-examples/tree/main/DevnetSponsoredTx>`_.
 
 Security considerations
 =======================
@@ -82,4 +107,3 @@ Security considerations
 - Validate all incoming transaction requests before sponsoring.
 - Set reasonable expiry times on transactions (5 minutes is typical).
 - Monitor the sponsor wallet balance and set up alerts for low funds.
-
