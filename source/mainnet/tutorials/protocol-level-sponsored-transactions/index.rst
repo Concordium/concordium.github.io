@@ -33,16 +33,9 @@ Before starting this tutorial, you should have:
 How sponsored transactions work
 ================================
 
-In a standard transaction, the sender pays the transaction fee. With sponsored transactions:
+In a standard transaction, the sender pays the transaction fee. With sponsored transactions, a sponsor account pays the fee instead — making it possible to onboard users who don't yet hold CCD, or to offer a seamless experience in your dApp.
 
-1. The user connects their wallet and initiates an action (e.g. a token transfer or a checkout).
-2. The frontend sends the transfer details to the backend, which builds the full transaction, adds the nonce and expiry, and signs it with the sponsor key.
-3. The user reviews and signs the transaction in their wallet to authorize the transfer.
-4. The sponsor's account pays the transaction fee when the transaction is submitted to the chain.
-
-This is useful for onboarding new users who may not have CCD to pay for fees, or for dApps that want to provide a frictionless experience.
-
-The following diagram shows the full flow between the user's wallet, frontend, sponsor backend, and the chain:
+The following diagram shows the full flow between the user's wallet, frontend, sponsor backend, and the Concordium chain:
 
 .. image:: sponsored-tx-flow.svg
    :alt: Sequence diagram showing the sponsored transaction flow between user wallet, frontend, sponsor backend, and Concordium chain
