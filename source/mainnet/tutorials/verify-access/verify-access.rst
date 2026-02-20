@@ -19,28 +19,24 @@ An age-gated application where users prove they're 18+ **without revealing their
 - **Concordium ID wallet** (user's phone holds their credentials, ID information private)
 - **On-chain anchoring** (verification is recorded on blockchain for audit or transparency purposes)
 
-.. mermaid::
+.. code-block:: text
 
-   sequenceDiagram
-       participant User
-       participant YourApp
-       participant VerifierService
-       participant ConcordiumWallet
-       participant Blockchain
-
-       User->>YourApp: Clicks "Verify Age"
-       YourApp->>VerifierService: Create verification request
-       VerifierService->>Blockchain: Anchor VRA (Verification Request Anchor)
-       VerifierService-->>YourApp: Return VPR (Verifiable Presentation Request)
-       YourApp->>ConcordiumWallet: Send VPR via WalletConnect
-       ConcordiumWallet->>User: Show "Prove age 18+"
-       User->>ConcordiumWallet: Approve
-       ConcordiumWallet->>ConcordiumWallet: Generate ZK proof (age ≥ 18)
-       ConcordiumWallet-->>YourApp: Return VP (Verifiable Presentation)
-       YourApp->>VerifierService: Verify presentation
-       VerifierService->>Blockchain: Anchor VAA (Verification Audit Anchor)
-       VerifierService-->>YourApp: "Verified ✓"
-       YourApp->>User: Grant access
+   User            YourApp          VerifierService    ConcordiumWallet   Blockchain
+    |                 |                   |                   |                |
+    |-- Clicks ------>|                   |                   |                |
+    |  "Verify Age"   |-- Create req ---->|                   |                |
+    |                 |                   |-- Anchor VRA ---->|                |
+    |                 |<-- Return VPR ----|                   |                |
+    |                 |-- Send VPR via WalletConnect -------->|                |
+    |                 |                   |                   |                |
+    |<----------------|-------------------|-- "Prove 18+" ----|                |
+    |-- Approve ----->|                   |                   |                |
+    |                 |                   |    Generate ZK proof (age >= 18)   |
+    |                 |<-- Return VP (Verifiable Presentation)-|                |
+    |                 |-- Verify -------->|                   |                |
+    |                 |                   |-- Anchor VAA -------------------->|
+    |                 |<-- "Verified" ----|                   |                |
+    |<-- Access ------|                   |                   |                |
 
 ----
 
@@ -272,13 +268,11 @@ Step 1.3: Start the Verifier Service
 
 **Architecture:**
 
-.. mermaid::
+.. code-block:: text
 
-   graph LR
-       A[Your App :3000] -->|HTTP| B[Verifier Service :8000]
-       B -->|SDK-gRPC| C[Concordium Testnet]
-       B -->|Reads| D[Private Keys]
-       C -->|On-chain| E[Blockchain Anchors]
+   Your App (:3000) ---HTTP---> Verifier Service (:8000) ---gRPC---> Concordium Testnet
+                                        |                                   |
+                                   Reads keys/                        On-chain anchors
 
 ✅ **Checkpoint:** Verifier service running at http://localhost:8000
 
@@ -992,7 +986,7 @@ Step 3.7: Create UI Component
 
 Create ``src/components/AgeGate.tsx``:
 
-.. code-block:: typescript
+.. code-block:: jsx
 
    "use client";
 
@@ -1014,7 +1008,7 @@ Create ``src/components/AgeGate.tsx``:
            <h2 className="text-2xl font-bold mb-4">Age Verification Required</h2>
            <p className="text-gray-600 mb-6">
              You must be 18 or older to access this content.
-             We'll verify your age using zero-knowledge proofs—your birthdate stays private.
+             We will verify your age using zero-knowledge proofs - your birthdate stays private.
            </p>
 
            {/* Main verification button - calls startVerification() when clicked */}
@@ -1052,7 +1046,7 @@ Step 3.8: Use in Your Page
 
 In ``src/app/page.tsx``:
 
-.. code-block:: typescript
+.. code-block:: jsx
 
    import { AgeGate } from "@/components/AgeGate";
 
@@ -1298,25 +1292,13 @@ Available Attribute Tags
 
 **Statement Types:**
 
-.. mermaid::
+.. code-block:: text
 
-   graph TD
-       A[Statement Types] --> B[AttributeInRange]
-       A --> C[AttributeInSet]
-       A --> D[RevealAttribute]
-       A --> E[AttributeNotInSet]
-
-       B --> B1[Zero-knowledge range proof]
-       B --> B2[Example: dob between dates]
-
-       C --> C1[Zero-knowledge set membership]
-       C --> C2[Example: nationality in EU list]
-
-       D --> D1[Reveals actual value]
-       D --> D2[Example: show firstName]
-
-       E --> E1[Zero-knowledge exclusion]
-       E --> E2[Example: not from blocked countries]
+   Statement Types
+   ├── AttributeInRange    — Zero-knowledge range proof (e.g., dob between dates)
+   ├── AttributeInSet      — Zero-knowledge set membership (e.g., nationality in EU list)
+   ├── RevealAttribute     — Reveals actual value (e.g., show firstName)
+   └── AttributeNotInSet   — Zero-knowledge exclusion (e.g., not from blocked countries)
 
 **Combining Multiple Statements:**
 
@@ -1398,36 +1380,28 @@ Step 2: Test the Flow
 
 **Full Verification Flow:**
 
-.. mermaid::
+.. code-block:: text
 
-   sequenceDiagram
-       autonumber
-       participant Browser
-       participant YourAPI
-       participant Verifier
-       participant Wallet
-       participant Chain
-
-       Browser->>Browser: User clicks "Verify Age"
-       Browser->>YourAPI: POST /api/verification/create
-       YourAPI->>Verifier: POST /create-verification-request
-       Verifier->>Chain: Anchor VRA (tx hash stored)
-       Verifier-->>YourAPI: Return VPR + audit record ID
-       YourAPI-->>Browser: Return sessionId + VPR
-       Browser->>Browser: SDK shows QR code modal
-       Wallet->>Wallet: User scans QR code
-       Browser->>Wallet: WalletConnect session established
-       Browser->>Wallet: Send VPR (age ≥ 18 request)
-       Wallet->>Wallet: User approves
-       Wallet->>Wallet: Generate ZK proof locally
-       Wallet-->>Browser: Send VP (verifiable presentation)
-       Browser->>YourAPI: POST /api/verification/verify
-       YourAPI->>Verifier: POST /verify (VP + VPR + audit ID)
-       Verifier->>Verifier: Validate ZK proof
-       Verifier->>Chain: Anchor VAA (verification audit)
-       Verifier-->>YourAPI: "verified" + tx hash
-       YourAPI-->>Browser: Success
-       Browser->>Browser: Grant access
+    1. Browser:  User clicks "Verify Age"
+    2. Browser  --> YourAPI:  POST /api/verification/create
+    3. YourAPI  --> Verifier: POST /create-verification-request
+    4. Verifier --> Chain:    Anchor VRA (tx hash stored)
+    5. Verifier --> YourAPI:  Return VPR + audit record ID
+    6. YourAPI  --> Browser:  Return sessionId + VPR
+    7. Browser:  SDK shows QR code modal
+    8. Wallet:   User scans QR code
+    9. Browser  --> Wallet:   WalletConnect session established
+   10. Browser  --> Wallet:   Send VPR (age >= 18 request)
+   11. Wallet:   User approves
+   12. Wallet:   Generate ZK proof locally
+   13. Wallet   --> Browser:  Send VP (verifiable presentation)
+   14. Browser  --> YourAPI:  POST /api/verification/verify
+   15. YourAPI  --> Verifier: POST /verify (VP + VPR + audit ID)
+   16. Verifier: Validate ZK proof
+   17. Verifier --> Chain:    Anchor VAA (verification audit)
+   18. Verifier --> YourAPI:  "verified" + tx hash
+   19. YourAPI  --> Browser:  Success
+   20. Browser:  Grant access
 
 Step 3: Debug Common Issues
 ----------------------------

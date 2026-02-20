@@ -98,6 +98,7 @@ Additional Resources
    eSealing <./eSealing/index>
    Sponsored Transactions <./sponsoredTransactions/index>
    Smart Contract Upgrade <./smartContractUpgrade/index>
+   Verify & Access <./verify-access/verify-access>
 
 .. toctree::
    :maxdepth: 2
