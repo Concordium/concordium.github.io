@@ -111,6 +111,8 @@ The following code is ready to copy into your project — just replace ``<GRPC_H
 Code walkthrough
 ================
 
+Each section of the code above is broken down below to explain what is happening at each stage.
+
 .. dropdown:: gRPC client and wallet setup
 
    The ``ConcordiumGRPCNodeClient`` connects to a Concordium node, which is needed to query on-chain data such as account nonces.
