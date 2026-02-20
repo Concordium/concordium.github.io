@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/protocol-level-sponsored-transactions/index.284163c6-4d47-4c09-966d-aaa4b445c49b.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/protocol-level-sponsored-transactions/index.6d30c173-dbb7-4ca0-b598-d71e00f5d83a.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/protocol-level-sponsored-transactions/index';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/protocol-level-sponsored-transactions/index.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -632,15 +632,8 @@
 </section>
 <section id="how-sponsored-transactions-work">
 <h2>How sponsored transactions work<a class="headerlink" href="#how-sponsored-transactions-work" title="Link to this heading">#</a></h2>
-<p>In a standard transaction, the sender pays the transaction fee. With sponsored transactions:</p>
-<ol class="arabic simple">
-<li><p>The user connects their wallet and initiates an action (e.g. a token transfer or a checkout).</p></li>
-<li><p>The frontend sends the transfer details to the backend, which builds the full transaction, adds the nonce and expiry, and signs it with the sponsor key.</p></li>
-<li><p>The user reviews and signs the transaction in their wallet to authorize the transfer.</p></li>
-<li><p>The sponsor’s account pays the transaction fee when the transaction is submitted to the chain.</p></li>
-</ol>
-<p>This is useful for onboarding new users who may not have CCD to pay for fees, or for dApps that want to provide a frictionless experience.</p>
-<p>The following diagram shows the full flow between the user’s wallet, frontend, sponsor backend, and the chain:</p>
+<p>In a standard transaction, the sender pays the transaction fee. With sponsored transactions, a sponsor account pays the fee instead — making it possible to onboard users who don’t yet hold CCD, or to offer a seamless experience in your dApp.</p>
+<p>The following diagram shows the full flow between the user’s wallet, frontend, sponsor backend, and the Concordium chain:</p>
 <a class="reference internal image-reference" href="../../_images/sponsored-tx-flow.svg"><img alt="Sequence diagram showing the sponsored transaction flow between user wallet, frontend, sponsor backend, and Concordium chain" src="../../_images/sponsored-tx-flow.svg" style="width: 100%;" />
 </a>
 <div class="toctree-wrapper compound">
