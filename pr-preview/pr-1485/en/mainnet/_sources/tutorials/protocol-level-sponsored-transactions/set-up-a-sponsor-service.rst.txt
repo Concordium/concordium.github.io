@@ -7,9 +7,14 @@ Set up a sponsor service
 
 The sponsor service runs on a secure backend and holds the sponsor wallet's private key. It creates transactions and signs them on behalf of the sponsor.
 
-**Step 1: Import the required modules**
+.. note::
 
-The ``@concordium/web-sdk`` provides transaction building and signing utilities, while the nodejs subpackage provides the gRPC client for communicating with Concordium nodes:
+   A full working example of a dApp using sponsored transactions is available on `GitHub <https://github.com/Concordium/concordium-dapp-examples/tree/main/DevnetSponsoredTx>`_.
+
+Sponsor service code
+====================
+
+The following code is ready to copy into your project — just replace ``<GRPC_HOST>``, ``<GRPC_PORT>``, and ``<PATH_TO_SPONSOR_WALLET>`` with your own values. Read the :ref:`walkthrough below <sponsor-walkthrough>` to understand each step before adapting it for your use case. This example focuses on clarity rather than production hardening, so you will want additional input validation, error handling, rate limiting, and logging before deploying.
 
 .. code-block:: typescript
 
@@ -30,12 +35,6 @@ The ``@concordium/web-sdk`` provides transaction building and signing utilities,
    import { credentials } from '@grpc/grpc-js'
    import { readFileSync } from 'node:fs'
 
-**Step 2: Initialize the gRPC client**
-
-Establish the connection to a Concordium node, needed to query the chain and submit transactions:
-
-.. code-block:: typescript
-
    // Initialize gRPC client
    const grpcClient = new ConcordiumGRPCNodeClient(
        '<GRPC_HOST>',
@@ -43,22 +42,11 @@ Establish the connection to a Concordium node, needed to query the chain and sub
        credentials.createSsl()
    )
 
-**Step 3: Load the sponsor wallet**
-
-Load the sponsor wallet from the exported wallet.export file. The ``parseWallet`` function reads the wallet export format, and ``buildAccountSigner`` creates the signer that can sign transactions on behalf of this account:
-
-.. code-block:: typescript
-
+   // Load sponsor wallet
    const walletFile = readFileSync('<PATH_TO_SPONSOR_WALLET>', 'utf8')
    const walletExport = parseWallet(walletFile)
    const sponsorAccount = AccountAddress.fromBase58(walletExport.value.address)
    const sponsorSigner = buildAccountSigner(walletExport)
-
-**Step 4: Create the main sponsoring function**
-
-Create the main sponsoring function. The sender is the user's account (who will authorize the transfer), while the recipient, amount and token details define what will be transferred:
-
-.. code-block:: typescript
 
    export async function sponsorTokenTransfer(
        sender: string,
@@ -69,12 +57,7 @@ Create the main sponsoring function. The sender is the user's account (who will 
    ) {
        const senderAddress = AccountAddress.fromBase58(sender)
 
-**Step 5: Build the token transfer operations**
-
-Inside the function, build the Protocol Level Token transfer operations. This creates an array of operations that describe what the transaction should do, in this case it will transfer tokens to a recipient with an optional memo:
-
-.. code-block:: typescript
-
+       // Build token transfer operations
        const ops = [{
            [TokenOperationType.Transfer]: {
                amount: TokenAmount.fromDecimal(parseFloat(amount), decimals),
@@ -85,26 +68,15 @@ Inside the function, build the Protocol Level Token transfer operations. This cr
            },
        }]
 
-**Step 6: Create the base transaction and get the sender's nonce**
-
-Then create the base transaction using ``Transaction.tokenUpdate``. This wraps the operations into a token update transaction that targets the specified token. Now query the chain for the sender's next nonce. The nonce increments with each transaction to prevent replay attacks:
-
-.. code-block:: typescript
-
-       const transaction = Transaction.tokenUpdate({
+       // Create the transaction builder and get the sender's nonce
+       const builder = Transaction.tokenUpdate({
            tokenId: TokenId.fromString(tokenId),
            operations: Cbor.encode(ops),
        })
 
        const nonce = await grpcClient.getNextAccountNonce(senderAddress)
 
-**Step 7: Build the sponsorable transaction**
-
-Add the sender's metadata (address, nonce, expiry) and designate the sponsor account that will pay the fees. The ``build()`` call produces a transaction ready for sponsorship:
-
-.. code-block:: typescript
-
-       const builder = Transaction.builderFromJSON(Transaction.toJSON(transaction))
+       // Build the sponsorable transaction
        const sponsorable = builder
            .addMetadata({
                sender: senderAddress,
@@ -114,21 +86,11 @@ Add the sender's metadata (address, nonce, expiry) and designate the sponsor acc
            .addSponsor(sponsorAccount)
            .build()
 
-**Step 8: Sign the transaction as the sponsor**
-
-Add the sponsor's cryptographic signature, committing them to pay the transaction fees:
-
-.. code-block:: typescript
-
+       // Sign as sponsor
        const sponsored = await Transaction.sponsor(sponsorable, sponsorSigner)
        const sponsoredJSON = Transaction.toJSON(sponsored)
 
-**Step 9: Serialize and return the transaction**
-
-Convert BigInt values to numbers or strings. JavaScript's native ``JSON.stringify`` cannot serialize BigInt, so we handle small values as numbers and large values as strings to avoid precision loss:
-
-.. code-block:: typescript
-
+       // Serialize BigInt values for JSON transport
        const serialized = JSON.parse(
            JSON.stringify(sponsoredJSON, (_, value) => {
                if (typeof value === 'bigint') {
@@ -144,4 +106,91 @@ Convert BigInt values to numbers or strings. JavaScript's native ``JSON.stringif
        return serialized
    }
 
+.. _sponsor-walkthrough:
 
+Code walkthrough
+================
+
+.. dropdown:: gRPC client and wallet setup
+
+   The ``ConcordiumGRPCNodeClient`` connects to a Concordium node, which is needed to query on-chain data such as account nonces.
+
+   The sponsor wallet is loaded from an exported ``wallet.export`` file. ``parseWallet`` reads the wallet export format, and ``buildAccountSigner`` creates a signer that can produce cryptographic signatures on behalf of the sponsor account.
+
+.. dropdown:: Building token transfer operations
+
+   The ``ops`` array describes what the transaction does. Each operation uses ``TokenOperationType.Transfer`` to move tokens to a recipient. ``TokenAmount.fromDecimal`` converts a human-readable amount (e.g. ``"10.5"``) into the on-chain representation using the token's decimal places. An optional ``CborMemo`` can be attached to annotate the transfer.
+
+.. dropdown:: Creating the transaction builder and nonce
+
+   ``Transaction.tokenUpdate`` returns a transaction builder targeting a specific token by its ID. The builder pattern allows you to chain metadata and sponsorship before finalizing the transaction.
+
+   The sender's next nonce is fetched from the chain via ``getNextAccountNonce``. The nonce increments with each transaction and prevents replay attacks.
+
+.. dropdown:: Building the sponsorable transaction
+
+   The builder's ``addMetadata`` method sets the sender's address, nonce, and expiry. ``addSponsor(sponsorAccount)`` designates the sponsor as the fee payer instead of the sender. The ``build()`` call produces a transaction ready for sponsorship.
+
+.. dropdown:: Signing and serialization
+
+   ``Transaction.sponsor`` adds the sponsor's cryptographic signature, committing them to pay the fees. The result is converted to JSON via ``Transaction.toJSON``.
+
+   JavaScript's native ``JSON.stringify`` cannot serialize ``BigInt`` values, so a custom replacer converts small values to numbers and large values to strings to avoid precision loss.
+
+Serve as an API endpoint
+========================
+
+To expose ``sponsorTokenTransfer`` as a POST endpoint, create a file called ``server.ts``:
+
+.. code-block:: typescript
+
+   import express from 'express'
+   import cors from 'cors'
+   import { sponsorTokenTransfer } from './sponsor'
+
+   const app = express()
+   app.use(cors())
+   app.use(express.json())
+
+   app.post('/sponsor', async (req, res) => {
+       try {
+           const { sender, recipient, amount, tokenId, decimals } = req.body
+
+           if (!sender || !recipient || !amount || !tokenId || decimals === undefined) {
+               return res.status(400).json({ error: 'Missing required fields' })
+           }
+
+           const sponsoredTransaction = await sponsorTokenTransfer(
+               sender,
+               recipient,
+               amount,
+               tokenId,
+               Number(decimals)
+           )
+
+           return res.json({ sponsoredTransaction })
+       } catch (error) {
+           console.error('Sponsor error:', error)
+           return res.status(500).json({ error: 'Failed to sponsor transaction' })
+       }
+   })
+
+   const PORT = process.env.PORT || 3000
+   app.listen(PORT, () => {
+       console.log(`Sponsor service running on port ${PORT}`)
+   })
+
+Install Express, CORS, and their types:
+
+.. code-block:: console
+
+   $ npm install express cors
+   $ npm install -D @types/express @types/cors
+
+Run the server:
+
+.. code-block:: console
+
+   $ npx ts-node server.ts
+
+The frontend (covered in :ref:`Create a sponsored transaction <create-a-sponsored-transaction>`) calls ``POST /sponsor`` with the transfer details and receives back the sponsor-signed transaction for the user's wallet to co-sign and submit.

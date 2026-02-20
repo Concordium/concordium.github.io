@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/protocol-level-sponsored-transactions/index.0c2c4151-2d3a-4dfc-b984-bd935814e204.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/protocol-level-sponsored-transactions/index.284163c6-4d47-4c09-966d-aaa4b445c49b.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/protocol-level-sponsored-transactions/index';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/protocol-level-sponsored-transactions/index.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -606,15 +606,19 @@
                   
   <section id="sponsored-transactions">
 <span id="protocol-level-sponsored-transactions"></span><h1>Sponsored transactions<a class="headerlink" href="#sponsored-transactions" title="Link to this heading">#</a></h1>
-<p>Sponsored transactions allow users to interact with the Concordium blockchain without paying <a class="reference internal" href="../../docs/protocol/transaction-fees.html#transaction-fees"><span class="std std-ref">transaction fees</span></a> themselves. Instead, a sponsor wallet covers the fee on behalf of the user, enabling seamless user experiences for dApps.</p>
-<p>This tutorial shows you how to implement a production-ready frontend/backend architecture for sponsored transactions. The tutorial has two parts:</p>
+<p>Sponsored transactions allow users to interact with the Concordium blockchain without paying <a class="reference internal" href="../../docs/protocol/transaction-fees.html#transaction-fees"><span class="std std-ref">transaction fees</span></a> themselves. Instead, a sponsor wallet covers the fee on behalf of the user.</p>
+<p>This tutorial walks through a frontend/backend architecture for sponsored transactions, focusing on clarity so you can adapt it to your own project. The tutorial has two parts:</p>
 <ol class="arabic simple">
 <li><p><a class="reference internal" href="set-up-a-sponsor-service.html#set-up-a-sponsor-service"><span class="std std-ref">Set up a sponsor service</span></a> - A secure backend service that holds the sponsor wallet’s private key, creates transactions, and signs them on behalf of the sponsor.</p></li>
 <li><p><a class="reference internal" href="create-a-sponsored-transaction.html#create-a-sponsored-transaction"><span class="std std-ref">Create a sponsored transaction</span></a> - A frontend implementation that requests sponsorship from the backend API and submits the transaction through the user’s wallet.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For production use, keeping the sponsor private key on a secure backend is essential. The examples use <code class="docutils literal notranslate"><span class="pre">&#64;concordium/web-sdk</span></code> version 12.0.0. Follow <a class="reference external" href="https://docs.concordium.com/concordium-node-sdk-js/12.0.0/functions/transactions.Transaction.sponsor.html">this link</a> to see the function documentation.</p>
+<p>A full working example of a dApp using sponsored transactions is available on <a class="reference external" href="https://github.com/Concordium/concordium-dapp-examples/tree/main/DevnetSponsoredTx">GitHub</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For production use, keeping the sponsor private key on a secure backend is essential. The examples use <code class="docutils literal notranslate"><span class="pre">&#64;concordium/web-sdk</span></code> version 12.0.0. See the <a class="reference external" href="https://docs.concordium.com/concordium-node-sdk-js/12.0.0/functions/transactions.Transaction.sponsor.html">Transaction.sponsor function documentation</a> for details.</p>
 </div>
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
@@ -630,12 +634,15 @@
 <h2>How sponsored transactions work<a class="headerlink" href="#how-sponsored-transactions-work" title="Link to this heading">#</a></h2>
 <p>In a standard transaction, the sender pays the transaction fee. With sponsored transactions:</p>
 <ol class="arabic simple">
-<li><p>The user connects their wallet and initiates an action (e.g. checkout or manually initiate transfer).</p></li>
-<li><p>The backend creates the transaction with pre-filled details and signs it with the sponsor key.</p></li>
-<li><p>The user reviews and signs to authorize the transfer.</p></li>
-<li><p>The sponsor’s account pays the gas fee when the transaction is submitted.</p></li>
+<li><p>The user connects their wallet and initiates an action (e.g. a token transfer or a checkout).</p></li>
+<li><p>The frontend sends the transfer details to the backend, which builds the full transaction, adds the nonce and expiry, and signs it with the sponsor key.</p></li>
+<li><p>The user reviews and signs the transaction in their wallet to authorize the transfer.</p></li>
+<li><p>The sponsor’s account pays the transaction fee when the transaction is submitted to the chain.</p></li>
 </ol>
 <p>This is useful for onboarding new users who may not have CCD to pay for fees, or for dApps that want to provide a frictionless experience.</p>
+<p>The following diagram shows the full flow between the user’s wallet, frontend, sponsor backend, and the chain:</p>
+<a class="reference internal image-reference" href="../../_images/sponsored-tx-flow.svg"><img alt="Sequence diagram showing the sponsored transaction flow between user wallet, frontend, sponsor backend, and Concordium chain" src="../../_images/sponsored-tx-flow.svg" style="width: 100%;" />
+</a>
 <div class="toctree-wrapper compound">
 </div>
 </section>

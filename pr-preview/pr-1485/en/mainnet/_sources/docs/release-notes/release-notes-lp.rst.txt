@@ -200,15 +200,26 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    1.17.0 - January 21, 2026
+    1.18.0 - February 11, 2026
 
-    Updates:
+    Added:
 
-    - Updated UI across the app with modernized UI components and the latest design system
-    - Added support for verifiable presentations (proofs) from identities and accounts
-    - Fixed inability to change validator pool ID
+    - Support for sponsored transactions
+    - Ability to buy CCD with Transak
+
+    Changed:
+
+    - Current account is selected by default for a WalletConnect session proposal, instead of the one with the highest balance
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.17.0 - January 21, 2026
+
+            Updates:
+
+            - Updated UI across the app with modernized UI components and the latest design system
+            - Added support for verifiable presentations (proofs) from identities and accounts
+            - Fixed inability to change validator pool ID
 
         .. dropdown:: 1.16.1 - December 9, 2025
 
@@ -577,16 +588,23 @@ Wallets
 |bw|
 -------------------------
 
-    Dec 03, 2025
+    Feb 17, 2026
 
-    Version 2.7.0
+    Version 2.8.0
 
-    -   Updated onboarding flow, focusing on streamlining the user experience from landing screens to account setup.
-    -   Updated texts across the wallet to be FCA legally compliant.
-    -   Fixed accounts display under incorrect identities.
-    -   Fixed an issue where CBOR encoded objects passed in register data payloads would crash the application.
+    -   Added support for Sponsored Transactions handling. With new method `sendSponsoredTransaction` in wallet-api.
+    -   Removed preconfigured connection for DevNet, from network options list. Custom connection should be used instead.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.7.0 - Dec 03, 2025
+
+            Version 2.7.0 changes:
+
+            -   Updated onboarding flow, focusing on streamlining the user experience from landing screens to account setup.
+            -   Updated texts across the wallet to be FCA legally compliant.
+            -   Fixed accounts display under incorrect identities.
+            -   Fixed an issue where CBOR encoded objects passed in register data payloads would crash the application.
 
         .. dropdown:: |bw| 2.6.2 - Oct 27, 2025
 

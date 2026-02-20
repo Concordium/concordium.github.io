@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/protocol-level-sponsored-transactions/create-a-sponsored-transaction.11d06eaf-f106-490e-a625-dc4f37e9fa6b.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/protocol-level-sponsored-transactions/create-a-sponsored-transaction.38973f1e-62bb-45da-94fc-4c5fc4525dc3.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/protocol-level-sponsored-transactions/create-a-sponsored-transaction';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/protocol-level-sponsored-transactions/create-a-sponsored-transaction.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -606,59 +606,85 @@
                   
   <section id="create-a-sponsored-transaction">
 <span id="id1"></span><h1>Create a sponsored transaction<a class="headerlink" href="#create-a-sponsored-transaction" title="Link to this heading">#</a></h1>
-<p>The frontend connects to the wallet, requests a sponsored transaction from the backend and sends it back to the user’s wallet for signing.</p>
-<p><strong>Step 1: Import the wallet detection helper</strong></p>
-<p>First, import <code class="docutils literal notranslate"><span class="pre">detectConcordiumProvider</span></code> which, as the name suggests, detects and connects to the Concordium wallet, in our case, the Concordium Wallet for Web:</p>
+<p>The frontend connects to the user’s wallet, sends the transfer details to the sponsor service, and submits the sponsor-signed transaction back to the wallet for the user to review and sign.</p>
+<p><strong>Step 1: Import dependencies</strong></p>
+<p>Import <code class="docutils literal notranslate"><span class="pre">detectConcordiumProvider</span></code> to connect to the Concordium Wallet for Web, <code class="docutils literal notranslate"><span class="pre">Transaction</span></code> to parse the sponsor-signed transaction, and <code class="docutils literal notranslate"><span class="pre">AccountAddress</span></code> to convert address strings into typed objects:</p>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">detectConcordiumProvider</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@concordium/browser-wallet-api-helpers&#39;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AccountAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">Transaction</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@concordium/web-sdk&#39;</span>
 </pre></div>
 </div>
 <p><strong>Step 2: Define your configuration</strong></p>
 <p>Set up the backend URL and token details. The backend URL points to your sponsor service and the token details should match the token you want to transfer:</p>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">BACKEND_URL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;YOUR_BACKEND_URL&gt;&#39;</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">TOKEN_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;YOUR_TOKEN_ID&gt;&#39;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">TOKEN_DECIMALS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;YOUR_TOKEN_DECIMALS&gt;&#39;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">TOKEN_DECIMALS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">YOUR_TOKEN_DECIMALS</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p><strong>Step 3: Create the function to send sponsored transfers</strong></p>
-<p>Create a function that takes the connected account address and the transfer details:</p>
+<p><strong>Step 3: Request a sponsored transaction from the backend</strong></p>
+<p>Create a function that takes the connected account address and transfer details, then requests a sponsored transaction from the <a class="reference internal" href="set-up-a-sponsor-service.html#set-up-a-sponsor-service"><span class="std std-ref">sponsor service</span></a>. The backend will create the transaction, sign it as a sponsor and return the sponsored transaction JSON:</p>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">sendSponsoredTransfer</span><span class="p">(</span>
 <span class="w">    </span><span class="nx">account</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">recipient</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
 <span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">BACKEND_URL</span><span class="si">}</span><span class="sb">/sponsor`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="kt">JSON.stringify</span><span class="p">({</span>
+<span class="w">            </span><span class="nx">sender</span><span class="o">:</span><span class="w"> </span><span class="kt">account</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">recipient</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">amount</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="kt">TOKEN_ID</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">decimals</span><span class="o">:</span><span class="w"> </span><span class="kt">TOKEN_DECIMALS</span><span class="p">,</span>
+<span class="w">        </span><span class="p">}),</span>
+<span class="w">    </span><span class="p">})</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Failed to create sponsored transaction&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">sponsoredTransaction</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Step 4: Request a sponsored transaction from the backend</strong></p>
-<p>Inside the function, request a sponsored transaction from your backend, the sponsor service we built before. It will create the transaction, sign it as a sponsor and return the sponsored transaction JSON:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">BACKEND_URL</span><span class="si">}</span><span class="sb">/sponsor`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">    </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="kt">JSON.stringify</span><span class="p">({</span>
-<span class="w">        </span><span class="nx">sender</span><span class="o">:</span><span class="w"> </span><span class="kt">account</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">recipient</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">amount</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="kt">TOKEN_ID</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">decimals</span><span class="o">:</span><span class="w"> </span><span class="kt">TOKEN_DECIMALS</span><span class="p">,</span>
-<span class="w">    </span><span class="p">}),</span>
-<span class="p">})</span>
-
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Failed to create sponsored transaction&#39;</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">sponsoredTransaction</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
-</pre></div>
-</div>
-<p><strong>Step 5: Send the transaction to the user’s wallet</strong></p>
-<p>Get the wallet provider and send the sponsored transaction. This opens the wallet popup where the user can review the transaction details and sign to authorize and submit to the chain. The transaction hash will be returned, as it’s useful data:</p>
+<p><strong>Step 4: Send the transaction to the user’s wallet</strong></p>
+<p>Parse the JSON back into a signable transaction object, then send it to the wallet. This opens the wallet popup where the user can review the transaction details and sign to authorize and submit to the chain:</p>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">detectConcordiumProvider</span><span class="p">()</span>
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">parsedTransaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Transaction</span><span class="p">.</span><span class="nx">signableFromJSON</span><span class="p">(</span><span class="nx">sponsoredTransaction</span><span class="p">)</span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">txHash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">provider</span><span class="p">.</span><span class="nx">sendSponsoredTransaction</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span><span class="w"> </span><span class="nx">parsedTransaction</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">txHash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">provider</span><span class="p">.</span><span class="nx">sendSponsoredTransaction</span><span class="p">(</span>
+<span class="w">        </span><span class="nx">AccountAddress</span><span class="p">.</span><span class="nx">fromBase58</span><span class="p">(</span><span class="nx">account</span><span class="p">),</span>
+<span class="w">        </span><span class="nx">parsedTransaction</span>
+<span class="w">    </span><span class="p">)</span>
 
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">txHash</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<section id="usage-example">
+<h2>Usage example<a class="headerlink" href="#usage-example" title="Link to this heading">#</a></h2>
+<p>Call <code class="docutils literal notranslate"><span class="pre">sendSponsoredTransfer</span></code> after the user connects their wallet. The recipient and amount would typically come from a form or your application logic:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">handleTransfer</span><span class="p">(</span><span class="nx">recipientAddress</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">transferAmount</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">detectConcordiumProvider</span><span class="p">()</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">provider</span><span class="p">.</span><span class="nx">connect</span><span class="p">()</span>
+
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">txHash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">sendSponsoredTransfer</span><span class="p">(</span>
+<span class="w">            </span><span class="nx">account</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">recipientAddress</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">transferAmount</span>
+<span class="w">        </span><span class="p">)</span>
+
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Transaction submitted:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">txHash</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Transfer failed:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A full working example using <code class="docutils literal notranslate"><span class="pre">&#64;concordium/react-components</span></code> for wallet management and <code class="docutils literal notranslate"><span class="pre">WalletConnect</span></code> support is available on <a class="reference external" href="https://github.com/Concordium/concordium-dapp-examples/tree/main/DevnetSponsoredTx">GitHub</a>.</p>
+</div>
+</section>
 <section id="security-considerations">
 <h2>Security considerations<a class="headerlink" href="#security-considerations" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -754,6 +780,7 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-example">Usage example</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#security-considerations">Security considerations</a></li>
 </ul>
   </nav></div>

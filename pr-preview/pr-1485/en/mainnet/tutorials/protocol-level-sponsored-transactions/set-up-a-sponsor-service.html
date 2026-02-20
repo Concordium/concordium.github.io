@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/protocol-level-sponsored-transactions/set-up-a-sponsor-service.d4fe0d34-a098-4a20-bd8d-aa51fa9f202a.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/protocol-level-sponsored-transactions/set-up-a-sponsor-service.0b7b4d31-7daf-4250-ae30-404fa8afa3bb.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/protocol-level-sponsored-transactions/set-up-a-sponsor-service';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/protocol-level-sponsored-transactions/set-up-a-sponsor-service.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -607,8 +607,13 @@
   <section id="set-up-a-sponsor-service">
 <span id="id1"></span><h1>Set up a sponsor service<a class="headerlink" href="#set-up-a-sponsor-service" title="Link to this heading">#</a></h1>
 <p>The sponsor service runs on a secure backend and holds the sponsor wallet’s private key. It creates transactions and signs them on behalf of the sponsor.</p>
-<p><strong>Step 1: Import the required modules</strong></p>
-<p>The <code class="docutils literal notranslate"><span class="pre">&#64;concordium/web-sdk</span></code> provides transaction building and signing utilities, while the nodejs subpackage provides the gRPC client for communicating with Concordium nodes:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A full working example of a dApp using sponsored transactions is available on <a class="reference external" href="https://github.com/Concordium/concordium-dapp-examples/tree/main/DevnetSponsoredTx">GitHub</a>.</p>
+</div>
+<section id="sponsor-service-code">
+<h2>Sponsor service code<a class="headerlink" href="#sponsor-service-code" title="Link to this heading">#</a></h2>
+<p>The following code is ready to copy into your project — just replace <code class="docutils literal notranslate"><span class="pre">&lt;GRPC_HOST&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;GRPC_PORT&gt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&lt;PATH_TO_SPONSOR_WALLET&gt;</span></code> with your own values. Read the <a class="reference internal" href="#sponsor-walkthrough"><span class="std std-ref">walkthrough below</span></a> to understand each step before adapting it for your use case. This example focuses on clarity rather than production hardening, so you will want additional input validation, error handling, rate limiting, and logging before deploying.</p>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">AccountAddress</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">TransactionExpiry</span><span class="p">,</span>
@@ -625,29 +630,21 @@
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@concordium/web-sdk/nodejs&#39;</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">credentials</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@grpc/grpc-js&#39;</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">readFileSync</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;node:fs&#39;</span>
-</pre></div>
-</div>
-<p><strong>Step 2: Initialize the gRPC client</strong></p>
-<p>Establish the connection to a Concordium node, needed to query the chain and submit transactions:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Initialize gRPC client</span>
+
+<span class="c1">// Initialize gRPC client</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">grpcClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="p">(</span>
 <span class="w">    </span><span class="s1">&#39;&lt;GRPC_HOST&gt;&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="o">&lt;</span><span class="nx">GRPC_PORT</span><span class="o">&gt;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">credentials</span><span class="p">.</span><span class="nx">createSsl</span><span class="p">()</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Step 3: Load the sponsor wallet</strong></p>
-<p>Load the sponsor wallet from the exported wallet.export file. The <code class="docutils literal notranslate"><span class="pre">parseWallet</span></code> function reads the wallet export format, and <code class="docutils literal notranslate"><span class="pre">buildAccountSigner</span></code> creates the signer that can sign transactions on behalf of this account:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">walletFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;&lt;PATH_TO_SPONSOR_WALLET&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+
+<span class="c1">// Load sponsor wallet</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">walletFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;&lt;PATH_TO_SPONSOR_WALLET&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">walletExport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parseWallet</span><span class="p">(</span><span class="nx">walletFile</span><span class="p">)</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">sponsorAccount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">AccountAddress</span><span class="p">.</span><span class="nx">fromBase58</span><span class="p">(</span><span class="nx">walletExport</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">address</span><span class="p">)</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">sponsorSigner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">buildAccountSigner</span><span class="p">(</span><span class="nx">walletExport</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Step 4: Create the main sponsoring function</strong></p>
-<p>Create the main sponsoring function. The sender is the user’s account (who will authorize the transfer), while the recipient, amount and token details define what will be transferred:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">sponsorTokenTransfer</span><span class="p">(</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">sponsorTokenTransfer</span><span class="p">(</span>
 <span class="w">    </span><span class="nx">sender</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">recipient</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
@@ -655,53 +652,42 @@
 <span class="w">    </span><span class="nx">decimals</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
 <span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">senderAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">AccountAddress</span><span class="p">.</span><span class="nx">fromBase58</span><span class="p">(</span><span class="nx">sender</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Step 5: Build the token transfer operations</strong></p>
-<p>Inside the function, build the Protocol Level Token transfer operations. This creates an array of operations that describe what the transaction should do, in this case it will transfer tokens to a recipient with an optional memo:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">ops</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span>
-<span class="w">    </span><span class="p">[</span><span class="nx">TokenOperationType</span><span class="p">.</span><span class="nx">Transfer</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="kt">TokenAmount.fromDecimal</span><span class="p">(</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">amount</span><span class="p">),</span><span class="w"> </span><span class="nx">decimals</span><span class="p">),</span>
-<span class="w">        </span><span class="nx">recipient</span><span class="o">:</span><span class="w"> </span><span class="kt">CborAccountAddress.fromAccountAddress</span><span class="p">(</span>
-<span class="w">            </span><span class="nx">AccountAddress</span><span class="p">.</span><span class="nx">fromBase58</span><span class="p">(</span><span class="nx">recipient</span><span class="p">)</span>
-<span class="w">        </span><span class="p">),</span>
-<span class="w">        </span><span class="nx">memo</span><span class="o">:</span><span class="w"> </span><span class="kt">CborMemo.fromString</span><span class="p">(</span><span class="s1">&#39;Sponsored transfer&#39;</span><span class="p">),</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="p">}]</span>
-</pre></div>
-</div>
-<p><strong>Step 6: Create the base transaction and get the sender’s nonce</strong></p>
-<p>Then create the base transaction using <code class="docutils literal notranslate"><span class="pre">Transaction.tokenUpdate</span></code>. This wraps the operations into a token update transaction that targets the specified token. Now query the chain for the sender’s next nonce. The nonce increments with each transaction to prevent replay attacks:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">transaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Transaction</span><span class="p">.</span><span class="nx">tokenUpdate</span><span class="p">({</span>
-<span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="kt">TokenId.fromString</span><span class="p">(</span><span class="nx">tokenId</span><span class="p">),</span>
-<span class="w">    </span><span class="nx">operations</span><span class="o">:</span><span class="w"> </span><span class="kt">Cbor.encode</span><span class="p">(</span><span class="nx">ops</span><span class="p">),</span>
-<span class="p">})</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">nonce</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">grpcClient</span><span class="p">.</span><span class="nx">getNextAccountNonce</span><span class="p">(</span><span class="nx">senderAddress</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Step 7: Build the sponsorable transaction</strong></p>
-<p>Add the sender’s metadata (address, nonce, expiry) and designate the sponsor account that will pay the fees. The <code class="docutils literal notranslate"><span class="pre">build()</span></code> call produces a transaction ready for sponsorship:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Transaction</span><span class="p">.</span><span class="nx">builderFromJSON</span><span class="p">(</span><span class="nx">Transaction</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">(</span><span class="nx">transaction</span><span class="p">))</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">sponsorable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">builder</span>
-<span class="w">    </span><span class="p">.</span><span class="nx">addMetadata</span><span class="p">({</span>
-<span class="w">        </span><span class="nx">sender</span><span class="o">:</span><span class="w"> </span><span class="kt">senderAddress</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">nonce</span><span class="o">:</span><span class="w"> </span><span class="kt">nonce.nonce</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">expiry</span><span class="o">:</span><span class="w"> </span><span class="kt">TransactionExpiry.futureMinutes</span><span class="p">(</span><span class="mf">5</span><span class="p">),</span>
+<span class="w">    </span><span class="c1">// Build token transfer operations</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">ops</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">        </span><span class="p">[</span><span class="nx">TokenOperationType</span><span class="p">.</span><span class="nx">Transfer</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="kt">TokenAmount.fromDecimal</span><span class="p">(</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">amount</span><span class="p">),</span><span class="w"> </span><span class="nx">decimals</span><span class="p">),</span>
+<span class="w">            </span><span class="nx">recipient</span><span class="o">:</span><span class="w"> </span><span class="kt">CborAccountAddress.fromAccountAddress</span><span class="p">(</span>
+<span class="w">                </span><span class="nx">AccountAddress</span><span class="p">.</span><span class="nx">fromBase58</span><span class="p">(</span><span class="nx">recipient</span><span class="p">)</span>
+<span class="w">            </span><span class="p">),</span>
+<span class="w">            </span><span class="nx">memo</span><span class="o">:</span><span class="w"> </span><span class="kt">CborMemo.fromString</span><span class="p">(</span><span class="s1">&#39;Sponsored transfer&#39;</span><span class="p">),</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">}]</span>
+
+<span class="w">    </span><span class="c1">// Create the transaction builder and get the sender&#39;s nonce</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Transaction</span><span class="p">.</span><span class="nx">tokenUpdate</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="kt">TokenId.fromString</span><span class="p">(</span><span class="nx">tokenId</span><span class="p">),</span>
+<span class="w">        </span><span class="nx">operations</span><span class="o">:</span><span class="w"> </span><span class="kt">Cbor.encode</span><span class="p">(</span><span class="nx">ops</span><span class="p">),</span>
 <span class="w">    </span><span class="p">})</span>
-<span class="w">    </span><span class="p">.</span><span class="nx">addSponsor</span><span class="p">(</span><span class="nx">sponsorAccount</span><span class="p">)</span>
-<span class="w">    </span><span class="p">.</span><span class="nx">build</span><span class="p">()</span>
-</pre></div>
-</div>
-<p><strong>Step 8: Sign the transaction as the sponsor</strong></p>
-<p>Add the sponsor’s cryptographic signature, committing them to pay the transaction fees:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">sponsored</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Transaction</span><span class="p">.</span><span class="nx">sponsor</span><span class="p">(</span><span class="nx">sponsorable</span><span class="p">,</span><span class="w"> </span><span class="nx">sponsorSigner</span><span class="p">)</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">sponsoredJSON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Transaction</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">(</span><span class="nx">sponsored</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Step 9: Serialize and return the transaction</strong></p>
-<p>Convert BigInt values to numbers or strings. JavaScript’s native <code class="docutils literal notranslate"><span class="pre">JSON.stringify</span></code> cannot serialize BigInt, so we handle small values as numbers and large values as strings to avoid precision loss:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">serialized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">nonce</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">grpcClient</span><span class="p">.</span><span class="nx">getNextAccountNonce</span><span class="p">(</span><span class="nx">senderAddress</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">// Build the sponsorable transaction</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">sponsorable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">builder</span>
+<span class="w">        </span><span class="p">.</span><span class="nx">addMetadata</span><span class="p">({</span>
+<span class="w">            </span><span class="nx">sender</span><span class="o">:</span><span class="w"> </span><span class="kt">senderAddress</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">nonce</span><span class="o">:</span><span class="w"> </span><span class="kt">nonce.nonce</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">expiry</span><span class="o">:</span><span class="w"> </span><span class="kt">TransactionExpiry.futureMinutes</span><span class="p">(</span><span class="mf">5</span><span class="p">),</span>
+<span class="w">        </span><span class="p">})</span>
+<span class="w">        </span><span class="p">.</span><span class="nx">addSponsor</span><span class="p">(</span><span class="nx">sponsorAccount</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="nx">build</span><span class="p">()</span>
+
+<span class="w">    </span><span class="c1">// Sign as sponsor</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">sponsored</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Transaction</span><span class="p">.</span><span class="nx">sponsor</span><span class="p">(</span><span class="nx">sponsorable</span><span class="p">,</span><span class="w"> </span><span class="nx">sponsorSigner</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">sponsoredJSON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Transaction</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">(</span><span class="nx">sponsored</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">// Serialize BigInt values for JSON transport</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">serialized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span>
 <span class="w">        </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">sponsoredJSON</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;bigint&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">value</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nb">Number</span><span class="p">.</span><span class="nx">MAX_SAFE_INTEGER</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nb">Number</span><span class="p">.</span><span class="nx">MIN_SAFE_INTEGER</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -717,6 +703,89 @@
 <span class="p">}</span>
 </pre></div>
 </div>
+</section>
+<section id="code-walkthrough">
+<span id="sponsor-walkthrough"></span><h2>Code walkthrough<a class="headerlink" href="#code-walkthrough" title="Link to this heading">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">gRPC client and wallet setup</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">ConcordiumGRPCNodeClient</span></code> connects to a Concordium node, which is needed to query on-chain data such as account nonces.</p>
+<p class="sd-card-text">The sponsor wallet is loaded from an exported <code class="docutils literal notranslate"><span class="pre">wallet.export</span></code> file. <code class="docutils literal notranslate"><span class="pre">parseWallet</span></code> reads the wallet export format, and <code class="docutils literal notranslate"><span class="pre">buildAccountSigner</span></code> creates a signer that can produce cryptographic signatures on behalf of the sponsor account.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Building token transfer operations</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">ops</span></code> array describes what the transaction does. Each operation uses <code class="docutils literal notranslate"><span class="pre">TokenOperationType.Transfer</span></code> to move tokens to a recipient. <code class="docutils literal notranslate"><span class="pre">TokenAmount.fromDecimal</span></code> converts a human-readable amount (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;10.5&quot;</span></code>) into the on-chain representation using the token’s decimal places. An optional <code class="docutils literal notranslate"><span class="pre">CborMemo</span></code> can be attached to annotate the transfer.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Creating the transaction builder and nonce</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Transaction.tokenUpdate</span></code> returns a transaction builder targeting a specific token by its ID. The builder pattern allows you to chain metadata and sponsorship before finalizing the transaction.</p>
+<p class="sd-card-text">The sender’s next nonce is fetched from the chain via <code class="docutils literal notranslate"><span class="pre">getNextAccountNonce</span></code>. The nonce increments with each transaction and prevents replay attacks.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Building the sponsorable transaction</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The builder’s <code class="docutils literal notranslate"><span class="pre">addMetadata</span></code> method sets the sender’s address, nonce, and expiry. <code class="docutils literal notranslate"><span class="pre">addSponsor(sponsorAccount)</span></code> designates the sponsor as the fee payer instead of the sender. The <code class="docutils literal notranslate"><span class="pre">build()</span></code> call produces a transaction ready for sponsorship.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Signing and serialization</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Transaction.sponsor</span></code> adds the sponsor’s cryptographic signature, committing them to pay the fees. The result is converted to JSON via <code class="docutils literal notranslate"><span class="pre">Transaction.toJSON</span></code>.</p>
+<p class="sd-card-text">JavaScript’s native <code class="docutils literal notranslate"><span class="pre">JSON.stringify</span></code> cannot serialize <code class="docutils literal notranslate"><span class="pre">BigInt</span></code> values, so a custom replacer converts small values to numbers and large values to strings to avoid precision loss.</p>
+</div>
+</details></section>
+<section id="serve-as-an-api-endpoint">
+<h2>Serve as an API endpoint<a class="headerlink" href="#serve-as-an-api-endpoint" title="Link to this heading">#</a></h2>
+<p>To expose <code class="docutils literal notranslate"><span class="pre">sponsorTokenTransfer</span></code> as a POST endpoint, create a file called <code class="docutils literal notranslate"><span class="pre">server.ts</span></code>:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;express&#39;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">cors</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;cors&#39;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">sponsorTokenTransfer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./sponsor&#39;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">()</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">())</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/sponsor&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">sender</span><span class="p">,</span><span class="w"> </span><span class="nx">recipient</span><span class="p">,</span><span class="w"> </span><span class="nx">amount</span><span class="p">,</span><span class="w"> </span><span class="nx">tokenId</span><span class="p">,</span><span class="w"> </span><span class="nx">decimals</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">sender</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">recipient</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">amount</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">tokenId</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">decimals</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">400</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Missing required fields&#39;</span><span class="w"> </span><span class="p">})</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">sponsoredTransaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">sponsorTokenTransfer</span><span class="p">(</span>
+<span class="w">            </span><span class="nx">sender</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">recipient</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">amount</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">tokenId</span><span class="p">,</span>
+<span class="w">            </span><span class="nb">Number</span><span class="p">(</span><span class="nx">decimals</span><span class="p">)</span>
+<span class="w">        </span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">sponsoredTransaction</span><span class="w"> </span><span class="p">})</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Sponsor error:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Failed to sponsor transaction&#39;</span><span class="w"> </span><span class="p">})</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">})</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">PORT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">3000</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Sponsor service running on port </span><span class="si">${</span><span class="nx">PORT</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>Install Express, CORS, and their types:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>npm<span class="w"> </span>install<span class="w"> </span>express<span class="w"> </span>cors
+<span class="gp">$ </span>npm<span class="w"> </span>install<span class="w"> </span>-D<span class="w"> </span>@types/express<span class="w"> </span>@types/cors
+</pre></div>
+</div>
+<p>Run the server:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>npx<span class="w"> </span>ts-node<span class="w"> </span>server.ts
+</pre></div>
+</div>
+<p>The frontend (covered in <a class="reference internal" href="create-a-sponsored-transaction.html#create-a-sponsored-transaction"><span class="std std-ref">Create a sponsored transaction</span></a>) calls <code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/sponsor</span></code> with the transfer details and receives back the sponsor-signed transaction for the user’s wallet to co-sign and submit.</p>
+</section>
 </section>
 
 
@@ -793,6 +862,20 @@
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sponsor-service-code">Sponsor service code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-walkthrough">Code walkthrough</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#serve-as-an-api-endpoint">Serve as an API endpoint</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
 
