@@ -65,7 +65,8 @@ Advanced Concordium Features
 
 .. container:: tutorial-section tutorial-section-yellow
 
-   * :ref:`Sponsored Transactions <sponsoredTransactions>` - Handle wallet signatures and backend processing
+   * :ref:`Sponsored Transactions <protocol-level-sponsored-transactions>` - Create transactions sponsored by a third-party
+   * :ref:`Smart Contract Sponsored Transactions <sponsoredTransactions>` - Handle wallet signatures and backend processing
    * :ref:`Smart Contract Upgrade <intro-smart-contract-upgrade>` - Deploy and upgrade contract logic with state migration
 
 Additional Resources
@@ -96,7 +97,8 @@ Additional Resources
    fungible-tokens/index
    Concordium low-code NFT framework <./low-code-nft-marketplace/introduction.rst>
    eSealing <./eSealing/index>
-   Sponsored Transactions <./sponsoredTransactions/index>
+   Sponsored transactions <./protocol-level-sponsored-transactions/index>
+   Smart contract sponsored transactions <./sponsoredTransactions/index>
    Smart Contract Upgrade <./smartContractUpgrade/index>
 
 .. toctree::
