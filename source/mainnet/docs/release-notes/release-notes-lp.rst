@@ -588,14 +588,21 @@ Wallets
 |bw|
 -------------------------
 
-    Feb 17, 2026
+    Feb ??, 2026
 
-    Version 2.8.0
+    Version 2.9.0
 
-    -   Added support for Sponsored Transactions handling. With new method `sendSponsoredTransaction` in wallet-api.
-    -   Removed preconfigured connection for DevNet, from network options list. Custom connection should be used instead.
+    -   Added support for Auditable ID proof, in the same UI used for the current proofs.
+    -   Added new on-ramp provider `Transak`
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.8.0 - Feb 17, 2026
+
+            Version 2.8.0 changes:
+
+            -   Added support for Sponsored Transactions handling. With new method `sendSponsoredTransaction` in wallet-api.
+            -   Removed preconfigured connection for DevNet, from network options list. Custom connection should be used instead.
 
         .. dropdown:: |bw| 2.7.0 - Dec 03, 2025
 
