@@ -17,6 +17,7 @@ pydata-sphinx-theme = "*"
 sphinx-sitemap = "*"
 sphinxcontrib-video = "*"
 sphinx-selective-exclude = "*"
+sphinxcontrib-mermaid = "*"
 
 [dev-packages]
 doc8 = "*"
