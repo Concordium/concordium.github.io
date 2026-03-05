@@ -239,4 +239,24 @@ For validators, delegators and passive delegators
 
     Delegation to a pool may provide more frequent rewards compared to becoming your own validator, albeit, the actual rewards over time can be expected to be smaller.
 
+Identity expiry
+---------------
+
+.. dropdown:: What happens when my identity expires?
+
+    After your identity expires, you will not be able to create new accounts or credentials from it.
+    However, any accounts you have already created on the blockchain will continue to work normally —
+    expiry does not affect existing accounts or their ability to send transactions.
+
+    If you want to create new accounts in the future, you will need to obtain a new identity by going
+    through the identity verification process again. Note that renewal of existing identities may be
+    supported in the future, but no details are available at this time.
+
+.. dropdown:: What happens if the ID document I used for verification (e.g. my driver's licence) expires before my identity does?
+
+    Nothing happens automatically. Your Concordium identity is valid for as long as its stated
+    expiry date, regardless of whether the underlying document (such as a passport or driver's
+    licence) has since expired. You can continue to use your identity to create accounts until the
+    identity itself expires.
+
 .. _CCDScan: https://ccdscan.io/
