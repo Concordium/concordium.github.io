@@ -100,6 +100,7 @@ Additional Resources
    Sponsored transactions <./protocol-level-sponsored-transactions/index>
    Smart contract sponsored transactions <./sponsoredTransactions/index>
    Smart Contract Upgrade <./smartContractUpgrade/index>
+   Verify & Access <./verify-access/verify-access>
 
 .. toctree::
    :maxdepth: 2
