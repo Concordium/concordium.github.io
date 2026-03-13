@@ -110,10 +110,10 @@ Create ``src/lib/config.ts``:
 
 **What this file does:**
 
-- ✅ Defines which identity providers we trust
-- ✅ Sets which blockchain network to use (testnet/mainnet)
-- ✅ Configures the minimum age requirement
-- ✅ Calculates date boundaries for age verification
+- Defines which identity providers we trust
+- Sets which blockchain network to use (testnet/mainnet)
+- Configures the minimum age requirement
+- Calculates date boundaries for age verification
 
 Create Verifier Service Client
 -------------------------------
@@ -327,10 +327,10 @@ Create ``src/lib/verifier-service.ts``:
 
 **What this file does:**
 
-- ✅ Creates proof requests ("prove you're 18+")
-- ✅ Sends requests to Docker verifier service
-- ✅ Verifies proofs submitted by users
-- ✅ Handles all communication with the blockchain (via verifier service)
+- Creates proof requests ("prove you're 18+")
+- Sends requests to Docker verifier service
+- Verifies proofs submitted by users
+- Handles all communication with the blockchain (via verifier service)
 
 **Key Concepts:**
 
@@ -673,9 +673,9 @@ Create API Routes
 
 **What these routes do:**
 
-- ✅ ``/create`` - Creates proof requests when wallet connects
-- ✅ ``/verify`` - Validates proofs submitted by users
-- ✅ Both routes are server-side (secure, can't be bypassed by users)
+- ``/create`` - Creates proof requests when wallet connects
+- ``/verify`` - Validates proofs submitted by users
+- Both routes are server-side (secure, can't be bypassed by users)
 
 Create UI Component
 -------------------
@@ -733,11 +733,11 @@ Create ``src/components/AgeGate.tsx``:
 
 **What this component does:**
 
-- ✅ Blocks content until user is verified
-- ✅ Shows "Verify Age" button
-- ✅ Updates button text based on state (idle/connecting/verifying)
-- ✅ Displays errors if verification fails
-- ✅ Disappears when verification succeeds
+- Blocks content until user is verified
+- Shows "Verify Age" button
+- Updates button text based on state (idle/connecting/verifying)
+- Displays errors if verification fails
+- Disappears when verification succeeds
 
 Use in Your Page
 ----------------
@@ -760,4 +760,4 @@ In ``src/app/page.tsx``:
      );
    }
 
-✅ **Checkpoint:** UI integrated, verification flow ready
+**Checkpoint:** UI integrated, verification flow ready

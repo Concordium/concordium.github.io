@@ -50,10 +50,10 @@ Tutorial Code Disclaimer
 What this tutorial provides
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- ✅ Correct cryptographic implementation (zero-knowledge proofs work properly)
-- ✅ Clean architecture (separation of concerns, reusable components)
-- ✅ Educational comments (learn how everything works)
-- ✅ Working integration (fully functional age verification)
+- Correct cryptographic implementation (zero-knowledge proofs work properly)
+- Clean architecture (separation of concerns, reusable components)
+- Educational comments (learn how everything works)
+- Working integration (fully functional age verification)
 
 **Use this as a foundation to learn the concepts, then harden it for production use.**
 
