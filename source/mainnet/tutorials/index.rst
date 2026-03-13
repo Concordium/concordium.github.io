@@ -78,7 +78,7 @@ Additional Resources
    * :ref:`Smart Contract Best Practices <best-practices>` - Recommended practices for production-ready development
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :hidden:
    :caption: Tutorials
 
@@ -98,7 +98,7 @@ Additional Resources
    eSealing <./eSealing/index>
    Sponsored Transactions <./sponsoredTransactions/index>
    Smart Contract Upgrade <./smartContractUpgrade/index>
-   Verify & Access <./verify-access/verify-access>
+   verify-access/index
 
 .. toctree::
    :maxdepth: 2
