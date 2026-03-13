@@ -79,7 +79,7 @@ Additional Resources
    * :ref:`Smart Contract Best Practices <best-practices>` - Recommended practices for production-ready development
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :hidden:
    :caption: Tutorials
 
@@ -100,6 +100,7 @@ Additional Resources
    Sponsored transactions <./protocol-level-sponsored-transactions/index>
    Smart contract sponsored transactions <./sponsoredTransactions/index>
    Smart Contract Upgrade <./smartContractUpgrade/index>
+   Verify & Access <verify-access/index>
 
 .. toctree::
    :maxdepth: 2
