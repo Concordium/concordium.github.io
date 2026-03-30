@@ -200,18 +200,34 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    1.18.0 - February 11, 2026
+    1.19.0 - March 27, 2026
 
     Added:
 
-    - Support for sponsored transactions
-    - Ability to buy CCD with Transak
+    - Support for sponsored Smart contract updates
+    - Support for sponsored delegation configuration transaction
+    - Support for switching networks in the Developer mode
 
-    Changed:
+    Fixed:
 
-    - Current account is selected by default for a WalletConnect session proposal, instead of the one with the highest balance
+    - Not responding to WalletConnect requests after switching wallets
+
+    Removed:
+
+    - Unmaintainable Spaceseven service
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.18.0 - February 11, 2026
+
+            Added:
+
+            - Support for sponsored transactions
+            - Ability to buy CCD with Transak
+
+            Changed:
+
+            - Current account is selected by default for a WalletConnect session proposal, instead of the one with the highest balance
 
         .. dropdown:: 1.17.0 - January 21, 2026
 
