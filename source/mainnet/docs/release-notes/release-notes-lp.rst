@@ -604,14 +604,24 @@ Wallets
 |bw|
 -------------------------
 
-    Feb 26, 2026
+    Mar 30, 2026
 
-    Version 2.9.0
+    Version 2.10.0
 
-    -   Added support for Auditable ID proof, in the same UI used for the current proofs.
-    -   Added new on-ramp provider `Transak`
+    -   Added support for two additional types of Sponsored Transactions, `Configure Delegation` and `Update Smart Contract Instance`.
+    -   Added Allowlist config at account page as part of feature parity with Old UI
+    -   Added export activity button to Transaction Log as part of feature parity with Old UI
+    -   Added banner at Old UI with info that in a month, Old UI will be decommissioned
+    -   Updated `RpcError` message parsing, to make it more readable
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.9.0 - Feb 26, 2026
+
+            Version 2.9.0 changes:
+
+            -   Added support for Auditable ID proof, in the same UI used for the current proofs.
+            -   Added new on-ramp provider `Transak`
 
         .. dropdown:: |bw| 2.8.0 - Feb 17, 2026
 
