@@ -55,7 +55,8 @@ extensions = [
     "sphinxcontrib.video",
     'sphinx_selective_exclude.eager_only',
     'sphinx_selective_exclude.search_auto_exclude', 
-    'sphinx_selective_exclude.modindex_exclude'
+    'sphinx_selective_exclude.modindex_exclude',
+    'sphinxcontrib.mermaid'
 ]
 
 # sphinx-prompt must be the first of these two.
