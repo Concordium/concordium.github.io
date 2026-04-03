@@ -9,7 +9,7 @@ The easiest way to run a local Concordium chain is using the `Concordium Local S
 What's included
 ===============
 
-- **P9 Node** with GRPC on port 20100
+- **P10 Node** with GRPC on port 20100
 - **Test Identity Provider** for wallet ID issuance
 - **Wallet Proxy** on port 7013
 - **CCDScan Explorer** on port 7016
