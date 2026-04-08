@@ -56,7 +56,7 @@ Delegation and participation
 
 The consensus mechanism includes a sophisticated delegation system that allows CCD holders to participate in staking without running a validator node. Through :term:`delegation`, users can add their stake to a validator's pool, increasing the validator's block production probability while sharing in the rewards.
 
-`Learn more about delegation and how it works on Concordium here. <concepts-delegation.html>`_
+:ref:`Learn more about delegation and how it works on Concordium here. <delegation-concept>`
 
 
 The role of identity
@@ -64,7 +64,7 @@ The role of identity
 
 A unique aspect of Concordium's consensus mechanism is its integration with the identity layer. While consensus operates pseudonymously, the underlying identity system ensures that validators can be held accountable if necessary, providing an additional security guarantee without compromising the network's decentralized nature.
 
-`Learn more about identities here. <identity.html>`_
+:ref:`Learn more about identities here. <reference-identity>`
 
 .. toctree::
    :hidden:
@@ -73,4 +73,3 @@ A unique aspect of Concordium's consensus mechanism is its integration with the 
    concepts-baker
    time-concepts
    validator-suspension
-

@@ -1,4 +1,4 @@
-.. include:: ../../variables.rst
+.. include:: ../variables.rst
 
 .. _reference-concordium-protocol:
 
@@ -44,7 +44,7 @@ Execution layer
 ---------------
 The execution layer allows users to interact with the platform through its API, processing transactions and running :term:`smart contracts<Smart contract>`. It uses :term:`WebAssembly` as its foundation, allowing developers to write smart contracts in Rust.
 
-.. image:: ../protocol/images/protocol-architecture.png
+.. image:: ../docs/protocol/images/protocol-architecture.png
    :alt: diagram of Concordium protocol architecture
 
 Economics and validation

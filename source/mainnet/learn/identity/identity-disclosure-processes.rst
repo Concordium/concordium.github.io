@@ -29,7 +29,7 @@ Legal scenario 1: Investigation of on-chain activity
 Once the identity has been revealed, it is possible to find additional accounts that are linked to it. This can be done via a full person to accounts disclosure scenario (detailed below) or via encrypted mapping information stored in the IDP. Both are dependent on a court order.
 
 
-.. image:: ./images/legal-scenario1.png
+.. image:: ../../docs/protocol/images/legal-scenario1.png
    :alt: graphic drawing showing the process for identity disclosure from account to person
 
 
@@ -50,6 +50,5 @@ Legal scenario 2: Investigation of person of interest
 
 7. The Authority takes appropriate action based on the retrieved account and transaction information.
 
-.. image:: ./images/legal-scenario2.png
+.. image:: ../../docs/protocol/images/legal-scenario2.png
    :alt: graphic drawing showing the process for identity disclosure from person to account
-

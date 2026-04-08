@@ -19,7 +19,7 @@ The subtree of a single Identity Credential consists of:
 * Multiple subtrees that generate cryptographic material for the ID object itself
 
 
-.. image:: ../protocol/images/key-derivation-linking-key.png
+.. image:: ../../docs/protocol/images/key-derivation-linking-key.png
    :alt: diagram of key derivation
 
 
@@ -38,7 +38,7 @@ Subtree 0' is used to derive signature keys for accounts related to the ID objec
 Holder Identifier
 -----------------
 
-Subtree 2' defines the holder identifier (essentially a public/private key pair) which is used as a user identifier in Concordium's :doc:`Identity Disclosure <identity-disclosure-processes>` scheme. Technically, the public identifier IDcredPub is an element in G1 of BLS12-381 and the secret identifier IDcredSec is a field element in the corresponding finite field.
+Subtree 2' defines the holder identifier (essentially a public/private key pair) which is used as a user identifier in Concordium's :doc:`Identity Disclosure <../identity/identity-disclosure-processes>` scheme. Technically, the public identifier IDcredPub is an element in G1 of BLS12-381 and the secret identifier IDcredSec is a field element in the corresponding finite field.
 
 Each account created with the given identity contains the public identifier in encrypted form (technically, secret shared where each share is ElGamal encrypted under the public key of a :term:`Privacy Guardian (PG)`. Generating the encryption requires knowledge of the secret identifier. The correctness of this encryption is proven in zero-knowledge as part of a larger  :term:`Zero-knowledge proof` for the account opening. The proof is a combination of :term:`Bulletproofs<Bulletproof>` and :term:`Sigma protocols` over :term:`BLS12-381`. For generating the zero-knowledge proof, one needs the secret identifier.
 
@@ -82,12 +82,12 @@ Concordium IDApp key derivation
 
 The Concordium IDApp uses the same key derivation structure for:
 
-* Holder Identifier (subtree 2’)
-* Linking key (subtree 3’)
-* Blind signature randomness (subtree 4’)
-* Pedersen commitment randomness (subtree 5’)
+* Holder Identifier (subtree 2')
+* Linking key (subtree 3')
+* Blind signature randomness (subtree 4')
+* Pedersen commitment randomness (subtree 5')
 
-The IDApp does not derive account keys (subtree 0’). Account keys are produced by the account wallets using their own key generation methods.
+The IDApp does not derive account keys (subtree 0'). Account keys are produced by the account wallets using their own key generation methods.
 For third-party wallet implementations, we recommend using the derivation path: m/44'/919'/0'/0'/accountIndex'.
 
 Legacy derivation tree
@@ -99,6 +99,5 @@ Legacy derivation tree
 
 Some older wallets use a legacy derivation tree. The only differences between this and the derivation tree described above are the prefix m/1105'/0/0'/0'/ID', which omits the Identity Provider index, and the use of different indices for the key subtrees in the Identity Credential subtree. For example, in the legacy tree the account signature keys are located in subtree 2' instead of 0'. It is important to note that the split of keys into subtrees is equivalent to those in the above tree.
 
-.. image:: ../protocol/images/legacy-key-derivation-linking-key.png
+.. image:: ../../docs/protocol/images/legacy-key-derivation-linking-key.png
    :alt: diagram of key derivation
-

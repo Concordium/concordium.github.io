@@ -57,4 +57,3 @@ How to become a delegator
 You can :ref:`delegate CCDs<add-delegation>` by creating an account in any Concordium wallet.  If you plan to delegate to a specific validator pool, it is recommended that you research the various validators and their performance using :ref:`CCDScan<ccd-scan>` before making your decision.
 
 See the :ref:`Delegation and validationcon FAQ<delegation-faq-old>` for answers to the most frequently asked questions.
-

@@ -81,17 +81,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
 
    The minimum supported rust version is currently version ``1.73``
 
-.. toctree::
-   :caption: Concordium Protocol
-   :hidden:
-
-   What is the Concordium Protocol <protocol/concordium-protocol>
-   Identity <protocol/identity>
-   Accounts <protocol/manage-accounts>
-   Transactions <protocol/transactions>
-   Consensus mechanisms <protocol/consensus-mechanisms>
-   Tokenomics <protocol/tokenomics>
-   Staking <protocol/staking>
 
 .. toctree::
    :caption: Concordium ID
@@ -152,7 +141,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :caption: Governance Committee Voting
    :hidden:
 
-   Concordium Governance Committee elections <voting/gc-voting>
    Election coordinator tool <voting/coordinator>
    How to vote <voting/voting>
    Guardians <voting/guardians>

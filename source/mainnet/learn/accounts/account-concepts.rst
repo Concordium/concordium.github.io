@@ -74,5 +74,3 @@ You can :ref:`look up the sequence number<account-seqno>` from an up to date nod
 The |cryptox| keeps track of the sequence number and assigns the correct one when sending transactions.
 ``concordium-client`` tracks the sequence number automatically, but it can
 also be set manually.
-
-

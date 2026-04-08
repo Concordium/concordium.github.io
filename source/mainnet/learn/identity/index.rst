@@ -20,8 +20,8 @@ The Concordium ID (also known as Base ID or Core ID) is the protocol-level ident
 
 After successful identity verification, the account holder receives a Concordium ID, which enables them to:
 
-- :doc:`Create accounts <manage-accounts>` on the Concordium blockchain
-- :doc:`Conduct transactions <transactions>` within the networkusing :term:`zero-knowledge proofs<zero-knowledge proof>` without revealing the underlying data
+- :ref:`Create accounts <managing_accounts>` on the Concordium blockchain
+- :ref:`Conduct transactions <transactions>` within the network using :term:`zero-knowledge proofs<zero-knowledge proof>` without revealing the underlying data
 - Prove certain identity attributes (such as age or citizenship)
 
 The Concordium ID is foundational to the accountability and privacy features of the Concordium blockchain.
@@ -49,7 +49,7 @@ This next-generation portable ID tool can be used for:
 
 While interaction with the Concordium blockchain always requires a Concordium ID, Web3 ID verifiable credentials can be used both within the Concordium ecosystem and in off-chain environments.
 
-:doc:`Learn more about using Concordium's ID layer <../network/web3-id/index>`.
+:doc:`Learn more about using Concordium's ID layer <../../docs/network/web3-id/index>`.
 
 
 .. _key-participants:
@@ -71,21 +71,21 @@ Key concepts
 
 Understanding Concordium's identity framework requires familiarity with several key concepts:
 
-* **Account**: An account is used to send and receive funds on the Concordium chain. The account is associated with the user’s identity, however this association is encrypted and can only be disclosed through the :doc:`Identity Disclosure Process <identity-disclosure-processes>`.
+* **Account**: An account is used to send and receive funds on the Concordium chain. The account is associated with the user's identity, however this association is encrypted and can only be disclosed through the :doc:`Identity Disclosure Process <identity-disclosure-processes>`.
 
-* **Identity Credential**: An Identity Credential contains attributes on a user's identity. It is used to open accounts on-chain. These credentials are issued by Identity Providers during :doc:`user onboarding <user-processes>` and are derived from an identity document (e.g. a passport). The IDP keeps an identity record within their database. Identity Credentials are also stored within the wallet application. Concordium does not have any access to the user information within the Identity Credential. Individual attributes from the user’s Identity Credential can be shared by the user from their wallet with minimal data exposure using zero-knowledge proofs.
+* **Identity Credential**: An Identity Credential contains attributes on a user's identity. It is used to open accounts on-chain. These credentials are issued by Identity Providers during :doc:`user onboarding <user-processes>` and are derived from an identity document (e.g. a passport). The IDP keeps an identity record within their database. Identity Credentials are also stored within the wallet application. Concordium does not have any access to the user information within the Identity Credential. Individual attributes from the user's Identity Credential can be shared by the user from their wallet with minimal data exposure using zero-knowledge proofs.
 
 * **Identity Disclosure Process**: Unique to Concordium. In cases where an Authority suspects suspicious behaviour and wants to open an investigation, :doc:`a process can be followed <identity-disclosure-processes>` with multiple stakeholders (Authorities, IDPs and PGs) to disclose the identity of the user of a given account or the finding of all accounts of a given user.
 
 * **Base Layer ID**: This is the identity system described above where users open accounts with Identity Credentials.
 
-* **Wallet**: A wallet is a secure application where users manage their accounts, hold and transfer tokens on the network, and store Identity Credentials issued by Identity Providers. It also enables users to generate zero-knowledge proofs to share verified identity information without revealing personal data. :doc:`View wallet setup guides <../guides/setup-wallets-lp>`.
+* **Wallet**: A wallet is a secure application where users manage their accounts, hold and transfer tokens on the network, and store Identity Credentials issued by Identity Providers. It also enables users to generate zero-knowledge proofs to share verified identity information without revealing personal data. :doc:`View wallet setup guides <../../docs/guides/setup-wallets-lp>`.
 
 * **Seed (phrase)**: A seed phrase is secret randomness created during wallet initialization. All cryptographic material needed for identity and account credentials is derived from this seed, allowing users to recover their Concordium accounts if needed.
 
 * **Public Holder Identifier**: An encrypted mapping between the user's Identity Credentials and their account. This identifier requires a court order and multiple Privacy Guardians to be decrypted.
 
-* **Account Holder Identity Records**: A collection of records related to the account owner, including their identity information and an encrypted  :term:`linking key<Linking key>` that links to any other accounts opened with the same identity document. This data is stored in the IDP’s database.
+* **Account Holder Identity Records**: A collection of records related to the account owner, including their identity information and an encrypted  :term:`linking key<Linking key>` that links to any other accounts opened with the same identity document. This data is stored in the IDP's database.
 
 
 .. toctree::

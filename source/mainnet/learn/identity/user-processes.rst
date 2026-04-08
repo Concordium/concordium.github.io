@@ -9,11 +9,11 @@ User processes
 Account creation
 ================
 
-Users must complete an identity verification process to :doc:`create an account <manage-accounts>` and become a participant on the Concordium network. This guards against unknown actors, hackers or fraudsters abusing the network. Wallets in the Concordium ecosystem hold both identities (stored as :term:`Identity Credentials<Identity Credential>`), and accounts (which contain cryptographic addresses). Every account must be linked to a Concordium ID Identity Credential.
+Users must complete an identity verification process to :ref:`create an account <managing_accounts>` and become a participant on the Concordium network. This guards against unknown actors, hackers or fraudsters abusing the network. Wallets in the Concordium ecosystem hold both identities (stored as :term:`Identity Credentials<Identity Credential>`), and accounts (which contain cryptographic addresses). Every account must be linked to a Concordium ID Identity Credential.
 
 The account creation process follows these steps:
 
-1. A user :doc:`downloads <../installation/downloads>` their chosen wallet application. :doc:`Mobile, browser and desktop versions are available <../guides/deciding-wallet>`.
+1. A user :doc:`downloads <../../docs/installation/downloads>` their chosen wallet application. :doc:`Mobile, browser and desktop versions are available <../../docs/guides/deciding-wallet>`.
 
 2. Within the wallet, the user initiates a request for the creation of an Identity Credential by selecting their :term:`IDP<Identity Provider>` of choice.
 
@@ -29,7 +29,7 @@ The account creation process follows these steps:
 
 8. Users can add multiple Identity Credentials within the same wallet application. However to create a new identity, as opposed to a new account, a user will need to complete an additional identity verification process with their chosen IDP.
 
-.. image:: ./images/account-creation-new.png
+.. image:: ../../docs/protocol/images/account-creation-new.png
    :alt: graphic drawing showing how creation of a user account
 
 

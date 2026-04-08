@@ -9,7 +9,7 @@ Concordium Governance Committee elections are a vital part of decentralization, 
 
 Users vote using their wallets and their vote is :term:`weighted<account weight>` by the amount of CCD held in their accounts. Thus, a user with multiple accounts should vote from all accounts for their votes to have maximum weight. If the *same account* votes multiple times, only the last vote will count.
 
-Staked CCD, whether it is by validators or delegators, is still held in the user’s wallet, so it counts towards the weight of the vote. In contrast, CCD locked in smart contracts cannot be used to vote. CCD that is in a custody wallet, e.g., on a centralized exchange, will not count as part of the weight of the token owner, but as part of the weight of the custodian. It is thus important for all CCD owners who want to vote (or who don’t want custodians to vote in their name) to transfer all CCD to wallets of their own.
+Staked CCD, whether it is by validators or delegators, is still held in the user's wallet, so it counts towards the weight of the vote. In contrast, CCD locked in smart contracts cannot be used to vote. CCD that is in a custody wallet, e.g., on a centralized exchange, will not count as part of the weight of the token owner, but as part of the weight of the custodian. It is thus important for all CCD owners who want to vote (or who don't want custodians to vote in their name) to transfer all CCD to wallets of their own.
 
 The voting system chosen for this election is called :term:`approval voting`. The voter may choose as many :term:`candidates<candidate>` as they like, i.e., they assign either 0 or 1 to every candidate. In standard approval voting, all votes are added up and the candidates with the most votes get the seats. In our weighted case, every candidate that receives a vote receives the corresponding full weight of the account from which the vote was cast — the weights are not split amongst the candidates that receive a vote. For example, suppose that there are four candidates, Peppa Pig, Rebecca Rabbit, Suzy Sheep and Zoe Zebra. And suppose that Alice has 4000 CCD and votes for Peppa, Bob has 2000 CCD and votes for Rebecca and Suzy, and Charlie has 3000 CCD and votes for Suzy and Zoe. Then the final tally is 4000 votes for Peppa, 2000 for Rebecca, 5000 for Suzy and 3000 for Zoe.
 
@@ -26,7 +26,7 @@ Before the election
 
 The period of time before the election is the setup phase. Several roles are involved in the setup of the election.
 
-.. image:: ../images/voting/pre-election.png
+.. image:: ../../docs/images/voting/pre-election.png
     :alt: diagram showing steps below
     :width: 100%
 
@@ -47,7 +47,7 @@ During the election
 
 The period of time during the election is the :term:`election phase`.
 
-.. image:: ../images/voting/election.png
+.. image:: ../../docs/images/voting/election.png
     :alt: diagram showing steps below
     :width: 100%
 
@@ -60,7 +60,7 @@ After the election
 
 The period after the election is the :term:`tally phase`.
 
-.. image:: ../images/voting/post-election.png
+.. image:: ../../docs/images/voting/post-election.png
     :alt: diagram showing steps below
     :width: 100%
 

@@ -41,4 +41,3 @@ For more information, see :ref:`delegation-concept`.
 
    how-to-become-a-validator
    concepts-delegation
-

@@ -30,7 +30,7 @@ The process continues throughout the epoch, with each subsequent leader on the l
 
 Below you see a diagram of a validation round:
 
-.. image:: ../protocol/images/validation-round.png
+.. image:: ../../docs/protocol/images/validation-round.png
    :alt: diagram of one validation round
 
 In the case of a faulty leader who does not produce a block or produces an invalid block, a timeout mechanism handles the process. If the leader does not produce a block within a certain time, a :term:`Timeout Certificate (TC)<Timeout certificate>` is issued to move the process forward. The next leader can now use the TC to skip the previous round and extend an older block for which they have a QC.
@@ -82,4 +82,3 @@ For more information on validation:
 * :ref:`Staking<staking>`: Introduction to validation and delegation on Concordium
 * :ref:`How to become a validator<how-to-become-a-validator>` : Guide to becoming a validator
 * :ref:`Validator management <baker-pool>`: Best practices for running and managing your validator
-

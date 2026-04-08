@@ -56,5 +56,3 @@ The following guides and resources provide detailed information about validation
 * :ref:`Concordium tokenomics system<tokenomics>`: Information about rewards, commissions, and staking economics
 * :ref:`Delegation and validation FAQ<delegation-faq-old>`: For answers to the most commonly asked questions
 * :ref:`CCDScan<ccd-scan>`: Tool for monitoring validator and pool performance
-
-
