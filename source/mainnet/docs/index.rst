@@ -81,7 +81,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
 
    The minimum supported rust version is currently version ``1.73``
 
-
 .. toctree::
    :caption: Concordium ID
    :hidden:

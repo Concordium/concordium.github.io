@@ -2,6 +2,8 @@
 
 Tracks categorisation and placement decisions made during the Divio/Diataxis restructuring of `source/mainnet/`. For each document: where it was placed, why, and any recommendations for future improvements.
 
+**Phase 1 (Learn menu) — complete.** All explanation-oriented content has been moved to `learn/`, all redirects are in place, `docs/index.rst` has been cleaned of all migrated entries, and the build is clean with no warnings.
+
 ---
 
 ## Learn
