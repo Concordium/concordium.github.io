@@ -43,17 +43,6 @@ CCDScan
 
 The tool for both validator management and research is `CCDScan <https://ccdscan.io>`_. For more information regarding the tool, read :ref:`this article <ccd-scan>`.
 
-.. toctree::
-   :hidden:
-   :maxdepth: 1
-
-   guides/validation-with-wallets
-   guides/become-validator
-   guides/add-baker-mw
-   guides/import-validator-keys
-   guides/update-baker-mw
-   guides/suspend-unsuspend-validator
-   guides/stop-validator
 
 
 

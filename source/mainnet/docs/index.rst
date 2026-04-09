@@ -134,14 +134,10 @@ Explore our developer resources, including detailed documentation, tutorials, an
    FAQs <help-and-faq/faqs>
    Concordium Standards <https://proposals.concordium.software/index.html>
    Glossary of Concordium terms <resources/glossary>
-   Exchange Onboarding Guide <resources/exchangeOnBoarding>
 
 .. toctree::
    :caption: Governance Committee Voting
    :hidden:
 
    Election coordinator tool <voting/coordinator>
-   How to vote <voting/voting>
-   Guardians <voting/guardians>
-   Verify election result <voting/verify-election-result>
 

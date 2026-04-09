@@ -1,4 +1,4 @@
-.. include:: ../../../variables.rst
+.. include:: ../../variables.rst
 .. _node-dashboard: http://localhost:8099
 .. _Discord: https://discord.com/invite/xWmQ5tp
 

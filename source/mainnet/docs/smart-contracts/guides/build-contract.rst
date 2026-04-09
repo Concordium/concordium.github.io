@@ -108,16 +108,7 @@ To ease deployment and initialization, you can use the `Smart contract deploy an
    :maxdepth: 1
    :hidden:
 
-   setup-contract
-   compile-module
    custom-errors
-   build-schema
-   no-std
-   fallback-entrypoints
-   upgradeable-contract
    json-params
-   migrate-contracts
    factory-pattern
-   unit-test-contract
-   integration-test-contract
 

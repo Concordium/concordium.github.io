@@ -34,7 +34,7 @@ When the election contract has been initialized, the guardians must connect to t
 
 #. Specify the election target, consisting of a Concordium network ("mainnet" or "testnet" from the dropdown) and contract index, which is a positive whole number specified in the input field.
 
-    .. image:: ../images/voting/guardian-connect.png
+    .. image:: ../../docs/images/voting/guardian-connect.png
         :alt: connect to election contract dialog
         :width: 100%
 
@@ -47,13 +47,13 @@ The guardian app will sign the guardian transactions and submit them to the chai
 
 #. To connect your account to the Guardian app, you must add your export file for your private account keys. For information about how to generate an export file, see :ref:`Export a private key<export-key>`.
 
-    .. image:: ../images/voting/guardian-await-key.png
+    .. image:: ../../docs/images/voting/guardian-await-key.png
         :alt: screen showing drag-drop or browse to export file
         :width: 100%
 
 #. Once you have added the export file, enter a password.
 
-    .. image:: ../images/voting/guardian-set-pw.png
+    .. image:: ../../docs/images/voting/guardian-set-pw.png
         :alt: password dialog
         :width: 100%
 
@@ -64,19 +64,19 @@ Before the election opens, the guardians must use the Guardian app to generate a
 
 #. Click **Generate guardian key** to create your secret key and register your public key in the election smart contract.
 
-    .. image:: ../images/voting/guardian-generate-keys.png
+    .. image:: ../../docs/images/voting/guardian-generate-keys.png
         :alt: generate key pair dialog
         :width: 100%
 
    The progress dialog shows the status. Click **Send key registration** to complete the process.
 
-    .. image:: ../images/voting/guardian-send-key-reg.png
+    .. image:: ../../docs/images/voting/guardian-send-key-reg.png
         :alt: key pair generation progress dialog
         :width: 100%
 
 Once you have generated your pre-key you must wait until the other guardians have done the same.
 
-.. image:: ../images/voting/guardian-waiting.png
+.. image:: ../../docs/images/voting/guardian-waiting.png
     :alt: dialog shown when awaiting other guardians
     :width: 100%
 
@@ -87,19 +87,19 @@ Once all guardians have generated their keys as described above, each guardian m
 
 #. Click **Generate encrypted shares**.
 
-    .. image:: ../images/voting/guardian-generate-encrypted-shares.png
+    .. image:: ../../docs/images/voting/guardian-generate-encrypted-shares.png
         :alt: generate encrypted shares dialog
         :width: 100%
 
 #. Click **Register encrypted shares** to register the encrypted shares information to the election smart contract.
 
-    .. image:: ../images/voting/guardian-reg-encrypted-shares.png
+    .. image:: ../../docs/images/voting/guardian-reg-encrypted-shares.png
         :alt: register encrypted shares progress dialog
         :width: 100%
 
 Once you have generated and registered your encrypted shares you must wait until the other guardians have done the same.
 
-.. image:: ../images/voting/guardian-await-shares.png
+.. image:: ../../docs/images/voting/guardian-await-shares.png
     :alt: dialog shown when awaiting other guardians
     :width: 100%
 
@@ -110,7 +110,7 @@ The final step is to generate your secret key share. This creates your share of 
 
 #. Click **Generate secret key share**.
 
-    .. image:: ../images/voting/guardian-generate-secret-key-share.png
+    .. image:: ../../docs/images/voting/guardian-generate-secret-key-share.png
         :alt: generate secret key share dialog
         :width: 100%
 
@@ -118,13 +118,13 @@ The final step is to generate your secret key share. This creates your share of 
 
 Once you have generated your secret key share you must wait until the other guardians have done the same.
 
-.. image:: ../images/voting/guardian-await-key-share.png
+.. image:: ../../docs/images/voting/guardian-await-key-share.png
     :alt: dialog shown when awaiting other guardians
     :width: 100%
 
 After all guardians have complete the process, a screen shows that election setup is complete and a countdown to the election start.
 
-.. image:: ../images/voting/guardian-election-setup-complete.png
+.. image:: ../../docs/images/voting/guardian-election-setup-complete.png
     :alt: dialog shown when election setup is completed by all guardians
     :width: 100%
 
@@ -142,19 +142,19 @@ Generate your decrypted share
 
 #. Click **Generate decryption share**.
 
-    .. image:: ../images/voting/guardian-generate-decryption-share.png
+    .. image:: ../../docs/images/voting/guardian-generate-decryption-share.png
         :alt: generate decryption share dialog
         :width: 100%
 
 #. Click **Send share registration**.
 
-    .. image:: ../images/voting/guardian-register-decryption-share.png
+    .. image:: ../../docs/images/voting/guardian-register-decryption-share.png
         :alt: register decryption share dialog
         :width: 100%
 
 Once you have registered your decryption share you must wait until the other guardians have done the same.
 
-.. image:: ../images/voting/guardian-await-decryption.png
+.. image:: ../../docs/images/voting/guardian-await-decryption.png
     :alt: dialog shown when awaiting other guardians
     :width: 100%
 
@@ -165,25 +165,25 @@ The final step creates a proof that can be checked by others to determine that t
 
 #. Click **Generate decryption proof**.
 
-    .. image:: ../images/voting/guardian-generate-decryption-proof.png
+    .. image:: ../../docs/images/voting/guardian-generate-decryption-proof.png
         :alt: generate decryption proof dialog
         :width: 100%
 
 #. Click **Send proof registration**.
 
-    .. image:: ../images/voting/guardian-register-decryption-proof.png
+    .. image:: ../../docs/images/voting/guardian-register-decryption-proof.png
         :alt: generate decryption proof dialog
         :width: 100%
 
 Once you have registered your decryption proof you must wait until the other guardians have done the same.
 
-.. image:: ../images/voting/guardian-await-decryption-proof.png
+.. image:: ../../docs/images/voting/guardian-await-decryption-proof.png
     :alt: dialog shown when awaiting other guardians
     :width: 100%
 
 After all guardians have registered decryption proofs, the decryption is shown as complete.
 
-.. image:: ../images/voting/guardian-decryption-complete.png
+.. image:: ../../docs/images/voting/guardian-decryption-complete.png
     :alt: dialog shown when awaiting other guardians
     :width: 100%
 
@@ -194,7 +194,7 @@ In the case of a reset of the election, the guardian app must be reconfigured. T
 
 The simplest way to reconfigure the app to target the new election is to click **Set Election Target** and update the network and contract index.
 
-    .. image:: ../images/voting/guardian-reconfigure.png
+    .. image:: ../../docs/images/voting/guardian-reconfigure.png
         :alt: reconfigure guardian app menu
         :width: 100%
 
