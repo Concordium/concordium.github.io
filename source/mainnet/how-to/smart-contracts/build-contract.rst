@@ -1,26 +1,26 @@
-.. include:: ../../../variables.rst
+.. include:: ../../variables.rst
 .. _build-contract:
 
-=======================
-Build a smart contract
-=======================
+==========================================
+Set up smart contract development tools
+==========================================
 
-The contract development guides help you get started writing smart contracts. Here you have guides to help you set up your tools, test your contract, and more.
+This guide covers how to install the tools needed to develop, build, and deploy
+smart contracts on Concordium.
+
+.. Note::
+
+   You can also watch a video about installing the smart contract tools.
+
+   .. raw:: html
+
+      <iframe src="https://www.youtube.com/embed/0UIyAlZjvLg?si=D0lguDkUjiHCKLcu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Once you are familiar with smart contracts, it is a good idea to read the :ref:`Smart contracts best practices<sc-development-best-practices>`.
 
 .. Note::
 
    To request CCDs for testing, use the buttons in the Concordium Wallets when running Testnet.
-
-
-Before you can start developing smart contracts, you need to :ref:`setup the development environment <setup-env>`.
-
-You can also watch a video about installing the smart contract tools.
-
-.. raw:: html
-
-   <iframe src="https://www.youtube.com/embed/0UIyAlZjvLg?si=D0lguDkUjiHCKLcu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Rust and Cargo
 ==============
@@ -103,12 +103,3 @@ To ease deployment and initialization, you can use the `Smart contract deploy an
 .. _Cargo: https://doc.rust-lang.org/cargo/
 .. _install rustup: https://rustup.rs/
 .. _crates.io: https://crates.io/
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   custom-errors
-   json-params
-   factory-pattern
-

@@ -100,10 +100,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :caption: Smart Contracts
    :hidden:
 
-   QuickStart <smart-contracts/guides/quick-start>
-   What is a smart contract? <smart-contracts/introduction>
-   Build <smart-contracts/guides/build-contract>
-   Deploy <smart-contracts/guides/deploy-module>
    Best practices <smart-contracts/best-practices/index>
    References <smart-contracts/references/index>
 

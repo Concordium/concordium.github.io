@@ -62,7 +62,7 @@ The factory constructs a new instance of the ``product`` smart contract, invokin
 ``init_product`` constructor.
 Finally, a reference to the new product instance is returned.
 
-.. image:: ./images/ideal-factory.svg
+.. image:: ../../docs/smart-contracts/guides/images/ideal-factory.svg
     :alt: sequence diagram showing the idealized interaction for the factory pattern
 
 
@@ -81,7 +81,7 @@ to the ``Product`` contract.
 The ``Factory`` contract in turn calls ``initialize`` on the ``Product`` contract, resulting in
 the ``Product`` being fully initialized.
 
-.. image:: images/concordium-factory.svg
+.. image:: ../../docs/smart-contracts/guides/images/concordium-factory.svg
     :alt: sequence diagram showing how the factory pattern might be realised on Concordium
 
 This process is significantly more complex than the original idealized factory pattern.
@@ -293,7 +293,7 @@ the process by inserting their own transaction to initialize the product.
 For instance, an adversary could invoke a different factory instance than intended by the user,
 as illustrated in the following sequence diagram:
 
-.. image:: images/factory-adversary.svg
+.. image:: ../../docs/smart-contracts/guides/images/factory-adversary.svg
     :alt: sequence diagram showing how a third party might hijack a product
 
 To prevent this possibility, the product checks in its ``initialize`` method that the invoker of the
@@ -307,7 +307,7 @@ created the product contract instance (i.e., the "owner"):
 With this check, the attack described above would result in failure for Adversary (because
 the invoker Adversary does not match the owner User), but success for User:
 
-.. image:: images/factory-adversary2.svg
+.. image:: ../../docs/smart-contracts/guides/images/factory-adversary2.svg
     :alt: sequence diagram showing how a hijacking attempt fails
 
 .. Note::
@@ -323,7 +323,7 @@ the invoker Adversary does not match the owner User), but success for User:
     construction and (intended) initialization transactions in order to hijack
     the product contract, as shown in the following sequence diagram:
 
-    .. image:: images/factory-tricked.svg
+    .. image:: ../../docs/smart-contracts/guides/images/factory-tricked.svg
         :alt: sequence diagram showing how a hijacking attempt may succeed if the user is deceived into signing a bad transaction
 
     Hopefully, this is unlikely. Moreover, the effect of

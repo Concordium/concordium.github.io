@@ -247,6 +247,14 @@ Review the existing `tutorials/index.rst` and its sub-documents against the prop
 
 Restructure the tutorials index to use these headings where content already exists. For sections with no matching content, add stubs and document the gap in `decisions-log.md`. No tutorial content files need to be moved — only the index structure changes.
 
+**Step 28 — Tutorials: Review and move remaining Docs content**
+Several documents still in `docs/` are candidates for the Tutorials menu but were not moved in Phase 2c because they require editorial review. For each, make a placement decision, move clearly tutorial-type content, and record deferred items in `decisions-log.md`:
+
+- **`docs/smart-contracts/introduction.rst` and sub-docs** (`contract-lifecycle.rst`, `contract-module.rst`, `contract-instances.rst`, `contract-schema.rst`, `develop-contracts.rst`): Mixed content — explanation, how-to, and reference. Review individually before placement.
+- **`docs/smart-contracts/guides/build-contract.rst`** and remaining files (`custom-errors.rst`, `json-params.rst`): Likely how-to material; `factory-pattern.rst` is mixed and may need splitting.
+- **`docs/smart-contracts/guides/deploy-module.rst`** and sub-docs: Mixed content — some steps are how-to guides, some are reference. Review before placement.
+- **`docs/network/guides/run-local-chain/`**: Potentially tutorial-oriented (building and running a local chain end-to-end). Review for placement under Running Infrastructure.
+
 ---
 
 ### Phase 2 — Unplaced documents review

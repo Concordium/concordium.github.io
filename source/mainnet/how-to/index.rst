@@ -11,14 +11,14 @@ Step-by-step guides for completing specific tasks on Concordium. Each guide focu
    :caption: Integrations
    :hidden:
 
-   Exchange Onboarding Guide <integrations/exchange-onboarding>
+   Onboard as an exchange <integrations/exchange-onboarding>
 
 .. toctree::
    :caption: Infrastructure
    :hidden:
 
-   Validation with Concordium wallets <infrastructure/validation-with-wallets>
-   Validation with the Concordium Client <infrastructure/become-validator>
+   Validate with Concordium wallets <infrastructure/validation-with-wallets>
+   Validate with the Concordium Client <infrastructure/become-validator>
    Add a validator <infrastructure/add-baker-mw>
    Import validator keys <infrastructure/import-validator-keys>
    Change validator options <infrastructure/update-baker-mw>
@@ -29,20 +29,25 @@ Step-by-step guides for completing specific tasks on Concordium. Each guide focu
    :caption: Smart Contracts
    :hidden:
 
+   Set up smart contract development tools <smart-contracts/build-contract>
    Set up a project <smart-contracts/setup-contract>
    Compile a module <smart-contracts/compile-module>
    Build a contract schema <smart-contracts/build-schema>
+   Use custom errors <smart-contracts/custom-errors>
+   Pass JSON parameters <smart-contracts/json-params>
    Use no_std <smart-contracts/no-std>
    Use fallback entrypoints <smart-contracts/fallback-entrypoints>
    Write an upgradeable contract <smart-contracts/upgradeable-contract>
-   Migrate contracts <smart-contracts/migrate-contracts>
+   Implement the factory pattern <smart-contracts/factory-pattern>
    Unit test a contract <smart-contracts/unit-test-contract>
    Integration test a contract <smart-contracts/integration-test-contract>
+   Deploy a smart contract module <smart-contracts/deploy-module>
+   Migrate contracts <smart-contracts/migrate-contracts>
 
 .. toctree::
    :caption: Governance
    :hidden:
 
-   How to vote <governance/voting>
-   Guardians <governance/guardians>
+   Cast a vote <governance/voting>
+   Participate as an election guardian <governance/guardians>
    Verify election result <governance/verify-election-result>

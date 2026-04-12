@@ -15,7 +15,7 @@ Understand how Concordium works. This section contains explanation-oriented cont
    Identity <identity/index>
    Accounts <accounts/index>
    Transactions <transactions/index>
-   Smart Contracts <smart-contracts>
+   Smart Contracts <smart-contracts/index>
    Network <network>
    Consensus <consensus/index>
    Tokenomics <tokenomics>

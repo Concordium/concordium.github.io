@@ -11,7 +11,7 @@ contract instance can be repeatedly updated according to its own logic.
 Before you can follow this guide, you need to :ref:`setup the development environment <setup-env>`.
 
 
-.. image:: images/smart-contract-lifecycle.png
+.. image:: ../../docs/smart-contracts/images/smart-contract-lifecycle.png
     :width: 100%
     :alt: flow diagram with different actions
 

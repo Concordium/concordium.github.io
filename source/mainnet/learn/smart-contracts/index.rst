@@ -99,7 +99,6 @@ Read :ref:`developer resources <developer-page>` for information regarding tools
 .. toctree::
    :hidden:
    :maxdepth: 1
-   :caption: General
 
    contract-lifecycle
    contract-module
