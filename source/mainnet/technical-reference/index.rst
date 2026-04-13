@@ -2,9 +2,9 @@
 .. _technical-reference:
 .. _sdks-apis:
 
-===================
-Technical Reference
-===================
+=========
+Reference
+=========
 
 Reference documentation for Concordium APIs, SDKs, command-line tools, smart contract specifications, and release notes.
 

@@ -2,7 +2,7 @@
 .. _how-to:
 
 ======
-How to
+How-to
 ======
 
 Step-by-step guides for completing specific tasks on Concordium. Each guide focuses on a single goal and walks you through exactly what you need to do to achieve it.
