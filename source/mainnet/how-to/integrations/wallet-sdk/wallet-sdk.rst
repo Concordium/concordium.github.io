@@ -1,8 +1,8 @@
 .. _wallet-sdk:
 
-==========
-Wallet SDK
-==========
+===============
+Build a wallet
+===============
 
 This integration guide is directed towards developers who want to implement their own wallet for the Concordium blockchain.
 This typically means either a mobile wallet (iOS or Android), or a solution building on TypeScript or JavaScript.

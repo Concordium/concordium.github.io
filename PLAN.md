@@ -130,6 +130,13 @@ The same pattern as Phase 1 applies throughout: every step must produce a clean 
 - **Smart contracts best practices conflict**: `docs/smart-contracts/best-practices/` is listed under both How to (Development, Cost reduction, Factory pattern) and Technical Reference (whole section). These files must be reviewed individually before moving — some may be how-to guides, others reference material. A decision is needed before Step 22.
 - **Validator Management** (`docs/network/baker-pool.rst`): This document is unplaced in the mapping. Much of its content overlaps with the Learn/Staking section and the How to/Infrastructure validator guides. It likely needs to be retired or significantly trimmed. Record in decisions log; do not move until reviewed.
 - **Tutorials directory already exists**: `source/mainnet/tutorials/` is already a functioning section with many tutorial pages. It does not need to be created from scratch — Phase 2c work is restructuring and aligning it with the proposed Divio section headings, and adding the quick-start guide.
+- **Tools menu migration**: All Tools content has been reviewed (April 2026). The Tools menu will be retired once all content is moved out of it. Routing decisions:
+  - *Wallet SDK* (parent + 5 sub-documents) → **How to / Integrations** (Step 19b). Content is task-oriented how-to guides for wallet developers. The parent document explicitly calls itself an "integration guide". Parent title to be revised — TBD, see decisions log.
+  - *Developer Resources* (`developer-page.rst`, gRPC V2 docs) → **Technical Reference / API** (Step 25).
+  - *CCDScan* (5 sub-documents) → **Technical Reference / CCDScan** (Step 25).
+  - *Concordium Client* (`concordium-client.rst`, `query-node.rst`, `multi-sig.rst`) → **Technical Reference / Concordium Client** (Step 25).
+  - *Auxiliary Tools* (`developer-tools.rst`) → **Technical Reference** (Step 25).
+  - The Tools menu entry is removed from `source/mainnet/index.rst` once all content has been moved (Step 25).
 
 ---
 
@@ -185,6 +192,17 @@ Move the clearly how-to guides from `docs/smart-contracts/guides/` → `how-to/s
 
 *Note: `quick-start.rst` is not moved here — it goes to Tutorials (Step 26). The best-practices files (`development.rst`, `costs.rst`, `factory-pattern.rst`) are not moved in this step — their placement (How to vs Technical Reference) requires the editorial decision noted above; record as deferred in decisions log.*
 
+**Step 19b — How to: Wallet SDK integration guides**
+Move `tools/wallet-sdk/` → `how-to/integrations/wallet-sdk/`:
+- `wallet-sdk.rst` (parent — rename H1 title to **"Build a wallet"**; use **"Build a wallet with the Wallet SDK"** as the nav label in `how-to/index.rst`)
+- `wallet-sdk-identity-creation.rst`
+- `wallet-sdk-identity-recovery.rst`
+- `wallet-sdk-credential-deployment.rst`
+- `wallet-sdk-account-transaction.rst`
+- `wallet-sdk-identity-provider.rst`
+
+Add the group to the Integrations toctree in `how-to/index.rst`, nested under the parent. Remove the Wallet SDK section from `tools/index.rst` (leave the rest of the Tools content in place until Step 25). Add redirects in `conf.py` for all six moved files.
+
 **Step 20 — How to: Document empty sections and unplaced content**
 For each stub section with no mapped content (Getting Started, Concordium ID, Transactions, Tokens and Assets), add a detailed entry to `decisions-log.md` recording what content is needed. No new files are created beyond the stubs from Step 15.
 
@@ -193,15 +211,17 @@ For each stub section with no mapped content (Getting Started, Concordium ID, Tr
 ### Phase 2b — Technical Reference menu
 
 **Step 21 — Create the Technical Reference skeleton**
-Create `technical-reference/index.rst` with the section structure from `Navigation structure.md`:
-- SDKs (Concordium SDK, ID App SDK, Verification Web UI) *(stubs — these are likely external links or tools/ content; investigate before moving)*
-- API / gRPC API *(stub — investigate location of existing API reference)*
-- Concordium Client *(stub — investigate)*
-- Smart Contracts
-- Governance
-- Release Notes
+Create `technical-reference/index.rst` with the following section structure, combining the `Navigation structure.md` outline with the Tools migration decisions above:
+- SDKs *(stubs for Concordium SDK, ID App SDK, Verification Web UI — these point to external repositories/documentation; create stub pages with links and record in decisions log)*
+- API / gRPC API *(stub — will receive `tools/developer-page.rst` content in Step 25)*
+- Concordium Client *(stub — will receive `tools/concordium-client.rst`, `query-node.rst`, `multi-sig.rst` in Step 25)*
+- CCDScan *(stub — will receive `tools/ccd-scan/` sub-documents in Step 25)*
+- Auxiliary Tools *(stub — will receive `tools/developer-tools.rst` in Step 25)*
+- Smart Contracts *(content moved in Step 22)*
+- Governance *(content moved in Step 23)*
+- Release Notes *(content moved in Step 24)*
 
-Add `Technical Reference <technical-reference/index>` to `source/mainnet/index.rst`. Record all stubs and investigation findings in `decisions-log.md`.
+Add `Technical Reference <technical-reference/index>` to `source/mainnet/index.rst`. Record all stubs and their planned content sources in `decisions-log.md`.
 
 **Step 22 — Technical Reference: Smart Contracts references**
 Move `docs/smart-contracts/references/` → `technical-reference/smart-contracts/references/`:
@@ -225,8 +245,17 @@ Move `docs/release-notes/` → `technical-reference/release-notes/`:
 - `release-notes-mainnet.rst`
 - `release-notes.rst`
 
-**Step 25 — Technical Reference: Investigate SDKs, API, and Concordium Client**
-Investigate the current location of SDK documentation, gRPC API reference, and Concordium Client documentation. These may already be in `tools/`, may be external links, or may be in `docs/net/references/`. Record findings and placement decisions in `decisions-log.md`. Move any files that are clearly standalone reference documents; create stubs with notes for sections that link out to external tools or need new content.
+**Step 25 — Technical Reference: Migrate remaining Tools content and retire Tools menu**
+Following the routing decisions in the key decisions section, migrate all remaining `tools/` content to Technical Reference and retire the Tools menu:
+
+1. Move `tools/developer-page.rst` → `technical-reference/api/grpc-v2.rst`. Update the API / gRPC API section in `technical-reference/index.rst`.
+2. Move `tools/ccd-scan/ccd-scan.rst` and its 5 sub-documents → `technical-reference/ccd-scan/`. Update the CCDScan section.
+3. Move `tools/concordium-client.rst`, `tools/query-node.rst`, `tools/multi-sig.rst` → `technical-reference/concordium-client/`. Update the Concordium Client section.
+4. Move `tools/developer-tools.rst` → `technical-reference/auxiliary-tools.rst`. Update the Auxiliary Tools section.
+5. For the SDKs stubs (Concordium SDK, ID App SDK, Verification Web UI): confirm that these are external links only and finalize the stub pages with correct external URLs. Record in decisions log.
+6. Remove `Tools <tools/index>` from `source/mainnet/index.rst`.
+7. Add redirects in `conf.py` for all moved files.
+8. Verify `tools/` directory is now empty of navigable content and can be archived or removed.
 
 ---
 

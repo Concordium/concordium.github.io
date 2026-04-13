@@ -12,6 +12,7 @@ Step-by-step guides for completing specific tasks on Concordium. Each guide focu
    :hidden:
 
    Onboard as an exchange <integrations/exchange-onboarding>
+   Build a wallet with the Wallet SDK <integrations/wallet-sdk/wallet-sdk>
 
 .. toctree::
    :caption: Infrastructure

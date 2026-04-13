@@ -17,19 +17,6 @@ Developer Resources
 
    * :doc:`gRPC V2 documentation <developer-page>` - Core API documentation
 
-Wallet SDK
-----------
-
-.. container:: tutorial-section tutorial-section-green
-
-
-   Tools for wallet integration and account management:
-
-   * :doc:`Create an identity <wallet-sdk/wallet-sdk-identity-creation>` - Guide for creating an identity
-   * :doc:`Recover an identity <wallet-sdk/wallet-sdk-identity-recovery>` - Guide for recovering an identity
-   * :doc:`Create an account <wallet-sdk/wallet-sdk-credential-deployment>` - Account creation and management
-   * :doc:`Submit a transaction <wallet-sdk/wallet-sdk-account-transaction>` - Handle transaction submissions
-   * :doc:`Get the list of identity providers <wallet-sdk/wallet-sdk-identity-provider>` - Access provider metadata via wallet-proxy
 
 CCDScan
 -------
@@ -69,7 +56,6 @@ Auxiliary Tools
    :hidden:
 
     Developer resources<developer-page>
-    Wallet SDK<./wallet-sdk/wallet-sdk.rst>
     CCDScan<./ccd-scan/ccd-scan.rst>
     Concordium Client<concordium-client>
     Auxiliary Tools<developer-tools>
