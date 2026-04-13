@@ -101,7 +101,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :hidden:
 
    Best practices <smart-contracts/best-practices/index>
-   References <smart-contracts/references/index>
 
 .. toctree::
    :caption: Network

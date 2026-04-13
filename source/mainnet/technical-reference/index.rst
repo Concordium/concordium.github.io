@@ -36,7 +36,12 @@ Reference documentation for Concordium APIs, SDKs, command-line tools, smart con
    :caption: Smart Contracts
    :hidden:
 
-   Smart contract references <smart-contracts>
+   Crypto primitives <smart-contracts/crypto-primitives>
+   Host functions <smart-contracts/host-fns>
+   Local settings <smart-contracts/local-settings>
+   On-chain references <smart-contracts/references-on-chain>
+   Schema JSON <smart-contracts/schema-json>
+   Simulate context <smart-contracts/simulate-context>
 
 .. toctree::
    :caption: Governance
