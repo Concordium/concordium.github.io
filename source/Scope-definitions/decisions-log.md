@@ -90,7 +90,15 @@ Tracks categorisation and placement decisions made during the Divio/Diataxis res
 
 | Document | Original location | New location | Rationale | Notes / Future recommendations |
 |---|---|---|---|---|
-| | | | | |
+| Technical Reference skeleton | — | `technical-reference/index.rst` + 8 stub pages | Step 21. Navigation skeleton created with 8 sections: SDKs, API, Concordium Client, CCDScan, Auxiliary Tools, Smart Contracts, Governance, Release Notes. Added to top-level `index.rst`. | — |
+| SDKs and APIs | `tools/sdks-apis.rst` | `technical-reference/sdks.rst` *(content populated at skeleton step; `tools/sdks-apis.rst` to be retired with redirect in Step 25)* | External SDK links (Rust, JS, Java, .NET, Rosetta, Go) and NPM libraries are static references requiring no file migration — populated immediately. Navigation structure.md lists three sub-items: "Concordium SDK", "ID App SDK", "Verification Web UI". "Concordium SDK" maps to the existing SDK list. "ID App SDK" and "Verification Web UI" are ambiguous — they may refer to identity/verification SDKs not yet clearly documented on the dev site. Recorded as a gap; review before finalising this section. | The sub-structure "Concordium SDK / ID App SDK / Verification Web UI" from Navigation structure.md needs clarification. Recommend reviewing with the product team to confirm what these entries refer to before creating separate sub-pages. |
+| API / gRPC API | `tools/grpc2.rst`, `tools/developer-page.rst`, `docs/mainnet/net/references/grpc-json-schemas/` | `technical-reference/api.rst` *(stub — content to be moved in Step 25)* | gRPC V2 API documentation and JSON schemas are reference material. Currently in Tools; will be moved to Technical Reference in Step 25. | — |
+| Concordium Client | `tools/concordium-client.rst`, `tools/query-node.rst`, `tools/multi-sig.rst` | `technical-reference/concordium-client.rst` *(stub — 3 pages to be moved in Step 25)* | CLI reference documentation. Currently in Tools; will be moved to Technical Reference in Step 25. | — |
+| CCDScan | `tools/ccd-scan/` (5 sub-documents) | `technical-reference/ccd-scan.rst` *(stub — 5 pages to be moved in Step 25)* | Block explorer reference documentation. Currently in Tools; will be moved to Technical Reference in Step 25. | — |
+| Auxiliary Tools | `tools/developer-tools.rst` | `technical-reference/auxiliary-tools.rst` *(stub — content to be moved in Step 25)* | Auxiliary developer tools reference. Currently in Tools; will be moved to Technical Reference in Step 25. | — |
+| Smart Contracts references | `docs/smart-contracts/references/` (6 files) | `technical-reference/smart-contracts.rst` *(stub — content to be moved in Step 22)* | Smart contract reference documentation (crypto primitives, host functions, local settings, on-chain references, schema JSON, simulate context). | — |
+| Governance reference | `docs/voting/coordinator.rst` | `technical-reference/governance.rst` *(stub — content to be moved in Step 23)* | Election coordinator reference document. | — |
+| Release Notes | `docs/release-notes/` (3 files) | `technical-reference/release-notes.rst` *(stub — content to be moved in Step 24)* | Mainnet release notes. | — |
 
 ## Unplaced / Deferred
 
