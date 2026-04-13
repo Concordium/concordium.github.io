@@ -12,7 +12,7 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :align: center
 
 
-.. container:: four-columns
+.. container:: three-columns
 
    .. container:: column1
 
@@ -21,7 +21,7 @@ Explore our developer resources, including detailed documentation, tutorials, an
            <a href="./index.html" class="heading-link"><strong>Docs</strong></a>
 
       Explore Concordium's architecture, unique ID layer, transaction structure, and tokens.
-      Understand the fundamentals of building on Concordium, and join our developer community.
+      Understand the fundamentals of building on Concordium.
 
 
    .. container:: column2
@@ -37,21 +37,10 @@ Explore our developer resources, including detailed documentation, tutorials, an
 
       .. raw:: html
 
-           <a href="../tools/index.html" class="heading-link"><strong>Tools</strong></a>
+           <a href="../technical-reference/index.html" class="heading-link"><strong>Technical Reference</strong></a>
 
 
-      Access a comprehensive set of tools to build your dApps.
-      Find SDKs, APIs, smart contract libraries, CLI, CCDScan, Testnet Faucet, and IDE plugins.
-
-   .. container:: column4
-
-      .. raw:: html
-
-           <a href="../community/index.html" class="heading-link"><strong>Community</strong></a>
-
-
-      Developer Community.
-      Find out about latest initiatives, projects and events for Concordium Developers.
+      Reference documentation for Concordium APIs, SDKs, command-line tools, smart contract specifications, and release notes.
 
 .. raw:: html
 
