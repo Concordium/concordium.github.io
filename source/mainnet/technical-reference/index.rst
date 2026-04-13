@@ -7,17 +7,16 @@ Technical Reference
 
 Reference documentation for Concordium APIs, SDKs, command-line tools, smart contract specifications, and release notes.
 
-SDKs
-----
+.. toctree::
+   :caption: SDK
+   :hidden:
 
-All SDK repositories are on `GitHub <https://github.com/Concordium>`__.
-
-- `Concordium Rust SDK <https://github.com/Concordium/concordium-rust-sdk>`_
-- `Concordium Javascript (Node / Web) SDK <https://github.com/Concordium/concordium-node-sdk-js>`_
-- `Concordium Java SDK <https://github.com/Concordium/concordium-java-sdk>`_
-- `Concordium .NET (C#) SDK <https://github.com/Concordium/concordium-net-sdk>`_
-- `Concordium Rosetta SDK <https://github.com/Concordium/concordium-rosetta>`_
-- `Concordium Go SDK <https://github.com/Concordium/concordium-go-sdk>`_
+   Rust SDK <https://github.com/Concordium/concordium-rust-sdk>
+   Javascript SDK <https://github.com/Concordium/concordium-node-sdk-js>
+   Java SDK <https://github.com/Concordium/concordium-java-sdk>
+   .NET SDK <https://github.com/Concordium/concordium-net-sdk>
+   Rosetta SDK <https://github.com/Concordium/concordium-rosetta>
+   Go SDK <https://github.com/Concordium/concordium-go-sdk>
 
 .. toctree::
    :caption: API
