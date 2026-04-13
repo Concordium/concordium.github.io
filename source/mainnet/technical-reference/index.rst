@@ -23,13 +23,13 @@ Reference documentation for Concordium APIs, SDKs, command-line tools, smart con
    :caption: Concordium Client
    :hidden:
 
-   Concordium Client <concordium-client>
+   Concordium Client <concordium-client/concordium-client>
 
 .. toctree::
    :caption: CCDScan
    :hidden:
 
-   CCDScan <ccd-scan>
+   CCDScan <ccd-scan/ccd-scan>
 
 .. toctree::
    :caption: Auxiliary Tools
