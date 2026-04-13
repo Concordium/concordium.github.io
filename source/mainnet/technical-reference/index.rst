@@ -9,6 +9,12 @@ Technical Reference
 Reference documentation for Concordium APIs, SDKs, command-line tools, smart contract specifications, and release notes.
 
 .. toctree::
+   :caption: Release Notes
+   :hidden:
+
+   Release Notes <release-notes>
+
+.. toctree::
    :caption: Concordium SDKs
    :hidden:
 
@@ -44,9 +50,3 @@ Reference documentation for Concordium APIs, SDKs, command-line tools, smart con
    On-chain references <smart-contracts/references-on-chain>
    Schema JSON <smart-contracts/schema-json>
    Simulate context <smart-contracts/simulate-context>
-
-.. toctree::
-   :caption: Release Notes
-   :hidden:
-
-   Release Notes <release-notes>
