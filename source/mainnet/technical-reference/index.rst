@@ -8,7 +8,7 @@ Technical Reference
 Reference documentation for Concordium APIs, SDKs, command-line tools, smart contract specifications, and release notes.
 
 .. toctree::
-   :caption: SDK
+   :caption: Concordium SDKs
    :hidden:
 
    Rust SDK <https://github.com/Concordium/concordium-rust-sdk>
