@@ -404,6 +404,6 @@ structure of ``concordium-client`` for more details.
    :hidden:
    :maxdepth: 1
 
-   transactions
-   query-node
+   Transactions <transactions>
+   Node queries <query-node>
    multi-sig
