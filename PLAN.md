@@ -37,7 +37,7 @@ Update `source/mainnet/index.rst` to add `Learn <learn/index>` as a new top-leve
 
 ---
 
-### Phase 1 — Learn: move documents one section at a time
+### Phase 1 — Learn: move documents one section at a time FINISHED
 
 Each step in this phase covers one Learn section. Every step includes:
 - Moving the relevant file(s) to their new location under `learn/`
@@ -140,7 +140,7 @@ The same pattern as Phase 1 applies throughout: every step must produce a clean 
 
 ---
 
-### Phase 2a — How to menu
+### Phase 2a — How to menu FINISHED
 
 **Step 15 — Create the How to skeleton**
 Create `how-to/index.rst` with the full section structure from `Navigation structure.md`, adding one proposed section from the mapping:
@@ -210,7 +210,7 @@ For each stub section with no mapped content (Getting Started, Concordium ID, Tr
 
 ### Phase 2b — Technical Reference menu
 
-**Step 21 — Create the Technical Reference skeleton**
+**Step 21 — Create the Technical Reference skeleton** FINISHED
 Create `technical-reference/index.rst` with the following section structure, combining the `Navigation structure.md` outline with the Tools migration decisions above:
 - SDKs *(stubs for Concordium SDK, ID App SDK, Verification Web UI — these point to external repositories/documentation; create stub pages with links and record in decisions log)*
 - API / gRPC API *(stub — will receive `tools/developer-page.rst` content in Step 25)*
@@ -245,7 +245,7 @@ Move `docs/release-notes/` → `technical-reference/release-notes/`:
 - `release-notes-mainnet.rst`
 - `release-notes.rst`
 
-**Step 25 — Technical Reference: Migrate remaining Tools content and retire Tools menu**
+**Step 25 — Technical Reference: Migrate remaining Tools content and retire Tools menu** FINISHED
 Following the routing decisions in the key decisions section, migrate all remaining `tools/` content to Technical Reference and retire the Tools menu:
 
 1. Move `tools/developer-page.rst` → `technical-reference/api/grpc-v2.rst`. Update the API / gRPC API section in `technical-reference/index.rst`.
@@ -259,7 +259,7 @@ Following the routing decisions in the key decisions section, migrate all remain
 
 ---
 
-### Phase 2c — Tutorials menu
+### Phase 2c — Tutorials menu FINISHED
 
 **Step 26 — Tutorials: Add the quick-start guide**
 Move `docs/smart-contracts/guides/quick-start.rst` → `tutorials/` (exact location to be confirmed based on `tutorials/index.rst` structure). Update `tutorials/index.rst` to include it under the Building Smart Contracts section.
