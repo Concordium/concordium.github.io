@@ -70,8 +70,8 @@ You can click Copy |copy| to copy the entire hash or account number.
     :hidden:
     :maxdepth: 1
 
-    ccd-scan-blocks
-    ccd-scan-transactions
-    ccd-scan-accounts
-    ccd-scan-staking
-    ccd-scan-nodes
+    Blocks <ccd-scan-blocks>
+    Transactions <ccd-scan-transactions>
+    Accounts <ccd-scan-accounts>
+    Staking <ccd-scan-staking>
+    Nodes <ccd-scan-nodes>
