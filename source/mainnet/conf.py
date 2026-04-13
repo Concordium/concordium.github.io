@@ -563,6 +563,8 @@ redirects = {
     "tools/ccd-scan/ccd-scan-accounts": "/en/mainnet/technical-reference/ccd-scan/ccd-scan-accounts.html",
     "tools/ccd-scan/ccd-scan-staking": "/en/mainnet/technical-reference/ccd-scan/ccd-scan-staking.html",
     "tools/ccd-scan/ccd-scan-nodes": "/en/mainnet/technical-reference/ccd-scan/ccd-scan-nodes.html",
+    "docs/voting/coordinator": "/en/mainnet/technical-reference/coordinator.html",
+    "technical-reference/governance": "/en/mainnet/technical-reference/index.html",
     "net/references/developer-tools": "/en/mainnet/technical-reference/auxiliary-tools.html",
     "net/guides/dapp-examples": "/en/mainnet/tutorials/daap-examples/dapp-examples.html",
     "net/guides/wallets-lp": "/en/mainnet/docs/guides/wallets-lp.html",

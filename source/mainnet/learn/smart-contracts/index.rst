@@ -94,7 +94,7 @@ For information about the lifecycle of smart contracts, see :ref:`Lifecycle of a
 Smart contract development tools
 --------------------------------
 
-Read :ref:`developer resources <developer-page>` for information regarding tools.
+Read the :ref:`Technical Reference <technical-reference>` for information regarding tools.
 
 .. toctree::
    :hidden:

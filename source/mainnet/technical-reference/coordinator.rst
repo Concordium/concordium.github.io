@@ -1,5 +1,5 @@
 .. _coordinator:
-.. include:: ../../variables.rst
+.. include:: ../variables.rst
 
 =========================
 Election coordinator tool

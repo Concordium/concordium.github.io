@@ -130,9 +130,4 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Concordium Standards <https://proposals.concordium.software/index.html>
    Glossary of Concordium terms <resources/glossary>
 
-.. toctree::
-   :caption: Governance Committee Voting
-   :hidden:
-
-   Election coordinator tool <voting/coordinator>
 

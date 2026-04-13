@@ -1,5 +1,6 @@
 .. include:: ../variables.rst
 .. _technical-reference:
+.. _sdks-apis:
 
 ===================
 Technical Reference
@@ -31,6 +32,7 @@ Reference documentation for Concordium APIs, SDKs, command-line tools, smart con
    Concordium Client <concordium-client/concordium-client>
    CCDScan <ccd-scan/ccd-scan>
    Auxiliary Tools <auxiliary-tools>
+   Election Coordinator <coordinator>
 
 .. toctree::
    :caption: Smart Contracts
@@ -42,12 +44,6 @@ Reference documentation for Concordium APIs, SDKs, command-line tools, smart con
    On-chain references <smart-contracts/references-on-chain>
    Schema JSON <smart-contracts/schema-json>
    Simulate context <smart-contracts/simulate-context>
-
-.. toctree::
-   :caption: Governance
-   :hidden:
-
-   Governance reference <governance>
 
 .. toctree::
    :caption: Release Notes
