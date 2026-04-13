@@ -124,7 +124,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :hidden:
 
    Downloads <installation/downloads>
-   Release notes <release-notes/release-notes-lp>
    Concordium wallets<./guides/wallets-lp>
    FAQs <help-and-faq/faqs>
    Concordium Standards <https://proposals.concordium.software/index.html>
