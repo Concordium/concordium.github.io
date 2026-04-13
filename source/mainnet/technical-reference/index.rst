@@ -25,21 +25,11 @@ Reference documentation for Concordium APIs, SDKs, command-line tools, smart con
    gRPC API <api>
 
 .. toctree::
-   :caption: Concordium Client
+   :caption: Tools
    :hidden:
 
    Concordium Client <concordium-client/concordium-client>
-
-.. toctree::
-   :caption: CCDScan
-   :hidden:
-
    CCDScan <ccd-scan/ccd-scan>
-
-.. toctree::
-   :caption: Auxiliary Tools
-   :hidden:
-
    Auxiliary Tools <auxiliary-tools>
 
 .. toctree::
