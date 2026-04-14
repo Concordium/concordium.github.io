@@ -5,7 +5,7 @@
 Add a validator
 ====================================
 
-Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to learn about best practices for validators. **There is a minimum amount to stake (500000 CCD) to become a validator**.
+Prior to becoming a validator, read :ref:`How to become a validator<how-to-become-a-validator>` to learn about best practices for validators. **There is a minimum amount to stake (500000 CCD) to become a validator**.
 
 .. Note::
 

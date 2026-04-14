@@ -54,6 +54,6 @@ For detailed information about cool-down periods, staking parameters, and tokeno
 How to become a delegator
 =========================
 
-You can :ref:`delegate CCDs<add-delegation>` by creating an account in any Concordium wallet.  If you plan to delegate to a specific validator pool, it is recommended that you research the various validators and their performance using :ref:`CCDScan<ccd-scan>` before making your decision.
+You can :ref:`delegate CCDs<add-delegation>` by creating an account in any Concordium wallet. If you plan to delegate to a specific validator pool, it is recommended that you research the various validators and their performance using :ref:`CCDScan<ccd-scan>` before making your decision. When evaluating a pool, check that it is not close to its cap on delegators or max capital, and look at whether the validator keeps their node upgraded to the latest version. Once you have delegated, monitor performance regularly and adjust if needed.
 
 See the :ref:`Delegation and validationcon FAQ<delegation-faq-old>` for answers to the most frequently asked questions.

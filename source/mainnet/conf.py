@@ -567,6 +567,7 @@ redirects = {
     "technical-reference/governance": "/en/mainnet/technical-reference/index.html",
     "docs/release-notes/release-notes-lp": "/en/mainnet/technical-reference/release-notes.html",
     "docs/resources/glossary": "/en/mainnet/technical-reference/glossary.html",
+    "docs/network/baker-pool": "/en/mainnet/learn/staking/how-to-become-a-validator.html",
     "docs/smart-contracts/best-practices/index": "/en/mainnet/how-to/smart-contracts/best-practices/index.html",
     "docs/smart-contracts/best-practices/costs": "/en/mainnet/how-to/smart-contracts/best-practices/costs.html",
     "docs/smart-contracts/best-practices/development": "/en/mainnet/how-to/smart-contracts/best-practices/development.html",

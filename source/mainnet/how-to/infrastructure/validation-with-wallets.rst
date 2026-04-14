@@ -11,7 +11,7 @@ To become a validator in the Concordium network, you need to run a node, generat
 
 .. Attention::
 
-   Before proceeding, read :ref:`Validator management<baker-pool>` for information about best practices for validators.
+   Before proceeding, read :ref:`How to become a validator<how-to-become-a-validator>` for information about best practices for validators.
 
 .. Note::
 

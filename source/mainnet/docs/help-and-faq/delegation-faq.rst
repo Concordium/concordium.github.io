@@ -86,7 +86,7 @@ For delegators
 
 .. dropdown:: How do I know whether a staking pool is good or bad? Where can I research validator performance and reliability?
 
-    You can research validator performance and pool reliability on `CCDScan`_. For information about how to judge validator performance and reliability, see :ref:`validator management<baker-pool>`.
+    You can research validator performance and pool reliability on `CCDScan`_. For information about how to judge validator performance and reliability, see :ref:`How to become a delegator<delegation-concept>`.
 
 .. dropdown:: What happens if a validator I delegate to closes the pool?
 
@@ -165,7 +165,7 @@ For validators
 
     The amount you earn depends on how much stake your pool has. The more delegators, the more stake you have and the greater your chances of being selected to produce a block are. Additional rewards to you as the pool owner come from the commissions on the delegators’ stake in your pool. The leverage bound for the pool is 6x the validator's stake: 5x from delegators and 1x from the validator. So the exact amount you can earn depends on the commissions you set.
 
-    Therefore, attracting delegators and managing your validator responsibly will maximize rewards for all. In :ref:`Validator management<baker-pool>` you'll find information about how to be a responsible validator.
+    Therefore, attracting delegators and managing your validator responsibly will maximize rewards for all. See :ref:`How to become a validator<how-to-become-a-validator>` for information about how to be a responsible validator.
 
 .. dropdown:: How can I change the delegation commissions for my staking pool?
 

@@ -81,4 +81,4 @@ For more information on validation:
 
 * :ref:`Staking<staking>`: Introduction to validation and delegation on Concordium
 * :ref:`How to become a validator<how-to-become-a-validator>` : Guide to becoming a validator
-* :ref:`Validator management <baker-pool>`: Best practices for running and managing your validator
+

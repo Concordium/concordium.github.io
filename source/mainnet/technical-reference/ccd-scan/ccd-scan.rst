@@ -20,7 +20,7 @@ CCDScan
 Delegation and staking pools
 ============================
 
-The CCDScan tool allows validators to view information that helps them to :ref:`manage their validator and pool responsibly<baker-pool>`. It also allows potential delegators to :ref:`research validators and pools<baker-pool>`.
+The CCDScan tool allows validators to view information that helps them to :ref:`manage their validator and pool responsibly<how-to-become-a-validator>`. It also allows potential delegators to :ref:`research validators and pools<delegation-concept>`.
 
 Use CCDScan
 ===========
