@@ -13,6 +13,7 @@ Step-by-step guides for completing specific tasks on Concordium. Each guide focu
 
    Onboard as an exchange <integrations/exchange-onboarding>
    Build a wallet with the Wallet SDK <integrations/wallet-sdk/wallet-sdk>
+   Identity on Concordium <web3-id/index>
 
 .. toctree::
    :caption: Validation
@@ -52,12 +53,6 @@ Step-by-step guides for completing specific tasks on Concordium. Each guide focu
    Deploy a smart contract module <smart-contracts/deploy-module>
    Migrate contracts <smart-contracts/migrate-contracts>
    Best practices <smart-contracts/best-practices/index>
-
-.. toctree::
-   :caption: Web3 ID
-   :hidden:
-
-   Identity on Concordium <web3-id/index>
 
 .. toctree::
    :caption: Governance
