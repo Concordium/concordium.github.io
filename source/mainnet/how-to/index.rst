@@ -15,7 +15,7 @@ Step-by-step guides for completing specific tasks on Concordium. Each guide focu
    Build a wallet with the Wallet SDK <integrations/wallet-sdk/wallet-sdk>
 
 .. toctree::
-   :caption: Infrastructure
+   :caption: Validation
    :hidden:
 
    Validate with Concordium wallets <infrastructure/validation-with-wallets>
@@ -25,6 +25,17 @@ Step-by-step guides for completing specific tasks on Concordium. Each guide focu
    Change validator options <infrastructure/update-baker-mw>
    Suspend or unsuspend a validator <infrastructure/suspend-unsuspend-validator>
    Stop validating <infrastructure/stop-validator>
+
+.. toctree::
+   :caption: Nodes
+   :hidden:
+
+   Node requirements <nodes/node-requirements>
+   Run a node on Ubuntu <nodes/run-node-ubuntu/index>
+   Run a node on Docker <nodes/run-node-docker/index>
+   Run a node on macOS <nodes/run-node-macos/index>
+   Run a node on Windows <nodes/run-node-windows/index>
+   Run a node on AWS <nodes/run-node-aws/index>
 
 .. toctree::
    :caption: Smart Contracts

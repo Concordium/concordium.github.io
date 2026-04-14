@@ -89,7 +89,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :caption: Network
    :hidden:
 
-   Run a Concordium Node <network/nodes/node-requirements>
    Use Concordium's ID layer <network/web3-id/index.rst>
    Run a local chain <network/guides/run-local-chain/index>
    Indexers <network/indexers/intro.rst>

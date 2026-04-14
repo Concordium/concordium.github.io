@@ -36,7 +36,7 @@ Before you start, make sure you’ve completed the following steps:
 
         - If you're running the testnet version of the Desktop Wallet, you must connect to a testnet node. In the **Address** field, enter *127.0.0.1*, and in the **Port field** enter *20001*.
 
-            .. image:: ../../docs/network/nodes/images/Node-setup-win-9.png
+            .. image:: ../../how-to/nodes/images/Node-setup-win-9.png
                 :width: 60%
 
         .. Note::
@@ -60,7 +60,7 @@ Before you start, make sure you’ve completed the following steps:
 
     #. If the connection to the node is successfully established and the Concordium App is installed on your Ledger device and launched, you will see the connection status with two green check marks in the lower left corner when you launch Desktop Wallet:
 
-        .. image:: ../../docs/network/nodes/images/DW-successful-connection.png
+        .. image:: ../../how-to/nodes/images/DW-successful-connection.png
 
     .. NOTE::
 
