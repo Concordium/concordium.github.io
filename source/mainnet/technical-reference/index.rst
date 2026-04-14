@@ -42,6 +42,13 @@ Reference documentation for Concordium APIs, SDKs, command-line tools, smart con
    Glossary <glossary>
 
 .. toctree::
+   :caption: Identity
+   :hidden:
+
+   ID attributes <id-attributes-reference>
+   Identity provider interfaces <identity-provider-interfaces>
+
+.. toctree::
    :caption: Smart Contracts
    :hidden:
 

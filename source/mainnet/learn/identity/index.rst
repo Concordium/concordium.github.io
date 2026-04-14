@@ -49,7 +49,7 @@ This next-generation portable ID tool can be used for:
 
 While interaction with the Concordium blockchain always requires a Concordium ID, Web3 ID verifiable credentials can be used both within the Concordium ecosystem and in off-chain environments.
 
-:doc:`Learn more about using Concordium's ID layer <../../docs/network/web3-id/index>`.
+:ref:`Learn more about using Concordium's ID layer <web3id-index>`.
 
 
 .. _key-participants:

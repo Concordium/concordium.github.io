@@ -1,5 +1,5 @@
 .. _web3id-index:
-.. include:: ../../../variables.rst
+.. include:: ../../variables.rst
 
 .. meta::
     :description lang=en:
@@ -9,27 +9,19 @@
 Identity on Concordium
 ======================
 
-Concordium’s identity layer is built into the protocol. Every account on the chain has one or more credentials issued by specially sanctioned identity providers who are expected to be able to provide full disclosure of the identity in concert with the :term:`Privacy Guardians<Privacy Guardian (PG)>`. ID 2.0 made it possible to use these identities off-chain: wallets allow using identities to prove properties about the holder, such as their nationality or age. These are known as :term:`account credentials<account credential>`.
-
-.. image:: ../../../docs/images/mobile-wallet/MW12.png
-   :width: 25%
-
-|
-
-You can read more about the identity provider issued account credentials in :ref:`Identity framework on Concordium<reference-identity>`.
-
-You can find a complete list of available ID attributes and their formats in :ref:`ID attributes reference<id-attributes-reference>`.
+For background on Concordium's identity framework and account credentials, see :ref:`Identity framework on Concordium<reference-identity>`.
+For a complete list of available ID attributes and their formats, see :ref:`ID attributes reference<id-attributes-reference>`.
 
 Web3 ID
 =======
 
 Web3 ID is an extension of the existing ID 2.0 infrastructure in Concordium to allow issuance of many different types of :term:`verifiable credentials<verifiable credential>` in addition to the existing :term:`account credentials<account credential>`. Web3 ID allows you to add :term:`verifiable credentials<verifiable credential>` to your |bw|, such as club memberships, education credentials, employment history, rewards programs, customer loyalty programs, and more. :term:`Proofs<zero-knowledge proof>` can be made to verify these credentials, if necessary.
 
-.. image:: ../../../docs/images/browser-wallet/add-web3id-credential.png
+.. image:: ../../docs/images/browser-wallet/add-web3id-credential.png
    :alt: window with pending credential and option buttons
    :width: 25%
 
-Web3 ID is an extension of the core protocol identity with other types of credentials that don’t have stringent requirements and won't be part of the identity disclosure process, but can also prove a number of other attributes of the holder. Examples of this could be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials, and in contrast to protocol identities, the verifiable credentials can be revoked according to the logic imposed by the issuer. This could be that the credential holder can revoke it, the credential expires, or the issuer or some other third party has rights to revoke it.
+Web3 ID is an extension of the core protocol identity with other types of credentials that don't have stringent requirements and won't be part of the identity disclosure process, but can also prove a number of other attributes of the holder. Examples of this could be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials, and in contrast to protocol identities, the verifiable credentials can be revoked according to the logic imposed by the issuer. This could be that the credential holder can revoke it, the credential expires, or the issuer or some other third party has rights to revoke it.
 
 Verifiable credentials, like account credentials, will contain commitments to a variety of attributes. :term:`Zero-knowledge proofs<zero-knowledge proof>` can be constructed to verify the committed values. The |bw| supports construction of these proofs. The proofs can contain a mix of verifiable credentials and account credentials.
 
@@ -38,20 +30,20 @@ Entities
 
 The core entities of the Web3 ID ecosystem are :term:`issuers<issuer>` which issue and manage the lifetime of verifiable credentials, and :term:`holders<credential holder>` that have verifiable credentials in their wallets, and use them to prove properties about themselves to :term:`verifiers<verifier>`.
 
-The issuer is an entity that issues verifiable credentials. Issuers have a smart contract that holds credential lifetime metadata, a backend service that has logic for identifying users and sending transactions to the smart contract, and a dApp that interacts with the user’s wallet and the backend to facilitate issuance of credentials.
+The issuer is an entity that issues verifiable credentials. Issuers have a smart contract that holds credential lifetime metadata, a backend service that has logic for identifying users and sending transactions to the smart contract, and a dApp that interacts with the user's wallet and the backend to facilitate issuance of credentials.
 
 Verifiers ask holders for proofs about their attributes, such as proof of club membership, and holders respond with zero knowledge proofs created using their verifiable credentials. Verifiers have a backend service that checks :term:`verifiable presentations<verifiable presentation>` and provides a service, And a dApp that facilitates interaction with the wallet, making requests.
 
 A user/wallet holds verifiable credentials, produces verifiable presentations, and interacts with the issuer and verifier. Verifiable credentials themselves never leave the user's wallet.
 
-.. image:: ../../../docs/images/web3id/web3id-entities.png
+.. image:: ../../docs/images/web3id/web3id-entities.png
 
 Issuance flow for verifiable credentials
 ========================================
 
 The following diagram shows the issuance flow for verifiable credentials.
 
-.. image:: ../../../docs/images/browser-wallet/web3id-diagram.png
+.. image:: ../../docs/images/browser-wallet/web3id-diagram.png
    :alt: diagram of verifiable credential flow
    :width: 75%
 
@@ -106,7 +98,4 @@ An example backend can be found in `the Web3 ID repository <https://github.com/C
    :maxdepth: 1
 
    issuer
-   Wallet identity provider interfaces <identity-provider-interfaces>
-   ../guides/create-proofs
-   id-attributes-reference
-
+   create-proofs

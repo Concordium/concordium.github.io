@@ -89,7 +89,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :caption: Network
    :hidden:
 
-   Use Concordium's ID layer <network/web3-id/index.rst>
    Indexers <network/indexers/intro.rst>
 
 .. toctree::

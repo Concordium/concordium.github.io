@@ -54,6 +54,12 @@ Step-by-step guides for completing specific tasks on Concordium. Each guide focu
    Best practices <smart-contracts/best-practices/index>
 
 .. toctree::
+   :caption: Web3 ID
+   :hidden:
+
+   Identity on Concordium <web3-id/index>
+
+.. toctree::
    :caption: Governance
    :hidden:
 
