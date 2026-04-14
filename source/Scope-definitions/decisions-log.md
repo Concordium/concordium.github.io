@@ -117,6 +117,13 @@ Tracks categorisation and placement decisions made during the Divio/Diataxis res
 | Smart contracts (Learn placeholder) | `docs/smart-contracts/introduction.rst` and sub-documents | Resolved — see Learn table above. | — |
 | Network (Learn placeholder) | No existing document | No explanation-oriented document covering "what is a node" or node types exists in the codebase. All content under `docs/network/nodes/` consists of how-to guides for running a node on specific platforms (Ubuntu, Windows, macOS, Docker, AWS). | A new document needs to be written for Learn/Network. It should explain: what a node is on Concordium, why nodes matter for the network, the different node roles (regular node vs. validator node), and how nodes relate to the consensus mechanism. This is a content gap that requires a new authoring effort. |
 
+## Suggestions for future content improvements
+
+| Area | Suggestion |
+|---|---|
+| Learn / Identity — Web3 ID | The Learn/Identity pages cover Web3 ID only at a high level (definition, use cases, relationship to Concordium ID). A dedicated Learn page explaining the Web3 ID ecosystem conceptually — the three entities (issuers, holders, verifiers), how credentials are issued, and how zero-knowledge proofs work — would significantly strengthen the Learn section and improve discoverability for AI agents and developers exploring the identity layer. This is new content that needs to be written. |
+| Learn / Network | No explanation-oriented document covering what a node is, why nodes matter, or the different node roles (regular vs. validator) exists in the codebase. A new Learn/Network page needs to be written. |
+
 ## Documents recommended for removal from the dev doc site
 
 | Document | Original location | Reason | Recommendation |
