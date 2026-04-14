@@ -31,6 +31,7 @@ Step-by-step guides for completing specific tasks on Concordium. Each guide focu
    :hidden:
 
    Run a Concordium node <nodes/node-requirements>
+   Run a local chain <nodes/run-local-chain/index>
 
 .. toctree::
    :caption: Smart Contracts

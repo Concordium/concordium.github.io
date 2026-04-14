@@ -90,7 +90,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :hidden:
 
    Use Concordium's ID layer <network/web3-id/index.rst>
-   Run a local chain <network/guides/run-local-chain/index>
    Indexers <network/indexers/intro.rst>
 
 .. toctree::
