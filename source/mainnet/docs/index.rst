@@ -86,12 +86,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Examples <plt/examples/index>
 
 .. toctree::
-   :caption: Network
-   :hidden:
-
-   Indexers <network/indexers/intro.rst>
-
-.. toctree::
    :caption: Integration
    :hidden:
 

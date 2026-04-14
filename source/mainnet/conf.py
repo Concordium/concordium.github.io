@@ -597,6 +597,8 @@ redirects = {
     "docs/network/web3-id/identity-provider-interfaces": "/en/mainnet/technical-reference/identity-provider-interfaces.html",
     "docs/network/web3-id/concordia": "/en/mainnet/how-to/web3-id/index.html",
     "docs/network/guides/create-proofs": "/en/mainnet/how-to/web3-id/create-proofs.html",
+    "docs/network/indexers/intro": "/en/mainnet/docs/index.html",
+    "docs/network/indexers/subquery": "/en/mainnet/docs/index.html",
     "docs/smart-contracts/best-practices/index": "/en/mainnet/how-to/smart-contracts/best-practices/index.html",
     "docs/smart-contracts/best-practices/costs": "/en/mainnet/how-to/smart-contracts/best-practices/costs.html",
     "docs/smart-contracts/best-practices/development": "/en/mainnet/how-to/smart-contracts/best-practices/development.html",

@@ -128,4 +128,5 @@ Tracks categorisation and placement decisions made during the Divio/Diataxis res
 
 | Document | Original location | Reason | Recommendation |
 |---|---|---|---|
-| | | | |
+| What are indexers | `docs/network/indexers/intro.rst` | Generic explanation of what indexers are, with no Concordium-specific content beyond a passing mention. Not sufficiently developer-facing to justify a standalone page on the dev doc site. | Retired. If indexer documentation is needed in future, a Concordium-specific Learn page should be written. |
+| SubQuery | `docs/network/indexers/subquery.rst` | Third-party tooling documentation. All substantive content lives on SubQuery's own documentation site. Hosting a page about a third-party product on the Concordium dev doc site creates a maintenance burden and is not the right place for it. | Retired. A brief mention with an external link could be added to a future "Ecosystem tools" section in Reference if needed. |
