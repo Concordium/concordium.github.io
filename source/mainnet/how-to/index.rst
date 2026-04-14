@@ -30,7 +30,7 @@ Step-by-step guides for completing specific tasks on Concordium. Each guide focu
    :caption: Nodes
    :hidden:
 
-   Node requirements <nodes/node-requirements>
+   Run a Concordium node <nodes/node-requirements>
 
 .. toctree::
    :caption: Smart Contracts
