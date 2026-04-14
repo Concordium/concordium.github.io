@@ -44,6 +44,7 @@ Step-by-step guides for completing specific tasks on Concordium. Each guide focu
    Integration test a contract <smart-contracts/integration-test-contract>
    Deploy a smart contract module <smart-contracts/deploy-module>
    Migrate contracts <smart-contracts/migrate-contracts>
+   Best practices <smart-contracts/best-practices/index>
 
 .. toctree::
    :caption: Governance

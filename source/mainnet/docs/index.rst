@@ -86,12 +86,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Examples <plt/examples/index>
 
 .. toctree::
-   :caption: Smart Contracts
-   :hidden:
-
-   Best practices <smart-contracts/best-practices/index>
-
-.. toctree::
    :caption: Network
    :hidden:
 
@@ -116,6 +110,5 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Concordium wallets<./guides/wallets-lp>
    FAQs <help-and-faq/faqs>
    Concordium Standards <https://proposals.concordium.software/index.html>
-   Glossary of Concordium terms <resources/glossary>
 
 

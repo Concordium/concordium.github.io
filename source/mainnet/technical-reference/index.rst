@@ -39,6 +39,7 @@ Reference documentation for Concordium APIs, SDKs, command-line tools, smart con
    CCDScan <ccd-scan/ccd-scan>
    Auxiliary Tools <auxiliary-tools>
    Election Coordinator <coordinator>
+   Glossary <glossary>
 
 .. toctree::
    :caption: Smart Contracts

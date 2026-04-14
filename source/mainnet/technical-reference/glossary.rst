@@ -1,6 +1,6 @@
 .. _ElGamal: https://en.wikipedia.org/wiki/ElGamal_encryption
 .. _ciphertexts: https://en.wikipedia.org/wiki/Ciphertext
-.. include:: ../../variables.rst
+.. include:: ../variables.rst
 .. _glossary:
 
 ============================
