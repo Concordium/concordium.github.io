@@ -13,7 +13,7 @@ Users must complete an identity verification process to :ref:`create an account 
 
 The account creation process follows these steps:
 
-1. A user :doc:`downloads <../../docs/installation/downloads>` their chosen wallet application. :doc:`Mobile, browser and desktop versions are available <../../docs/guides/deciding-wallet>`.
+1. A user :doc:`downloads <../../docs/installation/downloads>` their chosen wallet application. :doc:`Mobile, browser and desktop versions are available <../../technical-reference/wallets/guides/deciding-wallet>`.
 
 2. Within the wallet, the user initiates a request for the creation of an Identity Credential by selecting their :term:`IDP<Identity Provider>` of choice.
 

@@ -42,7 +42,7 @@ How to use an account
 Concordium provides several ways of interacting with the on-chain account.
 The same account can be used from multiple devices simultaneously, and off-chain parts of accounts can be transferred between different devices.
 
-Concordium offers wallet applications in :doc:`mobile, browser and desktop versions<../../docs/guides/deciding-wallet>`.
+Concordium offers wallet applications in :doc:`mobile, browser and desktop versions<../../technical-reference/wallets/guides/deciding-wallet>`.
 
 Accounts on the chain are identified by an account address, which is a 32-byte
 sequence. When using a Concordium wallet, however, you'll typically assign an **account name**

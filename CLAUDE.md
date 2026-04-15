@@ -45,6 +45,8 @@ Deployment is manual via the [Deploy GitHub Actions workflow](https://github.com
 
 All documentation is written in **reStructuredText** (`.rst`). The default syntax highlight language is Rust.
 
+**Style guide**: When creating or editing documentation, consult `source/contributing/style-guide.rst` for tone, terminology, formatting conventions, and Concordium-specific writing standards.
+
 **Testnet differences** are handled inline within mainnet docs using notes or collapsible dropdowns — not a separate branch or directory.
 
 **`.. todo::` directives** are supported. To surface them as build warnings, uncomment `todo_emit_warnings = True` in `source/mainnet/conf.py`.

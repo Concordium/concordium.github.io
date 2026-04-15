@@ -79,7 +79,7 @@ Understanding Concordium's identity framework requires familiarity with several 
 
 * **Base Layer ID**: This is the identity system described above where users open accounts with Identity Credentials.
 
-* **Wallet**: A wallet is a secure application where users manage their accounts, hold and transfer tokens on the network, and store Identity Credentials issued by Identity Providers. It also enables users to generate zero-knowledge proofs to share verified identity information without revealing personal data. :doc:`View wallet setup guides <../../docs/guides/setup-wallets-lp>`.
+* **Wallet**: A wallet is a secure application where users manage their accounts, hold and transfer tokens on the network, and store Identity Credentials issued by Identity Providers. It also enables users to generate zero-knowledge proofs to share verified identity information without revealing personal data. :doc:`View wallet setup guides <../../technical-reference/wallets/guides/setup-wallets-lp>`.
 
 * **Seed (phrase)**: A seed phrase is secret randomness created during wallet initialization. All cryptographic material needed for identity and account credentials is derived from this seed, allowing users to recover their Concordium accounts if needed.
 

@@ -58,3 +58,9 @@ Reference documentation for Concordium APIs, SDKs, command-line tools, smart con
    On-chain references <smart-contracts/references-on-chain>
    Schema JSON <smart-contracts/schema-json>
    Simulate context <smart-contracts/simulate-context>
+
+.. toctree::
+   :caption: Wallets
+   :hidden:
+
+   Concordium wallets <wallets/guides/wallets-lp>

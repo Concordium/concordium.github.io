@@ -71,12 +71,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
    The minimum supported rust version is currently version ``1.73``
 
 .. toctree::
-   :caption: Concordium ID
-   :hidden:
-
-   Verify and Access <concordium-id/verify-and-access/index>
-
-.. toctree::
    :caption: Protocol Level Tokens
    :hidden:
 
@@ -84,21 +78,5 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Get started with PLTs <plt/setup-guide/index>
    Operations <plt/operations/index>
    Examples <plt/examples/index>
-
-.. toctree::
-   :caption: Integration
-   :hidden:
-
-   Wallet integration <integration/wallet integration/wallet-integration>
-   X402 Integration <integration/x402 integration/x402-integration>
-
-.. toctree::
-   :caption: Help & FAQ
-   :hidden:
-
-   Downloads <installation/downloads>
-   Concordium wallets<./guides/wallets-lp>
-   FAQs <help-and-faq/faqs>
-   Concordium Standards <https://proposals.concordium.software/index.html>
 
 

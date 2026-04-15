@@ -8,3 +8,4 @@
    tutorials/index
    How-to <how-to/index>
    Reference <technical-reference/index>
+   Downloads <downloads>
