@@ -1,9 +1,81 @@
+.. include:: variables.rst
+
+=======================
+Developer Documentation
+=======================
+
+Concordium is a public blockchain platform designed for security, privacy, and scalability. It offers a unique identity layer for verified and private user interactions. Developers can leverage Concordium's fast and affordable transactions, along with its robust smart contract capabilities, to build innovative decentralized applications.
+
+Explore our developer resources, including detailed documentation, tutorials, and a suite of tools to support your development journey.
+
+.. image:: docs/images/frontpage.png
+   :width: 400px
+   :alt: frontpage image
+   :align: center
+
+
+.. container:: three-columns
+
+   .. container:: column1
+
+      .. raw:: html
+
+           <a href="learn/index.html" class="heading-link"><strong>Learn</strong></a>
+
+      Explore Concordium's architecture, unique ID layer, transaction structure, and tokens.
+      Understand the fundamentals of building on Concordium.
+
+
+   .. container:: column2
+
+      .. raw:: html
+
+           <a href="tutorials/index.html" class="heading-link"><strong>Tutorials</strong></a>
+
+
+      Develop on Concordium: Learn to build smart contracts and dApps, and set up your development environment. Find tutorials, code examples, and guides to help you get started today.
+
+   .. container:: column3
+
+      .. raw:: html
+
+           <a href="technical-reference/index.html" class="heading-link"><strong>Reference</strong></a>
+
+
+      Reference documentation for Concordium APIs, SDKs, command-line tools, smart contract specifications, and release notes.
+
+.. raw:: html
+
+
+    <style>
+   .. .three-columns {
+   ..     display: flex;
+   ..     justify-content: space-between;
+   ..     gap: 2em; /* Tilføjer mellemrum mellem spalterne */
+   .. }
+   .. .column1, .column2, .column3 {
+   ..     width: 30%;
+   ..     padding: 1em; /* Tilføjer indvendig polstring */
+
+   .. }
+    </style>
+
+.. Note::
+
+   Currently, Rust toolchain versions up to ``1.81`` are and newer are not supported by older ``cargo-concordium`` versions ( <= ``4.0.0``). Update ``cargo-concordium`` if you see the error ``Unexpected byte 0x80. Expected 0x00`` as follows:
+
+   .. code-block:: console
+
+      $ cargo install cargo-concordium
+      $ cargo concordium --version
+      $ cargo-concordium 4.1.1
+
+   The minimum supported rust version is currently version ``1.73``
 
 .. toctree::
    :maxdepth: 2
    :hidden:
 
-   Docs <docs/index>
    Learn <learn/index>
    tutorials/index
    How-to <how-to/index>

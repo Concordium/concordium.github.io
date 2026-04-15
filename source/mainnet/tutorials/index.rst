@@ -19,19 +19,19 @@ Welcome to Concordium's tutorials section. Each tutorial guides you through buil
    Company Identity Guide <company-identity/company-identities>
 
 .. toctree::
-   :caption: Integrating Concordium
-   :hidden:
-   :maxdepth: 2
-
-   integrating-concordium
-
-.. toctree::
    :caption: Transactions Workflows
    :hidden:
    :maxdepth: 2
 
    Sponsored transactions <./protocol-level-sponsored-transactions/index>
    Smart contract sponsored transactions <./sponsoredTransactions/index>
+
+.. toctree::
+   :caption: Protocol-Level Tokens
+   :hidden:
+   :maxdepth: 2
+
+   Get started with Protocol-Level Tokens <plt/index>
 
 .. toctree::
    :caption: Tokens and Assets

@@ -323,7 +323,7 @@ linkcheck_request_headers = {
 
 # -- Sphinx-reredirects for redirecting old paths to new ones ----------------
 redirects = {
-    "index": "docs/index.html",
+    "docs/index": "/en/mainnet/index.html",
     "./net/guides/shielded-transfer": "/net/guides/shield-ccd-wallets.html",
     "./net/desktop-wallet/send-gtu-single-desktop": "/net/guides/send-ccd-wallets.html",
     "./net/desktop-wallet/send-gtu-single-desktop": "/net/guides/send-ccd-wallets.html",
@@ -855,5 +855,19 @@ redirects = {
     "docs/help-and-faq/onboarding-guide-ethereum-developers/faq": "/en/mainnet/docs/index.html",
     "docs/help-and-faq/onboarding-guide-solana-developers/overview": "/en/mainnet/docs/index.html",
     "docs/help-and-faq/onboarding-guide-solana-developers/faq": "/en/mainnet/docs/index.html",
-    "docs/help-and-faq/faqs": "/en/mainnet/docs/index.html"
+    "docs/help-and-faq/faqs": "/en/mainnet/docs/index.html",
+    "docs/plt/index": "/en/mainnet/tutorials/plt/index.html",
+    "docs/plt/setup-guide/index": "/en/mainnet/tutorials/plt/setup-guide.html",
+    "docs/plt/setup-guide/request-ccd": "/en/mainnet/tutorials/plt/request-ccd.html",
+    "docs/plt/setup-guide/request-plt": "/en/mainnet/tutorials/plt/request-plt.html",
+    "docs/plt/operations/index": "/en/mainnet/tutorials/plt/operations.html",
+    "docs/plt/examples/index": "/en/mainnet/tutorials/plt/examples.html",
+    "docs/plt/examples/concordium-client": "/en/mainnet/tutorials/plt/concordium-client.html",
+    "docs/plt/examples/web-sdk": "/en/mainnet/tutorials/plt/web-sdk.html",
+    "docs/plt/examples/rust-sdk": "/en/mainnet/tutorials/plt/rust-sdk.html",
+    "docs/plt/setup-guide/account-creation": "/en/mainnet/tutorials/plt/index.html",
+    "docs/plt/setup-guide/browser-wallet": "/en/mainnet/tutorials/plt/index.html",
+    "docs/plt/setup-guide/devnet-connection": "/en/mainnet/tutorials/plt/index.html",
+    "docs/plt/setup-guide/identity-creation": "/en/mainnet/tutorials/plt/index.html",
+    "tutorials/integrating-concordium": "/en/mainnet/tutorials/index.html"
     }

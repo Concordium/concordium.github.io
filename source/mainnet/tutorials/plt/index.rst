@@ -36,4 +36,9 @@ The following operations are available:
 
 Node APIs support retrieving information about PLTs at three levels: individual token details (capabilities, supply, etc.), a complete listing of all existing PLTs, and account-specific information (balances and allow/deny list status).
 
+.. toctree::
+   :hidden:
 
+   setup-guide
+   operations
+   examples
