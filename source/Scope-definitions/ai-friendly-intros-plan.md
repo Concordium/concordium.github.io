@@ -32,13 +32,15 @@ Existing pages vary too much in structure — adding dedicated headings would re
 
 ### How-to
 
+Order matches the How-to navigation menu. All pages in each section should have an opening paragraph — including sub-documents, since each page is independently searchable and may be landed on directly by a user or AI agent.
+
 | Section | Path | Status |
 |---|---|---|
-| Smart Contracts | `how-to/smart-contracts/` | ⬜ Not started |
-| Infrastructure | `how-to/infrastructure/` | ⬜ Not started |
-| Nodes | `how-to/nodes/` | ⬜ Not started |
 | Concordium ID / Verify and Access | `how-to/concordium-id/` | ⬜ Not started |
 | Integrations | `how-to/integrations/` | ⬜ Not started |
+| Validation | `how-to/infrastructure/` | ⬜ Not started |
+| Nodes | `how-to/nodes/` | ⬜ Not started |
+| Smart Contracts | `how-to/smart-contracts/` | ⬜ Not started |
 | Governance | `how-to/governance/` | ⬜ Not started |
 | Web3 ID | `how-to/web3-id/` | ⬜ Not started |
 
@@ -60,4 +62,4 @@ Existing pages vary too much in structure — adding dedicated headings would re
 - There are approximately 120 pages in total across how-to and tutorials
 - Pages that already have a clear structured intro can be skipped or lightly improved
 - Pages where the existing content does not provide enough information to write a clear intro should be flagged for editorial attention
-- Start with how-to/smart-contracts as it is the largest and most-used section
+- Start with how-to/concordium-id (Verify and Access) as it is the first section in the How-to navigation
