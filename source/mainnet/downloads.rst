@@ -6,7 +6,7 @@
 Downloads
 =========
 
-This topic contains information about where you can download the Concordium Wallets and tools for Mainnet and Testnet.
+This topic contains information about where you can download the Concordium Wallets and tools for Mainnet and Testnet. For instructions on verifying the integrity of downloaded files, see :doc:`Verification instructions <docs/installation/verification-instructions>`.
 
 .. _downloads-cryptox:
 
@@ -374,8 +374,3 @@ For information about how to use the company identity management tool, see :ref:
 
    - `Download the Company identity management tool for macOS <https://distribution.concordium.software/tools/macos/signed/concordium_company_id_1.0.2-1_x64.dmg>`_
 
-.. toctree::
-   :hidden:
-   :maxdepth: 1
-
-   docs/installation/verification-instructions
