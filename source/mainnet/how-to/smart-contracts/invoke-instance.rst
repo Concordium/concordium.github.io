@@ -4,6 +4,10 @@
 Invoke
 ======
 
+.. admonition:: At a glance
+
+   This guide explains how to invoke a receive function on a smart contract instance to view its return value without submitting a transaction. You will need a running node, concordium-client, and a deployed contract instance. Invoking is free and does not change contract state — use it to query information or test a function before running an update.
+
 This guide explains how to invoke a smart contract instance, which
 means triggering a receive function and viewing its return value. Invoking an
 instance is *not a transaction* and it *does not change the state of a contract*.

@@ -5,6 +5,10 @@
 Verify election result
 ======================
 
+.. admonition:: At a glance
+
+   This guide explains how to independently verify a Concordium governance election result as a third party using the ``election-coordinator`` tool. You will need access to a Concordium node and the contract address of the election. After following this guide, you will be able to confirm that the published election result is correctly computed from the on-chain data.
+
 To verify that the result of an election is correctly computed as a third party, it is possible to execute a sequence of commands using the ``election-coordinator`` tool.
 
 In general, all the commands listed require specification of the concordium node and contract address to target:

@@ -5,6 +5,10 @@
 Supporting transactions
 =======================
 
+.. admonition:: At a glance
+
+   This page describes the transaction types your wallet should support on Concordium, including simple CCD transfers, smart contract interactions, staking transactions, and protocol-level tokens. No prerequisites are needed to read this page. After reading this, you will understand the full set of transaction types to implement and what makes each one different.
+
 A wallet's fundamental purpose is to construct, sign, and broadcast :term:`transactions<transaction>`. Each user-facing feature you implement will require your wallet to generate a specific type of transaction payload.
 
 The following section lists the core transaction types you can support.

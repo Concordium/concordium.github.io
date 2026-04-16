@@ -4,6 +4,10 @@
 Cost reduction
 ==============
 
+.. admonition:: At a glance
+
+   This page covers techniques for reducing transaction costs in your Concordium smart contracts, including using a custom allocator and other optimizations. You will need an existing smart contract. Use this page as a reference when your contract's transaction fees are higher than expected.
+
 There are several ways that you can reduce transaction costs when developing your smart contracts.
 
 .. _sc-costs-custom-allocator:

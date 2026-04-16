@@ -5,6 +5,10 @@
 Wallet integration
 ==================
 
+.. admonition:: At a glance
+
+   This overview covers the technical requirements for integrating Concordium blockchain support into a crypto wallet. No prerequisites are needed to read this page. After reading this, you will understand the key integration areas — identity, zero-knowledge proofs, transactions, staking, and network connectivity — and be ready to follow the individual guides in this section.
+
 This guide covers the technical requirements for integrating Concordium blockchain support into a crypto wallet. It walks you through core protocol features and key architectural decisions. Whether you're evaluating Concordium for integration or ready to begin implementation, this guide provides the foundation for making informed decisions.
 
 Integration overview

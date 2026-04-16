@@ -4,6 +4,10 @@
 Integration tests
 =================
 
+.. admonition:: At a glance
+
+   This guide shows how to write integration tests for your Concordium smart contracts using the ``concordium-smart-contract-testing`` library. You will need an existing Rust smart contract project. After following this guide, you will have tests that run against the actual contract code locally, covering single-contract and multi-contract interactions.
+
 This guide describes how to write *integration tests* in Rust for your smart contracts using the `Concordium smart contract testing library <https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/>`_.
 
 .. note::

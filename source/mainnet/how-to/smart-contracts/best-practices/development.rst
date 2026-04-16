@@ -4,6 +4,10 @@
 Development
 ===========
 
+.. admonition:: At a glance
+
+   This page provides guidelines for writing secure, reliable, and maintainable Concordium smart contracts in Rust, covering common pitfalls, security vulnerabilities, and audit considerations. No prerequisites are needed to read this page. Use this as a reference throughout your development process to avoid costly mistakes.
+
 This document provides guidelines for developing smart contracts, including best practices for smart contract development, audit, information about common pitfalls and security vulnerabilities, and how to avoid them.
 
 It starts with some general thoughts about smart contract development and then gives more details about writing smart contracts in Rust for Concordium.

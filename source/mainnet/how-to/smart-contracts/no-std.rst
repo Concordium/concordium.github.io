@@ -4,6 +4,10 @@
 Using ``no_std``
 ================
 
+.. admonition:: At a glance
+
+   This guide shows how to enable ``no_std`` in your Concordium smart contract to reduce the size of the compiled Wasm module. You will need an existing Rust smart contract and the nightly Rust toolchain. After following this guide, your contract will compile without the Rust standard library, resulting in a smaller binary.
+
 This guide shows how to enable ``no_std`` for your rust smart contract,
 potentially reducing the size of the resulting Wasm module by several kilobytes.
 

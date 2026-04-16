@@ -4,6 +4,10 @@
 Building from source
 ====================
 
+.. admonition:: At a glance
+
+   This guide explains how to build and run a local Concordium chain from source. This is an advanced process intended for developers who need to modify the node implementation or run a custom version. You will need Haskell and Rust toolchains installed. After following this guide, you will have a custom local chain running with a node, genesis data, and validator credentials.
+
 .. warning::
 
    Building from source is an advanced process. If you don't need to modify the node implementation or run a custom version, use :ref:`Docker images <run-local-chain-docker>` instead.

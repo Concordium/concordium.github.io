@@ -4,6 +4,10 @@
 Install and manage a node on Ubuntu
 ===================================
 
+.. admonition:: At a glance
+
+   This guide explains how to install and run a Concordium node on Ubuntu for mainnet or testnet. No account is required unless you want to become a validator. After following this guide, your node will be installed, running as a system service, and synchronizing with the Concordium network.
+
 This article explains how to run a Concordium node on Linux (Ubuntu) on mainnet or testnet, and how to set up your node as a :ref:`validator node<baker-node-Ubuntu>`.
 
 An account is not required to run a node, but you will need one if you want to become a validator.

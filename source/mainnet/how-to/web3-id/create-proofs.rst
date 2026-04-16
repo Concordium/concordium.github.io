@@ -5,6 +5,10 @@
 Create proofs
 =============
 
+.. admonition:: At a glance
+
+   This guide explains how to build a verifier that requests zero-knowledge proofs from users' wallets. You will need a dApp frontend and a backend service. After following this guide, you will be able to construct proof statements — including reveal, range, and membership proofs — and verify the resulting presentations against Concordium's identity layer.
+
 A :term:`verifier` is a business or use-case that provides a service contingent on the holder providing information about themselves using :term:`verifiable credentials<verifiable credential>` or :term:`account credentials<account credential>` they have. A verifier will typically consist of two components:
 
 1. A dApp that interacts with the wallet and requests a :term:`verifiable presentation` from the user.

@@ -6,6 +6,10 @@
 Set up a project
 ================
 
+.. admonition:: At a glance
+
+   This guide shows you how to create a new Concordium smart contract project, either from a template or from scratch. You will need cargo-concordium installed. After following this guide, you will have a new Rust project set up with the correct structure and dependencies for Concordium smart contract development.
+
 This guide documents two different options (*from a template* or *from scratch*) to create a new Concordium smart contract project.
 The *from a template* option is available for ``cargo-concordium`` version 2.2.0 or greater. It provides you with some
 smart contract templates. Choose the template that best fits your project scope.

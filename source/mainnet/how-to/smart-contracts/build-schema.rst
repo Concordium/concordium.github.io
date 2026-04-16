@@ -6,6 +6,10 @@
 Build a contract schema
 =======================
 
+.. admonition:: At a glance
+
+   This guide shows you how to build a schema for your smart contract, which allows off-chain tools to represent binary data in a human-readable format. You will need cargo-concordium and a compiled smart contract. After following this guide, you will have a schema exported to a file and/or embedded in your contract module.
+
 This guide will show you how to build a smart contract schema, how to export it
 to a file, and/or embed the schema into the smart contract module, all using
 |cargo-concordium|_.

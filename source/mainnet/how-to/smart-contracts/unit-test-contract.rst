@@ -4,6 +4,10 @@
 Unit testing
 ============
 
+.. admonition:: At a glance
+
+   This guide covers the legacy unit testing approach for Concordium smart contracts using the ``test_infrastructure`` module. Note that this approach is deprecated — new projects should use :ref:`integration tests <integration-test-contract>` instead. You will need an existing Rust smart contract. After following this guide, you will have unit tests running against your contract logic.
+
 .. warning::
 
    Unit testing your contracts with the |test_infrastructure|_ has been deprecated in favor of |concordium-smart-contract-testing|_.

@@ -5,6 +5,10 @@
 Deploy a smart contract module
 ==============================
 
+.. admonition:: At a glance
+
+   This guide shows you how to deploy a compiled smart contract module on-chain using concordium-client. You will need a running node, concordium-client, an account with CCD, and a compiled `.wasm` module. After following this guide, your module will be deployed on-chain and ready to be instantiated.
+
 This guide will show you how to deploy a smart contract module *on-chain* and
 how to name it.
 

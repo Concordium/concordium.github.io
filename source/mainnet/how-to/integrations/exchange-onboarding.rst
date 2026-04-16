@@ -4,6 +4,10 @@
 Exchange Onboarding Guide
 =========================
 
+.. admonition:: At a glance
+
+   This guide helps you add Concordium's native token (CCD) to your cryptocurrency exchange. You will need to create identities, set up a Concordium node, and choose an integration method. After following this guide, you will have the accounts, node infrastructure, and SDK integration in place to list CCD and handle deposits and withdrawals.
+
 This guide will help you add Concordium's native token (CCD) to your cryptocurrency exchange.
 
 Before you start, it is a good idea to read about the core concepts of the Concordium blockchain,

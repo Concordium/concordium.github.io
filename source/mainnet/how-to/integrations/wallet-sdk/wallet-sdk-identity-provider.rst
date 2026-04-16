@@ -4,6 +4,10 @@
 Get the list of identity providers
 ==================================
 
+.. admonition:: At a glance
+
+   This guide shows you how to retrieve the list of identity providers and their metadata from the Concordium wallet-proxy service. No special prerequisites are needed beyond your chosen SDK. After following this guide, your wallet will have access to the identity provider list required for identity creation and recovery.
+
 The list of identity providers can be retrieved from a Concordium node; however, the provided list lacks the necessary metadata for creating or recovering an identity from an identity provider. Therefore, Concordium hosts a service called the wallet-proxy that serves this information to wallets.
 
 .. _Identity Provider List:

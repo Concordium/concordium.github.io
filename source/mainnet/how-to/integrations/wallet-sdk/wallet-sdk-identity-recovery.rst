@@ -4,6 +4,10 @@
 Recover an identity
 ===================
 
+.. admonition:: At a glance
+
+   This guide shows you how to implement identity recovery in your wallet using the Concordium SDK. You will need the user's seed phrase and the identity provider that was used during identity creation. After following this guide, your wallet will be able to generate a recovery request and retrieve the identity object from the identity provider.
+
 The following sections demonstrate the process of creating a request to recover an identity from an identity provider. While accounts are stored on the Concordium blockchain, identities are stored by the selected identity provider during the creation process, and recovery is initiated by sending a request to that specific identity provider.
 
 * `Generate an identity recovery request`_

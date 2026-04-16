@@ -4,6 +4,10 @@
 Inspect
 =======
 
+.. admonition:: At a glance
+
+   This guide explains how to inspect a deployed smart contract instance to view its name, owner, module reference, balance, and available receive functions. You will need a running node, concordium-client, and a deployed contract instance. This is a read-only operation with no transaction fee.
+
 This guide explains how to inspect a smart contract instance.
 Inspecting an instance shows you its name, owner, module reference, balance,
 and receive-functions:

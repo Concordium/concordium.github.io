@@ -5,6 +5,10 @@
 Custom errors
 =============
 
+.. admonition:: At a glance
+
+   This guide shows how to define and return custom error types from your Concordium smart contract. You will need an existing Rust smart contract project. After following this guide, your contract will return meaningful, human-readable error codes instead of plain numeric rejection values.
+
 This guide shows how to return custom errors from your Rust smart contract.
 
 Defining and deriving

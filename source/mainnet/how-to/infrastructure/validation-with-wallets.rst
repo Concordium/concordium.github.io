@@ -6,6 +6,9 @@
 Validation with Concordium wallets
 ==================================
 
+.. admonition:: At a glance
+
+   This guide explains how to become a validator on Concordium using the Concordium wallets. You will need a running, fully synced node and an account with at least 500,000 CCD to stake. After following this guide, your validator keys will be generated, registered on-chain, and your node will be producing blocks.
 
 To become a validator in the Concordium network, you need to run a node, generate validator keys, and then import these keys to the node. Validator keys generation is possible with the Concordium wallets as well as with the ``Concordium-client``; however, the process differs between them. The overviews below give a brief description of the process.
 

@@ -4,6 +4,10 @@
 Fallback entrypoints
 ====================
 
+.. admonition:: At a glance
+
+   This guide explains how to add a fallback entrypoint to your smart contract, which handles calls to functions that are not explicitly defined — useful when building proxy contracts. You will need an existing Rust smart contract with Rust, Cargo, wasm32 target, and cargo-concordium installed. After following this guide, your contract will handle unknown function calls gracefully.
+
 This guide explains how to use fallback entrypoints, which can be useful
 when creating a proxy for your smart contract.
 

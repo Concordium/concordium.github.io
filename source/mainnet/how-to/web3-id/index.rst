@@ -9,6 +9,10 @@
 Identity on Concordium
 ======================
 
+.. admonition:: At a glance
+
+   This overview explains Concordium's Web3 ID system, which extends the core identity layer to support verifiable credentials such as memberships, certifications, and loyalty programs. No prerequisites are needed to read this page. After reading this, you will understand the roles of issuers, holders, and verifiers, and be ready to follow the guides for becoming an issuer or creating proofs.
+
 For background on Concordium's identity framework and account credentials, see :ref:`Identity framework on Concordium<reference-identity>`.
 For a complete list of available ID attributes and their formats, see :ref:`ID attributes reference<id-attributes-reference>`.
 

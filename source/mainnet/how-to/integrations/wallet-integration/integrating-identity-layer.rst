@@ -5,6 +5,10 @@
 Integrating Concordium's ID layer
 =================================
 
+.. admonition:: At a glance
+
+   This guide explains the two approaches for integrating Concordium's identity layer into your wallet: direct integration with an identity provider, or offloading identity management to the Concordium ID App. No implementation prerequisites are needed to read this page. After reading this, you will be able to make an informed architectural decision on which integration path is right for your project.
+
 Every account on Concordium is backed by a verified identity, requiring a balance between compliance and on-chain privacy. The process begins with an off-chain :term:`Identity Provider (IDP)<Identity Provider>` who issues a sensitive :term:`identity object` to the user. This object is the cryptographic root of the user's on-chain presence.
 
 Your wallet's role is to facilitate the use of this identity object to create public on-chain accounts, ensuring privacy by anchoring the user's identity without exposing personal data. This guide outlines the two primary integration paths for managing the identity creation process and its associated data.

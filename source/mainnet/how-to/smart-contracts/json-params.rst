@@ -4,6 +4,10 @@
 JSON parameters
 ===============
 
+.. admonition:: At a glance
+
+   This guide explains how to pass JSON parameters to CIS-2 smart contract functions using concordium-client. You will need an initialized CIS-2 contract instance and a schema. After following this guide, you will be able to call contract functions such as ``transfer`` and ``updateOperator`` using structured JSON input instead of raw binary.
+
 This guide explains how to interact with the CIS-2 smart contract functions by providing input JSON parameters. This guide uses the `cis2-multi smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis2-multi>`__ as a starting point, and then continues with a couple of custom input types.
 
 .. seealso::

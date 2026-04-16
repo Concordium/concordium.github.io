@@ -5,6 +5,10 @@
 Initialize
 ==========
 
+.. admonition:: At a glance
+
+   This guide shows you how to initialize a smart contract instance from a deployed module using concordium-client. You will need a running node, concordium-client, an account with CCD, and a deployed module. After following this guide, you will have a running smart contract instance on-chain ready to interact with.
+
 This guide will show you how to initialize a smart contract from a deployed
 smart contract module with parameters in JSON or binary format.
 Additionally, it will show how to name an instance.

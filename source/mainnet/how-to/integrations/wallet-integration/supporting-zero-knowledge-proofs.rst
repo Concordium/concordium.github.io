@@ -5,6 +5,10 @@
 Supporting zero-knowledge proofs
 ================================
 
+.. admonition:: At a glance
+
+   This page explains what your wallet needs to do to support Concordium's zero-knowledge proofs. Your responsibilities depend on which identity integration path you have chosen. After reading this, you will understand what ZKP support requires for your wallet and where to find the relevant developer tools.
+
 Concordium's identity layer uses :term:`zero-knowledge proofs (ZKPs)<zero-knowledge proof>` to ensure user privacy. These cryptographic proofs are a core component of the :term:`identity object`. They enable a user to confirm their verified status on-chain without disclosing personal data. This system also allows for selective disclosure; for instance, a user could generate a proof to confirm a specific attribute (e.g., "is over 18"). A third party can then verify the proof against the user's public commitment on the blockchain, confirming the attribute without revealing other personal data.
 
 Your wallet's responsibility for handling these proofs depends on your chosen integration path:

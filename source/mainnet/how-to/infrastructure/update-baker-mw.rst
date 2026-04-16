@@ -5,6 +5,10 @@
 Change validator options
 ========================
 
+.. admonition:: At a glance
+
+   This guide shows you how to update your validator settings using a Concordium wallet, including changing your stake, restaking preference, pool configuration, and validator keys. You will need an existing active validator. After following this guide, your validator settings will be updated and will take effect at the next pay day.
+
 .. Note::
 
    All transfers and transactions cost a fee, including staking and unstaking transactions. The fee is based on the set NRG for that transaction and the current exchange rate.

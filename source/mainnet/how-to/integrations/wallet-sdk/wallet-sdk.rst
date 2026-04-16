@@ -4,6 +4,10 @@
 Build a wallet
 ===============
 
+.. admonition:: At a glance
+
+   This guide is for developers building their own wallet for the Concordium blockchain — whether a mobile wallet (iOS or Android) or a web-based solution. You will need to choose an SDK for your target platform. After reading this, you will have the right SDK package and a working example wallet to build from, and you can follow the sub-guides for identity creation, recovery, credential deployment, and transactions.
+
 This integration guide is directed towards developers who want to implement their own wallet for the Concordium blockchain.
 This typically means either a mobile wallet (iOS or Android), or a solution building on TypeScript or JavaScript.
 

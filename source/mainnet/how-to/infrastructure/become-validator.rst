@@ -8,6 +8,10 @@
 Validation with the Concordium Client
 =====================================
 
+.. admonition:: At a glance
+
+   This guide takes you through setting up a validator node using the Concordium Client. You will need a running node and an account with sufficient CCD. After following this guide, your node will be registered as a validator and will start producing blocks and earning rewards.
+
 This guide takes you through the steps involved in upgrading your node to a validator node and managing the node using the Concordium Client.
 
 The process of becoming a validator involves the following:

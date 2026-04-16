@@ -6,6 +6,10 @@
 Install and manage a node on Docker
 ===================================
 
+.. admonition:: At a glance
+
+   This guide explains how to install and run a Concordium node in Docker on Linux for mainnet or testnet. You will need Docker installed. No account is required unless you want to become a validator. After following this guide, your node will be running in a Docker container and synchronizing with the Concordium network.
+
 This article explains how to run a Concordium node in Docker on Linux on mainnet or testnet, and how to set up your node as a :ref:`validator node<configure-baker-docker>`.
 
 An account is not required to run a node, but you will need one if you want to become a validator.

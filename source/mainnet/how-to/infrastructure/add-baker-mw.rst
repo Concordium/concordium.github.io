@@ -5,6 +5,10 @@
 Add a validator
 ====================================
 
+.. admonition:: At a glance
+
+   This guide shows you how to register as a validator from a Concordium wallet. You will need an account with at least 500,000 CCD available to stake. After following this guide, your validator keys will be generated and your account registered as a validator, ready for keys to be imported into your node.
+
 Prior to becoming a validator, read :ref:`How to become a validator<how-to-become-a-validator>` to learn about best practices for validators. **There is a minimum amount to stake (500000 CCD) to become a validator**.
 
 .. Note::

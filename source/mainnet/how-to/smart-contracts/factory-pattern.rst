@@ -4,6 +4,10 @@
 Factory pattern
 ===============
 
+.. admonition:: At a glance
+
+   This page explains the factory pattern and why it is largely unnecessary on Concordium. No prerequisites are needed. After reading this, you will understand how Concordium separates module deployment from contract instantiation, and why direct instantiation is the preferred approach over the factory pattern.
+
 The factory pattern is a design pattern where one contract (the factory) creates instances of
 another contract (the products). This pattern makes sense on Ethereum, where deploying a smart
 contract typically means deploying the code and instantiating a contract in a single transaction.

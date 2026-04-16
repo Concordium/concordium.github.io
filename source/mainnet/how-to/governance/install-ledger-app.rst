@@ -12,6 +12,10 @@
 Set up the LEDGER device and install the Concordium Governance LEDGER App
 =========================================================================
 
+.. admonition:: At a glance
+
+   This guide explains how to set up a Ledger hardware device and install the Concordium Governance Ledger app. This is for governance committee members only. You will need a compatible Ledger device (Nano S or Nano S Plus) and the correct firmware version. After following this guide, your Ledger device will be ready to sign governance transactions.
+
 .. warning::
 
    The steps here are only for members of the governance committee. If you are not a member of the governance committee, see :ref:`Install the Concordium LEDGER app using LEDGER Live<install-ledger>` for instructions on how to install.

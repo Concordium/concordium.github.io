@@ -5,6 +5,10 @@
 Supporting staking
 ==================
 
+.. admonition:: At a glance
+
+   This page explains what staking and delegation features your wallet should support to enable users to earn rewards on their CCD. No prerequisites are needed to read this page. After reading this, you will understand the delegation model, the key user flows to implement, and where to find more detailed documentation on staking mechanics.
+
 Concordium secures its network using a :term:`proof-of-stake` model enabling your users to earn rewards on their CCD holdings. This ecosystem is built on two key roles: :term:`validators<validator>`, who operate the nodes that run the network, and :term:`delegators<delegator>`, who are users that stake their CCD to support these validators.
 
 For the majority of users, the primary way to participate is through :term:`delegation`. This allows them to assign the weight of their CCD to a validator of their choice, earning a share of the rewards without the technical overhead of running their own node.

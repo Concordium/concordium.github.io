@@ -4,6 +4,10 @@
 Create an account
 =================
 
+.. admonition:: At a glance
+
+   This guide shows you how to create a Concordium account in your wallet by deploying a credential. You will need a completed identity object and the identity provider used to create it. After following this guide, your wallet will be able to construct, sign, and submit a credential deployment transaction, resulting in a new on-chain account.
+
 Having created an identity, the next step is to create an account. On Concordium, an account is an entity that can hold multiple credentials, but for the sake of keeping the example simple, the following guide will describe how to create an account with a single credential.
 
 * `Create a credential deployment transaction`_

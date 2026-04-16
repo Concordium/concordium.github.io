@@ -5,6 +5,10 @@
 Suspend/Unsuspend a validator
 =============================
 
+.. admonition:: At a glance
+
+   This guide explains how to manually suspend or reactivate a validator, and what happens when a validator is automatically suspended by the protocol. You will need an active validator. After reading this guide, you will understand when and how to suspend your validator safely, and how to resume it when your node is back online.
+
 A validator can be suspended in two ways:
 
 - **Self-suspension**: You can manually suspend your validator, for example during planned node maintenance.

@@ -9,6 +9,10 @@
 Web3 ID issuers
 ===============
 
+.. admonition:: At a glance
+
+   This guide explains how to become a Web3 ID credential issuer on Concordium. You will need an existing way to identify your users, and some CCD to pay for on-chain transactions. After following this guide, you will have a credential registry smart contract deployed, the necessary metadata set up, and a backend capable of issuing verifiable credentials to users' wallets.
+
 Web3 ID includes many types of credentials that are not identity credentials. This might be employment history, certifications from educational courses or diplomas, membership in loyalty clubs or rewards programs, and more. Because of this anyone can become an :term:`issuer`!
 
 How to become an issuer

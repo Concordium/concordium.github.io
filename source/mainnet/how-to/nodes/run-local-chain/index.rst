@@ -4,6 +4,10 @@
 Run a local chain
 =================
 
+.. admonition:: At a glance
+
+   This page explains what a local Concordium chain is and when to use one. No prerequisites are needed to read this page. After reading this, you will understand the benefits of a local chain for development and be ready to choose between the Docker-based setup (recommended) or building from source.
+
 A local chain is your own private instance of the Concordium blockchain, running entirely on your machine or local network. Unlike testnet or mainnet, you have full control over the chain's configuration, accounts, and progression — making it ideal for development workflows where you need fast iteration and complete isolation.
 
 Why run a local chain?

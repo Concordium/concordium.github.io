@@ -4,6 +4,10 @@
 Troubleshoot a node on macOS
 ============================
 
+.. admonition:: At a glance
+
+   This guide helps you diagnose and fix problems with a Concordium node running on macOS. You will need a node already installed. Use this page when your node is not starting, not syncing, or behaving unexpectedly.
+
 This guide describes how to troubleshoot a node running on macOS on the Concordium network.
 
 View node logs

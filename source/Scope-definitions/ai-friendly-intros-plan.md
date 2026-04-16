@@ -12,14 +12,18 @@ This also improves the experience for human readers scanning the page.
 
 ## Format
 
-**Option chosen: inline prose (opening paragraph)**
+**Option chosen: `.. admonition:: At a glance` box**
 
-Add or improve the opening paragraph of each page to naturally cover the three elements above. Example:
+Add an admonition block immediately after the page title on each page. The box contains a short paragraph covering the three elements above. Example:
 
-> This guide shows you how to compile a smart contract module into a Wasm binary using cargo-concordium. You will need Rust, the wasm32 target, and cargo-concordium installed. When you are done, you will have a `.wasm` file ready to deploy on the Concordium blockchain.
+```rst
+.. admonition:: At a glance
 
-**Why not explicit sections (Prerequisites / What you will build)?**
-Existing pages vary too much in structure — adding dedicated headings would require larger, more disruptive changes. Inline prose integrates naturally into any existing page structure. For new pages, explicit sections are encouraged (see the prompt/skill for new documents).
+   This guide shows you how to compile a smart contract module into a Wasm binary using cargo-concordium. You will need Rust, the wasm32 target, and cargo-concordium installed. When you are done, you will have a `.wasm` file ready to deploy on the Concordium blockchain.
+```
+
+**Why a named admonition box?**
+The box visually separates the structured intro from the existing page content without disrupting the document's own flow. It is also easy for AI agents to identify as a summary section. For overview/index pages the outcome statement describes what you will *understand* after reading, not what you will have built.
 
 ## Workflow
 
@@ -36,12 +40,12 @@ Order matches the How-to navigation menu. All pages in each section should have 
 
 | Section | Path | Status |
 |---|---|---|
-| Concordium ID / Verify and Access | `how-to/concordium-id/` | ⬜ Not started |
-| Integrations | `how-to/integrations/` | ⬜ Not started |
-| Validation | `how-to/infrastructure/` | ⬜ Not started |
-| Nodes | `how-to/nodes/` | ⬜ Not started |
-| Smart Contracts | `how-to/smart-contracts/` | ⬜ Not started |
-| Governance | `how-to/governance/` | ⬜ Not started |
+| Concordium ID / Verify and Access | `how-to/concordium-id/` | ✅ Done |
+| Integrations | `how-to/integrations/` | ✅ Done |
+| Validation | `how-to/infrastructure/` | ✅ Done |
+| Nodes | `how-to/nodes/` | ✅ Done |
+| Smart Contracts | `how-to/smart-contracts/` | ✅ Done |
+| Governance | `how-to/governance/` | ✅ Done |
 | Web3 ID | `how-to/web3-id/` | ⬜ Not started |
 
 ### Tutorials

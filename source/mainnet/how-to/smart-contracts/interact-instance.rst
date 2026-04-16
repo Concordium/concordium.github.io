@@ -4,6 +4,10 @@
 Interact
 ========
 
+.. admonition:: At a glance
+
+   This guide shows you how to call a receive function on a smart contract instance to update its state using concordium-client. You will need a running node, concordium-client, an account with CCD, and an initialized contract instance. After following this guide, you will be able to send update transactions to your contract.
+
 This guide will show you, how to interact with a smart contract instance, which
 means triggering a receive function that, possibly, updates the state of the
 instance.

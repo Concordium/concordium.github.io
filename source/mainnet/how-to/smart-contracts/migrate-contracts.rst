@@ -4,6 +4,10 @@
 Migrate contracts for ``concordium-std`` 8.1
 ==============================================
 
+.. admonition:: At a glance
+
+   This guide shows you how to migrate your existing smart contracts to use the simplified concrete types introduced in ``concordium-std`` 8.1. You will need an existing smart contract that uses the deprecated ``test_infrastructure`` approach. After following this guide, your contract will use fewer generics and be compatible with the ``concordium-smart-contract-testing`` integration test library.
+
 With the |concordium_std|_ version ``8.1`` release, writing and reading smart contracts is easier than ever before.
 The new version of the standard library reduces the need for generics and traits in your init and receive methods.
 These generics and traits were there to support testing with the |test_infrastructure|_, which has been deprecated in favor of the |concordium-smart-contract-testing|_ library.

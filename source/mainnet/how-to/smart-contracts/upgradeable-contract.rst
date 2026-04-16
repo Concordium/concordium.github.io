@@ -4,6 +4,10 @@
 Upgradeability Guide
 ====================
 
+.. admonition:: At a glance
+
+   This guide shows how to make your Concordium smart contract upgradeable so you can fix bugs or add features after deployment. You will need an existing Rust smart contract. After following this guide, your contract will support in-place module upgrades using Concordium's built-in upgrade mechanism, without needing a proxy pattern.
+
 This guide shows how to make a Rust smart contract upgradeable.
 
 Immutable smart contracts come with the drawback that bugs cannot be fixed, new features and cost optimizations cannot be implemented.

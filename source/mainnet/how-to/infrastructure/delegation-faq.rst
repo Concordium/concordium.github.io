@@ -4,6 +4,10 @@
 Delegation and validation FAQ
 =============================
 
+.. admonition:: At a glance
+
+   This page answers common questions about delegation and validation on Concordium, including how staking changes take effect, cool-down periods, rewards, and protocol changes across versions. No prerequisites are needed. Use this page as a reference when you have questions about validator or delegator behaviour.
+
 .. Note::
 
     **Changes from Protocol 6 to Protocol 7**

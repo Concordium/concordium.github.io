@@ -4,6 +4,10 @@
 Using Docker (recommended)
 ==========================
 
+.. admonition:: At a glance
+
+   This guide explains how to run a local Concordium chain using the Concordium Local Stack Docker setup. You will need Docker installed. After following this guide, you will have a complete local development environment running, including a node, wallet proxy, explorer, identity provider, and ZK verifier.
+
 The easiest way to run a local Concordium chain is using the `Concordium Local Stack <https://github.com/Concordium/concordium-local-stack>`_ — a pre-configured Docker setup that provides a complete development environment.
 
 What's included

@@ -4,6 +4,10 @@
 Run a Concordium node
 =====================
 
+.. admonition:: At a glance
+
+   This page covers everything you need to know before running a Concordium node: hardware requirements, platform options (Ubuntu, Windows, macOS, Docker, AWS), and how to synchronize with the network. No account is required just to run a node. After reading this, you will be ready to choose your platform and follow the relevant installation guide.
+
 Running a Concordium node is required for network validation, building custom services, or integrating directly with the blockchain.
 If you are a developer, operating your own node enables you to process events, access on-chain data, and build advanced integrations.
 You can choose to run a node yourself or have a third-party provider operate it for you.

@@ -8,6 +8,10 @@
 Import validator keys
 ======================
 
+.. admonition:: At a glance
+
+   This guide explains how to import your validator keys into a running Concordium node. You will need a node already running on your platform (Windows, Docker, Ubuntu, or macOS) and a set of generated validator keys. After following this guide, your node will be configured as a validator and will start producing blocks within two epochs.
+
 This guide describes how to set up a node to run as a :ref:`validator <baker-concept>` node that participates in the Concordium network on different platforms. A node receives blocks and transactions from other nodes and propagates information about blocks and transactions to the nodes in the Concordium network. In addition, a validator node also participates in the lottery and produces its own blocks. The validator node will start producing blocks two :term:`epochs <epoch>` after the transaction has been approved.
 
 .. Note::

@@ -14,6 +14,5 @@ Choose your wallet for instructions about installation and configuration.
    Set up the Concordium Wallet for Web <../../../docs/browser-wallet/setup-browser-wallet>
    Set up the Desktop Wallet <overview-desktop>
    Use your Ledger Device with Concordium Desktop Wallet <ledger-tutorial>
-   Set up Concordium Governance Ledger App <../../../how-to/governance/install-ledger-app>
 
 

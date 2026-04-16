@@ -4,6 +4,10 @@
 Advanced node configuration on Docker
 =====================================
 
+.. admonition:: At a glance
+
+   This page covers advanced configuration options for a Concordium node running in Docker, including enabling inbound connections, TLS setup, and node collector configuration. You will need a running Docker node. Use this page when you need to go beyond the default setup.
+
 .. Note::
    If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate, for example, ``CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000``.
 

@@ -5,6 +5,10 @@
 Connecting your wallet to the network
 =====================================
 
+.. admonition:: At a glance
+
+   This guide explains how to connect your wallet to the Concordium network. You will need to run a Concordium node or access one. After reading this, you will understand the recommended architecture — including running your own node and building a wallet proxy — and have the resources needed to set it up.
+
 A :term:`Concordium node<Node>` is the gateway to the blockchain. For your wallet to perform any :term:`on-chain action<On-chain>`, it must communicate with a node.
 
 Concordium nodes communicate exclusively via gRPC (gRPC Remote Procedure Calls). This framework exposes the blockchain's unique features, including its built-in identity layer and specific data structures for :term:`accounts<Account>` and :term:`smart contracts<Smart contract>`.

@@ -5,6 +5,10 @@
 Set up smart contract development tools
 ==========================================
 
+.. admonition:: At a glance
+
+   This guide explains how to install the tools needed to develop, build, and deploy smart contracts on Concordium. No prior Concordium experience is needed, but you should be familiar with Rust. After following this guide, you will have Rust, cargo-concordium, and the wasm32 target installed and ready for smart contract development.
+
 This guide covers how to install the tools needed to develop, build, and deploy
 smart contracts on Concordium.
 

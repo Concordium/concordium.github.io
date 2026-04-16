@@ -6,6 +6,10 @@
 Run a node on Amazon Web Services (AWS)
 =======================================
 
+.. admonition:: At a glance
+
+   This guide explains how to set up a Concordium node on an AWS Virtual Private Server using the marketplace product. You will need an AWS account. After following this guide, your node will be running on AWS and synchronizing with the Concordium network.
+
 In this guide, you will learn how to set up a node on an AWS Virtual Private Server (VPS), using the marketplace product.
 The node will be running on the minimum required hardware, but you will be able to configure it to be running on more powerful hardware.
 

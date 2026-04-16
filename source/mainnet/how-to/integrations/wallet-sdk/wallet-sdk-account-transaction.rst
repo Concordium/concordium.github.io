@@ -4,6 +4,10 @@
 Submit a transaction to a Concordium node
 =========================================
 
+.. admonition:: At a glance
+
+   This guide shows you how to construct, sign, and submit an account transaction using the Concordium SDK. You will need an existing Concordium account and a connection to a node. After following this guide, your wallet will be able to send a CCD transfer and receive a transaction hash to track its status.
+
 The following sections document the requirements for creating an account transaction, signing it, and
 sending it to a Concordium node.
 

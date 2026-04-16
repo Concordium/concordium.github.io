@@ -4,6 +4,10 @@
 Create an identity
 ==================
 
+.. admonition:: At a glance
+
+   This guide shows you how to implement identity creation in your wallet using the Concordium SDK. You will need a seed phrase, access to a Concordium node, and a chosen identity provider. After following this guide, your wallet will be able to generate an identity request, send it to an identity provider, and retrieve the resulting identity object.
+
 To create an account on the Concordium blockchain, a user must first acquire an identity. Therefore, as an initial step, a wallet user will always have to create an identity before being able to send account transactions.
 
 An identity is acquired by generating an identity request and sending it to an identity provider. The user will then be taken through the identity verification

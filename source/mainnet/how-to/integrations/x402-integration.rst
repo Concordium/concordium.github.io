@@ -5,6 +5,10 @@
 X402 Integration
 ================
 
+.. admonition:: At a glance
+
+   This page introduces the X402 open payment protocol and explains how it integrates with Concordium to enable compliant, frictionless micropayments — including machine-to-machine payments for AI agents. No prerequisites are needed to read this page. After reading this, you will understand how X402 works with Concordium's identity layer and where to go next to explore the integration further.
+
 X402 is an open payment protocol that revives the long-dormant HTTP 402 "Payment Required" status code. It is designed to embed payments directly into the standard internet request-response cycle, eliminating the need for traditional sign-ups, subscriptions, or complex API keys.
 
 - **HTTP Native:** When a client (a human user, a developer's application, or an AI agent) requests a resource (like an API call or a piece of data), the server can respond with 402 Payment Required, specifying the exact price and payment details.

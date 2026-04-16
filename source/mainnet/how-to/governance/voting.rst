@@ -5,6 +5,10 @@
 How to vote
 ===========
 
+.. admonition:: At a glance
+
+   This guide explains how to cast a vote in a Concordium governance election. You will need a Concordium wallet (CryptoX, Browser Wallet, or Desktop Wallet) with enough CCD to cover transaction fees. After following this guide, your vote will be submitted to the election smart contract.
+
 To paritcipate in voting, voters need a wallet on the Concordium blockchain with enough CCD to cover transaction fees. Once this is set up, the voting process works as described below.
 
 For |cryptox| and |bw| wallet holders

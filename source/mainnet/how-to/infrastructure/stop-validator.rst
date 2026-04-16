@@ -5,6 +5,10 @@
 Stop a validator
 ================
 
+.. admonition:: At a glance
+
+   This guide shows you how to stop validation and remove your validator from the network using a Concordium wallet. You will need an active validator. After following this guide, your node will stop producing blocks after the next pay day and your staked amount will be returned after the cool-down period.
+
 If you remove a validator, the node that is configured with the validator keys will stop producing blocks after the next :term:`pay day`.
 
 After the :term:`cool-down period`, the amount that you previously staked is returned to your disposable balance at the next pay day.

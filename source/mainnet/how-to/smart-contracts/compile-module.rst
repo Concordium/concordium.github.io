@@ -8,6 +8,10 @@
 Module Compilation
 ==================
 
+.. admonition:: At a glance
+
+   This guide shows you how to compile a Concordium smart contract written in Rust into a Wasm module. You will need Rust, Cargo, the wasm32 target, and cargo-concordium installed. After following this guide, you will have a compiled `.wasm` module ready to deploy on-chain.
+
 This guide will show you how to compile smart contract module written in Rust to
 a Wasm module.
 
