@@ -198,6 +198,19 @@ html[data-theme="dark"] .tutorial-section-yellow {
     border: 1px solid #48482d !important;
 }
 
+/* Landing page cards */
+.landing-card {
+    background-color: #eaf4f6 !important;
+    /* Very light tint of Concordium teal #48a2ae */
+    border: 1px solid #c0dfe4 !important;
+}
+
+html[data-theme="dark"] .landing-card {
+    background-color: #0d2e33 !important;
+    /* Dark teal for dark mode */
+    border: 1px solid #1a4a52 !important;
+}
+
 /* Main layout fixes - these were working well */
 .bd-container__inner.bd-page-width {
     max-width: none;

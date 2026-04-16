@@ -4,65 +4,46 @@
 Developer Documentation
 =======================
 
-Concordium is a public blockchain platform designed for security, privacy, and scalability. It offers a unique identity layer for verified and private user interactions. Developers can leverage Concordium's fast and affordable transactions, along with its robust smart contract capabilities, to build innovative decentralized applications.
+Concordium is a public, permissionless Layer 1 blockchain with a built-in identity layer. It provides fast, affordable transactions with smart contract support, and a unique approach to regulatory compliance through verified identities.
 
-Explore our developer resources, including detailed documentation, tutorials, and a suite of tools to support your development journey.
+Whether you are evaluating the technology, building your first integration, or looking for specific technical details, find what you need below.
 
-.. image:: docs/images/frontpage.png
-   :width: 400px
-   :alt: frontpage image
-   :align: center
+.. grid:: 1 1 3 3
+   :gutter: 3
 
+   .. grid-item-card:: Evaluating Concordium?
+      :class-card: landing-card
 
-.. container:: three-columns
+      Get a clear picture of what Concordium does, how it works, and whether it fits your use case.
 
-   .. container:: column1
+      - :doc:`What is the Concordium Protocol <learn/concordium-protocol>`
+      - :doc:`Identity framework <learn/identity/index>`
+      - :doc:`Tokenomics <learn/tokenomics>`
+      - :doc:`Smart contracts <learn/smart-contracts/index>`
 
-      .. raw:: html
+   .. grid-item-card:: Ready to build?
+      :class-card: landing-card
 
-           <a href="learn/index.html" class="heading-link"><strong>Learn</strong></a>
+      Set up your environment and follow step-by-step guides from your first transaction to a complete integration.
 
-      Explore Concordium's architecture, unique ID layer, transaction structure, and tokens.
-      Understand the fundamentals of building on Concordium.
+      - :doc:`Quick start guide <tutorials/quick-start>`
+      - :doc:`Set up development tools <how-to/smart-contracts/build-contract>`
+      - :doc:`Get started with Protocol-Level Tokens <tutorials/plt/index>`
+      - :doc:`Onboard as an exchange <how-to/integrations/exchange-onboarding>`
 
+   .. grid-item-card:: Looking for something specific?
+      :class-card: landing-card
 
-   .. container:: column2
+      Find detailed reference documentation, API specs, and targeted guides for specific tasks.
 
-      .. raw:: html
-
-           <a href="tutorials/index.html" class="heading-link"><strong>Tutorials</strong></a>
-
-
-      Develop on Concordium: Learn to build smart contracts and dApps, and set up your development environment. Find tutorials, code examples, and guides to help you get started today.
-
-   .. container:: column3
-
-      .. raw:: html
-
-           <a href="technical-reference/index.html" class="heading-link"><strong>Reference</strong></a>
-
-
-      Reference documentation for Concordium APIs, SDKs, command-line tools, smart contract specifications, and release notes.
-
-.. raw:: html
-
-
-    <style>
-   .. .three-columns {
-   ..     display: flex;
-   ..     justify-content: space-between;
-   ..     gap: 2em; /* Tilføjer mellemrum mellem spalterne */
-   .. }
-   .. .column1, .column2, .column3 {
-   ..     width: 30%;
-   ..     padding: 1em; /* Tilføjer indvendig polstring */
-
-   .. }
-    </style>
+      - :doc:`gRPC API reference <technical-reference/api>`
+      - :doc:`Concordium Client <technical-reference/concordium-client/concordium-client>`
+      - :doc:`How-to guides <how-to/index>`
+      - :doc:`Downloads <downloads>`
 
 .. Note::
 
-   Currently, Rust toolchain versions up to ``1.81`` are and newer are not supported by older ``cargo-concordium`` versions ( <= ``4.0.0``). Update ``cargo-concordium`` if you see the error ``Unexpected byte 0x80. Expected 0x00`` as follows:
+   Currently, Rust toolchain versions up to ``1.81`` and newer are not supported by older ``cargo-concordium`` versions ( <= ``4.0.0``). Update ``cargo-concordium`` if you see the error ``Unexpected byte 0x80. Expected 0x00`` as follows:
 
    .. code-block:: console
 
