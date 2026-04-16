@@ -20,4 +20,4 @@ Understand how Concordium works. This section contains explanation-oriented cont
    Consensus <consensus/index>
    Tokenomics <tokenomics>
    Staking <staking/index>
-   Governance <governance/index>
+   Governance <governance/gc-voting>

@@ -5,6 +5,8 @@
 Concordium Governance Committee elections
 =========================================
 
+Concordium's governance model enables the community to participate in decisions about the blockchain through on-chain voting. Governance Committee election process uses cryptographic proofs and the blockchain to ensure votes are counted correctly and verifiably.
+
 Concordium Governance Committee elections are a vital part of decentralization, allowing the Concordium community to make decisions about the blockchain.
 
 Users vote using their wallets and their vote is :term:`weighted<account weight>` by the amount of CCD held in their accounts. Thus, a user with multiple accounts should vote from all accounts for their votes to have maximum weight. If the *same account* votes multiple times, only the last vote will count.
@@ -74,3 +76,10 @@ Components for voting
 =====================
 
 There are a number of components used during voting, including the coordinator tool, the Voter dApp, and the Guardian App. You can explore the `repository for the components <https://github.com/Concordium/concordium-governance-committee-voting>`_.
+
+.. seealso::
+
+   - :doc:`How to vote </how-to/governance/voting>`
+   - :doc:`Guardians </how-to/governance/guardians>`
+   - :doc:`Verify election result </how-to/governance/verify-election-result>`
+   - :doc:`Install the Ledger governance app </how-to/governance/install-ledger-app>`
