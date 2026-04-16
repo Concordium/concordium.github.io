@@ -4,6 +4,8 @@ Tracks categorisation and placement decisions made during the Divio/Diataxis res
 
 **Phase 1 (Learn menu) — complete.** All explanation-oriented content has been moved to `learn/`, all redirects are in place, `docs/index.rst` has been cleaned of all migrated entries, and the build is clean with no warnings.
 
+**Phase 2 (Tutorials, How-to, Reference, Docs menu removal, Landing page) — complete.** PLT docs moved to Tutorials. Docs menu removed and replaced with a new main landing page. Governance section consolidated. Downloads sidebar fixed. Build is clean with no warnings.
+
 ---
 
 ## Learn
@@ -44,8 +46,8 @@ Tracks categorisation and placement decisions made during the Divio/Diataxis res
 | Document | Original location | New location | Rationale | Notes / Future recommendations |
 |---|---|---|---|---|
 | Quick start guide | `docs/smart-contracts/guides/quick-start.rst` | `tutorials/quick-start.rst` | End-to-end walkthrough of building and deploying a smart contract from scratch. Tutorial (not a how-to) — guides the user through the whole process. Correctly placed in Tutorials under Building Smart Contracts. | — |
-| Integrating Concordium (placeholder) | — | `tutorials/integrating-concordium.rst` | No tutorial content is currently mapped to this section. | Candidates to review when working through remaining Docs content: integration-related tutorials covering wallets, SDKs, or dApp connectivity that do not fit other sections. |
-| Running Infrastructure (placeholder) | — | `tutorials/running-infrastructure.rst` | No tutorial content is currently mapped to this section. | Candidates to review: `docs/network/guides/run-local-chain/` may contain tutorial-style content for setting up a local chain. Review during Technical Reference/unplaced document phase. |
+| Integrating Concordium (placeholder) | — | `tutorials/integrating-concordium.rst` | No content mapped. Placeholder deleted and redirect added → `tutorials/index.html`. | Removed — no content was ever mapped to this section. |
+| Protocol-Level Tokens (PLT) docs | `docs/plt/` (9 active files) | `tutorials/plt/` | PLT documentation moved to Tutorials as a 3-level structure: `plt/index.rst` (parent) → `setup-guide.rst`, `operations.rst`, `examples.rst` (children) → `request-ccd.rst`, `request-plt.rst`, `concordium-client.rst`, `web-sdk.rst`, `rust-sdk.rst` (grandchildren). Four orphaned setup files (`account-creation`, `browser-wallet`, `devnet-connection`, `identity-creation`) were retired with redirects → `tutorials/plt/index.html`. PLT announcement banner removed from `conf.py` — content now surfaced on the main landing page. **Note: PLT docs may be outdated — content review deferred.** | Content review needed before treating these as authoritative. The external Concordium website article is linked from the landing page as the primary PLT reference. |
 
 ## How to
 
@@ -121,7 +123,7 @@ Tracks categorisation and placement decisions made during the Divio/Diataxis res
 |---|---|---|---|
 | Smart contracts (Learn placeholder) | `docs/smart-contracts/introduction.rst` and sub-documents | Resolved — see Learn table above. | — |
 | Network (Learn placeholder) | No existing document | No explanation-oriented document covering "what is a node" or node types exists in the codebase. All content under `docs/network/nodes/` consists of how-to guides for running a node on specific platforms (Ubuntu, Windows, macOS, Docker, AWS). | A new document needs to be written for Learn/Network. It should explain: what a node is on Concordium, why nodes matter for the network, the different node roles (regular node vs. validator node), and how nodes relate to the consensus mechanism. This is a content gap that requires a new authoring effort. |
-| Protocol-Level Tokens (PLT) section | `docs/plt/` (4 files: `index.rst`, `setup-guide/index.rst`, `operations/index.rst`, `examples/index.rst` + child pages) | Deferred pending content review. Concern raised that the PLT documentation may be outdated. | Once confirmed current: `plt/index.rst` (conceptual overview) → Learn, next to Tokenomics. `plt/setup-guide/` → How-to. `plt/operations/index.rst` → Reference (lists available operations). `plt/examples/` (CLI, Web SDK, Rust SDK examples) → Tutorials or How-to depending on content depth. |
+| Protocol-Level Tokens (PLT) section | `docs/plt/` | Resolved — moved to `tutorials/plt/`. See Tutorials table above. Content review still pending. | — |
 
 ## Suggestions for future content improvements
 
@@ -129,6 +131,11 @@ Tracks categorisation and placement decisions made during the Divio/Diataxis res
 |---|---|
 | Learn / Identity — Web3 ID | The Learn/Identity pages cover Web3 ID only at a high level (definition, use cases, relationship to Concordium ID). A dedicated Learn page explaining the Web3 ID ecosystem conceptually — the three entities (issuers, holders, verifiers), how credentials are issued, and how zero-knowledge proofs work — would significantly strengthen the Learn section and improve discoverability for AI agents and developers exploring the identity layer. This is new content that needs to be written. |
 | Learn / Network | No explanation-oriented document covering what a node is, why nodes matter, or the different node roles (regular vs. validator) exists in the codebase. A new Learn/Network page needs to be written. |
+| Section landing pages | All four section landing pages (Learn, Tutorials, How-to, Reference) are currently minimal — a brief intro sentence and hidden toctree. Other documentation sites (e.g. Polkadot) have proper content on section landing pages. A future effort should write substantive, durable content for each section landing page. The content should describe the purpose and scope of the section, not list the sidebar contents (which would require maintenance). |
+| AI-agent friendly introductions | Each how-to and tutorial page should have a short structured introduction stating: (1) what the task is, (2) what you need (prerequisites), (3) what you will end up with. This makes it easier for AI agents to retrieve the right page for a given question. This can be done in bulk with Claude's help once the restructuring is complete. |
+| Prompt/skill for new documents | A Claude prompt or skill should be created for writing new how-to and tutorial documents, so every new page automatically gets the correct Diataxis-aligned structure and AI-friendly introduction from the start. |
+| Logo link | The Concordium logo in the navbar is hardcoded to link to `https://developer.concordium.software/`. This should be verified at deployment time — ideally changed to a relative Sphinx `pathto('index')` link so it correctly points to the landing page in all environments. |
+| PLT content review | PLT documentation in `tutorials/plt/` may be outdated. A content review is needed before treating these pages as authoritative developer documentation. |
 
 ## Non-public files (moved to source/contributing/)
 
@@ -139,11 +146,28 @@ These files are not in any Sphinx toctree and are therefore not built or served 
 | Set up documentation environment | `docs/help-and-faq/set-up-doc-env.rst` | `source/contributing/set-up-doc-env.rst` | Instructions for setting up the local Sphinx build environment. Not appropriate as published developer documentation but valuable for contributors. Moved to non-public `source/contributing/` folder. Redirect added: old URL → `docs/index.html`. |
 | Concordium documentation style guide | `docs/help-and-faq/style-guide.rst` | `source/contributing/style-guide.rst` | Tone, terminology, and formatting guide for documentation authors. Not appropriate as published developer documentation but essential for maintaining documentation quality. Moved to non-public `source/contributing/` folder. Referenced in `CLAUDE.md` so that AI agents consult it when writing or editing documentation. Redirect added: old URL → `docs/index.html`. |
 
+## Docs menu removal and main landing page
+
+| Item | Decision | Rationale |
+|---|---|---|
+| `docs/index.rst` | Deleted. Redirect added: `docs/index` → `/en/mainnet/index.html`. | The Docs menu was the old catch-all navigation entry. With content redistributed across Learn, Tutorials, How-to, Reference, and Downloads, the Docs menu and its index page were no longer needed. |
+| Main landing page (`mainnet/index.rst`) | Completely rewritten as a persona-based landing page with a 2×2 grid of four cards: **Exploring Concordium**, **Ready to build**, **Running infrastructure**, **Reference & tools**. Each card has 4–6 action-focused links covering the most important entry points for that persona. | Replaces the old landing page (frontpage image + raw HTML columns) with a structured, maintainable layout using sphinx-design grid cards. The four personas — explorer, builder, infrastructure operator, reference seeker — cover the main user types identified for the documentation site. |
+| PLT announcement banner | Removed from `conf.py`. | Banner was replaced by inline links on the landing page (Card 2 — Ready to build): one external link to the Concordium website article and one internal link to the PLT tutorial docs. |
+| Card styling | `.landing-card` CSS class added to `source/_static/css/custom.css` providing a teal border (`#c0dfe4`) matching the Concordium brand colour. No background fill — user decision. Dark mode variant included. | Provides visual distinction for the landing page cards without being visually overwhelming. |
+
+## Governance section consolidation
+
+| Item | Decision | Rationale |
+|---|---|---|
+| `learn/governance/index.rst` | Deleted. Redirect added: `learn/governance/index` → `/en/mainnet/learn/governance/gc-voting.html`. | The governance index was a thin wrapper containing only a brief intro paragraph and a single child (`gc-voting.rst`). Removing it and pointing the Learn nav directly to `gc-voting.rst` eliminates an unnecessary intermediate page. |
+| `learn/governance/gc-voting.rst` | Promoted to be the direct Learn/Governance nav entry. Intro text from the deleted index added at the top. `seealso` block added at the bottom linking to all four governance how-to pages (`voting`, `guardians`, `verify-election-result`, `install-ledger-app`). | The seealso block restores the connection between the conceptual governance page and the practical how-to guides that were previously sub-documents. |
+
 ## Downloads (top-level nav entry)
 
 | Document | Original location | New location | Rationale |
 |---|---|---|---|
-| Downloads | `docs/installation/downloads.rst` | `downloads.rst` (mainnet root, top-level nav entry) | The Downloads page is a key resource for developers getting started with Concordium wallets and tools. Placing it as a top-level nav entry (alongside Docs, Learn, Tutorials, How-to, Reference) gives it maximum visibility. Burying it in Reference or Docs would reduce discoverability. The `verification-instructions.rst` child document remains at its original location (`docs/installation/verification-instructions.rst`) and is referenced from the new root-level `downloads.rst`. Redirect added for the old URL. |
+| Downloads | `docs/installation/downloads.rst` | `downloads.rst` (mainnet root, top-level nav entry) | The Downloads page is a key resource for developers getting started with Concordium wallets and tools. Placing it as a top-level nav entry (alongside Learn, Tutorials, How-to, Reference) gives it maximum visibility. Burying it in Reference or Docs would reduce discoverability. Redirect added for the old URL. |
+| Verification instructions | `docs/installation/verification-instructions.rst` | Remains at original location. `:orphan:` directive added. Hidden toctree removed from `downloads.rst`. Clear link added at the top of `downloads.rst`. | The page was appearing as a lonely single item in the Downloads left sidebar, which looked odd. Making it an orphan removes it from the sidebar while keeping it fully accessible via the inline `:ref:` links already present throughout `downloads.rst` and the new prominent link at the top of the page. |
 
 ## Documents recommended for removal from the dev doc site
 
