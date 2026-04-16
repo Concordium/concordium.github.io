@@ -4,6 +4,10 @@
 Access the Concordium network
 =============================
 
+.. admonition:: At a glance
+
+   This guide explains how to connect your application to the Concordium network via gRPC, which is required for on-chain operations in the Verify and Access solution. You can either run your own Concordium node for full control, or use a third-party hosted node service for a faster setup. After following this guide, you will have a working gRPC endpoint ready to use in your integration.
+
 A Concordium node is the gateway to the blockchain. For a valid, verifiable audit record of your platform, on-chain transactions (:term:`VRA<Verification Request Anchor>` and :term:`VAA<Verification Audit Anchor>`) must occur, requiring a connection with a Concordium node.
 
 Concordium nodes communicate exclusively via gRPC (gRPC Remote Procedure Calls). This framework exposes the blockchain's unique features, including its built-in identity layer and specific data structures for accounts and smart contracts. This page outlines the recommended architecture for establishing a robust and scalable gRPC connection to your node.

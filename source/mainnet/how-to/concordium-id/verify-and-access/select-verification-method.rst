@@ -4,6 +4,10 @@
 Select verification method
 ==========================
 
+.. admonition:: At a glance
+
+   This guide helps you choose between the two Concordium identity verification methods: verification against an ID or verification against an account. You will need to know your compliance requirements and whether your users will make on-chain transactions. After reading this, you will be able to select the method that best fits your use case.
+
 Choosing the correct identity verification method is a critical decision for your business. This choice directly impacts your users' experience and determines whether your compliance needs are met. Selecting a check that is mismatched for the task can create unnecessary friction for your users (e.g., asking them to verify twice) or, conversely, fail to meet essential regulatory requirements.
 
 Concordium provides two distinct verification checks. While your technical method for performing the check remains the same, the proof the user provides will differ. Understanding these two options ensures you create a process that is both compliant and seamless.

@@ -4,6 +4,10 @@
 How it works
 ============
 
+.. admonition:: At a glance
+
+   This page explains the Verify and Access flow end-to-end — the one-time setup steps for both users and service providers, and the live verification process. No prerequisites are needed. Read this before implementing the integration to understand what happens at each stage.
+
 This page provides a high-level overview of the zero-knowledge proof (ZKP) verification process for a user requesting access to a restricted resource on a website. It covers the initial one-time setups for both users and providers, and the detailed technical flow of an individual verification request.
 
 The one-time user setup

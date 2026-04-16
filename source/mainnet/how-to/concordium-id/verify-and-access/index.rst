@@ -4,6 +4,10 @@
 Verify and Access
 ==================
 
+.. admonition:: At a glance
+
+   This guide walks you through implementing Concordium's Verify and Access solution for privacy-preserving identity verification. You will need a backend system, a frontend you can modify, and access to a Concordium node. After completing this guide, you will have a working integration that lets users prove identity attributes using zero-knowledge proofs without exposing personal data.
+
 This guide covers implementing :term:`zero-knowledge proof` identity verification using Concordium's Verify and Access solution. It walks you through the verification process, configuration decisions, and technical integration requirements. Whether you're evaluating the solution or ready to begin implementation, this guide provides the foundation for privacy-preserving, compliant identity verification.
 
 Privacy-preserving verification with ZKPs

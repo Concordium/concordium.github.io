@@ -5,6 +5,10 @@ Manage transaction costs
 =========================
 
 
+.. admonition:: At a glance
+
+   This guide explains how to set up and manage the CCD account used to pay for on-chain operations in the Verify and Access solution. You will need a Concordium account and CCD — transaction costs are fixed in EUR and are not subject to market volatility. After following this guide, you will have a funded CCD wallet correctly configured to run ZKP verification operations without interruption.
+
 All :term:`transactions <transaction>` on Concordium require a small amount of :term:`CCD` as :term:`gas`. CCD is stored securely in an on-chain wallet. This wallet is essential for holding the CCD required to pay for on-chain actions. For :term:`zero-knowledge proofs (ZKPs)<Zero-knowledge proof>`, there is no charge for the user, but on-chain transactions are required for anchoring the ZKPs.
 
 **What you need:**

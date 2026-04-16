@@ -4,6 +4,10 @@
 Integrate verification flow
 =============================
 
+.. admonition:: At a glance
+
+   This guide covers the technical components required to integrate Concordium's Verify and Access solution into your platform. You will need access to a Concordium node, a backend system capable of running Docker containers, and a frontend you can modify. After following this guide, you will have a working verification flow that allows users to prove their identity using zero-knowledge proofs.
+
 This page covers the technical components required to integrate Concordium's Verify and Access solution into your platform. The integration involves setting up the verification service, establishing wallet connections, implementing security measures, managing audit records, and building the user interface.
 
 Verifier service

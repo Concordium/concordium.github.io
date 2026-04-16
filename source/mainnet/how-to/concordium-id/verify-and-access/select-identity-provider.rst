@@ -4,6 +4,10 @@
 Select Identity Provider
 ==========================
 
+.. admonition:: At a glance
+
+   This guide helps you select the right Identity Provider (IDP) for your Verify and Access integration. You will need to know your regulatory requirements and the geographic regions you operate in. After reading this, you will be able to configure your integration to accept the IDP or combination of IDPs that meets your compliance needs.
+
 To confirm that a digital credential corresponds to a real-world identity, it must be verified by an :term:`Identity Provider (IDP)<Identity Provider>`. These providers act as the bridge between off-chain legal documents and on-chain verification. Concordium currently supports three primary IDPs: Digital Trust Solutions, Notabene, and Global FinReg. Choosing the correct IDP is essential to ensure your business remains compliant while providing a smooth onboarding experience for your users. While most IDPs offer the same central service, some do specialise in certain areas.
 
 Key considerations for selection
