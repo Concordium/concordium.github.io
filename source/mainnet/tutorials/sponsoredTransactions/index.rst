@@ -6,9 +6,9 @@
    :align: center
    :alt: An eSealing dApp
 
-=============================
-A Sponsored Transactions dApp
-=============================
+=====================================
+Smart contract sponsored transactions
+=====================================
 
 .. admonition:: At a glance
 

@@ -1,8 +1,8 @@
 .. _verify-access:
 
-=========================================
-Concordium Age Verification Tutorial
-=========================================
+================
+Verify & Access
+================
 
 .. admonition:: At a glance
 

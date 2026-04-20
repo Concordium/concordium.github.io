@@ -1,8 +1,8 @@
 .. _zk-proof-index:
 
-==================================================
-Building a Zero-Knowledge Proof dApp on Concordium
-==================================================
+==================
+Using ID in dApps
+==================
 
 .. admonition:: At a glance
 

@@ -16,12 +16,12 @@ Welcome to Concordium's tutorials. Each tutorial guides you through building som
       **Integrating Concordium ID**
 
       - :doc:`Verifying account ownership <verify-account-ownership-signature-proofs/signature-proofs>`
-      - :doc:`Building a Zero-Knowledge Proof dApp on Concordium <using-ID-in-dApps/index>`
+      - :doc:`Using ID in dApps <using-ID-in-dApps/index>`
 
-        - :doc:`ZK proof generation <using-ID-in-dApps/zk-proofs-tutorial>`
         - :doc:`Implementing Wallet Connectors <using-ID-in-dApps/wallet-connectors-tutorial>`
+        - :doc:`ZK proof generation <using-ID-in-dApps/zk-proofs-tutorial>`
 
-      - :doc:`Concordium Age Verification Tutorial <verify-access/index>`
+      - :doc:`Verify & Access <verify-access/index>`
 
         - :doc:`Introduction <verify-access/introduction>`
         - :doc:`Scaffolding the Project <verify-access/scaffolding>`
@@ -37,66 +37,66 @@ Welcome to Concordium's tutorials. Each tutorial guides you through building som
         - :doc:`Set up a sponsor service <protocol-level-sponsored-transactions/set-up-a-sponsor-service>`
         - :doc:`Create a sponsored transaction <protocol-level-sponsored-transactions/create-a-sponsored-transaction>`
 
-      - :doc:`A Sponsored Transactions dApp <sponsoredTransactions/index>`
+      - :doc:`Smart contract sponsored transactions <sponsoredTransactions/index>`
 
-        - :doc:`Sponsored Transactions Frontend and Backend <sponsoredTransactions/sponsoredTransactionsFrontendAndBackend>`
-        - :doc:`Sponsored Transactions Smart Contract <sponsoredTransactions/sponsoredTransactionsSmartContract>`
+        - :doc:`Exploring the sponsored Transactions Smart Contract <sponsoredTransactions/sponsoredTransactionsSmartContract>`
+        - :doc:`Exploring the sponsored Transactions dApp <sponsoredTransactions/sponsoredTransactionsFrontendAndBackend>`
 
       **Protocol-Level Tokens**
 
-      - :doc:`Protocol-Level Tokens (PLTs) <plt/index>`
+      - :doc:`Get started with Protocol-Level Tokens <plt/index>`
 
         - :doc:`Get started with PLTs <plt/setup-guide>`
         - :doc:`Request test CCD <plt/request-ccd>`
         - :doc:`Request PLT issuance <plt/request-plt>`
         - :doc:`PLT operations <plt/operations>`
         - :doc:`PLT examples <plt/examples>`
+        - :doc:`Concordium Client CLI Tool <plt/concordium-client>`
         - :doc:`Web SDK <plt/web-sdk>`
         - :doc:`Rust SDK <plt/rust-sdk>`
-        - :doc:`Concordium Client CLI Tool <plt/concordium-client>`
 
    .. grid-item::
 
       **Tokens and Assets**
 
-      - :doc:`Mint fungible tokens <fungible-tokens/index>`
+      - :doc:`Fungible tokens <fungible-tokens/index>`
 
         - :doc:`Smart contract implementation for fungible tokens <fungible-tokens/smart-contract>`
         - :doc:`Mint, transfer, and burn fungible tokens <fungible-tokens/mint-xfer>`
 
-      - :doc:`Mint an NFT <nft-minting/index>`
+      - :doc:`NFT minting <nft-minting/index>`
 
         - :doc:`Upload the NFT <nft-minting/upload-nft>`
         - :doc:`Initialize, build, and deploy the smart contract <nft-minting/build-smart-contract>`
         - :doc:`Mint and transfer the NFT <nft-minting/mint-xfer>`
 
-      - :doc:`Mint a semi-fungible token <sft-minting/index>`
+      - :doc:`SFT minting <sft-minting/index>`
 
         - :doc:`Smart contract modifications <sft-minting/build-smart-contract>`
         - :doc:`Mint and transfer semi-fungible token <sft-minting/mint-xfer>`
 
-      - :doc:`The wCCD smart contract <wCCD/index>`
+      - :doc:`wCCD <wCCD/index>`
 
         - :doc:`Understanding the wCCD smart contract <wCCD/wCCD-introduction>`
         - :doc:`Interacting with the wCCD token protocol <wCCD/wCCD-interacting>`
         - :doc:`Setting up the frontend <wCCD/wCCD-frontend-set-up>`
 
-      - :doc:`Implementing CIS-2 token receiving hooks <onReceivingCIS2/on-receivingCIS2>`
+      - :doc:`Using the onReceivingCIS2 hook <onReceivingCIS2/on-receivingCIS2>`
 
       **Building Smart Contracts**
 
       - :doc:`Set up the development environment <setup-env>`
-      - :doc:`Concordium smart contracts quick start guide <quick-start>`
-      - :doc:`Creating your first Concordium dApp <hello-world/hello-world>`
-      - :doc:`Concordium counter smart contract <counter/counter-contract>`
-      - :doc:`The piggy bank smart contract <piggy-bank/index>`
+      - :doc:`Quick start guide <quick-start>`
+      - :doc:`Hello World <hello-world/hello-world>`
+      - :doc:`Counter <counter/counter-contract>`
+      - :doc:`PiggyBank <piggy-bank/index>`
 
         - :doc:`Writing the piggy bank smart contract <piggy-bank/writing>`
         - :doc:`Testing the piggy bank smart contract <piggy-bank/testing>`
         - :doc:`Deploying the piggy bank smart contract <piggy-bank/deploying>`
         - :doc:`Setting up a frontend <piggy-bank/frontend>`
 
-      - :doc:`Upgrading smart contracts on Concordium <smartContractUpgrade/index>`
+      - :doc:`Smart Contract Upgrade <smartContractUpgrade/index>`
 
         - :doc:`Native upgradability <smartContractUpgrade/smartContractUpgrade>`
 
@@ -104,17 +104,17 @@ Welcome to Concordium's tutorials. Each tutorial guides you through building som
 
       - :doc:`The Voting dApp <voting/index>`
 
-        - :doc:`The Voting Smart Contract <voting/voting-sc>`
+        - :doc:`Writing a voting smart contract <voting/voting-sc>`
         - :doc:`Setting up the frontend <voting/voting-dapp>`
 
-      - :doc:`Concordium low-code NFT framework <low-code-nft-marketplace/introduction>`
+      - :doc:`Low Code NFT Marketplace <low-code-nft-marketplace/introduction>`
 
         - :doc:`Low code NFT marketplace <low-code-nft-marketplace/marketplace>`
         - :doc:`Low-code NFT minting tool <low-code-nft-marketplace/minting-tool>`
 
-      - :doc:`An eSealing dApp <eSealing/index>`
+      - :doc:`eSealing <eSealing/index>`
 
-        - :doc:`eSealing dApp <eSealing/eSealing_dapp>`
+        - :doc:`Exploring the eSealing dapp <eSealing/eSealing_dapp>`
 
       - :doc:`dApp examples <daap-examples/dapp-examples>`
 
