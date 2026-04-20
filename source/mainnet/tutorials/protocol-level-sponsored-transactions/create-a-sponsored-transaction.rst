@@ -5,6 +5,10 @@
 Create a sponsored transaction
 ==============================
 
+.. admonition:: At a glance
+
+   This part of the tutorial shows you how to build the React frontend for a sponsored transaction flow, where the user's wallet signs only their portion and the sponsor service submits the transaction to the chain. You will need Node.js, React, the @concordium/web-sdk, and the sponsor backend from the previous step. When you are done, you will have a dApp where users can execute transactions without paying CCD fees themselves.
+
 The frontend connects to the user's wallet, sends the transfer details to the sponsor service, and submits the sponsor-signed transaction back to the wallet for the user to review and sign.
 
 **Step 1: Import dependencies**

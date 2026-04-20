@@ -6,6 +6,10 @@
 Concordium low-code NFT framework
 ===================================
 
+.. admonition:: At a glance
+
+   This section introduces the Concordium low-code NFT framework, a white-label toolkit that lowers the barrier to building NFT projects on Concordium. After reading this overview, you will understand what the framework provides — a ready-to-use minting tool and marketplace — and be ready to explore each part.
+
 Concordium provides developer tools to its community for developing high-level dApps. In order to help our community, Concordium has implemented this Low-Code Minting Tool and Marketplace to lower the bar for getting started on Concordium.
 
 Concordium has collected feedback and done lots of market research and product experiments to understand the real pains when developing on Concordium. One outcome of those findings is the low-code NFT framework. The Low-Code NFT Minting tool provides a public resource to follow as an example and a white labeling solution for NFT project owners.

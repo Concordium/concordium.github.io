@@ -6,6 +6,10 @@
 Low-code NFT minting tool
 =========================
 
+.. admonition:: At a glance
+
+   This tutorial shows you how to install and use the Concordium low-code NFT minting tool to create and mint NFTs and semi-fungible tokens without writing smart contract code. You will need the Concordium Browser Wallet, Node.js, and yarn installed. When you are done, you will have minted your own NFT or token collection on Concordium using a no-code interface.
+
 For non-developers, Concordium has developed a minting tool to mint your NFT collections without minimal development effort. With this super simple dApp you will be able to:
 
 -  Connect with your |bw|

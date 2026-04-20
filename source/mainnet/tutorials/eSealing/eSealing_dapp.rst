@@ -5,6 +5,10 @@
 eSealing dApp
 =============
 
+.. admonition:: At a glance
+
+   This tutorial shows you how to use the eSealing dApp to register a file's hash on the Concordium blockchain and retrieve its timestamp and witness. You will need the Concordium Browser Wallet or mobile wallet connected to testnet. When you are done, you will have sealed a file on Concordium testnet and be able to prove its existence and integrity at a specific point in time.
+
 You can explore the `hosted eSealing service <https://esealing.testnet.concordium.com>`_ or
 start your own frontend by following the instructions in the README.md file of this
 `repository <https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/eSealing>`_ to get an overview of the dApp flow.

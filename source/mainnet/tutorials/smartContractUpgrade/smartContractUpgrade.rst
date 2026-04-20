@@ -5,6 +5,10 @@
 Native upgradability
 ====================
 
+.. admonition:: At a glance
+
+   This tutorial shows you how to deploy a smart contract, upgrade its logic to a new version, and run a migration function to update its state using Concordium's native upgradability. You will need concordium-client installed and a funded testnet account. When you are done, you will have deployed contract-version1, upgraded it to contract-version2, and successfully migrated its on-chain state.
+
 The goal of this tutorial is to deploy a ``contract-version1``, upgrade its logic, and migrate its state to ``contract-version2``.
 
 The `contract-version1 <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/smart-contract-upgrade/contract-version1>`_

@@ -46,20 +46,22 @@ Order matches the How-to navigation menu. All pages in each section should have 
 | Nodes | `how-to/nodes/` | ✅ Done |
 | Smart Contracts | `how-to/smart-contracts/` | ✅ Done |
 | Governance | `how-to/governance/` | ✅ Done |
-| Web3 ID | `how-to/web3-id/` | ⬜ Not started |
+| Web3 ID | `how-to/web3-id/` | ✅ Done |
 
 ### Tutorials
 
 | Section | Path | Status |
 |---|---|---|
-| Quick start | `tutorials/quick-start.rst` | ⬜ Not started |
-| Integrating Concordium ID | `tutorials/verify-account-ownership-signature-proofs/`, `tutorials/using-ID-in-dApps/`, `tutorials/verify-access/`, `tutorials/company-identity/` | ⬜ Not started |
-| Transaction Workflows | `tutorials/protocol-level-sponsored-transactions/`, `tutorials/sponsoredTransactions/` | ⬜ Not started |
-| Protocol-Level Tokens | `tutorials/plt/` | ⬜ Not started |
-| Tokens and Assets | `tutorials/fungible-tokens/`, `tutorials/nft-minting/`, `tutorials/sft-minting/`, `tutorials/wCCD/` | ⬜ Not started |
-| Smart Contracts | `tutorials/piggy-bank/`, `tutorials/eSealing/`, `tutorials/smartContractUpgrade/` | ⬜ Not started |
-| Governance | `tutorials/voting/` | ⬜ Not started |
-| dApp Examples | `tutorials/daap-examples/` | ⬜ Not started |
+| Quick start | `tutorials/quick-start.rst` | ✅ Done |
+| Setup environment | `tutorials/setup-env.rst` | ✅ Done |
+| Hello World / Counter | `tutorials/hello-world/`, `tutorials/counter/` | ✅ Done |
+| Integrating Concordium ID | `tutorials/verify-account-ownership-signature-proofs/`, `tutorials/using-ID-in-dApps/`, `tutorials/verify-access/`, `tutorials/company-identity/` | ✅ Done |
+| Transaction Workflows | `tutorials/protocol-level-sponsored-transactions/`, `tutorials/sponsoredTransactions/` | ✅ Done |
+| Protocol-Level Tokens | `tutorials/plt/` | ✅ Done |
+| Tokens and Assets | `tutorials/fungible-tokens/`, `tutorials/nft-minting/`, `tutorials/sft-minting/`, `tutorials/wCCD/`, `tutorials/onReceivingCIS2/` | ✅ Done |
+| Building Smart Contracts | `tutorials/piggy-bank/`, `tutorials/smartContractUpgrade/` | ✅ Done |
+| Governance | `tutorials/voting/` | ✅ Done |
+| dApp Development | `tutorials/eSealing/`, `tutorials/low-code-nft-marketplace/`, `tutorials/daap-examples/` | ✅ Done |
 
 ## Notes
 

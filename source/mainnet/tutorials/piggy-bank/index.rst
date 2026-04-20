@@ -11,6 +11,10 @@
 The piggy bank smart contract
 =============================
 
+.. admonition:: At a glance
+
+   This is a four-part tutorial series on building a piggy bank smart contract on Concordium. After reading this overview, you will understand the four-part structure — writing the contract in Rust, testing it with integration tests, deploying it to testnet, and building a web frontend — and be ready to follow each part in order. Basic knowledge of blockchains, smart contracts, and Rust is assumed.
+
 .. todo::
 
    Link the repo with the code

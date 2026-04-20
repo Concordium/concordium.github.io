@@ -4,6 +4,10 @@
 Mint an NFT
 ===========
 
+.. admonition:: At a glance
+
+   This is a three-part tutorial on minting a non-fungible token (NFT) on the Concordium blockchain. You will need Rust, cargo-concordium, concordium-client, and an IPFS node installed, plus a Concordium testnet account. After reading this overview, you will understand the three-part structure — upload to IPFS, build and deploy the contract, mint and transfer — and be ready to follow each part in order.
+
 In this tutorial, you are going to mint an NFT on Concordium blockchain. First you will learn the basics to set up your development environment. Note that in this tutorial most of the commands are for UNIX-like systems and will not work on Windows (though you could use `Windows Subsystem for Linux <https://aka.ms/wsl/>`_).
 
 All development is completed using ``concordium-client`` and includes the following examples:

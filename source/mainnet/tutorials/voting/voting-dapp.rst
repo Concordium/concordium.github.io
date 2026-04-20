@@ -5,6 +5,10 @@
 Setting up the frontend
 ========================
 
+.. admonition:: At a glance
+
+   This is the second part of the voting dApp tutorial, covering how to clone and run the voting web frontend locally. You will need Node.js, yarn, and the Concordium Browser Wallet installed in Chrome. When you are done, you will have a local voting dApp running in your browser that lets users create elections, cast votes, and view results.
+
 This is the second part of :ref:`the voting smart contract tutorial<voting-sc>`. In this part of the tutorial,
 we will create a web frontend application to make it easier for users to interact with the smart contract.
 

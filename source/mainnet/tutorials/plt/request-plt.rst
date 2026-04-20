@@ -4,6 +4,10 @@
 Request PLT issuance
 =====================
 
+.. admonition:: At a glance
+
+   This guide shows you how to request a Protocol-Level Token (PLT) issuance on Concordium testnet. You will need a Concordium testnet account with some CCD and your token parameters and metadata ready. When you are done, you will have submitted a PLT issuance request to the Concordium team and have a token issued on testnet that you can mint, transfer, and manage.
+
 This guide explains how to request the issuance of a custom Protocol-Level Token (PLT) on testnet for testing and development purposes. Please read the `CIS-7 standard <https://proposals.concordium.com/CIS/cis-7.html#cis-7-protocol-level-tokens-plts>`_ for PLTs to understand the token parameters and metadata requirements before submitting your request.
 
 .. _plt-overview:

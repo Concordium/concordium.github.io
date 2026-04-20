@@ -6,6 +6,10 @@
 Deploying the piggy bank smart contract
 =======================================
 
+.. admonition:: At a glance
+
+   This is the third part of the piggy bank tutorial, covering how to build, deploy, and interact with the piggy bank contract on Concordium testnet. You will need concordium-client installed and a funded testnet account. When you are done, you will have your piggy bank contract deployed on testnet and will have made deposit and smash transactions against it.
+
 This is the third :ref:`part of a tutorial<piggy-bank>` on smart contract
 development.
 So far you have written and tested a piggy bank smart contract in the Rust_ programming language.

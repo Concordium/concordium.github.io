@@ -4,6 +4,10 @@
 Request test CCD
 ================
 
+.. admonition:: At a glance
+
+   This guide shows you how to request test CCD on the Concordium testnet so you can pay for PLT transaction fees. You will need a Concordium testnet account with no prior incoming transactions. When you are done, you will have test CCD in your account ready to use for PLT operations.
+
 This guide explains how to request test CCD tokens on testnet, which are required for transactions and PLT operations.
 
 .. note::

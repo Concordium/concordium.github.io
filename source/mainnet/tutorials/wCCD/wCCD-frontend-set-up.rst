@@ -5,6 +5,10 @@
 Setting up the frontend
 ========================
 
+.. admonition:: At a glance
+
+   This part of the tutorial shows you how to clone and run the wCCD demo frontend locally. You will need Git, Node.js, yarn, and the Concordium browser wallet installed in Chrome. When you are done, you will have a local wCCD dApp running in your browser that you can use to wrap, unwrap, and transfer wCCD tokens.
+
 In this part, you will create a web frontend. Users can interact with the smart contract easier
 by using your frontend compared to interacting with the node directly.
 Non-tech users might find it inconvenient to interact with smart contracts via the Concordium node

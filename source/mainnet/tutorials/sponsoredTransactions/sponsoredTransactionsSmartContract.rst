@@ -5,6 +5,10 @@
 Sponsored Transactions Smart Contract
 =====================================
 
+.. admonition:: At a glance
+
+   This part of the tutorial shows you how a CIS-3 smart contract implements sponsored transactions using Ed25519 signature verification, allowing a backend to submit transactions on behalf of token holders. You will need Rust and cargo-concordium. When you are done, you will understand how permit-based sponsorship works in a Concordium smart contract and have a compiled, deployable module.
+
 The goal of this part of the tutorial is to understand how the sponsored
 transaction mechanism is implemented in the smart contract and how to create and verify an Ed25519 signature in the smart contract code.
 

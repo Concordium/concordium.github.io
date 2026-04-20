@@ -4,6 +4,10 @@
 ZK proof generation
 ===================
 
+.. admonition:: At a glance
+
+   This part of the tutorial shows you how to generate zero-knowledge proofs from Concordium identity attributes inside a dApp, including how ZK statements are structured and submitted to the wallet. You will need Node.js, React, the @concordium/web-sdk, and a Concordium account with an identity in the browser wallet. When you are done, you will have working code that requests and submits a ZK proof based on the user's identity attributes.
+
 Now we'll explore how to generate zero-knowledge proofs using the ID Layer, focusing on how ZK statements are structured.
 
 Defining ZK statements

@@ -4,6 +4,10 @@
 Upload the NFT
 ==============
 
+.. admonition:: At a glance
+
+   This part of the tutorial shows you how to upload your digital asset and its CIS-2 metadata to IPFS. You will need IPFS installed locally. When you are done, you will have a content identifier (CID) and a metadata URL for your NFT stored on IPFS, ready to reference in the smart contract.
+
 In this part of the tutorial, we will upload your asset and give it metadata. For this, we will use the `InterPlanetary File System (IPFS) <https://docs.ipfs.tech/concepts/what-is-ipfs/>`_.
 
 Using InterPlanetary File System (IPFS)

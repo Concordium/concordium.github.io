@@ -4,6 +4,10 @@
 Get started with PLTs
 =====================
 
+.. admonition:: At a glance
+
+   This guide shows you how to get started with Protocol-Level Tokens (PLTs) on Concordium testnet, covering the full issuance process from creating an account to requesting a PLT. You will need a Concordium testnet account. After reading, you will understand each step in the PLT setup process and be ready to request test CCD and a PLT issuance.
+
 This section covers everything you need to get started with Protocol-Level Tokens (PLTs) on Concordium's testnet. Read the following overview to understand the PLT issuance process before proceeding to the setup guides.
 
 PLT issuance process overview

@@ -4,6 +4,10 @@
 Rust SDK
 ========
 
+.. admonition:: At a glance
+
+   This guide shows you how to perform Protocol-Level Token (PLT) operations using Concordium's Rust SDK. You will need Rust and the concordium-rust-sdk crate (v8.0.0). When you are done, you will have working code examples for querying tokens, transferring, minting, burning, managing allow and deny lists, and pausing PLTs on testnet.
+
 This guide shows how to work with Protocol-Level Tokens using Concordium's Rust SDK.
 
 Installation and setup

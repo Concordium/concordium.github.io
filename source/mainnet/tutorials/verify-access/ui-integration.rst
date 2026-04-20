@@ -3,6 +3,10 @@
 UI Integration
 ==============
 
+.. admonition:: At a glance
+
+   This part of the tutorial shows you how to build the React verification UI using the @concordium/verification-web-ui SDK. You will need the scaffolding from the previous step and the @concordium/verification-web-ui package installed. When you are done, you will have a working frontend that prompts users to prove their age with a zero-knowledge proof and gates content on success.
+
 This section covers building the verification user interface, including configuration, backend services, React hooks, and UI components.
 
 Install SDK

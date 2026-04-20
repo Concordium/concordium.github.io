@@ -5,6 +5,10 @@
 Sponsored Transactions Frontend and Backend
 ===========================================
 
+.. admonition:: At a glance
+
+   This part of the tutorial shows you how to set up the frontend and backend for a Concordium sponsored transactions dApp locally. You will need Node.js, yarn, Git, and the Concordium browser wallet. When you are done, you will have a running dApp where users can execute CIS-3 transactions and a backend service that sponsors their fees.
+
 The goal of this part of the tutorial is to set up the frontend and the backend locally and to understand the two flows that the dApp provides.
 
 You can explore the `hosted sponsored transaction service <https://sponsored.testnet.concordium.com>`_.

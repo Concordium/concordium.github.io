@@ -4,6 +4,10 @@
 Web SDK
 =======
 
+.. admonition:: At a glance
+
+   This guide shows you how to perform Protocol-Level Token (PLT) operations using Concordium's Web SDK (TypeScript/JavaScript). You will need Node.js and the @concordium/web-sdk package (v11.0.0) installed. When you are done, you will have working code examples for querying tokens, transferring, minting, burning, managing allow and deny lists, and pausing PLTs on testnet.
+
 This guide shows how to work with Protocol-Level Tokens using Concordium's Web SDK.
 
 Installation and setup

@@ -5,6 +5,10 @@
 Setting up a frontend
 =====================
 
+.. admonition:: At a glance
+
+   This is the fourth part of the piggy bank tutorial, covering how to run the Piggybank web dApp locally. You will need Node.js, yarn, and either the Concordium Browser Wallet or the mobile wallet with WalletConnect. When you are done, you will have the Piggybank dApp running in your browser and be able to deposit and smash your deployed contract through a web interface.
+
 As an alternative to interacting with smart contracts directly,
 users might have a better experience using a web-based application.
 

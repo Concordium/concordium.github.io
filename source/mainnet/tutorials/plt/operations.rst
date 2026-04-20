@@ -4,6 +4,10 @@
 PLT operations
 ==============
 
+.. admonition:: At a glance
+
+   This page describes the core operations available for Protocol-Level Tokens (PLTs) on Concordium testnet, organised into three categories: create and manage PLTs (governance operations), transfer PLTs, and query PLT information. After reading, you will understand which operations are available and where to find code examples for the Web SDK, Rust SDK, and concordium-client.
+
 This page covers the core operations available with :term:`Protocol-Level Tokens (PLTs)<Protocol-Level Token (PLT)>` on Concordium's testnet.
 
 Available SDKs and tools

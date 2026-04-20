@@ -5,6 +5,10 @@
 Concordium smart contracts quick start guide
 ============================================
 
+.. admonition:: At a glance
+
+   This guide shows you how to get a smart contract written, compiled, deployed, and initialised on the Concordium testnet as quickly as possible. You will need Rust, cargo-concordium, and concordium-client installed, and a funded testnet account. When you are done, you will have a smart contract deployed on Concordium testnet that you can interact with.
+
 This guide is intended to be used by experienced developers who want to get up and running quickly with a smart contract deployed on chain with which they can interact.
 
 Before starting, it is a good idea to read the :ref:`Smart contracts best practices<sc-development-best-practices>`.

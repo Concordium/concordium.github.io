@@ -4,6 +4,10 @@
 Smart contract modifications
 ============================
 
+.. admonition:: At a glance
+
+   This part of the tutorial shows you how to modify the cis2-multi contract template to support semi-fungible token minting with custom metadata. You will need Rust and cargo-concordium. When you are done, you will have a compiled and deployed semi-fungible token contract instance on Concordium testnet.
+
 In this tutorial, you will use the example ``cis2-multi`` contract template from Concordium, which can be found `here <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis2-multi>`_ for further reading. In this tutorial you will add a couple of things and update some functions to give more flexibility to the template.
 
 First, you will add a new struct called ``TokenMetadata``. It needs to implement the ``Serialize`` and ``SchemaType`` traits. For those who are familiar with the Ethereum ecosystem, it's similar to the ABI.

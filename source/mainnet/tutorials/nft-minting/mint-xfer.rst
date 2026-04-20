@@ -4,6 +4,10 @@
 Mint and transfer the NFT
 =========================
 
+.. admonition:: At a glance
+
+   This part of the tutorial shows you how to mint your NFT, verify its state and metadata on chain, and transfer ownership to another account using concordium-client. You will need concordium-client and the deployed contract instance from the previous step. When you are done, you will have minted and transferred an NFT on the Concordium testnet.
+
 Now, you are ready to call the mint function. In order to invoke the mint function, you need the contract instance and you must set the owner/minter address, the metadata URL, and the token ID. Because you can mint more than one token with this instance address you need to specify the token ID. You can use either your terminal to give these parameters as inputs or you can create a JSON file and give that file as a parameter to ``concordium-client``. To make it more user-friendly, a JSON file is created in this tutorial. In your project file create a folder with any name you want. In this tutorial it is called “nft-artifacts” and the JSON file is called ``nft-params.json``. You can either do it manually or with following commands.
 
 .. code-block:: console

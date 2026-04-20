@@ -4,6 +4,10 @@
 Concordium Client CLI Tool
 ==========================
 
+.. admonition:: At a glance
+
+   This guide shows you how to perform Protocol-Level Token (PLT) operations from the command line using the concordium-client tool. You will need concordium-client (v9.1.4) installed and a Concordium testnet account. When you are done, you will be able to query, transfer, mint, burn, manage allow and deny lists, and pause PLTs directly from your terminal.
+
 This guide explains how to use concordium-client to perform PLT operations from the command line.
 
 Installation and setup

@@ -4,6 +4,10 @@
 PLT examples
 ============
 
+.. admonition:: At a glance
+
+   This page provides an overview of the PLT code examples available across three tools: the concordium-client CLI, the Web SDK (TypeScript/JavaScript), and the Rust SDK. After reading, you will know which example page to visit for your preferred tool and how to connect to the testnet gRPC node.
+
 This section provides examples of how to work with Protocol-Level Tokens (PLTs) using tools and SDKs provided by Concordium:
 
 

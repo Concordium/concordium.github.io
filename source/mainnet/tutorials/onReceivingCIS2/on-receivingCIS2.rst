@@ -4,6 +4,10 @@
 Implementing CIS-2 token receiving hooks
 ========================================
 
+.. admonition:: At a glance
+
+   This tutorial shows you how to implement the ``onReceivingCIS2`` hook in a Concordium smart contract so your contract can safely handle incoming CIS-2 tokens. You will need Rust, cargo-concordium, and concordium-client installed, and a testnet account with some CCD and wCCD. When you are done, you will have a deployed token forwarder contract on Concordium testnet that automatically forwards received CIS-2 tokens to its owner.
+
 In this tutorial, you'll learn how to handle incoming **CIS-2 tokens** in your Concordium smart contract by implementing the ``onReceivingCIS2`` hook.
 You will write a simple contract that automatically forwards any received tokens to prevent them from being locked in the contract.
 

@@ -44,12 +44,6 @@ Welcome to Concordium's tutorials section. Each tutorial guides you through buil
    wCCD <./wCCD/index>
    Using the onReceivingCIS2 hook <./onReceivingCIS2/on-receivingCIS2>
 
-.. toctree::
-   :caption: Running Infrastructure
-   :hidden:
-   :maxdepth: 2
-
-   running-infrastructure
 
 .. toctree::
    :caption: Building Smart Contracts
