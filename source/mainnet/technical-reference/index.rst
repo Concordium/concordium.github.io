@@ -15,7 +15,7 @@ Reference documentation for Concordium APIs, SDKs, command-line tools, smart con
 
       **Release Notes**
 
-      - :doc:`Release notes <release-notes>`
+      - :doc:`Release Notes <release-notes>`
 
       **Concordium SDKs**
 
@@ -33,30 +33,49 @@ Reference documentation for Concordium APIs, SDKs, command-line tools, smart con
       **Tools**
 
       - :doc:`Concordium Client <concordium-client/concordium-client>`
+
+        - :doc:`Transactions <concordium-client/transactions>`
+        - :doc:`Node queries <concordium-client/query-node>`
+        - :doc:`Multi-sig <concordium-client/multi-sig>`
+
       - :doc:`CCDScan <ccd-scan/ccd-scan>`
+
+        - :doc:`Blocks <ccd-scan/ccd-scan-blocks>`
+        - :doc:`Transactions <ccd-scan/ccd-scan-transactions>`
+        - :doc:`Accounts <ccd-scan/ccd-scan-accounts>`
+        - :doc:`Staking <ccd-scan/ccd-scan-staking>`
+        - :doc:`Nodes <ccd-scan/ccd-scan-nodes>`
+
       - :doc:`Auxiliary Tools <auxiliary-tools>`
-      - :doc:`Election coordinator tool <coordinator>`
-      - :doc:`Glossary of Concordium Terms <glossary>`
+      - :doc:`Election Coordinator <coordinator>`
+      - :doc:`Glossary <glossary>`
 
    .. grid-item::
 
       **Identity**
 
-      - :doc:`ID attributes reference <id-attributes-reference>`
-      - :doc:`Wallet identity provider interfaces (data formats) <identity-provider-interfaces>`
+      - :doc:`ID attributes <id-attributes-reference>`
+      - :doc:`Identity provider interfaces <identity-provider-interfaces>`
 
       **Smart Contracts**
 
-      - :doc:`Cryptographic primitives <smart-contracts/crypto-primitives>`
-      - :doc:`Contract host functions <smart-contracts/host-fns>`
+      - :doc:`Crypto primitives <smart-contracts/crypto-primitives>`
+      - :doc:`Host functions <smart-contracts/host-fns>`
       - :doc:`Local settings <smart-contracts/local-settings>`
-      - :doc:`References on-chain <smart-contracts/references-on-chain>`
-      - :doc:`Schema JSON representation <smart-contracts/schema-json>`
-      - :doc:`Simulation contexts <smart-contracts/simulate-context>`
+      - :doc:`On-chain references <smart-contracts/references-on-chain>`
+      - :doc:`Schema JSON <smart-contracts/schema-json>`
+      - :doc:`Simulate context <smart-contracts/simulate-context>`
 
       **Wallets**
 
       - :doc:`Concordium wallets <wallets/guides/wallets-lp>`
+
+        - :doc:`Wallet FAQs <wallets/guides/wallet-faqs>`
+        - :doc:`Set up a wallet <wallets/guides/setup-wallets-lp>`
+        - :doc:`Wallet activities <wallets/guides/manage-wallets-lp>`
+        - :doc:`Account activities <wallets/guides/account-activities-lp>`
+        - :doc:`Desktop Wallet <wallets/desktop-wallet/dw-lp>`
+        - :doc:`End User License Terms for CryptoX Concordium Wallet <wallets/guides/cryptox-terms>`
 
 .. toctree::
    :caption: Release Notes
