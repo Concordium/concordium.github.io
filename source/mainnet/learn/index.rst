@@ -18,7 +18,7 @@ Understand how Concordium works. Browse all topics below, grouped by theme, or u
 
       **Identity**
 
-      - :doc:`Identity framework on Concordium <identity/index>`
+      - :doc:`Identity <identity/index>`
 
         - :doc:`Principles of privacy <identity/principles-of-privacy>`
         - :doc:`User processes <identity/user-processes>`
@@ -42,7 +42,7 @@ Understand how Concordium works. Browse all topics below, grouped by theme, or u
 
       **Smart Contracts**
 
-      - :doc:`What is a smart contract <smart-contracts/index>`
+      - :doc:`Smart Contracts <smart-contracts/index>`
 
         - :doc:`Life cycle <smart-contracts/contract-lifecycle>`
         - :doc:`Modules <smart-contracts/contract-module>`
@@ -54,7 +54,7 @@ Understand how Concordium works. Browse all topics below, grouped by theme, or u
 
       **Consensus**
 
-      - :doc:`Consensus mechanisms <consensus/index>`
+      - :doc:`Consensus <consensus/index>`
 
         - :doc:`Block production and validation <consensus/concepts-baker>`
         - :doc:`Time concepts <consensus/time-concepts>`
@@ -73,7 +73,7 @@ Understand how Concordium works. Browse all topics below, grouped by theme, or u
 
       **Governance**
 
-      - :doc:`Concordium Governance Committee elections <governance/gc-voting>`
+      - :doc:`Governance <governance/gc-voting>`
 
 .. toctree::
    :hidden:
