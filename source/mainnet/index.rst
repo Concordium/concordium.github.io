@@ -62,7 +62,7 @@ Find technical documentation here for every stage — evaluating, building, inte
    :maxdepth: 2
    :hidden:
 
-   Learn <learn/index>
+   Explore <learn/index>
    tutorials/index
    How-to <how-to/index>
    Reference <technical-reference/index>
