@@ -52,10 +52,6 @@ Understand how Concordium works. Browse all topics below, grouped by theme, or u
 
    .. grid-item::
 
-      **Network**
-
-      - :doc:`Network <network>`
-
       **Consensus**
 
       - :doc:`Consensus mechanisms <consensus/index>`
@@ -68,9 +64,9 @@ Understand how Concordium works. Browse all topics below, grouped by theme, or u
 
       - :doc:`Tokenomics <tokenomics>`
 
-      **Staking**
+      **Validation and Staking**
 
-      - :doc:`Staking <staking/index>`
+      - :doc:`Validation and Staking <staking/index>`
 
         - :doc:`How to become a validator <staking/how-to-become-a-validator>`
         - :doc:`How to become a delegator <staking/concepts-delegation>`
@@ -87,8 +83,7 @@ Understand how Concordium works. Browse all topics below, grouped by theme, or u
    Accounts <accounts/index>
    Transactions <transactions/index>
    Smart Contracts <smart-contracts/index>
-   Network <network>
    Consensus <consensus/index>
    Tokenomics <tokenomics>
-   Staking <staking/index>
+   Validation and Staking <staking/index>
    Governance <governance/gc-voting>

@@ -1,9 +1,9 @@
 .. include:: ../../variables.rst
 .. _staking:
 
-========
-Staking
-========
+====================
+Validation and Staking
+====================
 
 Concordium uses a :term:`proof-of-stake<proof-of-stake>` mechanism to ensure resource-efficient operation and enhanced security of the network. Unlike :term:`proof-of-work<proof-of-work>` where validators compete using computational power, proof-of-stake selects validators through a lottery system where the probability of being chosen is proportional to the amount of CCD staked.
 
