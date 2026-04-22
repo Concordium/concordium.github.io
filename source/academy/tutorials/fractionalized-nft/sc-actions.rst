@@ -22,7 +22,7 @@ Deploy smart contract
 
 Second, you need to deploy the Wasm-compiled smart contract to testnet. If you don't have your own node running, you can use the Concordium testnet node to deploy. Using a public URL (node.testnet.concordium.com), you can connect to the Concordium testnet node and will be able to deploy/query nodes. For all operations in this tutorial, you are going to use the public gRPC endpoint that is provided by Concordium.
 
-For some use cases you might need to run your own local node as there could be some limitations of this one. If you need more information either check :ref:`this link<developer-page>` or `contact Concordium support <http://support.concordium.software>`_.
+For some use cases you might need to run your own local node as there could be some limitations of this one. If you need more information either check the `node documentation <https://developer.concordium.software/en/mainnet/how-to/nodes/node-requirements.html>`_ or `contact Concordium support <http://support.concordium.software>`_.
 
 Use the following command to do deploy your smart contract.
 
