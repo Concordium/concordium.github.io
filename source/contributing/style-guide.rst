@@ -9,7 +9,7 @@ Introduction
 
 This guide helps you create consistent, high-quality documentation for Concordium. It is divided into four main sections:
 
-#. **Documentation types** - An overview of the different types of documentation following the `Divio system <https://docs.divio.com/documentation-system/>`_.
+#. **Documentation types** - An overview of the different types of documentation following the `Diátaxis framework <https://diataxis.fr/>`_.
 
 #. **Tone of voice and language** - Principles for clear and consistent communication, defining our documentation's voice and language style.
 
@@ -17,18 +17,18 @@ This guide helps you create consistent, high-quality documentation for Concordiu
 
 #. **Review checklist** -  A verification list to help maintain documentation quality and reduce the risk of common issues.
 
-Find information on how to set up the documentation environment `here <https://docs.concordium.com/en/mainnet/docs/help-and-faq/set-up-doc-env.html>`_.
+Find information on how to set up the documentation environment in :doc:`set-up-doc-env`.
 
 Documentation Types
 ===================
-Our documentation follows the `Divio system <https://docs.divio.com/documentation-system/>`_, organizing content into four distinct types:
+Our documentation follows the `Diátaxis framework <https://diataxis.fr/>`_, organizing content into four distinct types that map directly to the four sections of the documentation:
 
-* **Tutorials**: Learning-oriented content that guides users through a series of steps to complete a project. Example: "Getting started with smart contracts".
-* **How-to guides**: Problem-oriented content showing how to solve specific tasks. Example: "How to deploy a smart contract module".
-* **References**: Information-oriented technical descriptions of systems and features. Example: "REST API documentation".
-* **Explanations**: Understanding-oriented discussions that explain concepts and provide background. Example: "Understanding consensus mechanisms".
+* **Explore**: Understanding-oriented content that explains concepts and provides background. Helps readers build a mental model of how Concordium works before they start building. Example: "Identity and privacy on Concordium".
+* **Tutorials**: Learning-oriented content that guides readers through a series of steps to complete a project. Designed to be followed in order, teaching through doing. Example: "Build your first smart contract".
+* **How-to**: Problem-oriented content showing how to accomplish a specific task. Assumes the reader knows what they want to do and needs the steps to do it. Example: "Deploy a smart contract module".
+* **Reference**: Information-oriented technical descriptions of systems, tools, APIs, and commands. Designed for look-up, not linear reading. Example: "Concordium Client command reference".
 
-When writing, be mindful of which type of documentation you are creating. While a document can contain multiple types, clarity of purpose helps readers find and understand the information they need.
+When writing, be clear about which type of documentation you are creating and place it in the correct section. While a document can touch on multiple types, each page should have a clear primary purpose.
 
 Tone of voice and language
 ==========================
@@ -170,6 +170,26 @@ Example::
    .. dropdown:: The text the reader sees on the clickable dropdown
 
       This text appears when the reader clicks on the dropdown element.
+
+At a glance boxes
+-----------------
+All Tutorials and How-to pages must begin with an **At a glance** box. This gives readers a quick summary of the page before they commit to reading it.
+
+Use the ``admonition`` directive with the title ``At a glance``::
+
+   .. admonition:: At a glance
+
+      This guide explains how to deploy a smart contract module. You will need
+      the Concordium Client and a compiled module. After following this guide,
+      your module will be deployed on the network and ready to initialize.
+
+The At a glance box should cover:
+
+* What the page is about
+* What the reader will need (tools, prerequisites)
+* What they will have achieved by the end
+
+Keep it to two or three sentences. Do not use bullet points inside the box.
 
 Glossary terms
 --------------
