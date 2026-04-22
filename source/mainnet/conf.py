@@ -144,7 +144,7 @@ html_favicon = "../_static/concordium-logo-no-text.svg"
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# These options are for sphinx_rtd_theme
+# These options are for pydata_sphinx_theme
 html_theme_options = {
     # 'canonical_url': '',
     # 'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
@@ -158,7 +158,6 @@ html_theme_options = {
     # # Toc options
     "collapse_navigation": False,
     # 'sticky_navigation': True,
-    "navigation_depth": 3,
     # 'includehidden': False,
     "navigation_with_keys": False,
     # 'titles_only': False,
@@ -205,7 +204,7 @@ html_theme_options = {
             # Concordium monitoring options
             "name": "Monitor",
             # URL where the link will redirect
-            "url": "https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers",  # required
+            "url": "https://ccdscan.io",  # required
             # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
             "icon": "fas fa-chart-line",
             # Whether icon should be a FontAwesome class, or a local file
@@ -326,10 +325,8 @@ redirects = {
     "docs/index": "/en/mainnet/index.html",
     "./net/guides/shielded-transfer": "/net/guides/shield-ccd-wallets.html",
     "./net/desktop-wallet/send-gtu-single-desktop": "/net/guides/send-ccd-wallets.html",
-    "./net/desktop-wallet/send-gtu-single-desktop": "/net/guides/send-ccd-wallets.html",
     "./net/desktop-wallet/shield-gtu-desktop": "/net/guides/shield-ccd-wallets.html",
     "./net/resources/terms-and-conditions-bw": "/net/resources/terms-and-conditions.html",
-    "./net/resources/terms-and-conditions-mw-gen2": "/net/resources/terms-and-conditions.html",
     "./net/resources/terms-and-conditions-mw-gen2": "/net/resources/terms-and-conditions.html",
     "./net/desktop-wallet/add-baker-pool-dw": "/net/mobile-wallet/add-baker-mw.html",
     "./net/concepts/concepts-backup": "/net/guides/recovery.html",
