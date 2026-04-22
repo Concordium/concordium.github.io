@@ -31,7 +31,7 @@ In Concordium, block creation follows a leader-based approach. For each round, a
 
 Unlike :term:`proof-of-work` systems that require solving complex puzzles, Concordium's block creation is energy-efficient. The chosen leader simply needs to create a valid block and prove they were legitimately selected through the verifiable random function (VRF) system.
 
-`See a detailed description of block production and  validation here. <concepts-baker.html>`_
+:doc:`See a detailed description of block production and validation here. <concepts-baker>`
 
 
 Security
