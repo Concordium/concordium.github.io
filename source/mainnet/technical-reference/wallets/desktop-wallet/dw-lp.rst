@@ -12,7 +12,6 @@ The guides here are specifically for Desktop Wallet.
     :hidden:
     :maxdepth: 1
 
-    single-sign-schedule
     transaction-log-filter
     update-application
     accounts-desktop
