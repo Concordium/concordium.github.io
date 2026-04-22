@@ -57,3 +57,28 @@ The build runs with `-W` (warnings as errors). Fix all warnings before committin
 ```bash
 cargo run generate --output_folder <path-to-grpc-json-schema-folder>
 ```
+
+## Documentation Maintenance
+
+### Landing page document maps
+
+The four section landing pages each contain a **manually maintained document map** — a two-column grid listing all pages and sub-pages in that section:
+
+- `source/mainnet/learn/index.rst` — Explore
+- `source/mainnet/tutorials/index.rst` — Tutorials
+- `source/mainnet/how-to/index.rst` — How-to guides
+- `source/mainnet/technical-reference/index.rst` — Reference
+
+**These maps do not update automatically.** Whenever you add, remove, or rename a page, you must also update the map on the relevant landing page.
+
+**Rules for keeping maps in sync:**
+
+1. **Adding a page**: Add a `:doc:` entry under the correct section heading in the landing page grid. If it has sub-pages, list those indented below it.
+2. **Removing a page**: Remove the `:doc:` entry (and any sub-page entries) from the landing page grid.
+3. **Renaming a page or changing its title**: Update both the `toctree` entry and the map entry. The label used in the map must match the **explicit label in the toctree** (not the page's H1 title, unless they are the same). Check the relevant toctree carefully.
+4. **Adding a new section** (new toctree with a caption): Add a corresponding bold heading and entry block to the landing page grid, in the same column position that makes visual sense.
+5. **Never use page H1 titles as map labels if the toctree overrides them** — always use the toctree's explicit label.
+
+### Why manual maps?
+
+An automatic approach (visible toctrees with `maxdepth: 2`) was considered but rejected because it renders plain indented lists instead of the current two-column grid layout. The manual maps look significantly better and the maintenance overhead is low when AI handles the updates as part of every structural change.

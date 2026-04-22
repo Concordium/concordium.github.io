@@ -12,6 +12,10 @@ Step-by-step guides for completing specific tasks on Concordium. Browse all guid
 
    .. grid-item::
 
+      **About this documentation**
+
+      - :doc:`Navigate this documentation <navigate-docs>`
+
       **Concordium ID**
 
       - :doc:`Implement Verify and Access <concordium-id/verify-and-access/index>`
@@ -110,6 +114,12 @@ Step-by-step guides for completing specific tasks on Concordium. Browse all guid
       - :doc:`Participate as an election guardian <governance/guardians>`
       - :doc:`Verify election result <governance/verify-election-result>`
       - :doc:`Install the Concordium Governance Ledger app <governance/install-ledger-app>`
+
+.. toctree::
+   :caption: About this documentation
+   :hidden:
+
+   Navigate this documentation <navigate-docs>
 
 .. toctree::
    :caption: Concordium ID
