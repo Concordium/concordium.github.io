@@ -113,50 +113,49 @@ map — a two-column grid listing all pages and sub-pages:
 * ``source/mainnet/how-to/index.rst`` — How-to
 * ``source/mainnet/technical-reference/index.rst`` — Reference
 
-These maps do **not** update automatically. Whenever a page is added,
-removed, or renamed, the relevant landing page map must also be updated.
-The rules for doing this are documented in ``CLAUDE.md`` under
-*Documentation Maintenance*. When using AI for maintenance, this update
-is included automatically as part of the task.
+These maps do **not** update automatically when manually updating the docs.
+In this case, whenever a page is added, removed, or renamed, the relevant
+landing page map must also be updated. The rules for doing this are
+documented in ``CLAUDE.md`` under *Documentation Maintenance*.
 
-AI prompts, skills, and templates
-===================================
+If you use the maintenance commands described below (``/add-doc``,
+``/edit-doc``, ``/remove-doc``), the map update is handled automatically
+as part of the command.
 
-.. note::
+Documentation maintenance commands
+====================================
 
-   This section describes planned resources that have not yet been created.
-   Update this section as they are added.
+All routine documentation maintenance tasks are supported by custom Claude
+Code commands. These guide the maintainer step by step and handle all the
+technical details — file creation, toctree updates, and landing page map
+updates — automatically.
 
-The plan is to create a set of reusable prompts, skills, and templates to
-support common documentation maintenance tasks with AI. These will cover:
+**How to use the commands**
 
-* **Adding a new page** — prompt that creates the RST file with the correct
-  structure (title, At a glance box, headings), adds it to the relevant
-  toctree, and updates the landing page document map.
-* **Removing a page** — prompt that removes the file, the toctree entry,
-  and the landing page map entry.
-* **Renaming a page** — prompt that updates the file, toctree label, map
-  entry, and any cross-references.
-* **Writing or editing content** — template that applies the style guide
-  rules: tone of voice, formatting, At a glance box, correct documentation
-  type for the section.
-* **Review checklist** — prompt that checks a page or set of changes against
-  the style guide review checklist before committing.
+1. Open the repository in Claude Code
+2. Type ``/`` in the chat to see the available commands
+3. Select the relevant command and follow the prompts
+4. Review the result and commit when satisfied
 
-The commands are stored in ``.claude/commands/`` at the root of the
-repository and are available to anyone working in the repo with Claude Code.
+No knowledge of RST, Sphinx, or the toctree structure is needed.
+
+**Available commands**
+
+The command files live in ``.claude/commands/`` at the root of the
+repository. Open any of them in a text editor to read the full instructions.
 
 .. list-table::
-   :widths: 30 70
+   :widths: 20 80
    :header-rows: 1
 
    * - Command
      - Purpose
    * - ``/add-doc``
      - Add a new documentation page. Guides the maintainer through choosing
-       the right documentation type, placement, nav label, and filename.
-       Generates the RST file, updates the toctree, and updates the landing
-       page document map.
+       the right documentation type (Explore, Tutorial, How-to, or
+       Reference), the correct section, nav label, and filename. Generates
+       the RST file, updates the toctree, and updates the landing page
+       document map. Also handles creating a new section if needed.
    * - ``/edit-doc``
      - Edit an existing page. Applies style guide rules and handles any
        knock-on updates to toctrees and landing page maps if the page is
@@ -167,7 +166,7 @@ repository and are available to anyone working in the repo with Claude Code.
        links to the page from other pages and warns if any will break.
    * - ``/review-doc``
      - Review a page against the style guide checklist before committing.
-       Reports all issues with suggested fixes.
+       Reports all issues found with suggested fixes.
 
 Build and local preview
 =======================
