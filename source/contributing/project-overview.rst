@@ -143,9 +143,31 @@ support common documentation maintenance tasks with AI. These will cover:
 * **Review checklist** — prompt that checks a page or set of changes against
   the style guide review checklist before committing.
 
-When these resources are created, store them in a dedicated folder (e.g.
-``source/contributing/prompts/``) and update this section with the location
-and a short description of each.
+The commands are stored in ``.claude/commands/`` at the root of the
+repository and are available to anyone working in the repo with Claude Code.
+
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
+
+   * - Command
+     - Purpose
+   * - ``/add-doc``
+     - Add a new documentation page. Guides the maintainer through choosing
+       the right documentation type, placement, nav label, and filename.
+       Generates the RST file, updates the toctree, and updates the landing
+       page document map.
+   * - ``/edit-doc``
+     - Edit an existing page. Applies style guide rules and handles any
+       knock-on updates to toctrees and landing page maps if the page is
+       renamed or sub-pages change.
+   * - ``/remove-doc``
+     - Remove an existing page. Deletes the RST file, removes the toctree
+       entry, and removes the landing page map entry. Also checks for
+       links to the page from other pages and warns if any will break.
+   * - ``/review-doc``
+     - Review a page against the style guide checklist before committing.
+       Reports all issues with suggested fixes.
 
 Build and local preview
 =======================

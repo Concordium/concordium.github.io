@@ -58,6 +58,10 @@ The build runs with `-W` (warnings as errors). Fix all warnings before committin
 cargo run generate --output_folder <path-to-grpc-json-schema-folder>
 ```
 
+## Git
+
+When staging files, never add the entire `.claude/` folder. Only commit files inside `.claude/commands/` — the rest of `.claude/` contains local session data and personal settings that should not be shared.
+
 ## Documentation Maintenance
 
 ### Landing page document maps
