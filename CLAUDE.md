@@ -58,10 +58,6 @@ The build runs with `-W` (warnings as errors). Fix all warnings before committin
 cargo run generate --output_folder <path-to-grpc-json-schema-folder>
 ```
 
-## Pre-deployment checklist
-
-Before deploying to production, revert `source/_templates/navbar-logo.html` so the logo links to `https://developer.concordium.software/` instead of `{{ pathto('index') }}`. This was intentionally left as a local link to make PR preview navigation work correctly.
-
 ## Git
 
 When staging files, never add the entire `.claude/` folder. Only commit files inside `.claude/commands/` — the rest of `.claude/` contains local session data and personal settings that should not be shared.
