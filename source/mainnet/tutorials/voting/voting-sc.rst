@@ -8,6 +8,10 @@
 The Voting Smart Contract
 =========================
 
+.. admonition:: At a glance
+
+   This is the first part of the voting dApp tutorial, covering how to write the voting smart contract in Rust. You will need Rust and cargo-concordium installed. When you are done, you will have a voting smart contract that supports multiple voting options, a configurable deadline, and per-account vote tracking, ready to deploy on Concordium testnet.
+
 This is the first :ref:`part of a tutorial<voting-dapp>` on smart contract development. In this part you will focus on how to write a smart contract in the Rust_ programming language using the |concordium-std| library.
 
 The `voting smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/voting>`_ allows for conducting an election with several voting options. When the election is initialized, a deadline is set, after which no more votes may be cast. Only accounts (not other smart contracts) are eligible to vote. Each account can change its selected voting option as often as it desires until the deadline is reached.

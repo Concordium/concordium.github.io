@@ -6,6 +6,10 @@
 Smart contract implementation for fungible tokens
 =================================================
 
+.. admonition:: At a glance
+
+   This part of the tutorial shows you how to modify the cis2-multi Concordium smart contract template to support a custom fungible token with a maximum supply cap and a burn function. You will need Rust and cargo-concordium. When you are done, you will have a compiled and deployable fungible token smart contract with mint, transfer, and burn support.
+
 For your token contract, use the `cis2-multi contract from Concordium’s example smart contract repository on GitHub <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis2-multi>`_. You will make some minor modifications to it in this tutorial, such as the maximum supply of your token, circulating supply, and a burn function. Basically, no one will be able to mint a token again if it already met the maximum supply. Your token will be deflationary in that sense. Burning a token will not affect the circulating supply; if you want, you can adjust the corresponding function so it could affect circulating supply.
 
 Minting

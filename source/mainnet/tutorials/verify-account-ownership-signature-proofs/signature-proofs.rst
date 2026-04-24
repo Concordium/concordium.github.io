@@ -4,6 +4,10 @@
 Verifying account ownership
 =============================
 
+.. admonition:: At a glance
+
+   This tutorial shows you how to verify that a user controls a Concordium account by having them sign a server-generated challenge message — a pattern that requires no blockchain transaction or fee. You will need a backend capable of verifying signatures and users with a Concordium wallet. When you are done, you will have a working server-side verification flow that proves ownership of a Concordium account.
+
 This tutorial shows how to verify that a user controls a Concordium account by having them sign a challenge message. This is useful for authentication, compliance screening, or any situation where you need proof that someone owns a particular account.
 
 .. note::

@@ -9,6 +9,10 @@
 An eSealing dApp
 ================
 
+.. admonition:: At a glance
+
+   This tutorial introduces the eSealing dApp on Concordium, where files can be sealed and timestamped on the blockchain to prove possession and integrity. After reading this overview, you will understand the concept of file sealing and timestamping and be ready to explore the eSealing dApp.
+
 In this tutorial, you are going to get familiar with the deployed eSealing smart contract on testnet and explore the associated website.
 
 What is file sealing? What is timestamping?

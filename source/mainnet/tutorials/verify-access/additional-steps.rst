@@ -3,6 +3,10 @@
 Additional Steps
 ================
 
+.. admonition:: At a glance
+
+   This part of the tutorial covers advanced topics: requesting different types of ZK proofs (range proofs and attribute reveals), testing your integration, and debugging common issues. You will need to have completed the previous three parts of the tutorial. When you are done, you will understand how to customise and troubleshoot ZK proof flows in a Concordium dApp.
+
 This section covers advanced topics including requesting different types of proofs, testing your integration, and understanding what you've built.
 
 Requesting Additional Proofs

@@ -10,6 +10,10 @@
 The wCCD smart contract
 =======================
 
+.. admonition:: At a glance
+
+   This is a three-part tutorial series on the wCCD (wrapped CCD) smart contract on Concordium. After reading this overview, you will understand the three-part structure — understanding the wCCD protocol, interacting with it via concordium-client, and building a web frontend — and be ready to follow each part in order.
+
 In this tutorial, you are going to get familiar with the deployed wCCD token on testnet.
 You are going to write a basic web frontend example that can read from and write to the deployed wCCD smart contract on testnet.
 

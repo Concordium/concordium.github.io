@@ -4,6 +4,10 @@
 Creating your first Concordium dApp
 ====================================
 
+.. admonition:: At a glance
+
+   This tutorial guides you through creating and deploying your first smart contract on Concordium. You will need Rust and cargo-concordium installed, and a funded testnet wallet. When you are done, you will have a Hello World smart contract deployed on Concordium testnet that stores and returns a message string.
+
 This tutorial guides you through creating and deploying your first smart contract on Concordium. You'll create a simple **Hello World** smart contract and deploy it on the testnet.
 
 Before you start

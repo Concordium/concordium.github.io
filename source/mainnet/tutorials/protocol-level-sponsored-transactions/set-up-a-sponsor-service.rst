@@ -5,6 +5,10 @@
 Set up a sponsor service
 =========================
 
+.. admonition:: At a glance
+
+   This part of the tutorial shows you how to build a backend sponsor service that holds a sponsor wallet and pays transaction fees on behalf of users. You will need Node.js and a Concordium testnet account funded with CCD to act as the sponsor. When you are done, you will have a running backend service that creates and signs transactions on behalf of other accounts.
+
 The sponsor service runs on a secure backend and holds the sponsor wallet's private key. It creates transactions and signs them on behalf of the sponsor.
 
 .. note::

@@ -89,6 +89,10 @@
 Testing the piggy bank smart contract
 =====================================
 
+.. admonition:: At a glance
+
+   This is the second part of the piggy bank tutorial, covering how to write integration tests for your smart contract using the concordium-smart-contract-testing library. You will need the piggy bank contract from part one. When you are done, you will have a suite of integration tests that verify the contract's insert and smash behaviour, run entirely locally without a node.
+
 This is the second :ref:`part of a tutorial<piggy-bank>` on smart contract
 development.
 So far you have written a piggy bank smart contract in the Rust_ programming

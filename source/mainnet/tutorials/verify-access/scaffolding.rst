@@ -3,6 +3,10 @@
 Scaffolding the Project
 ========================
 
+.. admonition:: At a glance
+
+   This part of the tutorial sets up the project scaffold for a Concordium age-gated web application. You will need Node.js, yarn, Docker, and a Concordium testnet account with some CCD. When you are done, you will have a Next.js project with the Concordium verifier service running in Docker and WalletConnect configured.
+
 This section covers setting up your development environment, including the Next.js application, Docker-based verifier service, and WalletConnect integration.
 
 Project Setup

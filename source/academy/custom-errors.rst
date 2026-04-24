@@ -1,5 +1,5 @@
 :orphan:
 
-.. include:: ../mainnet/docs/smart-contracts/guides/custom-errors.rst
+.. include:: ../mainnet/how-to/smart-contracts/custom-errors.rst
 
 .. include:: ../mainnet/variables.rst

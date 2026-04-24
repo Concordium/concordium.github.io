@@ -4,6 +4,10 @@
 Concordium counter smart contract
 =================================
 
+.. admonition:: At a glance
+
+   This tutorial guides you through creating a counter smart contract on Concordium that stores a numeric value, restricts updates to the contract owner, and handles overflow errors gracefully. You will need Rust and cargo-concordium installed, and a funded testnet account. When you are done, you will have a counter contract deployed on testnet that you can increment and query using concordium-client.
+
 This tutorial guides you through creating a smart contract using the Concordium default contract template that simply keeps a counter value in its state. It is a super simple, fundamental example contract that touches on the following points:
 
 - Updating the counter value by a parameter given by the user.

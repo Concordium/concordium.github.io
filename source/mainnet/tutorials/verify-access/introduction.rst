@@ -3,6 +3,10 @@
 Introduction
 ============
 
+.. admonition:: At a glance
+
+   This page introduces the Concordium age verification tutorial series and explains what you will build: an age-gated web application where users prove they are 18 or older without revealing their date of birth. You will need basic familiarity with React and web development. After reading this page, you will understand the tools, architecture, and overall flow before beginning the hands-on steps.
+
 This tutorial teaches you how to build an age-gated web application where users can prove they're 18 or older **without revealing their actual birthdate**. You'll learn to integrate Concordium's zero-knowledge proof system with a Next.js application, creating a privacy-preserving verification flow that's both secure and user-friendly.
 
 .. contents:: Table of Contents

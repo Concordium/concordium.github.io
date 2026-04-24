@@ -7,6 +7,10 @@
 Company identity creation
 =========================
 
+.. admonition:: At a glance
+
+   This guide shows you how to create a company identity on Concordium through the Global FinReg identity provider. You will need the Concordium Wallet for Web or CryptoX app, a registered company, and relevant business documents for Global FinReg. When you are done, you will have a company identity and account on Concordium that can be used for institutional operations.
+
 A company identity is for companies that need an identity and accounts on the Concordium blockchain, but don't want that identity to belong to a specific person. Company identities are therefore issued with documents that identify the company and not an individual. Company identities are only relevant for a few companies, such as crypto exchanges.
 
 Company identities can only be created through the |bw| or |cryptox| using Global FinReg as the identity provider. You cannot use the Desktop Wallet for this purpose.

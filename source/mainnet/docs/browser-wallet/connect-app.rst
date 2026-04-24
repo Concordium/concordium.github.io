@@ -65,5 +65,5 @@ Then, the dApp can initiate a request that you can confirm from within the walle
 .. toctree::
    :hidden:
 
-   ../guides/proofs
+   ../../technical-reference/wallets/guides/proofs
 

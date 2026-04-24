@@ -1,8 +1,12 @@
 .. _zk-proof-index:
 
-==================================================
-Building a Zero-Knowledge Proof dApp on Concordium
-==================================================
+==================
+Using ID in dApps
+==================
+
+.. admonition:: At a glance
+
+   This is a two-part tutorial series on building a React dApp that uses Concordium's identity layer to generate zero-knowledge proofs. After reading this overview, you will understand how Concordium wallets combine accounts with real-world identities to enable selective disclosure, and be ready to follow the two tutorial parts on ZK proof generation and wallet connector integration.
 
 In this tutorial, you'll learn how to integrate Concordium's browser and mobile wallets into a React-based decentralized application (dApp), and generate zero-knowledge (ZK) proofs.
 

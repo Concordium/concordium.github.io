@@ -5,6 +5,10 @@
 Sponsored transactions
 ======================
 
+.. admonition:: At a glance
+
+   This is a two-part tutorial series on implementing sponsored transactions on Concordium, where a sponsor service pays transaction fees on behalf of users. After reading this overview, you will understand the two-part architecture — a secure backend sponsor service and a React frontend — and be ready to follow each part in order.
+
 Sponsored transactions allow users to interact with the Concordium blockchain without paying :ref:`transaction fees<transaction-fees>` themselves. Instead, a sponsor wallet covers the fee on behalf of the user.
 
 This tutorial walks through a frontend/backend architecture for sponsored transactions, focusing on clarity so you can adapt it to your own project. The tutorial has two parts:

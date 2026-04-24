@@ -4,6 +4,10 @@
 Interacting with the wCCD token protocol
 ========================================
 
+.. admonition:: At a glance
+
+   This part of the tutorial shows you how to interact with the wCCD smart contract on testnet using concordium-client, covering both query functions (balanceOf, operatorOf, tokenMetadata, supports) and state-mutative functions (wrap, unwrap, transfer, updateOperator). You will need concordium-client v5.0.1 or later, access to a testnet node, and a funded testnet account. When you are done, you will have wrapped CCD into wCCD, transferred it, and unwrapped it back.
+
 .. note::
 
     Before you start with part 2 of this tutorial, make sure you have:

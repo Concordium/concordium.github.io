@@ -2,110 +2,177 @@
 .. _tutorials:
 .. _sc-tutorials:
 
-==========
+=========
 Tutorials
-==========
+=========
 
-Welcome to Concordium's tutorials section where you can sharpen your skills as a dApp (decentralized application) developer.
+Welcome to Concordium's tutorials. Each tutorial guides you through building something complete from start to finish. Browse all tutorials below, grouped by topic, or use the sidebar to navigate directly to a section.
 
-Getting Started
----------------
+.. grid:: 1 1 2 2
+   :gutter: 3
 
-.. container:: tutorial-section tutorial-section-blue
+   .. grid-item::
 
-   Begin your journey by setting up your development environment and learning the fundamentals through hands-on tutorials.
+      **Integrating Concordium ID**
 
-   :ref:`Setup Guide → <setup-env>`
-   :ref:`Verify account ownership, signature proofs → <signature-proofs>`
+      - :doc:`Verifying account ownership <verify-account-ownership-signature-proofs/signature-proofs>`
+      - :doc:`Using ID in dApps <using-ID-in-dApps/index>`
 
-Basic Smart Contracts
----------------------
+        - :doc:`Implementing Wallet Connectors <using-ID-in-dApps/wallet-connectors-tutorial>`
+        - :doc:`ZK proof generation <using-ID-in-dApps/zk-proofs-tutorial>`
 
-.. container:: tutorial-section tutorial-section-green
+      - :doc:`Verify & Access <verify-access/index>`
 
-   Build simple, fundamental contracts.
+        - :doc:`Introduction <verify-access/introduction>`
+        - :doc:`Scaffolding the Project <verify-access/scaffolding>`
+        - :doc:`UI Integration <verify-access/ui-integration>`
+        - :doc:`Additional Steps <verify-access/additional-steps>`
 
-   * :ref:`Counter <counter-sc>` - Build a simple smart contract with an owner-controlled counter
+      - :doc:`Company identity creation <company-identity/company-identities>`
 
-Token Development
------------------
+      **Transaction Workflows**
 
-.. container:: tutorial-section tutorial-section-yellow
+      - :doc:`Sponsored transactions <protocol-level-sponsored-transactions/index>`
 
-   Build with various token standards.
+        - :doc:`Set up a sponsor service <protocol-level-sponsored-transactions/set-up-a-sponsor-service>`
+        - :doc:`Create a sponsored transaction <protocol-level-sponsored-transactions/create-a-sponsored-transaction>`
 
-   * :ref:`Fungible Tokens <ft-index>` - Mint, transfer, and burn fungible tokens
-   * :ref:`NFT Minting <nft-index>` - Create and transfer non-fungible tokens
-   * :ref:`wCCD Token <wCCD>` - Interact with wrapped CCD tokens on testnet
-   * :ref:`Using the onReceivingCIS2 hook <cis2-receiving>` - Learn how to handle tokens received by a smart contract
+      - :doc:`Smart contract sponsored transactions <sponsoredTransactions/index>`
 
-Advanced Applications
----------------------
+        - :doc:`Exploring the sponsored Transactions Smart Contract <sponsoredTransactions/sponsoredTransactionsSmartContract>`
+        - :doc:`Exploring the sponsored Transactions dApp <sponsoredTransactions/sponsoredTransactionsFrontendAndBackend>`
 
-.. container:: tutorial-section tutorial-section-blue
+      **Protocol-Level Tokens**
 
-   Learn how to create decentralized solutions for voting and NFT trading.
+      - :doc:`Get started with Protocol-Level Tokens <plt/index>`
 
-   * :ref:`PiggyBank <piggy-bank>` - Create a contract that accepts CCD deposits and implements owner-only withdrawal
-   * :ref:`Voting dApp <voting-dapp>` - Build a complete voting system
-   * :ref:`Low Code NFT Marketplace <low-code-nft-mp-intro>` - Create a marketplace for trading NFTs
-   * :ref:`eSealing <eSealing>` - Implement document sealing with the |bw| and timestamp verification
+        - :doc:`Get started with PLTs <plt/setup-guide>`
+        - :doc:`Request test CCD <plt/request-ccd>`
+        - :doc:`Request PLT issuance <plt/request-plt>`
+        - :doc:`PLT operations <plt/operations>`
+        - :doc:`PLT examples <plt/examples>`
+        - :doc:`Concordium Client CLI Tool <plt/concordium-client>`
+        - :doc:`Web SDK <plt/web-sdk>`
+        - :doc:`Rust SDK <plt/rust-sdk>`
 
-ID Tutorials
-------------
+   .. grid-item::
 
-.. container:: tutorial-section tutorial-section-yellow
+      **Tokens and Assets**
 
-   Learn how to use the ID layer in dApps.
+      - :doc:`Fungible tokens <fungible-tokens/index>`
 
-   * :ref:`Using ID in dApps <zk-proof-index>` - Use the ID Layer
+        - :doc:`Smart contract implementation for fungible tokens <fungible-tokens/smart-contract>`
+        - :doc:`Mint, transfer, and burn fungible tokens <fungible-tokens/mint-xfer>`
 
-Advanced Concordium Features
-----------------------------
+      - :doc:`NFT minting <nft-minting/index>`
 
-.. container:: tutorial-section tutorial-section-yellow
+        - :doc:`Upload the NFT <nft-minting/upload-nft>`
+        - :doc:`Initialize, build, and deploy the smart contract <nft-minting/build-smart-contract>`
+        - :doc:`Mint and transfer the NFT <nft-minting/mint-xfer>`
 
-   * :ref:`Sponsored Transactions <protocol-level-sponsored-transactions>` - Create transactions sponsored by a third-party
-   * :ref:`Smart Contract Sponsored Transactions <sponsoredTransactions>` - Handle wallet signatures and backend processing
-   * :ref:`Smart Contract Upgrade <intro-smart-contract-upgrade>` - Deploy and upgrade contract logic with state migration
+      - :doc:`SFT minting <sft-minting/index>`
 
-Additional Resources
---------------------
+        - :doc:`Smart contract modifications <sft-minting/build-smart-contract>`
+        - :doc:`Mint and transfer semi-fungible token <sft-minting/mint-xfer>`
 
-.. container:: tutorial-section tutorial-section-blue
+      - :doc:`wCCD <wCCD/index>`
 
-   * :doc:`dApp Examples <daap-examples/dapp-examples>` - Real-world examples of decentralized applications
-   * :doc:`Company Identity Guide <company-identity/company-identities>` - Learn how to create and manage company identities
-   * :ref:`Smart Contract Best Practices <best-practices>` - Recommended practices for production-ready development
+        - :doc:`Understanding the wCCD smart contract <wCCD/wCCD-introduction>`
+        - :doc:`Interacting with the wCCD token protocol <wCCD/wCCD-interacting>`
+        - :doc:`Setting up the frontend <wCCD/wCCD-frontend-set-up>`
+
+      - :doc:`Using the onReceivingCIS2 hook <onReceivingCIS2/on-receivingCIS2>`
+
+      **Building Smart Contracts**
+
+      - :doc:`Set up the development environment <setup-env>`
+      - :doc:`Quick start guide <quick-start>`
+      - :doc:`Hello World <hello-world/hello-world>`
+      - :doc:`Counter <counter/counter-contract>`
+      - :doc:`PiggyBank <piggy-bank/index>`
+
+        - :doc:`Writing the piggy bank smart contract <piggy-bank/writing>`
+        - :doc:`Testing the piggy bank smart contract <piggy-bank/testing>`
+        - :doc:`Deploying the piggy bank smart contract <piggy-bank/deploying>`
+        - :doc:`Setting up a frontend <piggy-bank/frontend>`
+
+      - :doc:`Smart Contract Upgrade <smartContractUpgrade/index>`
+
+        - :doc:`Native upgradability <smartContractUpgrade/smartContractUpgrade>`
+
+      **dApp Development**
+
+      - :doc:`The Voting dApp <voting/index>`
+
+        - :doc:`Writing a voting smart contract <voting/voting-sc>`
+        - :doc:`Setting up the frontend <voting/voting-dapp>`
+
+      - :doc:`Low Code NFT Marketplace <low-code-nft-marketplace/introduction>`
+
+        - :doc:`Low code NFT marketplace <low-code-nft-marketplace/marketplace>`
+        - :doc:`Low-code NFT minting tool <low-code-nft-marketplace/minting-tool>`
+
+      - :doc:`eSealing <eSealing/index>`
+
+        - :doc:`Exploring the eSealing dapp <eSealing/eSealing_dapp>`
+
+      - :doc:`dApp examples <daap-examples/dapp-examples>`
 
 .. toctree::
-   :maxdepth: 2
+   :caption: Integrating Concordium ID
    :hidden:
-   :caption: Tutorials
+   :maxdepth: 2
+
+   Verify account ownership, signature proofs <./verify-account-ownership-signature-proofs/signature-proofs>
+   Using ID in dApps <./using-ID-in-dApps/index>
+   Verify & Access <verify-access/index>
+   Company Identity Guide <company-identity/company-identities>
+
+.. toctree::
+   :caption: Transactions Workflows
+   :hidden:
+   :maxdepth: 2
+
+   Sponsored transactions <./protocol-level-sponsored-transactions/index>
+   Smart contract sponsored transactions <./sponsoredTransactions/index>
+
+.. toctree::
+   :caption: Protocol-Level Tokens
+   :hidden:
+   :maxdepth: 2
+
+   Get started with Protocol-Level Tokens <plt/index>
+
+.. toctree::
+   :caption: Tokens and Assets
+   :hidden:
+   :maxdepth: 2
+
+   Fungible tokens <fungible-tokens/index>
+   NFT minting <nft-minting/index>
+   SFT minting <sft-minting/index>
+   wCCD <./wCCD/index>
+   Using the onReceivingCIS2 hook <./onReceivingCIS2/on-receivingCIS2>
+
+
+.. toctree::
+   :caption: Building Smart Contracts
+   :hidden:
+   :maxdepth: 2
 
    setup-env
+   Quick start guide <quick-start>
    Hello World <./hello-world/hello-world>
    Counter <./counter/counter-contract>
    PiggyBank <./piggy-bank/index>
-   Verify account ownership, signature proofs <./verify-account-ownership-signature-proofs/signature-proofs>
-   Using ID in dApps <./using-ID-in-dApps/index>
-   Using the onReceivingCIS2 hook <./onReceivingCIS2/on-receivingCIS2>
-   wCCD <./wCCD/index>
-   voting/index
-   nft-minting/index
-   sft-minting/index
-   fungible-tokens/index
-   Concordium low-code NFT framework <./low-code-nft-marketplace/introduction.rst>
-   eSealing <./eSealing/index>
-   Sponsored transactions <./protocol-level-sponsored-transactions/index>
-   Smart contract sponsored transactions <./sponsoredTransactions/index>
    Smart Contract Upgrade <./smartContractUpgrade/index>
-   Verify & Access <verify-access/index>
 
 .. toctree::
-   :maxdepth: 2
+   :caption: dApp Development
    :hidden:
-   :caption: Additional Ressources
+   :maxdepth: 2
 
-    dApp examples<daap-examples/dapp-examples>
-    How to create a company identity<company-identity/company-identities>
+   voting/index
+   Low Code NFT Marketplace <./low-code-nft-marketplace/introduction.rst>
+   eSealing <./eSealing/index>
+   dApp examples <daap-examples/dapp-examples>

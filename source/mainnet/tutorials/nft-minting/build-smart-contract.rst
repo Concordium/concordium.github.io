@@ -5,6 +5,10 @@
 Initialize, build, and deploy the smart contract
 ================================================
 
+.. admonition:: At a glance
+
+   This part of the tutorial shows you how to initialise the cis2-nft contract template, build it into a Wasm module, and deploy and initialise an instance on testnet. You will need Rust, cargo-concordium, and concordium-client with a testnet account imported. When you are done, you will have a deployed and initialised NFT smart contract instance on Concordium testnet.
+
 Now you are ready to build your smart contract. You'll be using the ``cis2-nft`` contract template provided by Concordium.
 
 Initialize Cis2-NFT contract template
