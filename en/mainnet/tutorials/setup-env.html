@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=19c83c19" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=2765dcc4" />
     <link rel="stylesheet" type="text/css" href="../_static/css/tippy.css?v=124524c4" />
   
   <!-- So that users can add custom icons -->
@@ -54,14 +54,14 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/tutorials/setup-env.0ef6abec-fbed-4c13-8541-56917f3d5a0f.js"></script>
+    <script defer="defer" src="../_static/tippy/tutorials/setup-env.f75989f4-6169-4b18-864e-e9daada44763.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/setup-env';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/setup-env.html" />
     <link rel="icon" href="../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Creating your first Concordium dApp" href="hello-world/hello-world.html" />
-    <link rel="prev" title="Tutorials" href="index.html" />
+    <link rel="next" title="Concordium smart contracts quick start guide" href="quick-start.html" />
+    <link rel="prev" title="Implementing CIS-2 token receiving hooks" href="onReceivingCIS2/on-receivingCIS2.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
   </head>
@@ -101,9 +101,6 @@
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
-<aside class="bd-header-announcement" aria-label="Announcement">
-  <div class="bd-header-announcement__content">Learn how to build with Protocol Level Tokens (PLTs). Read more about PLTs on the <a href="https://www.concordium.com/article/smart-money-starts-here-concordiums-protocol-level-tokens" target="_blank">Concordium website</a> or dive into our <a href="https://docs.concordium.com/en/mainnet/docs/plt/index.html">developer documentation</a>.</div>
-</aside>
 
   
     <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
@@ -140,8 +137,8 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../docs/index.html">
-    Docs
+  <a class="nav-link nav-internal" href="../learn/index.html">
+    Explore
   </a>
 </li>
 
@@ -154,15 +151,22 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../tools/index.html">
-    Tools
+  <a class="nav-link nav-internal" href="../how-to/index.html">
+    How-to
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../community/index.html">
-    Community
+  <a class="nav-link nav-internal" href="../technical-reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../downloads.html">
+    Downloads
   </a>
 </li>
 
@@ -226,7 +230,7 @@
           
           
           
-          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+          <a href="https://ccdscan.io" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
             <span class="sr-only">Monitor</span></a>
         </li>
         <li class="nav-item">
@@ -342,8 +346,8 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../docs/index.html">
-    Docs
+  <a class="nav-link nav-internal" href="../learn/index.html">
+    Explore
   </a>
 </li>
 
@@ -356,15 +360,22 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../tools/index.html">
-    Tools
+  <a class="nav-link nav-internal" href="../how-to/index.html">
+    How-to
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../community/index.html">
-    Community
+  <a class="nav-link nav-internal" href="../technical-reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../downloads.html">
+    Downloads
   </a>
 </li>
 
@@ -419,7 +430,7 @@
           
           
           
-          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+          <a href="https://ccdscan.io" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
             <span class="sr-only">Monitor</span></a>
         </li>
         <li class="nav-item">
@@ -497,61 +508,25 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Set up the development environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hello-world/hello-world.html">Hello World</a></li>
-<li class="toctree-l1"><a class="reference internal" href="counter/counter-contract.html">Counter</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="piggy-bank/index.html">PiggyBank</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="piggy-bank/writing.html">Writing the piggy bank smart contract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="piggy-bank/testing.html">Testing the piggy bank smart contract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="piggy-bank/deploying.html">Deploying the piggy bank smart contract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="piggy-bank/frontend.html">Setting up a frontend</a></li>
-</ul>
-</details></li>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrating Concordium ID</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="verify-account-ownership-signature-proofs/signature-proofs.html">Verify account ownership, signature proofs</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="using-ID-in-dApps/index.html">Using ID in dApps</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="using-ID-in-dApps/wallet-connectors-tutorial.html">Implementing Wallet Connectors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using-ID-in-dApps/zk-proofs-tutorial.html">ZK proof generation</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="onReceivingCIS2/on-receivingCIS2.html">Using the onReceivingCIS2 hook</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="wCCD/index.html">wCCD</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="wCCD/wCCD-introduction.html">Understanding the wCCD token protocol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wCCD/wCCD-interacting.html">Interacting with the wCCD token protocol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wCCD/wCCD-frontend-set-up.html">Setting up the frontend</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="verify-access/index.html">Verify &amp; Access</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="verify-access/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="verify-access/scaffolding.html">Scaffolding the Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="verify-access/ui-integration.html">UI Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="verify-access/additional-steps.html">Additional Steps</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="voting/index.html">The Voting dApp</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="voting/voting-sc.html">Writing a voting smart contract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="voting/voting-dapp.html">Setting up the frontend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="company-identity/company-identities.html">Company Identity Guide</a></li>
 </ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="nft-minting/index.html">Mint an NFT</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="nft-minting/upload-nft.html">Upload the NFT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nft-minting/build-smart-contract.html">Initialize, build, and deploy the smart contract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nft-minting/mint-xfer.html">Mint and transfer the NFT</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="sft-minting/index.html">Mint a semi-fungible token</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="sft-minting/build-smart-contract.html">Smart contract modifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sft-minting/mint-xfer.html">Mint and transfer semi-fungible token</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="fungible-tokens/index.html">Mint fungible tokens</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="fungible-tokens/smart-contract.html">Smart contract implementation for fungible tokens</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fungible-tokens/mint-xfer.html">Mint, transfer, and burn fungible tokens</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="low-code-nft-marketplace/introduction.html">Concordium low-code NFT framework</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="low-code-nft-marketplace/marketplace.html">Low code NFT marketplace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="low-code-nft-marketplace/minting-tool.html">Low-code NFT minting tool</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="eSealing/index.html">eSealing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="eSealing/eSealing_dapp.html">Exploring the eSealing dapp</a></li>
-</ul>
-</details></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Transactions Workflows</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="protocol-level-sponsored-transactions/index.html">Sponsored transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="protocol-level-sponsored-transactions/set-up-a-sponsor-service.html">Set up a sponsor service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="protocol-level-sponsored-transactions/create-a-sponsored-transaction.html">Create a sponsored transaction</a></li>
@@ -562,22 +537,86 @@
 <li class="toctree-l2"><a class="reference internal" href="sponsoredTransactions/sponsoredTransactionsFrontendAndBackend.html">Exploring the sponsored Transactions dApp</a></li>
 </ul>
 </details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Protocol-Level Tokens</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="plt/index.html">Get started with Protocol-Level Tokens</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="plt/setup-guide.html">Get started with PLTs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="plt/request-ccd.html">Request test CCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plt/request-plt.html">Request PLT issuance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="plt/operations.html">PLT operations</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="plt/examples.html">PLT examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="plt/concordium-client.html">Concordium Client CLI Tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plt/web-sdk.html">Web SDK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plt/rust-sdk.html">Rust SDK</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tokens and Assets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="fungible-tokens/index.html">Fungible tokens</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="fungible-tokens/smart-contract.html">Smart contract implementation for fungible tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fungible-tokens/mint-xfer.html">Mint, transfer, and burn fungible tokens</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="nft-minting/index.html">NFT minting</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="nft-minting/upload-nft.html">Upload the NFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nft-minting/build-smart-contract.html">Initialize, build, and deploy the smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nft-minting/mint-xfer.html">Mint and transfer the NFT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sft-minting/index.html">SFT minting</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="sft-minting/build-smart-contract.html">Smart contract modifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sft-minting/mint-xfer.html">Mint and transfer semi-fungible token</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="wCCD/index.html">wCCD</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="wCCD/wCCD-introduction.html">Understanding the wCCD token protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wCCD/wCCD-interacting.html">Interacting with the wCCD token protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wCCD/wCCD-frontend-set-up.html">Setting up the frontend</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="onReceivingCIS2/on-receivingCIS2.html">Using the onReceivingCIS2 hook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Building Smart Contracts</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Set up the development environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hello-world/hello-world.html">Hello World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="counter/counter-contract.html">Counter</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="piggy-bank/index.html">PiggyBank</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="piggy-bank/writing.html">Writing the piggy bank smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="piggy-bank/testing.html">Testing the piggy bank smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="piggy-bank/deploying.html">Deploying the piggy bank smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="piggy-bank/frontend.html">Setting up a frontend</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="smartContractUpgrade/index.html">Smart Contract Upgrade</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="smartContractUpgrade/smartContractUpgrade.html">Native upgradability</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="verify-access/index.html">Verify &amp; Access</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="verify-access/introduction.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="verify-access/scaffolding.html">Scaffolding the Project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="verify-access/ui-integration.html">UI Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="verify-access/additional-steps.html">Additional Steps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">dApp Development</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="voting/index.html">The Voting dApp</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="voting/voting-sc.html">Writing a voting smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="voting/voting-dapp.html">Setting up the frontend</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="low-code-nft-marketplace/introduction.html">Low Code NFT Marketplace</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="low-code-nft-marketplace/marketplace.html">Low code NFT marketplace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="low-code-nft-marketplace/minting-tool.html">Low-code NFT minting tool</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Ressources</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="daap-examples/dapp-examples.html"> dApp examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="company-identity/company-identities.html"> How to create a company identity</a></li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="eSealing/index.html">eSealing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="eSealing/eSealing_dapp.html">Exploring the eSealing dapp</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="daap-examples/dapp-examples.html">dApp examples</a></li>
 </ul>
 </div>
 </nav></div>
@@ -611,7 +650,11 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="set-up-the-development-environment">
+  <div class="admonition-at-a-glance admonition">
+<p class="admonition-title">At a glance</p>
+<p>This guide walks you through installing all the tools needed to follow the Concordium smart contract tutorials. You will need a Chrome browser and internet access. When you are done, you will have Rust, cargo-concordium, and concordium-client installed, a funded testnet wallet set up, and your account key imported into concordium-client — ready to build, deploy, and interact with smart contracts on testnet.</p>
+</div>
+<section id="set-up-the-development-environment">
 <span id="setup-env"></span><h1>Set up the development environment<a class="headerlink" href="#set-up-the-development-environment" title="Link to this heading">#</a></h1>
 <p>Before starting the tutorials, you must prepare your development environment by installing a number of tools. This topic covers the setup required for the tutorials.</p>
 <div class="admonition note">
@@ -642,7 +685,7 @@
 <p>During Wasm installation in your system you should see something similar to below.</p>
 <a class="reference internal image-reference" href="../_images/mint-wasm-install.png"><img alt="../_images/mint-wasm-install.png" src="../_images/mint-wasm-install.png" style="width: 100%;" />
 </a>
-<p>Now you need to install the Concordium software package. <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> is the tool for developing smart contracts for the Concordium blockchain. It can be used for <a class="reference internal" href="../docs/smart-contracts/guides/compile-module.html#compile-module"><span class="std std-ref">compiling</span></a> and <a class="reference internal" href="../docs/smart-contracts/guides/integration-test-contract.html#integration-test-contract"><span class="std std-ref">testing</span></a> smart contracts, and enables features such as <a class="reference internal" href="../docs/smart-contracts/guides/build-schema.html#build-schema"><span class="std std-ref">building contract schemas</span></a>. <a class="reference internal" href="../docs/installation/downloads.html#cargo-concordium-testnet"><span class="std std-ref">Click here</span></a> and download the version 2.2.0 or greater of <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> for your operating system. The tool is the same for both testnet and mainnet.</p>
+<p>Now you need to install the Concordium software package. <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> is the tool for developing smart contracts for the Concordium blockchain. It can be used for <a class="reference internal" href="../how-to/smart-contracts/compile-module.html#compile-module"><span class="std std-ref">compiling</span></a> and <a class="reference internal" href="../how-to/smart-contracts/integration-test-contract.html#integration-test-contract"><span class="std std-ref">testing</span></a> smart contracts, and enables features such as <a class="reference internal" href="../how-to/smart-contracts/build-schema.html#build-schema"><span class="std std-ref">building contract schemas</span></a>. <a class="reference internal" href="../downloads.html#cargo-concordium-testnet"><span class="std std-ref">Click here</span></a> and download the version 2.2.0 or greater of <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> for your operating system. The tool is the same for both testnet and mainnet.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you are not using Ubuntu/Linux as your operating system, the following screenshots and commands will be different.
@@ -667,7 +710,7 @@ Remember to adjust the following commands based on your operating system.</p>
 </div>
 <section id="download-and-run-concordium-client">
 <span id="interact-with-your-contract"></span><h2>Download and run Concordium Client<a class="headerlink" href="#download-and-run-concordium-client" title="Link to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool allows you to interact with a Concordium node. The tutorials use <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> as a command line tool to deploy, mint, and transfer. The tools is available for Windows, Mac, and Linux. <a class="reference internal" href="../docs/installation/downloads.html#concordium-node-and-client-download-testnet"><span class="std std-ref">Download it for your operating system here</span></a>. You find documentation of important commands that the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool provides <a class="reference internal" href="../tools/concordium-client.html#concordium-client"><span class="std std-ref">here</span></a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool allows you to interact with a Concordium node. The tutorials use <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> as a command line tool to deploy, mint, and transfer. The tools is available for Windows, Mac, and Linux. <a class="reference internal" href="../downloads.html#concordium-node-and-client-download-testnet"><span class="std std-ref">Download it for your operating system here</span></a>. You find documentation of important commands that the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool provides <a class="reference internal" href="../technical-reference/concordium-client/concordium-client.html#concordium-client"><span class="std std-ref">here</span></a>.</p>
 <p>Rename the package to <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> in case it has some version annotation. Go to the folder where you downloaded the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>. You can check if you are in the correct folder when you see the output <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> from the command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;concordium-client&#39;</span>
 </pre></div>
@@ -750,7 +793,7 @@ The macOS distribution is an installer that places an alias to the binary into t
 <section id="concordium-node-on-testnet">
 <h2>Concordium node on Testnet<a class="headerlink" href="#concordium-node-on-testnet" title="Link to this heading">#</a></h2>
 <p>For the purposes of these tutorials and for testing, a node is available on testnet to use when testing smart contracts and dApps so you do not need to run your own node. You can use this node for API calls of chain methods only with gRPC v2 and gRPC web. The address is <code class="docutils literal notranslate"><span class="pre">grpc.testnet.concordium.com</span></code> on port 20000 (gRPCv2 and gRPC-web). You can use this node for API calls of <em>chain methods only</em>. This node is maintained by Concordium, but Concordium does not guarantee availability. The status of this node is available on the <a class="reference external" href="https://status.testnet.concordium.software">Testnet status page</a>.</p>
-<p>If you wish to run your own node, see <a class="reference internal" href="../docs/network/nodes/node-requirements.html#node-requirements"><span class="std std-ref">Run a node on Concordium</span></a>.</p>
+<p>If you wish to run your own node, see <a class="reference internal" href="../how-to/nodes/node-requirements.html#node-requirements"><span class="std std-ref">Run a node on Concordium</span></a>.</p>
 </section>
 <section id="set-up-a-wallet">
 <span id="setup-wallet"></span><h2>Set up a wallet<a class="headerlink" href="#set-up-a-wallet" title="Link to this heading">#</a></h2>
@@ -765,7 +808,7 @@ The macOS distribution is an installer that places an alias to the binary into t
 <div style="margin-bottom: 50px;"></div><p>One thing to note is that if you click the <strong>Send</strong> button on the main screen, you go to the Send funds screen where you can transfer CCDs. You can type the amount of CCD and the recipient’s address in this section. As you can see below, the screen shows the <em>Estimated transaction fee</em> in CCD terms. This allows you to estimate the costs beforehand and helps you to calculate your business expenses.</p>
 <a class="reference internal image-reference" href="../_images/send-funds.png"><img alt="../_images/send-funds.png" src="../_images/send-funds.png" style="width: 50%;" />
 </a>
-<div style="margin-bottom: 50px;"></div><p>After that, you need to <a class="reference internal" href="../docs/guides/export-account-private-key.html#export-key"><span class="std std-ref">export the keys</span></a> for your account. Save the file on your local machine in the same folder as the rest of the repository. It will have a name like this &lt;YOUR PUBLIC ADDRESS&gt;.export. You can open it with a text editor and see your signKey, verifyKey in there. Copy signKey and your address. You will use them while deploying and interacting with your contract.</p>
+<div style="margin-bottom: 50px;"></div><p>After that, you need to <a class="reference internal" href="../technical-reference/wallets/guides/export-account-private-key.html#export-key"><span class="std std-ref">export the keys</span></a> for your account. Save the file on your local machine in the same folder as the rest of the repository. It will have a name like this &lt;YOUR PUBLIC ADDRESS&gt;.export. You can open it with a text editor and see your signKey, verifyKey in there. Copy signKey and your address. You will use them while deploying and interacting with your contract.</p>
 <p>To export the key, go to the Accounts page and click <strong>Export</strong> next to <em>Private key</em>. Enter your passcode and click <strong>Show private key</strong>, and then <strong>Export</strong>.</p>
 <a class="reference internal image-reference" href="../_images/export-key-new.png"><img alt="../_images/export-key-new.png" src="../_images/export-key-new.png" style="width: 100%;" />
 </a>
@@ -830,20 +873,20 @@ The macOS distribution is an installer that places an alias to the binary into t
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="onReceivingCIS2/on-receivingCIS2.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tutorials</p>
+        <p class="prev-next-title">Implementing CIS-2 token receiving hooks</p>
       </div>
     </a>
     <a class="right-next"
-       href="hello-world/hello-world.html"
+       href="quick-start.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Creating your first Concordium dApp</p>
+        <p class="prev-next-title">Concordium smart contracts quick start guide</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -6,9 +6,13 @@
    :align: center
    :alt: An eSealing dApp
 
-=============================
-A Sponsored Transactions dApp
-=============================
+=====================================
+Smart contract sponsored transactions
+=====================================
+
+.. admonition:: At a glance
+
+   This is a two-part tutorial series on building a sponsored transactions dApp on Concordium using a CIS-3 smart contract, where users can submit transactions without holding CCD. After reading this overview, you will understand the three components — smart contract, backend, and frontend — and be ready to follow the two tutorial parts.
 
 In this tutorial, you are going to get familiar with how to implement a sponsored transaction mechanism in a smart contract,
 how to sign messages in a wallet and verify the signature in the smart contract and

@@ -4,6 +4,10 @@
 Mint fungible tokens
 ====================
 
+.. admonition:: At a glance
+
+   This is a two-part tutorial on minting, transferring, and burning CIS-2 fungible tokens on the Concordium blockchain. You will need Rust, cargo-concordium, and concordium-client installed, and a Concordium testnet account. After reading this overview, you will understand the CIS-2 standard for fungible tokens and be ready to follow the two tutorial parts.
+
 In this tutorial, you are going to mint and burn fungible tokens on the Concordium blockchain, send them to multiple accounts, and test the balances. Before starting, you need to understand the CIS-2_ standard.
 
 

@@ -5,6 +5,10 @@
 Setting up a frontend
 =====================
 
+.. admonition:: At a glance
+
+   This is the fourth part of the piggy bank tutorial, covering how to run the Piggybank web dApp locally. You will need Node.js, yarn, and either the Concordium Browser Wallet or the mobile wallet with WalletConnect. When you are done, you will have the Piggybank dApp running in your browser and be able to deposit and smash your deployed contract through a web interface.
+
 As an alternative to interacting with smart contracts directly,
 users might have a better experience using a web-based application.
 
@@ -13,7 +17,7 @@ The application is able to perform contract updates on behalf of the user,
 either using the |bw| or |mw-gen2| via
 `Wallet Connect (v2) <https://docs.walletconnect.com/2.0/>`_.
 
-The `wCCD tutorial part 3 <wCCD-frontend-set-up>`_ explains how to set up the |bw|.
+The :doc:`wCCD tutorial part 3 <../wCCD/wCCD-frontend-set-up>` explains how to set up the |bw|.
 Wallet Connect is currently supported by the |mw-gen2|. iOS support will be added in the near future.
 
 The steps for setting up the Piggybank dApp are very similar to the :ref:`wCCD tutorial<wCCD-frontend-set-up>`, only with the repository linked above.

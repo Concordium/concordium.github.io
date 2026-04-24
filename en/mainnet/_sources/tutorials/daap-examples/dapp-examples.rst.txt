@@ -5,6 +5,10 @@
 dApp examples
 =============
 
+.. admonition:: At a glance
+
+   This page is a catalogue of Concordium dApp examples, each with links to a live testnet demo, tutorials, smart contract code, and frontend repositories. Use it to explore what is possible on Concordium and find a starting point for your own project.
+
 Select an example to see more information about it, such as a hosted dApp for you to try, links to tutorials, repositories, and more.
 
 Starting a new project on the Concordium blockchain? Have a look at the `dApp starter template <https://github.com/Concordium/concordium-dapp-starter>`__!

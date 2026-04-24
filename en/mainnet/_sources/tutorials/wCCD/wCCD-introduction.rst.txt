@@ -6,6 +6,10 @@
 Understanding the wCCD smart contract
 =====================================
 
+.. admonition:: At a glance
+
+   This part of the tutorial explains the wCCD protocol: how CCD is wrapped into a CIS-2 compliant token (wCCD) at a 1:1 ratio and unwrapped back, why this is useful for dApps and decentralised exchanges, and the canonical contract addresses on testnet and mainnet. After reading, you will understand how the wrap and unwrap functions work and be ready to interact with the wCCD contract.
+
 The native currency on the Concordium blockchain is CCD. When other tokens are
 built on the Concordium blockchain, they often use the recommended ``CIS-2``
 token standard. This has the advantage that other dApps (decentralized apps)

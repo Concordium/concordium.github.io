@@ -6,6 +6,10 @@
 Low code NFT marketplace
 ========================
 
+.. admonition:: At a glance
+
+   This tutorial shows you how to set up and use the Concordium low-code NFT marketplace, which lets you create a marketplace, mint NFTs with or without Pinata/IPFS integration, and buy and sell NFTs with fixed prices. You will need the Concordium Browser Wallet and Node.js installed. When you are done, you will have a running NFT marketplace where you can mint, list, and purchase tokens.
+
 To make it quicker and easier to develop and run an NFT marketplace, the Low-Code NFT Minting tool and marketplace have been created. It includes built-in smart contracts, a template user interface, and various functionalities, including the following:
 
 - Connect with |bw|

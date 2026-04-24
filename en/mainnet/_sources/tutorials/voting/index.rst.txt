@@ -7,6 +7,10 @@
 The Voting dApp
 ===============
 
+.. admonition:: At a glance
+
+   This is a two-part tutorial series on building a voting dApp on Concordium. After reading this overview, you will understand the two-part structure — writing the voting smart contract in Rust and setting up the web frontend — and be ready to follow each part in order. Basic knowledge of blockchains, smart contracts, Rust, and web frontend development is assumed.
+
 In this tutorial, you are going to get familiar with the deployed voting dApp on testnet. The voting dApp example is intended to show how you can use Concordium to conduct an election using the |bw| to enable users to cast their vote in your election.
 You are going to write a basic web frontend example that can read from and write to the deployed smart contract on testnet.
 

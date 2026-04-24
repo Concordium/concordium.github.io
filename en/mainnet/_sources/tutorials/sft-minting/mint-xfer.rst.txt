@@ -4,6 +4,10 @@
 Mint and transfer semi-fungible token
 =====================================
 
+.. admonition:: At a glance
+
+   This part of the tutorial shows you how to mint semi-fungible tokens, view the contract state and token metadata, and transfer tokens to another account using concordium-client. You will need concordium-client and the deployed SFT contract from the previous step. When you are done, you will have minted and transferred semi-fungible tokens on Concordium testnet.
+
 You have a contract instance which means you have an empty state and are ready to mint some tokens! You will be using `this metadata <https://gateway.pinata.cloud/ipfs/QmZ3939dLLFzvYZjFnkdqACe2n9TQA8Rx4efbjaYTXteeu>`_ and minting 100 of `this cool image <https://ipfs.io/ipfs/QmNqv1QnZw6j6N3ueqCA6VotciHUopRAvZqY8JBnheoLk6>`_.
 
 Create a folder called ``nft-artifacts`` and create a JSON file called ``mint-params.json`` in the folder to execute these steps properly. In the JSON file, you are going to give the minting parameters to the MintParams which you worked on a little in the beginning.

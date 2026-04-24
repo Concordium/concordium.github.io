@@ -1,8 +1,12 @@
 .. _verify-access:
 
-=========================================
-Concordium Age Verification Tutorial
-=========================================
+================
+Verify & Access
+================
+
+.. admonition:: At a glance
+
+   This is a four-part tutorial series on building an age-gated web application using Concordium zero-knowledge proofs, where users prove they are 18 or older without revealing their date of birth. After reading this overview, you will understand the four-part structure — introduction, project scaffolding, UI integration, and advanced steps — and be ready to follow each part in order.
 
 A beginner-friendly guide to integrating privacy-preserving age verification using Concordium's zero-knowledge proofs.
 

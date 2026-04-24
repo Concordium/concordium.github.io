@@ -5,6 +5,10 @@
 Implementing Wallet Connectors
 ==============================
 
+.. admonition:: At a glance
+
+   This part of the tutorial shows you how to implement wallet connectors in a Concordium dApp so users can connect their browser wallet or mobile wallet. You will need Node.js, React, and the @concordium/web-sdk. When you are done, you will have a dApp that can detect, connect to, and interact with the Concordium wallet to request zero-knowledge proofs.
+
 For this tutorial, we'll be focusing on two key Concordium features:
 
 #. Wallet connection (Browser and Mobile)

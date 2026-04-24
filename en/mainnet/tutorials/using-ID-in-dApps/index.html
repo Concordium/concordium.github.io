@@ -10,7 +10,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Building a Zero-Knowledge Proof dApp on Concordium &#8212; Concordium  documentation</title>
+    <title>Using ID in dApps &#8212; Concordium  documentation</title>
   
   
   
@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=19c83c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=2765dcc4" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
   
   <!-- So that users can add custom icons -->
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/using-ID-in-dApps/index.84a32f74-553a-4f14-a5a1-68e56549bbc8.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/using-ID-in-dApps/index.3725a45f-51c1-43d6-af17-105570e30c8a.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/using-ID-in-dApps/index';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/using-ID-in-dApps/index.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -101,9 +101,6 @@
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
-<aside class="bd-header-announcement" aria-label="Announcement">
-  <div class="bd-header-announcement__content">Learn how to build with Protocol Level Tokens (PLTs). Read more about PLTs on the <a href="https://www.concordium.com/article/smart-money-starts-here-concordiums-protocol-level-tokens" target="_blank">Concordium website</a> or dive into our <a href="https://docs.concordium.com/en/mainnet/docs/plt/index.html">developer documentation</a>.</div>
-</aside>
 
   
     <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
@@ -140,8 +137,8 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../docs/index.html">
-    Docs
+  <a class="nav-link nav-internal" href="../../learn/index.html">
+    Explore
   </a>
 </li>
 
@@ -154,15 +151,22 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../tools/index.html">
-    Tools
+  <a class="nav-link nav-internal" href="../../how-to/index.html">
+    How-to
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../community/index.html">
-    Community
+  <a class="nav-link nav-internal" href="../../technical-reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../downloads.html">
+    Downloads
   </a>
 </li>
 
@@ -226,7 +230,7 @@
           
           
           
-          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+          <a href="https://ccdscan.io" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
             <span class="sr-only">Monitor</span></a>
         </li>
         <li class="nav-item">
@@ -342,8 +346,8 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../docs/index.html">
-    Docs
+  <a class="nav-link nav-internal" href="../../learn/index.html">
+    Explore
   </a>
 </li>
 
@@ -356,15 +360,22 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../tools/index.html">
-    Tools
+  <a class="nav-link nav-internal" href="../../how-to/index.html">
+    How-to
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../community/index.html">
-    Community
+  <a class="nav-link nav-internal" href="../../technical-reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../downloads.html">
+    Downloads
   </a>
 </li>
 
@@ -419,7 +430,7 @@
           
           
           
-          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+          <a href="https://ccdscan.io" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
             <span class="sr-only">Monitor</span></a>
         </li>
         <li class="nav-item">
@@ -497,61 +508,25 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrating Concordium ID</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../setup-env.html">Set up the development environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../hello-world/hello-world.html">Hello World</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../counter/counter-contract.html">Counter</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../piggy-bank/index.html">PiggyBank</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/writing.html">Writing the piggy bank smart contract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/testing.html">Testing the piggy bank smart contract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/deploying.html">Deploying the piggy bank smart contract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/frontend.html">Setting up a frontend</a></li>
-</ul>
-</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../verify-account-ownership-signature-proofs/signature-proofs.html">Verify account ownership, signature proofs</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Using ID in dApps</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="wallet-connectors-tutorial.html">Implementing Wallet Connectors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="zk-proofs-tutorial.html">ZK proof generation</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../onReceivingCIS2/on-receivingCIS2.html">Using the onReceivingCIS2 hook</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../wCCD/index.html">wCCD</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../wCCD/wCCD-introduction.html">Understanding the wCCD token protocol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../wCCD/wCCD-interacting.html">Interacting with the wCCD token protocol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../wCCD/wCCD-frontend-set-up.html">Setting up the frontend</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../verify-access/index.html">Verify &amp; Access</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../verify-access/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../verify-access/scaffolding.html">Scaffolding the Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../verify-access/ui-integration.html">UI Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../verify-access/additional-steps.html">Additional Steps</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../voting/index.html">The Voting dApp</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../voting/voting-sc.html">Writing a voting smart contract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../voting/voting-dapp.html">Setting up the frontend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../company-identity/company-identities.html">Company Identity Guide</a></li>
 </ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../nft-minting/index.html">Mint an NFT</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../nft-minting/upload-nft.html">Upload the NFT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nft-minting/build-smart-contract.html">Initialize, build, and deploy the smart contract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nft-minting/mint-xfer.html">Mint and transfer the NFT</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../sft-minting/index.html">Mint a semi-fungible token</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../sft-minting/build-smart-contract.html">Smart contract modifications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sft-minting/mint-xfer.html">Mint and transfer semi-fungible token</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../fungible-tokens/index.html">Mint fungible tokens</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../fungible-tokens/smart-contract.html">Smart contract implementation for fungible tokens</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../fungible-tokens/mint-xfer.html">Mint, transfer, and burn fungible tokens</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../low-code-nft-marketplace/introduction.html">Concordium low-code NFT framework</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../low-code-nft-marketplace/marketplace.html">Low code NFT marketplace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../low-code-nft-marketplace/minting-tool.html">Low-code NFT minting tool</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../eSealing/index.html">eSealing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../eSealing/eSealing_dapp.html">Exploring the eSealing dapp</a></li>
-</ul>
-</details></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Transactions Workflows</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../protocol-level-sponsored-transactions/index.html">Sponsored transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../protocol-level-sponsored-transactions/set-up-a-sponsor-service.html">Set up a sponsor service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../protocol-level-sponsored-transactions/create-a-sponsored-transaction.html">Create a sponsored transaction</a></li>
@@ -562,22 +537,86 @@
 <li class="toctree-l2"><a class="reference internal" href="../sponsoredTransactions/sponsoredTransactionsFrontendAndBackend.html">Exploring the sponsored Transactions dApp</a></li>
 </ul>
 </details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Protocol-Level Tokens</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../plt/index.html">Get started with Protocol-Level Tokens</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../plt/setup-guide.html">Get started with PLTs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../plt/request-ccd.html">Request test CCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plt/request-plt.html">Request PLT issuance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../plt/operations.html">PLT operations</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../plt/examples.html">PLT examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../plt/concordium-client.html">Concordium Client CLI Tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plt/web-sdk.html">Web SDK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plt/rust-sdk.html">Rust SDK</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tokens and Assets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../fungible-tokens/index.html">Fungible tokens</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fungible-tokens/smart-contract.html">Smart contract implementation for fungible tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fungible-tokens/mint-xfer.html">Mint, transfer, and burn fungible tokens</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nft-minting/index.html">NFT minting</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nft-minting/upload-nft.html">Upload the NFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nft-minting/build-smart-contract.html">Initialize, build, and deploy the smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nft-minting/mint-xfer.html">Mint and transfer the NFT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sft-minting/index.html">SFT minting</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sft-minting/build-smart-contract.html">Smart contract modifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sft-minting/mint-xfer.html">Mint and transfer semi-fungible token</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../wCCD/index.html">wCCD</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../wCCD/wCCD-introduction.html">Understanding the wCCD token protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wCCD/wCCD-interacting.html">Interacting with the wCCD token protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wCCD/wCCD-frontend-set-up.html">Setting up the frontend</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../onReceivingCIS2/on-receivingCIS2.html">Using the onReceivingCIS2 hook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Building Smart Contracts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../setup-env.html">Set up the development environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-start.html">Quick start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hello-world/hello-world.html">Hello World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../counter/counter-contract.html">Counter</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../piggy-bank/index.html">PiggyBank</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/writing.html">Writing the piggy bank smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/testing.html">Testing the piggy bank smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/deploying.html">Deploying the piggy bank smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/frontend.html">Setting up a frontend</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../smartContractUpgrade/index.html">Smart Contract Upgrade</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../smartContractUpgrade/smartContractUpgrade.html">Native upgradability</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../verify-access/index.html">Verify &amp; Access</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../verify-access/introduction.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../verify-access/scaffolding.html">Scaffolding the Project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../verify-access/ui-integration.html">UI Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../verify-access/additional-steps.html">Additional Steps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">dApp Development</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../voting/index.html">The Voting dApp</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../voting/voting-sc.html">Writing a voting smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../voting/voting-dapp.html">Setting up the frontend</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../low-code-nft-marketplace/introduction.html">Low Code NFT Marketplace</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../low-code-nft-marketplace/marketplace.html">Low code NFT marketplace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../low-code-nft-marketplace/minting-tool.html">Low-code NFT minting tool</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Ressources</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../daap-examples/dapp-examples.html"> dApp examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../company-identity/company-identities.html"> How to create a company identity</a></li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../eSealing/index.html">eSealing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../eSealing/eSealing_dapp.html">Exploring the eSealing dapp</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../daap-examples/dapp-examples.html">dApp examples</a></li>
 </ul>
 </div>
 </nav></div>
@@ -611,19 +650,23 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="building-a-zero-knowledge-proof-dapp-on-concordium">
-<span id="zk-proof-index"></span><h1>Building a Zero-Knowledge Proof dApp on Concordium<a class="headerlink" href="#building-a-zero-knowledge-proof-dapp-on-concordium" title="Link to this heading">#</a></h1>
+  <section id="using-id-in-dapps">
+<span id="zk-proof-index"></span><h1>Using ID in dApps<a class="headerlink" href="#using-id-in-dapps" title="Link to this heading">#</a></h1>
+<div class="admonition-at-a-glance admonition">
+<p class="admonition-title">At a glance</p>
+<p>This is a two-part tutorial series on building a React dApp that uses Concordium’s identity layer to generate zero-knowledge proofs. After reading this overview, you will understand how Concordium wallets combine accounts with real-world identities to enable selective disclosure, and be ready to follow the two tutorial parts on ZK proof generation and wallet connector integration.</p>
+</div>
 <p>In this tutorial, you’ll learn how to integrate Concordium’s browser and mobile wallets into a React-based decentralized application (dApp), and generate zero-knowledge (ZK) proofs.</p>
 <p>Concordium is an identity-based blockchain with a unique approach to balancing privacy and compliance. Through wallets, users can generate zero-knowledge proofs and selectively disclose identity attributes on their accounts like nationality, age, etc., instead of sharing the entire ID information.</p>
-<p>Concordium wallets serve a unique dual purpose compared to wallets on other blockchains. They not only hold <a class="reference internal" href="../../docs/protocol/manage-accounts.html#managing-accounts"><span class="std std-ref">accounts</span></a> (blockchain addresses) but also manage <a class="reference internal" href="../../docs/protocol/identity.html#reference-identity"><span class="std std-ref">identities</span></a>.
-Users first create an identity in their wallet by completing a verification process with an <a class="reference internal" href="../../docs/resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a> (using a passport or ID card). Then, they can create on-chain accounts through a <a class="reference internal" href="../../docs/protocol/transactions.html#transactions"><span class="std std-ref">transaction</span></a> that associates each account with their verified identity.</p>
+<p>Concordium wallets serve a unique dual purpose compared to wallets on other blockchains. They not only hold <a class="reference internal" href="../../learn/accounts/index.html#managing-accounts"><span class="std std-ref">accounts</span></a> (blockchain addresses) but also manage <a class="reference internal" href="../../learn/identity/index.html#reference-identity"><span class="std std-ref">identities</span></a>.
+Users first create an identity in their wallet by completing a verification process with an <a class="reference internal" href="../../technical-reference/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a> (using a passport or ID card). Then, they can create on-chain accounts through a <a class="reference internal" href="../../learn/transactions/index.html#transactions"><span class="std std-ref">transaction</span></a> that associates each account with their verified identity.</p>
 <p>Unlike other blockchains where addresses exist without any identity context, Concordium accounts are explicitly linked to real-world identities.
 This architecture enables wallets to generate zero-knowledge proofs about the identity information associated with a user’s account, allowing for selective disclosure of attributes in a self-sovereign way.</p>
 <p>Unlike many other blockchains where implementing zero-knowledge proofs requires deep cryptographic expertise, Concordium simplifies this process significantly:</p>
 <ol class="arabic simple">
-<li><p><strong>Built-in identity layer</strong>: Identity credentials are already associated with accounts, read <a class="reference internal" href="../../docs/protocol/identity.html#reference-identity"><span class="std std-ref">this article</span></a> for more details</p></li>
+<li><p><strong>Built-in identity layer</strong>: Identity credentials are already associated with accounts, read <a class="reference internal" href="../../learn/identity/index.html#reference-identity"><span class="std std-ref">this article</span></a> for more details</p></li>
 <li><p><strong>Wallet-managed proofs</strong>: The cryptographic heavy lifting happens in the wallet</p></li>
-<li><p><strong>Flexible proof types</strong>: Support for revealing attributes, range proofs, and set membership proofs, read <a class="reference internal" href="../../docs/network/guides/create-proofs.html#create-proofs"><span class="std std-ref">this article</span></a> for more information</p></li>
+<li><p><strong>Flexible proof types</strong>: Support for revealing attributes, range proofs, and set membership proofs, read <a class="reference internal" href="../../how-to/web3-id/create-proofs.html#create-proofs"><span class="std std-ref">this article</span></a> for more information</p></li>
 <li><p><strong>Simple developer experience</strong>: No need for specialized ZK languages or custom implementations</p></li>
 </ol>
 <p>This architecture allows developers to focus on defining what needs to be proven rather than implementing complex cryptography.</p>

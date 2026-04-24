@@ -27,6 +27,10 @@
 Writing the piggy bank smart contract
 =====================================
 
+.. admonition:: At a glance
+
+   This is the first part of the piggy bank tutorial, covering how to write the smart contract in Rust using the concordium-std library. You will need Rust and cargo-concordium installed. When you are done, you will have a working piggy bank smart contract that accepts CCD from any account and lets the owner smash it to withdraw all funds.
+
 This is the first :ref:`part of a tutorial<piggy-bank>` on smart contract
 development. In this part you will focus on how to write a smart contract in the
 Rust_ programming language using the |concordium-std| library.

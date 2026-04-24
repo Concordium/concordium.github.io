@@ -10,6 +10,10 @@
 Upgrading smart contracts on Concordium
 =======================================
 
+.. admonition:: At a glance
+
+   This tutorial series introduces Concordium's native smart contract upgrade mechanism, which lets you update contract logic and migrate state without redeploying to a new address. After reading this overview, you will understand why upgradability is useful and how Concordium's native approach compares to proxy-implementation patterns used on other blockchains.
+
 In this tutorial, you are going to get familiar with how to upgrade a smart contract natively. You will explore how to
 migrate the smart contract state from your old contract to the upgraded contract.
 
