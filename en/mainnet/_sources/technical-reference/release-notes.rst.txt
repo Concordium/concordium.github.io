@@ -604,17 +604,24 @@ Wallets
 |bw|
 -------------------------
 
-    Mar 30, 2026
+    Apr 27, 2026
 
-    Version 2.10.0
+    Version 2.11.0
 
-    -   Added support for two additional types of Sponsored Transactions, `Configure Delegation` and `Update Smart Contract Instance`.
-    -   Added Allowlist config at account page as part of feature parity with Old UI
-    -   Added export activity button to Transaction Log as part of feature parity with Old UI
-    -   Added banner at Old UI with info that in a month, Old UI will be decommissioned
-    -   Updated `RpcError` message parsing, to make it more readable
+    -   Removed ability to switch to `OldUI`, it is no longer accessible to users through the interface.
+    -   Added Memory storage in background script
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.10.0 - Mar 30, 2026
+
+            Version 2.10.0 changes:
+
+            -   Added support for two additional types of Sponsored Transactions, `Configure Delegation` and `Update Smart Contract Instance`.
+            -   Added Allowlist config at account page as part of feature parity with Old UI
+            -   Added export activity button to Transaction Log as part of feature parity with Old UI
+            -   Added banner at Old UI with info that in a month, Old UI will be decommissioned
+            -   Updated `RpcError` message parsing, to make it more readable
 
         .. dropdown:: |bw| 2.9.0 - Feb 26, 2026
 
