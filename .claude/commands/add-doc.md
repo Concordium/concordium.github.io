@@ -109,6 +109,15 @@ Add a `:doc:` entry for the new page under the correct section heading in the tw
 
 The rules for map labels are in `CLAUDE.md` under *Documentation Maintenance*.
 
-## Step 8: Confirm
+## Step 8: Update llms.txt
+
+Check whether the new page should be listed in `public/llms.txt` as a key entry point. Ask the maintainer: "Should this page be added to llms.txt as a key entry point for AI assistants? This is appropriate for pages that cover important concepts, common tasks, or major features that developers are likely to ask about."
+
+If yes, add an entry under the correct section in `public/llms.txt` following the existing format:
+```
+- [Nav label](https://docs.concordium.com/en/mainnet/<path>.html): Short description
+```
+
+## Step 9: Confirm
 
 Show the maintainer a summary of everything that was created or changed and ask them to review.

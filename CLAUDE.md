@@ -86,3 +86,9 @@ The four section landing pages each contain a **manually maintained document map
 ### Why manual maps?
 
 An automatic approach (visible toctrees with `maxdepth: 2`) was considered but rejected because it renders plain indented lists instead of the current two-column grid layout. The manual maps look significantly better and the maintenance overhead is low when AI handles the updates as part of every structural change.
+
+### llms.txt
+
+`public/llms.txt` is a machine-readable index of key entry points in the documentation, following the [llms.txt standard](https://llmstxt.org/). It helps AI assistants discover and understand the documentation structure.
+
+**Keep it current:** When adding or removing a page that covers an important concept, common task, or major feature, update `public/llms.txt` accordingly. The `/add-doc` and `/remove-doc` commands include a step for this.
