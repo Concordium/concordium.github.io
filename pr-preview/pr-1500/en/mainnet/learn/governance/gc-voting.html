@@ -1,0 +1,887 @@
+
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Concordium Governance Committee elections &#8212; Concordium  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=2765dcc4" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=716d1818"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../../_static/tippy/learn/governance/gc-voting.b9213370-368b-436c-892b-01e36be3a452.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'learn/governance/gc-voting';</script>
+    <link rel="canonical" href="https://docs.concordium.com/en/mainnet/learn/governance/gc-voting.html" />
+    <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tutorials" href="../../tutorials/index.html" />
+    <link rel="prev" title="How to become a delegator" href="../staking/concepts-delegation.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item"><style>
+.navbar-brand img {
+    max-height: 200px;
+    width: auto;
+}
+</style>
+
+<div>
+    <a href="https://developer.concordium.software/">
+        <img class="logo light-logo" src="../../_static/concordium-logo-dark.svg" />
+        <img class="logo dark-logo" src="../../_static/concordium-logo.svg" />
+    </a>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Explore
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../how-to/index.html">
+    How-to
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../technical-reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../downloads.html">
+    Downloads
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ccdscan.io" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.com/invite/GpKGE2hCFx" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discord fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discord</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@concordium" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Explore
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../how-to/index.html">
+    How-to
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../technical-reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../downloads.html">
+    Downloads
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ccdscan.io" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.com/invite/GpKGE2hCFx" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discord fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discord</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@concordium" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../concordium-protocol.html">What is the Concordium Protocol</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../identity/index.html">Identity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../identity/principles-of-privacy.html">Principles of privacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../identity/user-processes.html">User processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../identity/identity-disclosure-processes.html">Identity disclosure processes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../accounts/index.html">Accounts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../accounts/account-concepts.html">Account concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts/account-aliases.html">Account aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts/key-derivation-and-usage.html">Key derivation and usage</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../transactions/index.html">Transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../transactions/transaction-reference.html">Transaction reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transactions/transaction-fees.html">Transaction fees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transactions/sponsored-transactions.html">Sponsored transactions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../smart-contracts/index.html">Smart Contracts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/contract-lifecycle.html">Life cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/contract-module.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/contract-instances.html">Instances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/contract-schema.html">Contract schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/develop-contracts.html">Using Rust</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../consensus/index.html">Consensus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../consensus/concepts-baker.html">Block production and validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../consensus/time-concepts.html">Time concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../consensus/validator-suspension.html">Validator suspension</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../tokenomics.html">Tokenomics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../staking/index.html">Validation and Staking</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../staking/how-to-become-a-validator.html">How to become a validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../staking/concepts-delegation.html">How to become a delegator</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Governance</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <span class="target" id="gc-voting"></span><section id="concordium-governance-committee-elections">
+<h1>Concordium Governance Committee elections<a class="headerlink" href="#concordium-governance-committee-elections" title="Link to this heading">#</a></h1>
+<p>Concordium’s governance model enables the community to participate in decisions about the blockchain through on-chain voting. Governance Committee election process uses cryptographic proofs and the blockchain to ensure votes are counted correctly and verifiably.</p>
+<p>Concordium Governance Committee elections are a vital part of decentralization, allowing the Concordium community to make decisions about the blockchain.</p>
+<p>Users vote using their wallets and their vote is <a class="reference internal" href="../../technical-reference/glossary.html#term-Account-weight"><span class="xref std std-term">weighted</span></a> by the amount of CCD held in their accounts. Thus, a user with multiple accounts should vote from all accounts for their votes to have maximum weight. If the <em>same account</em> votes multiple times, only the last vote will count.</p>
+<p>Staked CCD, whether it is by validators or delegators, is still held in the user’s wallet, so it counts towards the weight of the vote. In contrast, CCD locked in smart contracts cannot be used to vote. CCD that is in a custody wallet, e.g., on a centralized exchange, will not count as part of the weight of the token owner, but as part of the weight of the custodian. It is thus important for all CCD owners who want to vote (or who don’t want custodians to vote in their name) to transfer all CCD to wallets of their own.</p>
+<p>The voting system chosen for this election is called <a class="reference internal" href="../../technical-reference/glossary.html#term-Approval-voting"><span class="xref std std-term">approval voting</span></a>. The voter may choose as many <a class="reference internal" href="../../technical-reference/glossary.html#term-Candidate"><span class="xref std std-term">candidates</span></a> as they like, i.e., they assign either 0 or 1 to every candidate. In standard approval voting, all votes are added up and the candidates with the most votes get the seats. In our weighted case, every candidate that receives a vote receives the corresponding full weight of the account from which the vote was cast — the weights are not split amongst the candidates that receive a vote. For example, suppose that there are four candidates, Peppa Pig, Rebecca Rabbit, Suzy Sheep and Zoe Zebra. And suppose that Alice has 4000 CCD and votes for Peppa, Bob has 2000 CCD and votes for Rebecca and Suzy, and Charlie has 3000 CCD and votes for Suzy and Zoe. Then the final tally is 4000 votes for Peppa, 2000 for Rebecca, 5000 for Suzy and 3000 for Zoe.</p>
+<p>The candidates with the most votes are elected. In case of a tie, which is very unlikely given the weighted vote, a fair coin is flipped.</p>
+<p>Our election protocol uses cryptographic proofs and the blockchain to ensure correctness and verifiability, i.e., it ensures that all (valid) votes are counted towards the end result.</p>
+<p><a class="reference internal" href="../../technical-reference/glossary.html#term-Guardian"><span class="xref std std-term">Guardians</span></a> ensure that election results are private and fair while further decentralizing the election process. A guardian is one of a number of independent, trustworthy individuals who participate in the election to ensure that votes are decrypted after the election. Guardians may also vote in the election, as may candidates.</p>
+<p>The diagrams and descriptions below describe the process during each phase of the election.</p>
+<section id="before-the-election">
+<h2>Before the election<a class="headerlink" href="#before-the-election" title="Link to this heading">#</a></h2>
+<p>The period of time before the election is the setup phase. Several roles are involved in the setup of the election.</p>
+<a class="reference internal image-reference" href="../../_images/pre-election.png"><img alt="diagram showing steps below" src="../../_images/pre-election.png" style="width: 100%;" />
+</a>
+<ol class="arabic simple">
+<li><p>The Election Coordinator uses the coordinator tool to get the initial weight values and initialize an instance of the election smart contract.</p></li>
+<li><p>Each guardian sends their account address to Concordium.</p></li>
+<li><p>Candidates are nominated and can “campaign”. Candidates can provide information such as name, an image or logo, and the URL of a site with information about their campaign. This information is shown in the Voter dApp.</p></li>
+<li><p>The Election Coordinator adds the guardian addresses to the smart contract along with election parameters such as the start and end date and time, and candidates, and deploys and initializes the smart contract.</p></li>
+<li><p>The election server is started, the indexer is started, and the Guardian App is built and released.</p></li>
+<li><p>Guardians generate the shared decryption key using the Guardian App. Afterwards, the election public key is published.</p></li>
+</ol>
+</section>
+<section id="during-the-election">
+<h2>During the election<a class="headerlink" href="#during-the-election" title="Link to this heading">#</a></h2>
+<p>The period of time during the election is the <a class="reference internal" href="../../technical-reference/glossary.html#term-Election-phase"><span class="xref std std-term">election phase</span></a>.</p>
+<a class="reference internal image-reference" href="../../_images/election.png"><img alt="diagram showing steps below" src="../../_images/election.png" style="width: 100%;" />
+</a>
+<ol class="arabic simple">
+<li><p>Voters using the Concordium Wallet for Web, or Concordium Wallet, open the dApp and cast their votes. The voter must connect their wallet and sign and submit the transaction to register it on the blockchain. For voters preferring to delegate their vote to another account (e.g., from a non-dApp enabled account in Desktop Wallet or from the Concordium Client to one with dApp connectivity), it doesn’t matter when voting power is delegated, as long as it happens within the voting “window”, i.e., between election start and end time. The latest delegation registration counts and voting power that has been delegated cannot be redelegated; only initial weight can be delegated.</p></li>
+<li><p>The votes are registered in the smart contract and the server reads the votes from the contract.</p></li>
+</ol>
+</section>
+<section id="after-the-election">
+<h2>After the election<a class="headerlink" href="#after-the-election" title="Link to this heading">#</a></h2>
+<p>The period after the election is the <a class="reference internal" href="../../technical-reference/glossary.html#term-Tally-phase"><span class="xref std std-term">tally phase</span></a>.</p>
+<a class="reference internal image-reference" href="../../_images/post-election.png"><img alt="diagram showing steps below" src="../../_images/post-election.png" style="width: 100%;" />
+</a>
+<ol class="arabic simple">
+<li><p>Once the election closes, the Election Coordinator uses the coordinator tool to get the <a class="reference internal" href="../../technical-reference/glossary.html#term-Accumulated-weight"><span class="xref std std-term">final weights</span></a> (the initial weights plus weights after taking vote delegation into account) and compute the encrypted tally which is registered in the smart contract.</p></li>
+<li><p>The guardians use the Guardian App to generate their <a class="reference internal" href="../../technical-reference/glossary.html#term-Decryption-share"><span class="xref std std-term">decryption share</span></a> of the tally and post that before the specified deadline. They then generate and register proof of correct decryption.</p></li>
+<li><p>The decryption shares from each guardian and corresponding proofs of correct decryption are used to produce the election result, which is registered in the smart contract. The election coordinator posts the decrypted tally and voters can see the election result in the Voter dApp.</p></li>
+</ol>
+</section>
+<section id="components-for-voting">
+<h2>Components for voting<a class="headerlink" href="#components-for-voting" title="Link to this heading">#</a></h2>
+<p>There are a number of components used during voting, including the coordinator tool, the Voter dApp, and the Guardian App. You can explore the <a class="reference external" href="https://github.com/Concordium/concordium-governance-committee-voting">repository for the components</a>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../how-to/governance/voting.html"><span class="doc">How to vote</span></a></p></li>
+<li><p><a class="reference internal" href="../../how-to/governance/guardians.html"><span class="doc">Guardians</span></a></p></li>
+<li><p><a class="reference internal" href="../../how-to/governance/verify-election-result.html"><span class="doc">Verify election result</span></a></p></li>
+<li><p><a class="reference internal" href="../../how-to/governance/install-ledger-app.html"><span class="doc">Install the Ledger governance app</span></a></p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><style>
+  legend {
+    font-size: 12px;
+    font-weight:bold ;
+  }
+
+  label {
+    font-size: 12px;
+  }
+</style>
+
+<fieldset>
+  <legend>Was this article helpful?</legend>
+  <input type="radio" id="Yes" name="rating" value="Yes" onclick="_paq.push(['trackEvent', 'Rating', 'ClickYes', 'Yes']);">
+  <label for="Yes">Yes</label>
+  <input type="radio" id="No" name="rating" value="No" onclick="_paq.push(['trackEvent', 'Rating', 'ClickNo', 'No']);">
+  <label for="No">No</label>
+</fieldset>
+
+<!-- Matomo Tag Manager -->
+<script>
+  var _mtm = window._mtm = window._mtm || [];
+  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  (function() {
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://cdn.matomo.cloud/concordium.matomo.cloud/container_8ZIoCz8b.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Tag Manager --></div>
+  
+</div>
+                </footer>
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../staking/concepts-delegation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">How to become a delegator</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../tutorials/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tutorials</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-the-election">Before the election</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#during-the-election">During the election</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#after-the-election">After the election</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#components-for-voting">Components for voting</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/main/source/mainnet/learn/governance/gc-voting.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  
+
+  <p class="copyright">
+    
+      © Copyright 2021 - 2026, Concordium Software ApS.
+      <br/>
+    
+  </p>
+
+  <style>
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding-left: 16px;
+      padding-bottom: 8px;
+      color: black;
+      font-size: 8px;
+    }
+</style>
+
+<div class="cc">
+  <a text-decoration=none href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="../../_static/cc-sa-by.png" />
+  </a>
+  <a text-decoration=none href="../../net/guides/legal.html" >
+    Legal information
+  </a>
+</div>
+  <div id="cookie-consent" class="consent">     
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>     
+    <button onclick="consentDenied()">Decline</button>     
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a> 
+</div>  
+
+<!-- Matomo --> 
+<script>   
+var _paq = window._paq = window._paq || [];  
+
+// Save the choice in a cookie with proper attributes
+function storeChoice(granted) {   
+    // Set cookie with 1 year expiration, path, and secure attributes
+    const expires = new Date();
+    expires.setFullYear(expires.getFullYear() + 1);
+    document.cookie = "cookie-consent=" + granted + "; expires=" + expires.toUTCString() + "; path=/; SameSite=Lax";
+}  
+
+// Look for a cookie storing the previous choice of the user. 
+// Returns null if no choice was stored, true if granted, false if denied
+function loadChoice() {   
+    if (!document.cookie.includes("cookie-consent=")) {       
+        return null;   
+    }   
+    return document.cookie.includes("cookie-consent=true");
+}  
+
+// Removes the cookie consent banner safely
+function removeCookieConsentBanner() {   
+    const banner = document.getElementById("cookie-consent");
+    if (banner) {
+        banner.remove();
+    }
+}  
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {   
+    storeChoice(true);
+    _paq.push(['setCookieConsentGiven']);   
+    removeCookieConsentBanner();
+}  
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {   
+    storeChoice(false);  // FIXED: Now correctly stores false
+    removeCookieConsentBanner();
+}  
+
+// Check for stored consent and act accordingly
+const stored = loadChoice(); 
+if (stored === true) {
+    // User previously granted consent
+    _paq.push(['setCookieConsentGiven']);
+    removeCookieConsentBanner();
+} else if (stored === false) {
+    // User previously denied consent
+    removeCookieConsentBanner();
+}
+// If stored === null, show the banner (do nothing)
+
+_paq.push(['requireCookieConsent']); 
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */ 
+_paq.push(['trackPageView']); 
+_paq.push(['enableLinkTracking']);  
+
+(function() {     
+    var u="https://concordium.matomo.cloud/";     
+    _paq.push(['setTrackerUrl', u+'matomo.php']);     
+    _paq.push(['setSiteId', '2']);     
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];     
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);   
+})();    
+
+// Only remember consent if it was actually granted
+if (stored === true) {
+    _paq.push(['rememberCookieConsentGiven']);
+}
+</script>   
+
+<!-- Start of HubSpot Embed Code --> 
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4771748.js"></script> 
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

@@ -1,0 +1,1642 @@
+
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>UI Integration &#8212; Concordium  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=2765dcc4" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=716d1818"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/verify-access/ui-integration.eba0e69f-ce39-4705-a02b-733c5cad998c.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/verify-access/ui-integration';</script>
+    <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/verify-access/ui-integration.html" />
+    <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Additional Steps" href="additional-steps.html" />
+    <link rel="prev" title="Scaffolding the Project" href="scaffolding.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item"><style>
+.navbar-brand img {
+    max-height: 200px;
+    width: auto;
+}
+</style>
+
+<div>
+    <a href="https://developer.concordium.software/">
+        <img class="logo light-logo" src="../../_static/concordium-logo-dark.svg" />
+        <img class="logo dark-logo" src="../../_static/concordium-logo.svg" />
+    </a>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../learn/index.html">
+    Explore
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../how-to/index.html">
+    How-to
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../technical-reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../downloads.html">
+    Downloads
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ccdscan.io" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.com/invite/GpKGE2hCFx" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discord fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discord</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@concordium" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../learn/index.html">
+    Explore
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../how-to/index.html">
+    How-to
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../technical-reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../downloads.html">
+    Downloads
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ccdscan.io" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.com/invite/GpKGE2hCFx" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discord fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discord</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@concordium" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrating Concordium ID</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../verify-account-ownership-signature-proofs/signature-proofs.html">Verify account ownership, signature proofs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../using-ID-in-dApps/index.html">Using ID in dApps</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../using-ID-in-dApps/wallet-connectors-tutorial.html">Implementing Wallet Connectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using-ID-in-dApps/zk-proofs-tutorial.html">ZK proof generation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Verify &amp; Access</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scaffolding.html">Scaffolding the Project</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">UI Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="additional-steps.html">Additional Steps</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../company-identity/company-identities.html">Company Identity Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Transactions Workflows</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../protocol-level-sponsored-transactions/index.html">Sponsored transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../protocol-level-sponsored-transactions/set-up-a-sponsor-service.html">Set up a sponsor service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocol-level-sponsored-transactions/create-a-sponsored-transaction.html">Create a sponsored transaction</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sponsoredTransactions/index.html">Smart contract sponsored transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sponsoredTransactions/sponsoredTransactionsSmartContract.html">Exploring the sponsored Transactions Smart Contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sponsoredTransactions/sponsoredTransactionsFrontendAndBackend.html">Exploring the sponsored Transactions dApp</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Protocol-Level Tokens</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../plt/index.html">Get started with Protocol-Level Tokens</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../plt/setup-guide.html">Get started with PLTs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../plt/request-ccd.html">Request test CCD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plt/request-plt.html">Request PLT issuance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../plt/operations.html">PLT operations</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../plt/examples.html">PLT examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../plt/concordium-client.html">Concordium Client CLI Tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plt/web-sdk.html">Web SDK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plt/rust-sdk.html">Rust SDK</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tokens and Assets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../fungible-tokens/index.html">Fungible tokens</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fungible-tokens/smart-contract.html">Smart contract implementation for fungible tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fungible-tokens/mint-xfer.html">Mint, transfer, and burn fungible tokens</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nft-minting/index.html">NFT minting</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nft-minting/upload-nft.html">Upload the NFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nft-minting/build-smart-contract.html">Initialize, build, and deploy the smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nft-minting/mint-xfer.html">Mint and transfer the NFT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sft-minting/index.html">SFT minting</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sft-minting/build-smart-contract.html">Smart contract modifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sft-minting/mint-xfer.html">Mint and transfer semi-fungible token</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../wCCD/index.html">wCCD</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../wCCD/wCCD-introduction.html">Understanding the wCCD token protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wCCD/wCCD-interacting.html">Interacting with the wCCD token protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wCCD/wCCD-frontend-set-up.html">Setting up the frontend</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../onReceivingCIS2/on-receivingCIS2.html">Using the onReceivingCIS2 hook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Building Smart Contracts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../setup-env.html">Set up the development environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-start.html">Quick start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hello-world/hello-world.html">Hello World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../counter/counter-contract.html">Counter</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../piggy-bank/index.html">PiggyBank</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/writing.html">Writing the piggy bank smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/testing.html">Testing the piggy bank smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/deploying.html">Deploying the piggy bank smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/frontend.html">Setting up a frontend</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../smartContractUpgrade/index.html">Smart Contract Upgrade</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../smartContractUpgrade/smartContractUpgrade.html">Native upgradability</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">dApp Development</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../voting/index.html">The Voting dApp</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../voting/voting-sc.html">Writing a voting smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../voting/voting-dapp.html">Setting up the frontend</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../low-code-nft-marketplace/introduction.html">Low Code NFT Marketplace</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../low-code-nft-marketplace/marketplace.html">Low code NFT marketplace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../low-code-nft-marketplace/minting-tool.html">Low-code NFT minting tool</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../eSealing/index.html">eSealing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../eSealing/eSealing_dapp.html">Exploring the eSealing dapp</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../daap-examples/dapp-examples.html">dApp examples</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="ui-integration">
+<span id="verify-access-ui-integration"></span><h1>UI Integration<a class="headerlink" href="#ui-integration" title="Link to this heading">#</a></h1>
+<div class="admonition-at-a-glance admonition">
+<p class="admonition-title">At a glance</p>
+<p>This part of the tutorial shows you how to build the React verification UI using the &#64;concordium/verification-web-ui SDK. You will need the scaffolding from the previous step and the &#64;concordium/verification-web-ui package installed. When you are done, you will have a working frontend that prompts users to prove their age with a zero-knowledge proof and gates content on success.</p>
+</div>
+<p>This section covers building the verification user interface, including configuration, backend services, React hooks, and UI components.</p>
+<section id="install-sdk">
+<h2>Install SDK<a class="headerlink" href="#install-sdk" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm<span class="w"> </span>install<span class="w"> </span>@concordium/verification-web-ui
+</pre></div>
+</div>
+</section>
+<section id="create-configuration">
+<h2>Create Configuration<a class="headerlink" href="#create-configuration" title="Link to this heading">#</a></h2>
+<p><strong>Purpose:</strong> This file holds all the configuration constants your app needs. Think of it as a central settings file that other parts of your app can reference.</p>
+<p>Create <code class="docutils literal notranslate"><span class="pre">src/lib/config.ts</span></code>:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * TRUSTED_ISSUERS: The official identity providers that Concordium trusts.</span>
+<span class="cm"> * When someone creates a Concordium ID, they do it through one of these</span>
+<span class="cm"> * official providers. We only accept proofs from these trusted sources.</span>
+<span class="cm"> *</span>
+<span class="cm"> * Each &quot;did:ccd:testnet:idp:X&quot; is like a trusted government passport office.</span>
+<span class="cm"> * The &quot;did&quot; stands for &quot;Decentralized Identifier&quot; - a blockchain address.</span>
+<span class="cm"> */</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">TRUSTED_ISSUERS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">testnet</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;did:ccd:testnet:idp:0&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Testnet identity provider 0</span>
+<span class="w">    </span><span class="s2">&quot;did:ccd:testnet:idp:1&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Testnet identity provider 1</span>
+<span class="w">    </span><span class="s2">&quot;did:ccd:testnet:idp:2&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Testnet identity provider 2</span>
+<span class="w">    </span><span class="s2">&quot;did:ccd:testnet:idp:3&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Testnet identity provider 3</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nx">mainnet</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;did:ccd:mainnet:idp:0&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Mainnet identity provider 0</span>
+<span class="w">    </span><span class="s2">&quot;did:ccd:mainnet:idp:1&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Mainnet identity provider 1</span>
+<span class="w">    </span><span class="s2">&quot;did:ccd:mainnet:idp:2&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Mainnet identity provider 2</span>
+<span class="w">    </span><span class="s2">&quot;did:ccd:mainnet:idp:3&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Mainnet identity provider 3</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="p">}</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="kd">const</span><span class="p">;</span>
+
+<span class="c1">// Type definition: tells TypeScript we only accept &quot;testnet&quot; or &quot;mainnet&quot; as values</span>
+<span class="k">export</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="nx">ConcordiumNetwork</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;testnet&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;mainnet&quot;</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * NETWORK: Which blockchain network are we using?</span>
+<span class="cm"> * - testnet: For development and testing (fake money, test identities)</span>
+<span class="cm"> * - mainnet: For production (real money, real identities)</span>
+<span class="cm"> *</span>
+<span class="cm"> * This reads from your .env.local file, defaults to &quot;testnet&quot; if not set.</span>
+<span class="cm"> */</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">NETWORK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NEXT_PUBLIC_CONCORDIUM_NETWORK</span><span class="w"> </span><span class="o">||</span>
+<span class="w">  </span><span class="s2">&quot;testnet&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">ConcordiumNetwork</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * ISSUERS: Gets the list of trusted identity providers for our current network.</span>
+<span class="cm"> * If we&#39;re on testnet, this will be the testnet issuers.</span>
+<span class="cm"> * If we&#39;re on mainnet, this will be the mainnet issuers.</span>
+<span class="cm"> */</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">ISSUERS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">TRUSTED_ISSUERS</span><span class="p">[</span><span class="nx">NETWORK</span><span class="p">]];</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * REQUIRED_AGE: The minimum age users must be.</span>
+<span class="cm"> * Default is 18, but you can change this in .env.local</span>
+<span class="cm"> */</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">REQUIRED_AGE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">REQUIRED_AGE</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">&quot;18&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * VERIFIER_SERVICE_URL: Where is our Docker verifier service running?</span>
+<span class="cm"> * Default is localhost:8000 (the service we started earlier)</span>
+<span class="cm"> */</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">VERIFIER_SERVICE_URL</span><span class="w"> </span><span class="o">=</span>
+<span class="w">  </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VERIFIER_SERVICE_URL</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">&quot;http://localhost:8000&quot;</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * getDobUpperBound(): Calculates the latest birthdate that qualifies as &quot;old enough&quot;</span>
+<span class="cm"> *</span>
+<span class="cm"> * How it works:</span>
+<span class="cm"> * 1. Get today&#39;s date</span>
+<span class="cm"> * 2. Subtract REQUIRED_AGE years from it</span>
+<span class="cm"> * 3. Anyone born ON or BEFORE that date is at least REQUIRED_AGE years old</span>
+<span class="cm"> *</span>
+<span class="cm"> * Example: If today is Feb 17, 2026 and REQUIRED_AGE is 18:</span>
+<span class="cm"> * - Cutoff date = Feb 17, 2008</span>
+<span class="cm"> * - Returns: &quot;20080217&quot; (YYYYMMDD format)</span>
+<span class="cm"> * - Anyone born before/on Feb 17, 2008 is 18+ years old</span>
+<span class="cm"> */</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getDobUpperBound</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span><span class="w"> </span><span class="c1">// Today&#39;s date</span>
+
+<span class="w">  </span><span class="c1">// Create a date that&#39;s REQUIRED_AGE years ago</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">cutoff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">now</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">REQUIRED_AGE</span><span class="p">,</span><span class="w"> </span><span class="c1">// Subtract years</span>
+<span class="w">    </span><span class="nx">now</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">(),</span><span class="w"> </span><span class="c1">// Keep same month</span>
+<span class="w">    </span><span class="nx">now</span><span class="p">.</span><span class="nx">getDate</span><span class="p">(),</span><span class="w"> </span><span class="c1">// Keep same day</span>
+<span class="w">  </span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Format the date as YYYYMMDD string (e.g., &quot;20080217&quot;)</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cutoff</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">().</span><span class="nx">toString</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">month</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">cutoff</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">padStart</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// +1 because months are 0-indexed</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">day</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cutoff</span><span class="p">.</span><span class="nx">getDate</span><span class="p">().</span><span class="nx">toString</span><span class="p">().</span><span class="nx">padStart</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">year</span><span class="si">}${</span><span class="nx">month</span><span class="si">}${</span><span class="nx">day</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>What this file does:</strong></p>
+<ul class="simple">
+<li><p>Defines which identity providers we trust</p></li>
+<li><p>Sets which blockchain network to use (testnet/mainnet)</p></li>
+<li><p>Configures the minimum age requirement</p></li>
+<li><p>Calculates date boundaries for age verification</p></li>
+</ul>
+</section>
+<section id="create-verifier-service-client">
+<h2>Create Verifier Service Client<a class="headerlink" href="#create-verifier-service-client" title="Link to this heading">#</a></h2>
+<p><strong>Purpose:</strong> This file is your communication bridge to the Docker verifier service. It has two main jobs:</p>
+<ol class="arabic simple">
+<li><p><strong>Create proof requests</strong> - “Hey user, please prove you’re 18+”</p></li>
+<li><p><strong>Verify proofs</strong> - “Let me check if this proof is valid”</p></li>
+</ol>
+<p>Create <code class="docutils literal notranslate"><span class="pre">src/lib/verifier-service.ts</span></code>:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Import our configuration settings from the previous step</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">VERIFIER_SERVICE_URL</span><span class="p">,</span><span class="w"> </span><span class="nx">ISSUERS</span><span class="p">,</span><span class="w"> </span><span class="nx">getDobUpperBound</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./config&quot;</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * createVerificationRequest()</span>
+<span class="cm"> *</span>
+<span class="cm"> * This function asks the verifier service to create a &quot;proof request&quot; (VPR).</span>
+<span class="cm"> * Think of it like creating a form that says &quot;Please prove you&#39;re 18+ without</span>
+<span class="cm"> * telling me your exact birthdate.&quot;</span>
+<span class="cm"> *</span>
+<span class="cm"> * The verifier service will:</span>
+<span class="cm"> * 1. Create the proof request</span>
+<span class="cm"> * 2. Record it on the blockchain (for audit purposes)</span>
+<span class="cm"> * 3. Return the request so we can send it to the user&#39;s wallet</span>
+<span class="cm"> */</span>
+<span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">createVerificationRequest</span><span class="p">(</span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">connectionId</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// WalletConnect session ID (links to user&#39;s wallet)</span>
+<span class="w">  </span><span class="nx">resourceId</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// What are they trying to access? (e.g., &quot;/news&quot;)</span>
+<span class="w">  </span><span class="nx">contextString</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// Human-readable description (e.g., &quot;Age verification&quot;)</span>
+<span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Calculate the cutoff date for age verification</span>
+<span class="w">  </span><span class="c1">// Example: If we need 18+, this returns &quot;20080217&quot; (Feb 17, 2008)</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">dobUpperBound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getDobUpperBound</span><span class="p">();</span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * Build the request body that we&#39;ll send to the verifier service.</span>
+<span class="cm">   * This is the &quot;form&quot; we&#39;re asking the user to fill out.</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// connectionId: Links this request to the user&#39;s WalletConnect session</span>
+<span class="w">    </span><span class="nx">connectionId</span><span class="o">:</span><span class="w"> </span><span class="kt">params.connectionId</span><span class="p">,</span>
+
+<span class="w">    </span><span class="c1">// resourceId: What resource needs age verification?</span>
+<span class="w">    </span><span class="nx">resourceId</span><span class="o">:</span><span class="w"> </span><span class="kt">params.resourceId</span><span class="p">,</span>
+
+<span class="w">    </span><span class="c1">// contextString: Human-readable explanation shown to the user</span>
+<span class="w">    </span><span class="nx">contextString</span><span class="o">:</span><span class="w"> </span><span class="kt">params.contextString</span><span class="p">,</span>
+
+<span class="w">    </span><span class="c1">// public_info: Extra metadata (shown in the proof, public on blockchain)</span>
+<span class="w">    </span><span class="nx">public_info</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">merchant</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;my app&quot;</span><span class="w"> </span><span class="p">},</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * requestedClaims: This is the MOST IMPORTANT part.</span>
+<span class="cm">     * It defines EXACTLY what we&#39;re asking the user to prove.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="nx">requestedClaims</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// type: We want identity claims (from their Concordium ID)</span>
+<span class="w">        </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;identity&quot;</span><span class="p">,</span>
+
+<span class="w">        </span><span class="c1">// source: Where should the proof come from? Their ID credential.</span>
+<span class="w">        </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;identityCredential&quot;</span><span class="p">],</span>
+
+<span class="w">        </span><span class="cm">/**</span>
+<span class="cm">         * issuers: We only accept proofs from these trusted identity providers.</span>
+<span class="cm">         * This prevents fake IDs - only official Concordium identity providers</span>
+<span class="cm">         * can issue valid credentials.</span>
+<span class="cm">         */</span>
+<span class="w">        </span><span class="nx">issuers</span><span class="o">:</span><span class="w"> </span><span class="kt">ISSUERS</span><span class="p">,</span>
+
+<span class="w">        </span><span class="cm">/**</span>
+<span class="cm">         * statements: The actual requirements we&#39;re checking.</span>
+<span class="cm">         * This is where we define &quot;prove you&#39;re 18+&quot;</span>
+<span class="cm">         */</span>
+<span class="w">        </span><span class="nx">statements</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="cm">/**</span>
+<span class="cm">             * type: &quot;AttributeInRange&quot; means &quot;prove this value is within a range&quot;</span>
+<span class="cm">             * This is ZERO-KNOWLEDGE - the user proves age WITHOUT revealing DOB</span>
+<span class="cm">             */</span>
+<span class="w">            </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;AttributeInRange&quot;</span><span class="p">,</span>
+
+<span class="w">            </span><span class="c1">// attributeTag: Which attribute? &quot;dob&quot; = date of birth</span>
+<span class="w">            </span><span class="nx">attributeTag</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;dob&quot;</span><span class="p">,</span>
+
+<span class="w">            </span><span class="cm">/**</span>
+<span class="cm">             * lower: Minimum birthdate (Jan 1, 1900)</span>
+<span class="cm">             * This prevents errors for very old users</span>
+<span class="cm">             */</span>
+<span class="w">            </span><span class="nx">lower</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;19000101&quot;</span><span class="p">,</span>
+
+<span class="w">            </span><span class="cm">/**</span>
+<span class="cm">             * upper: Maximum birthdate (the cutoff we calculated)</span>
+<span class="cm">             * Example: &quot;20080217&quot; means born on/before Feb 17, 2008</span>
+<span class="cm">             * Anyone with dob &lt;= 20080217 is at least 18 years old today</span>
+<span class="cm">             */</span>
+<span class="w">            </span><span class="nx">upper</span><span class="o">:</span><span class="w"> </span><span class="kt">dobUpperBound</span><span class="p">,</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * Send the request to our verifier service (running in Docker).</span>
+<span class="cm">   * The service will create the VPR and anchor it on the blockchain.</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span>
+<span class="w">    </span><span class="sb">`</span><span class="si">${</span><span class="nx">VERIFIER_SERVICE_URL</span><span class="si">}</span><span class="sb">/verifiable-presentations/create-verification-request`</span><span class="p">,</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// POST request to create a new verification</span>
+<span class="w">      </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="kt">JSON.stringify</span><span class="p">(</span><span class="nx">body</span><span class="p">),</span><span class="w"> </span><span class="c1">// Convert our request to JSON</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// If something went wrong, throw an error with details</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">();</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="sb">`Verifier Service failed: </span><span class="si">${</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">text</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * Success! Return the VPR (Verifiable Presentation Request).</span>
+<span class="cm">   * This contains:</span>
+<span class="cm">   * - The proof request to send to the user&#39;s wallet</span>
+<span class="cm">   * - An audit record ID (for tracking)</span>
+<span class="cm">   * - A blockchain transaction hash (proof this request was recorded)</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * verifyPresentation()</span>
+<span class="cm"> *</span>
+<span class="cm"> * This function checks if a proof submitted by the user is valid.</span>
+<span class="cm"> * Think of it like checking a signed document - we verify:</span>
+<span class="cm"> * 1. The signature is real</span>
+<span class="cm"> * 2. It was signed by a trusted authority</span>
+<span class="cm"> * 3. The content matches what we asked for</span>
+<span class="cm"> *</span>
+<span class="cm"> * The verifier service will:</span>
+<span class="cm"> * 1. Validate the cryptographic proof</span>
+<span class="cm"> * 2. Check it matches our original request</span>
+<span class="cm"> * 3. Record the verification result on the blockchain</span>
+<span class="cm"> * 4. Return &quot;verified&quot; or &quot;failed&quot;</span>
+<span class="cm"> */</span>
+<span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">verifyPresentation</span><span class="p">(</span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">auditRecordId</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// The ID from when we created the request</span>
+<span class="w">  </span><span class="nx">presentation</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span><span class="w"> </span><span class="c1">// The proof submitted by the user</span>
+<span class="w">  </span><span class="nx">verificationRequest</span><span class="o">:</span><span class="w"> </span><span class="kt">unknown</span><span class="p">;</span><span class="w"> </span><span class="c1">// The original request we made (VPR)</span>
+<span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * The wallet might wrap the proof in an extra layer.</span>
+<span class="cm">   * We need to unwrap it to get the actual proof.</span>
+<span class="cm">   *</span>
+<span class="cm">   * Example input: { verifiablePresentationJson: { actual proof } }</span>
+<span class="cm">   * We extract: { actual proof }</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">rawPresentation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">params</span><span class="p">.</span><span class="nx">presentation</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">presentation</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="nx">rawPresentation</span><span class="p">.</span><span class="nx">verifiablePresentationJson</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="nx">rawPresentation</span><span class="p">;</span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * Build the verification request body.</span>
+<span class="cm">   * We send:</span>
+<span class="cm">   * 1. auditRecordId - Links to the original request</span>
+<span class="cm">   * 2. presentation - The proof to verify</span>
+<span class="cm">   * 3. verificationRequest - The original VPR (so service knows what to check)</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">auditRecordId</span><span class="o">:</span><span class="w"> </span><span class="kt">params.auditRecordId</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">presentation</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">verificationRequest</span><span class="o">:</span><span class="w"> </span><span class="kt">params.verificationRequest</span><span class="p">,</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * Send to verifier service for validation.</span>
+<span class="cm">   * The service will:</span>
+<span class="cm">   * - Verify the cryptographic proof</span>
+<span class="cm">   * - Check the age range statement</span>
+<span class="cm">   * - Anchor the verification result on blockchain</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span>
+<span class="w">    </span><span class="sb">`</span><span class="si">${</span><span class="nx">VERIFIER_SERVICE_URL</span><span class="si">}</span><span class="sb">/verifiable-presentations/verify`</span><span class="p">,</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="kt">JSON.stringify</span><span class="p">(</span><span class="nx">body</span><span class="p">),</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// If verification failed, throw an error</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">();</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="sb">`Verification failed: </span><span class="si">${</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">text</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * Success! Return the verification result.</span>
+<span class="cm">   * This contains:</span>
+<span class="cm">   * - result: &quot;verified&quot; or &quot;failed&quot;</span>
+<span class="cm">   * - anchorTransactionHash: Blockchain proof of this verification</span>
+<span class="cm">   * - The verified claims (but NOT the user&#39;s actual DOB!)</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>What this file does:</strong></p>
+<ul class="simple">
+<li><p>Creates proof requests (“prove you’re 18+”)</p></li>
+<li><p>Sends requests to Docker verifier service</p></li>
+<li><p>Verifies proofs submitted by users</p></li>
+<li><p>Handles all communication with the blockchain (via verifier service)</p></li>
+</ul>
+<p><strong>Key Concepts:</strong></p>
+<ul class="simple">
+<li><p><strong>VPR (Verifiable Presentation Request)</strong>: “Please prove X about yourself”</p></li>
+<li><p><strong>VP (Verifiable Presentation)</strong>: “Here’s my proof of X” (the user’s response)</p></li>
+<li><p><strong>Zero-knowledge</strong>: User proves age without revealing birthdate</p></li>
+<li><p><strong>Blockchain anchoring</strong>: Every request and verification is recorded on-chain for auditing</p></li>
+</ul>
+</section>
+<section id="create-verification-hook">
+<h2>Create Verification Hook<a class="headerlink" href="#create-verification-hook" title="Link to this heading">#</a></h2>
+<p><strong>Purpose:</strong> This is the “brain” of your verification UI. It’s a React hook that:</p>
+<ul class="simple">
+<li><p>Manages the verification workflow (connecting → verifying → verified)</p></li>
+<li><p>Handles communication between your app, the SDK, and the user’s wallet</p></li>
+<li><p>Listens for events from the SDK (like “user scanned QR code” or “proof received”)</p></li>
+</ul>
+<p>Think of it as an orchestrator that coordinates all the pieces.</p>
+<p>Create <code class="docutils literal notranslate"><span class="pre">src/hooks/useVerification.ts</span></code>:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;use client&quot;</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useCallback</span><span class="p">,</span><span class="w"> </span><span class="nx">useRef</span><span class="p">,</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">NETWORK</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@/lib/config&quot;</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * getSDK() - Dynamic Import Function</span>
+<span class="cm"> *</span>
+<span class="cm"> * Why do we use `await import()` instead of `import` at the top?</span>
+<span class="cm"> *</span>
+<span class="cm"> * 1. **SSR Compatibility**: The SDK uses browser APIs (window, localStorage, DOM)</span>
+<span class="cm"> *    that don&#39;t exist during Server-Side Rendering. Next.js tries to render</span>
+<span class="cm"> *    components on the server first, which would crash if we import the SDK normally.</span>
+<span class="cm"> *</span>
+<span class="cm"> * 2. **Lazy Loading**: The SDK is only loaded when the user clicks &quot;Verify Age&quot;.</span>
+<span class="cm"> *    This keeps your initial page load fast and small.</span>
+<span class="cm"> *</span>
+<span class="cm"> * 3. **Code Splitting**: Next.js automatically creates a separate chunk for the SDK,</span>
+<span class="cm"> *    so users who never verify don&#39;t download it at all.</span>
+<span class="cm"> *</span>
+<span class="cm"> * Think of it like: &quot;Only load the SDK when we&#39;re in the browser AND when we need it.&quot;</span>
+<span class="cm"> */</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getSDK</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ConcordiumVerificationWebUI</span><span class="p">,</span><span class="w"> </span><span class="nx">resetSDK</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="k">import</span><span class="p">(</span><span class="s2">&quot;@concordium/verification-web-ui&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ConcordiumVerificationWebUI</span><span class="p">,</span><span class="w"> </span><span class="nx">resetSDK</span><span class="w"> </span><span class="p">};</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">useVerification</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * State Management (useState):</span>
+<span class="cm">   * - Tracks the current verification flow step</span>
+<span class="cm">   * - Causes re-renders when state changes (updates UI automatically)</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">setState</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="o">&lt;</span>
+<span class="w">    </span><span class="s2">&quot;idle&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;connecting&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;verifying&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;verified&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">&quot;failed&quot;</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="p">(</span><span class="s2">&quot;idle&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">setError</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="o">&lt;</span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * Refs (useRef):</span>
+<span class="cm">   * - Store values that persist between renders WITHOUT causing re-renders</span>
+<span class="cm">   * - Like &quot;memory&quot; that survives when React updates the UI</span>
+<span class="cm">   *</span>
+<span class="cm">   * sdkRef: Holds the SDK instance so we can call methods like closeModal()</span>
+<span class="cm">   * sessionIdRef: Remembers the audit record ID from /api/verification/create</span>
+<span class="cm">   * vprRef: Stores the Verifiable Presentation Request to send to /verify later</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">sdkRef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useRef</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">sessionIdRef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useRef</span><span class="o">&lt;</span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">vprRef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useRef</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * useEffect: Runs ONCE when component mounts (because of empty [] dependency)</span>
+<span class="cm">   * Sets up the event listener to receive events from the SDK.</span>
+<span class="cm">   *</span>
+<span class="cm">   * The SDK emits CustomEvents that we listen to here. This is like a</span>
+<span class="cm">   * messaging system where the SDK says &quot;something happened!&quot; and we respond.</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleSDKEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="kt">Event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Extract the event type and data from the SDK&#39;s CustomEvent</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kr">type</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">CustomEvent</span><span class="p">).</span><span class="nx">detail</span><span class="p">;</span>
+
+<span class="w">      </span><span class="cm">/**</span>
+<span class="cm">       * Event Flow (what happens in order):</span>
+<span class="cm">       *</span>
+<span class="cm">       * 1. User scans QR code with wallet</span>
+<span class="cm">       * 2. SDK emits &quot;session_approved&quot; → we create VPR and send to wallet</span>
+<span class="cm">       * 3. Wallet creates proof and sends back</span>
+<span class="cm">       * 4. SDK emits &quot;presentation_received&quot; → we verify the proof</span>
+<span class="cm">       * 5. If successful, we show &quot;verified&quot; state</span>
+<span class="cm">       */</span>
+<span class="w">      </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="kr">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;session_approved&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="c1">// User successfully connected their wallet via WalletConnect</span>
+<span class="w">          </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">topic</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">;</span><span class="w"> </span><span class="c1">// WalletConnect session ID</span>
+<span class="w">          </span><span class="nx">setState</span><span class="p">(</span><span class="s2">&quot;verifying&quot;</span><span class="p">);</span>
+
+<span class="w">          </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="cm">/**</span>
+<span class="cm">             * Step 1: Call our API to create a Verifiable Presentation Request (VPR)</span>
+<span class="cm">             * This also anchors the request on-chain via the Verifier Service.</span>
+<span class="cm">             * The &quot;topic&quot; is the WalletConnect session that links to the user&#39;s wallet.</span>
+<span class="cm">             */</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">createRes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;/api/verification/create&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+<span class="w">              </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">              </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="kt">JSON.stringify</span><span class="p">({</span><span class="w"> </span><span class="nx">connectionId</span><span class="o">:</span><span class="w"> </span><span class="kt">topic</span><span class="w"> </span><span class="p">}),</span>
+<span class="w">            </span><span class="p">});</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">createRes</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Failed to create VPR&quot;</span><span class="p">);</span>
+
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">sessionId</span><span class="p">,</span><span class="w"> </span><span class="nx">vpr</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">createRes</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+<span class="w">            </span><span class="c1">// Save these for later use in the &quot;presentation_received&quot; event</span>
+<span class="w">            </span><span class="nx">sessionIdRef</span><span class="p">.</span><span class="nx">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sessionId</span><span class="p">;</span><span class="w"> </span><span class="c1">// Audit record ID (for /verify endpoint)</span>
+<span class="w">            </span><span class="nx">vprRef</span><span class="p">.</span><span class="nx">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">vpr</span><span class="p">;</span><span class="w"> </span><span class="c1">// The VPR (also needed for /verify)</span>
+
+<span class="w">            </span><span class="cm">/**</span>
+<span class="cm">             * Step 2: Send the VPR to the user&#39;s wallet</span>
+<span class="cm">             * The wallet will show the user what we&#39;re asking for (&quot;Prove you&#39;re 18+&quot;)</span>
+<span class="cm">             * and create a zero-knowledge proof if they agree.</span>
+<span class="cm">             */</span>
+<span class="w">            </span><span class="k">await</span><span class="w"> </span><span class="nx">sdkRef</span><span class="p">.</span><span class="nx">current</span><span class="o">!</span><span class="p">.</span><span class="nx">sendPresentationRequest</span><span class="p">(</span><span class="nx">vpr</span><span class="p">,</span><span class="w"> </span><span class="nx">topic</span><span class="p">);</span>
+<span class="w">          </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">setError</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+<span class="w">            </span><span class="nx">setState</span><span class="p">(</span><span class="s2">&quot;failed&quot;</span><span class="p">);</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">          </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;presentation_received&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="cm">/**</span>
+<span class="cm">           * The wallet created a proof and sent it back!</span>
+<span class="cm">           * Now we need to verify it using the Verifier Service.</span>
+<span class="cm">           *</span>
+<span class="cm">           * The &quot;data&quot; here is the Verifiable Presentation (VP) - the actual proof.</span>
+<span class="cm">           */</span>
+<span class="w">          </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">verifyRes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;/api/verification/verify&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+<span class="w">              </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">              </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="kt">JSON.stringify</span><span class="p">({</span>
+<span class="w">                </span><span class="nx">sessionId</span><span class="o">:</span><span class="w"> </span><span class="kt">sessionIdRef.current</span><span class="p">,</span><span class="w"> </span><span class="c1">// Links to our audit record</span>
+<span class="w">                </span><span class="nx">presentation</span><span class="o">:</span><span class="w"> </span><span class="kt">data</span><span class="p">,</span><span class="w"> </span><span class="c1">// The proof from the wallet</span>
+<span class="w">                </span><span class="nx">verificationRequest</span><span class="o">:</span><span class="w"> </span><span class="kt">vprRef.current</span><span class="p">,</span><span class="w"> </span><span class="c1">// The original VPR we sent</span>
+<span class="w">              </span><span class="p">}),</span>
+<span class="w">            </span><span class="p">});</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">verifyRes</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Verification failed&quot;</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// Success! The user is verified as 18+</span>
+<span class="w">            </span><span class="nx">setState</span><span class="p">(</span><span class="s2">&quot;verified&quot;</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// Close the modal after 2 seconds to let user see success message</span>
+<span class="w">            </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">sdkRef</span><span class="p">.</span><span class="nx">current</span><span class="o">?</span><span class="p">.</span><span class="nx">closeModal</span><span class="p">(),</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
+<span class="w">          </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">setError</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+<span class="w">            </span><span class="nx">setState</span><span class="p">(</span><span class="s2">&quot;failed&quot;</span><span class="p">);</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">          </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="c1">// SDK encountered an error (network issue, user rejected, etc.)</span>
+<span class="w">          </span><span class="nx">setError</span><span class="p">(</span><span class="nx">data</span><span class="o">?</span><span class="p">.</span><span class="nx">message</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">&quot;An error occurred&quot;</span><span class="p">);</span>
+<span class="w">          </span><span class="nx">setState</span><span class="p">(</span><span class="s2">&quot;failed&quot;</span><span class="p">);</span>
+<span class="w">          </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="c1">// Register the event listener</span>
+<span class="w">    </span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;verification-web-ui-event&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">handleSDKEvent</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Cleanup function: remove listener when component unmounts</span>
+<span class="w">    </span><span class="c1">// (Prevents memory leaks and duplicate listeners)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span>
+<span class="w">      </span><span class="nb">window</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">&quot;verification-web-ui-event&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">handleSDKEvent</span><span class="p">);</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[]);</span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * startVerification() - Called when user clicks &quot;Verify Age&quot; button</span>
+<span class="cm">   *</span>
+<span class="cm">   * useCallback: Memoizes the function so it doesn&#39;t get recreated on every render.</span>
+<span class="cm">   * This prevents unnecessary re-renders if this function is passed to child components.</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">startVerification</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useCallback</span><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">setState</span><span class="p">(</span><span class="s2">&quot;connecting&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">setError</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+<span class="w">      </span><span class="c1">// Dynamically import the SDK (only runs in browser, not during SSR)</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ConcordiumVerificationWebUI</span><span class="p">,</span><span class="w"> </span><span class="nx">resetSDK</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getSDK</span><span class="p">();</span>
+
+<span class="w">      </span><span class="c1">// Reset SDK state to clear any previous sessions</span>
+<span class="w">      </span><span class="c1">// (Important if user verifies multiple times without refreshing)</span>
+<span class="w">      </span><span class="nx">resetSDK</span><span class="p">();</span>
+
+<span class="w">      </span><span class="cm">/**</span>
+<span class="cm">       * Initialize the SDK with:</span>
+<span class="cm">       * - network: Which Concordium network (testnet/mainnet)</span>
+<span class="cm">       * - projectId: Your WalletConnect project ID from cloud.walletconnect.com</span>
+<span class="cm">       * - metadata: Information shown in the wallet when connecting</span>
+<span class="cm">       */</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">sdk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ConcordiumVerificationWebUI</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">network</span><span class="o">:</span><span class="w"> </span><span class="kt">NETWORK</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">projectId</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID</span><span class="o">!</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">metadata</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;My Age Verification App&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Privacy-preserving age verification&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.NEXT_PUBLIC_APP_URL</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">&quot;http://localhost:3000&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">icons</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="sb">`</span><span class="si">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NEXT_PUBLIC_APP_URL</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">&quot;http://localhost:3000&quot;</span><span class="si">}</span><span class="sb">/logo.svg`</span><span class="p">,</span>
+<span class="w">          </span><span class="p">],</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">      </span><span class="p">});</span>
+
+<span class="w">      </span><span class="c1">// Save SDK instance to ref so we can use it in event handlers</span>
+<span class="w">      </span><span class="nx">sdkRef</span><span class="p">.</span><span class="nx">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sdk</span><span class="p">;</span>
+
+<span class="w">      </span><span class="cm">/**</span>
+<span class="cm">       * renderUIModals(): Shows the QR code modal</span>
+<span class="cm">       * - The callback runs when the modal closes</span>
+<span class="cm">       * - We reset to &quot;idle&quot; if user closed modal without completing verification</span>
+<span class="cm">       */</span>
+<span class="w">      </span><span class="k">await</span><span class="w"> </span><span class="nx">sdk</span><span class="p">.</span><span class="nx">renderUIModals</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">state</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;verified&quot;</span><span class="p">)</span><span class="w"> </span><span class="nx">setState</span><span class="p">(</span><span class="s2">&quot;idle&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">setError</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">setState</span><span class="p">(</span><span class="s2">&quot;failed&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[]);</span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * Return values used by the UI component:</span>
+<span class="cm">   * - state: Current step in the flow (idle/connecting/verifying/verified/failed)</span>
+<span class="cm">   * - error: Error message if something went wrong</span>
+<span class="cm">   * - startVerification: Function to start the verification process</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">startVerification</span><span class="w"> </span><span class="p">};</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="import-sdk-styles">
+<h2>Import SDK Styles<a class="headerlink" href="#import-sdk-styles" title="Link to this heading">#</a></h2>
+<p>In <code class="docutils literal notranslate"><span class="pre">src/app/layout.tsx</span></code>, add:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="s2">&quot;@concordium/verification-web-ui/styles&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="create-api-routes">
+<h2>Create API Routes<a class="headerlink" href="#create-api-routes" title="Link to this heading">#</a></h2>
+<p><strong>Purpose:</strong> These are your backend endpoints that the frontend calls. They act as a secure layer between your frontend and the verifier service.</p>
+<p><strong>Why use API routes?</strong></p>
+<ul class="simple">
+<li><p>Keeps your backend logic server-side (more secure)</p></li>
+<li><p>Hides verifier service details from the browser</p></li>
+<li><p>Can add authentication, rate limiting, etc.</p></li>
+</ul>
+<p><strong>Create</strong> <code class="docutils literal notranslate"><span class="pre">src/app/api/verification/create/route.ts</span></code>:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">NextRequest</span><span class="p">,</span><span class="w"> </span><span class="nx">NextResponse</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;next/server&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createVerificationRequest</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@/lib/verifier-service&quot;</span><span class="p">;</span>
+
+<span class="c1">// POST /api/verification/create</span>
+<span class="c1">// Called when: User scans QR code and WalletConnect session is established</span>
+<span class="c1">// Purpose: Create a proof request (VPR) and return it to the frontend</span>
+<span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">POST</span><span class="p">(</span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kt">NextRequest</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Extract the WalletConnect session ID from the request</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">connectionId</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">request</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Call the verifier service to create a VPR</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">createVerificationRequest</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">connectionId</span><span class="p">,</span><span class="w"> </span><span class="c1">// Links to user&#39;s wallet</span>
+<span class="w">      </span><span class="nx">resourceId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/protected-content&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// What they&#39;re accessing</span>
+<span class="w">      </span><span class="nx">contextString</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Age verification&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Shown to user</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="c1">// Return the session ID and VPR to the frontend</span>
+<span class="w">    </span><span class="c1">// Frontend will send the VPR to the user&#39;s wallet</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">NextResponse</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">sessionId</span><span class="o">:</span><span class="w"> </span><span class="kt">result.id</span><span class="p">,</span><span class="w"> </span><span class="c1">// Audit record ID (for tracking)</span>
+<span class="w">      </span><span class="nx">vpr</span><span class="o">:</span><span class="w"> </span><span class="kt">result.request</span><span class="p">,</span><span class="w"> </span><span class="c1">// The proof request to send to wallet</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">NextResponse</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="kt">error.message</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="kt">500</span><span class="w"> </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Create</strong> <code class="docutils literal notranslate"><span class="pre">src/app/api/verification/verify/route.ts</span></code>:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">NextRequest</span><span class="p">,</span><span class="w"> </span><span class="nx">NextResponse</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;next/server&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">verifyPresentation</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@/lib/verifier-service&quot;</span><span class="p">;</span>
+
+<span class="c1">// POST /api/verification/verify</span>
+<span class="c1">// Called when: User approves proof request and wallet sends back the proof</span>
+<span class="c1">// Purpose: Verify the proof is valid and return the result</span>
+<span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">POST</span><span class="p">(</span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kt">NextRequest</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Extract the proof data from the request</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">sessionId</span><span class="p">,</span><span class="w"> </span><span class="nx">presentation</span><span class="p">,</span><span class="w"> </span><span class="nx">verificationRequest</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span>
+<span class="w">      </span><span class="k">await</span><span class="w"> </span><span class="nx">request</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Call the verifier service to validate the proof</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">verifyPresentation</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">auditRecordId</span><span class="o">:</span><span class="w"> </span><span class="kt">sessionId</span><span class="p">,</span><span class="w"> </span><span class="c1">// Links to original request</span>
+<span class="w">      </span><span class="nx">presentation</span><span class="p">,</span><span class="w"> </span><span class="c1">// The proof from wallet</span>
+<span class="w">      </span><span class="nx">verificationRequest</span><span class="p">,</span><span class="w"> </span><span class="c1">// Original VPR (for validation)</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="c1">// Check if verification succeeded</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">result</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;verified&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Verification failed&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Return success with blockchain transaction hash</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">NextResponse</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">verified</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">anchorTransactionHash</span><span class="o">:</span>
+<span class="w">        </span><span class="kt">result.verificationAuditRecord.anchorTransactionHash</span><span class="p">,</span><span class="w"> </span><span class="c1">// Proof it&#39;s on-chain</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">NextResponse</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="kt">error.message</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="kt">500</span><span class="w"> </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>What these routes do:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/create</span></code> - Creates proof requests when wallet connects</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/verify</span></code> - Validates proofs submitted by users</p></li>
+<li><p>Both routes are server-side (secure, can’t be bypassed by users)</p></li>
+</ul>
+</section>
+<section id="create-ui-component">
+<h2>Create UI Component<a class="headerlink" href="#create-ui-component" title="Link to this heading">#</a></h2>
+<p><strong>Purpose:</strong> This component shows a blocking overlay until the user verifies their age. It uses the <code class="docutils literal notranslate"><span class="pre">useVerification</span></code> hook we created earlier.</p>
+<p>Create <code class="docutils literal notranslate"><span class="pre">src/components/AgeGate.tsx</span></code>:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;use client&quot;</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useVerification</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@/hooks/useVerification&quot;</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">AgeGate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Get verification state and functions from our hook</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">startVerification</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useVerification</span><span class="p">();</span>
+
+<span class="w">  </span><span class="c1">// If user is verified, hide the gate (return nothing)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">state</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;verified&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Show a modal overlay blocking the content</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;fixed inset-0 bg-black/50 flex items-center justify-center z-50&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;bg-white rounded-lg p-8 max-w-md&quot;</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">h2</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-2xl font-bold mb-4&quot;</span><span class="p">&gt;</span><span class="nx">Age</span><span class="w"> </span><span class="nx">Verification</span><span class="w"> </span><span class="nx">Required</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">p</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-gray-600 mb-6&quot;</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="nx">You</span><span class="w"> </span><span class="nx">must</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="mf">18</span><span class="w"> </span><span class="nx">or</span><span class="w"> </span><span class="nx">older</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">access</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="nx">content</span><span class="p">.</span>
+<span class="w">          </span><span class="nx">We</span><span class="w"> </span><span class="nx">will</span><span class="w"> </span><span class="nx">verify</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="nx">using</span><span class="w"> </span><span class="nx">zero</span><span class="o">-</span><span class="nx">knowledge</span><span class="w"> </span><span class="nx">proofs</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">birthdate</span><span class="w"> </span><span class="nx">stays</span><span class="w"> </span><span class="kr">private</span><span class="p">.</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="w">        </span><span class="p">{</span><span class="cm">/* Main verification button - calls startVerification() when clicked */</span><span class="p">}</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">button</span>
+<span class="w">          </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">startVerification</span><span class="p">}</span>
+<span class="w">          </span><span class="na">disabled</span><span class="o">=</span><span class="p">{</span><span class="nx">state</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;connecting&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">state</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;verifying&quot;</span><span class="p">}</span>
+<span class="w">          </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 disabled:opacity-50&quot;</span>
+<span class="w">        </span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">{</span><span class="cm">/* Show different text based on current state */</span><span class="p">}</span>
+<span class="w">          </span><span class="p">{</span><span class="nx">state</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;connecting&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s2">&quot;Connecting...&quot;</span><span class="p">}</span>
+<span class="w">          </span><span class="p">{</span><span class="nx">state</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;verifying&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s2">&quot;Verifying...&quot;</span><span class="p">}</span>
+<span class="w">          </span><span class="p">{</span><span class="nx">state</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;idle&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s2">&quot;Verify Age with Concordium ID&quot;</span><span class="p">}</span>
+<span class="w">          </span><span class="p">{</span><span class="nx">state</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;failed&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s2">&quot;Retry Verification&quot;</span><span class="p">}</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+
+<span class="w">        </span><span class="p">{</span><span class="cm">/* Show error message if something went wrong */</span><span class="p">}</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">error</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">          </span><span class="p">&lt;</span><span class="nt">p</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;text-red-600 text-sm mt-4&quot;</span><span class="p">&gt;{</span><span class="nx">error</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">)}</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>What this component does:</strong></p>
+<ul class="simple">
+<li><p>Blocks content until user is verified</p></li>
+<li><p>Shows “Verify Age” button</p></li>
+<li><p>Updates button text based on state (idle/connecting/verifying)</p></li>
+<li><p>Displays errors if verification fails</p></li>
+<li><p>Disappears when verification succeeds</p></li>
+</ul>
+</section>
+<section id="use-in-your-page">
+<h2>Use in Your Page<a class="headerlink" href="#use-in-your-page" title="Link to this heading">#</a></h2>
+<p>In <code class="docutils literal notranslate"><span class="pre">src/app/page.tsx</span></code>:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AgeGate</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@/components/AgeGate&quot;</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Home</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">AgeGate</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">main</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;p-8&quot;</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Protected</span><span class="w"> </span><span class="nx">Content</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">This</span><span class="w"> </span><span class="nx">content</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">only</span><span class="w"> </span><span class="nx">accessible</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">verified</span><span class="w"> </span><span class="nx">users</span><span class="w"> </span><span class="mf">18</span><span class="o">+</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Checkpoint:</strong> UI integrated, verification flow ready</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><style>
+  legend {
+    font-size: 12px;
+    font-weight:bold ;
+  }
+
+  label {
+    font-size: 12px;
+  }
+</style>
+
+<fieldset>
+  <legend>Was this article helpful?</legend>
+  <input type="radio" id="Yes" name="rating" value="Yes" onclick="_paq.push(['trackEvent', 'Rating', 'ClickYes', 'Yes']);">
+  <label for="Yes">Yes</label>
+  <input type="radio" id="No" name="rating" value="No" onclick="_paq.push(['trackEvent', 'Rating', 'ClickNo', 'No']);">
+  <label for="No">No</label>
+</fieldset>
+
+<!-- Matomo Tag Manager -->
+<script>
+  var _mtm = window._mtm = window._mtm || [];
+  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  (function() {
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://cdn.matomo.cloud/concordium.matomo.cloud/container_8ZIoCz8b.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Tag Manager --></div>
+  
+</div>
+                </footer>
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="scaffolding.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Scaffolding the Project</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="additional-steps.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Additional Steps</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-sdk">Install SDK</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-configuration">Create Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-verifier-service-client">Create Verifier Service Client</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-verification-hook">Create Verification Hook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-sdk-styles">Import SDK Styles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-api-routes">Create API Routes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-ui-component">Create UI Component</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-in-your-page">Use in Your Page</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/main/source/mainnet/tutorials/verify-access/ui-integration.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  
+
+  <p class="copyright">
+    
+      © Copyright 2021 - 2026, Concordium Software ApS.
+      <br/>
+    
+  </p>
+
+  <style>
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding-left: 16px;
+      padding-bottom: 8px;
+      color: black;
+      font-size: 8px;
+    }
+</style>
+
+<div class="cc">
+  <a text-decoration=none href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="../../_static/cc-sa-by.png" />
+  </a>
+  <a text-decoration=none href="../../net/guides/legal.html" >
+    Legal information
+  </a>
+</div>
+  <div id="cookie-consent" class="consent">     
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>     
+    <button onclick="consentDenied()">Decline</button>     
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a> 
+</div>  
+
+<!-- Matomo --> 
+<script>   
+var _paq = window._paq = window._paq || [];  
+
+// Save the choice in a cookie with proper attributes
+function storeChoice(granted) {   
+    // Set cookie with 1 year expiration, path, and secure attributes
+    const expires = new Date();
+    expires.setFullYear(expires.getFullYear() + 1);
+    document.cookie = "cookie-consent=" + granted + "; expires=" + expires.toUTCString() + "; path=/; SameSite=Lax";
+}  
+
+// Look for a cookie storing the previous choice of the user. 
+// Returns null if no choice was stored, true if granted, false if denied
+function loadChoice() {   
+    if (!document.cookie.includes("cookie-consent=")) {       
+        return null;   
+    }   
+    return document.cookie.includes("cookie-consent=true");
+}  
+
+// Removes the cookie consent banner safely
+function removeCookieConsentBanner() {   
+    const banner = document.getElementById("cookie-consent");
+    if (banner) {
+        banner.remove();
+    }
+}  
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {   
+    storeChoice(true);
+    _paq.push(['setCookieConsentGiven']);   
+    removeCookieConsentBanner();
+}  
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {   
+    storeChoice(false);  // FIXED: Now correctly stores false
+    removeCookieConsentBanner();
+}  
+
+// Check for stored consent and act accordingly
+const stored = loadChoice(); 
+if (stored === true) {
+    // User previously granted consent
+    _paq.push(['setCookieConsentGiven']);
+    removeCookieConsentBanner();
+} else if (stored === false) {
+    // User previously denied consent
+    removeCookieConsentBanner();
+}
+// If stored === null, show the banner (do nothing)
+
+_paq.push(['requireCookieConsent']); 
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */ 
+_paq.push(['trackPageView']); 
+_paq.push(['enableLinkTracking']);  
+
+(function() {     
+    var u="https://concordium.matomo.cloud/";     
+    _paq.push(['setTrackerUrl', u+'matomo.php']);     
+    _paq.push(['setSiteId', '2']);     
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];     
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);   
+})();    
+
+// Only remember consent if it was actually granted
+if (stored === true) {
+    _paq.push(['rememberCookieConsentGiven']);
+}
+</script>   
+
+<!-- Start of HubSpot Embed Code --> 
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4771748.js"></script> 
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>
