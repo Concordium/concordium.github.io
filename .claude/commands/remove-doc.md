@@ -26,6 +26,10 @@ Find the toctree in the parent `index.rst` that references this page and remove 
 
 Find the `:doc:` entry for this page in the relevant section landing page map and remove it. If the page had sub-page entries listed below it, remove those too. If removing the entry leaves a section heading with no entries, remove the heading as well.
 
-## Step 6: Confirm
+## Step 6: Update llms.txt
+
+Check whether the removed page is listed in `public/llms.txt`. If it is, remove the entry. If the removal leaves a section with no entries, remove the section heading as well.
+
+## Step 7: Confirm
 
 Show the maintainer a summary of everything that was removed or changed and ask them to review.
