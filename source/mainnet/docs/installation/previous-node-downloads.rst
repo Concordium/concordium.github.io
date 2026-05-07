@@ -14,6 +14,8 @@ Windows - Mainnet and Testnet
 
 **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
+`Windows 10.0.5 <https://distribution.concordium.software/windows/Node-10.0.5-0.msi>`_
+
 `Windows 9.0.7 <https://distribution.concordium.software/windows/Node-9.0.7-3.msi>`_
 
 `Windows 8.0.3 <https://distribution.concordium.software/windows/Signed/Node-8.0.3-1.msi>`_
@@ -62,6 +64,8 @@ Windows - Mainnet and Testnet
 
 macOS - Mainnet and Testnet
 ===========================
+
+`macOS 10.0.5 <https://distribution.concordium.software/macos/concordium-node-10.0.5-0.pkg>`_
 
 `macOS 9.0.7 <https://distribution.concordium.software/macos/concordium-node-9.0.7-3.pkg>`_
 
@@ -113,6 +117,16 @@ Ubuntu - Mainnet
 Default GRPC port is set to ``20000``
 
 Default listen port is set to ``8888``
+
+`10.0.5 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_10.0.5-0_amd64.deb>`__
+
+   - Verification instructions
+
+      In a terminal:
+
+      #. Navigate to the download.
+      #. Paste the following into the terminal: $sha256sum concordium-mainnet-node_10.0.5-0_amd64.deb
+      #. Verify that the output matches the SHA256 checksum ``7446d89219e4a05adb821cb6e5f5f9870c3a192ec63a5ae049e9540ad626de50``
 
 `9.0.7 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_9.0.7-3_amd64.deb>`__
 
@@ -305,6 +319,16 @@ Ubuntu - Testnet
 Default GRPC port is set to ``20001``
 
 Default listen port is set to ``8889``
+
+`10.0.5 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_10.0.5-0_amd64.deb>`_
+
+      - Verification instructions
+
+         In a terminal:
+
+         #. Navigate to the download.
+         #. Paste the following into the terminal: $sha256sum concordium-testnet-node_10.0.5-0_amd64.deb
+         #. Verify that the output matches the SHA256 checksum ``edc73d3cb42e57191a894ac5989887ea0c809606f67aae14baaa8a8f0ec517ba``
 
 `10.0.4 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_10.0.4-1_amd64.deb>`_
 

@@ -1140,29 +1140,36 @@ Nodes
 Mainnet
 -------
 
-    February 16, 2026
+    May 7, 2026
 
-    Concordium node version 10.0.5 contains support for `protocol version 10 <https://proposals.concordium.software/updates/P10.html>`_. This protocol version introduces support for sponsored transactions.
-    The new consensus protocol will take effect on the testnet on March 10, 2026.
-    **Node runners should upgrade to version 10.0.4 before the protocol update to ensure that their nodes do not shut down.**
-
-    Support for protocol version 10:
-
-    - Send any account transaction as a sponsored transaction.
-
-    Additionally, the following changes are included in the release
-
-    - Fix a bug (present in 8.1.0 - 10.0.1 versions) where a protocol update can be executed twice, resulting in a corrupted database. Means of recovery from the bug has also been added.
-
-    - Fix a bug where transactions are not reported as committed when they appear in live blocks.
-
-    - Fixed the ``build_catchup_url`` in the Ubuntu build release pipeline.
-
-    - Disable administrative gRPC endpoints by default. These can be enabled by specifying a ``CONCORDIUM_NODE_GRPC2_ENDPOINT_CONFIG`` that enables them explicitly.
-
-    Note: **Ubuntu 20.04 LTS is no longer supported;** the minimum supported version for this release is 22.04 LTS.
+    Concordium node version 10.0.8 includes fixes for a number of security issues.
+    In particular, it fixes an issue where a specially-crafted scheduled transfer transaction could result in corrupted account balances.
+    It also improves the handling of network messages to protect against denial-of-service attacks.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 10.0.5 - February 16, 2026
+
+            Concordium node version 10.0.5 contains support for `protocol version 10 <https://proposals.concordium.software/updates/P10.html>`_. This protocol version introduces support for sponsored transactions.
+            The new consensus protocol will take effect on the testnet on March 10, 2026.
+            **Node runners should upgrade to version 10.0.4 before the protocol update to ensure that their nodes do not shut down.**
+
+            Support for protocol version 10:
+
+            - Send any account transaction as a sponsored transaction.
+
+            Additionally, the following changes are included in the release
+
+            - Fix a bug (present in 8.1.0 - 10.0.1 versions) where a protocol update can be executed twice, resulting in a corrupted database. Means of recovery from the bug has also been added.
+
+            - Fix a bug where transactions are not reported as committed when they appear in live blocks.
+
+            - Fixed the ``build_catchup_url`` in the Ubuntu build release pipeline.
+
+            - Disable administrative gRPC endpoints by default. These can be enabled by specifying a ``CONCORDIUM_NODE_GRPC2_ENDPOINT_CONFIG`` that enables them explicitly.
+
+            Note: **Ubuntu 20.04 LTS is no longer supported;** the minimum supported version for this release is 22.04 LTS.
+
 
         .. dropdown:: 9.0.7 - September 1, 2025
 
@@ -1670,13 +1677,20 @@ Mainnet
 Testnet
 -------
 
-    February 11, 2026
+    May 7, 2026
 
-    Concordium node version 10.0.5 includes fixes to improve the security of gRPC endpoints.
-
-    - Disable administrative gRPC endpoints by default. These can be enabled by specifying a ``CONCORDIUM_NODE_GRPC2_ENDPOINT_CONFIG`` that enables them explicitly.
+    Concordium node version 10.0.8 includes fixes for a number of security issues.
+    In particular, it fixes an issue where a specially-crafted scheduled transfer transaction could result in corrupted account balances.
+    It also improves the handling of network messages to protect against denial-of-service attacks.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 10.0.5 - February 11, 2026
+
+            Concordium node version 10.0.5 includes fixes to improve the security of gRPC endpoints.
+
+            - Disable administrative gRPC endpoints by default. These can be enabled by specifying a ``CONCORDIUM_NODE_GRPC2_ENDPOINT_CONFIG`` that enables them explicitly.
+
 
         .. dropdown:: 10.0.4 - February 4, 2026
 
