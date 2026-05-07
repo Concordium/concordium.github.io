@@ -1,0 +1,66 @@
+# Concordium Developer Documentation
+
+> Technical documentation for developers building on, integrating with, or operating the Concordium blockchain. Concordium is a public, permissionless Layer 1 blockchain with a built-in identity layer, fast finality, and smart contract support.
+
+The documentation is organized into four sections following the Diátaxis framework: Explore (concepts), Tutorials (learning by doing), How-to (task guides), and Reference (technical look-up material).
+
+## Explore
+
+Conceptual background and explanations of how Concordium works.
+
+- [Concordium Protocol at a glance](https://docs.concordium.com/en/mainnet/learn/concordium-protocol.html): Overview of the Concordium blockchain and its key properties
+- [Identity and privacy](https://docs.concordium.com/en/mainnet/learn/identity/index.html): How Concordium's built-in identity layer works
+- [Accounts](https://docs.concordium.com/en/mainnet/learn/accounts/index.html): Account model, creation, and key management
+- [Transactions](https://docs.concordium.com/en/mainnet/learn/transactions/index.html): Transaction types, fees, and sponsored transactions
+- [Smart contracts](https://docs.concordium.com/en/mainnet/learn/smart-contracts/index.html): Smart contract model, modules, instances, and schema
+- [Consensus](https://docs.concordium.com/en/mainnet/learn/consensus/index.html): ConcordiumBFT consensus mechanism and block production
+- [Tokenomics](https://docs.concordium.com/en/mainnet/learn/tokenomics.html): CCD token, transaction fees, and rewards
+- [Validation and Staking](https://docs.concordium.com/en/mainnet/learn/staking/index.html): Validators, delegation, and staking pools
+- [Governance](https://docs.concordium.com/en/mainnet/learn/governance/index.html): On-chain governance and voting
+
+## Tutorials
+
+Step-by-step learning guides for building on Concordium.
+
+- [Quick start guide](https://docs.concordium.com/en/mainnet/tutorials/quick-start.html): Set up your development environment and deploy your first smart contract
+- [Verify and Access](https://docs.concordium.com/en/mainnet/tutorials/verify-access/index.html): Build an age verification dApp using Concordium ID
+- [Using ID in dApps](https://docs.concordium.com/en/mainnet/tutorials/using-ID-in-dApps/index.html): Build a zero-knowledge proof dApp with wallet connectors
+- [Smart contract sponsored transactions](https://docs.concordium.com/en/mainnet/tutorials/sponsoredTransactions/index.html): Build a sponsored transactions dApp
+- [Protocol-Level Tokens](https://docs.concordium.com/en/mainnet/tutorials/plt/index.html): Work with Concordium's protocol-level token standard
+- [NFT minting](https://docs.concordium.com/en/mainnet/tutorials/nft-minting/index.html): Mint and transfer NFTs on Concordium
+- [Piggy bank](https://docs.concordium.com/en/mainnet/tutorials/piggy-bank/index.html): End-to-end smart contract tutorial with frontend
+
+## How-to
+
+Task-focused guides for completing specific goals on Concordium.
+
+- [Implement Verify and Access](https://docs.concordium.com/en/mainnet/how-to/concordium-id/verify-and-access/index.html): Integrate Concordium ID verification into your application
+- [Build a wallet with the Wallet SDK](https://docs.concordium.com/en/mainnet/how-to/integrations/wallet-sdk/wallet-sdk.html): Create identities, accounts, and submit transactions
+- [Integrate Concordium in a crypto wallet](https://docs.concordium.com/en/mainnet/how-to/integrations/wallet-integration/wallet-integration.html): Add Concordium support to an existing wallet
+- [Implement Web3 ID](https://docs.concordium.com/en/mainnet/how-to/web3-id/index.html): Issue and verify Web3 ID credentials
+- [Run a Concordium node](https://docs.concordium.com/en/mainnet/how-to/nodes/node-requirements.html): Set up and operate a node on Ubuntu, macOS, Windows, or Docker
+- [Set up smart contract development tools](https://docs.concordium.com/en/mainnet/how-to/smart-contracts/build-contract.html): Install cargo-concordium and set up your environment
+- [Deploy a smart contract module](https://docs.concordium.com/en/mainnet/how-to/smart-contracts/deploy-module.html): Deploy, initialize, and interact with smart contracts
+- [Become a validator](https://docs.concordium.com/en/mainnet/how-to/infrastructure/become-validator.html): Set up a validator node using the Concordium Client
+- [Navigate this documentation](https://docs.concordium.com/en/mainnet/how-to/navigate-docs.html): Guide to how the documentation is organized
+
+## Reference
+
+Technical specifications, APIs, tools, and release notes.
+
+- [gRPC API v2](https://developer.concordium.software/concordium-grpc-api/#v2%2fconcordium%2fservice.proto): Full gRPC API reference
+- [Rust SDK](https://docs.rs/concordium-rust-sdk/latest/concordium_rust_sdk/): Concordium Rust SDK API reference
+- [Concordium Client](https://docs.concordium.com/en/mainnet/technical-reference/concordium-client/concordium-client.html): Command-line tool for interacting with the Concordium blockchain
+- [CCDScan](https://docs.concordium.com/en/mainnet/technical-reference/ccd-scan/ccd-scan.html): Blockchain explorer documentation
+- [Smart contract references](https://docs.concordium.com/en/mainnet/technical-reference/smart-contracts/references-on-chain.html): On-chain references, host functions, and schema format
+- [Glossary of Concordium terms](https://docs.concordium.com/en/mainnet/technical-reference/glossary.html): Definitions of key terms used across the documentation
+- [Release notes](https://docs.concordium.com/en/mainnet/technical-reference/release-notes.html): Node and tool release history
+- [Downloads](https://docs.concordium.com/en/mainnet/downloads.html): Wallets, node software, and tools
+
+## Optional
+
+- [Onboard as an exchange](https://docs.concordium.com/en/mainnet/how-to/integrations/exchange-onboarding.html): Integration guide for cryptocurrency exchanges
+- [Implement X402 payments](https://docs.concordium.com/en/mainnet/how-to/integrations/x402-integration.html): Add HTTP 402 payment support
+- [Election coordinator](https://docs.concordium.com/en/mainnet/technical-reference/coordinator.html): Governance election coordinator reference
+- [ID layer references](https://docs.concordium.com/en/mainnet/technical-reference/id-attributes-reference.html): Identity attribute reference and identity provider interfaces
+- [dApp examples](https://docs.concordium.com/en/mainnet/tutorials/daap-examples/dapp-examples.html): Collection of example dApps built on Concordium
