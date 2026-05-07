@@ -320,7 +320,7 @@ Default GRPC port is set to ``20001``
 
 Default listen port is set to ``8889``
 
-`10.0.4 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_10.0.5-0_amd64.deb>`_
+`10.0.5 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_10.0.5-0_amd64.deb>`_
 
       - Verification instructions
 
