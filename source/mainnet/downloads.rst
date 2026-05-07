@@ -225,7 +225,7 @@ For the system requirements to run a node and installation instructions for each
 
          - SHA256 checksum of the download: |node-deb-package-checksum|
 
-         - :ref:`Verification instrcutions<verification-cdw-deb>`
+         - :ref:`Verification instructions <verification-cdw-deb>`
 
    .. dropdown:: Linux-Docker |mainnet-node-version|
 
