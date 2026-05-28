@@ -1,9 +1,9 @@
 .. include:: ../../variables.rst
 .. _agent-registry-reference:
 
-=============
+==============
 Agent Registry
-=============
+==============
 
 Reference documentation for the Concordium Agent Registry — a suite of on-chain contracts, standards, and supporting services that give AI agents a verified on-chain identity.
 
