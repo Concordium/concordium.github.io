@@ -52,6 +52,14 @@ Reference documentation for Concordium APIs, SDKs, command-line tools, smart con
 
    .. grid-item::
 
+      **Agent Registry**
+
+      - :doc:`CIS-8: External Key Registry <agent-registry/cis-8>`
+      - :doc:`CIS-8004: Agent Registry <agent-registry/cis-8004>`
+      - :doc:`Agent Card <agent-registry/agent-card>`
+      - :doc:`MCP service <agent-registry/mcp-service>`
+      - :doc:`Indexer <agent-registry/indexer>`
+
       **Identity**
 
       - :doc:`ID attributes <id-attributes-reference>`
@@ -109,6 +117,17 @@ Reference documentation for Concordium APIs, SDKs, command-line tools, smart con
    Auxiliary Tools <auxiliary-tools>
    Election Coordinator <coordinator>
    Glossary <glossary>
+
+.. toctree::
+   :caption: Agent Registry
+   :hidden:
+
+   Agent Registry <agent-registry/index>
+   CIS-8: External Key Registry <agent-registry/cis-8>
+   CIS-8004: Agent Registry <agent-registry/cis-8004>
+   Agent Card <agent-registry/agent-card>
+   MCP service <agent-registry/mcp-service>
+   Indexer <agent-registry/indexer>
 
 .. toctree::
    :caption: Identity

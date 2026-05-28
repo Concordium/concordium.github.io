@@ -57,6 +57,17 @@ Technical specifications, APIs, tools, and release notes.
 - [Release notes](https://docs.concordium.com/en/mainnet/technical-reference/release-notes.html): Node and tool release history
 - [Downloads](https://docs.concordium.com/en/mainnet/downloads.html): Wallets, node software, and tools
 
+## Agent Registry
+
+On-chain identity and discovery for AI agents.
+
+- [Use the Agent Registry](https://docs.concordium.com/en/mainnet/how-to/integrations/agent-registry.html): Register an agent, link an Ethereum address, and publish a verifiable Agent Card
+- [CIS-8004: Agent Registry standard](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/cis-8004.html): CIS-8004 contract specification — token model, entrypoints, and external references
+- [CIS-8: External Key Registry standard](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/cis-8.html): CIS-8 contract specification — cross-chain key bindings and proof schemes
+- [Agent Card format](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/agent-card.html): Agent Card JSON structure, Concordium extension block, and card verification
+- [MCP service](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/mcp-service.html): Model Context Protocol server — hosted endpoint, local setup, and all available tools
+- [Indexer](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/indexer.html): Event indexer for agent discovery — setup, REST API, and sync state
+
 ## Optional
 
 - [Onboard as an exchange](https://docs.concordium.com/en/mainnet/how-to/integrations/exchange-onboarding.html): Integration guide for cryptocurrency exchanges
