@@ -52,6 +52,7 @@ Step-by-step guides for completing specific tasks on Concordium. Browse all guid
         - :doc:`Create proofs <web3-id/create-proofs>`
 
       - :doc:`Implement X402 payments <integrations/x402-integration>`
+      - :doc:`Use the Agent Registry <integrations/agent-registry>`
 
       **Validation**
 
@@ -136,6 +137,7 @@ Step-by-step guides for completing specific tasks on Concordium. Browse all guid
    Integrate Concordium in a crypto wallet <integrations/wallet-integration/wallet-integration>
    Implement Web3 ID <web3-id/index>
    Implement X402 payments <integrations/x402-integration>
+   Use the Agent Registry <integrations/agent-registry>
 
 .. toctree::
    :caption: Validation
