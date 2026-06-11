@@ -604,14 +604,22 @@ Wallets
 |bw|
 -------------------------
 
-    Apr 27, 2026
+    Jun 11, 2026
 
-    Version 2.11.0
+    Version 2.12.0
 
-    -   Removed ability to switch to `OldUI`, it is no longer accessible to users through the interface.
-    -   Added Memory storage in background script
+    -   Updated payload titles for RBAC operations.
+    -   Section Advanced renamed to Operations and always shown in transactions details.
+    -   Unresponsive identity providers are now automatically skipped during the recovery process. Recovery will continue with the remaining providers instead of failing when a provider is unavailable.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.11.0 - Apr 27, 2026
+
+            Version 2.11.0 changes:
+
+            -   Removed ability to switch to `OldUI`, it is no longer accessible to users through the interface.
+            -   Added Memory storage in background script
 
         .. dropdown:: |bw| 2.10.0 - Mar 30, 2026
 
