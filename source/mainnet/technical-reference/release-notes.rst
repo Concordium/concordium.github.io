@@ -604,15 +604,21 @@ Wallets
 |bw|
 -------------------------
 
-    Jun 11, 2026
+    Jun 16, 2026
 
-    Version 2.12.0
+    Version 2.12.1
 
-    -   Updated payload titles for RBAC operations.
-    -   Section Advanced renamed to Operations and always shown in transactions details.
-    -   Unresponsive identity providers are now automatically skipped during the recovery process. Recovery will continue with the remaining providers instead of failing when a provider is unavailable.
+    -   Updated text area size for string message in binary display.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.12.0 - Jun 11, 2026
+
+            Version 2.12.0 changes:
+
+            -   Updated payload titles for RBAC operations.
+            -   Section Advanced renamed to Operations and always shown in transactions details.
+            -   Unresponsive identity providers are now automatically skipped during the recovery process. Recovery will continue with the remaining providers instead of failing when a provider is unavailable.
 
         .. dropdown:: |bw| 2.11.0 - Apr 27, 2026
 
