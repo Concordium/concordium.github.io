@@ -1154,13 +1154,17 @@ Nodes
 Mainnet
 -------
 
-    May 7, 2026
+    July 8, 2026
 
-    Concordium node version 10.0.8 includes fixes for a number of security issues.
-    In particular, it fixes an issue where a specially-crafted scheduled transfer transaction could result in corrupted account balances.
-    It also improves the handling of network messages to protect against denial-of-service attacks.
+    Concordium node version 10.0.9 changes the inner representation of finalizer sets in quorum messages to improve deserialization performance when the messages are relayed between peers.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 10.0.8 - May 7, 2026
+
+            Concordium node version 10.0.8 includes fixes for a number of security issues.
+            In particular, it fixes an issue where a specially-crafted scheduled transfer transaction could result in corrupted account balances.
+            It also improves the handling of network messages to protect against denial-of-service attacks.
 
         .. dropdown:: 10.0.5 - February 16, 2026
 
@@ -1691,13 +1695,17 @@ Mainnet
 Testnet
 -------
 
-    May 7, 2026
+    July 8, 2026
 
-    Concordium node version 10.0.8 includes fixes for a number of security issues.
-    In particular, it fixes an issue where a specially-crafted scheduled transfer transaction could result in corrupted account balances.
-    It also improves the handling of network messages to protect against denial-of-service attacks.
+    Concordium node version 10.0.9 changes the inner representation of finalizer sets in quorum messages to improve deserialization performance when the messages are relayed between peers.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 10.0.8 - May 7, 2026
+
+            Concordium node version 10.0.8 includes fixes for a number of security issues.
+            In particular, it fixes an issue where a specially-crafted scheduled transfer transaction could result in corrupted account balances.
+            It also improves the handling of network messages to protect against denial-of-service attacks.
 
         .. dropdown:: 10.0.5 - February 11, 2026
 
