@@ -57,6 +57,7 @@ Reference documentation for Concordium APIs, SDKs, command-line tools, smart con
       - :doc:`CIS-8: External Key Registry <agent-registry/cis-8>`
       - :doc:`CIS-8004: Agent Registry <agent-registry/cis-8004>`
       - :doc:`Agent Card <agent-registry/agent-card>`
+      - :doc:`Concordium Badge <agent-registry/concordium-badge>`
       - :doc:`MCP service <agent-registry/mcp-service>`
       - :doc:`Indexer <agent-registry/indexer>`
 
@@ -126,6 +127,7 @@ Reference documentation for Concordium APIs, SDKs, command-line tools, smart con
    CIS-8: External Key Registry <agent-registry/cis-8>
    CIS-8004: Agent Registry <agent-registry/cis-8004>
    Agent Card <agent-registry/agent-card>
+   Concordium Badge <agent-registry/concordium-badge>
    MCP service <agent-registry/mcp-service>
    Indexer <agent-registry/indexer>
 
