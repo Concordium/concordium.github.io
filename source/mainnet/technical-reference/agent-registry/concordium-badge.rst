@@ -50,6 +50,10 @@ Resolve and verify a badge
 
 Verification is trustless: given only the badge string, any party can verify it independently, without trusting whoever presented it.
 
+.. note::
+
+   **Zero-setup path.** A badge embedded in an Agent Card may advertise a ``verification`` block (defined under **Embed the badge**, below) that points at a hosted resolver. A consumer that has never used Concordium can then verify from the card alone — ``GET`` the ``verifyUrl`` and read the verdict — without first discovering which node, Indexer, or MCP endpoint to call. The steps below are what that resolver runs, and what a consumer verifying directly against the chain performs itself.
+
 #. **Parse** the Base58Check string into ``(contract, token_id)``. *(MCP tool: ``parse_token_address``)*
 
 #. **Confirm the contract** is the expected CIS-8004 registry for the network (mainnet ``<10082,0>``).
@@ -78,8 +82,36 @@ Add a ``concordium`` block to the :doc:`Agent Card <agent-card>`:
      "chain": "ccd:9dd9ca4d19e9393877d2c44b70f89acb",
      "owner": { "account": "<account>", "caip10": "ccd:9dd9ca4d…:<account>" },
      "contracts": { "cis8004": "10082,0", "cis8": "10081,0" },
-     "verify": "Resolve tokenAddress via CIS-8004 agent_of; confirm owner + status=Active + card SHA-256 == metadata_hash."
+     "verify": "Resolve tokenAddress via CIS-8004 agent_of; confirm owner + status=Active + card SHA-256 == metadata_hash.",
+     "verification": {
+       "service": "Concordium Agent Registry",
+       "verifyUrl": "https://agent-registry-mcp.concordium.com/v1/badge-check/<account>",
+       "mcp": "https://agent-registry-mcp.concordium.com/mcp",
+       "indexer": "https://agent-registry-indexer.concordium.com",
+       "docs": "https://docs.concordium.com/mainnet/technical-reference/agent-registry/concordium-badge.html"
+     }
    }
+
+The ``verify`` string names the steps; the optional ``verification`` block names **where to run them**. Together they make a badge *self-resolving* — a consumer that has never seen Concordium can verify it from the card alone. Every field is a discovery convenience: the trust root is still the on-chain contracts in ``contracts``, and any party may ignore these hints and resolve directly against the chain.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 20 80
+
+   * - Field
+     - Purpose
+   * - ``service``
+     - Human-readable name of the resolver / registry service.
+   * - ``verifyUrl``
+     - REST endpoint — the owner account's badge check — returning a JSON verdict for each of the account's badges, including this one (owner, ``status``, and card-hash match). One ``GET``, no MCP client, SDK, or node access required.
+   * - ``mcp``
+     - MCP endpoint for agents that speak the Model Context Protocol; they can call ``verify_agent_card`` / ``agent_by_token_address`` directly.
+   * - ``indexer``
+     - :doc:`Indexer <indexer>` REST base URL, for enumeration and discovery.
+   * - ``docs``
+     - This specification, for a consumer that prefers to verify manually against the chain.
+
+A resolver named here is a convenience, not an authority — it returns chain-derived data that the consumer can re-check against the contracts in the badge. Issuers point these fields at whichever hosted :doc:`MCP service <mcp-service>` and :doc:`Indexer <indexer>` they operate or trust.
 
 Profile or bio
 --------------
