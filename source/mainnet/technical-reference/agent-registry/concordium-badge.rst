@@ -138,21 +138,6 @@ The badge introduces no new standard. It composes:
 - :doc:`CIS-8 <cis-8>` — external key binding
 - :doc:`Agent Card <agent-card>` — the agent's published metadata document
 
-Worked example (mainnet)
-========================
-
-.. code-block:: text
-
-   Badge:      Mf22soLh1NuZYFgBK8iSs
-    parse   →  contract 10082,0 · token_id 484 (hex e401000000000000)
-    agent_of→  owner   4DDvjwdcLmTy1Ar9FCKKPMiABrS261TvyXJGr4n4ypuuogXeFF
-               status  Active   (registered 2026-06-17)
-               card    https://…/.well-known/agent-card.json
-               hash    1253bd8fa1618f6b5fd2ff741cc8f4d60a0e6ac0f8ea5f32640c71540001e0d0
-    CAIP-19 →  ccd:9dd9ca4d19e9393877d2c44b70f89acb/cis-2:Mf22soLh1NuZYFgBK8iSs
-
-Fetch the card, compute its SHA-256, and confirm it equals ``1253bd8f…`` — the badge is verified end-to-end.
-
 Tooling
 =======
 
