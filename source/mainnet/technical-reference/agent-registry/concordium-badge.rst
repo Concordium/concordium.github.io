@@ -87,7 +87,7 @@ Add a ``concordium`` block to the :doc:`Agent Card <agent-card>`:
        "service": "Concordium Agent Registry",
        "verifyUrl": "https://agent-registry-mcp.concordium.com/v1/badge-check/<account>",
        "mcp": "https://agent-registry-mcp.concordium.com/mcp",
-       "docs": "https://docs.concordium.com/mainnet/technical-reference/agent-registry/concordium-badge.html"
+       "docs": "https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html"
      }
    }
 
