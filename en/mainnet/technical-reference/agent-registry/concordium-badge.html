@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/technical-reference/agent-registry/concordium-badge.161b7fe2-d20e-4c74-92a5-a8d7f4f11141.js"></script>
+    <script defer="defer" src="../../_static/tippy/technical-reference/agent-registry/concordium-badge.5e8c59a7-6916-498f-9222-c3e3e0bb2f3d.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-reference/agent-registry/concordium-badge';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -728,18 +728,22 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><strong>Registry contracts (mainnet):</strong> CIS-8004 Agent Registry <code class="docutils literal notranslate"><span class="pre">&lt;10082,0&gt;</span></code>, CIS-8 External Key Registry <code class="docutils literal notranslate"><span class="pre">&lt;10081,0&gt;</span></code>. A badge that parses to any other contract is not a Concordium Badge.</p>
+<p><strong>Registry contracts.</strong> <a class="reference internal" href="cis-8004.html"><span class="doc">CIS-8004</span></a> and <a class="reference internal" href="cis-8.html"><span class="doc">CIS-8</span></a> are open standards. Concordium operates the official registries — on mainnet, the CIS-8004 Agent Registry <code class="docutils literal notranslate"><span class="pre">&lt;10082,0&gt;</span></code> and the CIS-8 External Key Registry <code class="docutils literal notranslate"><span class="pre">&lt;10081,0&gt;</span></code> — but a badge is a Concordium Badge whenever its contract <em>implements the CIS-8004 standard</em>, not only when it resolves to the official instance. Each badge’s <code class="docutils literal notranslate"><span class="pre">contracts</span></code> block names the specific contracts it resolves against, and a verifier decides which registries it trusts.</p>
 </div>
 </section>
 <section id="resolve-and-verify-a-badge">
 <h2>Resolve and verify a badge<a class="headerlink" href="#resolve-and-verify-a-badge" title="Link to this heading">#</a></h2>
 <p>Verification is trustless: given only the badge string, any party can verify it independently, without trusting whoever presented it.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Zero-setup path.</strong> A badge embedded in an Agent Card may advertise a <code class="docutils literal notranslate"><span class="pre">verification</span></code> block (defined under <strong>Embed the badge</strong>, below) that points at a hosted resolver. A consumer that has never used Concordium can then verify from the card alone — <code class="docutils literal notranslate"><span class="pre">GET</span></code> the <code class="docutils literal notranslate"><span class="pre">verifyUrl</span></code> and read the verdict — without first discovering which node, resolver, or MCP endpoint to call. The steps below are what that resolver runs, and what a consumer verifying directly against the chain performs itself.</p>
+</div>
 <ol class="arabic simple">
 <li><p><strong>Parse</strong> the Base58Check string into <code class="docutils literal notranslate"><span class="pre">(contract,</span> <span class="pre">token_id)</span></code>. <em>(MCP tool: ``parse_token_address``)</em></p></li>
-<li><p><strong>Confirm the contract</strong> is the expected CIS-8004 registry for the network (mainnet <code class="docutils literal notranslate"><span class="pre">&lt;10082,0&gt;</span></code>).</p></li>
+<li><p><strong>Confirm the contract</strong> implements CIS-8004 and is a registry your application trusts. Concordium’s official mainnet registry is <code class="docutils literal notranslate"><span class="pre">&lt;10082,0&gt;</span></code>.</p></li>
 <li><p><strong>Resolve on-chain</strong> with the CIS-8004 <code class="docutils literal notranslate"><span class="pre">agent_of(token_id)</span></code> query, which returns the owner account, agent wallet, status, <code class="docutils literal notranslate"><span class="pre">agent_uri</span></code>, and <code class="docutils literal notranslate"><span class="pre">metadata_hash</span></code>. Require <code class="docutils literal notranslate"><span class="pre">status</span> <span class="pre">=</span> <span class="pre">&quot;Active&quot;</span></code>. <em>(MCP tools: ``agent_by_token_address`` / ``agent_of``)</em></p></li>
 <li><p><strong>Check card integrity.</strong> Fetch the Agent Card at <code class="docutils literal notranslate"><span class="pre">agent_uri</span></code>, compute the SHA-256 hash of its canonical bytes, and require that it equals the on-chain <code class="docutils literal notranslate"><span class="pre">metadata_hash</span></code>. The published card cannot be swapped without the chain revealing a mismatch. <em>(MCP tool: ``verify_agent_card``)</em></p></li>
-<li><p><strong>(Optional)</strong> Confirm the agent’s platform handle via its CIS-10 assertion, and/or an external cryptographic key bound to the agent via <a class="reference internal" href="cis-8.html"><span class="doc">CIS-8</span></a>.</p></li>
+<li><p><strong>(Optional)</strong> Confirm an external cryptographic key bound to the agent via <a class="reference internal" href="cis-8.html"><span class="doc">CIS-8</span></a>.</p></li>
 </ol>
 <p>A passing check proves that the agent is registered in the Agent Registry, is currently active, is owned by an accountable Concordium account, and that its published card is exactly the one committed on-chain. The trust root is Concordium — not the party presenting the badge.</p>
 </section>
@@ -754,10 +758,44 @@
 <span class="w">  </span><span class="nt">&quot;chain&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ccd:9dd9ca4d19e9393877d2c44b70f89acb&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;account&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;caip10&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ccd:9dd9ca4d…:&lt;account&gt;&quot;</span><span class="w"> </span><span class="p">},</span>
 <span class="w">  </span><span class="nt">&quot;contracts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;cis8004&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10082,0&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;cis8&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10081,0&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;verify&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Resolve tokenAddress via CIS-8004 agent_of; confirm owner + status=Active + card SHA-256 == metadata_hash.&quot;</span>
+<span class="w">  </span><span class="nt">&quot;verify&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Resolve tokenAddress via CIS-8004 agent_of; confirm owner + status=Active + card SHA-256 == metadata_hash.&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;verification&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Concordium Agent Registry&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;verifyUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://agent-registry-mcp.concordium.com/v1/badge-check/&lt;account&gt;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;mcp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://agent-registry-mcp.concordium.com/mcp&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;docs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html&quot;</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>The <code class="docutils literal notranslate"><span class="pre">verify</span></code> string names the steps; the optional <code class="docutils literal notranslate"><span class="pre">verification</span></code> block names <strong>where to run them</strong> — <code class="docutils literal notranslate"><span class="pre">service</span></code>, <code class="docutils literal notranslate"><span class="pre">verifyUrl</span></code>, <code class="docutils literal notranslate"><span class="pre">mcp</span></code>, and <code class="docutils literal notranslate"><span class="pre">docs</span></code>. Together they make a badge <em>self-resolving</em>: a consumer that has never seen Concordium can verify it from the card alone. The values below are Concordium’s official Agent Registry service, shown as an example — the block is <strong>not limited to them</strong>. Any issuer may point these fields at a different service that runs the same checks, and any party may ignore the hints entirely and resolve directly against the contracts in <code class="docutils literal notranslate"><span class="pre">contracts</span></code>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">service</span></code></p></td>
+<td><p>Human-readable name of the resolver / registry service.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">verifyUrl</span></code></p></td>
+<td><p>REST endpoint — the owner account’s badge check — returning a JSON verdict for each of the account’s badges, including this one (owner, <code class="docutils literal notranslate"><span class="pre">status</span></code>, and card-hash match). One <code class="docutils literal notranslate"><span class="pre">GET</span></code>, no MCP client, SDK, or node access required.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mcp</span></code></p></td>
+<td><p>MCP endpoint for agents that speak the Model Context Protocol; they can call <code class="docutils literal notranslate"><span class="pre">verify_agent_card</span></code> / <code class="docutils literal notranslate"><span class="pre">agent_by_token_address</span></code> directly.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docs</span></code></p></td>
+<td><p>This specification, for a consumer that prefers to verify manually against the chain.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A service named here is a convenience, not an authority — it returns chain-derived data the consumer can re-check against the contracts in the badge. Issuers point these fields at whichever hosted verification service — resolver and <a class="reference internal" href="mcp-service.html"><span class="doc">MCP</span></a> — they operate or trust. Discovery and enumeration (finding agents you don’t already have a badge for) is a separate concern handled by the <a class="reference internal" href="indexer.html"><span class="doc">Indexer</span></a>, not the badge.</p>
 </section>
 <section id="profile-or-bio">
 <h3>Profile or bio<a class="headerlink" href="#profile-or-bio" title="Link to this heading">#</a></h3>
@@ -785,19 +823,6 @@ Agent Card: https://…/.well-known/agent-card.json
 <li><p><a class="reference internal" href="cis-8.html"><span class="doc">CIS-8</span></a> — external key binding</p></li>
 <li><p><a class="reference internal" href="agent-card.html"><span class="doc">Agent Card</span></a> — the agent’s published metadata document</p></li>
 </ul>
-</section>
-<section id="worked-example-mainnet">
-<h2>Worked example (mainnet)<a class="headerlink" href="#worked-example-mainnet" title="Link to this heading">#</a></h2>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Badge:      Mf22soLh1NuZYFgBK8iSs
- parse   →  contract 10082,0 · token_id 484 (hex e401000000000000)
- agent_of→  owner   4DDvjwdcLmTy1Ar9FCKKPMiABrS261TvyXJGr4n4ypuuogXeFF
-            status  Active   (registered 2026-06-17)
-            card    https://…/.well-known/agent-card.json
-            hash    1253bd8fa1618f6b5fd2ff741cc8f4d60a0e6ac0f8ea5f32640c71540001e0d0
- CAIP-19 →  ccd:9dd9ca4d19e9393877d2c44b70f89acb/cis-2:Mf22soLh1NuZYFgBK8iSs
-</pre></div>
-</div>
-<p>Fetch the card, compute its SHA-256, and confirm it equals <code class="docutils literal notranslate"><span class="pre">1253bd8f…</span></code> — the badge is verified end-to-end.</p>
 </section>
 <section id="tooling">
 <h2>Tooling<a class="headerlink" href="#tooling" title="Link to this heading">#</a></h2>
@@ -900,7 +925,6 @@ Agent Card: https://…/.well-known/agent-card.json
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-mark">Visual mark</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-on-existing-standards">Built on existing standards</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-example-mainnet">Worked example (mainnet)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tooling">Tooling</a></li>
 </ul>
   </nav></div>
