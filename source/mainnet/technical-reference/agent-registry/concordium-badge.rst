@@ -85,7 +85,7 @@ Add a ``concordium`` block to the :doc:`Agent Card <agent-card>`:
      "verify": "Resolve tokenAddress via CIS-8004 agent_of; confirm owner + status=Active + card SHA-256 == metadata_hash.",
      "verification": {
        "service": "Concordium Agent Registry",
-       "verifyUrl": "https://agent-registry-mcp.concordium.com/v1/badge-check/<account>",
+       "verifyUrl": "https://agent-registry-mcp.concordium.com/v1/badge-check/<tokenAddressBase58>",
        "mcp": "https://agent-registry-mcp.concordium.com/mcp",
        "docs": "https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html"
      }
@@ -102,7 +102,7 @@ The ``verify`` string names the steps; the optional ``verification`` block names
    * - ``service``
      - Human-readable name of the resolver / registry service.
    * - ``verifyUrl``
-     - REST endpoint — the owner account's badge check — returning a JSON verdict for each of the account's badges, including this one (owner, ``status``, and card-hash match). One ``GET``, no MCP client, SDK, or node access required.
+     - REST endpoint keyed on the badge itself (``tokenAddressBase58``) — a single ``GET`` returns the JSON verdict for **this** badge (owner, ``status``, and card-hash match). No MCP client, SDK, or node access required.
    * - ``mcp``
      - MCP endpoint for agents that speak the Model Context Protocol; they can call ``verify_agent_card`` / ``agent_by_token_address`` directly.
    * - ``docs``
