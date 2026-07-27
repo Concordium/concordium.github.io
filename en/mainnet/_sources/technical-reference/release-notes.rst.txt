@@ -1154,11 +1154,15 @@ Nodes
 Mainnet
 -------
 
-    July 8, 2026
+    July 27, 2026
 
-    Concordium node version 10.0.9 changes the inner representation of finalizer sets in quorum messages to improve deserialization performance when the messages are relayed between peers.
+    Concordium node version 10.0.10 fixes a bug where pending blocks with unknown parents got relayed to peers.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 10.0.9 - July 8, 2026
+
+            Concordium node version 10.0.9 changes the inner representation of finalizer sets in quorum messages to improve deserialization performance when the messages are relayed between peers.
 
         .. dropdown:: 10.0.8 - May 7, 2026
 
@@ -1695,11 +1699,15 @@ Mainnet
 Testnet
 -------
 
-    July 8, 2026
+    July 27, 2026
 
-    Concordium node version 10.0.9 changes the inner representation of finalizer sets in quorum messages to improve deserialization performance when the messages are relayed between peers.
+    Concordium node version 10.0.10 fixes a bug where pending blocks with unknown parents got relayed to peers.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 10.0.9 - July 8, 2026
+
+            Concordium node version 10.0.9 changes the inner representation of finalizer sets in quorum messages to improve deserialization performance when the messages are relayed between peers.
 
         .. dropdown:: 10.0.8 - May 7, 2026
 
