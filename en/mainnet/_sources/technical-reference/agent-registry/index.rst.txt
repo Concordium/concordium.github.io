@@ -29,16 +29,6 @@ Reference documentation for the Concordium Agent Registry — a suite of on-chai
       - :doc:`MCP service <mcp-service>`
       - :doc:`Indexer <indexer>`
 
-.. toctree::
-   :hidden:
-
-   CIS-8: External Key Registry <cis-8>
-   CIS-8004: Agent Registry <cis-8004>
-   Agent Card <agent-card>
-   Concordium Badge <concordium-badge>
-   MCP service <mcp-service>
-   Indexer <indexer>
-
 Overview
 ========
 
