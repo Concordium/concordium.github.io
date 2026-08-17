@@ -1,6 +1,6 @@
 # Concordium Developer Documentation
 
-> Technical documentation for developers building on, integrating with, or operating the Concordium blockchain. Concordium is a public, permissionless Layer 1 blockchain with a built-in identity layer, fast finality, and smart contract support.
+> Technical documentation for developers building on, integrating with, or operating Concordium. Concordium is an AI infrastructure for the agentic economy, powered by a public, permissionless Layer-1 blockchain with identity and trust built into the protocol.
 
 The documentation is organized into four sections following the Diátaxis framework: Explore (concepts), Tutorials (learning by doing), How-to (task guides), and Reference (technical look-up material).
 
@@ -65,7 +65,7 @@ On-chain identity and discovery for AI agents.
 - [CIS-8004: Agent Registry standard](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/cis-8004.html): CIS-8004 contract specification — token model, entrypoints, and external references
 - [CIS-8: External Key Registry standard](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/cis-8.html): CIS-8 contract specification — cross-chain key bindings and proof schemes
 - [Agent Card format](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/agent-card.html): Agent Card JSON structure, Concordium extension block, and card verification
-- [Concordium Badge](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html): Badge string format (token address, CAIP-19), trustless resolution and verification, and embedding guidance
+- [Verified by Concordium badge](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html): Badge string format (token address, CAIP-19), trustless resolution and verification, and embedding guidance
 - [MCP service](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/mcp-service.html): Model Context Protocol server — hosted endpoint, local setup, and all available tools
 - [Indexer](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/indexer.html): Event indexer for agent discovery — setup, REST API, and sync state
 

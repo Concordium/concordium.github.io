@@ -6,7 +6,11 @@
 What is the Concordium Protocol
 ===============================
 
-Concordium is a public and permissionless blockchain platform designed for both business applications and public use. It combines privacy-preserving features with regulatory compliance, fast transaction processing, and cost-effective operations.
+Concordium is an AI infrastructure for the agentic economy, powered by a purpose-built, regulatory-grade blockchain with identity and trust built into the protocol.
+
+The blockchain behind it is a public, permissionless Layer-1 with an identity layer at the protocol level. Every account, whether it belongs to a person, a business, or an autonomous AI agent, is created from a verified real-world identity, while on-chain activity remains private. Transactions finalize in seconds, costs are stable in Euro terms, and smart contracts run on WebAssembly and are written in Rust.
+
+Founded in 2018 and backed by leading cryptographers, Concordium is powered by a non-profit Foundation based in Switzerland.
 
 Core features
 =============
@@ -14,6 +18,14 @@ Core features
 Identity layer
 --------------
 Concordium provides a new solution to blockchain privacy through its identity layer. When users create an account, they first verify their identity with an authorized :term:`identity provider`. On the blockchain, their transactions remain private, but their identity can be revealed through a regulated legal process if required by authorities.
+
+Verified agents
+---------------
+The same identity layer applies to autonomous software. An AI agent can be registered through the :doc:`Agent Registry <../technical-reference/agent-registry/index>`, where it is minted as a non-fungible CIS-2 token under the :doc:`CIS-8004 standard <../technical-reference/agent-registry/cis-8004>`. That token is the agent's stable on-chain identity: discoverable, transferable, and, combined with Concordium's ID layer, linked to a verified human or business owner. A counterparty can establish who stands behind an agent before transacting with it.
+
+Each agent carries a :doc:`Verified by Concordium badge <../technical-reference/agent-registry/concordium-badge>`, a compact identifier anyone can check against the chain to confirm the agent's owner, its active status, and an integrity-checked :doc:`Agent Card <../technical-reference/agent-registry/agent-card>` describing its capabilities and endpoints. CIS-8004 is compatible with ERC-8004, and the :doc:`CIS-8 External Key Registry <../technical-reference/agent-registry/cis-8>` binds Concordium accounts to keys from Ethereum, Solana, Cosmos, and other chains, so an agent stays attributable from outside the Concordium ecosystem.
+
+See :doc:`Agent Registry <../technical-reference/agent-registry/index>` for the standards, data formats, and services.
 
 Fast and final transactions
 ---------------------------
@@ -38,7 +50,7 @@ The consensus layer ensures all nodes agree on the state of the blockchain using
 Identity layer
 --------------
 The identity layer manages user verification and privacy. It works with external identity providers who verify users' real-world identities. This information is stored securely off-chain, while on-chain transactions maintain user privacy. Only through a regulated process involving multiple authorities can identities be revealed.
-At no point does Concordium see or hold any identiy information about its users, nor does the identity provider know which accounts are opened by which users.
+At no point does Concordium see or hold any identity information about its users, nor does the identity provider know which accounts are opened by which users.
 
 Execution layer
 ---------------

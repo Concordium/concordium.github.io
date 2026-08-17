@@ -4,7 +4,9 @@
 Developer Documentation
 =======================
 
-Concordium is a public, permissionless Layer 1 blockchain with a built-in identity layer. It provides fast, affordable transactions with smart contract support, and a unique approach to regulatory compliance through verified identities.
+Concordium is an AI infrastructure for the agentic economy, powered by a purpose-built, regulatory-grade blockchain with identity and trust built into the protocol.
+
+The blockchain behind it is a public, permissionless Layer-1 with an identity layer at the protocol level. Every account, whether it belongs to a person, a business, or an autonomous AI agent, is created from a verified real-world identity. It provides fast, affordable transactions with smart contract support and a unique approach to regulatory compliance through verified identities.
 
 Find technical documentation here for every stage — evaluating, building, integrating, and operating Concordium. If you want to know more about how this documentation is organized and how to find what you need, see :doc:`Navigate this documentation <how-to/navigate-docs>`.
 

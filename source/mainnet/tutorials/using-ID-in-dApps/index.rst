@@ -10,7 +10,7 @@ Using ID in dApps
 
 In this tutorial, you'll learn how to integrate Concordium's browser and mobile wallets into a React-based decentralized application (dApp), and generate zero-knowledge (ZK) proofs.
 
-Concordium is an identity-based blockchain with a unique approach to balancing privacy and compliance. Through wallets, users can generate zero-knowledge proofs and selectively disclose identity attributes on their accounts like nationality, age, etc., instead of sharing the entire ID information.
+Concordium is an AI infrastructure for the agentic economy, powered by a public, permissionless Layer-1 blockchain with an identity layer at the protocol level. Through wallets, users can generate zero-knowledge proofs and selectively disclose identity attributes on their accounts like nationality, age, etc., instead of sharing the entire ID information.
 
 Concordium wallets serve a unique dual purpose compared to wallets on other blockchains. They not only hold :ref:`accounts <managing_accounts>` (blockchain addresses) but also manage :ref:`identities <reference-identity>`.
 Users first create an identity in their wallet by completing a verification process with an :term:`identity provider` (using a passport or ID card). Then, they can create on-chain accounts through a :ref:`transaction <transactions>` that associates each account with their verified identity.
