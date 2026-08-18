@@ -16,6 +16,10 @@ Understand how Concordium works. Browse all topics below, grouped by theme, or u
 
       - :doc:`What is the Concordium Protocol <concordium-protocol>`
 
+      **Agents**
+
+      - :doc:`Agent Registry <../technical-reference/agent-registry/index>`
+
       **Identity**
 
       - :doc:`Identity <identity/index>`
@@ -79,6 +83,7 @@ Understand how Concordium works. Browse all topics below, grouped by theme, or u
    :hidden:
 
    What is the Concordium Protocol <concordium-protocol>
+   Agent Registry <../technical-reference/agent-registry/index>
    Identity <identity/index>
    Accounts <accounts/index>
    Transactions <transactions/index>

@@ -16,7 +16,7 @@ The demand for reliable user verification is rapidly intensifying across various
 
 Zero-knowledge proofs resolve these issues. A zero-knowledge proof (ZKP) is a cryptographic method that allows one party (the "prover") to prove to another party (the "verifier") that a statement is true, without revealing any information beyond the validity of the statement itself. In the context of ID verification, a user can prove they are over 18 without ever disclosing their actual date of birth. This enables robust, verifiable identity checks that eliminate the need to store sensitive data and fully preserve user privacy.
 
-Concordium is a science-backed, public, and permissionless Layer-1 blockchain designed to meet the needs of modern businesses. It uniquely balances user privacy with regulatory accountability through a built-in identity layer at the protocol level. This core feature establishes a trusted, secure, and compliant environment, allowing developers, users, and enterprises to build and transact with confidence on a platform that is both fast and cost-effective.
+Concordium is an AI infrastructure for the agentic economy, powered by a public, permissionless Layer-1 blockchain with an identity layer at the protocol level. It uniquely balances user privacy with regulatory accountability through a built-in identity layer at the protocol level. This core feature establishes a trusted, secure, and compliant environment, allowing developers, users, and enterprises to build and transact with confidence on a platform that is both fast and cost-effective.
 
 Concordium ZKP key features
 ===========================

@@ -20,7 +20,7 @@ Reference documentation for the Concordium Agent Registry — a suite of on-chai
       **Data formats**
 
       - :doc:`Agent Card <agent-card>`
-      - :doc:`Concordium Badge <concordium-badge>`
+      - :doc:`Verified by Concordium badge <concordium-badge>`
 
    .. grid-item::
 

@@ -1,11 +1,11 @@
 .. include:: ../../variables.rst
 .. _concordium-badge:
 
-================
-Concordium Badge
-================
+============================
+Verified by Concordium badge
+============================
 
-A Concordium Badge is the compact, verifiable identifier showing that an agent has a live on-chain identity in the :ref:`Agent Registry <agent-registry-reference>`. The badge is the agent's :doc:`CIS-8004 <cis-8004>` NFT **token address** — anyone can resolve it against the chain to confirm the agent's owner, its active status, and an integrity-checked :doc:`Agent Card <agent-card>`.
+A Verified by Concordium badge is the compact, verifiable identifier showing that an agent has a live on-chain identity in the :ref:`Agent Registry <agent-registry-reference>`. The badge string is the agent's :doc:`CIS-8004 <cis-8004>` NFT **token address** — anyone can resolve it against the chain to confirm the agent's owner, its active status, and an integrity-checked :doc:`Agent Card <agent-card>`.
 
 The badge is **not a new contract or token type**. It is a naming and resolution convention layered over existing Concordium standards, so adopting it requires no new deployment.
 
@@ -43,7 +43,7 @@ where ``token_id`` is a ``TokenIdU64`` (8 bytes, little-endian). The ``@concordi
 
 .. note::
 
-   **Registry contracts.** :doc:`CIS-8004 <cis-8004>` and :doc:`CIS-8 <cis-8>` are open standards. Concordium operates the official registries — on mainnet, the CIS-8004 Agent Registry ``<10082,0>`` and the CIS-8 External Key Registry ``<10081,0>`` — but a badge is a Concordium Badge whenever its contract *implements the CIS-8004 standard*, not only when it resolves to the official instance. Each badge's ``contracts`` block names the specific contracts it resolves against, and a verifier decides which registries it trusts.
+   **Registry contracts.** :doc:`CIS-8004 <cis-8004>` and :doc:`CIS-8 <cis-8>` are open standards. Concordium operates the official registries — on mainnet, the CIS-8004 Agent Registry ``<10082,0>`` and the CIS-8 External Key Registry ``<10081,0>`` — but a badge qualifies as a Verified by Concordium badge whenever its contract *implements the CIS-8004 standard*, not only when it resolves to the official instance. Each badge's ``contracts`` block names the specific contracts it resolves against, and a verifier decides which registries it trusts.
 
 Resolve and verify a badge
 ==========================
@@ -115,13 +115,13 @@ Profile or bio
 
 .. code-block:: text
 
-   Concordium Badge: Mf22soLh1NuZYFgBK8iSs
+   Badge string: Mf22soLh1NuZYFgBK8iSs
    Agent Card: https://…/.well-known/agent-card.json
 
 Visual mark
 ===========
 
-The human-facing badge is the official **"Verified by Concordium"** logomark from the Concordium Agent Registry brand kit. It should link to the resolved badge — the agent's registry or explorer entry.
+The human-facing visual is the official **Verified by Concordium logomark** from the Concordium Agent Registry brand kit. It should link to the resolved badge — the agent's registry or explorer entry.
 
 .. warning::
 
