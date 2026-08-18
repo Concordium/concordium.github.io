@@ -54,13 +54,13 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/learn/concordium-protocol.406608e9-4c3f-4b6d-b8ca-6d57e6ebba7b.js"></script>
+    <script defer="defer" src="../_static/tippy/learn/concordium-protocol.3931c3bb-4ae1-492a-bba9-6de98a8e39f3.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'learn/concordium-protocol';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/learn/concordium-protocol.html" />
     <link rel="icon" href="../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Identity framework on Concordium" href="identity/index.html" />
+    <link rel="next" title="Agent Registry" href="../technical-reference/agent-registry/index.html" />
     <link rel="prev" title="Explore" href="index.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -510,6 +510,7 @@
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">What is the Concordium Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical-reference/agent-registry/index.html">Agent Registry</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="identity/index.html">Identity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="identity/principles-of-privacy.html">Principles of privacy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="identity/user-processes.html">User processes</a></li>
@@ -584,12 +585,20 @@
                   
   <section id="what-is-the-concordium-protocol">
 <span id="reference-concordium-protocol"></span><h1>What is the Concordium Protocol<a class="headerlink" href="#what-is-the-concordium-protocol" title="Link to this heading">#</a></h1>
-<p>Concordium is a public and permissionless blockchain platform designed for both business applications and public use. It combines privacy-preserving features with regulatory compliance, fast transaction processing, and cost-effective operations.</p>
+<p>Concordium is an AI infrastructure for the agentic economy, powered by a purpose-built, regulatory-grade blockchain with identity and trust built into the protocol.</p>
+<p>The blockchain behind it is a public, permissionless Layer-1 with an identity layer at the protocol level. Every account, whether it belongs to a person, a business, or an autonomous AI agent, is created from a verified real-world identity, while on-chain activity remains private. Transactions finalize in seconds, costs are stable in Euro terms, and smart contracts run on WebAssembly and are written in Rust.</p>
+<p>Founded in 2018 and backed by leading cryptographers, Concordium is powered by a non-profit Foundation based in Switzerland.</p>
 <section id="core-features">
 <h2>Core features<a class="headerlink" href="#core-features" title="Link to this heading">#</a></h2>
 <section id="identity-layer">
 <h3>Identity layer<a class="headerlink" href="#identity-layer" title="Link to this heading">#</a></h3>
 <p>Concordium provides a new solution to blockchain privacy through its identity layer. When users create an account, they first verify their identity with an authorized <a class="reference internal" href="../technical-reference/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a>. On the blockchain, their transactions remain private, but their identity can be revealed through a regulated legal process if required by authorities.</p>
+</section>
+<section id="verified-agents">
+<h3>Verified agents<a class="headerlink" href="#verified-agents" title="Link to this heading">#</a></h3>
+<p>The same identity layer applies to autonomous software. An AI agent can be registered through the <a class="reference internal" href="../technical-reference/agent-registry/index.html"><span class="doc">Agent Registry</span></a>, where it is minted as a non-fungible CIS-2 token under the <a class="reference internal" href="../technical-reference/agent-registry/cis-8004.html"><span class="doc">CIS-8004 standard</span></a>. That token is the agent’s stable on-chain identity: discoverable, transferable, and, combined with Concordium’s ID layer, linked to a verified human or business owner. A counterparty can establish who stands behind an agent before transacting with it.</p>
+<p>Each agent carries a <a class="reference internal" href="../technical-reference/agent-registry/concordium-badge.html"><span class="doc">Verified by Concordium badge</span></a>, a compact identifier anyone can check against the chain to confirm the agent’s owner, its active status, and an integrity-checked <a class="reference internal" href="../technical-reference/agent-registry/agent-card.html"><span class="doc">Agent Card</span></a> describing its capabilities and endpoints. CIS-8004 is compatible with ERC-8004, and the <a class="reference internal" href="../technical-reference/agent-registry/cis-8.html"><span class="doc">CIS-8 External Key Registry</span></a> binds Concordium accounts to keys from Ethereum, Solana, Cosmos, and other chains, so an agent stays attributable from outside the Concordium ecosystem.</p>
+<p>See <a class="reference internal" href="../technical-reference/agent-registry/index.html"><span class="doc">Agent Registry</span></a> for the standards, data formats, and services.</p>
 </section>
 <section id="fast-and-final-transactions">
 <h3>Fast and final transactions<a class="headerlink" href="#fast-and-final-transactions" title="Link to this heading">#</a></h3>
@@ -614,7 +623,7 @@
 <section id="id1">
 <h3>Identity layer<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>The identity layer manages user verification and privacy. It works with external identity providers who verify users’ real-world identities. This information is stored securely off-chain, while on-chain transactions maintain user privacy. Only through a regulated process involving multiple authorities can identities be revealed.
-At no point does Concordium see or hold any identiy information about its users, nor does the identity provider know which accounts are opened by which users.</p>
+At no point does Concordium see or hold any identity information about its users, nor does the identity provider know which accounts are opened by which users.</p>
 </section>
 <section id="execution-layer">
 <h3>Execution layer<a class="headerlink" href="#execution-layer" title="Link to this heading">#</a></h3>
@@ -703,11 +712,11 @@ At no point does Concordium see or hold any identiy information about its users,
       </div>
     </a>
     <a class="right-next"
-       href="identity/index.html"
+       href="../technical-reference/agent-registry/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Identity framework on Concordium</p>
+        <p class="prev-next-title">Agent Registry</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -732,6 +741,7 @@ At no point does Concordium see or hold any identiy information about its users,
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-features">Core features</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identity-layer">Identity layer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verified-agents">Verified agents</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fast-and-final-transactions">Fast and final transactions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predictable-costs">Predictable costs</a></li>
 </ul>

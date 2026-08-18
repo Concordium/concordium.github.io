@@ -14,7 +14,7 @@ This guide covers the technical requirements for integrating Concordium blockcha
 Integration overview
 ====================
 
-Concordium is a Layer-1 :term:`proof-of-stake` blockchain with a built-in :ref:`identity layer<reference-identity>` at protocol level balancing user privacy with regulatory compliance. The platform supports multiple transaction types, offers native staking and :term:`delegation` functionality, and uses an efficient gRPC-based node communication protocol.
+Concordium is an AI infrastructure for the agentic economy, powered by a public, permissionless Layer-1 blockchain with an identity layer at the protocol level. The platform supports multiple transaction types, offers native staking and :term:`delegation` functionality, and uses an efficient gRPC-based node communication protocol.
 
 Integrating Concordium involves implementing support for several protocol-specific features:
 

@@ -10,7 +10,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Concordium Badge &#8212; Concordium  documentation</title>
+    <title>Verified by Concordium badge &#8212; Concordium  documentation</title>
   
   
   
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/technical-reference/agent-registry/concordium-badge.7c98ec80-58ae-4d36-8c18-7cf90c321cfa.js"></script>
+    <script defer="defer" src="../../_static/tippy/technical-reference/agent-registry/concordium-badge.90c4b938-d41e-4be3-8636-ebccb89d093a.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-reference/agent-registry/concordium-badge';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -551,7 +551,7 @@
 <li class="toctree-l1"><a class="reference internal" href="cis-8.html">CIS-8: External Key Registry</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cis-8004.html">CIS-8004: Agent Registry</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent-card.html">Agent Card</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Concordium Badge</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Verified by Concordium badge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mcp-service.html">MCP service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="indexer.html">Indexer</a></li>
 </ul>
@@ -677,9 +677,9 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="concordium-badge">
-<span id="id1"></span><h1>Concordium Badge<a class="headerlink" href="#concordium-badge" title="Link to this heading">#</a></h1>
-<p>A Concordium Badge is the compact, verifiable identifier showing that an agent has a live on-chain identity in the <a class="reference internal" href="index.html#agent-registry-reference"><span class="std std-ref">Agent Registry</span></a>. The badge is the agent’s <a class="reference internal" href="cis-8004.html"><span class="doc">CIS-8004</span></a> NFT <strong>token address</strong> — anyone can resolve it against the chain to confirm the agent’s owner, its active status, and an integrity-checked <a class="reference internal" href="agent-card.html"><span class="doc">Agent Card</span></a>.</p>
+  <section id="verified-by-concordium-badge">
+<span id="concordium-badge"></span><h1>Verified by Concordium badge<a class="headerlink" href="#verified-by-concordium-badge" title="Link to this heading">#</a></h1>
+<p>A Verified by Concordium badge is the compact, verifiable identifier showing that an agent has a live on-chain identity in the <a class="reference internal" href="index.html#agent-registry-reference"><span class="std std-ref">Agent Registry</span></a>. The badge string is the agent’s <a class="reference internal" href="cis-8004.html"><span class="doc">CIS-8004</span></a> NFT <strong>token address</strong> — anyone can resolve it against the chain to confirm the agent’s owner, its active status, and an integrity-checked <a class="reference internal" href="agent-card.html"><span class="doc">Agent Card</span></a>.</p>
 <p>The badge is <strong>not a new contract or token type</strong>. It is a naming and resolution convention layered over existing Concordium standards, so adopting it requires no new deployment.</p>
 <section id="badge-string">
 <h2>Badge string<a class="headerlink" href="#badge-string" title="Link to this heading">#</a></h2>
@@ -720,7 +720,7 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><strong>Registry contracts.</strong> <a class="reference internal" href="cis-8004.html"><span class="doc">CIS-8004</span></a> and <a class="reference internal" href="cis-8.html"><span class="doc">CIS-8</span></a> are open standards. Concordium operates the official registries — on mainnet, the CIS-8004 Agent Registry <code class="docutils literal notranslate"><span class="pre">&lt;10082,0&gt;</span></code> and the CIS-8 External Key Registry <code class="docutils literal notranslate"><span class="pre">&lt;10081,0&gt;</span></code> — but a badge is a Concordium Badge whenever its contract <em>implements the CIS-8004 standard</em>, not only when it resolves to the official instance. Each badge’s <code class="docutils literal notranslate"><span class="pre">contracts</span></code> block names the specific contracts it resolves against, and a verifier decides which registries it trusts.</p>
+<p><strong>Registry contracts.</strong> <a class="reference internal" href="cis-8004.html"><span class="doc">CIS-8004</span></a> and <a class="reference internal" href="cis-8.html"><span class="doc">CIS-8</span></a> are open standards. Concordium operates the official registries — on mainnet, the CIS-8004 Agent Registry <code class="docutils literal notranslate"><span class="pre">&lt;10082,0&gt;</span></code> and the CIS-8 External Key Registry <code class="docutils literal notranslate"><span class="pre">&lt;10081,0&gt;</span></code> — but a badge qualifies as a Verified by Concordium badge whenever its contract <em>implements the CIS-8004 standard</em>, not only when it resolves to the official instance. Each badge’s <code class="docutils literal notranslate"><span class="pre">contracts</span></code> block names the specific contracts it resolves against, and a verifier decides which registries it trusts.</p>
 </div>
 </section>
 <section id="resolve-and-verify-a-badge">
@@ -791,7 +791,7 @@
 </section>
 <section id="profile-or-bio">
 <h3>Profile or bio<a class="headerlink" href="#profile-or-bio" title="Link to this heading">#</a></h3>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Concordium Badge: Mf22soLh1NuZYFgBK8iSs
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Badge string: Mf22soLh1NuZYFgBK8iSs
 Agent Card: https://…/.well-known/agent-card.json
 </pre></div>
 </div>
@@ -799,7 +799,7 @@ Agent Card: https://…/.well-known/agent-card.json
 </section>
 <section id="visual-mark">
 <h2>Visual mark<a class="headerlink" href="#visual-mark" title="Link to this heading">#</a></h2>
-<p>The human-facing badge is the official <strong>“Verified by Concordium”</strong> logomark from the Concordium Agent Registry brand kit. It should link to the resolved badge — the agent’s registry or explorer entry.</p>
+<p>The human-facing visual is the official <strong>Verified by Concordium logomark</strong> from the Concordium Agent Registry brand kit. It should link to the resolved badge — the agent’s registry or explorer entry.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The visual is a claim; the string is the proof. Always pair the logomark with the badge string so the claim can be verified.</p>
