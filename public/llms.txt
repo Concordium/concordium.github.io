@@ -54,6 +54,7 @@ Technical specifications, APIs, tools, and release notes.
 - [CCDScan](https://docs.concordium.com/en/mainnet/technical-reference/ccd-scan/ccd-scan.html): Blockchain explorer documentation
 - [Smart contract references](https://docs.concordium.com/en/mainnet/technical-reference/smart-contracts/references-on-chain.html): On-chain references, host functions, and schema format
 - [Glossary of Concordium terms](https://docs.concordium.com/en/mainnet/technical-reference/glossary.html): Definitions of key terms used across the documentation
+- [CAIP identifiers for Concordium](https://docs.concordium.com/en/mainnet/technical-reference/caip-identifiers.html): The ccd namespace profile — CAIP-2 networks, CAIP-10 accounts and contracts (dot-form), CAIP-19 assets (cis-2, plt, slip44:919)
 - [Release notes](https://docs.concordium.com/en/mainnet/technical-reference/release-notes.html): Node and tool release history
 - [Downloads](https://docs.concordium.com/en/mainnet/downloads.html): Wallets, node software, and tools
 
@@ -64,8 +65,8 @@ On-chain identity and discovery for AI agents.
 - [Use the Agent Registry](https://docs.concordium.com/en/mainnet/how-to/integrations/agent-registry.html): Register an agent, link an Ethereum address, and publish a verifiable Agent Card
 - [CIS-8004: Agent Registry standard](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/cis-8004.html): CIS-8004 contract specification — token model, entrypoints, and external references
 - [CIS-8: External Key Registry standard](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/cis-8.html): CIS-8 contract specification — cross-chain key bindings and proof schemes
-- [Agent Card format](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/agent-card.html): Agent Card JSON structure, Concordium extension block, and card verification
-- [Verified by Concordium badge](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html): Badge string format (token address, CAIP-19), trustless resolution and verification, and embedding guidance
+- [Agent Card format](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/agent-card.html): Combined document valid as both an ERC-8004 registration file and an A2A v1.0 Agent Card, with badge extension and card verification
+- [Verified by Concordium badge](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html): Badge string format (token address, CAIP-19), trustless resolution and verification, A2A extension embedding, and ERC-8004 registrations
 - [MCP service](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/mcp-service.html): Model Context Protocol server — hosted endpoint, local setup, and all available tools
 - [Indexer](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/indexer.html): Event indexer for agent discovery — setup, REST API, and sync state
 
