@@ -69,27 +69,69 @@ A passing check proves that the agent is registered in the Agent Registry, is cu
 Embed the badge
 ===============
 
-Agent Card
-----------
+Agent Card extension (normative)
+--------------------------------
 
-Add a ``concordium`` block to the :doc:`Agent Card <agent-card>`:
+The badge is embedded in the :doc:`Agent Card <agent-card>` as an **A2A extension**, declared in ``capabilities.extensions`` under the versioned extension URI ``https://docs.concordium.com/a2a-extensions/concordium-badge/v1``:
 
 .. code-block:: json
 
-   "concordium": {
-     "tokenAddress": "ccd:9dd9ca4d19e9393877d2c44b70f89acb/cis-2:Mf22soLh1NuZYFgBK8iSs",
-     "tokenAddressBase58": "Mf22soLh1NuZYFgBK8iSs",
-     "chain": "ccd:9dd9ca4d19e9393877d2c44b70f89acb",
-     "owner": { "account": "<account>", "caip10": "ccd:9dd9ca4d…:<account>" },
-     "contracts": { "cis8004": "10082,0", "cis8": "10081,0" },
-     "verify": "Resolve tokenAddress via CIS-8004 agent_of; confirm owner + status=Active + card SHA-256 == metadata_hash.",
-     "verification": {
-       "service": "Concordium Agent Registry",
-       "verifyUrl": "https://agent-registry-mcp.concordium.com/v1/badge-check/<tokenAddressBase58>",
-       "mcp": "https://agent-registry-mcp.concordium.com/mcp",
-       "docs": "https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html"
-     }
+   "capabilities": {
+     "extensions": [
+       {
+         "uri": "https://docs.concordium.com/a2a-extensions/concordium-badge/v1",
+         "description": "Verified by Concordium badge — on-chain agent identity in a CIS-8004 registry",
+         "required": false,
+         "params": {
+           "tokenAddress": "ccd:9dd9ca4d19e9393877d2c44b70f89acb/cis-2:Mf22soLh1NuZYFgBK8iSs",
+           "owner": {
+             "account": "ccd:9dd9ca4d19e9393877d2c44b70f89acb:3z9dkoTnLi2HEZvjnmKrMec2Gk2NKcEhdi4PugDWzP4GQtZiFa"
+           },
+           "contracts": {
+             "cis8004": "ccd:9dd9ca4d19e9393877d2c44b70f89acb:10082.0",
+             "cis8": "ccd:9dd9ca4d19e9393877d2c44b70f89acb:10081.0"
+           },
+           "verify": "Resolve tokenAddress via CIS-8004 agent_of; confirm owner + status is Active + card SHA-256 equals metadata_hash.",
+           "verification": {
+             "service": "Concordium Agent Registry",
+             "verifyUrl": "https://agent-registry-mcp.concordium.com/v1/badge-check/Mf22soLh1NuZYFgBK8iSs",
+             "mcp": "https://agent-registry-mcp.concordium.com/mcp",
+             "docs": "https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html"
+           }
+         }
+       }
+     ]
    }
+
+Every on-chain reference in ``params`` is a full :doc:`CAIP identifier <../caip-identifiers>`: ``tokenAddress`` is the badge in CAIP-19 form (the short form is the segment after ``cis-2:``), ``owner.account`` is a CAIP-10 account, and each entry in ``contracts`` is a CAIP-10 contract address, so the network is explicit in every value and no separate ``chain`` field is needed.
+
+.. note::
+
+   **Why an extension, not a top-level field.** The A2A specification requires that extensions place their data in the sanctioned extension mechanism — an ``AgentExtension`` entry in ``capabilities.extensions`` with a URI-identified ``params`` object — and prohibits extensions from adding new top-level fields to core data structures. The URI is the extension's identity and version: a consumer locates the badge by matching the URI, and any breaking change to the ``params`` schema mints a new URI (``/v2``), never a change to this one. Do not move this block to the top level of the card.
+
+ERC-8004 registrations entry
+----------------------------
+
+For interoperability with ERC-8004 (Trustless Agents) tooling, the agent's anchored registration document also carries an ERC-8004 ``registrations`` entry identifying the agent's on-chain registration:
+
+.. code-block:: json
+
+   "registrations": [
+     {
+       "agentId": 484,
+       "agentRegistry": "ccd:9dd9ca4d19e9393877d2c44b70f89acb:10082.0"
+     }
+   ]
+
+``agentId`` is the CIS-8004 token id as a JSON number and ``agentRegistry`` is the registry contract as a CAIP-10 contract address, matching ERC-8004's ``{namespace}:{chainId}:{identityRegistry}`` shape. The field is an array because ERC-8004 allows one agent to hold registrations in several registries — a Concordium entry can sit beside ``eip155:`` entries for a cross-chain agent. Per the current ERC-8004 draft, ``registrations`` belongs in the agent registration file — the document the on-chain ``agent_uri`` resolves to. See the :doc:`Agent Card <agent-card>` page for the combined document that satisfies both ERC-8004 and A2A at once.
+
+Legacy embedding
+----------------
+
+Cards published before this specification carry the badge as a top-level ``concordium`` object instead of the extension above. Such badges remain fully valid — verification never depended on where the block sits in the card — and verifiers should accept both placements. New cards, and existing cards when they are next re-anchored, should use the extension form.
+
+Verification hints
+------------------
 
 The ``verify`` string names the steps; the optional ``verification`` block names **where to run them** — ``service``, ``verifyUrl``, ``mcp``, and ``docs``. Together they make a badge *self-resolving*: a consumer that has never seen Concordium can verify it from the card alone. The values below are Concordium's official Agent Registry service, shown as an example — the block is **not limited to them**. Any issuer may point these fields at a different service that runs the same checks, and any party may ignore the hints entirely and resolve directly against the contracts in ``contracts``.
 
@@ -102,7 +144,7 @@ The ``verify`` string names the steps; the optional ``verification`` block names
    * - ``service``
      - Human-readable name of the resolver / registry service.
    * - ``verifyUrl``
-     - REST endpoint keyed on the badge itself (``tokenAddressBase58``) — a single ``GET`` returns the JSON verdict for **this** badge (owner, ``status``, and card-hash match). No MCP client, SDK, or node access required.
+     - REST endpoint keyed on the badge itself (its short form) — a single ``GET`` returns the JSON verdict for **this** badge (owner, ``status``, and card-hash match). No MCP client, SDK, or node access required.
    * - ``mcp``
      - MCP endpoint for agents that speak the Model Context Protocol; they can call ``verify_agent_card`` / ``agent_by_token_address`` directly.
    * - ``docs``
@@ -134,7 +176,9 @@ The badge introduces no new standard. It composes:
 
 - :doc:`CIS-8004 <cis-8004>` — Agent Registry / agent NFT
 - CIS-2 — token-address encoding
-- CAIP-2 / CAIP-10 / CAIP-19 — portable chain, account, and asset identifiers
+- :doc:`CAIP-2 / CAIP-10 / CAIP-19 <../caip-identifiers>` — portable chain, account, and asset identifiers
+- A2A extensions — the Agent Card's sanctioned mechanism for vendor data (``capabilities.extensions``)
+- ERC-8004 (Trustless Agents) — the ``registrations`` entry linking a card to its on-chain registry
 - :doc:`CIS-8 <cis-8>` — external key binding
 - :doc:`Agent Card <agent-card>` — the agent's published metadata document
 
