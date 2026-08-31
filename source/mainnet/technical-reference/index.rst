@@ -61,6 +61,10 @@ Reference documentation for Concordium APIs, SDKs, command-line tools, smart con
       - :doc:`MCP service <agent-registry/mcp-service>`
       - :doc:`Indexer <agent-registry/indexer>`
 
+      **Standards**
+
+      - :doc:`CAIP identifiers <caip-identifiers>`
+
       **Identity**
 
       - :doc:`ID attributes <id-attributes-reference>`
@@ -130,6 +134,12 @@ Reference documentation for Concordium APIs, SDKs, command-line tools, smart con
    Verified by Concordium badge <agent-registry/concordium-badge>
    MCP service <agent-registry/mcp-service>
    Indexer <agent-registry/indexer>
+
+.. toctree::
+   :caption: Standards
+   :hidden:
+
+   CAIP identifiers <caip-identifiers>
 
 .. toctree::
    :caption: Identity
