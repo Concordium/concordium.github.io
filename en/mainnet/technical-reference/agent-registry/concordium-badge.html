@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/technical-reference/agent-registry/concordium-badge.90c4b938-d41e-4be3-8636-ebccb89d093a.js"></script>
+    <script defer="defer" src="../../_static/tippy/technical-reference/agent-registry/concordium-badge.5da98331-f063-4798-a54b-7b895beb1ff0.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-reference/agent-registry/concordium-badge';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -555,6 +555,10 @@
 <li class="toctree-l1"><a class="reference internal" href="mcp-service.html">MCP service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="indexer.html">Indexer</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Standards</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../caip-identifiers.html">CAIP identifiers</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Identity</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../id-attributes-reference.html">ID attributes</a></li>
@@ -741,25 +745,62 @@
 </section>
 <section id="embed-the-badge">
 <h2>Embed the badge<a class="headerlink" href="#embed-the-badge" title="Link to this heading">#</a></h2>
-<section id="agent-card">
-<h3>Agent Card<a class="headerlink" href="#agent-card" title="Link to this heading">#</a></h3>
-<p>Add a <code class="docutils literal notranslate"><span class="pre">concordium</span></code> block to the <a class="reference internal" href="agent-card.html"><span class="doc">Agent Card</span></a>:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;concordium&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;tokenAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ccd:9dd9ca4d19e9393877d2c44b70f89acb/cis-2:Mf22soLh1NuZYFgBK8iSs&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;tokenAddressBase58&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mf22soLh1NuZYFgBK8iSs&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;chain&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ccd:9dd9ca4d19e9393877d2c44b70f89acb&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;account&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;caip10&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ccd:9dd9ca4d…:&lt;account&gt;&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;contracts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;cis8004&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10082,0&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;cis8&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10081,0&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;verify&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Resolve tokenAddress via CIS-8004 agent_of; confirm owner + status=Active + card SHA-256 == metadata_hash.&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;verification&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Concordium Agent Registry&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;verifyUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://agent-registry-mcp.concordium.com/v1/badge-check/&lt;tokenAddressBase58&gt;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;mcp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://agent-registry-mcp.concordium.com/mcp&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;docs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html&quot;</span>
-<span class="w">  </span><span class="p">}</span>
+<section id="agent-card-extension-normative">
+<h3>Agent Card extension (normative)<a class="headerlink" href="#agent-card-extension-normative" title="Link to this heading">#</a></h3>
+<p>The badge is embedded in the <a class="reference internal" href="agent-card.html"><span class="doc">Agent Card</span></a> as an <strong>A2A extension</strong>, declared in <code class="docutils literal notranslate"><span class="pre">capabilities.extensions</span></code> under the versioned extension URI <code class="docutils literal notranslate"><span class="pre">https://docs.concordium.com/a2a-extensions/concordium-badge/v1</span></code>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;capabilities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;extensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://docs.concordium.com/a2a-extensions/concordium-badge/v1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Verified by Concordium badge — on-chain agent identity in a CIS-8004 registry&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;tokenAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ccd:9dd9ca4d19e9393877d2c44b70f89acb/cis-2:Mf22soLh1NuZYFgBK8iSs&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ccd:9dd9ca4d19e9393877d2c44b70f89acb:3z9dkoTnLi2HEZvjnmKrMec2Gk2NKcEhdi4PugDWzP4GQtZiFa&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;contracts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;cis8004&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ccd:9dd9ca4d19e9393877d2c44b70f89acb:10082.0&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;cis8&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ccd:9dd9ca4d19e9393877d2c44b70f89acb:10081.0&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;verify&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Resolve tokenAddress via CIS-8004 agent_of; confirm owner + status is Active + card SHA-256 equals metadata_hash.&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;verification&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Concordium Agent Registry&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;verifyUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://agent-registry-mcp.concordium.com/v1/badge-check/Mf22soLh1NuZYFgBK8iSs&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;mcp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://agent-registry-mcp.concordium.com/mcp&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;docs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>Every on-chain reference in <code class="docutils literal notranslate"><span class="pre">params</span></code> is a full <a class="reference internal" href="../caip-identifiers.html"><span class="doc">CAIP identifier</span></a>: <code class="docutils literal notranslate"><span class="pre">tokenAddress</span></code> is the badge in CAIP-19 form (the short form is the segment after <code class="docutils literal notranslate"><span class="pre">cis-2:</span></code>), <code class="docutils literal notranslate"><span class="pre">owner.account</span></code> is a CAIP-10 account, and each entry in <code class="docutils literal notranslate"><span class="pre">contracts</span></code> is a CAIP-10 contract address, so the network is explicit in every value and no separate <code class="docutils literal notranslate"><span class="pre">chain</span></code> field is needed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Why an extension, not a top-level field.</strong> The A2A specification requires that extensions place their data in the sanctioned extension mechanism — an <code class="docutils literal notranslate"><span class="pre">AgentExtension</span></code> entry in <code class="docutils literal notranslate"><span class="pre">capabilities.extensions</span></code> with a URI-identified <code class="docutils literal notranslate"><span class="pre">params</span></code> object — and prohibits extensions from adding new top-level fields to core data structures. The URI is the extension’s identity and version: a consumer locates the badge by matching the URI, and any breaking change to the <code class="docutils literal notranslate"><span class="pre">params</span></code> schema mints a new URI (<code class="docutils literal notranslate"><span class="pre">/v2</span></code>), never a change to this one. Do not move this block to the top level of the card.</p>
+</div>
+</section>
+<section id="erc-8004-registrations-entry">
+<h3>ERC-8004 registrations entry<a class="headerlink" href="#erc-8004-registrations-entry" title="Link to this heading">#</a></h3>
+<p>For interoperability with ERC-8004 (Trustless Agents) tooling, the agent’s anchored registration document also carries an ERC-8004 <code class="docutils literal notranslate"><span class="pre">registrations</span></code> entry identifying the agent’s on-chain registration:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;registrations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;agentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">484</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;agentRegistry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ccd:9dd9ca4d19e9393877d2c44b70f89acb:10082.0&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">agentId</span></code> is the CIS-8004 token id as a JSON number and <code class="docutils literal notranslate"><span class="pre">agentRegistry</span></code> is the registry contract as a CAIP-10 contract address, matching ERC-8004’s <code class="docutils literal notranslate"><span class="pre">{namespace}:{chainId}:{identityRegistry}</span></code> shape. The field is an array because ERC-8004 allows one agent to hold registrations in several registries — a Concordium entry can sit beside <code class="docutils literal notranslate"><span class="pre">eip155:</span></code> entries for a cross-chain agent. Per the current ERC-8004 draft, <code class="docutils literal notranslate"><span class="pre">registrations</span></code> belongs in the agent registration file — the document the on-chain <code class="docutils literal notranslate"><span class="pre">agent_uri</span></code> resolves to. See the <a class="reference internal" href="agent-card.html"><span class="doc">Agent Card</span></a> page for the combined document that satisfies both ERC-8004 and A2A at once.</p>
+</section>
+<section id="legacy-embedding">
+<h3>Legacy embedding<a class="headerlink" href="#legacy-embedding" title="Link to this heading">#</a></h3>
+<p>Cards published before this specification carry the badge as a top-level <code class="docutils literal notranslate"><span class="pre">concordium</span></code> object instead of the extension above. Such badges remain fully valid — verification never depended on where the block sits in the card — and verifiers should accept both placements. New cards, and existing cards when they are next re-anchored, should use the extension form.</p>
+</section>
+<section id="verification-hints">
+<h3>Verification hints<a class="headerlink" href="#verification-hints" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">verify</span></code> string names the steps; the optional <code class="docutils literal notranslate"><span class="pre">verification</span></code> block names <strong>where to run them</strong> — <code class="docutils literal notranslate"><span class="pre">service</span></code>, <code class="docutils literal notranslate"><span class="pre">verifyUrl</span></code>, <code class="docutils literal notranslate"><span class="pre">mcp</span></code>, and <code class="docutils literal notranslate"><span class="pre">docs</span></code>. Together they make a badge <em>self-resolving</em>: a consumer that has never seen Concordium can verify it from the card alone. The values below are Concordium’s official Agent Registry service, shown as an example — the block is <strong>not limited to them</strong>. Any issuer may point these fields at a different service that runs the same checks, and any party may ignore the hints entirely and resolve directly against the contracts in <code class="docutils literal notranslate"><span class="pre">contracts</span></code>.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <colgroup>
@@ -776,7 +817,7 @@
 <td><p>Human-readable name of the resolver / registry service.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">verifyUrl</span></code></p></td>
-<td><p>REST endpoint keyed on the badge itself (<code class="docutils literal notranslate"><span class="pre">tokenAddressBase58</span></code>) — a single <code class="docutils literal notranslate"><span class="pre">GET</span></code> returns the JSON verdict for <strong>this</strong> badge (owner, <code class="docutils literal notranslate"><span class="pre">status</span></code>, and card-hash match). No MCP client, SDK, or node access required.</p></td>
+<td><p>REST endpoint keyed on the badge itself (its short form) — a single <code class="docutils literal notranslate"><span class="pre">GET</span></code> returns the JSON verdict for <strong>this</strong> badge (owner, <code class="docutils literal notranslate"><span class="pre">status</span></code>, and card-hash match). No MCP client, SDK, or node access required.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mcp</span></code></p></td>
 <td><p>MCP endpoint for agents that speak the Model Context Protocol; they can call <code class="docutils literal notranslate"><span class="pre">verify_agent_card</span></code> / <code class="docutils literal notranslate"><span class="pre">agent_by_token_address</span></code> directly.</p></td>
@@ -811,7 +852,9 @@ Agent Card: https://…/.well-known/agent-card.json
 <ul class="simple">
 <li><p><a class="reference internal" href="cis-8004.html"><span class="doc">CIS-8004</span></a> — Agent Registry / agent NFT</p></li>
 <li><p>CIS-2 — token-address encoding</p></li>
-<li><p>CAIP-2 / CAIP-10 / CAIP-19 — portable chain, account, and asset identifiers</p></li>
+<li><p><a class="reference internal" href="../caip-identifiers.html"><span class="doc">CAIP-2 / CAIP-10 / CAIP-19</span></a> — portable chain, account, and asset identifiers</p></li>
+<li><p>A2A extensions — the Agent Card’s sanctioned mechanism for vendor data (<code class="docutils literal notranslate"><span class="pre">capabilities.extensions</span></code>)</p></li>
+<li><p>ERC-8004 (Trustless Agents) — the <code class="docutils literal notranslate"><span class="pre">registrations</span></code> entry linking a card to its on-chain registry</p></li>
 <li><p><a class="reference internal" href="cis-8.html"><span class="doc">CIS-8</span></a> — external key binding</p></li>
 <li><p><a class="reference internal" href="agent-card.html"><span class="doc">Agent Card</span></a> — the agent’s published metadata document</p></li>
 </ul>
@@ -911,7 +954,10 @@ Agent Card: https://…/.well-known/agent-card.json
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#badge-string">Badge string</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resolve-and-verify-a-badge">Resolve and verify a badge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embed-the-badge">Embed the badge</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agent-card">Agent Card</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agent-card-extension-normative">Agent Card extension (normative)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erc-8004-registrations-entry">ERC-8004 registrations entry</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#legacy-embedding">Legacy embedding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verification-hints">Verification hints</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-or-bio">Profile or bio</a></li>
 </ul>
 </li>

@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/technical-reference/agent-registry/agent-card.467a1c45-b53b-4f7a-8bee-20cb20b4c261.js"></script>
+    <script defer="defer" src="../../_static/tippy/technical-reference/agent-registry/agent-card.e31e0c9a-d625-4599-b773-45b03ccfffed.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-reference/agent-registry/agent-card';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/agent-card.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -555,6 +555,10 @@
 <li class="toctree-l1"><a class="reference internal" href="mcp-service.html">MCP service</a></li>
 <li class="toctree-l1"><a class="reference internal" href="indexer.html">Indexer</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Standards</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../caip-identifiers.html">CAIP identifiers</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Identity</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../id-attributes-reference.html">ID attributes</a></li>
@@ -681,9 +685,51 @@
 <span id="id1"></span><h1>Agent Card<a class="headerlink" href="#agent-card" title="Link to this heading">#</a></h1>
 <p>An Agent Card is a JSON document that describes a registered AI agent: its identity, capabilities, service endpoints, and on-chain coordinates. It is hosted at a public URL (the agent’s <code class="docutils literal notranslate"><span class="pre">agent_uri</span></code>) and its integrity is protected by a SHA-256 hash anchored on-chain in the <a class="reference internal" href="cis-8004.html"><span class="doc">CIS-8004</span></a> contract.</p>
 <p>Any consumer — another agent, an AI development tool, or a human — can verify a card by fetching <code class="docutils literal notranslate"><span class="pre">agent_uri</span></code>, computing the SHA-256 hash of the raw response body, and comparing it to the <code class="docutils literal notranslate"><span class="pre">metadata_hash</span></code> stored on-chain. The MCP tool <code class="docutils literal notranslate"><span class="pre">verify_agent_card</span></code> performs this check automatically.</p>
-<p>Concordium’s Agent Card format is compatible with the A2A (Agent-to-Agent) protocol card format and adds a <code class="docutils literal notranslate"><span class="pre">concordium</span></code> extension block that carries the on-chain identifiers needed for cross-chain discovery.</p>
+<p>Concordium’s Agent Card is a single <strong>combined document</strong>: it is simultaneously a valid ERC-8004 (Trustless Agents) <em>agent registration file</em> and a valid A2A v1.0 <em>Agent Card</em>, with the Verified by Concordium badge carried as an A2A extension. One anchored JSON therefore serves ERC-8004 tooling, A2A clients, and Concordium verification at once. This works because the two standards compose cleanly: their shared fields (<code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">description</span></code>) mean the same thing, and each specification tolerates the other’s fields — A2A requires implementations to ignore unrecognized fields, and ERC-8004 permits additional fields beyond its mandatory structure.</p>
 <section id="top-level-fields">
 <h2>Top-level fields<a class="headerlink" href="#top-level-fields" title="Link to this heading">#</a></h2>
+<p>Fields drawn from <strong>ERC-8004</strong> (registration file structure):</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 15.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">type</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Identifies the document as an ERC-8004 registration file. Fixed value: <code class="docutils literal notranslate"><span class="pre">https://eips.ethereum.org/EIPS/eip-8004#registration-v1</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">image</span></code></p></td>
+<td><p>URI</p></td>
+<td><p>Agent image, for compatibility with ERC-721 applications that render the agent NFT.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">services</span></code></p></td>
+<td><p>array</p></td>
+<td><p>Named service endpoints, each <code class="docutils literal notranslate"><span class="pre">{name,</span> <span class="pre">endpoint,</span> <span class="pre">version}</span></code> — e.g. an <code class="docutils literal notranslate"><span class="pre">A2A</span></code> entry pointing at the card’s public URL and an <code class="docutils literal notranslate"><span class="pre">MCP</span></code> entry for the agent’s MCP endpoint. The list is open-ended.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">x402Support</span></code></p></td>
+<td><p>boolean</p></td>
+<td><p>Whether the agent supports x402 proof-of-payment.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">active</span></code></p></td>
+<td><p>boolean</p></td>
+<td><p>Whether the agent is operational.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">registrations</span></code></p></td>
+<td><p>array</p></td>
+<td><p>The agent’s on-chain registrations. Each entry has a numeric <code class="docutils literal notranslate"><span class="pre">agentId</span></code> (the CIS-8004 token id) and <code class="docutils literal notranslate"><span class="pre">agentRegistry</span></code> as a <a class="reference internal" href="../caip-identifiers.html"><span class="doc">CAIP-10 contract address</span></a>. An array because one agent may be registered in several registries across chains.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Fields drawn from <strong>A2A v1.0</strong> (Agent Card structure):</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <colgroup>
 <col style="width: 25.0%" />
@@ -699,23 +745,31 @@
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
 <td><p>string</p></td>
-<td><p>Display name of the agent. Maximum 128 characters.</p></td>
+<td><p>Display name of the agent. Shared with ERC-8004. Maximum 128 characters.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">description</span></code></p></td>
 <td><p>string</p></td>
-<td><p>Human-readable description of what the agent does. Maximum 2048 characters.</p></td>
+<td><p>Human-readable description of what the agent does. Shared with ERC-8004. Maximum 2048 characters.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">version</span></code></p></td>
 <td><p>string</p></td>
 <td><p>Semantic version of the agent (e.g. <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code>).</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">url</span></code></p></td>
-<td><p>URI</p></td>
-<td><p>Canonical URL where this card is hosted. Must match the <code class="docutils literal notranslate"><span class="pre">agent_uri</span></code> registered on-chain.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">provider</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">provider</span></code></p></td>
 <td><p>object (optional)</p></td>
 <td><p>The organisation that operates the agent. Has <code class="docutils literal notranslate"><span class="pre">organization</span></code> (string) and <code class="docutils literal notranslate"><span class="pre">url</span></code> (URI) sub-fields.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">supportedInterfaces</span></code></p></td>
+<td><p>array</p></td>
+<td><p>Endpoints where the agent’s A2A service is reachable, each <code class="docutils literal notranslate"><span class="pre">{url,</span> <span class="pre">protocolBinding,</span> <span class="pre">protocolVersion}</span></code>, in preference order.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">capabilities</span></code></p></td>
+<td><p>object</p></td>
+<td><p>Declared A2A capabilities (<code class="docutils literal notranslate"><span class="pre">streaming</span></code>, <code class="docutils literal notranslate"><span class="pre">pushNotifications</span></code>) and the <code class="docutils literal notranslate"><span class="pre">extensions</span></code> array carrying the <a class="reference internal" href="concordium-badge.html"><span class="doc">Verified by Concordium badge</span></a> extension.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">defaultInputModes</span></code> / <code class="docutils literal notranslate"><span class="pre">defaultOutputModes</span></code></p></td>
+<td><p>array</p></td>
+<td><p>Default request and response media types, e.g. <code class="docutils literal notranslate"><span class="pre">[&quot;text/plain&quot;]</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">skills</span></code></p></td>
 <td><p>array</p></td>
@@ -725,88 +779,73 @@
 <td><p>URI (optional)</p></td>
 <td><p>Link to extended documentation.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">concordium</span></code></p></td>
-<td><p>object</p></td>
-<td><p>Concordium-specific extension block. See below.</p></td>
-</tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="concordium-extension-block">
-<h2>Concordium extension block<a class="headerlink" href="#concordium-extension-block" title="Link to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">concordium</span></code> object is injected automatically by the MCP tool <code class="docutils literal notranslate"><span class="pre">build_agent_card</span></code>. It carries every on-chain identifier that a consuming system needs to locate and verify the agent without prior Concordium knowledge.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<colgroup>
-<col style="width: 30.0%" />
-<col style="width: 70.0%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Field</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">chain_id</span></code></p></td>
-<td><p>CAIP-2 chain identifier for the network the agent is registered on. For mainnet: <code class="docutils literal notranslate"><span class="pre">concordium:mainnet</span></code>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">token_address</span></code></p></td>
-<td><p>Base58Check CIS-2 token address derived from <code class="docutils literal notranslate"><span class="pre">(contract_index=10082,</span> <span class="pre">subindex=0,</span> <span class="pre">token_id)</span></code>. Uniquely identifies the agent across Concordium tooling.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cis8004_contract</span></code></p></td>
-<td><p>JSON object <code class="docutils literal notranslate"><span class="pre">{&quot;index&quot;:</span> <span class="pre">10082,</span> <span class="pre">&quot;subindex&quot;:</span> <span class="pre">0}</span></code> — the Agent Registry contract address.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cis8_contract</span></code></p></td>
-<td><p>JSON object <code class="docutils literal notranslate"><span class="pre">{&quot;index&quot;:</span> <span class="pre">10081,</span> <span class="pre">&quot;subindex&quot;:</span> <span class="pre">0}</span></code> — the External Key Registry contract address.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">owner</span></code></p></td>
-<td><p>Base58 Concordium account address of the agent’s current owner.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">services</span></code></p></td>
-<td><p>Optional key-value map of named service endpoints. For example, <code class="docutils literal notranslate"><span class="pre">{&quot;tippingMcp&quot;:</span> <span class="pre">&quot;https://...&quot;}</span></code> exposes an MCP endpoint that other agents can call to tip this agent. Keys and values are free-form strings.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<section id="verified-by-concordium-badge-extension">
+<h2>Verified by Concordium badge extension<a class="headerlink" href="#verified-by-concordium-badge-extension" title="Link to this heading">#</a></h2>
+<p>The badge — the agent’s on-chain identity — is declared in <code class="docutils literal notranslate"><span class="pre">capabilities.extensions</span></code> under the extension URI <code class="docutils literal notranslate"><span class="pre">https://docs.concordium.com/a2a-extensions/concordium-badge/v1</span></code>, with its on-chain coordinates (CAIP-19 token address, CAIP-10 owner and contracts, verification hints) in the extension’s <code class="docutils literal notranslate"><span class="pre">params</span></code>. The <a class="reference internal" href="concordium-badge.html"><span class="doc">Verified by Concordium badge</span></a> page is the normative definition of the extension and its fields; the example below shows it in place. The MCP tool <code class="docutils literal notranslate"><span class="pre">build_agent_card</span></code> injects the extension, the <code class="docutils literal notranslate"><span class="pre">registrations</span></code> entry, and all other Concordium-specific fields automatically.</p>
 </section>
 <section id="example-card">
 <h2>Example card<a class="headerlink" href="#example-card" title="Link to this heading">#</a></h2>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://eips.ethereum.org/EIPS/eip-8004#registration-v1&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Market Data Agent&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fetches and summarises real-time CCD/EUR market data on demand.&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://agents.example.com/market-data/card.json&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;organization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Example Labs&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com&quot;</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;skills&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fetch-price&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fetch price&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Returns the current CCD/EUR mid-market price.&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;market&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;price&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ccd&quot;</span><span class="p">]</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;summarise-day&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Summarise day&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Returns a one-paragraph summary of today&#39;s CCD price action.&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;market&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;summary&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ccd&quot;</span><span class="p">]</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://agents.example.com/market-data/icon.png&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;organization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Example Labs&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;supportedInterfaces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://agents.example.com/market-data/a2a/v1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;protocolBinding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HTTP+JSON&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;protocolVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="w"> </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;concordium&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;chain_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;concordium:mainnet&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;token_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TKN1A2B3C4...&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;cis8004_contract&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;index&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10082</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;subindex&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;cis8_contract&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;index&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10081</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;subindex&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3z9dkoTnLi2HEZvjnmKrMec2Gk2NKcEhdi4PugDWzP4GQtZiFa&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;services&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;tippingMcp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://agents.example.com/market-data/mcp&quot;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nt">&quot;capabilities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;streaming&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;pushNotifications&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;extensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://docs.concordium.com/a2a-extensions/concordium-badge/v1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Verified by Concordium badge — on-chain agent identity in a CIS-8004 registry&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;tokenAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ccd:9dd9ca4d19e9393877d2c44b70f89acb/cis-2:Mf22soLh1NuZYFgBK8iSs&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ccd:9dd9ca4d19e9393877d2c44b70f89acb:3z9dkoTnLi2HEZvjnmKrMec2Gk2NKcEhdi4PugDWzP4GQtZiFa&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;contracts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;cis8004&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ccd:9dd9ca4d19e9393877d2c44b70f89acb:10082.0&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;cis8&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ccd:9dd9ca4d19e9393877d2c44b70f89acb:10081.0&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;verify&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Resolve tokenAddress via CIS-8004 agent_of; confirm owner + status is Active + card SHA-256 equals metadata_hash.&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;verification&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Concordium Agent Registry&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;verifyUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://agent-registry-mcp.concordium.com/v1/badge-check/Mf22soLh1NuZYFgBK8iSs&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;mcp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://agent-registry-mcp.concordium.com/mcp&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;docs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html&quot;</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;defaultInputModes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;text/plain&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;defaultOutputModes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;text/plain&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;skills&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fetch-price&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fetch price&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Returns the current CCD/EUR mid-market price.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;market&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;price&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ccd&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;summarise-day&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Summarise day&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Returns a one-paragraph summary of today&#39;s CCD price action.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;market&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;summary&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ccd&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;services&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A2A&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;endpoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://agents.example.com/market-data/.well-known/agent-card.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MCP&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;endpoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://agents.example.com/market-data/mcp&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-18&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;x402Support&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;registrations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;agentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">484</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;agentRegistry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ccd:9dd9ca4d19e9393877d2c44b70f89acb:10082.0&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>Cards published before this specification carry the badge as a top-level <code class="docutils literal notranslate"><span class="pre">concordium</span></code> object; see <a class="reference internal" href="concordium-badge.html"><span class="doc">Legacy embedding</span></a> on the badge page. Verifiers accept both forms.</p>
 </section>
 <section id="building-and-hosting-a-card">
 <h2>Building and hosting a card<a class="headerlink" href="#building-and-hosting-a-card" title="Link to this heading">#</a></h2>
@@ -913,7 +952,7 @@
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-level-fields">Top-level fields</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-extension-block">Concordium extension block</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verified-by-concordium-badge-extension">Verified by Concordium badge extension</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-card">Example card</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-and-hosting-a-card">Building and hosting a card</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#card-verification">Card verification</a></li>

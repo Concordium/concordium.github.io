@@ -9,10 +9,40 @@ An Agent Card is a JSON document that describes a registered AI agent: its ident
 
 Any consumer — another agent, an AI development tool, or a human — can verify a card by fetching ``agent_uri``, computing the SHA-256 hash of the raw response body, and comparing it to the ``metadata_hash`` stored on-chain. The MCP tool ``verify_agent_card`` performs this check automatically.
 
-Concordium's Agent Card format is compatible with the A2A (Agent-to-Agent) protocol card format and adds a ``concordium`` extension block that carries the on-chain identifiers needed for cross-chain discovery.
+Concordium's Agent Card is a single **combined document**: it is simultaneously a valid ERC-8004 (Trustless Agents) *agent registration file* and a valid A2A v1.0 *Agent Card*, with the Verified by Concordium badge carried as an A2A extension. One anchored JSON therefore serves ERC-8004 tooling, A2A clients, and Concordium verification at once. This works because the two standards compose cleanly: their shared fields (``name``, ``description``) mean the same thing, and each specification tolerates the other's fields — A2A requires implementations to ignore unrecognized fields, and ERC-8004 permits additional fields beyond its mandatory structure.
 
 Top-level fields
 ================
+
+Fields drawn from **ERC-8004** (registration file structure):
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 15 60
+
+   * - Field
+     - Type
+     - Description
+   * - ``type``
+     - string
+     - Identifies the document as an ERC-8004 registration file. Fixed value: ``https://eips.ethereum.org/EIPS/eip-8004#registration-v1``.
+   * - ``image``
+     - URI
+     - Agent image, for compatibility with ERC-721 applications that render the agent NFT.
+   * - ``services``
+     - array
+     - Named service endpoints, each ``{name, endpoint, version}`` — e.g. an ``A2A`` entry pointing at the card's public URL and an ``MCP`` entry for the agent's MCP endpoint. The list is open-ended.
+   * - ``x402Support``
+     - boolean
+     - Whether the agent supports x402 proof-of-payment.
+   * - ``active``
+     - boolean
+     - Whether the agent is operational.
+   * - ``registrations``
+     - array
+     - The agent's on-chain registrations. Each entry has a numeric ``agentId`` (the CIS-8004 token id) and ``agentRegistry`` as a :doc:`CAIP-10 contract address <../caip-identifiers>`. An array because one agent may be registered in several registries across chains.
+
+Fields drawn from **A2A v1.0** (Agent Card structure):
 
 .. list-table::
    :header-rows: 1
@@ -23,52 +53,36 @@ Top-level fields
      - Description
    * - ``name``
      - string
-     - Display name of the agent. Maximum 128 characters.
+     - Display name of the agent. Shared with ERC-8004. Maximum 128 characters.
    * - ``description``
      - string
-     - Human-readable description of what the agent does. Maximum 2048 characters.
+     - Human-readable description of what the agent does. Shared with ERC-8004. Maximum 2048 characters.
    * - ``version``
      - string
      - Semantic version of the agent (e.g. ``1.0.0``).
-   * - ``url``
-     - URI
-     - Canonical URL where this card is hosted. Must match the ``agent_uri`` registered on-chain.
    * - ``provider``
      - object (optional)
      - The organisation that operates the agent. Has ``organization`` (string) and ``url`` (URI) sub-fields.
+   * - ``supportedInterfaces``
+     - array
+     - Endpoints where the agent's A2A service is reachable, each ``{url, protocolBinding, protocolVersion}``, in preference order.
+   * - ``capabilities``
+     - object
+     - Declared A2A capabilities (``streaming``, ``pushNotifications``) and the ``extensions`` array carrying the :doc:`Verified by Concordium badge <concordium-badge>` extension.
+   * - ``defaultInputModes`` / ``defaultOutputModes``
+     - array
+     - Default request and response media types, e.g. ``["text/plain"]``.
    * - ``skills``
      - array
      - Capabilities the agent exposes. Each entry has ``id``, ``name``, ``description``, and ``tags`` (string array).
    * - ``documentationUrl``
      - URI (optional)
      - Link to extended documentation.
-   * - ``concordium``
-     - object
-     - Concordium-specific extension block. See below.
 
-Concordium extension block
-==========================
+Verified by Concordium badge extension
+======================================
 
-The ``concordium`` object is injected automatically by the MCP tool ``build_agent_card``. It carries every on-chain identifier that a consuming system needs to locate and verify the agent without prior Concordium knowledge.
-
-.. list-table::
-   :header-rows: 1
-   :widths: 30 70
-
-   * - Field
-     - Description
-   * - ``chain_id``
-     - CAIP-2 chain identifier for the network the agent is registered on. For mainnet: ``concordium:mainnet``.
-   * - ``token_address``
-     - Base58Check CIS-2 token address derived from ``(contract_index=10082, subindex=0, token_id)``. Uniquely identifies the agent across Concordium tooling.
-   * - ``cis8004_contract``
-     - JSON object ``{"index": 10082, "subindex": 0}`` — the Agent Registry contract address.
-   * - ``cis8_contract``
-     - JSON object ``{"index": 10081, "subindex": 0}`` — the External Key Registry contract address.
-   * - ``owner``
-     - Base58 Concordium account address of the agent's current owner.
-   * - ``services``
-     - Optional key-value map of named service endpoints. For example, ``{"tippingMcp": "https://..."}`` exposes an MCP endpoint that other agents can call to tip this agent. Keys and values are free-form strings.
+The badge — the agent's on-chain identity — is declared in ``capabilities.extensions`` under the extension URI ``https://docs.concordium.com/a2a-extensions/concordium-badge/v1``, with its on-chain coordinates (CAIP-19 token address, CAIP-10 owner and contracts, verification hints) in the extension's ``params``. The :doc:`Verified by Concordium badge <concordium-badge>` page is the normative definition of the extension and its fields; the example below shows it in place. The MCP tool ``build_agent_card`` injects the extension, the ``registrations`` entry, and all other Concordium-specific fields automatically.
 
 Example card
 ============
@@ -76,39 +90,61 @@ Example card
 .. code-block:: json
 
    {
+     "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
      "name": "Market Data Agent",
      "description": "Fetches and summarises real-time CCD/EUR market data on demand.",
-     "version": "1.0.0",
-     "url": "https://agents.example.com/market-data/card.json",
-     "provider": {
-       "organization": "Example Labs",
-       "url": "https://example.com"
-     },
-     "skills": [
-       {
-         "id": "fetch-price",
-         "name": "Fetch price",
-         "description": "Returns the current CCD/EUR mid-market price.",
-         "tags": ["market", "price", "ccd"]
-       },
-       {
-         "id": "summarise-day",
-         "name": "Summarise day",
-         "description": "Returns a one-paragraph summary of today's CCD price action.",
-         "tags": ["market", "summary", "ccd"]
-       }
+     "image": "https://agents.example.com/market-data/icon.png",
+     "version": "2.0.0",
+     "provider": { "organization": "Example Labs", "url": "https://example.com" },
+     "supportedInterfaces": [
+       { "url": "https://agents.example.com/market-data/a2a/v1", "protocolBinding": "HTTP+JSON", "protocolVersion": "1.0" }
      ],
-     "concordium": {
-       "chain_id": "concordium:mainnet",
-       "token_address": "TKN1A2B3C4...",
-       "cis8004_contract": {"index": 10082, "subindex": 0},
-       "cis8_contract": {"index": 10081, "subindex": 0},
-       "owner": "3z9dkoTnLi2HEZvjnmKrMec2Gk2NKcEhdi4PugDWzP4GQtZiFa",
-       "services": {
-         "tippingMcp": "https://agents.example.com/market-data/mcp"
-       }
-     }
+     "capabilities": {
+       "streaming": false,
+       "pushNotifications": false,
+       "extensions": [
+         {
+           "uri": "https://docs.concordium.com/a2a-extensions/concordium-badge/v1",
+           "description": "Verified by Concordium badge — on-chain agent identity in a CIS-8004 registry",
+           "required": false,
+           "params": {
+             "tokenAddress": "ccd:9dd9ca4d19e9393877d2c44b70f89acb/cis-2:Mf22soLh1NuZYFgBK8iSs",
+             "owner": {
+               "account": "ccd:9dd9ca4d19e9393877d2c44b70f89acb:3z9dkoTnLi2HEZvjnmKrMec2Gk2NKcEhdi4PugDWzP4GQtZiFa"
+             },
+             "contracts": {
+               "cis8004": "ccd:9dd9ca4d19e9393877d2c44b70f89acb:10082.0",
+               "cis8": "ccd:9dd9ca4d19e9393877d2c44b70f89acb:10081.0"
+             },
+             "verify": "Resolve tokenAddress via CIS-8004 agent_of; confirm owner + status is Active + card SHA-256 equals metadata_hash.",
+             "verification": {
+               "service": "Concordium Agent Registry",
+               "verifyUrl": "https://agent-registry-mcp.concordium.com/v1/badge-check/Mf22soLh1NuZYFgBK8iSs",
+               "mcp": "https://agent-registry-mcp.concordium.com/mcp",
+               "docs": "https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html"
+             }
+           }
+         }
+       ]
+     },
+     "defaultInputModes": ["text/plain"],
+     "defaultOutputModes": ["text/plain"],
+     "skills": [
+       { "id": "fetch-price", "name": "Fetch price", "description": "Returns the current CCD/EUR mid-market price.", "tags": ["market", "price", "ccd"] },
+       { "id": "summarise-day", "name": "Summarise day", "description": "Returns a one-paragraph summary of today's CCD price action.", "tags": ["market", "summary", "ccd"] }
+     ],
+     "services": [
+       { "name": "A2A", "endpoint": "https://agents.example.com/market-data/.well-known/agent-card.json", "version": "1.0" },
+       { "name": "MCP", "endpoint": "https://agents.example.com/market-data/mcp", "version": "2025-06-18" }
+     ],
+     "x402Support": false,
+     "active": true,
+     "registrations": [
+       { "agentId": 484, "agentRegistry": "ccd:9dd9ca4d19e9393877d2c44b70f89acb:10082.0" }
+     ]
    }
+
+Cards published before this specification carry the badge as a top-level ``concordium`` object; see :doc:`Legacy embedding <concordium-badge>` on the badge page. Verifiers accept both forms.
 
 Building and hosting a card
 ============================
