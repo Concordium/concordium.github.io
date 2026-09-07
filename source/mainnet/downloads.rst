@@ -235,13 +235,13 @@ For the system requirements to run a node and installation instructions for each
 
    .. dropdown:: Windows |mainnet-node-version|
 
-      To run a node on Windows, `download a Mainnet Windows Installer package <https://distribution.concordium.software/windows/Node-10.0.10-1.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
+      To run a node on Windows, `download a Mainnet Windows Installer package <https://distribution.concordium.software/windows/Node-10.0.11-1.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
       To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
    .. dropdown:: Mac |mainnet-node-version|
 
-      To run a node on macOS, `download a Mainnet macOS installer package <https://distribution.concordium.software/macos/concordium-node-10.0.10-1.pkg>`_.
+      To run a node on macOS, `download a Mainnet macOS installer package <https://distribution.concordium.software/macos/concordium-node-10.0.11-1.pkg>`_.
 
       To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
@@ -268,13 +268,13 @@ For the system requirements to run a node and installation instructions for each
 
    .. dropdown:: Windows |testnet-node-version|
 
-      To run a node on Windows, `download a Testnet Windows Installer package <https://distribution.concordium.software/windows/Node-10.0.10-1.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
+      To run a node on Windows, `download a Testnet Windows Installer package <https://distribution.concordium.software/windows/Node-10.0.11-1.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
       To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
    .. dropdown:: Mac |testnet-node-version|
 
-      To run a node on macOS, `download a Testnet macOS installer package <https://distribution.concordium.software/macos/concordium-node-10.0.10-1.pkg>`_.
+      To run a node on macOS, `download a Testnet macOS installer package <https://distribution.concordium.software/macos/concordium-node-10.0.11-1.pkg>`_.
 
       To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS <run-node-macos>`.
 
