@@ -1154,11 +1154,17 @@ Nodes
 Mainnet
 -------
 
-    July 27, 2026
+    September 7, 2026
 
-    Concordium node version 10.0.10 fixes a bug where pending blocks with unknown parents got relayed to peers.
+    Concordium node version 10.0.11 includes fixes for a number of security issues.
+    In particular, it fixes an issue where some V1 smart contract state queries could perform more work than their charged energy reflected.
+    It also improves peer backpressure and the validation of credential updates and block timestamps.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 10.0.10 - July 27, 2026
+
+            Concordium node version 10.0.10 fixes a bug where pending blocks with unknown parents got relayed to peers.
 
         .. dropdown:: 10.0.9 - July 8, 2026
 
@@ -1699,11 +1705,17 @@ Mainnet
 Testnet
 -------
 
-    July 27, 2026
+    September 7, 2026
 
-    Concordium node version 10.0.10 fixes a bug where pending blocks with unknown parents got relayed to peers.
+    Concordium node version 10.0.11 includes fixes for a number of security issues.
+    In particular, it fixes an issue where some V1 smart contract state queries could perform more work than their charged energy reflected.
+    It also improves peer backpressure and the validation of credential updates and block timestamps.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 10.0.10 - July 27, 2026
+
+            Concordium node version 10.0.10 fixes a bug where pending blocks with unknown parents got relayed to peers.
 
         .. dropdown:: 10.0.9 - July 8, 2026
 
