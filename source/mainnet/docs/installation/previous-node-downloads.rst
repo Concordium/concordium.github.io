@@ -14,7 +14,7 @@ Windows - Mainnet and Testnet
 
 **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-`Windows 10.0.10 <https://distribution.concordium.software/windows/Node-10.0.10-1.msi>`_
+`Windows 10.0.10 <https://distribution.concordium.software/windows/Node-10.0.10-4.msi>`_
 
 `Windows 10.0.9 <https://distribution.concordium.software/windows/Node-10.0.9-3.msi>`_
 
@@ -71,7 +71,7 @@ Windows - Mainnet and Testnet
 macOS - Mainnet and Testnet
 ===========================
 
-`macOS 10.0.10 <https://distribution.concordium.software/macos/concordium-node-10.0.10-1.pkg>`_
+`macOS 10.0.10 <https://distribution.concordium.software/macos/concordium-node-10.0.10-4.pkg>`_
 
 `macOS 10.0.9 <https://distribution.concordium.software/macos/concordium-node-10.0.9-3.pkg>`_
 
@@ -130,15 +130,15 @@ Default GRPC port is set to ``20000``
 
 Default listen port is set to ``8888``
 
-`10.0.10 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_10.0.10-1_amd64.deb>`__
+`10.0.10 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_10.0.10-4_amd64.deb>`__
 
    - Verification instructions
 
       In a terminal:
 
       #. Navigate to the download.
-      #. Paste the following into the terminal: $sha256sum concordium-mainnet-node_10.0.10-1_amd64.deb
-      #. Verify that the output matches the SHA256 checksum ``49da763cd4a7069b0ff84e0a37608620c434d32d36b31a44942794e7d95ca3a5``
+      #. Paste the following into the terminal: $sha256sum concordium-mainnet-node_10.0.10-4_amd64.deb
+      #. Verify that the output matches the SHA256 checksum ``503b4c55fd575bac6ceaad8d9de40b61b8461f49ba38a41ee493f631a8bd5eaf``
 
 `10.0.9 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_10.0.9-3_amd64.deb>`__
 
@@ -362,15 +362,15 @@ Default GRPC port is set to ``20001``
 
 Default listen port is set to ``8889``
 
-`10.0.10 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_10.0.10-1_amd64.deb>`_
+`10.0.10 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_10.0.10-4_amd64.deb>`_
 
       - Verification instructions
 
          In a terminal:
 
          #. Navigate to the download.
-         #. Paste the following into the terminal: $sha256sum concordium-testnet-node_10.0.10-1_amd64.deb
-         #. Verify that the output matches the SHA256 checksum ``64886cf8be1d2c87c63863f1e546b08d61e27509344815f9c6c72e34e3ecd658``
+         #. Paste the following into the terminal: $sha256sum concordium-testnet-node_10.0.10-4_amd64.deb
+         #. Verify that the output matches the SHA256 checksum ``1243aa372d81df2c86d18cd7bf5846bfe2545f07597a4ad6e604b0b371b49b74``
 
 
 `10.0.9 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_10.0.9-3_amd64.deb>`_
