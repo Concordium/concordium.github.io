@@ -42,7 +42,7 @@ On-chain agent state
      - SHA-256 hash of the Agent Card bytes at ``agent_uri``. On-chain integrity anchor.
    * - ``external_reference``
      - ExternalReference (optional)
-     - A ``Cis8`` or ``Cis10`` reference linking the agent to an external key or platform handle. See below.
+     - A ``Cis8`` reference linking the agent to an external cryptographic key. See below.
    * - ``metadata``
      - map<string, bytes>
      - Arbitrary on-chain key-value store. The reserved key ``agentWallet`` holds the payment wallet address.
@@ -56,7 +56,6 @@ External references
 An agent can carry one optional ``external_reference`` that links it to a cross-chain or cross-platform identity:
 
 - **Cis8 reference** — Points to a binding in the :doc:`CIS-8 External Key Registry <cis-8>`. Use this to attach an Ethereum, Solana, Cosmos, or Fetch.ai public key to the agent. The CIS-8 binding must exist before it can be set as a reference.
-- **Cis10 reference** — Points to a binding in the CIS-10 External Identifier Registry. Use this to attach a platform handle (Moltbook, X, GitHub, etc.) to the agent. Note that the CIS-10 contract integration is not yet active on the mainnet deployment.
 
 Native vs. external agent ownership
 =====================================
@@ -97,7 +96,7 @@ Contract entrypoints
    * - ``upgrade``
      - Admin-only: upgrades the contract module. Does not affect stored agent data.
    * - ``setExternalRegistries``
-     - Admin-only: updates the linked CIS-8 and CIS-10 contract addresses.
+     - Admin-only: updates the linked CIS-8 contract address.
 
 Token address encoding
 ======================
