@@ -1154,13 +1154,17 @@ Nodes
 Mainnet
 -------
 
-    September 7, 2026
+    October 2, 2026
 
-    Concordium node version 10.0.11 includes fixes for a number of security issues.
-    In particular, it fixes an issue where some V1 smart contract state queries could perform more work than their charged energy reflected.
-    It also improves peer backpressure and the validation of credential updates and block timestamps.
+    Concordium node version 10.0.12 adds runtime metering of copy operations in the WebAssembly interpreter, preventing abuse of operations that previously incurred no energy cost.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 10.0.11 - September 7, 2026
+
+            Concordium node version 10.0.11 includes fixes for a number of security issues.
+            In particular, it fixes an issue where some V1 smart contract state queries could perform more work than their charged energy reflected.
+            It also improves peer backpressure and the validation of credential updates and block timestamps.
 
         .. dropdown:: 10.0.10 - July 27, 2026
 
@@ -1705,13 +1709,17 @@ Mainnet
 Testnet
 -------
 
-    September 7, 2026
+    October 2, 2026
 
-    Concordium node version 10.0.11 includes fixes for a number of security issues.
-    In particular, it fixes an issue where some V1 smart contract state queries could perform more work than their charged energy reflected.
-    It also improves peer backpressure and the validation of credential updates and block timestamps.
+    Concordium node version 10.0.12 adds runtime metering of copy operations in the WebAssembly interpreter, preventing abuse of operations that previously incurred no energy cost.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 10.0.11 - September 7, 2026
+
+            Concordium node version 10.0.11 includes fixes for a number of security issues.
+            In particular, it fixes an issue where some V1 smart contract state queries could perform more work than their charged energy reflected.
+            It also improves peer backpressure and the validation of credential updates and block timestamps.
 
         .. dropdown:: 10.0.10 - July 27, 2026
 
