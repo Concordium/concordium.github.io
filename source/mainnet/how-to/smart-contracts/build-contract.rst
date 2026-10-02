@@ -63,11 +63,6 @@ The tool to deploy and interact with smart contracts is
 
 To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
 
-.. note::
-
-   To deploy smart contract modules and interact with the chain, make sure
-   that you are :ref:`running a node<run-a-node>`.
-
 .. _Rust: https://www.rust-lang.org/
 .. _Cargo: https://doc.rust-lang.org/cargo/
 .. _install rustup: https://rustup.rs/

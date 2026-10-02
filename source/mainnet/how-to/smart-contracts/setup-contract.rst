@@ -64,26 +64,30 @@ This is done by adding the following in the ``Cargo.toml`` file ::
    [lib]
    crate-type = ["cdylib", "rlib"]
 
+And you need to declare you library as ``no_std`` in ``lib.rs``:
+
+.. code-block:: rust
+
+   #![no_std]
+
 **Add the smart contract standard library**
 
-The next step is to add ``concordium-std`` as a dependency.
+The next step is to add ``concordium-std`` as a dependency. The crate documentation is on docs.rs_.
 It is a library for Rust containing procedural macros and functions for
 writing small and efficient smart contracts.
 
-To add the library, open ``Cargo.toml`` and add the line
-``concordium-std = "*"`` (preferably, replace the `*` with the latest version of `concordium-std`_) in
+To add the library, open ``Cargo.toml`` and add ``concordium-std`` in
 the ``[dependencies]`` section::
 
    [dependencies]
-   concordium-std = "6.0"
+   concordium-std = "11.0"
 
-The crate documentation is on docs.rs_.
+
 
 .. _Rust: https://www.rust-lang.org/
 .. _Cargo: https://doc.rust-lang.org/cargo/
 .. _rustup: https://rustup.rs/
 .. _repository: https://gitlab.com/Concordium/concordium-std
-.. _docs.rs: https://docs.rs/crate/concordium-std/
-.. _`concordium-std`: https://docs.rs/crate/concordium-std/
+.. _docs.rs: https://docs.rs/concordium-std/latest/concordium_std/
 
 That is it! You are now ready to develop your own smart contract.
