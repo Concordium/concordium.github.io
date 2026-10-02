@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/technical-reference/agent-registry/cis-8004.1e8c415c-4d58-414a-8af1-72f5fc741954.js"></script>
+    <script defer="defer" src="../../_static/tippy/technical-reference/agent-registry/cis-8004.13e59f79-e1d2-446c-bd2d-bd92fe90bd81.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-reference/agent-registry/cis-8004';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/cis-8004.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -724,7 +724,7 @@
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">external_reference</span></code></p></td>
 <td><p>ExternalReference (optional)</p></td>
-<td><p>A <code class="docutils literal notranslate"><span class="pre">Cis8</span></code> or <code class="docutils literal notranslate"><span class="pre">Cis10</span></code> reference linking the agent to an external key or platform handle. See below.</p></td>
+<td><p>A <code class="docutils literal notranslate"><span class="pre">Cis8</span></code> reference linking the agent to an external cryptographic key. See below.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">metadata</span></code></p></td>
 <td><p>map&lt;string, bytes&gt;</p></td>
@@ -743,7 +743,6 @@
 <p>An agent can carry one optional <code class="docutils literal notranslate"><span class="pre">external_reference</span></code> that links it to a cross-chain or cross-platform identity:</p>
 <ul class="simple">
 <li><p><strong>Cis8 reference</strong> — Points to a binding in the <a class="reference internal" href="cis-8.html"><span class="doc">CIS-8 External Key Registry</span></a>. Use this to attach an Ethereum, Solana, Cosmos, or Fetch.ai public key to the agent. The CIS-8 binding must exist before it can be set as a reference.</p></li>
-<li><p><strong>Cis10 reference</strong> — Points to a binding in the CIS-10 External Identifier Registry. Use this to attach a platform handle (Moltbook, X, GitHub, etc.) to the agent. Note that the CIS-10 contract integration is not yet active on the mainnet deployment.</p></li>
 </ul>
 </section>
 <section id="native-vs-external-agent-ownership">
@@ -795,7 +794,7 @@
 <td><p>Admin-only: upgrades the contract module. Does not affect stored agent data.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">setExternalRegistries</span></code></p></td>
-<td><p>Admin-only: updates the linked CIS-8 and CIS-10 contract addresses.</p></td>
+<td><p>Admin-only: updates the linked CIS-8 contract address.</p></td>
 </tr>
 </tbody>
 </table>

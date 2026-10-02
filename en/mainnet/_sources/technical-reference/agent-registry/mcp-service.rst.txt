@@ -99,7 +99,7 @@ On-chain lookups (no Indexer required)
    * - ``agent_by_token_address``
      - Resolves a Base58Check token address to a full agent record.
    * - ``agent_by_external_reference``
-     - Resolves a ``Cis8`` (external key) or ``Cis10`` (platform handle) reference to an agent.
+     - Resolves a ``Cis8`` external key reference to an agent.
    * - ``agents_by_owner``
      - Returns all agents owned by a given Concordium account.
    * - ``agent_of``
@@ -143,7 +143,7 @@ All builder tools return ``{ hex, schema_json }`` — the hex is the wire-encode
    * - ``build_upgrade``
      - Admin-only: builds a module upgrade payload.
    * - ``build_set_external_registries``
-     - Admin-only: updates the linked CIS-8 and CIS-10 contract addresses atomically.
+     - Admin-only: updates the linked CIS-8 contract address.
 
 Transaction builders (CIS-8)
 ------------------------------

@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/technical-reference/agent-registry/mcp-service.805b23a3-b1d8-4bac-9395-9dd2274d4d48.js"></script>
+    <script defer="defer" src="../../_static/tippy/technical-reference/agent-registry/mcp-service.6a50f54e-777b-4474-8778-423d786fb625.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-reference/agent-registry/mcp-service';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/mcp-service.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -797,7 +797,7 @@
 <td><p>Resolves a Base58Check token address to a full agent record.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">agent_by_external_reference</span></code></p></td>
-<td><p>Resolves a <code class="docutils literal notranslate"><span class="pre">Cis8</span></code> (external key) or <code class="docutils literal notranslate"><span class="pre">Cis10</span></code> (platform handle) reference to an agent.</p></td>
+<td><p>Resolves a <code class="docutils literal notranslate"><span class="pre">Cis8</span></code> external key reference to an agent.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">agents_by_owner</span></code></p></td>
 <td><p>Returns all agents owned by a given Concordium account.</p></td>
@@ -863,7 +863,7 @@
 <td><p>Admin-only: builds a module upgrade payload.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">build_set_external_registries</span></code></p></td>
-<td><p>Admin-only: updates the linked CIS-8 and CIS-10 contract addresses atomically.</p></td>
+<td><p>Admin-only: updates the linked CIS-8 contract address.</p></td>
 </tr>
 </tbody>
 </table>
