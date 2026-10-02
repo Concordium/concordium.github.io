@@ -12,19 +12,7 @@ Set up smart contract development tools
 This guide covers how to install the tools needed to develop, build, and deploy
 smart contracts on Concordium.
 
-.. Note::
-
-   You can also watch a video about installing the smart contract tools.
-
-   .. raw:: html
-
-      <iframe src="https://www.youtube.com/embed/0UIyAlZjvLg?si=D0lguDkUjiHCKLcu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 Once you are familiar with smart contracts, it is a good idea to read the :ref:`Smart contracts best practices<sc-development-best-practices>`.
-
-.. Note::
-
-   To request CCDs for testing, use the buttons in the Concordium Wallets when running Testnet.
 
 Rust and Cargo
 ==============
@@ -32,25 +20,13 @@ Rust and Cargo
 First, `install rustup`_, which installs both Rust_ and Cargo_ on your
 machine.
 
-.. Note::
-
-   Currently, Rust toolchain versions up to ``1.81`` are and newer are not supported by older ``cargo-concordium`` versions ( <= ``4.0.0``). Update ``cargo-concordium`` if you see the error ``Unexpected byte 0x80. Expected 0x00`` as follows:
-
-   .. code-block:: console
-
-      $ cargo install cargo-concordium
-      $ cargo concordium --version
-      $ cargo-concordium 4.1.1
-
-   The minimum supported rust version is currently version ``1.73``
-
 Then use ``rustup`` to install the Wasm target, which is used for compilation:
 
 .. code-block:: console
 
-   $rustup target add wasm32-unknown-unknown
+   $ rustup target add wasm32v1-none
 
-``cargo-concordium``
+cargo-concordium
 ====================
 
 ``cargo-concordium`` is the tool for developing smart contracts for the Concordium
@@ -63,29 +39,18 @@ To install ``cargo-concordium`` run:
 
 .. code-block:: console
 
-   $cargo install --locked cargo-concordium
+   $ cargo install --locked cargo-concordium
 
 For a description of how to use the ``cargo-concordium`` run:
 
 .. code-block:: console
 
-   $cargo concordium --help
+   $ cargo concordium --help
 
 To use verifiable builds with cargo-concordium a container runtime such as `Docker <https://www.docker.com/>`_ is required.
 
-VSCode extension
-----------------
-
-The `VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`__ can help you develop Concordium smart contracts. The extension sets up the editor for development, installs the ``cargo-concordium`` smart contract development tool for all supported platforms, and provides commands in the editor for the essential workflows, such as building and testing smart contracts.
-
-You can watch a video about how to use the VSCode extension.
-
-.. raw:: html
-
-   <iframe src="https://www.youtube.com/embed/9qjcsGDeveg?si=zGDkjMAdP5JjRMd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 Typescript smart contract client generator
-------------------------------------------
+==========================================
 
 The `Typescript smart contract client generator <https://www.npmjs.com/package/@concordium/ccd-js-gen>`_ helps you generate JavaScript/TypeScript clients for smart contracts on the Concordium blockchain, providing a lower development time and better type-safety.
 
