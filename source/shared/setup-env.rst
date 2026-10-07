@@ -6,14 +6,6 @@ Set up the development environment
 
 Before starting the tutorials, you must prepare your development environment by installing a number of tools. This topic covers the setup required for the tutorials.
 
-.. Note::
-
-    You can also watch a video about installing the smart contract tools.
-
-    .. raw:: html
-
-        <iframe src="https://www.youtube.com/embed/0UIyAlZjvLg?si=D0lguDkUjiHCKLcu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 First, you need to install ``rustup`` which installs Rust and Cargo to your computer. Go to `Rustup <https://rustup.rs/>`_ to install ``rustup`` for your platform.
 
 Type **1** to continue the installation.
@@ -26,36 +18,14 @@ Finally, when Rust and Cargo are successfully installed in your system, you shou
 .. image:: images/mint-rust-install-done.png
     :width: 100%
 
-.. Note::
-
-   Currently, Rust toolchain versions up to ``1.81`` are and newer are not supported by older ``cargo-concordium`` versions ( <= ``4.0.0``). Update ``cargo-concordium`` if you see the error ``Unexpected byte 0x80. Expected 0x00`` as follows:
-
-   .. code-block:: console
-
-      $ cargo install cargo-concordium
-      $ cargo concordium --version
-      $ cargo-concordium 4.1.1
-
-   The minimum supported rust version is currently version ``1.73``
-
 Copy and paste the commands in a terminal to install Wasm which will be used for building contracts.
 
 .. code-block:: console
 
-    rustup target add wasm32-unknown-unknown
+    rustup target add wasm32v1-none
 
-During Wasm installation in your system you should see something similar to below.
 
-.. image:: images/mint-wasm-install.png
-    :width: 100%
-
-Now you need to install the Concordium software package. ``cargo-concordium`` is the tool for developing smart contracts for the Concordium blockchain. It can be used for :ref:`compiling<compile-module>` and :ref:`testing<integration-test-contract>` smart contracts, and enables features such as :ref:`building contract schemas<build-schema>`. :ref:`Click here<cargo-concordium-testnet>` and download the version 2.2.0 or greater of ``cargo-concordium`` for your operating system. The tool is the same for both testnet and mainnet.
-
-.. note::
-
-   If you are not using Ubuntu/Linux as your operating system, the following screenshots and commands will be different.
-   Remember to adjust the following commands based on your operating system.
-
+Now you need to install the Concordium software package. ``cargo-concordium`` is the tool for developing smart contracts for the Concordium blockchain. It can be used for :ref:`compiling<compile-module>` and :ref:`testing<integration-test-contract>` smart contracts, and enables features such as :ref:`building contract schemas<build-schema>`. 
 To install ``cargo-concordium`` run:
 
 .. code-block:: console
@@ -73,12 +43,6 @@ To use verifiable builds with cargo-concordium a container runtime such as `Dock
 .. image:: images/cargo-help.png
     :width: 100%
 
-.. Note::
-
-    If you have a warning on a Mac device that says “cargo-concordium cannot be opened because the developer cannot be verified” that means it requires permission to run and you should go to **System Preferences → Security** and unlock it with your password and click **Allow Anyway**.
-
-    .. image:: images/mac-warning.png
-        :width: 100%
 
 .. _interact-with-your-contract:
 
