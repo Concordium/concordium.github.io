@@ -4,6 +4,13 @@
 Advanced node configuration on Ubuntu
 =====================================
 
+.. warning::
+
+   The Debian package distribution is deprecated. For new installations, use
+   :ref:`run-node-docker-image`. For an existing Ubuntu package installation,
+   follow :ref:`migrate-debian-to-docker`. Keep the existing node data during
+   migration. This guide remains available for existing installations.
+
 .. admonition:: At a glance
 
    This page covers advanced configuration options for a Concordium node running on Ubuntu, including enabling inbound connections, TLS setup, and node collector configuration. You will need a running Ubuntu node. Use this page when you need to go beyond the default setup.

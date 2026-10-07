@@ -4,6 +4,13 @@
 Troubleshoot a node on Ubuntu
 ===========================================
 
+.. warning::
+
+   The Debian package distribution is deprecated. For new installations, use
+   :ref:`run-node-docker-image`. For an existing Ubuntu package installation,
+   follow :ref:`migrate-debian-to-docker`. Keep the existing node data during
+   migration. This guide remains available for existing installations.
+
 .. admonition:: At a glance
 
    This guide helps you diagnose and fix problems with a Concordium node running on Ubuntu. You will need a node already installed. Use this page when your node is not starting, not syncing, or behaving unexpectedly.

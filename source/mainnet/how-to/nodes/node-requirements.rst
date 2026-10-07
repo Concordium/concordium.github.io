@@ -11,7 +11,7 @@ Run a Concordium node
 Running a Concordium node is required for network validation, building custom services, or integrating directly with the blockchain.
 If you are a developer, operating your own node enables you to process events, access on-chain data, and build advanced integrations.
 You can choose to run a node yourself or have a third-party provider operate it for you.
-If you prefer to manage the node yourself, several options are available: :ref:`Ubuntu<run-node-ubuntu>`, :ref:`Windows<run-node-windows>`, :ref:`macOS<run-node-macos>`, :ref:`Docker<run-a-node>`, or cloud platforms such as :ref:`AWS<run-a-node-aws>`.
+If you prefer to manage the node yourself, see guides for using :ref:`Docker<install-node-docker-image>` or cloud platforms such as :ref:`AWS<run-a-node-aws>`.
 Alternatively, you can deploy your Concordium node through a decentralized Web3 provider like `Akash Network <https://akash.network/>`_.
 
 When you run a node on the Concordium blockchain as a validator, you participate in the network by producing blocks and validating transactions.
@@ -120,6 +120,7 @@ Checking the Node synchronization status
    :maxdepth: 1
    :hidden:
 
+   run-node-docker-image/index
    run-node-ubuntu/index
    run-node-macos/index
    run-node-windows/index
