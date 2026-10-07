@@ -90,7 +90,6 @@ Step-by-step guides for completing specific tasks on Concordium. Browse all guid
       - :doc:`Build a contract schema <smart-contracts/build-schema>`
       - :doc:`Use custom errors <smart-contracts/custom-errors>`
       - :doc:`Pass JSON parameters <smart-contracts/json-params>`
-      - :doc:`Use no_std <smart-contracts/no-std>`
       - :doc:`Use fallback entrypoints <smart-contracts/fallback-entrypoints>`
       - :doc:`Write an upgradeable contract <smart-contracts/upgradeable-contract>`
       - :doc:`Implement the factory pattern <smart-contracts/factory-pattern>`
@@ -169,8 +168,7 @@ Step-by-step guides for completing specific tasks on Concordium. Browse all guid
    Build a contract schema <smart-contracts/build-schema>
    Use custom errors <smart-contracts/custom-errors>
    Pass JSON parameters <smart-contracts/json-params>
-   Use no_std <smart-contracts/no-std>
-   Use fallback entrypoints <smart-contracts/fallback-entrypoints>
+      Use fallback entrypoints <smart-contracts/fallback-entrypoints>
    Write an upgradeable contract <smart-contracts/upgradeable-contract>
    Implement the factory pattern <smart-contracts/factory-pattern>
    Unit test a contract <smart-contracts/unit-test-contract>
