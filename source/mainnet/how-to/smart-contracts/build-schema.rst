@@ -158,11 +158,6 @@ Building the schema
 Now, you are ready to build the actual schema using ``cargo-concordium``, and you
 have the options to embed the schema and/or write the schema to a file and/or print the schema to the console.
 
-.. seealso::
-
-   For more on which to choose see
-   :ref:`here<contract-schema-which-to-choose>`.
-
 Embedding the schema
 --------------------
 
@@ -191,7 +186,7 @@ must exist and the file will be created in following command
 
    $cargo concordium build --schema-out "/some/path/schema.bin"
 
-If using ``cargo concordium`` version 2.6.0 or newer then the schema can be
+The schema can be
 output in JSON format that can be more suitable for use in dApps. When building
 the contract use ``--schema-json-out DIR`` to output the schema for each
 contract in the module to a JSON file inside the directory ``DIR``. The
@@ -202,7 +197,7 @@ names that exist in the module or a counter in case of special characters in the
 
    $cargo concordium build --schema-json-out "/some/path/"
 
-If using ``cargo concordium`` version 2.7.0 or newer then the schema can be
+The schema can be
 output in base64 format that is currently supported in the |bw|. When building
 the contract use ``--schema-base64-out FILE``, where ``FILE`` is a path and filename. The path
 must exist and the file will be created in following command
@@ -237,8 +232,6 @@ schemas in all the formats will be output
 Converting a binary schema to JSON
 ----------------------------------
 
-These commands are available in ``cargo concordium`` version 2.6.0 or newer.
-
 To convert an existing binary schema (obtained via ``--schema-out``) use the
 ``cargo concordium schema-json`` subcommand, e.g.,
 
@@ -255,8 +248,6 @@ module (obtained via ``cargo concordium build``) by using
 
 Converting a binary schema to base64
 ------------------------------------
-
-These commands are available in ``cargo concordium`` version 2.7.0 or newer.
 
 To convert an existing binary schema (obtained via ``--schema-out``) use the
 ``cargo concordium schema-base64`` subcommand, e.g.,

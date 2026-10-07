@@ -54,8 +54,8 @@ Typescript smart contract client generator
 
 The `Typescript smart contract client generator <https://www.npmjs.com/package/@concordium/ccd-js-gen>`_ helps you generate JavaScript/TypeScript clients for smart contracts on the Concordium blockchain, providing a lower development time and better type-safety.
 
-Concordium software
-===================
+Concordium client
+=================
 
 The tool to deploy and interact with smart contracts is
 :ref:`concordium-client<concordium-client>`. It is distributed as part of the
