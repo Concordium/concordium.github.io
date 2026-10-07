@@ -4,6 +4,15 @@
 Advanced node configuration on Docker
 =====================================
 
+.. warning::
+
+   This guide is deprecated with the network-specific images
+   ``concordium/mainnet-node`` and ``concordium/testnet-node``. It remains
+   available for existing installations. For new installations, use
+   :ref:`run-node-docker-image`. To migrate an existing Docker node, follow
+   :ref:`migrate-network-specific-images`. Keep the existing node data during
+   migration.
+
 .. admonition:: At a glance
 
    This page covers advanced configuration options for a Concordium node running in Docker, including enabling inbound connections, TLS setup, and node collector configuration. You will need a running Docker node. Use this page when you need to go beyond the default setup.

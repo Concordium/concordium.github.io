@@ -4,6 +4,15 @@
 Troubleshoot a node in Docker
 =============================
 
+.. warning::
+
+   This guide is deprecated with the network-specific images
+   ``concordium/mainnet-node`` and ``concordium/testnet-node``. It remains
+   available for existing installations. For new installations, use
+   :ref:`run-node-docker-image`. To migrate an existing Docker node, follow
+   :ref:`migrate-network-specific-images`. Keep the existing node data during
+   migration.
+
 .. admonition:: At a glance
 
    This guide helps you diagnose and fix problems with a Concordium node running in Docker. You will need a node already installed. Use this page when your node is not starting, not syncing, or behaving unexpectedly.

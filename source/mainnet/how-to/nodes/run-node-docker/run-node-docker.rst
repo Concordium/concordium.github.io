@@ -6,6 +6,15 @@
 Install and manage a node on Docker
 ===================================
 
+.. warning::
+
+   This guide covers the deprecated network-specific images
+   ``concordium/mainnet-node`` and ``concordium/testnet-node``. It remains
+   available for existing installations. For new installations, follow
+   :ref:`run-node-docker-image`; to migrate an existing Docker node, follow
+   :ref:`migrate-network-specific-images`. Do not delete node state during
+   migration.
+
 .. admonition:: At a glance
 
    This guide explains how to install and run a Concordium node in Docker on Linux for mainnet or testnet. You will need Docker installed. No account is required unless you want to become a validator. After following this guide, your node will be running in a Docker container and synchronizing with the Concordium network.

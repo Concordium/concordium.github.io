@@ -86,7 +86,14 @@ Select your platform below to configure your node with validator keys.
 
    For more information on the logs, see :ref:`Run a node on Windows<view-windows-node-log>`.
 
-.. dropdown:: Ubuntu
+.. dropdown:: Ubuntu (deprecated)
+
+   .. warning::
+
+      The Ubuntu package distribution is deprecated.
+      For an existing validator, follow :ref:`migrate-debian-to-docker`.
+      Do not generate new keys or register the validator again during migration.
+      The instructions below apply only to existing Ubuntu package installations.
 
    **Prerequisites**
 
@@ -240,7 +247,125 @@ Select your platform below to configure your node with validator keys.
 
       For **Testnet**: Run **Concordium Node Stop Testnet** (if running) and then **Concordium Node Start Testnet**.
 
-.. dropdown:: Docker
+.. dropdown:: Docker image
+
+   These instructions apply to ``concordium/node``.
+   Use the setup in :ref:`install-node-docker-image`.
+   If your paths or service names differ, change the examples to match.
+
+   **Prerequisites**
+
+   - Run a node with :ref:`the Docker image <install-node-docker-image>`.
+   - Have generated validator keys. See :ref:`add-baker-mw` and :ref:`baker-concept`.
+
+   .. warning::
+
+      Do not run two nodes with the same validator credentials at the same time.
+      For an existing Debian validator, follow :ref:`migrate-debian-to-docker`.
+      For an existing network-specific image, follow
+      :ref:`migrate-network-specific-images`.
+      Do not register an existing validator again during migration.
+
+   **Register a new validator**
+
+   If you already registered the keys with a wallet or Concordium Client,
+   skip this step. Use the exported ``validator-credentials.json`` file.
+
+   To register new keys with Concordium Client, send a ``validator add``
+   transaction from a running node:
+
+   .. code-block:: console
+
+      $concordium-client validator add <keys-file>.json --sender validatorAccount --stake <amount-to-stake> --validator-credentials-out ./validator-credentials.json
+
+   Replace ``<keys-file>.json`` with your generated keys file.
+   Replace ``validatorAccount`` with your validator account.
+   Replace ``<amount-to-stake>`` with the initial stake in CCD.
+   The command writes credentials to ``./validator-credentials.json``.
+
+   .. warning::
+
+      Keep enough CCD to pay transaction fees. Do not stake all your funds.
+      Do not give all users read access to credentials.
+      Do not put credentials in a repository.
+
+   To disable automatic restaking, add ``--no-restake`` to the command.
+   See :ref:`restake-earnings`.
+
+   **Configure the node**
+
+   Run these commands in the network directory that contains ``compose.yaml``.
+   Use ``mainnet-node/`` or ``testnet-node/`` from the installation guide.
+   Put the exported credentials file in this directory.
+   The steps below copy it into the existing ``data/`` mount.
+
+   #. Stop the node:
+
+      .. code-block:: console
+
+         $docker compose stop
+
+      Read the last 100 log lines to check for a clean shutdown:
+
+      .. code-block:: console
+
+         $docker compose logs --tail 100 node
+
+      Confirm a clean shutdown before you continue.
+
+   #. Copy the credentials into the existing ``data/`` directory.
+      Give the container's UID ``10001`` read access:
+
+      .. code-block:: console
+
+         $sudo install -o 10001 -g 10001 -m 0400 ./validator-credentials.json ./data/validator-credentials.json
+
+      Protect the original credentials file separately.
+      Include the credentials when you back up ``data/``.
+      Limit access to these backups.
+
+   #. Add this entry to the ``node`` service's existing ``environment`` mapping
+      in ``compose.yaml``:
+
+      .. code-block:: yaml
+
+         CONCORDIUM_NODE_VALIDATOR_CREDENTIALS_FILE: /mnt/data/validator-credentials.json
+
+      The existing ``./data:/mnt/data`` mount gives the node access to the file.
+      No separate credential mount is necessary.
+
+   #. Check the Compose file for configuration errors:
+
+      .. code-block:: console
+
+         $docker compose config --quiet
+
+      Start the node in the background:
+
+      .. code-block:: console
+
+         $docker compose up --detach
+
+      Follow the node logs to check that it loads the credentials without errors:
+
+      .. code-block:: console
+
+         $docker compose logs --follow node
+
+      The node produces blocks when the network includes it in the validators
+      for the current epoch.
+
+   Use the verification instructions below to check the validator status.
+
+.. dropdown:: Network-specific Docker image (deprecated)
+
+   .. warning::
+
+      The network-specific images are deprecated.
+      For an existing validator, follow :ref:`migrate-network-specific-images`.
+      Do not generate new keys or register the validator again during migration.
+      The instructions below apply only to ``concordium/mainnet-node`` and
+      ``concordium/testnet-node``.
 
    **Prerequisites**
 
