@@ -115,7 +115,7 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
 
     .. code-block:: console
 
-       $concordium-client module deploy my_module.wasm.v1 --sender account_name
+       $ concordium-client module deploy my_module.wasm.v1 --sender account_name
 
    The ``--sender`` option can be omitted if the account "default" is to be used.
 
@@ -140,7 +140,7 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
 
     .. code-block:: console
 
-       $concordium-client module deploy my_module.wasm.v1 --name my_deployed_module
+       $ concordium-client module deploy my_module.wasm.v1 --name my_deployed_module
 
     If successful, the output will be similar to the following:
 
@@ -158,7 +158,7 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
 
     .. code-block:: console
 
-       $concordium-client contract update 0 --entrypoint my_receive --energy 10000 --sender MyAccount
+       $ concordium-client contract update 0 --entrypoint my_receive --energy 10000 --sender MyAccount
 
     If successful, the output will be similar to the following:
 

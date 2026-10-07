@@ -91,7 +91,7 @@ To add additional keys to an existing account on Concordium using the ``concordi
 
    .. code-block:: console
 
-      $concordium-client account show <account-name-or-account-address> \
+      $ concordium-client account show <account-name-or-account-address> \
          --grpc-port <grpc-port-of-server> \
          --grpc-ip <grpc-ip-url-to-node>
 
@@ -99,7 +99,7 @@ To add additional keys to an existing account on Concordium using the ``concordi
 
    .. code-block:: console
 
-      $concordium-client account show <account-name-or-account-address> \
+      $ concordium-client account show <account-name-or-account-address> \
          --grpc-port 20000 \
          --grpc-ip grpc.testnet.concordium.com \
          --secure
@@ -128,7 +128,7 @@ To add additional keys to an existing account on Concordium using the ``concordi
 
    .. code-block:: console
 
-      $concordium-client account update-keys ./update-keys.json \
+      $ concordium-client account update-keys ./update-keys.json \
          --credId <credential-registration-id> \
          --sender <account-name-or-address> \
          --grpc-port <grpc-port-of-server> \
@@ -138,7 +138,7 @@ To add additional keys to an existing account on Concordium using the ``concordi
 
    .. code-block:: console
 
-      $concordium-client account update-keys ./update-keys.json \
+      $ concordium-client account update-keys ./update-keys.json \
          --credId <credential-registration-id> \
          --sender <account-name-or-address> \
          --grpc-port 20000 \
@@ -183,7 +183,7 @@ To add additional keys to an existing account on Concordium using the ``concordi
 
    .. code-block:: console
 
-      $concordium-client account update-credentials \
+      $ concordium-client account update-credentials \
          --new-credentials new-credential.json \
          --new-threshold <number-of-credential-to-sign> \
          --sender <account-name-or-address> \
@@ -194,7 +194,7 @@ To add additional keys to an existing account on Concordium using the ``concordi
 
    .. code-block:: console
 
-      $concordium-client account update-credentials \
+      $ concordium-client account update-credentials \
          --new-credentials new-credential.json \
          --new-threshold <number-of-credential-to-sign> \
          --sender <account-name-or-address> \
@@ -222,7 +222,7 @@ To view the key directory path that the ``concordium-client`` tool is using, run
 
    .. code-block:: console
 
-      $concordium-client config show
+      $ concordium-client config show
 
 The goal is to add additional keys for your account to the local key directory of the ``concordium-client``
 tool in this section (Option 2). The guide for the first option is in the
@@ -286,7 +286,7 @@ tool in this section (Option 2). The guide for the first option is in the
 
    .. code-block:: console
 
-      $concordium-client config account import browser_wallet.export \
+      $ concordium-client config account import browser_wallet.export \
          --name <choose-a-name-for-your-account>
 
    A summary of the achievements from this section:
@@ -319,7 +319,7 @@ tool in this section (Option 2). The guide for the first option is in the
 
    .. code-block:: console
 
-      $concordium-client config account update-keys \
+      $ concordium-client config account update-keys \
          --keys new-keys.json \
          --account <account-name-or-address>
 
@@ -411,7 +411,7 @@ run the following command:
 
 .. code-block:: console
 
-   $concordium-client transaction send \
+   $ concordium-client transaction send \
       --receiver 4bbdAUCDK2D6cUvUeprGr4FaSaHXKuYmYVjyCa4bXSCu3NUXzA \
       --amount 1 \
       --out ./transaction.json \
@@ -463,7 +463,7 @@ from a file, run the following command:
 
 .. code-block:: console
 
-   $concordium-client transaction send \
+   $ concordium-client transaction send \
       --keys ./keypair.json \
       --receiver 4bbdAUCDK2D6cUvUeprGr4FaSaHXKuYmYVjyCa4bXSCu3NUXzA \
       --amount 1 \
@@ -523,7 +523,7 @@ previous section) on a potentially different device by a different entity, run t
 
 .. code-block:: console
 
-   $concordium-client transaction add-signature ./transaction.json \
+   $ concordium-client transaction add-signature ./transaction.json \
       --grpc-port 20000 \
       --grpc-ip grpc.testnet.concordium.com \
       --secure
@@ -578,7 +578,7 @@ previous section) on-chain, run the following command:
 
 .. code-block:: console
 
-   $concordium-client transaction submit ./transaction.json \
+   $ concordium-client transaction submit ./transaction.json \
       --grpc-port 20000 \
       --grpc-ip grpc.testnet.concordium.com \
       --secure

@@ -14,7 +14,7 @@ You can perform all types of transactions with the :ref:`concordium-client<conco
 
   .. code-block:: text
 
-      $concordium-client consensus status --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
+      $ concordium-client consensus status --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
 
 .. Note::
 
@@ -22,7 +22,7 @@ You can perform all types of transactions with the :ref:`concordium-client<conco
 
   .. code-block:: text
 
-      $concordium-client account show 48XGRnvQoG92T1AwETvW5pnJ1aRSPMKsWtGdKhTqyiNZzMk3Qn --grpc-ip 192.168.0.10 --grpc-port 20001
+      $ concordium-client account show 48XGRnvQoG92T1AwETvW5pnJ1aRSPMKsWtGdKhTqyiNZzMk3Qn --grpc-ip 192.168.0.10 --grpc-port 20001
 
 .. Note::
 
@@ -136,7 +136,7 @@ The sequence number can be looked up from an up to date node by running
 
 .. code-block:: console
 
-   $concordium-client account show [ACCOUNT]
+   $ concordium-client account show [ACCOUNT]
 
 where ``[ACCOUNT]`` is an optional argument that is either an address of an
 account or the name of an account chosen when importing the account. If no
@@ -164,7 +164,7 @@ To show aliases, enter:
 
 .. code-block:: console
 
-   $concordium-client account show-alias 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 --alias 17
+   $ concordium-client account show-alias 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 --alias 17
 
 This generates the output:
 
@@ -183,13 +183,13 @@ To show the identity providers authorized by Concordium and a URL, enter:
 
 .. code-block:: console
 
-   $concordium-client identity show identity-providers
+   $ concordium-client identity show identity-providers
 
 To show the Privacy Guardians, enter:
 
 .. code-block:: console
 
-   $concordium-client identity show anonymity-revokers
+   $ concordium-client identity show anonymity-revokers
 
 Commands for transferring CCD
 =============================
@@ -210,7 +210,7 @@ Use the following command for transfers:
 
 .. code-block:: console
 
-   $concordium-client transaction send
+   $ concordium-client transaction send
 
 Apart from the generic transaction flags above, the parameters are:
 
@@ -237,7 +237,7 @@ to transfer 25 CCD is:
 
 .. code-block:: console
 
-   $concordium-client transaction send --amount 25 --sender A --receiver B
+   $ concordium-client transaction send --amount 25 --sender A --receiver B
 
 The output will look similar to the following. Note that this example assumes that the
 sender account A has three transaction signing keys 0, 1, and 3.
@@ -280,7 +280,7 @@ The command is:
 
 .. code-block:: console
 
-   $concordium-client account unshield --sender B --amount 7
+   $ concordium-client account unshield --sender B --amount 7
 
 This
 
@@ -337,7 +337,7 @@ use the following command:
 
 .. code-block:: console
 
-   $concordium-client transaction send-scheduled --amount 100 --every Day --for 10 --starting 2021-02-10T12:00:00Z --receiver B --sender A
+   $ concordium-client transaction send-scheduled --amount 100 --every Day --for 10 --starting 2021-02-10T12:00:00Z --receiver B --sender A
 
 When you specify an explicit release schedule, you must use the option ``--schedule``, which takes a comma-separated list of releases in the form of ``<amount> at <date>``. For example, to send a transaction from A to B that:
 
@@ -349,13 +349,13 @@ Use the following command:
 
 .. code-block:: console
 
-   $concordium-client transaction send-scheduled --schedule "100 at 2021-01-01T12:00:00Z, 150 at 2021-02-15T12:00:00Z, 200 at 2021-12-31T12:00:00Z" --receiver B --sender A
+   $ concordium-client transaction send-scheduled --schedule "100 at 2021-01-01T12:00:00Z, 150 at 2021-02-15T12:00:00Z, 200 at 2021-12-31T12:00:00Z" --receiver B --sender A
 
 If you query the account information of the recipient account afterwards, it will show the list of releases that are still pending to be released:
 
 .. code-block:: console
 
-   $concordium-client account show B
+   $ concordium-client account show B
    Local name:            B
    Address:               3WbgGP2iE21HyrBg5kL429ZXWu2dNDXzzjZ7qwu9neop2bSCRJ
    Balance:               550.000000 CCD
@@ -385,7 +385,7 @@ The command is:
 
 .. code-block:: console
 
-   $concordium-client delegator add --sender EXAMPLEACCT --stake 5000 --target 12345
+   $ concordium-client delegator add --sender EXAMPLEACCT --stake 5000 --target 12345
 
 The command has the following required arguments:
 
@@ -421,7 +421,7 @@ Use the consensus command ``show-chain-parameters`` to show a number of paramete
 
 .. code-block:: console
 
-   $concordium-client consensus show-chain-parameters
+   $ concordium-client consensus show-chain-parameters
 
 To see the chain parameters for a specific block use the ``--block`` flag to specify the block hash.
 

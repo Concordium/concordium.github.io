@@ -127,7 +127,7 @@ Now we can deploy the smart contract using the Concordium client CLI. If you are
 
 .. code-block:: console
 
-    $concordium-client module deploy dist/module.wasm.v1 \
+    $ concordium-client module deploy dist/module.wasm.v1 \
         --sender <YOUR-ADDRESS> \
         --grpc-port 20001
 
@@ -135,7 +135,7 @@ Or, if you just want to try things out on testnet, you can use the testing nodes
 
 .. code-block:: console
 
-    $concordium-client module deploy dist/module.wasm.v1 \
+    $ concordium-client module deploy dist/module.wasm.v1 \
         --sender <YOUR-TESTNET-ADDRESS> \
         --grpc-ip grpc.testnet.concordium.com \
         --grpc-port 20000 \
@@ -149,7 +149,7 @@ Finally, let's initialize a contract instance, so you are ready to invoke the co
 
 .. code-block:: console
 
-    $concordium-client contract init <MODULE-HASH> \
+    $ concordium-client contract init <MODULE-HASH> \
         --sender <YOUR-ADDRESS> \
         --energy 30000 \
         --contract counter \
@@ -158,8 +158,8 @@ Finally, let's initialize a contract instance, so you are ready to invoke the co
 Or, use this command to use the Concordium testnet node:
 
 .. code-block:: console
-
-    $concordium-client contract init <MODULE-HASH> \
+ 
+    $ concordium-client contract init <MODULE-HASH> \
         --sender <YOUR-TESTNET-ADDRESS> \
         --energy 30000 \
         --contract counter \
@@ -181,7 +181,7 @@ First, check the initial state of the contract. Use this command if you're hosti
 
 .. code-block:: console
 
-    $concordium-client contract invoke <CONTRACT-INSTANCE-INDEX> \
+    $ concordium-client contract invoke <CONTRACT-INSTANCE-INDEX> \
         --entrypoint view \
         --grpc-port 20001
 
@@ -189,7 +189,7 @@ Or, use this command to use the Concordium testnet node:
 
 .. code-block:: console
 
-    $concordium-client contract invoke <CONTRACT-INSTANCE-INDEX> \
+    $ concordium-client contract invoke <CONTRACT-INSTANCE-INDEX> \
         --entrypoint view \
         --grpc-ip grpc.testnet.concordium.com \
         --grpc-port 20000 \
@@ -210,7 +210,7 @@ Now we can invoke the update function with that input by using a contract update
 
 .. code-block:: console
 
-    $concordium-client contract update <CONTRACT-INSTANCE-INDEX> \
+    $ concordium-client contract update <CONTRACT-INSTANCE-INDEX> \
         --entrypoint update \
         --parameter-json input.json \
         --sender <YOUR-ADDRESS> \
@@ -221,7 +221,7 @@ Or, to use Concordium's testnet node, use this command:
 
 .. code-block:: console
 
-    $concordium-client contract update <CONTRACT-INSTANCE-INDEX> \
+    $ concordium-client contract update <CONTRACT-INSTANCE-INDEX> \
         --entrypoint update \
         --parameter-json input.json \
         --sender <YOUR-ADDRESS> \

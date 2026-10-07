@@ -178,7 +178,7 @@ This command will create the ``smart_contract_upgrade.wasm.v1`` file in your cur
 
 .. code-block:: console
 
-    $concordium-client module deploy ./smart_contract_upgrade.wasm.v1 --sender <YourAccountAddress> --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
+    $ concordium-client module deploy ./smart_contract_upgrade.wasm.v1 --sender <YourAccountAddress> --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
 
 .. image:: ./images/deploy_contract_version1.png
    :alt: Deploy contract version 1
@@ -197,13 +197,13 @@ Initialize a ``contract-version1`` smart contract instance with the command:
 
 .. code-block:: console
 
-   $concordium-client contract init <ModuleReference> --contract smart_contract_upgrade --energy 30000 --sender <YourAccountAddress> --grpc-port 20000  --grpc-ip grpc.testnet.concordium.com --secure
+   $ concordium-client contract init <ModuleReference> --contract smart_contract_upgrade --energy 30000 --sender <YourAccountAddress> --grpc-port 20000  --grpc-ip grpc.testnet.concordium.com --secure
 
 For example, when using the module reference from the image above, the command will look as follows:
 
 .. code-block:: console
 
-   $concordium-client contract init 8fc09d2519f516cfbb3d139b1e567753780fbb52854ecbf9a12c447756d18eb0 --contract smart_contract_upgrade --energy 30000 --sender <YourAccountAddress> --grpc-port 20000  --grpc-ip grpc.testnet.concordium.com --secure
+   $ concordium-client contract init 8fc09d2519f516cfbb3d139b1e567753780fbb52854ecbf9a12c447756d18eb0 --contract smart_contract_upgrade --energy 30000 --sender <YourAccountAddress> --grpc-port 20000  --grpc-ip grpc.testnet.concordium.com --secure
 
 .. image:: ./images/initialize_contract.png
    :alt: Initialize contract version 1
@@ -215,13 +215,13 @@ Before upgrading the ``contract-version1``, you can check its state with the vie
 
 .. code-block:: console
 
-   $concordium-client contract invoke <YourContractVersion1Index> --entrypoint view --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
+   $ concordium-client contract invoke <YourContractVersion1Index> --entrypoint view --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
 
 For example, when using the smart contract index from the image above, the command will look as follows:
 
 .. code-block:: console
 
-   $concordium-client contract invoke 4462 --entrypoint view --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
+   $ concordium-client contract invoke 4462 --entrypoint view --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
 
 You should see the following output.
 
@@ -251,7 +251,7 @@ This command will create the ``smart_contract_upgrade.wasm.v1`` file in your cur
 
 .. code-block:: console
 
-    $concordium-client module deploy ./smart_contract_upgrade.wasm.v1 --sender <YourAccountAddress> --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
+    $ concordium-client module deploy ./smart_contract_upgrade.wasm.v1 --sender <YourAccountAddress> --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
 
 .. image:: ./images/deploy_contract_version2.png
    :alt: Deploy contract version 2
@@ -303,13 +303,13 @@ Upgrade the smart contract as follows:
 
 .. code-block:: console
 
-   $concordium-client contract update <YourContractVersion1Index> --entrypoint upgrade --parameter-json upgrade.json --energy 5000 --sender <YourAccountAddress> --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
+   $ concordium-client contract update <YourContractVersion1Index> --entrypoint upgrade --parameter-json upgrade.json --energy 5000 --sender <YourAccountAddress> --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
 
 For example, when using the smart contract index from the image above, the command will look as follows:
 
 .. code-block:: console
 
-   $concordium-client contract update 4462 --entrypoint upgrade --parameter-json upgrade.json --energy 5000 --sender <YourAccountAddress> --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
+   $ concordium-client contract update 4462 --entrypoint upgrade --parameter-json upgrade.json --energy 5000 --sender <YourAccountAddress> --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
 
 You should see the following output.
 
@@ -321,7 +321,7 @@ You can check that the state migration was successful by inspecting the state wi
 
 .. code-block:: console
 
-   $concordium-client contract invoke <YourContractVersion1Index> --entrypoint view --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
+   $ concordium-client contract invoke <YourContractVersion1Index> --entrypoint view --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
 
 .. image:: ./images/view_contract_version2.png
    :alt: View contract version 2

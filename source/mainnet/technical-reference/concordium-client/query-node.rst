@@ -30,7 +30,7 @@ List accounts
 
 .. code-block:: console
 
-   $concordium-client account list [--block BLOCK-HASH]
+   $ concordium-client account list [--block BLOCK-HASH]
 
 List the addresses of all accounts on the chain as of a specific block:
 
@@ -41,7 +41,7 @@ Example
 
 .. code-block:: console
 
-   $concordium-client account list
+   $ concordium-client account list
    2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG
    33MT5V7LAzbjfRS537nqq9AqHb4ALymQWwYhriE3kcYr8qsDoS
    3GqF3FQPxyxUChnBcwsC5jmY4kqWyi6R8dNXHk88GYqCPKaLGP
@@ -52,7 +52,7 @@ Inspect specific account
 
 .. code-block:: console
 
-   $concordium-client account show [ACCOUNT] [--block BLOCK] [--encrypted] [--decrypt-encrypted]
+   $ concordium-client account show [ACCOUNT] [--block BLOCK] [--encrypted] [--decrypt-encrypted]
 
 Display all publicly available information of a specific account as of a
 specific block. For accounts for which secret keys are available this command
@@ -70,7 +70,7 @@ Example
 
 .. code-block:: console
 
-   $concordium-client account show my-account --shielded
+   $ concordium-client account show my-account --shielded
    Local name:            my-account
    Address:               2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG
    Amount:                1026.000000 CCD
@@ -119,7 +119,7 @@ Transaction status
 
 .. code-block:: console
 
-   $concordium-client transaction status TX-HASH
+   $ concordium-client transaction status TX-HASH
 
 Display the lifecycle state of a :term:`transaction` (pending, committed, finalized,
 or absent).
@@ -132,7 +132,7 @@ Example
 
 .. code-block:: console
 
-   $concordium-client transaction status 0fda6e284f9cd4429c6f76fd1bf6179aad4fa1bb218fe5ec8ad33916bf84a833
+   $ concordium-client transaction status 0fda6e284f9cd4429c6f76fd1bf6179aad4fa1bb218fe5ec8ad33916bf84a833
    Transaction is finalized into block e2a12d06273f5641ea8157e04367eae49a72706aa831aa58b60ee5c062cdd6e2 with status "success" and cost 0.011200 CCD (112 NRG).
 
 Block state
@@ -143,7 +143,7 @@ Inspect specific block
 
 .. code-block:: console
 
-   $concordium-client block show [BLOCK-HASH]
+   $ concordium-client block show [BLOCK-HASH]
 
 Display information about a specific block. Note that some fields (e.g. slot
 time) are objective (i.e. all nodes participating in the Concordium network will
@@ -156,7 +156,7 @@ Example
 
 .. code-block:: console
 
-   $concordium-client block show e2a12d06273f5641ea8157e04367eae49a72706aa831aa58b60ee5c062cdd6e2
+   $ concordium-client block show e2a12d06273f5641ea8157e04367eae49a72706aa831aa58b60ee5c062cdd6e2
    Hash:                       e2a12d06273f5641ea8157e04367eae49a72706aa831aa58b60ee5c062cdd6e2
    Parent block:               01aea0ec91fe37cb956aafcd6d0ab7f86cfd0207e5fffc2a87d40657e2c4fa40
    Last finalized block:       dbf61032a23e020dc6793cbf242c8eadcd91586d84873dee4ae92856b29e2b3f
@@ -185,7 +185,7 @@ Inspect consensus parameters
 
 .. code-block:: console
 
-   $concordium-client consensus show-parameters [--include-bakers] [--block BLOCK-HASH]
+   $ concordium-client consensus show-parameters [--include-bakers] [--block BLOCK-HASH]
 
 Show :term:`election parameters<leader election>` for a specific block, optionally including
 bakers and their :term:`lottery power`:
@@ -200,7 +200,7 @@ Example
 
 .. code-block:: console
 
-   $concordium-client consensus show-parameters --include-bakers
+   $ concordium-client consensus show-parameters --include-bakers
    Election nonce:      17afce44c8eb1a7e0c48ec28bff50df3f43b36e68155f311f5574108564a2b66
    Bakers:
                               Account                       Lottery power  Account Name
@@ -220,7 +220,7 @@ Inspect consensus status
 
 .. code-block:: console
 
-   $concordium-client consensus status
+   $ concordium-client consensus status
 
 Display key blocks along with various statistics related to block production.
 
@@ -234,7 +234,7 @@ Example
 
 .. code-block:: console
 
-   $concordium-client consensus status
+   $ concordium-client consensus status
    Best block:                  9cd0a5f1dc488b919847e4b3e98aeea567fe80fafd077bacc2901f145f973c6d
    Genesis block:               f97d975f0e92297c51e24c3b0d8fd39dfe8e1b148d993eba6e9389d4083f7a64
    Genesis time:                2022-11-11 12:00:00 UTC
@@ -271,7 +271,7 @@ ID layer
 
 .. code-block:: console
 
-   $concordium-client identity show (identity-providers|anonymity-revokers) [--block BLOCK]
+   $ concordium-client identity show (identity-providers|anonymity-revokers) [--block BLOCK]
 
 Display the list of identity providers or :term:`Privacy Guardians<Privacy Guardian (PG)>` at a given block,
 defaulting to the best block.
@@ -286,7 +286,7 @@ exchange rates, query the chain parameters of the best block:
 
 .. code-block:: console
 
-   $concordium-client raw GetBlockChainParameters
+   $ concordium-client raw GetBlockChainParameters
 
 You can also add a block hash at the end of the command to query a specific block.
 
@@ -321,7 +321,7 @@ following command:
 
 .. code-block:: console
 
-   $concordium-client raw GetBlockPendingUpdates
+   $ concordium-client raw GetBlockPendingUpdates
 
 This prints a JSON list containing any such pending updates. As before you can
 also pass a block hash to the command to query a specific block.
@@ -334,7 +334,7 @@ Earliest time a validator may be expected to produce a block
 
 .. code-block:: console
 
-    $concordium-client validator win-time 1
+    $ concordium-client validator win-time 1
     Validator 1 is expected to produce a block no sooner than:
     Thu, 26 Oct 2023 07:01:26 UTC  (in 34s 699ms)
 

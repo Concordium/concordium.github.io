@@ -194,8 +194,8 @@ Consider the following map for storing all user bids in an auction contract:
 
 .. code-block:: rust
 
-  pub struct State<S = StateApi> {
-    bids: StateMap<Address, Amount, S>
+  pub struct State {
+    bids: StateMap<Address, Amount>
   }
 
 Computing the maximum for each new bid requires iterating over the map.
