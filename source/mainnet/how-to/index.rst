@@ -101,7 +101,6 @@ Step-by-step guides for completing specific tasks on Concordium. Browse all guid
         - :doc:`Inspect <smart-contracts/inspect-instance>`
         - :doc:`Invoke <smart-contracts/invoke-instance>`
 
-      - :doc:`Migrate contracts <smart-contracts/migrate-contracts>`
       - :doc:`Best practices <smart-contracts/best-practices/index>`
 
         - :doc:`Development <smart-contracts/best-practices/development>`
@@ -172,7 +171,6 @@ Step-by-step guides for completing specific tasks on Concordium. Browse all guid
    Implement the factory pattern <smart-contracts/factory-pattern>
    Integration test a contract <smart-contracts/integration-test-contract>
    Deploy a smart contract module <smart-contracts/deploy-module>
-   Migrate contracts <smart-contracts/migrate-contracts>
    Best practices <smart-contracts/best-practices/index>
 
 .. toctree::

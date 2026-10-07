@@ -10,13 +10,8 @@ Integration tests
 
 This guide describes how to write *integration tests* in Rust for your smart contracts using the `Concordium smart contract testing library <https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/>`_.
 
-.. note::
-
-   Unit testing your contracts with the ``test_infrastructure`` has been deprecated in favor of what is described on the present page.
-   To migrate your contracts and tests see :ref:`migrate-contracts-for-std-8.1`.
-
 The library allows you to test individual contracts in isolation, but, notably, also interactions between multiple contracts.
-When running the tests, they are executed locally on the exact contract code that is deployed on the chain, and using the same execution engine that the nodes use.
+When running the tests, they are executed locally on the exact contract code that is deployed on the chain, and using the same execution engine that the nodes use. Only the chain itself is stubbed.
 V0 smart contracts are not supported, but all V1 smart contract features are, including upgrades, and it is also possible to see the energy usage of your contracts.
 This allows you to refactor and optimize your contracts for speed and efficiency with greater ease and confidence.
 
