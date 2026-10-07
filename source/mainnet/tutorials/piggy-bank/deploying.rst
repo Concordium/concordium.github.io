@@ -38,7 +38,7 @@ Repeat this step since you might have done some changes to the smart contract co
 
 .. note::
 
-   When you use the above command *without* the ``--out`` flag, you can find the module in the folder ``./target/concordium/wasm32-unknown-unknown/release/``.
+   When you use the above command *without* the ``--out`` flag, you can find the module in the folder ``./concordium_out/``.
    Use the Wasm module file suffixed with ``v1`` when deploying to the chain. The ``piggy_bank_part2.wasm`` file (without the ``v1`` suffix) is not the ``v0`` module, but rather the raw Wasm module produced by cargo.
    The ``v1`` suffixed module has been stripped for debugging information, which makes it significantly smaller.
 

@@ -119,14 +119,12 @@ Adding the testing library
 
 Start by adding the |concordium-smart-contract-testing|_ library to the ``Cargo.toml`` located in the project root.
 Then, add the |concordium-std-derive|_ library as well, which contains useful macros for testing.
-You should add them under the section ``[dev-dependencies]``, which are dependencies only needed during development, as it is only needed during testing.
-The libraries require the Rust edition ``2021`` or greater, which you must also set:
+You should add them under the section ``[dev-dependencies]``, which are dependencies only needed during development, as it is only needed during testing:
 
 .. code-block:: toml
 
    [package]
    # ...
-   edition = "2021"
 
    [dev-dependencies]
    concordium-smart-contract-testing = "3.0"
@@ -247,8 +245,7 @@ If that is the case, try to fix them using the helpful error messages from the c
 
       $ cargo concordium test --out piggy_bank_part2.wasm.v1
 
-   Please note that the test command only builds your module in cargo concordium version 2.9.0+.
-   Also note that for the highest assurance of correctness, you should *deploy the exact module* that you also tested.
+   Note that for the highest assurance of correctness, you should *deploy the exact module* that you also tested.
 
 Going back to your test case, use the function |module_load_v1|_ to load the module.
 

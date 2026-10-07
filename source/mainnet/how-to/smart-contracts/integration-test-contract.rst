@@ -30,7 +30,7 @@ The high-level process of adding integration tests to your existing smart contra
       # ...
 
       [dev-dependencies]
-      concordium-smart-contract-testing = "4.4.0"
+      concordium-smart-contract-testing = "5.0.0"
 
    By putting it under ``dev-dependencies``, it is only included for tests.
 

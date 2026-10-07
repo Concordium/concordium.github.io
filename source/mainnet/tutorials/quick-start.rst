@@ -48,11 +48,10 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
 
     The path where the project should be created can be provided with the ``--path`` option.
 
-    You can use the `concordium-std`_ library to help you build smart contracts or build without Rust's ``std``. To add the library, open ``Cargo.toml`` and add the line
-    ``concordium-std = "*"`` (preferably, replace the `*` with the latest version of `concordium-std`_) in the ``[dependencies]`` section:
+    You can use the `concordium-std`_ library to help you build smart contracts or build without Rust's ``std``. To add the library, open ``Cargo.toml`` and add the library in the ``[dependencies]`` section:
 
         [dependencies]
-        concordium-std = "5.1"
+        concordium-std = "11.0"
 
     The library documentation is on `docs.rs`_.
 
@@ -61,6 +60,8 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
     If you're using the ``concordium-std`` library bring everything from the `concordium-std`_ library into scope by adding the line:
 
     .. code-block:: rust
+
+        #![no_std]
 
         use concordium_std::*;
 
@@ -86,24 +87,12 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
 
         $ cargo concordium build
 
-    This uses Cargo_ for building, but runs further optimizations on the result. Running the ``cargo concordium build`` command will produce a smart contract module which can be found relative to your project root folder in ``./target/concordium/wasm32-unknown-unknown/release/my_module.wasm.v1``. Alternatively, you can supply the location where to store the smart contract module using the ``--out`` option. For example running the following command will output your smart contract module into the root folder of your project in a file name ``my_module.wasm.v1``.
+    This uses Cargo_ for building, but runs further optimizations on the result. Running the ``cargo concordium build`` command will produce a smart contract module which can be found relative to your project root folder in ``./concordium-out/my_module.wasm.v1``. Alternatively, you can supply the location where to store the smart contract module using the ``--out`` option. For example running the following command will output your smart contract module into the root folder of your project in a file name ``my_module.wasm.v1``.
 
     .. code-block:: console
 
         $ cargo concordium build --out ./my_module.wasm.v1
 
-    .. Note::
-
-        For building the schema for a smart contract module, some :ref:`further preparation is required <build-schema>`.
-
-   It is also possible to compile using Cargo_ directly by running:
-
-   .. code-block:: console
-
-      $ cargo build --target=wasm32-unknown-unknown [--release]
-
-   Note that even with ``--release`` set, the produced Wasm module includes
-   debug information.
 
 .. dropdown:: Step 5 - Deploy your smart contract
 
@@ -122,11 +111,6 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
    Modules built with ``cargo-concordium`` get a suffix corresponding to
    the smart contract version, i.e. ``my_module.wasm.v0`` for V0 contracts and
    ``my_module.wasm.v1`` for V1 contracts.
-
-   When deploying a smart contract module built directly with ``cargo``, it is necessary to
-   specify the smart contract version with the ``--contract-version [v0, v1]``
-   option. These module files will not have the version suffix, e.g.
-   ``.v0``, or ``.v1``, but just be called ``<module_name>.wasm``.
 
     If successful, the output should be similar to the following:
 

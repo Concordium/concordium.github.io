@@ -51,9 +51,10 @@ For example, running the following command will output your smart contract modul
 
    .. code-block:: console
 
-      $ cargo check --target=wasm32v1-none --release
+      $ cargo build --target=wasm32v1-none --release
 
-   produces a pure Wasm module as output. But Cargo concordium will embed schema and version information that is needed in addition.
+   produces a pure Wasm module as output. But Cargo concordium will embed schema and version information that is needed in addition, 
+   and also optimize the Wasm by stripping unused code.
 
 .. _cargo-concordium: https://crates.io/crates/cargo-concordium
 .. |cargo-concordium| replace:: ``cargo-concordium``

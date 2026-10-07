@@ -152,13 +152,13 @@ Clone the `smart contract upgrade example <https://github.com/Concordium/concord
 
 .. code-block:: console
 
-    $git clone --recurse-submodules git@github.com:Concordium/concordium-rust-smart-contracts.git
+    $ git clone --recurse-submodules git@github.com:Concordium/concordium-rust-smart-contracts.git
 
 Navigate to the ``contract-version1`` example folder:
 
 .. code-block:: console
 
-    $cd ./examples/smart-contract-upgrade/contract-version1
+    $ cd ./examples/smart-contract-upgrade/contract-version1
 
 Compile the smart contract to a Wasm module which you will deploy to testnet in the next step.
 
@@ -235,7 +235,7 @@ Navigate to the ``contract-version2`` example folder:
 
 .. code-block:: console
 
-    $cd ./examples/smart-contract-upgrade/contract-version2
+    $ cd ./examples/smart-contract-upgrade/contract-version2
 
 Compile the smart contract to a Wasm module which you will deploy to testnet in the next step.
 
