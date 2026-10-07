@@ -60,13 +60,13 @@ To install ``cargo-concordium`` run:
 
 .. code-block:: console
 
-   $cargo install --locked cargo-concordium
+   $ cargo install --locked cargo-concordium
 
 For a description of how to use the ``cargo-concordium`` run:
 
 .. code-block:: console
 
-   $cargo concordium --help
+   $ cargo concordium --help
 
 To use verifiable builds with cargo-concordium a container runtime such as `Docker <https://www.docker.com/>`_ is required.
 

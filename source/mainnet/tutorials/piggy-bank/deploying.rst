@@ -30,7 +30,7 @@ Repeat this step since you might have done some changes to the smart contract co
 
 .. code-block:: console
 
-   $cargo concordium build --out piggy_bank_part2.wasm.v1
+   $ cargo concordium build --out piggy_bank_part2.wasm.v1
 
 .. note::
 

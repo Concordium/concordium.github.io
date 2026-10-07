@@ -50,7 +50,7 @@ Use ``cargo`` to run the test:
 
 .. code-block:: console
 
-   $cargo test
+   $ cargo test
 
 By default, this command compiles the contract and tests to machine code for
 your local target (most likely ``x86_64``), and runs them.
@@ -111,7 +111,7 @@ Tests can now be built and run using:
 
 .. code-block:: console
 
-   $cargo concordium test
+   $ cargo concordium test
 
 This command compiles the tests for Wasm with the ``wasm-test`` feature enabled
 for ``concordium-std`` and uses the test runner from ``cargo-concordium``.
@@ -695,7 +695,7 @@ The same command is used for running Wasm QuickCheck tests as in :ref:`tests_in_
 
 .. code-block:: console
 
-    $cargo concordium test
+    $ cargo concordium test
 
 When a test fails, it reports the random seed used to produce the input values.
 The random numbers are generated using a deterministic pseudo-random number generator from this seed.
@@ -704,13 +704,13 @@ The seed is a ``u64`` number, which can be provided along with the test command:
 
 .. code-block:: console
 
-    $cargo concordium test --seed 1234567890
+    $ cargo concordium test --seed 1234567890
 
 Concordium QuickCheck tests can also be run with:
 
 .. code-block:: console
 
-    $cargo test
+    $ cargo test
 
 By default, this command compiles the contract, unit tests, and QuickCheck tests to machine code for your local target (most likely x86_64) and runs them.
 

@@ -38,13 +38,13 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
 
     .. code-block:: console
 
-        $cargo install --locked cargo-generate
+        $ cargo install --locked cargo-generate
 
     To start a new Concordium smart contract project from a template, run the command:
 
     .. code-block:: console
 
-        $cargo concordium init
+        $ cargo concordium init
 
     The path where the project should be created can be provided with the ``--path`` option.
 
@@ -84,13 +84,13 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
 
     .. code-block:: console
 
-        $cargo concordium build
+        $ cargo concordium build
 
     This uses Cargo_ for building, but runs further optimizations on the result. Running the ``cargo concordium build`` command will produce a smart contract module which can be found relative to your project root folder in ``./target/concordium/wasm32-unknown-unknown/release/my_module.wasm.v1``. Alternatively, you can supply the location where to store the smart contract module using the ``--out`` option. For example running the following command will output your smart contract module into the root folder of your project in a file name ``my_module.wasm.v1``.
 
     .. code-block:: console
 
-        $cargo concordium build --out ./my_module.wasm.v1
+        $ cargo concordium build --out ./my_module.wasm.v1
 
     .. Note::
 
@@ -100,7 +100,7 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
 
    .. code-block:: console
 
-      $cargo build --target=wasm32-unknown-unknown [--release]
+      $ cargo build --target=wasm32-unknown-unknown [--release]
 
    Note that even with ``--release`` set, the produced Wasm module includes
    debug information.

@@ -165,7 +165,7 @@ The schema is embedded by default when building the smart contract module:
 
 .. code-block:: console
 
-   $cargo concordium build
+   $ cargo concordium build
 
 If successful the output of the command will tell you the total sie of the schema in bytes.
 
@@ -173,7 +173,7 @@ You can disable the default behavior (not recommended) with:
 
 .. code-block:: console
 
-   $cargo concordium build --no-schema-embed
+   $ cargo concordium build --no-schema-embed
 
 Outputting a schema file
 ------------------------
@@ -184,7 +184,7 @@ must exist and the file will be created in following command
 
 .. code-block:: console
 
-   $cargo concordium build --schema-out "/some/path/schema.bin"
+   $ cargo concordium build --schema-out "/some/path/schema.bin"
 
 The schema can be
 output in JSON format that can be more suitable for use in dApps. When building
@@ -195,7 +195,7 @@ names that exist in the module or a counter in case of special characters in the
 
 .. code-block:: console
 
-   $cargo concordium build --schema-json-out "/some/path/"
+   $ cargo concordium build --schema-json-out "/some/path/"
 
 The schema can be
 output in base64 format that is currently supported in the |bw|. When building
@@ -204,20 +204,20 @@ must exist and the file will be created in following command
 
 .. code-block:: console
 
-   $cargo concordium build --schema-base64-out "/some/path/base64_schema.b64"
+   $ cargo concordium build --schema-base64-out "/some/path/base64_schema.b64"
 
 Instead of writing the base64 representation of the schema to the file provided with the ``--schema-base64-out`` flag, you can print it to the console by using a dash character (-) in following command
 
 .. code-block:: console
 
-   $cargo concordium build --schema-base64-out -
+   $ cargo concordium build --schema-base64-out -
 
 The ``--schema-out``, ``--schema-json-out`` and ``--schema-base64-out`` can be used at the same time and
 schemas in all the formats will be output
 
 .. code-block:: console
 
-   $cargo concordium build --schema-out "/some/path/schema.bin" --schema-json-out "/some/path/" --schema-base64-out "/some/path/base64_schema.b64"
+   $ cargo concordium build --schema-out "/some/path/schema.bin" --schema-json-out "/some/path/" --schema-base64-out "/some/path/base64_schema.b64"
 
 .. note ::
 
@@ -237,14 +237,14 @@ To convert an existing binary schema (obtained via ``--schema-out``) use the
 
 .. code-block:: console
 
-   $cargo concordium schema-json --schema "/some/path/schema.bin" --out "/some/path/"
+   $ cargo concordium schema-json --schema "/some/path/schema.bin" --out "/some/path/"
 
 Alternatively, a schema in JSON can be extracted from an embedded schema in a
 module (obtained via ``cargo concordium build``) by using
 
 .. code-block:: console
 
-   $cargo concordium schema-json --module "module.wasm.v1" --out "/some/path/"
+   $ cargo concordium schema-json --module "module.wasm.v1" --out "/some/path/"
 
 Converting a binary schema to base64
 ------------------------------------
@@ -254,14 +254,14 @@ To convert an existing binary schema (obtained via ``--schema-out``) use the
 
 .. code-block:: console
 
-   $cargo concordium schema-base64 --schema "/some/path/schema.bin" --out "/some/path/base64_schema.b64"
+   $ cargo concordium schema-base64 --schema "/some/path/schema.bin" --out "/some/path/base64_schema.b64"
 
 Alternatively, a schema in base64 format can be extracted from an embedded schema in a
 module (obtained via ``cargo concordium build``) by using
 
 .. code-block:: console
 
-   $cargo concordium schema-base64 --module "module.wasm.v1" --out "/some/path/base64_schema.b64"
+   $ cargo concordium schema-base64 --module "module.wasm.v1" --out "/some/path/base64_schema.b64"
 
 Instead of writing the base64 representation of the schema to the file provided with the ``--out`` flag,
 you can print it to the console by using a dash character (-) or by omitting the ``--out`` flag. The following four
@@ -269,13 +269,13 @@ commands print the base64 representation of the schema to the console:
 
 .. code-block:: console
 
-   $cargo concordium schema-base64 --schema "schema.bin"
+   $ cargo concordium schema-base64 --schema "schema.bin"
 
-   $cargo concordium schema-base64 --schema "schema.bin" --out -
+   $ cargo concordium schema-base64 --schema "schema.bin" --out -
 
-   $cargo concordium schema-base64 --module "/some/path/module.wasm.v1"
+   $ cargo concordium schema-base64 --module "/some/path/module.wasm.v1"
 
-   $cargo concordium schema-base64 --module "/some/path/module.wasm.v1" --out -
+   $ cargo concordium schema-base64 --module "/some/path/module.wasm.v1" --out -
 
 .. _cargo-concordium: https://crates.io/crates/cargo-concordium
 .. |cargo-concordium| replace:: ``cargo-concordium``

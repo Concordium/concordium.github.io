@@ -231,7 +231,7 @@ Then compile your contract with:
 
 .. code-block:: console
 
-   $cargo concordium build --out piggy_bank_part2.wasm.v1
+   $ cargo concordium build --out piggy_bank_part2.wasm.v1
 
 This produces the Wasm module ``piggy_bank_part2.wasm.v1`` in the root of your project, unless you have any typos or bugs in your code.
 If that is the case, try to fix them using the helpful error messages from the compiler or go back to the end of part 1 and copy the full contract code again.
@@ -245,7 +245,7 @@ If that is the case, try to fix them using the helpful error messages from the c
 
    .. code-block:: console
 
-      $cargo concordium test --out piggy_bank_part2.wasm.v1
+      $ cargo concordium test --out piggy_bank_part2.wasm.v1
 
    Please note that the test command only builds your module in cargo concordium version 2.9.0+.
    Also note that for the highest assurance of correctness, you should *deploy the exact module* that you also tested.
@@ -412,7 +412,7 @@ Run the test to check that it compiles and succeeds.
 
 .. code-block:: console
 
-   $cargo concordium test --out piggy_bank_part2.wasm.v1
+   $ cargo concordium test --out piggy_bank_part2.wasm.v1
 
 Note that the command recompiles the Wasm module and replaces the old module in the same location due to the ``--out`` parameter.
 

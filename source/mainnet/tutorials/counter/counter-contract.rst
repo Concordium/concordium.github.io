@@ -27,7 +27,7 @@ Once you have setup your development environment, you are ready to create your s
 
 .. code-block:: console
 
-    $cargo concordium init
+    $ cargo concordium init
 
 When prompted for which template to expand, select the ``default`` option. You will then be asked for a name for your project. In this example we'll use "counter", but you can choose whatever name you want.
 
@@ -119,7 +119,7 @@ Create a ``dist`` folder for the compiled WASM contract. Then, run the build com
 
 .. code-block:: console
 
-    $cargo concordium build --out dist/module.wasm.v1
+    $ cargo concordium build --out dist/module.wasm.v1
 
 You may get a warning about the build not being verifiable, which you may ignore.
 
