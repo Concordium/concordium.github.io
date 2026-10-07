@@ -93,7 +93,6 @@ Step-by-step guides for completing specific tasks on Concordium. Browse all guid
       - :doc:`Use fallback entrypoints <smart-contracts/fallback-entrypoints>`
       - :doc:`Write an upgradeable contract <smart-contracts/upgradeable-contract>`
       - :doc:`Implement the factory pattern <smart-contracts/factory-pattern>`
-      - :doc:`Unit test a contract <smart-contracts/unit-test-contract>`
       - :doc:`Integration test a contract <smart-contracts/integration-test-contract>`
       - :doc:`Deploy a smart contract module <smart-contracts/deploy-module>`
 
@@ -171,7 +170,6 @@ Step-by-step guides for completing specific tasks on Concordium. Browse all guid
       Use fallback entrypoints <smart-contracts/fallback-entrypoints>
    Write an upgradeable contract <smart-contracts/upgradeable-contract>
    Implement the factory pattern <smart-contracts/factory-pattern>
-   Unit test a contract <smart-contracts/unit-test-contract>
    Integration test a contract <smart-contracts/integration-test-contract>
    Deploy a smart contract module <smart-contracts/deploy-module>
    Migrate contracts <smart-contracts/migrate-contracts>

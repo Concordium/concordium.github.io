@@ -316,11 +316,16 @@ Code documentation
 Automated testing
 -----------------
 
-The Concordium standard library `concordium-std`_ offers several possibilities for testing the smart contract code.
+Integration tests of smart contracts can be implemented as described on :ref:`Integration testing <integration-test-contract>`.
+Integration tests allows you to test the contract in an environment where:
+  
+- The smart contract runs in the real Wasm interpreter
+- The smart contract interacts with the real host functions and real chain integration 
+- The chain itself is stubbed, as the only component that is not "real"
 
-- Use :ref:`Integration testing <integration-test-contract>` to test particular cases where you define what is the valid output.
-- (**Deprecated**) Use :ref:`Unit testing <unit-test-contract>` to test particular cases where you define what is the valid output.
-- (**Deprecated**) :ref:`Property-based testing <writing_property_based_tests>` is a variant of randomized testing that repeatedly checks a *property* with randomly generated input.
+Besides from those tests, you can also implement plain Rust unit tests for functions that does not interact with host functions.
+A third, and more advanced, possibility is using the `concordium_test macro <https://docs.rs/concordium-std/latest/concordium_std/attr.concordium_test.html>`_.
+Examples may be found in `concordium-std tests <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-std/src/impls.rs>`_.
 
 Use the :ref:`smart contract specification <best-practices-specification>` guidelines from this document to come up with cases and properties to test.
 
