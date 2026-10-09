@@ -28,7 +28,8 @@ Smart contracts do not have to be written in Rust.
 This is simply the first SDK provided.
 Manually written Wasm, or Wasm compiled from C, C++, AssemblyScript_, and
 others, is equally valid on the chain, as long as it adheres to the :ref:`Wasm
-limitations Concordium imposes <wasm-limitations>`.
+limitations Concordium imposes <wasm-limitations>`. Technically, the Wasm must
+adhere to `WebAssembly Core Specification 1.0`_.
 
 .. seealso::
 
@@ -54,9 +55,10 @@ To obtain correct exports, the `crate-type` attribute must be set to
 Write a smart contract using ``concordium_std``
 ===============================================
 
-It is recommended to use the ``concordium_std`` crate, which provides a
-more Rust-like experience for developing smart contract modules and calling
-host functions.
+It is highly recommended to use the ``concordium_std`` Rust crate, which provides a
+more standard Rust-like experience for developing smart contract modules and calling
+host functions. When using ``concordium_std``, you smart contract should be compiled
+to the ``no_std`` target wasm32v1-none_.
 
 The crate enables writing init and receive functions as simple Rust
 functions annotated with ``#[init(...)]`` and ``#[receive(...)]``, respectively.
@@ -64,6 +66,8 @@ functions annotated with ``#[init(...)]`` and ``#[receive(...)]``, respectively.
 Here is an example of a smart contract that implements a counter:
 
 .. code-block:: rust
+
+   #![no_std]
 
    use concordium_std::*;
 
@@ -121,31 +125,10 @@ There are a number of things to notice:
   necessary. Otherwise, the state will appear as having mutated and you will
   also pay for the cost of saving and serializing the state.
 
-.. note::
-
-   Note that deserialization is not without cost, and in some cases the
-   user might want more fine-grained control over the use of host functions.
-   For such use cases the annotations support a ``low_level`` option, which has
-   less overhead, but requires more from the user.
-
 .. todo::
 
    - Describe low-level
    - Introduce the concept of host functions before using them in the note above
-
-.. [#serialize] If the state contains one or more of the types |StateBox|_,
-                |StateMap|_, or |StateSet|_, it should implement ``Serial``
-                and ``DeserialWithState`` instead. The difference is the
-                deserialization, where ``Serialize`` is a combination of the
-                traits ``Serial`` and ``Deserial``.
-                ``State*`` types are essentially pointers to data stored in
-                state, and when serialized, only the pointer is written, while
-                the values are stored in the state. To load
-                the values again, the state context is needed, hence the ``DeserialWithState``.
-
-.. note::
-
-   There is also the option of building a contract using ``no_std``. For more information, read :ref:`no-std`
 
 .. _serialize-state-and-parameters:
 
@@ -184,7 +167,7 @@ state into multiple nodes in the state tree.
 Which provide an interface similar to that of a map and set.
 These types cannot implement ``Serialize``, but they *do* implement ``Serial``
 and ``DeserialWithState`` [#serialize]_.
-``concordium_std`` also has a macros for deriving these two types for
+``concordium_std`` also has macros for deriving these two types for
 user-defined structs and enums.
 
 .. code-block:: rust
@@ -207,6 +190,16 @@ the state must implement ``Serialize`` *or* ``Serial + DeserialWithState``.
    Strictly speaking you only need to deserialize bytes to your parameter type,
    but it is convenient to be able to serialize types when writing tests.
 
+.. [#serialize] If the state contains one or more of the types |StateBox|_,
+                |StateMap|_, or |StateSet|_, it should implement ``Serial``
+                and ``DeserialWithState`` instead. The difference is the
+                deserialization, where ``Serialize`` is a combination of the
+                traits ``Serial`` and ``Deserial``.
+                ``State*`` types are essentially pointers to data stored in
+                state, and when serialized, only the pointer is written, while
+                the values are stored in the state. To load
+                the values again, the state context is needed, hence the ``DeserialWithState``.   
+
 .. _working-with-parameters:
 
 Work with parameters
@@ -223,7 +216,9 @@ As an example, see the following contract in which the parameter
 ``ReceiveParameter`` is deserialized on the highlighted line:
 
 .. code-block:: rust
-   :emphasize-lines: 25
+   :emphasize-lines: 27
+
+   #![no_std]
 
    use concordium_std::*;
 
@@ -363,13 +358,13 @@ Build a smart contract module with ``cargo-concordium``
 =======================================================
 
 The Rust compiler has good support for compiling to Wasm using the
-``wasm32-unknown-unknown`` target.
+wasm32v1-none_ target.
 However, even when compiling with ``--release`` the resulting build includes
 large sections of debug information in custom sections, which are not useful for
 smart contracts on-chain.
 
-To optimize the build and allow for new features such as embedding schemas, Concordium
-recommends using ``cargo-concordium`` to build smart contracts.
+To optimize the build and allow for features such as embedding schemas, Concordium
+highly recommends using ``cargo-concordium`` to build smart contracts.
 
 .. seealso::
 
@@ -422,3 +417,5 @@ macro, e.g.: ``#[init(..., payable)]`` and ``#[receive(..., payable)]``.
 .. |StateSet| replace:: ``StateSet``
 .. _payable: https://docs.rs/concordium-std/latest/concordium_std/attr.receive.html#payable-make-function-accept-an-amount-of-ccd
 .. |payable| replace:: ``payable``
+.. _WebAssembly Core Specification 1.0: https://www.w3.org/TR/wasm-core-1/
+.. _wasm32v1-none: https://doc.rust-lang.org/rustc/platform-support/wasm32v1-none.html

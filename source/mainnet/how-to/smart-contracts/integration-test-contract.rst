@@ -10,32 +10,24 @@ Integration tests
 
 This guide describes how to write *integration tests* in Rust for your smart contracts using the `Concordium smart contract testing library <https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/>`_.
 
-.. note::
-
-   Unit testing your contracts with the |test_infrastructure|_ has been deprecated in favor of |concordium-smart-contract-testing|_.
-   To migrate your contracts and tests see :ref:`migrate-contracts-for-std-8.1`.
-   You can read the :ref:`old documentation for unit testing here <unit-test-contract>` if you are not ready to migrate your contracts.
-
 The library allows you to test individual contracts in isolation, but, notably, also interactions between multiple contracts.
-When running the tests, they are executed locally on the exact contract code that is deployed on the chain, and using the same execution engine that the nodes use.
+When running the tests, they are executed locally on the exact contract code that is deployed on the chain, and using the same execution engine that the nodes use. Only the chain itself is stubbed.
 V0 smart contracts are not supported, but all V1 smart contract features are, including upgrades, and it is also possible to see the energy usage of your contracts.
 This allows you to refactor and optimize your contracts for speed and efficiency with greater ease and confidence.
 
 The high-level process of adding integration tests to your existing smart contract project is as follows:
 
-1. Add the testing library to your ``Cargo.toml`` file and use Rust edition ``2021``:
+1. Add the testing library to your ``Cargo.toml`` file:
 
    .. code-block:: yaml
 
       [package]
       # ...
-      edition = "2021"
 
       [dev-dependencies]
-      concordium-smart-contract-testing = "1.0"
+      concordium-smart-contract-testing = "5.0.0"
 
    By putting it under ``dev-dependencies``, it is only included for tests.
-   You must use edition ``2021`` or greater as that is a requirement for the testing library.
 
 2. Write tests in files residing in ``my-project/tests/``.
    Example content:
@@ -169,10 +161,10 @@ Deploying smart contract modules is a two-step process.
 First, you load the module with the function |module_load_v1|_, then you deploy it to the chain with the method |Chain_module_deploy_v1|_.
 Loading as a separate step allows you to reuse the loaded module across multiple tests for efficiency.
 
-The module to load must be a ``wasm`` module compiled with ``cargo concordium build`` or, if using cargo concordium version 2.9.0+, ``cargo concordium test --out path/to/wasm/module``.
-Using the test command is ideal, as that will both compile the module *and* run the tests.
+The module to load must be a ``wasm`` module compiled with ``cargo concordium build``. The easiest is to run ``cargo concordium test``,
+which will both compile the module *and* run the tests.
 By compiling the module every time, you ensure that the tests run on the newest version of your code.
-For example, for ``cargo concordium test --embed-schema --out my_module.wasm.v1``, you write:
+For example, for ``cargo concordium test --out my_module.wasm.v1``, you write:
 
 .. code-block:: rust
 
@@ -516,7 +508,7 @@ Example:
        to: AccountAddress([0u8;32]),
    }]);
 
-.. _concordium-smart-contract-testing: https://docs.rs/concordium-std-derive/latest/concordium_smart-contract-testing
+.. _concordium-smart-contract-testing: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing
 .. |concordium-smart-contract-testing| replace:: ``concordium-smart-contract-testing``
 .. _Account: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Account.html
 .. |Account| replace:: ``Account``

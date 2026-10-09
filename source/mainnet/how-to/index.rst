@@ -90,11 +90,9 @@ Step-by-step guides for completing specific tasks on Concordium. Browse all guid
       - :doc:`Build a contract schema <smart-contracts/build-schema>`
       - :doc:`Use custom errors <smart-contracts/custom-errors>`
       - :doc:`Pass JSON parameters <smart-contracts/json-params>`
-      - :doc:`Use no_std <smart-contracts/no-std>`
       - :doc:`Use fallback entrypoints <smart-contracts/fallback-entrypoints>`
       - :doc:`Write an upgradeable contract <smart-contracts/upgradeable-contract>`
       - :doc:`Implement the factory pattern <smart-contracts/factory-pattern>`
-      - :doc:`Unit test a contract <smart-contracts/unit-test-contract>`
       - :doc:`Integration test a contract <smart-contracts/integration-test-contract>`
       - :doc:`Deploy a smart contract module <smart-contracts/deploy-module>`
 
@@ -103,7 +101,6 @@ Step-by-step guides for completing specific tasks on Concordium. Browse all guid
         - :doc:`Inspect <smart-contracts/inspect-instance>`
         - :doc:`Invoke <smart-contracts/invoke-instance>`
 
-      - :doc:`Migrate contracts <smart-contracts/migrate-contracts>`
       - :doc:`Best practices <smart-contracts/best-practices/index>`
 
         - :doc:`Development <smart-contracts/best-practices/development>`
@@ -169,14 +166,11 @@ Step-by-step guides for completing specific tasks on Concordium. Browse all guid
    Build a contract schema <smart-contracts/build-schema>
    Use custom errors <smart-contracts/custom-errors>
    Pass JSON parameters <smart-contracts/json-params>
-   Use no_std <smart-contracts/no-std>
-   Use fallback entrypoints <smart-contracts/fallback-entrypoints>
+      Use fallback entrypoints <smart-contracts/fallback-entrypoints>
    Write an upgradeable contract <smart-contracts/upgradeable-contract>
    Implement the factory pattern <smart-contracts/factory-pattern>
-   Unit test a contract <smart-contracts/unit-test-contract>
    Integration test a contract <smart-contracts/integration-test-contract>
    Deploy a smart contract module <smart-contracts/deploy-module>
-   Migrate contracts <smart-contracts/migrate-contracts>
    Best practices <smart-contracts/best-practices/index>
 
 .. toctree::
