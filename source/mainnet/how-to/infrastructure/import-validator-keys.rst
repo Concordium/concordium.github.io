@@ -184,7 +184,14 @@ Select your platform below to configure your node with validator keys.
 
          $sudo systemctl status concordium-testnet-node.service
 
-.. dropdown:: macOS
+.. dropdown:: macOS (deprecated)
+
+   .. warning::
+
+      The macOS package distribution is deprecated. To migrate an existing
+      validator to Docker Desktop, follow :ref:`migrate-macos-to-docker`.
+      Reuse existing keys and registration. The instructions below apply only
+      to existing macOS package installations.
 
    **Prerequisites**
 
