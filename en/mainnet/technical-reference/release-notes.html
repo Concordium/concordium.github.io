@@ -54,7 +54,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/technical-reference/release-notes.ddef92d1-124d-432c-b5dd-a7d5a596154f.js"></script>
+    <script defer="defer" src="../_static/tippy/technical-reference/release-notes.f62c7a92-7a85-40c9-a801-3650ff42ab60.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-reference/release-notes';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/technical-reference/release-notes.html" />
     <link rel="icon" href="../_static/concordium-logo-no-text.svg"/>
@@ -1747,15 +1747,56 @@ delivering a more seamless and user-friendly experience while preserving all the
 <section id="desktop-wallet">
 <span id="rn-dw"></span><h3>Desktop Wallet<a class="headerlink" href="#desktop-wallet" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>September 26, 2025</p>
-<p>Version 1.9.3 contains the following changes:</p>
+<div><p>October 12, 2026</p>
+<p>Version 1.9.6 contains the following changes:</p>
 <ul class="simple">
-<li><p>Fixed issue where wallet losses connection to ledger</p></li>
+<li><p>Fixed Linux startup on Ubuntu 24.04 and later by using system OpenSSL 3 instead of requiring OpenSSL 1.1.</p></li>
+<li><p>Added OpenSSL 3 as a runtime dependency in Linux packages.</p></li>
 </ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">1.9.5 - September 15, 2026</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Added both Intel (x64) and Apple Silicon (ARM64) macOS DMG builds.</p></li>
+<li><p class="sd-card-text">Fixed white screens caused by race conditions and timeouts with LEDGER devices:</p>
+<ul>
+<li><p class="sd-card-text">Fixed a blank screen crash when repeatedly signing multi-signature proposals.</p></li>
+<li><p class="sd-card-text">Handled <code class="docutils literal notranslate"><span class="pre">DisconnectedDevice</span></code> gracefully during signing.</p></li>
+<li><p class="sd-card-text">Fixed the <code class="docutils literal notranslate"><span class="pre">ErrorBoundary</span></code> null fallback that caused an invisible blank screen.</p></li>
+<li><p class="sd-card-text">Fixed a duplicate React key in <code class="docutils literal notranslate"><span class="pre">DisplayHexString</span></code>.</p></li>
+<li><p class="sd-card-text">Fixed an <code class="docutils literal notranslate"><span class="pre">html2canvas</span></code> crash when <code class="docutils literal notranslate"><span class="pre">CopiableIdenticon</span></code> re-renders.</p></li>
+<li><p class="sd-card-text">Removed a harmful cleanup dispatch in the <code class="docutils literal notranslate"><span class="pre">useLedger</span></code> <code class="docutils literal notranslate"><span class="pre">ExternalHook</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">1.9.4 - March 9, 2026</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Fixed white screens caused by race conditions and timeouts with LEDGER devices:</p>
+<ul>
+<li><p class="sd-card-text">Fixed a blank screen crash when repeatedly signing multi-signature proposals.</p></li>
+<li><p class="sd-card-text">Handled <code class="docutils literal notranslate"><span class="pre">DisconnectedDevice</span></code> gracefully during signing.</p></li>
+<li><p class="sd-card-text">Fixed the <code class="docutils literal notranslate"><span class="pre">ErrorBoundary</span></code> null fallback that caused an invisible blank screen.</p></li>
+<li><p class="sd-card-text">Fixed a duplicate React key in <code class="docutils literal notranslate"><span class="pre">DisplayHexString</span></code>.</p></li>
+<li><p class="sd-card-text">Fixed an <code class="docutils literal notranslate"><span class="pre">html2canvas</span></code> crash when <code class="docutils literal notranslate"><span class="pre">CopiableIdenticon</span></code> re-renders.</p></li>
+<li><p class="sd-card-text">Removed a harmful cleanup dispatch in the <code class="docutils literal notranslate"><span class="pre">useLedger</span></code> <code class="docutils literal notranslate"><span class="pre">ExternalHook</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">1.9.3 - September 26, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Fixed an issue where the wallet loses connection to the LEDGER device.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">1.9.2 - September 24, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ul class="simple">
