@@ -83,8 +83,8 @@ The Docker image can run the collector in the node container.
 To enable it, set these environment entries:
 
 - ``CONCORDIUM_NODE_COLLECTOR_ENABLED``: ``"true"``.
-- ``CONCORDIUM_NODE_COLLECTOR_NODE_NAME``: your dashboard name.
-- ``CONCORDIUM_NODE_COLLECTOR_URL``: the backend URL for your network.
+- ``CONCORDIUM_NODE_COLLECTOR_NODE_NAME``: your node's name on the network dashboard.
+- ``CONCORDIUM_NODE_COLLECTOR_URL``: the backend URL for the network dashboard.
 
 Use the network backend URL from :ref:`configure-docker-image`.
 To disable reports, set ``CONCORDIUM_NODE_COLLECTOR_ENABLED`` to ``"false"``.

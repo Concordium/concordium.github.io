@@ -89,7 +89,7 @@ To recover:
 
 3. Check the logs for a clean shutdown.
 4. Find the database at ``./data/database-v4``.
-   You can need ``sudo`` to inspect and change entries owned by UID ``10001``.
+   You might need ``sudo`` to inspect and change entries owned by UID ``10001``.
 5. Delete the block-state file that has no matching tree-state directory.
    In the example above, delete ``blockstate-2.dat`` because ``treestate-2``
    is missing.
