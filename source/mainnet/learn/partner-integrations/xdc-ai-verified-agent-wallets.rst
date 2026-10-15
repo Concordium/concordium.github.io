@@ -15,9 +15,6 @@ How XDC AI verifies agent wallets on Concordium
 
 XDC AI's own documentation covers what a seller does on their platform. This page covers what happens on Concordium and why it is built this way, so that you can reuse the same pattern for any smart-contract wallet on any EVM chain.
 
-.. todo::
-
-   The key encoding used in this integration is ``secp256k1-compressed``. The CIS-8 reference page and the Agent Registry how-to currently document only ``secp256k1-uncompressed`` for Ethereum-style chains. Confirm with the contract team which encodings CIS-8 accepts and align the reference pages before this page is published.
 
 The question an EVM address cannot answer
 =========================================
