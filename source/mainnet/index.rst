@@ -24,6 +24,7 @@ Find technical documentation here for every stage — evaluating, building, inte
       - :doc:`Earn rewards by delegating your CCD <learn/staking/concepts-delegation>`
       - :doc:`Verify and Access: integration overview <how-to/concordium-id/verify-and-access/index>`
       - :doc:`Wallet integration: what to consider <how-to/integrations/wallet-integration/wallet-integration>`
+      - :doc:`How partners have integrated with Concordium <learn/partner-integrations/index>`
 
    .. grid-item-card:: Ready to build?
       :class-card: landing-card

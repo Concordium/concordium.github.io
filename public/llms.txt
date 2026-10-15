@@ -70,6 +70,13 @@ On-chain identity and discovery for AI agents.
 - [MCP service](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/mcp-service.html): Model Context Protocol server — hosted endpoint, local setup, and all available tools
 - [Indexer](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/indexer.html): Event indexer for agent discovery — setup, REST API, and sync state
 
+## Partner integrations
+
+How partners have built on Concordium, explained at architecture level so that others can reuse the same patterns.
+
+- [Partner integrations](https://docs.concordium.com/en/mainnet/learn/partner-integrations/index.html): Index of documented partner integrations and the common integration archetypes
+- [XDC AI: verified agent wallets](https://docs.concordium.com/en/mainnet/learn/partner-integrations/xdc-ai-verified-agent-wallets.html): How XDC AI binds a Safe smart wallet on the XDC Network to an identity-verified Concordium account using CIS-8, CIS-8004, the Verified by Concordium badge, and sponsored transactions
+
 ## Optional
 
 - [Onboard as an exchange](https://docs.concordium.com/en/mainnet/how-to/integrations/exchange-onboarding.html): Integration guide for cryptocurrency exchanges
