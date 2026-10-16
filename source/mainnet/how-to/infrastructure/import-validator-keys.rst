@@ -263,7 +263,7 @@ Select your platform below to configure your node with validator keys.
 
    .. code-block:: console
 
-      $concordium-client validator add <keys-file>.json --sender validatorAccount --stake <amount-to-stake> --validator-credentials-out <concordium-data-dir>/validator-credentials.json
+      $ concordium-client validator add <keys-file>.json --sender validatorAccount --stake <amount-to-stake> --validator-credentials-out <concordium-data-dir>/validator-credentials.json
 
    where you replace
 
@@ -311,7 +311,7 @@ You can use ``concordium-client`` to see the status of the node. For more inform
 
 .. code-block:: console
 
-   $concordium-client raw GetNodeInfo
+   $ concordium-client raw GetNodeInfo
 
    ...
 

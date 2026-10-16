@@ -38,21 +38,11 @@ with name account-name, run the following command:
 
 .. code-block:: console
 
-   $concordium-client module deploy my_module.wasm.v1 --sender account_name
+   $ concordium-client module deploy my_module.wasm.v1 --sender account_name
 
 .. note::
 
    The ``--sender`` option can be omitted if the account "default" is to be used. For brevity, you will do so in the following.
-
-   Modules built with ``cargo-concordium`` (version 2+) get a suffix corresponding to
-   the smart contract version, i.e. ``my_module.wasm.v0`` for V0 contracts and
-   ``my_module.wasm.v1`` for V1 contracts.
-
-   When deploying a smart contract module built using ``cargo-concordium``
-   version < 2, or built directly with ``cargo``, it is necessary to
-   specify the smart contract version with the ``--contract-version [v0, v1]``
-   option. These module files will not have the version suffix, e.g.
-   ``.v0``, or ``.v1``, but just be called ``<module_name>.wasm``.
 
 If successful, the output should be similar to the following:
 
@@ -90,7 +80,7 @@ Here, you are naming the module ``my_deployed_module``:
 
 .. code-block:: console
 
-   $concordium-client module deploy my_module.wasm.v1 --name my_deployed_module
+   $ concordium-client module deploy my_module.wasm.v1 --name my_deployed_module
 
 If successful, the output should be similar to the following:
 
@@ -105,7 +95,7 @@ To name a deployed module with reference
 
 .. code-block:: console
 
-   $concordium-client module name \
+   $ concordium-client module name \
              9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 \
              --name some_deployed_module
 

@@ -125,7 +125,7 @@ topic to see the available commands within that topic:
 
 .. code-block:: console
 
-   $concordium-client config --help
+   $ concordium-client config --help
    Usage: concordium-client config COMMAND
      Commands for inspecting and changing local configuration.
 
@@ -141,7 +141,7 @@ Give the full command to see available options related to that command:
 
 .. code-block:: console
 
-   $concordium-client config account import --help
+   $ concordium-client config account import --help
    Usage: concordium-client config account import FILE [--name NAME]
      Import an account to persistent config.
 
@@ -202,7 +202,7 @@ Display contents
 
 .. code-block:: console
 
-   $concordium-client config show
+   $ concordium-client config show
 
 Display the full contents of the persistent configuration. This will display the
 stored keys that are used for signing transactions (under the ``Account Keys``
@@ -214,7 +214,7 @@ Example:
 
 .. code-block:: console
 
-   $concordium-client config show
+   $ concordium-client config show
    Base configuration:
    - Verbose:            no
    - Account config dir: /var/lib/concordium/config/accounts
@@ -282,7 +282,7 @@ Add named account
 
 .. code-block:: console
 
-   $concordium-client config account name ADDRESS [--name NAME]
+   $ concordium-client config account name ADDRESS [--name NAME]
 
 Add an account address to persistent configuration, naming it. This name may now be used to refer to the account
 throughout the client.
@@ -295,7 +295,7 @@ Add key to an account
 
 .. code-block:: console
 
-   $concordium-client config account add-keys --account ACCOUNT --keys KEYS
+   $ concordium-client config account add-keys --account ACCOUNT --keys KEYS
 
 Add a sign/verify key-pair to a specific account. The ``KEYS`` parameter must be
 a JSON file that contains the keys that will be added in the same format as they
@@ -331,7 +331,7 @@ Update keys of an account
 
 .. code-block:: console
 
-   $concordium-client config account update-keys --account ACCOUNT --keys KEYS
+   $ concordium-client config account update-keys --account ACCOUNT --keys KEYS
 
 Update a sign/verify key-pair on a specific account. The ``KEYS`` parameter must be
 a JSON file that contains the keys that will be added in the same format as for adding keys.
@@ -342,7 +342,7 @@ Remove keys of an account
 
 .. code-block:: console
 
-   $concordium-client config account remove-keys --account ACCOUNT --credential-index CREDENTIALINDEX KEYINDICES
+   $ concordium-client config account remove-keys --account ACCOUNT --credential-index CREDENTIALINDEX KEYINDICES
 
 Remove sign/verify key-pairs from a specific credential of an account. The ``CREDENTIALINDEX`` specifies the credential that the key pairs should be removed from, and the space-seperated list of key indices specify which of the key pairs that should be removed.
 

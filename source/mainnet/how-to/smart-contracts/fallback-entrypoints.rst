@@ -20,7 +20,7 @@ You also need to have the following installed:
 
 - Rust
 - Cargo
-- The ``wasm32-unknown-unknown`` compiling target
+- The ``wasm32v1-none`` compiling target
 - ``cargo-concordium``
 
 .. seealso::

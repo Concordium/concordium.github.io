@@ -6,14 +6,6 @@ Set up the development environment
 
 Before starting the tutorials, you must prepare your development environment by installing a number of tools. This topic covers the setup required for the tutorials.
 
-.. Note::
-
-    You can also watch a video about installing the smart contract tools.
-
-    .. raw:: html
-
-        <iframe src="https://www.youtube.com/embed/0UIyAlZjvLg?si=D0lguDkUjiHCKLcu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 First, you need to install ``rustup`` which installs Rust and Cargo to your computer. Go to `Rustup <https://rustup.rs/>`_ to install ``rustup`` for your platform.
 
 Type **1** to continue the installation.
@@ -26,59 +18,31 @@ Finally, when Rust and Cargo are successfully installed in your system, you shou
 .. image:: images/mint-rust-install-done.png
     :width: 100%
 
-.. Note::
-
-   Currently, Rust toolchain versions up to ``1.81`` are and newer are not supported by older ``cargo-concordium`` versions ( <= ``4.0.0``). Update ``cargo-concordium`` if you see the error ``Unexpected byte 0x80. Expected 0x00`` as follows:
-
-   .. code-block:: console
-
-      $ cargo install cargo-concordium
-      $ cargo concordium --version
-      $ cargo-concordium 4.1.1
-
-   The minimum supported rust version is currently version ``1.73``
-
 Copy and paste the commands in a terminal to install Wasm which will be used for building contracts.
 
 .. code-block:: console
 
-    rustup target add wasm32-unknown-unknown
+    rustup target add wasm32v1-none
 
-During Wasm installation in your system you should see something similar to below.
 
-.. image:: images/mint-wasm-install.png
-    :width: 100%
-
-Now you need to install the Concordium software package. ``cargo-concordium`` is the tool for developing smart contracts for the Concordium blockchain. It can be used for :ref:`compiling<compile-module>` and :ref:`testing<integration-test-contract>` smart contracts, and enables features such as :ref:`building contract schemas<build-schema>`. :ref:`Click here<cargo-concordium-testnet>` and download the version 2.2.0 or greater of ``cargo-concordium`` for your operating system. The tool is the same for both testnet and mainnet.
-
-.. note::
-
-   If you are not using Ubuntu/Linux as your operating system, the following screenshots and commands will be different.
-   Remember to adjust the following commands based on your operating system.
-
+Now you need to install the Concordium software package. ``cargo-concordium`` is the tool for developing smart contracts for the Concordium blockchain. It can be used for :ref:`compiling<compile-module>` and :ref:`testing<integration-test-contract>` smart contracts, and enables features such as :ref:`building contract schemas<build-schema>`. 
 To install ``cargo-concordium`` run:
 
 .. code-block:: console
 
-   $cargo install --locked cargo-concordium
+   $ cargo install --locked cargo-concordium
 
 For a description of how to use the ``cargo-concordium`` run:
 
 .. code-block:: console
 
-   $cargo concordium --help
+   $ cargo concordium --help
 
 To use verifiable builds with cargo-concordium a container runtime such as `Docker <https://www.docker.com/>`_ is required.
 
 .. image:: images/cargo-help.png
     :width: 100%
 
-.. Note::
-
-    If you have a warning on a Mac device that says “cargo-concordium cannot be opened because the developer cannot be verified” that means it requires permission to run and you should go to **System Preferences → Security** and unlock it with your password and click **Allow Anyway**.
-
-    .. image:: images/mac-warning.png
-        :width: 100%
 
 .. _interact-with-your-contract:
 
@@ -91,7 +55,7 @@ Rename the package to ``concordium-client`` in case it has some version annotati
 
 .. code-block:: console
 
-   $ls | grep 'concordium-client'
+   $ ls | grep 'concordium-client'
 
 .. image:: images/pb_tutorial_10.png
    :width: 70 %
@@ -112,7 +76,7 @@ Before you can use the downloaded Concordium Client on Linux you have to make th
 
 .. code-block:: console
 
-   $chmod +x concordium-client
+   $ chmod +x concordium-client
 
 .. image:: images/pb_tutorial_8.png
    :width: 50 %
@@ -121,77 +85,12 @@ Check whether you can execute the ``concordium-client`` tool.
 
 .. code-block:: console
 
-   $./concordium-client --help
+   $ ./concordium-client --help
 
 You should see some output that will help you in getting familiar with the ``concordium-client`` tool.
 
 .. image:: images/pb_tutorial_9.png
    :width: 100 %
-
-Your next task enables the ``concordium-client`` tool to talk to a testnet node. There are two options to achieve this:
-
-.. dropdown:: **Option 1 (beginners)**
-
-    This option explains how to transfer the ``concordium-client`` tool to your instance and execute commands from within the instance.
-
-    **Advantage**: You can execute the commands within your instance.
-
-    **Disadvantage**: You have to transfer files between your local machine and your instance.
-
-    Transfer the ``concordium-client`` package from your machine via a file-sharing tool (such as `FileZilla <https://filezilla-project.org/>`_ or the ``sftp`` command) to your instance.
-
-    Connect to your instance and make your package executable again as you have done previously already:
-
-    .. code-block:: console
-
-        $chmod +x concordium-client
-
-    Check if everything is connected correctly by displaying the best/latest block.
-
-    .. code-block:: console
-
-        $./concordium-client block show --grpc-port 20001
-
-    You should see some block data output.
-
-    .. image:: images/pb_tutorial_18.png
-        :width: 100 %
-
-    .. note::
-
-        Port 20001 is open by default on your testnet node to interact with it.
-
-.. dropdown:: **Option 2 (advanced users)**
-
-    This option explains how you can use the ``concordium-client`` tool locally on your machine and connect remotely to your node running on the server.
-
-    **Advantage**: You don't have to transfer files between your local machine and your instance later in the tutorial.
-
-    **Disadvantage**: You have to use ssh with port forwarding when you run a command locally.
-
-    Since you have a remote server your cloud provider usually gives you an option to ssh into it. Add the following port forwarding rule to your method to ssh into your instance in terminal A. The port 20001 on your localhost is forwarded to the port 20001 on your instance.
-
-    .. code-block:: console
-
-        $ssh -NL localhost:20001:<IP-address-of-your-instance>:20001 <username>@<host>
-
-    .. image:: images/pb_tutorial_26.png
-        :width: 100 %
-
-    .. note::
-
-        Port 20001 is open by default on your testnet node to interact with it. Cloud providers often use ``ubuntu`` as the default <username> and the <IP-address-of-your-instance> as the default <host>.
-
-    Go in another terminal B to the folder where you downloaded the ``concordium-client``. Check if everything is connected correctly by displaying the best/latest block.
-
-    .. code-block:: console
-
-        $./concordium-client block show --grpc-port 20001
-
-    You should see some block data output.
-
-    .. image:: images/pb_tutorial_17.png
-        :width: 100 %
 
 Concordium node on Testnet
 ==========================

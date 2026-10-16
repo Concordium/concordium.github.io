@@ -279,7 +279,7 @@ You need to install a custom certificate to ensure that the LEDGER device trusts
          .. code-block:: console
             :substitutions:
 
-            $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanos-|nano-s-firmware|
+            $ cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanos-|nano-s-firmware|
 
          .. For now, setting up custom CAs on Nano S+ does not make any difference, as sideloading signed apps is not working.
          ..
@@ -290,14 +290,14 @@ You need to install a custom certificate to ensure that the LEDGER device trusts
          ..       .. code-block:: console
          ..          :substitutions:
          ..
-         ..          $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanos-|nano-s-firmware|
+         ..          $ cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanos-|nano-s-firmware|
          ..
          ..    .. group-tab:: Nano S+
          ..
          ..       .. code-block:: console
          ..          :substitutions:
          ..
-         ..          $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanosplus
+         ..          $ cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanosplus
 
       #. Load the certificate onto the LEDGER device by running the following script from the extracted folder:
 
@@ -375,14 +375,14 @@ After installing the certificate, you can proceed to install the Concordium LEDG
                .. code-block:: console
                   :substitutions:
 
-                  $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanos-|nano-s-firmware|
+                  $ cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanos-|nano-s-firmware|
 
             .. group-tab:: Nano S+
 
                .. code-block:: console
                   :substitutions:
 
-                  $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanosplus
+                  $ cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanosplus
 
       #. Install the Concordium application on the LEDGER device by running the following script from the folder you extracted the files to:
 
@@ -458,14 +458,14 @@ For the app to work properly with the current version of the Desktop Wallet, mak
                .. code-block:: console
                   :substitutions:
 
-                  $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanos-|nano-s-firmware|
+                  $ cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanos-|nano-s-firmware|
 
             .. group-tab:: Nano S+
 
                .. code-block:: console
                   :substitutions:
 
-                  $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanosplus
+                  $ cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanosplus
 
       #. Install the Concordium application on the LEDGER device by running the following script from the folder you extracted the files to:
 
