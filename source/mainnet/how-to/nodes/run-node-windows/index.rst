@@ -1,5 +1,10 @@
-Run a node on Windows
-=====================
+Run a node on Windows (deprecated)
+==================================
+
+.. warning::
+
+   The native Windows node distribution is deprecated.
+   For existing installations, follow :ref:`migrate-windows-to-docker`.
 
 .. admonition:: At a glance
 
@@ -10,7 +15,8 @@ Choose a topic below to learn how to install, configure, or troubleshoot your Co
 .. toctree::
    :maxdepth: 1
 
-   run-node-windows
-   advanced-node-configuration-on-windows
-   node-runner-service-configuration
-   troubleshoot-windows
+   Migrate to Docker <migrate-to-docker-image>
+   Install and manage a node on Windows (deprecated) <run-node-windows>
+   Advanced node configuration on Windows (deprecated) <advanced-node-configuration-on-windows>
+   Concordium Windows node runner service configuration (deprecated) <node-runner-service-configuration>
+   Troubleshoot a node on Windows (deprecated) <troubleshoot-windows>

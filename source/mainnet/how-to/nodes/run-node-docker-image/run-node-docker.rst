@@ -18,7 +18,7 @@ If you are running a node already, avoid catching up from scratch using the matc
 - :ref:`Ubuntu package migration guide<migrate-debian-to-docker>`.
 - :ref:`Network-specific docker image migration guide<migrate-network-specific-images>`.
 - TODO MacOS
-- TODO Windows
+- :ref:`Windows node migration guide <migrate-windows-to-docker>`
 
 Prerequisites
 =============
