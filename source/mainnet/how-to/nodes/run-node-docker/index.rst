@@ -1,5 +1,14 @@
-Run a node using Docker
-=======================
+Network-specific Docker images (deprecated)
+===========================================
+
+.. warning::
+
+   The network-specific images ``concordium/mainnet-node`` and
+   ``concordium/testnet-node`` are deprecated. The guides in this section
+   remain available for existing installations. For new installations, use
+   :ref:`run-node-docker-image`. To migrate an existing Docker node, follow
+   :ref:`migrate-network-specific-images`. Keep the existing node data during
+   migration.
 
 .. admonition:: At a glance
 
@@ -10,6 +19,7 @@ Choose a topic below to learn how to install, configure, or troubleshoot your Co
 .. toctree::
    :maxdepth: 1
 
-   run-node-docker
-   advanced-node-configuration-on-docker
-   troubleshoot-docker
+   migrate-to-docker-image
+   Install and manage a node on Docker (deprecated) <run-node-docker>
+   Advanced node configuration on Docker (deprecated) <advanced-node-configuration-on-docker>
+   Troubleshoot a node in Docker (deprecated) <troubleshoot-docker>
