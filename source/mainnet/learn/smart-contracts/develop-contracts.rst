@@ -57,7 +57,7 @@ Write a smart contract using ``concordium_std``
 
 It is highly recommended to use the ``concordium_std`` Rust crate, which provides a
 more standard Rust-like experience for developing smart contract modules and calling
-host functions. When using ``concordium_std``, you smart contract should be compiled
+host functions. When using ``concordium_std``, your smart contract should be compiled
 to the ``no_std`` target wasm32v1-none_.
 
 The crate enables writing init and receive functions as simple Rust

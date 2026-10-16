@@ -158,7 +158,7 @@ Finally, let's initialize a contract instance, so you are ready to invoke the co
 Or, use this command to use the Concordium testnet node:
 
 .. code-block:: console
- 
+
     $ concordium-client contract init <MODULE-HASH> \
         --sender <YOUR-TESTNET-ADDRESS> \
         --energy 30000 \

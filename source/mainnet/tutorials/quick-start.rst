@@ -48,7 +48,7 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
 
     The path where the project should be created can be provided with the ``--path`` option.
 
-    You can use the `concordium-std`_ library to help you build smart contracts or build without Rust's ``std``. To add the library, open ``Cargo.toml`` and add the library in the ``[dependencies]`` section:
+    You should use the `concordium-std`_ library to help you build smart contracts. To add the library, open ``Cargo.toml`` and add the library in the ``[dependencies]`` section:
 
         [dependencies]
         concordium-std = "11.0"

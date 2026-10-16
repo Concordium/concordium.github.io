@@ -96,6 +96,6 @@ Verifiable builds require a container runtime such as `Docker <https://www.docke
 
 Additional information about verifiable builds can be found in Cargo concordium `README.md <https://github.com/Concordium/concordium-smart-contract-tools/blob/main/cargo-concordium/README.md#reproducible-and-verifiable-builds>`_.
 
-To further optmize the build, you may consider using the ``bump_alloc`` allocator for your smart contract. See `concordium_std features`_.
+To further optimize the build, you may consider using the ``bump_alloc`` allocator for your smart contract. See `concordium_std features`_.
 
 .. _concordium_std features: https://docs.rs/concordium-std/latest/concordium_std/#features

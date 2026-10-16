@@ -166,7 +166,7 @@ Step-by-step guides for completing specific tasks on Concordium. Browse all guid
    Build a contract schema <smart-contracts/build-schema>
    Use custom errors <smart-contracts/custom-errors>
    Pass JSON parameters <smart-contracts/json-params>
-      Use fallback entrypoints <smart-contracts/fallback-entrypoints>
+   Use fallback entrypoints <smart-contracts/fallback-entrypoints>
    Write an upgradeable contract <smart-contracts/upgradeable-contract>
    Implement the factory pattern <smart-contracts/factory-pattern>
    Integration test a contract <smart-contracts/integration-test-contract>
