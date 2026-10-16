@@ -101,9 +101,6 @@ notfound_urls_prefix = "/en/mainnet/"
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates', '../_templates']
 
-# 404 page template.
-notfound_template = '404.html'
-
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
@@ -136,8 +133,6 @@ highlight_language = "rust"
 # a list of builtin themes.
 #
 html_theme = "pydata_sphinx_theme"
-
-html_logo = "../_static/concordium-logo.svg"
 html_favicon = "../_static/concordium-logo-no-text.svg"
 
 # Theme options are theme-specific and customize the look and feel of a theme
@@ -146,6 +141,10 @@ html_favicon = "../_static/concordium-logo-no-text.svg"
 #
 # These options are for pydata_sphinx_theme
 html_theme_options = {
+    "logo": {
+        "image_light": "_static/concordium-logo-dark.svg",
+        "image_dark": "_static/concordium-logo.svg",
+    },
     # 'canonical_url': '',
     # 'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
     # 'analytics_anonymize_ip': False,

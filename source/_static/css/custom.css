@@ -1,7 +1,9 @@
 /* Custom styling for the Pydata Sphinx Theme */
 /* See https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/styling.html. */
 
-html {
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+html[data-theme] {
     /*****************************************************************************
      * Font features used in this theme
      */
@@ -36,33 +38,44 @@ html {
 
     /* Font family */
     /* These are adapted from https://systemfontstack.com/ */
-    --pst-font-family-base-system: "IBM Plex Sans", "Helvetica Neue", Arial,
-        sans-serif;
-    --pst-font-family-monospace-system: "IBM Plex Mono", "Menlo",
-        "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
+    --pst-font-family-base-system: "Inter", sans-serif;
+    --pst-font-family-monospace-system: "IBM Plex Mono", Courier, monospace;
     --pst-font-family-base: var(--pst-font-family-base-system);
-    --pst-font-family-heading: var(--pst-font-family-base-system);
+    --pst-font-family-heading: "Plus Jakarta Sans", sans-serif;
     --pst-font-family-monospace: var(--pst-font-family-monospace-system);
 
     /*****************************************************************************
      * Colors
      **/
+    --blue-0: #2667FF;
+    --blue-1: #3E8AFF;
+    --blue-2: #69A4FF;
+    --blue-3: #ACCBFA;
+    --blue-4: #CCE0FF;
+    --blue-5: #E2EDFF;
+    --blue-6: #EEF5FF;
+    --black-0: #14181e;
+    --gray-0: #1B2735;
+    --gray-1: #384557;
+    --gray-2: #505F74;
+    --gray-3: #6E7C90;
+    --gray-4: #909CAD;
+    --gray-5: #BFC6D1;
+    --gray-6: #E4E8ED;
+    --white-0: #FFFFFF;
+    --white-1: #F2F2F2;
+    --white-2: #F9F9F9;
+    --white-3: #FCFCFC;
+    --red-0: #FF4F4C;
+    --red-1: #FF8886;
+    --red-2: #FFD3D2;
 
     /* specified with RGB or hexcodes */
-    --pst-color-primary: #48a2ae;
-    --pst-color-primary-text: #333333;
-    --pst-color-secondary: #052535;
-    --pst-color-link: #48a2ae;
-    --pst-color-link-hover: #48a2ae;
-    --pst-color-inline-code: 178, 34, 34;
-    --pst-color-sidebar-link-hover: #48a2ae;
-    --pst-color-toc-link-hover: #48a2ae;
-    --pst-color-toc-link-active: #48a2ae;
-    --pst-color-headerlink: #48a2ae;
-    --pst-color-headerlink-hover: #48a2ae;
-    --bg-color: #ffffff;
-    --heading-color: #333333;
-    --font-color: #333333;
+    --pst-color-primary: light-dark(var(--blue-0), var(--blue-1));
+    --pst-color-secondary: var(--blue-2); /*light-dark(var(--gray-0), var(--gray-6));*/
+
+    --pst-color-background: light-dark(var(--white-0), var(--black-0));
+    --pst-color-on-background: light-dark(var(--white-1), var(--gray-0));
 
     /*****************************************************************************
      * Admonitions
@@ -86,324 +99,42 @@ html {
 .consent {
     position: fixed;
     right: 0;
+    left: 0;
     bottom: 0;
-    max-width: 530px;
-    padding: 30px 45px 25px;
-    background: linear-gradient(157deg, #005a78 -18.68%, #2e8894 95.63%);
-    color: #fff;
-}
-
-.consent p {
-    margin-bottom: 0.5em;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 300;
+    padding: 1rem;
+    background-color: var(--pst-color-on-background);
+    color: var(--pst-color-text-base);
+    /* Other elements like admonition use z-index, so we ensure this banner is in front. */
+    z-index: 100;
 }
 
 .consent button {
     padding-left: 1em;
     padding-right: 1em;
-    margin-left: 0.5em;
     margin-right: 0.5em;
-    background-color: #48a2ae;
+    background-color: var(--blue-0);
+    color: var(--white-0);
     border-radius: 12px;
     border-width: 0;
-    color: #fff;
 }
 
-.consent a:link {
-    margin-left: 0.5em;
-    color: #ffffff;
-}
-
-.consent a:visited {
-    color: lightgrey;
-}
-
-.consent a:hover {
-    color: lightgrey;
-}
-
-.consent a:active {
-    color: #d9d9d9;
-}
-
+/* Remove the 'Section Navigation' title on the sidenav */
 .bd-links__title {
     display: none !important;
 }
 
-/* Tutorial page styling */
-.tutorial-section {
-    background-color: var(--pst-color-on-background);
-    border-color: var(--pst-color-border);
-    padding: 25px 25px 25px 40px !important;
-    /* top right bottom left - more padding on left */
-    margin: 20px 0;
-    border-radius: 8px;
-    border: 1px solid #cbd5e0;
-    /* More visible border */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    /* Subtle shadow */
+/* Remove underline on hover for links in the sidenav. */
+nav.bd-links li > a:hover {
+  text-decoration-line: none;
 }
 
-/* Blue container */
-.tutorial-section-blue {
-    background-color: #edf2f7 !important;
-    border: 1px solid #cbd5e0 !important;
+/* Adjust spacing for main content */
+p {
+  line-height: 1.5;
+  letter-spacing: 0.023rem;
 }
 
-/* Green container */
-.tutorial-section-green {
-    background-color: #f0fdf4 !important;
-    /* Light green */
-    border: 1px solid #dcfce7 !important;
-}
-
-/* Purple container */
-.tutorial-section-purple {
-    background-color: #faf5ff !important;
-    /* Light purple */
-    border: 1px solid #f3e8ff !important;
-}
-
-/* Yellow container */
-.tutorial-section-yellow {
-    background-color: #fefce8 !important;
-    /* Light yellow */
-    border: 1px solid #fef9c3 !important;
-}
-
-/* Dark mode variants */
-html[data-theme="dark"] .tutorial-section-blue {
-    background-color: #1e2937 !important;
-    /* Dark blue */
-    border: 1px solid #2d3748 !important;
-}
-
-html[data-theme="dark"] .tutorial-section-green {
-    background-color: #1a2e1a !important;
-    /* Dark green */
-    border: 1px solid #2d482d !important;
-}
-
-html[data-theme="dark"] .tutorial-section-purple {
-    background-color: #2d1a2e !important;
-    /* Dark purple */
-    border: 1px solid #482d48 !important;
-}
-
-html[data-theme="dark"] .tutorial-section-yellow {
-    background-color: #2e2d1a !important;
-    /* Dark yellow */
-    border: 1px solid #48482d !important;
-}
-
-/* Landing page cards */
-.landing-card {
-    background-color: #eaf4f6 !important;
-    /* Very light tint of Concordium teal #48a2ae */
-    border: 1px solid #c0dfe4 !important;
-}
-
-html[data-theme="dark"] .landing-card {
-    background-color: #0d2e33 !important;
-    /* Dark teal for dark mode */
-    border: 1px solid #1a4a52 !important;
-}
-
-/* Main layout fixes - these were working well */
-.bd-container__inner.bd-page-width {
-    max-width: none;
-    width: 100%;
-}
-
-.bd-main .bd-content {
-    max-width: none;
-    padding: 0 3rem;
-}
-
-.three-columns {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(250px, 1fr));
-    gap: 2.5rem;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-}
-
-/* Sidebar max width */
-.bd-sidebar-primary {
-    min-width: 250px;
-    max-width: 20%;
-    flex: 0 0 auto;
-}
-
-/* Prevent text selection in sidebar navigation */
-.bd-sidebar-primary .bd-links .bd-links__item,
-.bd-sidebar-primary .bd-links .bd-links__item *,
-.bd-sidebar-primary .current,
-.bd-sidebar-primary .toctree-l1,
-.bd-sidebar-primary .toctree-l2,
-.bd-sidebar-primary .reference.internal,
-.bd-sidebar-primary .nav-link {
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-
-/* Logo positioning */
-.navbar-header-items__start {
-    position: relative;
-    left: 0;
-    padding-left: 1rem;
-    z-index: 1;
-    /* Reduced z-index */
-    background: var(--pst-color-on-background);
-    max-width: 167px;
-    /* Match logo's natural width*/
-}
-
-/* Dark mode switching */
-html[data-theme="dark"] .light-logo {
-    display: none;
-}
-
-html[data-theme="dark"] .dark-logo {
-    display: block;
-}
-
-/* Menu positioning */
-.navbar-header-items:not(.navbar-header-items__start) {
-    margin-left: 200px;
-    position: relative;
-    z-index: 2;
-    /* Higher than logo */
-    background: var(--pst-color-on-background);
-}
-
-/* Logo handling for dark/light mode */
-.light-logo {
-    display: block;
-}
-
-.dark-logo {
-    display: none;
-}
-
-img.logo {
-    max-height: 35px;
-    width: auto;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .navbar-header-items__start {
-        max-width: 120px;
-        /* Smaller width on mobile */
-        margin-left: 3rem;
-        /* Make space for menu button */
-        background: var(--pst-color-on-background);
-        /* Single background property */
-    }
-
-    img.logo {
-        width: 100%;
-        height: auto;
-    }
-}
-
-/* Dark mode specific adjustments if needed */
-html[data-theme="dark"] .navbar-header-items__start,
-html[data-theme="dark"] .navbar-header-items:not(.navbar-header-items__start) {
-    background: var(--pst-color-on-background);
-    /* Ensures correct dark mode background */
-}
-
-@media (max-width: 576px) {
-    .bd-main .bd-content {
-        padding: 0 16px;
-    }
-
-    .three-columns {
-        display: grid;
-        grid-template-columns: repeat(1, minmax(300px, 1fr));
-        gap: 1rem;
-        margin-bottom: 0;
-    }
-
-    /* .prev-next-area a p.prev-next-title {
-    font-size: 0.875rem;
-  }
-
-  .prev-next-area a p.prev-next-subtitle {
-    font-size: 0.8rem;
-  } */
-
-    .prev-next-area a {
-        max-width: 50%;
-    }
-
-    .tutorial-section {
-        padding: 0.9375rem !important;
-    }
-
-    /* .tutorial-section {
-    padding: 15px !important;
-  } */
-
-    .copyright {
-        text-align: center;
-        font-size: 0.9rem;
-    }
-
-    .sd-tab-set .sd-tab-label {
-        /*    font-size: 0.75rem;*/
-        padding: 0.375rem !important;
-    }
-
-    .bd-search-container ul.search {
-        padding: 0;
-    }
-
-    .bd-search-container ul.search li div.context,
-    .bd-search-container ul.search li p.context {
-        word-wrap: break-word;
-    }
-
-    span.pre {
-        text-wrap: auto;
-    }
-
-    .sig {
-        flex-direction: column;
-        /* Stacks elements vertically */
-        align-items: flex-start;
-        /* Aligns to the left for better readability */
-    }
-
-    .sig-paren {
-        display: inline-block;
-    }
-
-    /*dd, ul {
-        margin-left: 0px !important;
-        padding-left: 0px !important;
-    }*/
-    #import-created-accounts-into-concordium-client{
-        word-break: break-all;
-    }
-    .sd-tab-set>input:checked+label+.sd-tab-content{
-        word-wrap: break-word;
-    }
-}
-
-@media (min-width: 768px),
-(max-width: 576px) {
-    .bd-sidebar-primary {
-        min-width: 20rem;
-    }
-
-    ul.navbar-icon-links {
-        flex-flow: row;
-    }
+/* Prevent the concordium logo from growing to big */
+.navbar-brand.logo {
+    max-width: 200px;
 }
