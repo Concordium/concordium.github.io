@@ -157,17 +157,39 @@ while Docker uses its validator credentials.
 Run the remaining commands beside the new ``compose.yaml``. Replace the quoted
 source paths below with the actual directories read from the plist:
 
+Create a new ``data/`` directory with access limited to its owner:
+
 .. code-block:: console
 
-   $ mkdir -m 0700 data
-   $ cp -pR "/actual/native/config-directory/." ./data/
-   $ cp -piR "/actual/native/data-directory/." ./data/
-   $ sudo chown -R 10001:10001 data
-   $ sudo chmod 0700 data
+   $mkdir -m 0700 data
 
-If the second copy prompts to overwrite a file, cancel and resolve the name
-conflict before continuing. If your user cannot read the source, use ``sudo``
-for the copy. Assign UID/GID ``10001:10001`` only to the destination copy,
+Copy the saved node configuration into ``data/``:
+
+.. code-block:: console
+
+   $cp -pR "/actual/native/config-directory/." ./data/
+
+Copy the database into the same directory. The ``-i`` option asks before
+replacing an existing file. If an overwrite prompt appears, cancel the command
+and resolve the conflicting names before you continue:
+
+.. code-block:: console
+
+   $cp -piR "/actual/native/data-directory/." ./data/
+
+Give the container's UID and GID ownership of the copy:
+
+.. code-block:: console
+
+   $sudo chown -R 10001:10001 data
+
+Limit access to the destination directory to its new owner:
+
+.. code-block:: console
+
+   $sudo chmod 0700 data
+
+If your user cannot read the source, use ``sudo`` for the copy. Assign UID/GID ``10001:10001`` only to the destination copy,
 not the original.
 Check symbolic links that refer outside the mount. Keep source directories
 unchanged, including their ownership and permissions.
@@ -179,14 +201,29 @@ Find the existing credential file using the native plist setting. Older
 installations use ``CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE``. Do not assume it is
 inside the default config directory. Reuse that file and existing registration.
 
-Create a protected directory beside Compose and copy the credentials:
+Create a protected ``secrets/`` directory beside the Compose file:
 
 .. code-block:: console
 
-   $ mkdir -m 0700 secrets
-   $ sudo cp -p "/actual/native/validator-credentials.json" ./secrets/validator-credentials.json
-   $ sudo chown 10001:10001 secrets/validator-credentials.json
-   $ sudo chmod 0400 secrets/validator-credentials.json
+   $mkdir -m 0700 secrets
+
+Copy the existing validator credentials into this directory:
+
+.. code-block:: console
+
+   $sudo cp -p "/actual/native/validator-credentials.json" ./secrets/validator-credentials.json
+
+Give the container's UID and GID ownership of the copied file:
+
+.. code-block:: console
+
+   $sudo chown 10001:10001 secrets/validator-credentials.json
+
+Limit read access to the file's new owner:
+
+.. code-block:: console
+
+   $sudo chmod 0400 secrets/validator-credentials.json
 
 The copied file belongs to the container's UID/GID ``10001:10001`` and is
 readable only by its owner under ordinary file permissions. Keep the original
