@@ -73,7 +73,7 @@ Step-by-step guides for completing specific tasks on Concordium. Browse all guid
 
         - :doc:`Run a node using Docker <nodes/run-node-docker-image/index>`
         - :doc:`Run a node on Ubuntu (deprecated) <nodes/run-node-ubuntu/index>`
-        - :doc:`Run a node on macOS <nodes/run-node-macos/index>`
+        - :doc:`Run a node on macOS (deprecated) <nodes/run-node-macos/index>`
         - :doc:`Run a node on Windows <nodes/run-node-windows/index>`
         - :doc:`Network-specific Docker images (deprecated) <nodes/run-node-docker/index>`
         - :doc:`Run a node on AWS <nodes/run-node-aws/index>`
