@@ -31,9 +31,6 @@ network-specific paths, ports, and settings accordingly.
 This guide covers Windows 10 and Windows 11 using Docker Engine
 installed directly inside Ubuntu WSL2, without Docker Desktop.
 
-This setup allows the Concordium node to start automatically when
-Windows boots, without requiring a user to sign in.
-
 Install Ubuntu 24.04 LTS
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
