@@ -10,7 +10,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Run a Node on macOS &#8212; Concordium  documentation</title>
+    <title>Run a node on macOS (deprecated) &#8212; Concordium  documentation</title>
   
   
   
@@ -54,13 +54,13 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/how-to/nodes/run-node-macos/index.b54449f5-9974-48a5-b0cd-dd2b89b2687b.js"></script>
+    <script defer="defer" src="../../../_static/tippy/how-to/nodes/run-node-macos/index.0dd751b0-6774-4921-a0dd-bc2239bd65ad.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'how-to/nodes/run-node-macos/index';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/how-to/nodes/run-node-macos/index.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Install and manage a node on macOS" href="run-node-macos.html" />
+    <link rel="next" title="Migrate to Docker" href="migrate-to-docker-image.html" />
     <link rel="prev" title="Troubleshoot a node on Ubuntu" href="../run-node-ubuntu/troubleshoot-node-ubuntu.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -578,10 +578,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../run-node-ubuntu/troubleshoot-node-ubuntu.html">Troubleshoot a node on Ubuntu (deprecated)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Run a Node on macOS</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="run-node-macos.html">Install and manage a node on macOS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="advanced-node-configuration-on-macos.html">Advanced node configuration on macOS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="troubleshoot-macos.html">Troubleshoot a node on macOS</a></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Run a node on macOS (deprecated)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="migrate-to-docker-image.html">Migrate to Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run-node-macos.html">Install and manage a node on macOS (deprecated)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced-node-configuration-on-macos.html">Advanced node configuration on macOS (deprecated)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshoot-macos.html">Troubleshoot a node on macOS (deprecated)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../run-node-windows/index.html">Run a node on Windows (deprecated)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -678,18 +679,28 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="run-a-node-on-macos">
-<h1>Run a Node on macOS<a class="headerlink" href="#run-a-node-on-macos" title="Link to this heading">#</a></h1>
+  <section id="run-a-node-on-macos-deprecated">
+<h1>Run a node on macOS (deprecated)<a class="headerlink" href="#run-a-node-on-macos-deprecated" title="Link to this heading">#</a></h1>
 <div class="admonition-at-a-glance admonition">
 <p class="admonition-title">At a glance</p>
 <p>This section covers installing and configuring a Concordium node on macOS. Choose a guide below based on what you need to do.</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The macOS package distribution is deprecated. For existing installations,
+follow <a class="reference internal" href="migrate-to-docker-image.html#migrate-macos-to-docker"><span class="std std-ref">Migrate to Docker</span></a> to move to Docker Desktop.
+Keep existing node data and validator keys during migration.
+The guides below remain available for existing package installations.
+For new installations, use the macOS tabs in
+<a class="reference internal" href="../run-node-docker-image/run-node-docker.html#install-node-docker-image"><span class="std std-ref">Install and manage a node on Docker</span></a>.</p>
+</div>
 <p>Choose a topic below to learn how to install, configure, or troubleshoot your Concordium node on macOS.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="run-node-macos.html">Install and manage a node on macOS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced-node-configuration-on-macos.html">Advanced node configuration on macOS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="troubleshoot-macos.html">Troubleshoot a node on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migrate-to-docker-image.html">Migrate to Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run-node-macos.html">Install and manage a node on macOS (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-node-configuration-on-macos.html">Advanced node configuration on macOS (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshoot-macos.html">Troubleshoot a node on macOS (deprecated)</a></li>
 </ul>
 </div>
 </section>
@@ -750,11 +761,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="run-node-macos.html"
+       href="migrate-to-docker-image.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Install and manage a node on macOS</p>
+        <p class="prev-next-title">Migrate to Docker</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

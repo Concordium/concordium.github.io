@@ -51,10 +51,11 @@
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=716d1818"></script>
+    <script src="../../../_static/tabs.js?v=3030b3cb"></script>
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/how-to/nodes/run-node-docker-image/run-node-docker.f1d173bd-4fe9-4b1a-96d9-03efa2a4e075.js"></script>
+    <script defer="defer" src="../../../_static/tippy/how-to/nodes/run-node-docker-image/run-node-docker.b5e0c28c-6075-4874-9173-530a88e60ab7.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'how-to/nodes/run-node-docker-image/run-node-docker';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/how-to/nodes/run-node-docker-image/run-node-docker.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -578,10 +579,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../run-node-ubuntu/troubleshoot-node-ubuntu.html">Troubleshoot a node on Ubuntu (deprecated)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../run-node-macos/index.html">Run a Node on macOS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../run-node-macos/run-node-macos.html">Install and manage a node on macOS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../run-node-macos/advanced-node-configuration-on-macos.html">Advanced node configuration on macOS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../run-node-macos/troubleshoot-macos.html">Troubleshoot a node on macOS</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../run-node-macos/index.html">Run a node on macOS (deprecated)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../run-node-macos/migrate-to-docker-image.html">Migrate to Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../run-node-macos/run-node-macos.html">Install and manage a node on macOS (deprecated)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../run-node-macos/advanced-node-configuration-on-macos.html">Advanced node configuration on macOS (deprecated)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../run-node-macos/troubleshoot-macos.html">Troubleshoot a node on macOS (deprecated)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../run-node-windows/index.html">Run a node on Windows (deprecated)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -682,7 +684,7 @@
 <span id="install-node-docker-image"></span><h1>Install and manage a node on Docker<a class="headerlink" href="#install-and-manage-a-node-on-docker" title="Link to this heading">#</a></h1>
 <div class="admonition-at-a-glance admonition">
 <p class="admonition-title">At a glance</p>
-<p>Use Docker Compose to run a mainnet or testnet node on Linux.
+<p>Use Docker Compose to run a mainnet or testnet node on Linux or macOS.
 You need Docker Engine and the Compose plugin.
 After this procedure, your node runs in a Docker container.</p>
 </div>
@@ -692,17 +694,25 @@ network genesis files. Select the network in the Compose file.</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../run-node-ubuntu/migrate-to-docker-image.html#migrate-debian-to-docker"><span class="std std-ref">Ubuntu package migration guide</span></a>.</p></li>
 <li><p><a class="reference internal" href="../run-node-docker/migrate-to-docker-image.html#migrate-network-specific-images"><span class="std std-ref">Network-specific docker image migration guide</span></a>.</p></li>
-<li><p>TODO MacOS</p></li>
-<li><p><a class="reference internal" href="../run-node-windows/migrate-to-docker-image.html#migrate-windows-to-docker"><span class="std std-ref">Windows node migration guide</span></a></p></li>
+<li><p><a class="reference internal" href="../run-node-macos/migrate-to-docker-image.html#migrate-macos-to-docker"><span class="std std-ref">macOS package migration guide</span></a> (Docker Desktop).</p></li>
+<li><p><a class="reference internal" href="../run-node-windows/migrate-to-docker-image.html#migrate-windows-to-docker"><span class="std std-ref">Windows node migration guide</span></a> (Docker Engine in WSL2).</p></li>
 </ul>
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Meet the <a class="reference internal" href="../node-requirements.html#node-requirements"><span class="std std-ref">node requirements</span></a>.</p></li>
 <li><p>Make sure that the selected image is available for your host platform.</p></li>
-<li><p>Install <a class="reference external" href="https://docs.docker.com/engine/install/">Docker Engine</a> and the
-<a class="reference external" href="https://docs.docker.com/compose/install/">Compose plugin</a>.</p></li>
 </ul>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-TGludXg=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-TGludXg=" name="TGludXg=" role="tab" tabindex="0">Linux</button><button aria-controls="panel-0-bWFjT1M=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-bWFjT1M=" name="bWFjT1M=" role="tab" tabindex="-1">macOS</button><button aria-controls="panel-0-V2luZG93cw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-V2luZG93cw==" name="V2luZG93cw==" role="tab" tabindex="-1">Windows</button></div><div aria-labelledby="tab-0-TGludXg=" class="sphinx-tabs-panel group-tab" id="panel-0-TGludXg=" name="TGludXg=" role="tabpanel" tabindex="0"><p>Install <a class="reference external" href="https://docs.docker.com/engine/install/">Docker Engine</a> and the
+<a class="reference external" href="https://docs.docker.com/compose/install/">Compose plugin</a>.</p>
+</div><div aria-labelledby="tab-0-bWFjT1M=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-bWFjT1M=" name="bWFjT1M=" role="tabpanel" tabindex="0"><p>Install and start <a class="reference external" href="https://docs.docker.com/desktop/setup/install/mac-install/">Docker Desktop for Mac</a>.
+Allocate resources that meet the node requirements. Keep Docker Desktop
+running while the node runs; container restart policies do not start
+Docker Desktop itself after a reboot.</p>
+</div><div aria-labelledby="tab-0-V2luZG93cw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-V2luZG93cw==" name="V2luZG93cw==" role="tabpanel" tabindex="0"><p>Docker Desktop instructions for Windows have not been written yet.
+Do not assume the Linux or macOS procedures apply unchanged.</p>
+</div></div>
 </section>
 <section id="configure-a-node">
 <span id="configure-docker-image"></span><h2>Configure a node<a class="headerlink" href="#configure-a-node" title="Link to this heading">#</a></h2>
@@ -711,10 +721,10 @@ network genesis files. Select the network in the Compose file.</p>
 <li><p>In the directory, create <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code> from one the network-configuration examples below.</p></li>
 <li><p>Replace the collector name with your desired node’s dashboard name, <em>note this name will be publicly visible</em>.</p></li>
 </ol>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-1-TGludXg=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-TGludXg=" name="TGludXg=" role="tab" tabindex="0">Linux</button><button aria-controls="panel-1-bWFjT1M=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-bWFjT1M=" name="bWFjT1M=" role="tab" tabindex="-1">macOS</button><button aria-controls="panel-1-V2luZG93cw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-V2luZG93cw==" name="V2luZG93cw==" role="tab" tabindex="-1">Windows</button></div><div aria-labelledby="tab-1-TGludXg=" class="sphinx-tabs-panel group-tab" id="panel-1-TGludXg=" name="TGludXg=" role="tabpanel" tabindex="0"><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Mainnet <code class="docutils literal notranslate"><span class="pre">mainnet-node/compose.yaml</span></code> example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Example of Concordium node configuration for running a node on Concordium Mainnet.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">node</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/node:latest</span>
@@ -739,7 +749,6 @@ network genesis files. Select the network in the Compose file.</p>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Testnet <code class="docutils literal notranslate"><span class="pre">testnet-node/compose.yaml</span></code> example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Example of Concordium node configuration for running a node on Concordium Testnet.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">node</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/node:latest</span>
@@ -762,7 +771,63 @@ network genesis files. Select the network in the Compose file.</p>
 </pre></div>
 </div>
 </div>
-</details><p>The examples mount a local <code class="docutils literal notranslate"><span class="pre">./data</span></code> directory beside the <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code> ensuring the node data and configurations are persisted across restart and updates.</p>
+</details></div><div aria-labelledby="tab-1-bWFjT1M=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-bWFjT1M=" name="bWFjT1M=" role="tabpanel" tabindex="0"><p>The current image uses AMD64. <code class="docutils literal notranslate"><span class="pre">platform</span></code> selects that architecture;
+Apple Silicon Macs require emulation. Check the selected image tag’s
+architecture and verify that your node keeps up with the network.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Mainnet <code class="docutils literal notranslate"><span class="pre">mainnet-node/compose.yaml</span></code> example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">node</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/node:latest</span>
+<span class="w">    </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/amd64</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mainnet-node</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">stop_grace_period</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8888:8888&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;127.0.0.1:20000:20000&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/mnt/data</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/genesis/mainnet-genesis.dat</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bootstrap.mainnet.concordium.software:8888</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://catchup.mainnet.concordium.software/blocks.idx</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_ENABLED</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_NODE_NAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-mainnet-node</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://dashboard.mainnet.concordium.software/nodes/post</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Testnet <code class="docutils literal notranslate"><span class="pre">testnet-node/compose.yaml</span></code> example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">node</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/node:latest</span>
+<span class="w">    </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/amd64</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testnet-node</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">stop_grace_period</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8889:8889&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;127.0.0.1:20001:20000&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/mnt/data</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/genesis/testnet-genesis.dat</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bootstrap.testnet.concordium.com:8888</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://catchup.testnet.concordium.com/blocks.idx</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_LISTEN_PORT</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;8889&quot;</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_ENABLED</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_NODE_NAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-testnet-node</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://dashboard.testnet.concordium.com/nodes/post</span>
+</pre></div>
+</div>
+</div>
+</details></div><div aria-labelledby="tab-1-V2luZG93cw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-V2luZG93cw==" name="V2luZG93cw==" role="tabpanel" tabindex="0"><p>Configuration examples for Windows have not been written yet.</p>
+</div></div>
+<p>The examples mount a local <code class="docutils literal notranslate"><span class="pre">./data</span></code> directory beside the <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code> ensuring the node data and configurations are persisted across restart and updates.</p>
 <p>The examples give public access to the P2P port and limit host gRPC access to the loopback interface.
 Testnet uses host port <code class="docutils literal notranslate"><span class="pre">20001</span></code> and container port <code class="docutils literal notranslate"><span class="pre">20000</span></code>.</p>
 <p>They setup the network specific genesis data and the concordium-provided bootstrapper nodes, source for out-of-band blocks (improves catchup time) and enables the collector handling telemetrics which allows the node to show up in the various blockchain explorers.</p>
@@ -818,8 +883,8 @@ Run this command for both <code class="docutils literal notranslate"><span class
 <section id="stop-or-remove-the-node">
 <span id="remove-docker-image"></span><h2>Stop or remove the node<a class="headerlink" href="#stop-or-remove-the-node" title="Link to this heading">#</a></h2>
 <p>To stop and take down the node run:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker<span class="w"> </span>compose<span class="w"> </span>stop
-<span class="gp">$</span>docker<span class="w"> </span>compose<span class="w"> </span>down
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>docker<span class="w"> </span>compose<span class="w"> </span>stop
+<span class="gp">$ </span>docker<span class="w"> </span>compose<span class="w"> </span>down
 </pre></div>
 </div>
 <p>The example configurations use 5 minute shutdown grace period for the node to stop.
@@ -836,6 +901,7 @@ Then, remove old state or backups only as permitted by your retention policy.</p
 <span id="validator-docker-image"></span><h2>Run a validator node<a class="headerlink" href="#run-a-validator-node" title="Link to this heading">#</a></h2>
 <p>For a new validator, see <a class="reference internal" href="../../infrastructure/import-validator-keys.html#import-validator-keys"><span class="std std-ref">Import validator keys</span></a>.
 For an existing Debian validator, follow <a class="reference internal" href="../run-node-ubuntu/migrate-to-docker-image.html#migrate-debian-to-docker"><span class="std std-ref">Migrate to Docker</span></a>.
+For an existing macOS validator, follow <a class="reference internal" href="../run-node-macos/migrate-to-docker-image.html#migrate-macos-to-docker"><span class="std std-ref">Migrate to Docker</span></a>.
 Use the existing validator keys. Do not generate new keys or register them again.</p>
 </section>
 </section>

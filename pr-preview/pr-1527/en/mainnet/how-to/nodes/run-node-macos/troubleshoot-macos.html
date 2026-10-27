@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/how-to/nodes/run-node-macos/troubleshoot-macos.cc249453-b3ea-431f-97f4-0f57defe7f82.js"></script>
+    <script defer="defer" src="../../../_static/tippy/how-to/nodes/run-node-macos/troubleshoot-macos.d289cb51-d092-4137-93c3-19a03e35cc8c.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'how-to/nodes/run-node-macos/troubleshoot-macos';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/how-to/nodes/run-node-macos/troubleshoot-macos.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -578,10 +578,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../run-node-ubuntu/troubleshoot-node-ubuntu.html">Troubleshoot a node on Ubuntu (deprecated)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Run a Node on macOS</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="run-node-macos.html">Install and manage a node on macOS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="advanced-node-configuration-on-macos.html">Advanced node configuration on macOS</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">Troubleshoot a node on macOS</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Run a node on macOS (deprecated)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="migrate-to-docker-image.html">Migrate to Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run-node-macos.html">Install and manage a node on macOS (deprecated)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced-node-configuration-on-macos.html">Advanced node configuration on macOS (deprecated)</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Troubleshoot a node on macOS (deprecated)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../run-node-windows/index.html">Run a node on Windows (deprecated)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -683,6 +684,12 @@
 <div class="admonition-at-a-glance admonition">
 <p class="admonition-title">At a glance</p>
 <p>This guide helps you diagnose and fix problems with a Concordium node running on macOS. You will need a node already installed. Use this page when your node is not starting, not syncing, or behaving unexpectedly.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The macOS package distribution is deprecated. Existing users should follow
+<a class="reference internal" href="migrate-to-docker-image.html#migrate-macos-to-docker"><span class="std std-ref">Migrate to Docker</span></a>. Keep node data and validator keys during
+migration. Do not use database deletion steps as part of migration.</p>
 </div>
 <p>This guide describes how to troubleshoot a node running on macOS on the Concordium network.</p>
 <section id="view-node-logs">
