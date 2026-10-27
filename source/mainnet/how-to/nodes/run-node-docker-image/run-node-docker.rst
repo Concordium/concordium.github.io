@@ -6,7 +6,7 @@ Install and manage a node on Docker
 
 .. admonition:: At a glance
 
-   Use Docker Compose to run a mainnet or testnet node on Linux.
+   Use Docker Compose to run a mainnet or testnet node on Linux or macOS.
    You need Docker Engine and the Compose plugin.
    After this procedure, your node runs in a Docker container.
 
@@ -17,16 +17,34 @@ If you are running a node already, avoid catching up from scratch using the matc
 
 - :ref:`Ubuntu package migration guide<migrate-debian-to-docker>`.
 - :ref:`Network-specific docker image migration guide<migrate-network-specific-images>`.
-- TODO MacOS
-- :ref:`Windows node migration guide <migrate-windows-to-docker>`
+- :ref:`macOS package migration guide <migrate-macos-to-docker>` (Docker Desktop).
+- :ref:`Windows node migration guide <migrate-windows-to-docker>` (Docker Engine in WSL2).
 
 Prerequisites
 =============
 
 - Meet the :ref:`node requirements <node-requirements>`.
 - Make sure that the selected image is available for your host platform.
-- Install `Docker Engine <https://docs.docker.com/engine/install/>`_ and the
-  `Compose plugin <https://docs.docker.com/compose/install/>`_.
+
+.. tabs::
+
+   .. group-tab:: Linux
+
+      Install `Docker Engine <https://docs.docker.com/engine/install/>`_ and the
+      `Compose plugin <https://docs.docker.com/compose/install/>`_.
+
+   .. group-tab:: macOS
+
+      Install and start `Docker Desktop for Mac
+      <https://docs.docker.com/desktop/setup/install/mac-install/>`_.
+      Allocate resources that meet the node requirements. Keep Docker Desktop
+      running while the node runs; container restart policies do not start
+      Docker Desktop itself after a reboot.
+
+   .. group-tab:: Windows
+
+      Docker Desktop instructions for Windows have not been written yet.
+      Do not assume the Linux or macOS procedures apply unchanged.
 
 .. _configure-docker-image:
 
@@ -37,56 +55,115 @@ Configure a node
 2. In the directory, create ``compose.yaml`` from one the network-configuration examples below.
 3. Replace the collector name with your desired node's dashboard name, :emphasis:`note this name will be publicly visible`.
 
-.. dropdown:: Mainnet ``mainnet-node/compose.yaml`` example
+.. tabs::
 
-   Example of Concordium node configuration for running a node on Concordium Mainnet.
+   .. group-tab:: Linux
 
-   .. code-block:: yaml
+      .. dropdown:: Mainnet ``mainnet-node/compose.yaml`` example
 
-      services:
-        node:
-          image: concordium/node:latest
-          container_name: mainnet-node
-          restart: unless-stopped
-          stop_grace_period: 5m
-          ports:
-            - "8888:8888"
-            - "127.0.0.1:20000:20000"
-          volumes:
-            - ./data:/mnt/data
-          environment:
-            CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE: /genesis/mainnet-genesis.dat
-            CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES: bootstrap.mainnet.concordium.software:8888
-            CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM: https://catchup.mainnet.concordium.software/blocks.idx
-            CONCORDIUM_NODE_COLLECTOR_ENABLED: "true"
-            CONCORDIUM_NODE_COLLECTOR_NODE_NAME: my-mainnet-node
-            CONCORDIUM_NODE_COLLECTOR_URL: https://dashboard.mainnet.concordium.software/nodes/post
+         .. code-block:: yaml
 
-.. dropdown:: Testnet ``testnet-node/compose.yaml`` example
+            services:
+              node:
+                image: concordium/node:latest
+                container_name: mainnet-node
+                restart: unless-stopped
+                stop_grace_period: 5m
+                ports:
+                  - "8888:8888"
+                  - "127.0.0.1:20000:20000"
+                volumes:
+                  - ./data:/mnt/data
+                environment:
+                  CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE: /genesis/mainnet-genesis.dat
+                  CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES: bootstrap.mainnet.concordium.software:8888
+                  CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM: https://catchup.mainnet.concordium.software/blocks.idx
+                  CONCORDIUM_NODE_COLLECTOR_ENABLED: "true"
+                  CONCORDIUM_NODE_COLLECTOR_NODE_NAME: my-mainnet-node
+                  CONCORDIUM_NODE_COLLECTOR_URL: https://dashboard.mainnet.concordium.software/nodes/post
 
-   Example of Concordium node configuration for running a node on Concordium Testnet.
+      .. dropdown:: Testnet ``testnet-node/compose.yaml`` example
 
-   .. code-block:: yaml
+         .. code-block:: yaml
 
-      services:
-        node:
-          image: concordium/node:latest
-          container_name: testnet-node
-          restart: unless-stopped
-          stop_grace_period: 5m
-          ports:
-            - "8889:8889"
-            - "127.0.0.1:20001:20000"
-          volumes:
-            - ./data:/mnt/data
-          environment:
-            CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE: /genesis/testnet-genesis.dat
-            CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES: bootstrap.testnet.concordium.com:8888
-            CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM: https://catchup.testnet.concordium.com/blocks.idx
-            CONCORDIUM_NODE_LISTEN_PORT: "8889"
-            CONCORDIUM_NODE_COLLECTOR_ENABLED: "true"
-            CONCORDIUM_NODE_COLLECTOR_NODE_NAME: my-testnet-node
-            CONCORDIUM_NODE_COLLECTOR_URL: https://dashboard.testnet.concordium.com/nodes/post
+            services:
+              node:
+                image: concordium/node:latest
+                container_name: testnet-node
+                restart: unless-stopped
+                stop_grace_period: 5m
+                ports:
+                  - "8889:8889"
+                  - "127.0.0.1:20001:20000"
+                volumes:
+                  - ./data:/mnt/data
+                environment:
+                  CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE: /genesis/testnet-genesis.dat
+                  CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES: bootstrap.testnet.concordium.com:8888
+                  CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM: https://catchup.testnet.concordium.com/blocks.idx
+                  CONCORDIUM_NODE_LISTEN_PORT: "8889"
+                  CONCORDIUM_NODE_COLLECTOR_ENABLED: "true"
+                  CONCORDIUM_NODE_COLLECTOR_NODE_NAME: my-testnet-node
+                  CONCORDIUM_NODE_COLLECTOR_URL: https://dashboard.testnet.concordium.com/nodes/post
+
+   .. group-tab:: macOS
+
+      The current image uses AMD64. ``platform`` selects that architecture;
+      Apple Silicon Macs require emulation. Check the selected image tag's
+      architecture and verify that your node keeps up with the network.
+
+      .. dropdown:: Mainnet ``mainnet-node/compose.yaml`` example
+
+         .. code-block:: yaml
+
+            services:
+              node:
+                image: concordium/node:latest
+                platform: linux/amd64
+                container_name: mainnet-node
+                restart: unless-stopped
+                stop_grace_period: 5m
+                ports:
+                  - "8888:8888"
+                  - "127.0.0.1:20000:20000"
+                volumes:
+                  - ./data:/mnt/data
+                environment:
+                  CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE: /genesis/mainnet-genesis.dat
+                  CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES: bootstrap.mainnet.concordium.software:8888
+                  CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM: https://catchup.mainnet.concordium.software/blocks.idx
+                  CONCORDIUM_NODE_COLLECTOR_ENABLED: "true"
+                  CONCORDIUM_NODE_COLLECTOR_NODE_NAME: my-mainnet-node
+                  CONCORDIUM_NODE_COLLECTOR_URL: https://dashboard.mainnet.concordium.software/nodes/post
+
+      .. dropdown:: Testnet ``testnet-node/compose.yaml`` example
+
+         .. code-block:: yaml
+
+            services:
+              node:
+                image: concordium/node:latest
+                platform: linux/amd64
+                container_name: testnet-node
+                restart: unless-stopped
+                stop_grace_period: 5m
+                ports:
+                  - "8889:8889"
+                  - "127.0.0.1:20001:20000"
+                volumes:
+                  - ./data:/mnt/data
+                environment:
+                  CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE: /genesis/testnet-genesis.dat
+                  CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES: bootstrap.testnet.concordium.com:8888
+                  CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM: https://catchup.testnet.concordium.com/blocks.idx
+                  CONCORDIUM_NODE_LISTEN_PORT: "8889"
+                  CONCORDIUM_NODE_COLLECTOR_ENABLED: "true"
+                  CONCORDIUM_NODE_COLLECTOR_NODE_NAME: my-testnet-node
+                  CONCORDIUM_NODE_COLLECTOR_URL: https://dashboard.testnet.concordium.com/nodes/post
+
+   .. group-tab:: Windows
+
+      Configuration examples for Windows have not been written yet.
 
 The examples mount a local ``./data`` directory beside the ``compose.yaml`` ensuring the node data and configurations are persisted across restart and updates.
 
@@ -155,8 +232,8 @@ To stop and take down the node run:
 
 .. code-block:: console
 
-   $docker compose stop
-   $docker compose down
+   $ docker compose stop
+   $ docker compose down
 
 The example configurations use 5 minute shutdown grace period for the node to stop.
 Check the logs for a clean shutdown.
@@ -175,4 +252,5 @@ Run a validator node
 
 For a new validator, see :ref:`Import validator keys <import-validator-keys>`.
 For an existing Debian validator, follow :ref:`migrate-debian-to-docker`.
+For an existing macOS validator, follow :ref:`migrate-macos-to-docker`.
 Use the existing validator keys. Do not generate new keys or register them again.
