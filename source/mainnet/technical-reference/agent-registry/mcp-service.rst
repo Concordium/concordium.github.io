@@ -12,9 +12,11 @@ The service holds **no private keys**. All tools that produce transactions retur
 Hosted service
 ==============
 
-A hosted instance of the MCP service is available for direct use in AI assistants and agent frameworks. Connect your MCP-compatible client to the hosted endpoint to gain immediate access to all registry tools on mainnet, testnet, and devnet.
+A hosted instance of the MCP service runs at ``https://agent-registry-mcp.concordium.com`` with mainnet, testnet, and devnet configured. Connect any MCP-compatible client to it for immediate access to every registry tool.
 
-Contact the Concordium team or check the `Concordium developer portal <https://developer.concordium.software>`__ for the current hosted endpoint URL and connection instructions.
+- MCP endpoint: ``https://agent-registry-mcp.concordium.com/mcp`` — JSON-RPC 2.0; ``tools/list`` returns every tool with its description and input schema, so clients discover new tools without a docs change.
+- REST endpoints: the most common operations as plain ``GET`` calls — see :ref:`agent-registry-mcp-rest` below. ``/docs`` is an interactive Swagger UI; ``/openapi.json`` is the OpenAPI 3 document.
+- Health: ``https://agent-registry-mcp.concordium.com/healthz``
 
 Running locally
 ===============
@@ -65,7 +67,7 @@ The server listens on port ``3000`` by default and exposes a standard MCP endpoi
 Available tools
 ===============
 
-The MCP service exposes 35 tools, grouped by function.
+The MCP service exposes 40 tools, grouped by function. Tools that also have a REST endpoint say so in their description (see :ref:`agent-registry-mcp-rest`).
 
 Discovery and search (require Indexer)
 --------------------------------------
@@ -175,9 +177,17 @@ Utilities
    * - Tool
      - Description
    * - ``build_agent_card``
-     - Generates a complete, valid Agent Card JSON and its SHA-256 hash from human-readable inputs.
+     - Generates a complete, valid Agent Card JSON and its SHA-256 hash from human-readable inputs. For a brand-new card.
+   * - ``build_agent_badge``
+     - Adds or upgrades the badge on an **existing** card without disturbing its other fields. Takes the card as ``card_json`` or ``card_url``; returns the merged card and its SHA-256.
+   * - ``get_badge_json``
+     - The badge → the JSON block. Given only a token address, resolves the agent on chain and returns the extension object to paste into ``capabilities.extensions``, the ERC-8004 ``registrations`` entry, and the next steps. REST: ``GET /v1/get-badge-JSON/{badge}``.
+   * - ``check_badge``
+     - Verifies one badge (by token address) or every badge an account owns: on-chain record, card hash, badge block well-formedness and extension-form conformance, verification block. REST: ``GET /v1/check-badge/{id}``.
+   * - ``check_account_badges``
+     - Account-only alias of ``check_badge``.
    * - ``verify_agent_card``
-     - Fetches ``agent_uri`` and verifies its hash against the on-chain ``metadata_hash``.
+     - Fetches ``agent_uri`` and verifies its hash against the on-chain ``metadata_hash``. REST: ``GET /v1/verify-agent-card/{badge}``.
    * - ``token_address``
      - Computes the Base58Check CIS-2 token address for a ``(contract_index, subindex, token_id)`` triple. Off-chain only.
    * - ``parse_token_address``
@@ -189,6 +199,52 @@ Utilities
    * - ``contract_info``
      - Returns contract addresses, module references, and admin accounts for both CIS-8004 and CIS-8 on a given network.
 
+.. _agent-registry-mcp-rest:
+
+REST endpoints
+==============
+
+The hosted service also exposes the most common operations as plain ``GET`` endpoints, so a developer with ``curl`` needs no MCP client. The endpoints reuse the MCP tools verbatim — both doors return the same JSON. No authentication; CORS is open; requests are rate-limited per IP.
+
+**Naming rule.** An MCP tool ``verb_noun`` that has a REST twin lives at ``/v1/verb-noun/{badge}``. Where the object is an agent, the key is the **badge** — its Base58Check token address — and the network is resolved from it; ``?network=`` only overrides.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 42 22 36
+
+   * - REST
+     - MCP tool
+     - Purpose
+   * - ``GET /v1/get-badge-JSON/{badge}``
+     - ``get_badge_json``
+     - The badge → the JSON block to paste into an Agent Card, plus the ERC-8004 ``registrations`` entry and ``next_steps``. Refuses revoked agents (``409``). See :doc:`add the badge to an existing card <concordium-badge>`.
+   * - ``GET /v1/check-badge/{badge or account}``
+     - ``check_badge``
+     - Verify one badge, or every badge an account owns. ``/v1/badge-check/{id}`` is a permanent alias — it is the path stamped into every issued badge's ``verification.verifyUrl``.
+   * - ``GET /v1/verify-agent-card/{badge}``
+     - ``verify_agent_card``
+     - Card SHA-256 versus the on-chain ``metadata_hash``. ``?fetch=false`` returns only the on-chain anchor.
+   * - ``GET /v1/build-set-agent-uri/{badge}``
+     - ``build_set_agent_uri``
+     - Sign-ready ``setAgentURI`` payload to pin a new card hash and/or URL. Query: ``metadata_hash_hex``, ``agent_uri``, ``sender``.
+   * - ``GET /openapi.json`` · ``GET /docs``
+     - —
+     - OpenAPI 3 document · Swagger UI to try the calls.
+
+.. code-block:: bash
+
+   # the badge -> the block to paste into your card
+   curl -s https://agent-registry-mcp.concordium.com/v1/get-badge-JSON/Mf22soLh1NuZYFgBK8iSs
+
+   # verify it
+   curl -s https://agent-registry-mcp.concordium.com/v1/check-badge/Mf22soLh1NuZYFgBK8iSs
+
+Errors are JSON ``{ "error", "message" }``: ``400`` for a malformed id or refused input, ``404`` when no agent exists at that token address, ``409`` when the agent is revoked, ``429`` with ``Retry-After`` when rate-limited.
+
+.. note::
+
+   Enumeration, search, and feeds — listing agents, an agent's history, recent events, registry statistics — are a separate, resource-style REST API served by the :doc:`Indexer <indexer>` at ``https://agent-registry-indexer.concordium.com/`` (its ``/`` lists its routes). The MCP tools ``list_agents``, ``search_agents``, ``agents_by_owner``, ``agent_history``, ``recent_registrations``, and ``recent_transfers`` read from it.
+
 Connecting Claude Desktop
 =========================
 
@@ -199,7 +255,7 @@ Add the following block to your Claude Desktop MCP configuration (``claude_deskt
    {
      "mcpServers": {
        "concordium-agent-registry": {
-         "url": "<hosted-mcp-endpoint>"
+         "url": "https://agent-registry-mcp.concordium.com/mcp"
        }
      }
    }

@@ -66,8 +66,8 @@ On-chain identity and discovery for AI agents.
 - [CIS-8004: Agent Registry standard](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/cis-8004.html): CIS-8004 contract specification — token model, entrypoints, and external references
 - [CIS-8: External Key Registry standard](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/cis-8.html): CIS-8 contract specification — cross-chain key bindings and proof schemes
 - [Agent Card format](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/agent-card.html): Combined document valid as both an ERC-8004 registration file and an A2A v1.0 Agent Card, with badge extension and card verification
-- [Verified by Concordium badge](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html): Badge string format (token address, CAIP-19), trustless resolution and verification, A2A extension embedding, and ERC-8004 registrations
-- [MCP service](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/mcp-service.html): Model Context Protocol server — hosted endpoint, local setup, and all available tools
+- [Verified by Concordium badge](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html): Badge string format (token address, CAIP-19), trustless resolution and verification, A2A extension embedding, and ERC-8004 registrations, and how to add the badge to an existing card (get-badge-JSON → paste → hash → pin)
+- [MCP service](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/mcp-service.html): Model Context Protocol server — hosted endpoint, local setup, all available tools, and the REST endpoints (get-badge-JSON, check-badge, verify-agent-card, build-set-agent-uri; OpenAPI at /openapi.json) with the MCP ↔ REST naming rule
 - [Indexer](https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/indexer.html): Event indexer for agent discovery — setup, REST API, and sync state
 
 ## Partner integrations
