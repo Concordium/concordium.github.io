@@ -53,7 +53,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/technical-reference/agent-registry/concordium-badge.53ea8d67-195a-43f6-b797-7c6cb03c20d6.js"></script>
+    <script defer="defer" src="../../_static/tippy/technical-reference/agent-registry/concordium-badge.1f3ee53e-07ac-4eca-b8f3-4e31bde34df4.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-reference/agent-registry/concordium-badge';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -839,6 +839,39 @@
 </div>
 <p>A service named here is a convenience, not an authority — it returns chain-derived data the consumer can re-check against the contracts in the badge. Issuers point these fields at whichever hosted verification service — resolver and <a class="reference internal" href="mcp-service.html"><span class="doc">MCP</span></a> — they operate or trust. Discovery and enumeration (finding agents you don’t already have a badge for) is a separate concern handled by the <a class="reference internal" href="indexer.html"><span class="doc">Indexer</span></a>, not the badge.</p>
 </section>
+<section id="add-the-badge-to-an-existing-card">
+<h3>Add the badge to an existing card<a class="headerlink" href="#add-the-badge-to-an-existing-card" title="Link to this heading">#</a></h3>
+<p>If your agent is already registered you do not need to rebuild your card: fetch the badge block, paste it in, re-host, and pin the new hash. Everything in the block is resolved from the chain, so the only input is the badge itself.</p>
+<ol class="arabic">
+<li><p><strong>Get the block.</strong> One <code class="docutils literal notranslate"><span class="pre">GET</span></code> with the badge string and nothing else — the network is resolved from the badge:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span>https://agent-registry-mcp.concordium.com/v1/get-badge-JSON/Mf22soLh1NuZYFgBK8iSs
+</pre></div>
+</div>
+<p>The response carries <code class="docutils literal notranslate"><span class="pre">extension</span></code> (the complete <code class="docutils literal notranslate"><span class="pre">{uri,</span> <span class="pre">description,</span> <span class="pre">required,</span> <span class="pre">params}</span></code> object, including <code class="docutils literal notranslate"><span class="pre">verification.verifyUrl</span></code>), <code class="docutils literal notranslate"><span class="pre">registrations_entry</span></code> (the ERC-8004 line above) and <code class="docutils literal notranslate"><span class="pre">next_steps</span></code>. Over MCP the same call is the <code class="docutils literal notranslate"><span class="pre">get_badge_json</span></code> tool.</p>
+</li>
+<li><p><strong>Paste.</strong> Put <code class="docutils literal notranslate"><span class="pre">extension</span></code> into <code class="docutils literal notranslate"><span class="pre">capabilities.extensions</span></code>, replacing any existing <code class="docutils literal notranslate"><span class="pre">…/concordium-badge/v1</span></code> entry, and delete any top-level <code class="docutils literal notranslate"><span class="pre">concordium</span></code> block. Optionally add <code class="docutils literal notranslate"><span class="pre">registrations_entry</span></code> to the top-level <code class="docutils literal notranslate"><span class="pre">registrations</span></code> array. Change nothing else.</p></li>
+<li><p><strong>Host</strong> the card at its <code class="docutils literal notranslate"><span class="pre">agent_uri</span></code>.</p></li>
+<li><p><strong>Hash the served bytes</strong> — what a verifier will fetch, not the file on disk:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span>https://your-host/.well-known/agent-card.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>sha256sum
+</pre></div>
+</div>
+</li>
+<li><p><strong>Pin the hash on chain.</strong> Build the <code class="docutils literal notranslate"><span class="pre">setAgentURI</span></code> payload (omit <code class="docutils literal notranslate"><span class="pre">agent_uri</span></code> to keep the URL), sign it with the owner wallet and submit:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;https://agent-registry-mcp.concordium.com/v1/build-set-agent-uri/Mf22soLh1NuZYFgBK8iSs?metadata_hash_hex=&lt;sha256&gt;&amp;sender=&lt;owner account&gt;&quot;</span>
+</pre></div>
+</div>
+<p>Between hosting and pinning, the served card and the on-chain hash disagree for a moment. To avoid even that, host at a new versioned URL and pass <code class="docutils literal notranslate"><span class="pre">agent_uri</span></code> together with <code class="docutils literal notranslate"><span class="pre">metadata_hash_hex</span></code> in one transaction.</p>
+</li>
+<li><p><strong>Confirm.</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-s<span class="w"> </span>https://agent-registry-mcp.concordium.com/v1/check-badge/Mf22soLh1NuZYFgBK8iSs
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">badge_valid</span></code>, <code class="docutils literal notranslate"><span class="pre">extension_conformant</span></code> and <code class="docutils literal notranslate"><span class="pre">verification_present</span></code> should all be <code class="docutils literal notranslate"><span class="pre">true</span></code> with an empty <code class="docutils literal notranslate"><span class="pre">issues</span></code> list.</p>
+</li>
+</ol>
+<p>If you would rather not hash anything yourself, the <code class="docutils literal notranslate"><span class="pre">build_agent_badge</span></code> MCP tool takes your current card (<code class="docutils literal notranslate"><span class="pre">card_url</span></code> or <code class="docutils literal notranslate"><span class="pre">card_json</span></code>) and returns the merged card together with its SHA-256, ready for step 5.</p>
+<p>Composing a card for an agent that is <strong>not registered yet</strong> is a two-pass flow, because the badge needs a token id that does not exist until <code class="docutils literal notranslate"><span class="pre">register</span></code> mints it: use <code class="docutils literal notranslate"><span class="pre">build_agent_card</span></code> for the first card (its badge carries <code class="docutils literal notranslate"><span class="pre">&quot;tokenAddress&quot;:</span> <span class="pre">null</span></code> and a <code class="docutils literal notranslate"><span class="pre">verifyUrl</span></code> keyed on the owner account), register, then run the steps above once with the new badge.</p>
+</section>
 <section id="profile-or-bio">
 <h3>Profile or bio<a class="headerlink" href="#profile-or-bio" title="Link to this heading">#</a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Badge string: Mf22soLh1NuZYFgBK8iSs
@@ -967,6 +1000,7 @@ Agent Card: https://…/.well-known/agent-card.json
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erc-8004-registrations-entry">ERC-8004 registrations entry</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#legacy-embedding">Legacy embedding</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verification-hints">Verification hints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-the-badge-to-an-existing-card">Add the badge to an existing card</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-or-bio">Profile or bio</a></li>
 </ul>
 </li>
