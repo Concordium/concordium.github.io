@@ -14,7 +14,6 @@ Find technical documentation here for every stage — evaluating, building, inte
    :gutter: 3
 
    .. grid-item-card:: Exploring Concordium?
-      :class-card: landing-card
 
       Get a clear picture of what Concordium does, how it works, and whether it fits your use case.
 
@@ -24,9 +23,9 @@ Find technical documentation here for every stage — evaluating, building, inte
       - :doc:`Earn rewards by delegating your CCD <learn/staking/concepts-delegation>`
       - :doc:`Verify and Access: integration overview <how-to/concordium-id/verify-and-access/index>`
       - :doc:`Wallet integration: what to consider <how-to/integrations/wallet-integration/wallet-integration>`
+      - :doc:`How partners have integrated with Concordium <learn/partner-integrations/index>`
 
    .. grid-item-card:: Ready to build?
-      :class-card: landing-card
 
       Set up your environment and follow step-by-step tutorials from your first transaction to a complete integration.
 
@@ -38,7 +37,6 @@ Find technical documentation here for every stage — evaluating, building, inte
       - Protocol-Level Tokens — `read more on concordium.com <https://www.concordium.com/article/smart-money-starts-here-concordiums-protocol-level-tokens>`__ or :doc:`build with PLTs <tutorials/plt/index>`
 
    .. grid-item-card:: Running infrastructure?
-      :class-card: landing-card
 
       Set up and operate nodes and validators on the Concordium network.
 
@@ -49,7 +47,6 @@ Find technical documentation here for every stage — evaluating, building, inte
       - :doc:`Validation and delegation: common questions <how-to/infrastructure/delegation-faq>`
 
    .. grid-item-card:: Reference & tools
-      :class-card: landing-card
 
       Find API specifications, command-line tools, and other reference material.
 
@@ -66,6 +63,6 @@ Find technical documentation here for every stage — evaluating, building, inte
 
    Explore <learn/index>
    tutorials/index
-   How-to <how-to/index>
+   How‑to <how-to/index>
    Reference <technical-reference/index>
    Downloads <downloads>

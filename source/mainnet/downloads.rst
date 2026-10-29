@@ -65,49 +65,55 @@ Concordium Desktop Wallet
 
 .. dropdown:: Mainnet
 
-   .. card:: Windows v1.9.3
-      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-mainnet/concordium-desktop-wallet-1.9.3.exe
+   .. card:: Windows v1.9.6
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.6-mainnet/concordium-desktop-wallet-1.9.6.exe
 
-   .. card:: macOS v1.9.3
-      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-mainnet/concordium-desktop-wallet-1.9.3.dmg
+   .. card:: macOS v1.9.6 - Intel (x64)
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.6-mainnet/concordium-desktop-wallet-1.9.6-x64.dmg
 
-   .. dropdown:: Linux v1.9.3
+   .. card:: macOS v1.9.6 - Apple Silicon (ARM64)
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.6-mainnet/concordium-desktop-wallet-1.9.6-arm64.dmg
 
-      - `Mainnet AppImage <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-mainnet/concordium-desktop-wallet-1.9.3.AppImage>`_
+   .. card:: Linux v1.9.6 - AppImage
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.6-mainnet/concordium-desktop-wallet-1.9.6.AppImage
 
-         - SHA256 checksum of the download: :substitution-code:`|cdw-appimage-checksum|`
-         - :ref:`Verification instructions <verification-cdw-appimage>`
+   :ref:`SHA256 checksum:<verification-cdw-appimage>` :substitution-code:`|cdw-appimage-checksum|`
 
-      - `Mainnet Debian package <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-mainnet/concordium-desktop-wallet-1.9.3.deb>`_
+   .. card:: Linux v1.9.6 - Debian package
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.6-mainnet/concordium-desktop-wallet-1.9.6.deb
 
-         - SHA256 checksum of the download: :substitution-code:`|cdw-deb-checksum|`
-         - :ref:`Verification instructions <verification-cdw-deb>`
+   :ref:`SHA256 checksum:<verification-cdw-deb>` :substitution-code:`|cdw-deb-checksum|`
 
-      - `Mainnet RPM <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-mainnet/concordium-desktop-wallet-1.9.3.rpm>`_
+   .. card:: Linux v1.9.6 - RPM
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.6-mainnet/concordium-desktop-wallet-1.9.6.rpm
 
-         - SHA256 checksum of the download: :substitution-code:`|cdw-rpm-checksum|`
-         - :ref:`Verification instructions <verification-cdw-rpm>`
+   :ref:`SHA256 checksum:<verification-cdw-rpm>` :substitution-code:`|cdw-rpm-checksum|`
 
 .. dropdown:: Testnet
 
-   .. card:: Windows v1.9.3
-      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-testnet/concordium-desktop-wallet-testnet-1.9.3.exe
+   .. card:: Windows v1.9.6
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.6-testnet/concordium-desktop-wallet-testnet-1.9.6.exe
 
-   .. card:: macOS v1.9.3
-      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-testnet/concordium-desktop-wallet-testnet-1.9.3.dmg
+   .. card:: macOS v1.9.6 - Intel (x64)
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.6-testnet/concordium-desktop-wallet-testnet-1.9.6-x64.dmg
 
-   .. dropdown:: Linux v1.9.3
+   .. card:: macOS v1.9.6 - Apple Silicon (ARM64)
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.6-testnet/concordium-desktop-wallet-testnet-1.9.6-arm64.dmg
 
-      Download the Testnet version of Concordium Desktop Wallet for Linux:
+   .. card:: Linux v1.9.6 - AppImage
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.6-testnet/concordium-desktop-wallet-testnet-1.9.6.AppImage
 
-      -  `Testnet AppImage <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-testnet/concordium-desktop-wallet-testnet-1.9.3.AppImage>`_
-         -  SHA256 checksum of the download: ``d38c74635a30f467e1acdf17e1fd2409cb59caecf1365942c16fd79a5cf0db60``
+   :ref:`SHA256 checksum:<verification-cdw-appimage>` ``8f52df25876e6651cb28de875ab013f464899a395d72a12ea644709d0a4f8805``
 
-      -  `Testnet Debian package <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-testnet/concordium-desktop-wallet-testnet-1.9.3.deb>`_
-         -  SHA256 checksum of the download: ``d480b27f8d2f5dd4e7f3b4901d6647c8341ac89b3124a6255cfbe12dad42a9a2``
+   .. card:: Linux v1.9.6 - Debian package
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.6-testnet/concordium-desktop-wallet-testnet-1.9.6.deb
 
-      -  `Testnet RPM <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-testnet/concordium-desktop-wallet-testnet-1.9.3.rpm>`_
-         -  SHA256 checksum of the download: ``10dc5e84158f9eae1d009eb9bb55298bbe7e8aa49be592f129795c751df73e77``
+   :ref:`SHA256 checksum:<verification-cdw-deb>` ``fb22631a83c214319df78bf12ac687dfc0ba59b033363886191a78b68078f251``
+
+   .. card:: Linux v1.9.6 - RPM
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.6-testnet/concordium-desktop-wallet-testnet-1.9.6.rpm
+
+   :ref:`SHA256 checksum:<verification-cdw-rpm>` ``b14cfed06885a4d2b293d1cb510482c47a13595fe6839003334c44da76bdb5cf``
 
 .. _ledger-app-download:
 
@@ -210,7 +216,7 @@ For the system requirements to run a node and installation instructions for each
 
    .. dropdown:: Ubuntu |mainnet-node-version|
 
-      To run a node on a server with Ubuntu, `download a Mainnet Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_10.0.11-5_amd64.deb>`_.
+      To run a node on a server with Ubuntu, `download a Mainnet Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_10.0.12-6_amd64.deb>`_.
 
          - SHA256 checksum of the download: |node-deb-package-checksum|
 
@@ -224,13 +230,13 @@ For the system requirements to run a node and installation instructions for each
 
    .. dropdown:: Windows |mainnet-node-version|
 
-      To run a node on Windows, `download a Mainnet Windows Installer package <https://distribution.concordium.software/windows/Node-10.0.11-5.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
+      To run a node on Windows, `download a Mainnet Windows Installer package <https://distribution.concordium.software/windows/Node-10.0.12-6.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
       To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
    .. dropdown:: Mac |mainnet-node-version|
 
-      To run a node on macOS, `download a Mainnet macOS installer package <https://distribution.concordium.software/macos/concordium-node-10.0.11-5.pkg>`_.
+      To run a node on macOS, `download a Mainnet macOS installer package <https://distribution.concordium.software/macos/concordium-node-10.0.12-6.pkg>`_.
 
       To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
@@ -241,9 +247,9 @@ For the system requirements to run a node and installation instructions for each
 
    .. dropdown:: Ubuntu |testnet-node-version|
 
-      To run a node on a server with Ubuntu, `download a Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_10.0.11-5_amd64.deb>`_.
+      To run a node on a server with Ubuntu, `download a Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_10.0.12-6_amd64.deb>`_.
 
-      - SHA256 checksum of the download: ``a9dd6cf3b04a3b4c37c70cac803eac638910f51c437ec6920fda969f58d6e9ad``
+      - SHA256 checksum of the download: ``a0f16379c71b8bc1f6c5add21f105bcacd071bd9958775f6e8e25e1f05c58b18``
 
       To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
@@ -257,13 +263,13 @@ For the system requirements to run a node and installation instructions for each
 
    .. dropdown:: Windows |testnet-node-version|
 
-      To run a node on Windows, `download a Testnet Windows Installer package <https://distribution.concordium.software/windows/Node-10.0.11-5.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
+      To run a node on Windows, `download a Testnet Windows Installer package <https://distribution.concordium.software/windows/Node-10.0.12-6.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
       To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
    .. dropdown:: Mac |testnet-node-version|
 
-      To run a node on macOS, `download a Testnet macOS installer package <https://distribution.concordium.software/macos/concordium-node-10.0.11-5.pkg>`_.
+      To run a node on macOS, `download a Testnet macOS installer package <https://distribution.concordium.software/macos/concordium-node-10.0.12-6.pkg>`_.
 
       To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS <run-node-macos>`.
 
