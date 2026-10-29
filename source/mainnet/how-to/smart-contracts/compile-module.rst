@@ -53,7 +53,7 @@ For example, running the following command will output your smart contract modul
 
       $ cargo build --target=wasm32v1-none --release
 
-   produces a pure Wasm module as output. But Cargo concordium will embed schema and version information that is needed in addition, 
+   produces a pure Wasm module as output. But Cargo concordium will embed schema and version information that is needed in addition,
    and also optimize the Wasm by stripping unused code.
 
 .. _cargo-concordium: https://crates.io/crates/cargo-concordium
@@ -70,7 +70,7 @@ Verifiable builds
 
 Compiling the smart contract above is fine for development. But once you want to deploy a contract on chain, it is
 recommended to do a verifiable build. A verifiable build links the smart contract module with the source code it is build
-from in a verifiable way. 
+from in a verifiable way.
 In order to build a verifiable smart contract, run:
 
 .. code-block:: console
@@ -81,7 +81,7 @@ This uses Cargo_ for building, but runs further optimizations on the result.
 
 A verifiable build will cause ``cargo-concordium`` to build the sources
 in a container to make the build reproducible. It will additionally produce
-a ``tar`` file with packaged sources that were used for the build. 
+a ``tar`` file with packaged sources that were used for the build.
 
 The ``tar`` archive should be uploaded and made publicly available, and its
 link should be embedded into the deployed module using the ``cargo concordium edit-build-info``

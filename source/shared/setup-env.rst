@@ -25,7 +25,7 @@ Copy and paste the commands in a terminal to install Wasm which will be used for
     rustup target add wasm32v1-none
 
 
-Now you need to install the Concordium software package. ``cargo-concordium`` is the tool for developing smart contracts for the Concordium blockchain. It can be used for :ref:`compiling<compile-module>` and :ref:`testing<integration-test-contract>` smart contracts, and enables features such as :ref:`building contract schemas<build-schema>`. 
+Now you need to install the Concordium software package. ``cargo-concordium`` is the tool for developing smart contracts for the Concordium blockchain. It can be used for :ref:`compiling<compile-module>` and :ref:`testing<integration-test-contract>` smart contracts, and enables features such as :ref:`building contract schemas<build-schema>`.
 To install ``cargo-concordium`` run:
 
 .. code-block:: console

@@ -198,7 +198,7 @@ the state must implement ``Serialize`` *or* ``Serial + DeserialWithState``.
                 ``State*`` types are essentially pointers to data stored in
                 state, and when serialized, only the pointer is written, while
                 the values are stored in the state. To load
-                the values again, the state context is needed, hence the ``DeserialWithState``.   
+                the values again, the state context is needed, hence the ``DeserialWithState``.
 
 .. _working-with-parameters:
 

@@ -317,9 +317,9 @@ Automated testing
 
 Integration tests of smart contracts can be implemented as described on :ref:`Integration testing <integration-test-contract>`.
 Integration tests allows you to test the contract in an environment where:
-  
+
 - The smart contract runs in the real Wasm interpreter
-- The smart contract interacts with the real host functions and real chain integration 
+- The smart contract interacts with the real host functions and real chain integration
 - Only the chain itself is stubbed, as the only component that is not "real"
 
 Besides from integration tests, you can also implement plain Rust unit tests for functions that does not interact with the host.
