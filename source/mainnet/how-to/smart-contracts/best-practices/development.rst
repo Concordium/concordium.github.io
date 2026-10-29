@@ -260,7 +260,6 @@ Do not treat external contract invocations as regular method calls.
 Instead, think of them as sending a message and temporarily pausing execution of your contract.
 The receiving side has full control of what to do next and can choose to call your contract again while it is still in the "paused" state waiting for the external call to be completed.
 Once the external call is completed, the contract state and balance might be different from those before the call.
-See an :ref:`example <reentracny-unit-testing>` based on `the DAO <https://en.wikipedia.org/wiki/The_DAO_(organization)>`_ Ethereum smart contract vulnerability of how reentrancy can be discovered using unit testing.
 
 - Avoid changing the state after an external call: use the *Checks-Effects-Interactions* pattern: validate data, update the contract state, make external calls.
 - If you need to perform some state changes after an external call use `invoke_contract_read_only <https://docs.rs/concordium-std/latest/concordium_std/struct.ExternHost.html#method.invoke_contract_read_only>`_.
