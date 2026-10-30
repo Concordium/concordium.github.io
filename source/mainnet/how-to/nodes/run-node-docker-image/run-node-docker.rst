@@ -17,8 +17,8 @@ If you are running a node already, avoid catching up from scratch using the matc
 
 - :ref:`Ubuntu package migration guide<migrate-debian-to-docker>`.
 - :ref:`Network-specific docker image migration guide<migrate-network-specific-images>`.
-- :ref:`macOS package migration guide<migrate-macos-to-docker>` (Docker Desktop).
-- TODO Windows
+- :ref:`macOS package migration guide <migrate-macos-to-docker>` (Docker Desktop).
+- :ref:`Windows node migration guide <migrate-windows-to-docker>` (Docker Engine in WSL2).
 
 Prerequisites
 =============
@@ -30,7 +30,7 @@ Prerequisites
 
    .. group-tab:: Linux
 
-      Install `Docker Engine <https://docs.docker.com/engine/install/>`_ and the
+      Install `Docker Engine <https://docs.docker.com/engine/install/>`__ and the
       `Compose plugin <https://docs.docker.com/compose/install/>`_.
 
    .. group-tab:: macOS
@@ -43,8 +43,11 @@ Prerequisites
 
    .. group-tab:: Windows
 
-      Docker Desktop instructions for Windows have not been written yet.
-      Do not assume the Linux or macOS procedures apply unchanged.
+      Install `WSL2 with Ubuntu <https://learn.microsoft.com/en-us/windows/wsl/install>`__,
+      then install `Docker Engine <https://docs.docker.com/engine/install/ubuntu/>`__
+      and the `Docker Compose plugin <https://docs.docker.com/compose/install/linux/>`__
+      inside Ubuntu. Docker Desktop is not required. Ensure WSL2 has
+      sufficient resources to meet the node requirements.
 
 .. _configure-docker-image:
 
@@ -161,9 +164,66 @@ Configure a node
                   CONCORDIUM_NODE_COLLECTOR_NODE_NAME: my-testnet-node
                   CONCORDIUM_NODE_COLLECTOR_URL: https://dashboard.testnet.concordium.com/nodes/post
 
+
    .. group-tab:: Windows
 
-      Configuration examples for Windows have not been written yet.
+      On Windows 10 and 11, run Docker Engine directly inside Ubuntu WSL2,
+      without Docker Desktop. Create a separate directory for each network
+      and save the appropriate configuration as ``compose.yaml``.
+
+      .. dropdown:: Mainnet ``mainnet-node/compose.yaml`` example
+
+         .. code-block:: yaml
+            :caption: Docker Compose - compose.yaml (Mainnet)
+
+            services:
+              node:
+                image: concordium/node:latest
+                container_name: mainnet-node
+                restart: unless-stopped
+                stop_grace_period: 5m
+                ports:
+                  - "8888:8888"
+                  - "127.0.0.1:20000:20000"
+                volumes:
+                  - ./data:/mnt/data
+                environment:
+                  CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE: /genesis/mainnet-genesis.dat
+                  CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES: bootstrap.mainnet.concordium.software:8888
+                  CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM: https://catchup.mainnet.concordium.software/blocks.idx
+                  CONCORDIUM_NODE_COLLECTOR_ENABLED: "true"
+                  CONCORDIUM_NODE_COLLECTOR_NODE_NAME: my-mainnet-node
+                  CONCORDIUM_NODE_COLLECTOR_URL: https://dashboard.mainnet.concordium.software/nodes/post
+
+      .. dropdown:: Testnet ``testnet-node/compose.yaml`` example
+
+         .. code-block:: yaml
+            :caption: Docker Compose - compose.yaml (Testnet)
+
+            services:
+              node:
+                image: concordium/node:latest
+                container_name: testnet-node
+                restart: unless-stopped
+                stop_grace_period: 5m
+                ports:
+                  - "8889:8889"
+                  - "127.0.0.1:20001:20000"
+                volumes:
+                  - ./data:/mnt/data
+                environment:
+                  CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE: /genesis/testnet-genesis.dat
+                  CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES: bootstrap.testnet.concordium.com:8888
+                  CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM: https://catchup.testnet.concordium.com/blocks.idx
+                  CONCORDIUM_NODE_LISTEN_PORT: "8889"
+                  CONCORDIUM_NODE_COLLECTOR_ENABLED: "true"
+                  CONCORDIUM_NODE_COLLECTOR_NODE_NAME: my-testnet-node
+                  CONCORDIUM_NODE_COLLECTOR_URL: https://dashboard.testnet.concordium.com/nodes/post
+
+      The ``./data`` directory stores the blockchain database and node data
+      persistently inside Ubuntu WSL2. Keep Mainnet and Testnet in separate
+      directories, each with its own ``compose.yaml`` and ``data`` directory.
+
 
 The examples mount a local ``./data`` directory beside the ``compose.yaml`` ensuring the node data and configurations are persisted across restart and updates.
 
