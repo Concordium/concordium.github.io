@@ -30,7 +30,7 @@ Prerequisites
 
    .. group-tab:: Linux
 
-      Install `Docker Engine <https://docs.docker.com/engine/install/>`_ and the
+      Install `Docker Engine <https://docs.docker.com/engine/install/>`__ and the
       `Compose plugin <https://docs.docker.com/compose/install/>`_.
 
    .. group-tab:: macOS
@@ -43,9 +43,9 @@ Prerequisites
 
    .. group-tab:: Windows
 
-      Install `WSL2 with Ubuntu <https://learn.microsoft.com/en-us/windows/wsl/install>`_,
-      then install `Docker Engine <https://docs.docker.com/engine/install/ubuntu/>`_
-      and the `Docker Compose plugin <https://docs.docker.com/compose/install/linux/>`_
+      Install `WSL2 with Ubuntu <https://learn.microsoft.com/en-us/windows/wsl/install>`__,
+      then install `Docker Engine <https://docs.docker.com/engine/install/ubuntu/>`__
+      and the `Docker Compose plugin <https://docs.docker.com/compose/install/linux/>`__
       inside Ubuntu. Docker Desktop is not required. Ensure WSL2 has
       sufficient resources to meet the node requirements.
 
