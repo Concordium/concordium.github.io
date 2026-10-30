@@ -81,10 +81,6 @@ This has the benefit of being in the same transaction as the upgrade itself, mak
     by the default (*high_level*) ``upgrade`` function, it would overwrite the state stored by the ``migration`` function. The :ref:`upgrade tutorial<intro-smart-contract-upgrade>`
     provides an example where ``low_level`` is *necessary* since the shape of the state is changed in the ``migration`` function.
 
-.. note::
-
-   The code snippet above is using Rust and ``concordium-std`` version 5 or newer.
-
 The JSON parameter for triggering an upgrade is of the form:
 
 .. code-block:: json

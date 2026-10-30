@@ -37,7 +37,7 @@ entrypoint ``my_receive``, run the following command:
 
 .. code-block:: console
 
-   $concordium-client contract invoke 0 --entrypoint my_receive
+   $ concordium-client contract invoke 0 --entrypoint my_receive
 
 If successful, the output should be similar to the following:
 
@@ -71,20 +71,20 @@ sender account:
 
 .. code-block:: console
 
-   $concordium-client contract invoke 0 --entrypoint my_receive --invoker-account <account-address>
+   $ concordium-client contract invoke 0 --entrypoint my_receive --invoker-account <account-address>
 
 Use the ``invoker-contract`` parameter to invoke an entrypoint with a sender contract:
 
 .. code-block:: console
 
-   $concordium-client contract invoke 0 --entrypoint my_receive --invoker-contract <contract-index>
+   $ concordium-client contract invoke 0 --entrypoint my_receive --invoker-contract <contract-index>
 
 Use the ``amount`` parameter to invoke an entrypoint with the specified amount
 of CCD.
 
 .. code-block:: console
 
-   $concordium-client contract invoke 0 --entrypoint my_receive --amount <CCD>
+   $ concordium-client contract invoke 0 --entrypoint my_receive --amount <CCD>
 
 .. note::
 
@@ -96,7 +96,7 @@ in:
 
 .. code-block:: console
 
-   $concordium-client contract invoke 0 --entrypoint my_receive --block <block-hash>
+   $ concordium-client contract invoke 0 --entrypoint my_receive --block <block-hash>
 
 Passing parameters in JSON format
 ---------------------------------
@@ -116,7 +116,7 @@ format, run the following command:
 
 .. code-block:: console
 
-   $concordium-client contract invoke 0 --entrypoint my_parameter_receive \
+   $ concordium-client contract invoke 0 --entrypoint my_parameter_receive \
             --parameter-json my_parameter.json
 
 If successful, the output should be similar to the following:
@@ -167,7 +167,7 @@ format, run the following command:
 
 .. code-block:: console
 
-   $concordium-client contract invoke 0 --entrypoint my_parameter_receive \
+   $ concordium-client contract invoke 0 --entrypoint my_parameter_receive \
             --parameter-bin my_parameter.bin
 
 If successful, the output should be similar to the following:

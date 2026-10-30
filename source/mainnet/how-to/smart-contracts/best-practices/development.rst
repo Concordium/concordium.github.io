@@ -194,8 +194,8 @@ Consider the following map for storing all user bids in an auction contract:
 
 .. code-block:: rust
 
-  pub struct State<S = StateApi> {
-    bids: StateMap<Address, Amount, S>
+  pub struct State {
+    bids: StateMap<Address, Amount>
   }
 
 Computing the maximum for each new bid requires iterating over the map.
@@ -260,7 +260,6 @@ Do not treat external contract invocations as regular method calls.
 Instead, think of them as sending a message and temporarily pausing execution of your contract.
 The receiving side has full control of what to do next and can choose to call your contract again while it is still in the "paused" state waiting for the external call to be completed.
 Once the external call is completed, the contract state and balance might be different from those before the call.
-See an :ref:`example <reentracny-unit-testing>` based on `the DAO <https://en.wikipedia.org/wiki/The_DAO_(organization)>`_ Ethereum smart contract vulnerability of how reentrancy can be discovered using unit testing.
 
 - Avoid changing the state after an external call: use the *Checks-Effects-Interactions* pattern: validate data, update the contract state, make external calls.
 - If you need to perform some state changes after an external call use `invoke_contract_read_only <https://docs.rs/concordium-std/latest/concordium_std/struct.ExternHost.html#method.invoke_contract_read_only>`_.
@@ -316,11 +315,16 @@ Code documentation
 Automated testing
 -----------------
 
-The Concordium standard library `concordium-std`_ offers several possibilities for testing the smart contract code.
+Integration tests of smart contracts can be implemented as described on :ref:`Integration testing <integration-test-contract>`.
+Integration tests allows you to test the contract in an environment where:
 
-- Use :ref:`Integration testing <integration-test-contract>` to test particular cases where you define what is the valid output.
-- (**Deprecated**) Use :ref:`Unit testing <unit-test-contract>` to test particular cases where you define what is the valid output.
-- (**Deprecated**) :ref:`Property-based testing <writing_property_based_tests>` is a variant of randomized testing that repeatedly checks a *property* with randomly generated input.
+- The smart contract runs in the real Wasm interpreter
+- The smart contract interacts with the real host functions and real chain integration
+- Only the chain itself is stubbed, as the only component that is not "real"
+
+Besides from integration tests, you can also implement plain Rust unit tests for functions that does not interact with the host.
+A third, and more advanced, possibility is using the `concordium_test macro <https://docs.rs/concordium-std/latest/concordium_std/attr.concordium_test.html>`_.
+Examples of this may be found in `concordium-std tests <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-std/src/impls.rs>`_.
 
 Use the :ref:`smart contract specification <best-practices-specification>` guidelines from this document to come up with cases and properties to test.
 

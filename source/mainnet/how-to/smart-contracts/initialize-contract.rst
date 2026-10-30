@@ -51,7 +51,7 @@ following command:
 
 .. code-block:: console
 
-   $concordium-client contract init \
+   $ concordium-client contract init \
             9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 \
             --sender my_account \
             --contract my_contract \
@@ -99,7 +99,7 @@ parameter file ``my_parameter.json`` in JSON format, run the following command:
 
 .. code-block:: console
 
-   $concordium-client contract init \
+   $ concordium-client contract init \
             9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 \
             --contract my_parameter_contract \
             --energy 10000 \
@@ -154,7 +154,7 @@ parameter file ``my_parameter.bin`` in binary format, run the following command:
 
 .. code-block:: console
 
-   $concordium-client contract init \
+   $ concordium-client contract init \
             9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 \
             --contract my_parameter_contract \
             --energy 10000 \
@@ -195,7 +195,7 @@ it ``my_named_contract``:
 
 .. code-block:: console
 
-   $concordium-client contract init \
+   $ concordium-client contract init \
             9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 \
             --contract my_contract \
             --energy 10000 \
@@ -214,7 +214,7 @@ the following command:
 
 .. code-block:: console
 
-   $concordium-client contract name 0 --name my_named_contract
+   $ concordium-client contract name 0 --name my_named_contract
 
 If successful, the output should be similar to the following:
 
