@@ -55,7 +55,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/how-to/nodes/run-node-docker-image/run-node-docker.b5e0c28c-6075-4874-9173-530a88e60ab7.js"></script>
+    <script defer="defer" src="../../../_static/tippy/how-to/nodes/run-node-docker-image/run-node-docker.1aca6402-a289-4321-9007-0ada9f6a637c.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'how-to/nodes/run-node-docker-image/run-node-docker';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/how-to/nodes/run-node-docker-image/run-node-docker.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -710,8 +710,11 @@ network genesis files. Select the network in the Compose file.</p>
 Allocate resources that meet the node requirements. Keep Docker Desktop
 running while the node runs; container restart policies do not start
 Docker Desktop itself after a reboot.</p>
-</div><div aria-labelledby="tab-0-V2luZG93cw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-V2luZG93cw==" name="V2luZG93cw==" role="tabpanel" tabindex="0"><p>Docker Desktop instructions for Windows have not been written yet.
-Do not assume the Linux or macOS procedures apply unchanged.</p>
+</div><div aria-labelledby="tab-0-V2luZG93cw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-V2luZG93cw==" name="V2luZG93cw==" role="tabpanel" tabindex="0"><p>Install <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL2 with Ubuntu</a>,
+then install <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a>
+and the <a class="reference external" href="https://docs.docker.com/compose/install/linux/">Docker Compose plugin</a>
+inside Ubuntu. Docker Desktop is not required. Ensure WSL2 has
+sufficient resources to meet the node requirements.</p>
 </div></div>
 </section>
 <section id="configure-a-node">
@@ -825,7 +828,67 @@ architecture and verify that your node keeps up with the network.</p>
 </pre></div>
 </div>
 </div>
-</details></div><div aria-labelledby="tab-1-V2luZG93cw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-V2luZG93cw==" name="V2luZG93cw==" role="tabpanel" tabindex="0"><p>Configuration examples for Windows have not been written yet.</p>
+</details></div><div aria-labelledby="tab-1-V2luZG93cw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-V2luZG93cw==" name="V2luZG93cw==" role="tabpanel" tabindex="0"><p>On Windows 10 and 11, run Docker Engine directly inside Ubuntu WSL2,
+without Docker Desktop. Create a separate directory for each network
+and save the appropriate configuration as <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Mainnet <code class="docutils literal notranslate"><span class="pre">mainnet-node/compose.yaml</span></code> example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Docker Compose - compose.yaml (Mainnet)</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">node</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/node:latest</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mainnet-node</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">stop_grace_period</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8888:8888&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;127.0.0.1:20000:20000&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/mnt/data</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/genesis/mainnet-genesis.dat</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bootstrap.mainnet.concordium.software:8888</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://catchup.mainnet.concordium.software/blocks.idx</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_ENABLED</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_NODE_NAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-mainnet-node</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://dashboard.mainnet.concordium.software/nodes/post</span>
+</pre></div>
+</div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Testnet <code class="docutils literal notranslate"><span class="pre">testnet-node/compose.yaml</span></code> example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Docker Compose - compose.yaml (Testnet)</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">node</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/node:latest</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testnet-node</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">stop_grace_period</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8889:8889&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;127.0.0.1:20001:20000&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/mnt/data</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/genesis/testnet-genesis.dat</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bootstrap.testnet.concordium.com:8888</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://catchup.testnet.concordium.com/blocks.idx</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_LISTEN_PORT</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;8889&quot;</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_ENABLED</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_NODE_NAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-testnet-node</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://dashboard.testnet.concordium.com/nodes/post</span>
+</pre></div>
+</div>
+</div>
+</div>
+</details><p>The <code class="docutils literal notranslate"><span class="pre">./data</span></code> directory stores the blockchain database and node data
+persistently inside Ubuntu WSL2. Keep Mainnet and Testnet in separate
+directories, each with its own <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code> and <code class="docutils literal notranslate"><span class="pre">data</span></code> directory.</p>
 </div></div>
 <p>The examples mount a local <code class="docutils literal notranslate"><span class="pre">./data</span></code> directory beside the <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code> ensuring the node data and configurations are persisted across restart and updates.</p>
 <p>The examples give public access to the P2P port and limit host gRPC access to the loopback interface.

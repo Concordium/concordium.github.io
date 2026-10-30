@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/how-to/nodes/run-node-windows/migrate-to-docker-image.5748fa52-f26d-48ca-8779-479fab103ef2.js"></script>
+    <script defer="defer" src="../../../_static/tippy/how-to/nodes/run-node-windows/migrate-to-docker-image.8dc343bc-e691-45e8-83e0-e20380288df0.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'how-to/nodes/run-node-windows/migrate-to-docker-image';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/how-to/nodes/run-node-windows/migrate-to-docker-image.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -690,22 +690,13 @@ a user to sign in.
 The existing Windows blockchain database is reused directly through
 VirtioFS. A pre-migration backup is recommended for rollback.</p>
 </div>
-<p>The native Windows node distribution is deprecated.
-The Docker image includes the node, collector, and mainnet and testnet
-genesis files. This guide supports both networks, but the step-by-step
-commands use Testnet as the example unless otherwise specified.
-For Mainnet, select the corresponding Compose configuration and adjust
-network-specific paths, ports, and settings accordingly.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Never run two nodes with the same validator credentials simultaneously.
-Stop and disable the native Windows node before starting Docker.
-Do not generate new validator keys or register the validator again.</p>
-</div>
+<p>The native Windows node distribution is deprecated. This guide covers migrating Mainnet
+and Testnet nodes on Windows 10 and 11 to Docker Engine running directly inside Ubuntu WSL2,
+without Docker Desktop. The Docker image includes the node, collector, and genesis files for
+both networks. The commands use Mainnet as the default example; for Testnet, use the corresponding
+Compose configuration and adjust network-specific paths, ports, and settings.</p>
 <section id="find-settings-and-prepare">
 <h2>1. Find settings and prepare<a class="headerlink" href="#find-settings-and-prepare" title="Link to this heading">#</a></h2>
-<p>This guide covers Windows 10 and Windows 11 using Docker Engine
-installed directly inside Ubuntu WSL2, without Docker Desktop.</p>
 <section id="install-ubuntu-24-04-lts">
 <h3>Install Ubuntu 24.04 LTS<a class="headerlink" href="#install-ubuntu-24-04-lts" title="Link to this heading">#</a></h3>
 <div class="admonition note">
@@ -718,8 +709,7 @@ commands accordingly.</p>
 </div>
 <p>By default, WSL installs Ubuntu on the Windows system drive
 (typically <code class="docutils literal notranslate"><span class="pre">C:</span></code>). Ubuntu stores its Linux filesystem in a virtual
-disk that grows as data is added.</p>
-<p>With the direct VirtioFS migration described in this guide, the
+disk that grows as data is added. With the direct VirtioFS migration described in this guide, the
 existing blockchain database remains on its original Windows drive.
 Make sure that drive has enough free space for future blockchain
 growth. The Ubuntu filesystem also requires space for Docker images,
@@ -731,30 +721,12 @@ configuration, and other Linux files.</p>
 </pre></div>
 </div>
 </div>
-<p>If your system drive does not have enough free space, you can install
-Ubuntu on another drive using the <code class="docutils literal notranslate"><span class="pre">--location</span></code> option.</p>
-<p>For example, to install Ubuntu on drive <code class="docutils literal notranslate"><span class="pre">D:</span></code>, first create the
-destination directory in PowerShell:</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Force</span> <span class="n">-Path</span> <span class="s2">&quot;D:\WSL\Ubuntu-24.04&quot;</span>
-</pre></div>
-</div>
-</div>
-<p>Then install Ubuntu into that directory:</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">wsl</span> <span class="p">-</span><span class="n">-install</span> <span class="n">-d</span> <span class="n">Ubuntu</span><span class="p">-</span><span class="n">24</span><span class="p">.</span><span class="n">04</span> <span class="p">-</span><span class="n">-location</span> <span class="s2">&quot;D:\WSL\Ubuntu-24.04&quot;</span>
-</pre></div>
-</div>
-</div>
-<p>Choose only one of the installation commands above.</p>
 <p>During installation, Ubuntu may prompt you to create a default Linux
 username and password. Complete this setup before proceeding.
 Restart Windows if prompted.</p>
 <p>For subsequent sessions, open Ubuntu from PowerShell:</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">wsl</span> <span class="n">-d</span> <span class="n">Ubuntu</span><span class="p">-</span><span class="n">24</span><span class="p">.</span><span class="n">04</span>
 </pre></div>
 </div>
@@ -767,8 +739,8 @@ from Ubuntu WSL2, without copying it into the Linux filesystem.
 The Windows drive must be mounted using VirtioFS rather than the
 default 9P filesystem.</p>
 <p>First, update WSL from Windows PowerShell:</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">wsl</span> <span class="p">-</span><span class="n">-update</span>
 <span class="n">wsl</span> <span class="p">-</span><span class="n">-version</span>
 </pre></div>
@@ -778,15 +750,15 @@ default 9P filesystem.</p>
 Windows drive mounts. The availability of this feature depends on
 the WSL version and Linux kernel.</p>
 <p>In Windows PowerShell, open the global WSL configuration file:</p>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">notepad</span> <span class="s2">&quot;$env:USERPROFILE\.wslconfig&quot;</span>
 </pre></div>
 </div>
 </div>
 <p>Add the following configuration:</p>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">Windows - .wslconfig</span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Windows - .wslconfig</span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
 <div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[wsl2]</span>
 <span class="na">virtiofs</span><span class="o">=</span><span class="s">true</span>
 </pre></div>
@@ -795,16 +767,16 @@ the WSL version and Linux kernel.</p>
 <p>If the file already contains a <code class="docutils literal notranslate"><span class="pre">[wsl2]</span></code> section, add
 <code class="docutils literal notranslate"><span class="pre">virtiofs=true</span></code> to that section instead of creating a duplicate.</p>
 <p>Save the file and restart WSL:</p>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">wsl</span> <span class="p">-</span><span class="n">-shutdown</span>
 <span class="n">wsl</span> <span class="n">-d</span> <span class="n">Ubuntu</span><span class="p">-</span><span class="n">24</span><span class="p">.</span><span class="n">04</span>
 </pre></div>
 </div>
 </div>
 <p>Inside Ubuntu, verify the filesystem used for the Windows drive:</p>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>findmnt<span class="w"> </span>-T<span class="w"> </span>/mnt/c<span class="w"> </span>-o<span class="w"> </span>TARGET,SOURCE,FSTYPE,OPTIONS
 </pre></div>
 </div>
@@ -814,12 +786,12 @@ the WSL version and Linux kernel.</p>
 is still using <code class="docutils literal notranslate"><span class="pre">9p</span></code>. Check the WSL version, configuration, and
 kernel support before proceeding.</p>
 </section>
-<section id="enable-systemd-and-install-docker-engine">
-<h3>Enable systemd and install Docker Engine<a class="headerlink" href="#enable-systemd-and-install-docker-engine" title="Link to this heading">#</a></h3>
+<section id="enable-systemd">
+<h3>Enable systemd<a class="headerlink" href="#enable-systemd" title="Link to this heading">#</a></h3>
 <p>Docker Engine runs directly inside Ubuntu WSL2 and is managed by systemd.</p>
 <p>First, verify that systemd is running as PID 1 inside Ubuntu:</p>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id10" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps<span class="w"> </span>-p<span class="w"> </span><span class="m">1</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">comm</span><span class="o">=</span>
 </pre></div>
 </div>
@@ -827,40 +799,28 @@ kernel support before proceeding.</p>
 <p>The expected output is <code class="docutils literal notranslate"><span class="pre">systemd</span></code>.</p>
 <p>If systemd is not enabled, open <code class="docutils literal notranslate"><span class="pre">/etc/wsl.conf</span></code> with administrator
 privileges and add the following configuration:</p>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 - /etc/wsl.conf</span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 - /etc/wsl.conf</span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
 <div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[boot]</span>
 <span class="na">systemd</span><span class="o">=</span><span class="s">true</span>
 </pre></div>
 </div>
 </div>
 <p>Save the file, then shut down WSL from Windows PowerShell:</p>
-<div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id10" title="Link to this code">#</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">wsl</span> <span class="p">-</span><span class="n">-shutdown</span>
 <span class="n">wsl</span> <span class="n">-d</span> <span class="n">Ubuntu</span><span class="p">-</span><span class="n">24</span><span class="p">.</span><span class="n">04</span>
 </pre></div>
 </div>
 </div>
 <p>Verify that systemd is now running as PID 1.</p>
-<p>Install Docker Engine and the Docker Compose plugin from Docker’s
-official APT repository.</p>
-<p>First, remove any conflicting packages if they are installed:</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The following installation steps assume a fresh Ubuntu WSL2
-environment. If Docker is already installed and used by other
-workloads, review the package removal commands before proceeding.</p>
-</div>
-<div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id13" title="Link to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>remove<span class="w"> </span>-y<span class="w"> </span>docker.io<span class="w"> </span>docker-compose-v2<span class="w"> </span>docker-compose<span class="w"> </span>docker-doc<span class="w"> </span>podman-docker<span class="w"> </span>containerd<span class="w"> </span>runc
-</pre></div>
-</div>
-</div>
+</section>
+<section id="install-docker-engine-and-the-docker-compose-plugin-from-docker-s-official-apt-repository">
+<h3>Install Docker Engine and the Docker Compose plugin from Docker’s official APT repository.<a class="headerlink" href="#install-docker-engine-and-the-docker-compose-plugin-from-docker-s-official-apt-repository" title="Link to this heading">#</a></h3>
 <p>Set up Docker’s official APT repository:</p>
-<div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id14" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>ca-certificates<span class="w"> </span>curl
 
@@ -880,8 +840,8 @@ sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/d
 </div>
 </div>
 <p>Install Docker Engine, the CLI, containerd, and the Compose plugin:</p>
-<div class="literal-block-wrapper docutils container" id="id15">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id15" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>docker-ce<span class="w"> </span>docker-ce-cli<span class="w"> </span>containerd.io<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>docker-buildx-plugin<span class="w"> </span>docker-compose-plugin
@@ -889,16 +849,16 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 </div>
 </div>
 <p>Enable and start the Docker service:</p>
-<div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id16" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id13" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>docker
 sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>docker
 </pre></div>
 </div>
 </div>
 <p>Verify Docker Engine and Docker Compose:</p>
-<div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id17" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id14" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>docker<span class="w"> </span>version
 sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>version
 sudo<span class="w"> </span>docker<span class="w"> </span>ps
@@ -916,10 +876,6 @@ root-equivalent privileges and should be restricted to trusted users.</p>
 <p>This guide uses VirtioFS to access the existing Windows blockchain
 database directly, avoiding a second copy of the database inside
 the Ubuntu filesystem.</p>
-<p>Filesystem performance may differ from a native Linux filesystem.
-Monitor node synchronization and disk performance after migration.
-If direct access is unsuitable, copying the database into the Ubuntu
-filesystem remains an alternative.</p>
 </section>
 <section id="locate-the-existing-windows-node-configuration">
 <h3>Locate the existing Windows node configuration<a class="headerlink" href="#locate-the-existing-windows-node-configuration" title="Link to this heading">#</a></h3>
@@ -935,12 +891,12 @@ at <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\C
 <li><p><code class="docutils literal notranslate"><span class="pre">collector.node_name</span></code>: the name displayed on the network dashboard.</p></li>
 <li><p>Any custom network ports or other configuration settings.</p></li>
 </ul>
-<p>For a standard Testnet installation, <code class="docutils literal notranslate"><span class="pre">nodes.toml</span></code> typically uses
+<p>For a standard Mainnet installation, <code class="docutils literal notranslate"><span class="pre">nodes.toml</span></code> typically uses
 relative paths:</p>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text">Windows - nodes.toml</span><a class="headerlink" href="#id18" title="Link to this code">#</a></div>
-<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">config_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;testnet\config&#39;</span>
-<span class="n">data_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;testnet\data&#39;</span>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text">Windows - nodes.toml</span><a class="headerlink" href="#id15" title="Link to this code">#</a></div>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">config_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mainnet\config&#39;</span>
+<span class="n">data_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mainnet\data&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -949,8 +905,8 @@ relative paths:</p>
 <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Concordium\Node</span> <span class="pre">Runner\nodes.toml</span></code>, the corresponding
 absolute paths are:</p>
 <ul class="simple">
-<li><p>Configuration: <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Concordium\Node</span> <span class="pre">Runner\testnet\config</span></code></p></li>
-<li><p>Blockchain data: <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Concordium\Node</span> <span class="pre">Runner\testnet\data</span></code></p></li>
+<li><p>Configuration: <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Concordium\Node</span> <span class="pre">Runner\mainnet\config</span></code></p></li>
+<li><p>Blockchain data: <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Concordium\Node</span> <span class="pre">Runner\mainnet\data</span></code></p></li>
 </ul>
 <p>Use the actual paths from your <code class="docutils literal notranslate"><span class="pre">nodes.toml</span></code> file if they differ.
 Do not modify or delete the existing database or validator credentials.</p>
@@ -960,40 +916,33 @@ Do not modify or delete the existing database or validator credentials.</p>
 <h2>2. Translate configuration<a class="headerlink" href="#translate-configuration" title="Link to this heading">#</a></h2>
 <p>The Docker image supports both mainnet and testnet.</p>
 <p>In Ubuntu WSL2, create a working directory for your node.
-The following example uses <code class="docutils literal notranslate"><span class="pre">testnet-node</span></code>. For mainnet, replace it
-with <code class="docutils literal notranslate"><span class="pre">mainnet-node</span></code>.</p>
-<div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id19" title="Link to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-m<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/testnet-node
-<span class="nb">cd</span><span class="w"> </span>~/testnet-node
+The following example uses <code class="docutils literal notranslate"><span class="pre">mainnet-node</span></code>. For testnet, replace it
+with <code class="docutils literal notranslate"><span class="pre">testnet-node</span></code>.</p>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id16" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-m<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/mainnet-node
+<span class="nb">cd</span><span class="w"> </span>~/mainnet-node
 mkdir<span class="w"> </span>-m<span class="w"> </span><span class="m">700</span><span class="w"> </span>secrets
 </pre></div>
 </div>
 </div>
 <p>Create a <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code> file in the working directory using the
 <code class="docutils literal notranslate"><span class="pre">nano</span></code> text editor:</p>
-<div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id17" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>compose.yaml
 </pre></div>
 </div>
 </div>
 <p>Copy the configuration for your network from the <strong>Mainnet</strong> or
-<strong>Testnet</strong> example below and paste it into the editor.</p>
-<p>To save the file and exit <code class="docutils literal notranslate"><span class="pre">nano</span></code>:</p>
-<ol class="arabic simple">
-<li><p>Press <strong>Ctrl+O</strong> (the letter O) to save the file.</p></li>
-<li><p>Press <strong>Enter</strong> to confirm the filename <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code>.</p></li>
-<li><p>Press <strong>Ctrl+X</strong> to exit the editor.</p></li>
-</ol>
-<p>The file is now saved in your node’s working directory.</p>
-<p>The image includes the node, collector, and genesis files for both networks.
+<strong>Testnet</strong> example below and paste it into the editor.
+The image includes the node, collector, and genesis files for both networks.
 Keep the image’s default entrypoint so it can manage the node and collector.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Mainnet <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-text">Docker Compose - compose.yaml (Mainnet)</span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text">Docker Compose - compose.yaml (Mainnet)</span><a class="headerlink" href="#id18" title="Link to this code">#</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">node</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/node:latest</span>
@@ -1023,8 +972,8 @@ Keep the image’s default entrypoint so it can manage the node and collector.</
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Testnet <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="literal-block-wrapper docutils container" id="id22">
-<div class="code-block-caption"><span class="caption-text">Docker Compose - compose.yaml (Testnet)</span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text">Docker Compose - compose.yaml (Testnet)</span><a class="headerlink" href="#id19" title="Link to this code">#</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">node</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/node:latest</span>
@@ -1052,7 +1001,14 @@ Keep the image’s default entrypoint so it can manage the node and collector.</
 </div>
 </div>
 </div>
-</details><p>The examples mount the existing Windows blockchain database directly
+</details><p>To save the file and exit <code class="docutils literal notranslate"><span class="pre">nano</span></code>:</p>
+<ol class="arabic simple">
+<li><p>Press <strong>Ctrl+O</strong> (the letter O) to save the file.</p></li>
+<li><p>Press <strong>Enter</strong> to confirm the filename <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code>.</p></li>
+<li><p>Press <strong>Ctrl+X</strong> to exit the editor.</p></li>
+</ol>
+<p>The file is now saved in your node’s working directory.</p>
+<p>The examples mount the existing Windows blockchain database directly
 into the container using VirtioFS. No database copy is required.</p>
 <p>Replace the example <code class="docutils literal notranslate"><span class="pre">source</span></code> path with the actual Windows node data
 directory identified in <code class="docutils literal notranslate"><span class="pre">nodes.toml</span></code>, using its WSL path under
@@ -1071,9 +1027,6 @@ and migrate the applicable configuration separately.
 See <a class="reference internal" href="../run-node-docker-image/advanced-node-configuration-on-docker.html#advanced-docker-image"><span class="std std-ref">Advanced node configuration on Docker</span></a> for advanced Docker configuration.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The database is mounted directly from its existing Windows
-directory using a Docker bind mount over VirtioFS. No database
-copy or Docker named volume is required.</p>
 <p>The Docker image runs as a non-root user with UID and GID <code class="docutils literal notranslate"><span class="pre">10001</span></code>.
 Section 3 explains how to configure Windows filesystem permissions
 and verify access to the existing database.</p>
@@ -1089,8 +1042,8 @@ the filesystem permissions have been verified as described in section 3.</p>
 <section id="stop-and-disable-the-native-windows-node">
 <h3>Stop and disable the native Windows node<a class="headerlink" href="#stop-and-disable-the-native-windows-node" title="Link to this heading">#</a></h3>
 <p>Open PowerShell as an administrator and stop the native Windows service:</p>
-<div class="literal-block-wrapper docutils container" id="id23">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text">Windows PowerShell (Administrator)</span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Stop-Service</span> <span class="n">ConcordiumNode</span>
 <span class="nb">Set-Service</span> <span class="n">ConcordiumNode</span> <span class="n">-StartupType</span> <span class="n">Disabled</span>
 <span class="nb">Get-Service</span> <span class="n">ConcordiumNode</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span><span class="n">Status</span><span class="p">,</span><span class="n">StartType</span>
@@ -1100,53 +1053,34 @@ the filesystem permissions have been verified as described in section 3.</p>
 <p>Confirm that the service reports <code class="docutils literal notranslate"><span class="pre">Stopped</span></code> and <code class="docutils literal notranslate"><span class="pre">Disabled</span></code>.
 Do not start the Docker node while the native Windows node is running.</p>
 </section>
-<section id="back-up-the-existing-database">
-<h3>Back up the existing database<a class="headerlink" href="#back-up-the-existing-database" title="Link to this heading">#</a></h3>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Docker will use and modify the original Windows blockchain database
-directly. The database will no longer remain unchanged for rollback.
-Create a backup before proceeding if you need to preserve the
-pre-migration state.</p>
-</div>
-<p>With the Windows node stopped, back up the complete data directory to
-a separate location with sufficient free space. Do not merge the backup
-with another node database.</p>
-<p>Keep the backup until the Docker node has been verified and you are
-confident that rollback is no longer required.</p>
-</section>
 <section id="verify-the-existing-windows-database">
 <h3>Verify the existing Windows database<a class="headerlink" href="#verify-the-existing-windows-database" title="Link to this heading">#</a></h3>
 <p>Find the original Windows node data directory using <code class="docutils literal notranslate"><span class="pre">nodes.toml</span></code>.
 Windows drives are accessible from Ubuntu WSL2 under
 <code class="docutils literal notranslate"><span class="pre">/mnt/&lt;drive-letter&gt;/</span></code>.</p>
-<p>For example, the default Testnet path is:</p>
-<div class="literal-block-wrapper docutils container" id="id24">
-<div class="code-block-caption"><span class="caption-text">Windows - Node Runner database path</span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>C:\ProgramData\Concordium\Node Runner\testnet\data
+<p>For example, the default Mainnet path is:</p>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text">Windows - Node Runner database path</span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>C:\ProgramData\Concordium\Node Runner\mainnet\data
 </pre></div>
 </div>
 </div>
 <p>The corresponding Ubuntu WSL2 path is:</p>
-<div class="literal-block-wrapper docutils container" id="id25">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 - Node Runner database path</span><a class="headerlink" href="#id25" title="Link to this code">#</a></div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/mnt/c/ProgramData/Concordium/Node Runner/testnet/data
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 - Node Runner database path</span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/mnt/c/ProgramData/Concordium/Node Runner/mainnet/data
 </pre></div>
 </div>
 </div>
 <p>Inside Ubuntu, verify that the directory exists and contains the
 expected database files:</p>
-<div class="literal-block-wrapper docutils container" id="id26">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id26" title="Link to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-lah<span class="w"> </span><span class="s2">&quot;/mnt/c/ProgramData/Concordium/Node Runner/testnet/data&quot;</span>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-lah<span class="w"> </span><span class="s2">&quot;/mnt/c/ProgramData/Concordium/Node Runner/mainnet/data&quot;</span>
 </pre></div>
 </div>
 </div>
-<p>The directory should contain the existing blockchain database,
-including files such as <code class="docutils literal notranslate"><span class="pre">data.mdb</span></code> and <code class="docutils literal notranslate"><span class="pre">genesis.dat</span></code>.</p>
-<p>Use the actual data directory from your Windows node configuration
-if it differs from the example. Confirm that the same path is used
-as the <code class="docutils literal notranslate"><span class="pre">source</span></code> in <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code>.</p>
+<p>The directory should contain the existing blockchain <code class="docutils literal notranslate"><span class="pre">database-v4</span></code> directory, <code class="docutils literal notranslate"><span class="pre">data.mdb</span></code> and <code class="docutils literal notranslate"><span class="pre">genesis.dat</span></code> files.</p>
 </section>
 <section id="configure-windows-filesystem-permissions">
 <h3>Configure Windows filesystem permissions<a class="headerlink" href="#configure-windows-filesystem-permissions" title="Link to this heading">#</a></h3>
@@ -1165,17 +1099,17 @@ explicitly instead of using the automatically detected account.</p>
 </div>
 <p>In an elevated Windows PowerShell session, identify the Windows
 account that will be granted access:</p>
-<div class="literal-block-wrapper docutils container" id="id27">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="no">[System.Security.Principal.WindowsIdentity]</span><span class="p">::</span><span class="n">GetCurrent</span><span class="p">().</span><span class="n">Name</span>
 </pre></div>
 </div>
 </div>
 <p>Grant that account Modify permissions on the existing data directory
 and its contents. For example, for Testnet:</p>
-<div class="literal-block-wrapper docutils container" id="id28">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell (Administrator)</span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
-<div class="migration-copy-raw highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$path</span> <span class="p">=</span> <span class="s2">&quot;C:\ProgramData\Concordium\Node Runner\testnet\data&quot;</span>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-text">Windows PowerShell (Administrator)</span><a class="headerlink" href="#id25" title="Link to this code">#</a></div>
+<div class="migration-copy-raw highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$path</span> <span class="p">=</span> <span class="s2">&quot;C:\ProgramData\Concordium\Node Runner\mainnet\data&quot;</span>
 <span class="nv">$account</span> <span class="p">=</span> <span class="no">[System.Security.Principal.WindowsIdentity]</span><span class="p">::</span><span class="n">GetCurrent</span><span class="p">().</span><span class="n">Name</span>
 <span class="n">icacls</span> <span class="nv">$path</span> <span class="p">/</span><span class="n">grant</span> <span class="s2">&quot;${account}:(OI)(CI)M&quot;</span> <span class="p">/</span><span class="n">T</span> <span class="p">/</span><span class="n">C</span>
 </pre></div>
@@ -1183,27 +1117,68 @@ and its contents. For example, for Testnet:</p>
 </div>
 <script>
 document.addEventListener('click', function (event) {
-  const button = event.target.closest('button.copybtn');
-  if (!button) return;
+const button = event.target.closest('button.copybtn');
+if (!button) return;
 
-  const selector = button.getAttribute('data-clipboard-target');
-  if (!selector) return;
+const selector = button.getAttribute('data-clipboard-target');
+if (!selector) return;
 
-  const target = document.querySelector(selector);
-  if (!target || !target.closest('.migration-copy-raw')) return;
+const target = document.querySelector(selector);
+if (!target || !target.closest('.migration-copy-raw')) return;
 
-  event.stopImmediatePropagation();
-  event.preventDefault();
+event.stopImmediatePropagation();
+event.preventDefault();
 
-  const text = target.innerText.replace(/\n+$/, '') + '\n';
+const text = target.innerText.replace(/\n+$/, '') + '\n';
 
-  navigator.clipboard.writeText(text).then(() => {
-    button.setAttribute('data-tooltip', 'Copied!');
-  }).catch(error => {
-    console.error('Migration guide copy failed:', error);
-  });
+function fallbackCopy() {
+   const textarea = document.createElement('textarea');
+   textarea.value = text;
+   textarea.setAttribute('readonly', '');
+   textarea.style.position = 'fixed';
+   textarea.style.left = '-9999px';
+
+   document.body.appendChild(textarea);
+   textarea.select();
+
+   let copied = false;
+   try {
+      copied = document.execCommand('copy');
+   } finally {
+      document.body.removeChild(textarea);
+   }
+
+   return copied;
+}
+
+function showResult(success) {
+   button.setAttribute(
+      'data-tooltip',
+      success ? 'Copied!' : 'Copy failed'
+   );
+}
+
+if (navigator.clipboard?.writeText) {
+   navigator.clipboard.writeText(text)
+      .then(() => showResult(true))
+      .catch(() => {
+      try {
+         showResult(fallbackCopy());
+      } catch (error) {
+         console.error('Migration guide copy failed:', error);
+         showResult(false);
+      }
+      });
+} else {
+   try {
+      showResult(fallbackCopy());
+   } catch (error) {
+      console.error('Migration guide copy failed:', error);
+      showResult(false);
+   }
+}
 }, true);
-</script><p>For Mainnet, use the corresponding <code class="docutils literal notranslate"><span class="pre">mainnet\data</span></code> directory.</p>
+</script><p>For Testnet, use the corresponding <code class="docutils literal notranslate"><span class="pre">testnet\data</span></code> directory.</p>
 <p>This grants Modify permissions to the selected Windows account,
 including existing files and subdirectories. Avoid granting broad
 access to groups such as <code class="docutils literal notranslate"><span class="pre">Everyone</span></code>.</p>
@@ -1217,41 +1192,32 @@ used for WSL drive access, adjust the ACL accordingly.</p>
 <p>Before starting the node, verify that the container user can access
 the existing database files. Run the following command inside Ubuntu
 WSL2, using the actual database path for your network:</p>
-<div class="literal-block-wrapper docutils container" id="id29">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id29" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id26">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id26" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--user<span class="w"> </span><span class="m">10001</span>:10001<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--entrypoint<span class="w"> </span>/bin/sh<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--mount<span class="w"> </span><span class="s2">&quot;type=bind,source=/mnt/c/ProgramData/Concordium/Node Runner/testnet/data,target=/mnt/data&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mount<span class="w"> </span><span class="s2">&quot;type=bind,source=/mnt/c/ProgramData/Concordium/Node Runner/mainnet/data,target=/mnt/data&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>concordium/node:latest<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-c<span class="w"> </span><span class="s1">&#39;test -r /mnt/data/data.mdb &amp;&amp; test -w /mnt/data/data.mdb &amp;&amp; echo &quot;Database access OK&quot;&#39;</span>
 </pre></div>
 </div>
 </div>
 <p>The expected output is <code class="docutils literal notranslate"><span class="pre">Database</span> <span class="pre">access</span> <span class="pre">OK</span></code>.</p>
-<p>This check does not modify the database. If it fails, verify the
-Windows ACLs and VirtioFS mount configuration before proceeding.
-Do not change permissions on the database using recursive Linux
-<code class="docutils literal notranslate"><span class="pre">chown</span></code> commands.</p>
-<p>Do not run <code class="docutils literal notranslate"><span class="pre">chown</span> <span class="pre">-R</span></code> on the Windows-mounted blockchain database.
-The database remains on NTFS and is not copied into Ubuntu.</p>
-<p>The original Windows service must remain disabled while Docker uses
-the database.</p>
 </section>
 </section>
 <section id="mount-existing-validator-credentials-validators-only">
 <h2>4. Mount existing validator credentials (validators only)<a class="headerlink" href="#mount-existing-validator-credentials-validators-only" title="Link to this heading">#</a></h2>
 <p>If your existing Windows node is a validator, reuse its current validator
-credentials. Do not generate new keys or register the validator again.</p>
-<p>Skip this section if you are migrating a non-validator node.</p>
+credentials. Do not generate new keys or register the validator again.
+Skip this section if you are migrating a non-validator node.</p>
 <p>Locate the existing <code class="docutils literal notranslate"><span class="pre">validator-credentials.json</span></code> file on Windows.
-Make sure you have access to the original file before proceeding.</p>
-<p>Windows drives are accessible in Ubuntu WSL2 under <code class="docutils literal notranslate"><span class="pre">/mnt/</span></code>.
+Windows drives are accessible in Ubuntu WSL2 under <code class="docutils literal notranslate"><span class="pre">/mnt/</span></code>.
 For example, a file stored in <code class="docutils literal notranslate"><span class="pre">C:\Users\&lt;username&gt;\Downloads</span></code> is
 accessible under <code class="docutils literal notranslate"><span class="pre">/mnt/c/Users/&lt;username&gt;/Downloads</span></code>.</p>
 <p>In Ubuntu, from the directory containing <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code>, copy the
 existing credentials into the <code class="docutils literal notranslate"><span class="pre">secrets</span></code> directory:</p>
-<div class="literal-block-wrapper docutils container" id="id30">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id30" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id27">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span><span class="s2">&quot;/mnt/c/Users/&lt;username&gt;/Downloads/validator-credentials.json&quot;</span><span class="w"> </span>./secrets/validator-credentials.json
 </pre></div>
 </div>
@@ -1260,8 +1226,8 @@ existing credentials into the <code class="docutils literal notranslate"><span c
 your credentials file.</p>
 <p>Set ownership and permissions so that the Docker container user can read
 the credentials:</p>
-<div class="literal-block-wrapper docutils container" id="id31">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id31" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id28">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>chown<span class="w"> </span><span class="m">10001</span>:10001<span class="w"> </span>./secrets
 sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>./secrets
 sudo<span class="w"> </span>chown<span class="w"> </span><span class="m">10001</span>:10001<span class="w"> </span>./secrets/validator-credentials.json
@@ -1270,8 +1236,8 @@ sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">400</sp
 </div>
 </div>
 <p>Verify the file ownership and permissions:</p>
-<div class="literal-block-wrapper docutils container" id="id32">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id32" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id29">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id29" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ls<span class="w"> </span>-ldn<span class="w"> </span>./secrets
 sudo<span class="w"> </span>ls<span class="w"> </span>-ln<span class="w"> </span>./secrets/validator-credentials.json
 </pre></div>
@@ -1296,8 +1262,8 @@ Use <code class="docutils literal notranslate"><span class="pre">sudo</span></co
 </div>
 <p>Add the following entries to the existing <code class="docutils literal notranslate"><span class="pre">node</span></code> service in
 <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code>:</p>
-<div class="literal-block-wrapper docutils container" id="id33">
-<div class="code-block-caption"><span class="caption-text">Docker Compose - validator configuration</span><a class="headerlink" href="#id33" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id30">
+<div class="code-block-caption"><span class="caption-text">Docker Compose - validator configuration</span><a class="headerlink" href="#id30" title="Link to this code">#</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">volumes</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./secrets:/run/secrets:ro</span>
 <span class="nt">environment</span><span class="p">:</span>
@@ -1308,8 +1274,8 @@ Use <code class="docutils literal notranslate"><span class="pre">sudo</span></co
 <p>Merge these entries into the existing <code class="docutils literal notranslate"><span class="pre">volumes</span></code> and <code class="docutils literal notranslate"><span class="pre">environment</span></code>
 sections. Do not create duplicate YAML keys.</p>
 <p>Validate the updated Compose configuration before proceeding:</p>
-<div class="literal-block-wrapper docutils container" id="id34">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id34" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id31">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id31" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>config<span class="w"> </span>--quiet
 </pre></div>
 </div>
@@ -1318,10 +1284,6 @@ sections. Do not create duplicate YAML keys.</p>
 configuration is valid. If an error is reported, correct the
 <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code> file and run the command again before starting
 the node.</p>
-<p>The entire <code class="docutils literal notranslate"><span class="pre">secrets</span></code> directory is mounted read-only to prevent
-the container from modifying the validator credentials.
-Keeping the files inside the Ubuntu filesystem also avoids
-potential performance issues associated with Windows bind mounts.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Validator credentials are sensitive private keys.
@@ -1333,15 +1295,12 @@ simultaneously with the same credentials.</p>
 </section>
 <section id="start-and-verify">
 <h2>5. Start and verify<a class="headerlink" href="#start-and-verify" title="Link to this heading">#</a></h2>
-<p>Before starting the Docker node, confirm that the original Windows node
-service is stopped and disabled. Never run both installations with the same
-validator credentials.</p>
 <section id="download-the-docker-image">
 <h3>Download the Docker image<a class="headerlink" href="#download-the-docker-image" title="Link to this heading">#</a></h3>
-<p>Open Ubuntu WSL2 and navigate to the directory containing <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code>.</p>
-<p>Download the selected Docker image:</p>
-<div class="literal-block-wrapper docutils container" id="id35">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id35" title="Link to this code">#</a></div>
+<p>In Ubuntu WSL2 navigate to the directory containing <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code>.
+Download the selected Docker image:</p>
+<div class="literal-block-wrapper docutils container" id="id32">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id32" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>pull
 </pre></div>
 </div>
@@ -1350,8 +1309,8 @@ validator credentials.</p>
 write the existing blockchain database files.</p>
 <p>The following checks require the Docker image to contain <code class="docutils literal notranslate"><span class="pre">/bin/sh</span></code>.</p>
 <p>For both validators and non-validator nodes, run:</p>
-<div class="literal-block-wrapper docutils container" id="id36">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id36" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id33">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id33" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--no-deps<span class="w"> </span>--entrypoint<span class="w"> </span>/bin/sh<span class="w"> </span>node<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-c<span class="w"> </span><span class="s1">&#39;id; test -r /mnt/data/data.mdb &amp;&amp; test -w /mnt/data/data.mdb &amp;&amp; echo &quot;Database permissions OK&quot;&#39;</span>
 </pre></div>
@@ -1360,66 +1319,40 @@ write the existing blockchain database files.</p>
 <p>The expected output includes <code class="docutils literal notranslate"><span class="pre">Database</span> <span class="pre">permissions</span> <span class="pre">OK</span></code>.</p>
 <p>For validators, also verify that the container can read the existing
 validator credentials:</p>
-<div class="literal-block-wrapper docutils container" id="id37">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id37" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id34">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id34" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--no-deps<span class="w"> </span>--entrypoint<span class="w"> </span>/bin/sh<span class="w"> </span>node<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-c<span class="w"> </span><span class="s1">&#39;test -r /run/secrets/validator-credentials.json &amp;&amp; echo &quot;Validator credentials OK&quot;&#39;</span>
 </pre></div>
 </div>
 </div>
 <p>The expected output is <code class="docutils literal notranslate"><span class="pre">Validator</span> <span class="pre">credentials</span> <span class="pre">OK</span></code>.</p>
-<p>These checks do not modify the database or credentials. They verify
-basic filesystem access but do not guarantee that all database
-operations will succeed.</p>
-<p>If either check fails, review the Windows ACLs, VirtioFS configuration,
-and the container mounts before proceeding.</p>
-<p>If the Docker image does not contain <code class="docutils literal notranslate"><span class="pre">/bin/sh</span></code>, these checks are
-unavailable. Inspect the container startup logs for permission and
-credentials errors instead.</p>
 </section>
 <section id="start-the-docker-node">
 <h3>Start the Docker node<a class="headerlink" href="#start-the-docker-node" title="Link to this heading">#</a></h3>
 <p>Start the node:</p>
-<div class="literal-block-wrapper docutils container" id="id38">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id38" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id35">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id35" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
 sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>ps
 </pre></div>
 </div>
 </div>
 <p>Inspect the startup logs:</p>
-<div class="literal-block-wrapper docutils container" id="id39">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id39" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id36">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id36" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>--tail<span class="w"> </span><span class="m">100</span><span class="w"> </span>node
 </pre></div>
 </div>
 </div>
 <p>To follow new log messages:</p>
-<div class="literal-block-wrapper docutils container" id="id40">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id40" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id37">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id37" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>--follow<span class="w"> </span>node
 </pre></div>
 </div>
 </div>
 <p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code> to stop following the logs. This does not stop the node.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>During startup, you may see repeated messages such as:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ERROR: gRPC failed with &quot;transport error&quot;
-</pre></div>
-</div>
-<p>These messages may come from the node collector, which attempts
-to retrieve node information through gRPC before the node is
-fully initialized.</p>
-<p>When starting with a migrated blockchain database, the node may
-need some time to load its existing state. During this period,
-the gRPC interface may not yet be available.</p>
-<p>These errors are usually temporary and should stop once the node
-finishes initializing and the collector can connect successfully.</p>
-<p>If the errors continue after the node has started and is
-operational, check the collector’s gRPC address and port in
-<code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code> and inspect the node logs for startup errors.</p>
-</div>
 </section>
 <section id="verify-consensus-and-validator-status">
 <h3>Verify consensus and validator status<a class="headerlink" href="#verify-consensus-and-validator-status" title="Link to this heading">#</a></h3>
@@ -1427,16 +1360,16 @@ operational, check the collector’s gRPC address and port in
 Confirm that the node connects to peers and catches up with the network.</p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> from Windows PowerShell to inspect the running node.</p>
 <p>For mainnet:</p>
-<div class="literal-block-wrapper docutils container" id="id41">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id41" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id38">
+<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id38" title="Link to this code">#</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">concordium-client</span> <span class="n">raw</span> <span class="n">GetNodeInfo</span> <span class="p">-</span><span class="n">-grpc-ip</span> <span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span> <span class="p">-</span><span class="n">-grpc-port</span> <span class="n">20000</span>
 <span class="n">concordium-client</span> <span class="n">raw</span> <span class="n">GetConsensusInfo</span> <span class="p">-</span><span class="n">-grpc-ip</span> <span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span> <span class="p">-</span><span class="n">-grpc-port</span> <span class="n">20000</span>
 </pre></div>
 </div>
 </div>
 <p>For testnet:</p>
-<div class="literal-block-wrapper docutils container" id="id42">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id42" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id39">
+<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id39" title="Link to this code">#</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">concordium-client</span> <span class="n">raw</span> <span class="n">GetNodeInfo</span> <span class="p">-</span><span class="n">-grpc-ip</span> <span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span> <span class="p">-</span><span class="n">-grpc-port</span> <span class="n">20001</span>
 <span class="n">concordium-client</span> <span class="n">raw</span> <span class="n">GetConsensusInfo</span> <span class="p">-</span><span class="n">-grpc-ip</span> <span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span> <span class="p">-</span><span class="n">-grpc-port</span> <span class="n">20001</span>
 </pre></div>
@@ -1459,8 +1392,8 @@ dashboard and its reporting continues.</p></li>
 <p>Validator committee participation depends on network state. A running
 container alone does not guarantee that the validator is operating correctly.</p>
 </section>
-<section id="configure-automatic-startup">
-<h3>Configure automatic startup<a class="headerlink" href="#configure-automatic-startup" title="Link to this heading">#</a></h3>
+<section id="configure-automatic-startup-optional">
+<h3>Configure automatic startup (optional)<a class="headerlink" href="#configure-automatic-startup-optional" title="Link to this heading">#</a></h3>
 <p>Docker Engine runs as a systemd service inside Ubuntu WSL2, and the
 Compose configuration uses the <code class="docutils literal notranslate"><span class="pre">unless-stopped</span></code> restart policy.</p>
 <p>However, WSL2 does not necessarily start when Windows boots.
@@ -1475,20 +1408,13 @@ than an interactive logon session.</p>
 <p>The following commands require an elevated Windows PowerShell
 session.</p>
 </div>
-<p>First, confirm that the Ubuntu distribution is installed:</p>
-<div class="literal-block-wrapper docutils container" id="id43">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id43" title="Link to this code">#</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">wsl</span> <span class="p">-</span><span class="n">-list</span> <span class="p">-</span><span class="n">-verbose</span>
-</pre></div>
-</div>
-</div>
 <p>Confirm that your Ubuntu distribution uses WSL version 2. Note its exact
 name, as shown by <code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--list</span> <span class="pre">--verbose</span></code>. The examples below use
 <code class="docutils literal notranslate"><span class="pre">Ubuntu-24.04</span></code>; replace this name if your distribution is registered
 under a different name.</p>
 <p>Open Powershell with Administrator rights and create a scheduled task that starts Ubuntu when Windows boots:</p>
-<div class="literal-block-wrapper docutils container" id="id44">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell (Administrator)</span><a class="headerlink" href="#id44" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id40">
+<div class="code-block-caption"><span class="caption-text">Windows PowerShell (Administrator)</span><a class="headerlink" href="#id40" title="Link to this code">#</a></div>
 <div class="migration-copy-raw highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$taskName</span> <span class="p">=</span> <span class="s2">&quot;Concordium WSL Autostart&quot;</span>
 <span class="nv">$credential</span> <span class="p">=</span> <span class="nb">Get-Credential</span> <span class="n">-Message</span> <span class="s2">&quot;Enter your Windows account credentials&quot;</span>
 
@@ -1515,12 +1441,9 @@ under a different name.</p>
 </pre></div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">tail</span> <span class="pre">-f</span> <span class="pre">/dev/null</span></code> process keeps the WSL2 distribution running
-after the scheduled task starts. Systemd then starts Docker Engine,
-which restores the Concordium container according to its restart policy.</p>
 <p>Verify the container restart policy inside Ubuntu WSL2:</p>
-<div class="literal-block-wrapper docutils container" id="id45">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id45" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id41">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id41" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>docker<span class="w"> </span>inspect<span class="w"> </span><span class="k">$(</span>sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>ps<span class="w"> </span>-q<span class="w"> </span>node<span class="k">)</span><span class="w"> </span>--format<span class="w"> </span><span class="s1">&#39;Status={{.State.Status}} RestartPolicy={{.HostConfig.RestartPolicy.Name}}&#39;</span>
 </pre></div>
 </div>
@@ -1530,295 +1453,7 @@ which restores the Concordium container according to its restart policy.</p>
 <p>To verify automatic startup, restart Windows and do not sign in
 immediately. Check the node’s collector reporting from another
 device, if available.</p>
-<p>After signing in, inspect the scheduled task in an elevated
-PowerShell session:</p>
-<div class="literal-block-wrapper docutils container" id="id46">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id46" title="Link to this code">#</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-ScheduledTaskInfo</span> <span class="n">-TaskName</span> <span class="s2">&quot;Concordium WSL Autostart&quot;</span>
-</pre></div>
-</div>
-</div>
-<p>Check <code class="docutils literal notranslate"><span class="pre">LastRunTime</span></code> and <code class="docutils literal notranslate"><span class="pre">LastTaskResult</span></code>. A running task that
-launches a long-lived WSL process may remain in the <code class="docutils literal notranslate"><span class="pre">Running</span></code>
-state, so task status alone does not prove that Docker and the
-Concordium node started successfully.</p>
-<p>Then check the container from Ubuntu WSL2, in the directory
-containing <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code>:</p>
-<div class="literal-block-wrapper docutils container" id="id47">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id47" title="Link to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/testnet-node
-sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>ps
-sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>--tail<span class="w"> </span><span class="m">100</span><span class="w"> </span>node
-</pre></div>
-</div>
-</div>
-<p>For Mainnet, use <code class="docutils literal notranslate"><span class="pre">~/mainnet-node</span></code> instead.</p>
-<p>Repeat the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> consensus and validator checks
-to confirm that the node resumed correctly.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The scheduled task requires a Windows account with a password
-and permission to run scheduled tasks at system startup.</p>
-<p>The collector is managed inside the same container as the node.
-Container status alone does not confirm that the collector is healthy.</p>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Configure P2P access from the local network (optional)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p class="sd-card-text">The examples below use the Testnet P2P port <code class="docutils literal notranslate"><span class="pre">8889</span></code>.
-For Mainnet, use port <code class="docutils literal notranslate"><span class="pre">8888</span></code> instead, matching the
-Mainnet Docker Compose configuration.</p>
-</div>
-<p class="sd-card-text">Opening the P2P port to incoming connections is optional.
-The Concordium node can synchronize with the network and
-participate in validation using outbound peer connections.</p>
-<p class="sd-card-text">If you are running a validator and do not need to accept
-incoming P2P connections, you can safely skip this section.
-The following instructions are only necessary if you want
-other computers on your local network to initiate P2P
-connections to your node.</p>
-<p class="sd-card-text">With the default WSL2 NAT networking mode, Docker’s published P2P
-port may be accessible from Windows through <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code> but not
-from other computers using the Windows host’s LAN address.</p>
-<p class="sd-card-text">To make the node’s P2P port available on the local network, configure
-a Windows TCP port proxy and an inbound firewall rule.</p>
-<p class="sd-card-text">The following example uses:</p>
-<ul class="simple">
-<li><p class="sd-card-text">Windows LAN address: <code class="docutils literal notranslate"><span class="pre">192.168.0.3</span></code></p></li>
-<li><p class="sd-card-text">WSL2 address: <code class="docutils literal notranslate"><span class="pre">172.27.252.227</span></code></p></li>
-<li><p class="sd-card-text">Concordium P2P port: <code class="docutils literal notranslate"><span class="pre">8889</span></code></p></li>
-<li><p class="sd-card-text">Allowed local subnet: <code class="docutils literal notranslate"><span class="pre">192.168.0.0/24</span></code></p></li>
-</ul>
-<p class="sd-card-text">Replace these addresses with values from your environment.</p>
-<p class="sd-card-text">Find the Windows LAN IPv4 address in PowerShell. Select the address
-of the physical network interface used to access your local network:</p>
-<div class="literal-block-wrapper docutils container" id="id48">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id48" title="Link to this code">#</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-NetIPAddress</span> <span class="n">-AddressFamily</span> <span class="n">IPv4</span> <span class="p">|</span>
-   <span class="nb">Where-Object</span> <span class="p">{</span>
-      <span class="nv">$_</span><span class="p">.</span><span class="n">IPAddress</span> <span class="o">-notlike</span> <span class="s2">&quot;169.254.*&quot;</span> <span class="o">-and</span>
-      <span class="nv">$_</span><span class="p">.</span><span class="n">InterfaceAlias</span> <span class="o">-notlike</span> <span class="s2">&quot;vEthernet*&quot;</span> <span class="o">-and</span>
-      <span class="nv">$_</span><span class="p">.</span><span class="n">InterfaceAlias</span> <span class="o">-notlike</span> <span class="s2">&quot;Loopback*&quot;</span>
-   <span class="p">}</span> <span class="p">|</span>
-   <span class="nb">Select-Object</span> <span class="n">InterfaceAlias</span><span class="p">,</span> <span class="n">IPAddress</span>
-</pre></div>
-</div>
-</div>
-<p class="sd-card-text">Find the Ubuntu WSL2 IPv4 address:</p>
-<div class="literal-block-wrapper docutils container" id="id49">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id49" title="Link to this code">#</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">wsl</span> <span class="n">-d</span> <span class="n">Ubuntu</span><span class="p">-</span><span class="n">24</span><span class="p">.</span><span class="n">04</span> <span class="n">-u</span> <span class="n">root</span> <span class="p">--</span> <span class="p">/</span><span class="n">usr</span><span class="p">/</span><span class="n">sbin</span><span class="p">/</span><span class="n">ip</span> <span class="p">-</span><span class="n">4</span> <span class="n">-o</span> <span class="n">addr</span> <span class="n">show</span> <span class="n">dev</span> <span class="n">eth0</span>
-</pre></div>
-</div>
-</div>
-<p class="sd-card-text">The WSL2 address can change after a restart, so the port proxy
-must be refreshed when Windows boots.</p>
-<p class="sd-card-text">First, configure the TCP port proxy from an elevated PowerShell
-session, substituting your addresses:</p>
-<div class="literal-block-wrapper docutils container" id="id50">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id50" title="Link to this code">#</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">netsh</span> <span class="n">interface</span> <span class="n">portproxy</span> <span class="n">add</span> <span class="n">v4tov4</span> <span class="p">`</span>
-   <span class="n">listenaddress</span><span class="p">=</span><span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">3</span> <span class="n">listenport</span><span class="p">=</span><span class="n">8889</span> <span class="p">`</span>
-   <span class="n">connectaddress</span><span class="p">=</span><span class="n">172</span><span class="p">.</span><span class="n">27</span><span class="p">.</span><span class="n">252</span><span class="p">.</span><span class="n">227</span> <span class="n">connectport</span><span class="p">=</span><span class="n">8889</span>
-</pre></div>
-</div>
-</div>
-<p class="sd-card-text">Allow incoming P2P connections from the local subnet:</p>
-<div class="literal-block-wrapper docutils container" id="id51">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id51" title="Link to this code">#</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-NetFirewallRule</span> <span class="p">`</span>
-   <span class="n">-DisplayName</span> <span class="s2">&quot;Concordium Node P2P WSL2&quot;</span> <span class="p">`</span>
-   <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="n">-Action</span> <span class="n">Allow</span> <span class="n">-Protocol</span> <span class="n">TCP</span> <span class="p">`</span>
-   <span class="n">-LocalAddress</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">3</span> <span class="n">-LocalPort</span> <span class="n">8889</span> <span class="p">`</span>
-   <span class="n">-RemoteAddress</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">/</span><span class="n">24</span> <span class="n">-Profile</span> <span class="n">Private</span>
-</pre></div>
-</div>
-</div>
-<p class="sd-card-text">Verify the port proxy:</p>
-<div class="literal-block-wrapper docutils container" id="id52">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id52" title="Link to this code">#</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">netsh</span> <span class="n">interface</span> <span class="n">portproxy</span> <span class="n">show</span> <span class="n">v4tov4</span>
-</pre></div>
-</div>
-</div>
-<p class="sd-card-text">The Windows IP Helper service (<code class="docutils literal notranslate"><span class="pre">iphlpsvc</span></code>) must be running for
-the TCP port proxy to work.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p class="sd-card-text">A DHCP reservation for the Windows computer is recommended so
-its LAN IPv4 address remains stable. If the Windows LAN address
-changes, update the port proxy’s listening address and the
-Windows Firewall rule.</p>
-<p class="sd-card-text">The firewall rule above allows only the specified local subnet.
-Public Internet P2P access requires separate firewall and router
-configuration, if applicable.</p>
-<p class="sd-card-text">Keep the node’s gRPC port restricted to localhost; do not expose
-it through the P2P port proxy.</p>
-</div>
-<p class="rubric">Refresh the P2P port proxy automatically (optional)</p>
-<p class="sd-card-text">Because the WSL2 IPv4 address may change after a restart, configure
-a scheduled task to refresh the Windows port proxy automatically.</p>
-<p class="sd-card-text">Create the directory <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Concordium</span></code> and save the
-following script as <code class="docutils literal notranslate"><span class="pre">Update-WSLPortProxy.ps1</span></code>.</p>
-<div class="literal-block-wrapper docutils container" id="id53">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id53" title="Link to this code">#</a></div>
-<div class="migration-copy-raw highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$ErrorActionPreference</span> <span class="p">=</span> <span class="s2">&quot;Stop&quot;</span>
-<span class="nv">$distro</span> <span class="p">=</span> <span class="s2">&quot;Ubuntu-24.04&quot;</span>
-<span class="nv">$listenAddress</span> <span class="p">=</span> <span class="s2">&quot;192.168.0.3&quot;</span>
-<span class="nv">$port</span> <span class="p">=</span> <span class="n">8889</span>
-<span class="nv">$wslAddress</span> <span class="p">=</span> <span class="nv">$null</span>
-
-<span class="k">for</span> <span class="p">(</span><span class="nv">$attempt</span> <span class="p">=</span> <span class="n">1</span><span class="p">;</span> <span class="nv">$attempt</span> <span class="o">-le</span> <span class="n">60</span><span class="p">;</span> <span class="nv">$attempt</span><span class="p">++)</span> <span class="p">{</span>
-   <span class="nv">$output</span> <span class="p">=</span> <span class="p">&amp;</span> <span class="s2">&quot;$env:WINDIR\System32\wsl.exe&quot;</span> <span class="p">`</span>
-      <span class="n">-d</span> <span class="nv">$distro</span> <span class="n">-u</span> <span class="n">root</span> <span class="p">--</span> <span class="p">/</span><span class="n">usr</span><span class="p">/</span><span class="n">sbin</span><span class="p">/</span><span class="n">ip</span> <span class="p">-</span><span class="n">4</span> <span class="n">-o</span> <span class="n">addr</span> <span class="n">show</span> <span class="n">dev</span> <span class="n">eth0</span> <span class="n">2</span><span class="p">&gt;</span><span class="nv">$null</span>
-
-   <span class="k">if</span> <span class="p">(</span><span class="nv">$LASTEXITCODE</span> <span class="o">-eq</span> <span class="n">0</span> <span class="o">-and</span> <span class="nv">$output</span> <span class="o">-match</span> <span class="s1">&#39;inet\s+(\d+\.\d+\.\d+\.\d+)/&#39;</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nv">$wslAddress</span> <span class="p">=</span> <span class="nv">$Matches</span><span class="p">[</span><span class="n">1</span><span class="p">]</span>
-      <span class="k">break</span>
-   <span class="p">}</span>
-
-   <span class="nb">Start-Sleep</span> <span class="n">-Seconds</span> <span class="n">5</span>
-<span class="p">}</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="o">-not</span> <span class="nv">$wslAddress</span><span class="p">)</span> <span class="p">{</span>
-   <span class="k">throw</span> <span class="s2">&quot;Unable to determine WSL2 IPv4 address.&quot;</span>
-<span class="p">}</span>
-
-<span class="c"># Update only the Concordium P2P listener.</span>
-<span class="p">&amp;</span> <span class="n">netsh</span> <span class="n">interface</span> <span class="n">portproxy</span> <span class="n">delete</span> <span class="n">v4tov4</span> <span class="p">`</span>
-   <span class="n">listenaddress</span><span class="p">=</span><span class="nv">$listenAddress</span> <span class="n">listenport</span><span class="p">=</span><span class="nv">$port</span> <span class="p">|</span> <span class="nb">Out-Null</span>
-
-<span class="p">&amp;</span> <span class="n">netsh</span> <span class="n">interface</span> <span class="n">portproxy</span> <span class="n">add</span> <span class="n">v4tov4</span> <span class="p">`</span>
-   <span class="n">listenaddress</span><span class="p">=</span><span class="nv">$listenAddress</span> <span class="n">listenport</span><span class="p">=</span><span class="nv">$port</span> <span class="p">`</span>
-   <span class="n">connectaddress</span><span class="p">=</span><span class="nv">$wslAddress</span> <span class="n">connectport</span><span class="p">=</span><span class="nv">$port</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="nv">$LASTEXITCODE</span> <span class="o">-ne</span> <span class="n">0</span><span class="p">)</span> <span class="p">{</span>
-   <span class="k">throw</span> <span class="s2">&quot;Failed to configure Concordium P2P portproxy.&quot;</span>
-<span class="p">}</span>
-
-<span class="c"># Verify that the expected listener exists.</span>
-<span class="nv">$rules</span> <span class="p">=</span> <span class="p">&amp;</span> <span class="n">netsh</span> <span class="n">interface</span> <span class="n">portproxy</span> <span class="n">show</span> <span class="n">v4tov4</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="nv">$LASTEXITCODE</span> <span class="o">-ne</span> <span class="n">0</span><span class="p">)</span> <span class="p">{</span>
-   <span class="k">throw</span> <span class="s2">&quot;Failed to inspect portproxy configuration.&quot;</span>
-<span class="p">}</span>
-
-<span class="nv">$expected</span> <span class="p">=</span> <span class="s2">&quot;$listenAddress\s+$port\s+$wslAddress\s+$port&quot;</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="o">-not</span> <span class="p">((</span><span class="nv">$rules</span> <span class="n">-join</span> <span class="s2">&quot;</span><span class="se">`n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="o">-match</span> <span class="nv">$expected</span><span class="p">))</span> <span class="p">{</span>
-   <span class="k">throw</span> <span class="s2">&quot;Concordium P2P portproxy verification failed.&quot;</span>
-<span class="p">}</span>
-
-<span class="nb">Write-Output</span> <span class="s2">&quot;Portproxy updated: ${listenAddress}:${port} -&gt; ${wslAddress}:${port}&quot;</span>
-</pre></div>
-</div>
-</div>
-<p class="sd-card-text">Set <code class="docutils literal notranslate"><span class="pre">$distro</span></code> to the exact WSL distribution name reported by
-<code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--list</span> <span class="pre">--verbose</span></code>. Set <code class="docutils literal notranslate"><span class="pre">$listenAddress</span></code> to the Windows
-LAN IPv4 address and <code class="docutils literal notranslate"><span class="pre">$port</span></code> to <code class="docutils literal notranslate"><span class="pre">8889</span></code> for Testnet or <code class="docutils literal notranslate"><span class="pre">8888</span></code>
-for Mainnet.</p>
-<p class="sd-card-text">Replace <code class="docutils literal notranslate"><span class="pre">192.168.0.3</span></code> with your Windows computer’s LAN IPv4
-address before saving the script.</p>
-<p class="sd-card-text">The script waits for Ubuntu WSL2 to become available, discovers
-its current IPv4 address, and updates the Windows TCP port proxy.</p>
-<p class="sd-card-text">Run the script once from an elevated PowerShell session to verify
-that it works:</p>
-<div class="literal-block-wrapper docutils container" id="id54">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id54" title="Link to this code">#</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">powershell</span><span class="p">.</span><span class="n">exe</span> <span class="n">-NoProfile</span> <span class="n">-NonInteractive</span> <span class="n">-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="p">`</span>
-   <span class="o">-File</span> <span class="s2">&quot;C:\ProgramData\Concordium\Update-WSLPortProxy.ps1&quot;</span>
-</pre></div>
-</div>
-</div>
-<p class="sd-card-text">Verify the resulting configuration:</p>
-<div class="literal-block-wrapper docutils container" id="id55">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id55" title="Link to this code">#</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">netsh</span> <span class="n">interface</span> <span class="n">portproxy</span> <span class="n">show</span> <span class="n">v4tov4</span>
-</pre></div>
-</div>
-</div>
-<p class="sd-card-text">Create a scheduled task to refresh the port proxy at startup.
-Run the following commands from an elevated Windows PowerShell session:</p>
-<div class="literal-block-wrapper docutils container" id="id56">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id56" title="Link to this code">#</a></div>
-<div class="migration-copy-raw highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$taskName</span> <span class="p">=</span> <span class="s2">&quot;Concordium WSL PortProxy&quot;</span>
-<span class="nv">$credential</span> <span class="p">=</span> <span class="nb">Get-Credential</span> <span class="n">-Message</span> <span class="s2">&quot;Enter your Windows account credentials&quot;</span>
-
-<span class="nv">$action</span> <span class="p">=</span> <span class="nb">New-ScheduledTaskAction</span> <span class="p">`</span>
-   <span class="n">-Execute</span> <span class="s2">&quot;powershell.exe&quot;</span> <span class="p">`</span>
-   <span class="n">-Argument</span> <span class="s1">&#39;-NoProfile -NonInteractive -ExecutionPolicy Bypass -File &quot;C:\ProgramData\Concordium\Update-WSLPortProxy.ps1&quot;&#39;</span>
-
-<span class="nv">$trigger</span> <span class="p">=</span> <span class="nb">New-ScheduledTaskTrigger</span> <span class="n">-AtStartup</span>
-<span class="nv">$trigger</span><span class="p">.</span><span class="n">Delay</span> <span class="p">=</span> <span class="s2">&quot;PT30S&quot;</span>
-
-<span class="nv">$settings</span> <span class="p">=</span> <span class="nb">New-ScheduledTaskSettingsSet</span> <span class="p">`</span>
-   <span class="n">-ExecutionTimeLimit</span> <span class="p">(</span><span class="nb">New-TimeSpan</span> <span class="n">-Minutes</span> <span class="n">10</span><span class="p">)</span> <span class="p">`</span>
-   <span class="n">-RestartCount</span> <span class="n">3</span> <span class="p">`</span>
-   <span class="n">-RestartInterval</span> <span class="p">(</span><span class="nb">New-TimeSpan</span> <span class="n">-Minutes</span> <span class="n">1</span><span class="p">)</span> <span class="p">`</span>
-   <span class="n">-MultipleInstances</span> <span class="n">IgnoreNew</span>
-
-<span class="nb">Register-ScheduledTask</span> <span class="p">`</span>
-   <span class="n">-TaskName</span> <span class="nv">$taskName</span> <span class="p">`</span>
-   <span class="n">-Action</span> <span class="nv">$action</span> <span class="p">`</span>
-   <span class="n">-Trigger</span> <span class="nv">$trigger</span> <span class="p">`</span>
-   <span class="n">-Settings</span> <span class="nv">$settings</span> <span class="p">`</span>
-   <span class="n">-User</span> <span class="nv">$credential</span><span class="p">.</span><span class="n">UserName</span> <span class="p">`</span>
-   <span class="n">-Password</span> <span class="nv">$credential</span><span class="p">.</span><span class="n">GetNetworkCredential</span><span class="p">().</span><span class="n">Password</span> <span class="p">`</span>
-   <span class="n">-RunLevel</span> <span class="n">Highest</span>
-</pre></div>
-</div>
-</div>
-<p class="sd-card-text">The task runs under the same Windows account that owns the
-Ubuntu WSL2 distribution. Do not configure it to run as
-<code class="docutils literal notranslate"><span class="pre">SYSTEM</span></code>, because that account may not have access to the
-user’s registered WSL2 distribution.</p>
-<p class="sd-card-text">The 30-second delay allows the WSL2 startup task to begin
-before the port proxy is updated. The script also retries
-while waiting for the WSL2 network interface to become available.</p>
-<p class="sd-card-text">Verify the scheduled task:</p>
-<div class="literal-block-wrapper docutils container" id="id57">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id57" title="Link to this code">#</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-ScheduledTaskInfo</span> <span class="n">-TaskName</span> <span class="s2">&quot;Concordium WSL PortProxy&quot;</span>
-</pre></div>
-</div>
-</div>
-<p class="sd-card-text">After restarting Windows, confirm that the task completed
-successfully and that the port proxy points to the current
-WSL2 IPv4 address:</p>
-<div class="literal-block-wrapper docutils container" id="id58">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id58" title="Link to this code">#</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">netsh</span> <span class="n">interface</span> <span class="n">portproxy</span> <span class="n">show</span> <span class="n">v4tov4</span>
-<span class="n">wsl</span> <span class="n">-d</span> <span class="n">Ubuntu</span><span class="p">-</span><span class="n">24</span><span class="p">.</span><span class="n">04</span> <span class="n">-u</span> <span class="n">root</span> <span class="p">--</span> <span class="p">/</span><span class="n">usr</span><span class="p">/</span><span class="n">sbin</span><span class="p">/</span><span class="n">ip</span> <span class="p">-</span><span class="n">4</span> <span class="n">-o</span> <span class="n">addr</span> <span class="n">show</span> <span class="n">dev</span> <span class="n">eth0</span>
-</pre></div>
-</div>
-</div>
-<p class="sd-card-text">To test connectivity from another Windows computer on the local
-network, run the following command in PowerShell:</p>
-<div class="literal-block-wrapper docutils container" id="id59">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id59" title="Link to this code">#</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Test-NetConnection</span> <span class="n">-ComputerName</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">3</span> <span class="n">-Port</span> <span class="n">8889</span>
-</pre></div>
-</div>
-</div>
-<p class="sd-card-text">Replace the address with the Windows host’s LAN IPv4 address.
-For Mainnet, use port <code class="docutils literal notranslate"><span class="pre">8888</span></code> instead.</p>
-<p class="sd-card-text">A successful test reports <code class="docutils literal notranslate"><span class="pre">TcpTestSucceeded</span> <span class="pre">:</span> <span class="pre">True</span></code>.
-If the test fails, check the Windows Firewall rule, the port
-proxy configuration, and whether the Docker node is running.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p class="sd-card-text">The port proxy refreshes at Windows startup. If WSL2 is
-restarted separately and receives a different IPv4 address,
-rerun <code class="docutils literal notranslate"><span class="pre">Update-WSLPortProxy.ps1</span></code> from an elevated PowerShell
-session.</p>
-<p class="sd-card-text">This scheduled task is only required when incoming P2P
-connections have been enabled. It is not necessary for
-normal validator operation.</p>
-</div>
-</div>
-</details></section>
+</section>
 </section>
 <section id="roll-back-or-retire-the-windows-installation">
 <h2>6. Roll back or retire the Windows installation<a class="headerlink" href="#roll-back-or-retire-the-windows-installation" title="Link to this heading">#</a></h2>
@@ -1833,26 +1468,18 @@ Rolling back safely may require restoring the pre-migration backup.</p>
 automatically when Windows boots. Otherwise, Docker may restart the
 validator container after a reboot.</p>
 <p>Open Windows PowerShell as an administrator:</p>
-<div class="literal-block-wrapper docutils container" id="id60">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id60" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id42">
+<div class="code-block-caption"><span class="caption-text">Windows PowerShell (Administrator)</span><a class="headerlink" href="#id42" title="Link to this code">#</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Disable-ScheduledTask</span> <span class="n">-TaskName</span> <span class="s2">&quot;Concordium WSL Autostart&quot;</span>
 </pre></div>
 </div>
 </div>
-<p>If you configured optional P2P port forwarding, disable its
-scheduled task as well:</p>
-<div class="literal-block-wrapper docutils container" id="id61">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id61" title="Link to this code">#</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Disable-ScheduledTask</span> <span class="n">-TaskName</span> <span class="s2">&quot;Concordium WSL PortProxy&quot;</span>
-</pre></div>
-</div>
-</div>
-<p>These commands disable the scheduled tasks without deleting them.
-They can be enabled again if you decide to return to Docker.</p>
+<p>This command disable the scheduled tasks without deleting them.
+It can be enabled again if you decide to return to Docker.</p>
 <p>Next, stop the Docker node from Ubuntu WSL2, in the directory containing
 <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code>:</p>
-<div class="literal-block-wrapper docutils container" id="id62">
-<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id62" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id43">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id43" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>stop
 sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>--tail<span class="w"> </span><span class="m">100</span><span class="w"> </span>node
 sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>down
@@ -1876,16 +1503,10 @@ Restore it only after Docker has been stopped completely.
 Preserve the current database separately if it may be needed
 for troubleshooting or returning to Docker.</p>
 </div>
-<p>Before restarting the native Windows service, confirm that its node
-version is compatible with the current Concordium network protocol.</p>
-<p>If necessary, restore the complete pre-migration database backup to
-the original Windows data directory. Verify that the restored database
-belongs to the correct network and that the native node configuration
-still references that directory.</p>
-<p>Only after these checks, open PowerShell as an administrator and
+<p>After these checks, open PowerShell as an administrator and
 restore the original service:</p>
-<div class="literal-block-wrapper docutils container" id="id63">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id63" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id44">
+<div class="code-block-caption"><span class="caption-text">Windows PowerShell (Administrator)</span><a class="headerlink" href="#id44" title="Link to this code">#</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Set-Service</span> <span class="n">ConcordiumNode</span> <span class="n">-StartupType</span> <span class="n">Automatic</span>
 <span class="nb">Start-Service</span> <span class="n">ConcordiumNode</span>
 <span class="nb">Get-Service</span> <span class="n">ConcordiumNode</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span><span class="n">Status</span><span class="p">,</span><span class="n">StartType</span>
@@ -1901,8 +1522,8 @@ the Docker node was running.</p>
 successful recovery after a Windows reboot, monitor it for an appropriate
 observation period.</p>
 <p>Keep the native Windows service disabled while Docker is operating:</p>
-<div class="literal-block-wrapper docutils container" id="id64">
-<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id64" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id45">
+<div class="code-block-caption"><span class="caption-text">Windows PowerShell</span><a class="headerlink" href="#id45" title="Link to this code">#</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-Service</span> <span class="n">ConcordiumNode</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span><span class="n">Status</span><span class="p">,</span><span class="n">StartType</span>
 </pre></div>
 </div>
@@ -1911,30 +1532,6 @@ observation period.</p>
 <p>When you no longer need the native installation, you can uninstall the
 deprecated Windows Node Runner using the normal Windows application
 uninstallation procedure.</p>
-<p>Before removing any files:</p>
-<ul class="simple">
-<li><p>Confirm that the Docker node is running and synchronized.</p></li>
-<li><p>For validators, confirm that the original validator identity is active.</p></li>
-<li><p>Confirm that Ubuntu WSL2, Docker Engine, and the Concordium node start
-automatically after a Windows reboot, without requiring a user to sign in.</p></li>
-<li><p>Preserve validator credentials and any required backups.</p></li>
-<li><p>Preserve the Windows database directory referenced by <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code>,
-because it contains the active Docker blockchain state.</p></li>
-<li><p>Retain the pre-migration backup according to your rollback and
-recovery requirements.</p></li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The original Windows blockchain database is also the active
-Docker database when using the VirtioFS bind mount.</p>
-<p>Do not delete, move, or modify this directory while the Docker
-node is using it. Uninstalling the native Windows Node Runner
-must not remove the database directory referenced by
-<code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code>.</p>
-<p>Preserve validator credentials and any backups required for
-recovery. Verify the uninstall procedure before removing
-the deprecated Windows installation.</p>
-</div>
 <p>For future Docker image upgrades, see <a class="reference internal" href="../run-node-docker-image/run-node-docker.html#upgrade-docker-image"><span class="std std-ref">Upgrade the node</span></a>.</p>
 </section>
 </section>
@@ -2026,14 +1623,14 @@ the deprecated Windows installation.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-settings-and-prepare">1. Find settings and prepare</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-ubuntu-24-04-lts">Install Ubuntu 24.04 LTS</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-virtiofs-for-windows-drives">Enable VirtioFS for Windows drives</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-systemd-and-install-docker-engine">Enable systemd and install Docker Engine</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-systemd">Enable systemd</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-docker-engine-and-the-docker-compose-plugin-from-docker-s-official-apt-repository">Install Docker Engine and the Docker Compose plugin from Docker’s official APT repository.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#locate-the-existing-windows-node-configuration">Locate the existing Windows node configuration</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#translate-configuration">2. Translate configuration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-the-windows-node-and-prepare-the-database">3. Stop the Windows node and prepare the database</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-and-disable-the-native-windows-node">Stop and disable the native Windows node</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#back-up-the-existing-database">Back up the existing database</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-the-existing-windows-database">Verify the existing Windows database</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-windows-filesystem-permissions">Configure Windows filesystem permissions</a></li>
 </ul>
@@ -2043,7 +1640,7 @@ the deprecated Windows installation.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-docker-image">Download the Docker image</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-the-docker-node">Start the Docker node</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-consensus-and-validator-status">Verify consensus and validator status</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-automatic-startup">Configure automatic startup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-automatic-startup-optional">Configure automatic startup (optional)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roll-back-or-retire-the-windows-installation">6. Roll back or retire the Windows installation</a><ul class="visible nav section-nav flex-column">
