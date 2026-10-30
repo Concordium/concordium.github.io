@@ -4,6 +4,13 @@
 Install and manage a node on Ubuntu
 ===================================
 
+.. warning::
+
+   The Debian package distribution is deprecated. Existing users should follow
+   :ref:`migrate-debian-to-docker`. For new installations, use
+   :ref:`run-node-docker-image`. The instructions below remain available for legacy
+   installations; do not delete their state during migration.
+
 .. admonition:: At a glance
 
    This guide explains how to install and run a Concordium node on Ubuntu for mainnet or testnet. No account is required unless you want to become a validator. After following this guide, your node will be installed, running as a system service, and synchronizing with the Concordium network.
