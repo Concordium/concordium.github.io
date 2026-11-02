@@ -152,6 +152,49 @@ The ``verify`` string names the steps; the optional ``verification`` block names
 
 A service named here is a convenience, not an authority — it returns chain-derived data the consumer can re-check against the contracts in the badge. Issuers point these fields at whichever hosted verification service — resolver and :doc:`MCP <mcp-service>` — they operate or trust. Discovery and enumeration (finding agents you don't already have a badge for) is a separate concern handled by the :doc:`Indexer <indexer>`, not the badge.
 
+Add the badge to an existing card
+---------------------------------
+
+If your agent is already registered you do not need to rebuild your card: fetch the badge block, paste it in, re-host, and pin the new hash. Everything in the block is resolved from the chain, so the only input is the badge itself.
+
+#. **Get the block.** One ``GET`` with the badge string and nothing else — the network is resolved from the badge:
+
+   .. code-block:: bash
+
+      curl -s https://agent-registry-mcp.concordium.com/v1/get-badge-JSON/Mf22soLh1NuZYFgBK8iSs
+
+   The response carries ``extension`` (the complete ``{uri, description, required, params}`` object, including ``verification.verifyUrl``), ``registrations_entry`` (the ERC-8004 line above) and ``next_steps``. Over MCP the same call is the ``get_badge_json`` tool.
+
+#. **Paste.** Put ``extension`` into ``capabilities.extensions``, replacing any existing ``…/concordium-badge/v1`` entry, and delete any top-level ``concordium`` block. Optionally add ``registrations_entry`` to the top-level ``registrations`` array. Change nothing else.
+
+#. **Host** the card at its ``agent_uri``.
+
+#. **Hash the served bytes** — what a verifier will fetch, not the file on disk:
+
+   .. code-block:: bash
+
+      curl -s https://your-host/.well-known/agent-card.json | sha256sum
+
+#. **Pin the hash on chain.** Build the ``setAgentURI`` payload (omit ``agent_uri`` to keep the URL), sign it with the owner wallet and submit:
+
+   .. code-block:: bash
+
+      curl -s "https://agent-registry-mcp.concordium.com/v1/build-set-agent-uri/Mf22soLh1NuZYFgBK8iSs?metadata_hash_hex=<sha256>&sender=<owner account>"
+
+   Between hosting and pinning, the served card and the on-chain hash disagree for a moment. To avoid even that, host at a new versioned URL and pass ``agent_uri`` together with ``metadata_hash_hex`` in one transaction.
+
+#. **Confirm.**
+
+   .. code-block:: bash
+
+      curl -s https://agent-registry-mcp.concordium.com/v1/check-badge/Mf22soLh1NuZYFgBK8iSs
+
+   ``badge_valid``, ``extension_conformant`` and ``verification_present`` should all be ``true`` with an empty ``issues`` list.
+
+If you would rather not hash anything yourself, the ``build_agent_badge`` MCP tool takes your current card (``card_url`` or ``card_json``) and returns the merged card together with its SHA-256, ready for step 5.
+
+Composing a card for an agent that is **not registered yet** is a two-pass flow, because the badge needs a token id that does not exist until ``register`` mints it: use ``build_agent_card`` for the first card (its badge carries ``"tokenAddress": null`` and a ``verifyUrl`` keyed on the owner account), register, then run the steps above once with the new badge.
+
 Profile or bio
 --------------
 

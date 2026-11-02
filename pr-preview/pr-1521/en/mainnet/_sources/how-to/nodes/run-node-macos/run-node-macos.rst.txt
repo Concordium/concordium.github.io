@@ -8,6 +8,12 @@ Install and manage a node on macOS
 
    This guide explains how to install and run a Concordium node on macOS for mainnet or testnet. No account is required unless you want to become a validator. After following this guide, your node will be installed as a background service and synchronizing with the Concordium network.
 
+.. warning::
+
+   The macOS package distribution is deprecated. Existing users should follow
+   :ref:`migrate-macos-to-docker`. Keep node data and validator keys during
+   migration. These instructions apply only to existing package installations.
+
 This article explains how to run a Concordium node on macOS on mainnet or testnet, and how to set up your node as a :ref:`validator node<import-validator-keys>`.
 
 An account is not required to run a node, but you will need one if you want to become a validator.

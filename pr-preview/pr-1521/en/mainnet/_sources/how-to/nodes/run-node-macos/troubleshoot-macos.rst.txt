@@ -8,6 +8,12 @@ Troubleshoot a node on macOS
 
    This guide helps you diagnose and fix problems with a Concordium node running on macOS. You will need a node already installed. Use this page when your node is not starting, not syncing, or behaving unexpectedly.
 
+.. warning::
+
+   The macOS package distribution is deprecated. Existing users should follow
+   :ref:`migrate-macos-to-docker`. Keep node data and validator keys during
+   migration. Do not use database deletion steps as part of migration.
+
 This guide describes how to troubleshoot a node running on macOS on the Concordium network.
 
 View node logs

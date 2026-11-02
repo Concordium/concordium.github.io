@@ -8,6 +8,12 @@ Advanced node configuration on macOS
 
    This page covers advanced configuration options for a Concordium node running on macOS, including verifying the node is running, enabling inbound connections, and TLS setup. You will need a running macOS node. Use this page when you need to go beyond the default setup.
 
+.. warning::
+
+   The macOS package distribution is deprecated. Existing users should follow
+   :ref:`migrate-macos-to-docker`. Keep node data and validator keys during
+   migration. These instructions apply only to existing package installations.
+
 .. Note::
    If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate, for example, ``CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000``.
 

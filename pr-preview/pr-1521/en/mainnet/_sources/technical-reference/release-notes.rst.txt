@@ -962,13 +962,41 @@ Wallets
 Desktop Wallet
 --------------
 
-    September 26, 2025
+    October 12, 2026
 
-    Version 1.9.3 contains the following changes:
+    Version 1.9.6 contains the following changes:
 
-    - Fixed issue where wallet losses connection to ledger
+    - Fixed Linux startup on Ubuntu 24.04 and later by using system OpenSSL 3 instead of requiring OpenSSL 1.1.
+    - Added OpenSSL 3 as a runtime dependency in Linux packages.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.9.5 - September 15, 2026
+
+            - Added both Intel (x64) and Apple Silicon (ARM64) macOS DMG builds.
+            - Fixed white screens caused by race conditions and timeouts with LEDGER devices:
+
+              - Fixed a blank screen crash when repeatedly signing multi-signature proposals.
+              - Handled ``DisconnectedDevice`` gracefully during signing.
+              - Fixed the ``ErrorBoundary`` null fallback that caused an invisible blank screen.
+              - Fixed a duplicate React key in ``DisplayHexString``.
+              - Fixed an ``html2canvas`` crash when ``CopiableIdenticon`` re-renders.
+              - Removed a harmful cleanup dispatch in the ``useLedger`` ``ExternalHook``.
+
+        .. dropdown:: 1.9.4 - March 9, 2026
+
+            - Fixed white screens caused by race conditions and timeouts with LEDGER devices:
+
+              - Fixed a blank screen crash when repeatedly signing multi-signature proposals.
+              - Handled ``DisconnectedDevice`` gracefully during signing.
+              - Fixed the ``ErrorBoundary`` null fallback that caused an invisible blank screen.
+              - Fixed a duplicate React key in ``DisplayHexString``.
+              - Fixed an ``html2canvas`` crash when ``CopiableIdenticon`` re-renders.
+              - Removed a harmful cleanup dispatch in the ``useLedger`` ``ExternalHook``.
+
+        .. dropdown:: 1.9.3 - September 26, 2025
+
+            - Fixed an issue where the wallet loses connection to the LEDGER device.
 
         .. dropdown:: 1.9.2 - September 24, 2025
 
