@@ -79,6 +79,12 @@ Understand how Concordium works. Browse all topics below, grouped by theme, or u
 
       - :doc:`Governance <governance/gc-voting>`
 
+      **Partner integrations**
+
+      - :doc:`Partner integrations <partner-integrations/index>`
+
+        - :doc:`XDC AI: verified agent wallets <partner-integrations/xdc-ai-verified-agent-wallets>`
+
 .. toctree::
    :hidden:
 
@@ -92,3 +98,4 @@ Understand how Concordium works. Browse all topics below, grouped by theme, or u
    Tokenomics <tokenomics>
    Validation and Staking <staking/index>
    Governance <governance/gc-voting>
+   Partner integrations <partner-integrations/index>

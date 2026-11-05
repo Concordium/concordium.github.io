@@ -87,7 +87,7 @@ Clone this `repository <https://github.com/Concordium/concordium-browser-wallet>
 
 .. code-block:: console
 
-    $git clone https://github.com/Concordium/concordium-browser-wallet
+    $ git clone https://github.com/Concordium/concordium-browser-wallet
 
 Navigate to the ``examples/voting`` subdirectory, then build and run the frontend as described below:
 
@@ -95,31 +95,31 @@ Navigate to the ``examples/voting`` subdirectory, then build and run the fronten
 
 .. code-block:: console
 
-    $yarn
+    $ yarn
 
 - Run ``yarn build`` to build the package.
 
 .. code-block:: console
 
-    $yarn build
+    $ yarn build
 
 - Navigate to the voting example folder.
 
 .. code-block:: console
 
-    $cd ./examples/voting/
+    $ cd ./examples/voting/
 
 - Run ``yarn watch`` to enable hot-reload (useful for development) of the web frontend whenever you do any changes to the code.
 
 .. code-block:: console
 
-    $yarn watch
+    $ yarn watch
 
 - Run ``yarn start`` in another terminal to start the web frontend.
 
 .. code-block:: console
 
-    $yarn start
+    $ yarn start
 
 The command will log a URL in the console. Open this URL in the Chrome browser.
 

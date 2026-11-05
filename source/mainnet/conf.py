@@ -101,9 +101,6 @@ notfound_urls_prefix = "/en/mainnet/"
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates', '../_templates']
 
-# 404 page template.
-notfound_template = '404.html'
-
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
@@ -136,8 +133,6 @@ highlight_language = "rust"
 # a list of builtin themes.
 #
 html_theme = "pydata_sphinx_theme"
-
-html_logo = "../_static/concordium-logo.svg"
 html_favicon = "../_static/concordium-logo-no-text.svg"
 
 # Theme options are theme-specific and customize the look and feel of a theme
@@ -146,6 +141,10 @@ html_favicon = "../_static/concordium-logo-no-text.svg"
 #
 # These options are for pydata_sphinx_theme
 html_theme_options = {
+    "logo": {
+        "image_light": "_static/concordium-logo-dark.svg",
+        "image_dark": "_static/concordium-logo.svg",
+    },
     # 'canonical_url': '',
     # 'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
     # 'analytics_anonymize_ip': False,
@@ -407,12 +406,10 @@ redirects = {
     "net/smart-contracts/guides/setup-contract": "/docs/smart-contracts/guides/setup-contract.html",
     "net/smart-contracts/guides/compile-module": "/docs/smart-contracts/guides/compile-module.html",
     "net/smart-contracts/guides/build-schema": "/docs/smart-contracts/guides/build-schema.html",
-    "net/smart-contracts/guides/no-std": "/docs/smart-contracts/guides/no-std.html",
     "net/smart-contracts/guides/fallback-entrypoints": "/docs/smart-contracts/guides/fallback-entrypoints.html",
     "net/smart-contracts/guides/upgradeable-contract": "/docs/smart-contracts/guides/upgradeable-contract.html",
     "net/smart-contracts/guides/json-params": "/how-to/smart-contracts/json-params.html",
     "net/smart-contracts/guides/factory-pattern": "/how-to/smart-contracts/factory-pattern.html",
-    "net/smart-contracts/guides/unit-test-contract": "/docs/smart-contracts/guides/unit-test-contract.html",
     "net/smart-contracts/guides/development": "/docs/smart-contracts/guides/development.html",
     "net/smart-contracts/guides/costs": "/docs/smart-contracts/guides/costs.html",
     "net/guides/company-identities": "/docs/protocol/company-identities.html",
@@ -639,7 +636,6 @@ redirects = {
     "net/guides/recovery": "/docs/guides/recovery.html",
     "net/resources/ar-idp-contact": "/docs/index.html",
     "net/guides/new-to-concordium": "/docs/index.html",
-    "smart-contracts/guides/unit-test-contract": "/docs/smart-contracts/guides/unit-test-contract.html",
     "smart-contracts/onboarding-guide-ethereum-developers/faq": "/docs/help-and-faq/onboarding-guide-ethereum-developers/faq.html",
     "net/mobile-wallet/share-address-mw":"/docs/mobile-wallet/share-address-mw.html",
     "net/index": "/docs/index.html",
@@ -763,11 +759,8 @@ redirects = {
     "docs/smart-contracts/guides/setup-contract": "/how-to/smart-contracts/setup-contract.html",
     "docs/smart-contracts/guides/compile-module": "/how-to/smart-contracts/compile-module.html",
     "docs/smart-contracts/guides/build-schema": "/how-to/smart-contracts/build-schema.html",
-    "docs/smart-contracts/guides/no-std": "/how-to/smart-contracts/no-std.html",
     "docs/smart-contracts/guides/fallback-entrypoints": "/how-to/smart-contracts/fallback-entrypoints.html",
     "docs/smart-contracts/guides/upgradeable-contract": "/how-to/smart-contracts/upgradeable-contract.html",
-    "docs/smart-contracts/guides/migrate-contracts": "/how-to/smart-contracts/migrate-contracts.html",
-    "docs/smart-contracts/guides/unit-test-contract": "/how-to/smart-contracts/unit-test-contract.html",
     "docs/smart-contracts/guides/integration-test-contract": "/how-to/smart-contracts/integration-test-contract.html",
     "docs/smart-contracts/guides/quick-start": "/tutorials/quick-start.html",
     "docs/smart-contracts/introduction": "/learn/smart-contracts/index.html",
