@@ -46,7 +46,6 @@ extensions = [
     "sphinx_reredirects",
     "sphinx_copybutton",
     "sphinx_toolbox.collapse",
-    "sphinx_tabs.tabs",
     "sphinx_design",
     'notfound.extension'
 ]
@@ -78,9 +77,6 @@ graphviz_dot_args=[
 # Options for copybutton behavior
 copybutton_prompt_text = "$"
 copybutton_line_continuation_character = "\\"
-
-# Options for tabs behavior
-sphinx_tabs_disable_tab_closing = True
 
 # Disable default url prefix "/en/latest/" on every resource.
 notfound_urls_prefix = "/"
