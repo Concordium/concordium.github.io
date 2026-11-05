@@ -26,14 +26,17 @@ Prerequisites
 - Meet the :ref:`node requirements <node-requirements>`.
 - Make sure that the selected image is available for your host platform.
 
-.. tabs::
+.. tab-set::
+   :sync-group: os
 
-   .. group-tab:: Linux
+   .. tab-item:: Linux
+      :sync: linux
 
       Install `Docker Engine <https://docs.docker.com/engine/install/>`__ and the
       `Compose plugin <https://docs.docker.com/compose/install/>`_.
 
-   .. group-tab:: macOS
+   .. tab-item:: macOS
+      :sync: macos
 
       Install and start `Docker Desktop for Mac
       <https://docs.docker.com/desktop/setup/install/mac-install/>`_.
@@ -41,7 +44,8 @@ Prerequisites
       running while the node runs; container restart policies do not start
       Docker Desktop itself after a reboot.
 
-   .. group-tab:: Windows
+   .. tab-item:: Windows
+      :sync: windows
 
       Install `WSL2 with Ubuntu <https://learn.microsoft.com/en-us/windows/wsl/install>`__,
       then install `Docker Engine <https://docs.docker.com/engine/install/ubuntu/>`__
@@ -58,9 +62,11 @@ Configure a node
 2. In the directory, create ``compose.yaml`` from one the network-configuration examples below.
 3. Replace the collector name with your desired node's dashboard name, :emphasis:`note this name will be publicly visible`.
 
-.. tabs::
+.. tab-set::
+   :sync-group: os
 
-   .. group-tab:: Linux
+   .. tab-item:: Linux
+      :sync: linux
 
       .. dropdown:: Mainnet ``mainnet-node/compose.yaml`` example
 
@@ -109,7 +115,8 @@ Configure a node
                   CONCORDIUM_NODE_COLLECTOR_NODE_NAME: my-testnet-node
                   CONCORDIUM_NODE_COLLECTOR_URL: https://dashboard.testnet.concordium.com/nodes/post
 
-   .. group-tab:: macOS
+   .. tab-item:: macOS
+      :sync: macos
 
       The current image uses AMD64. ``platform`` selects that architecture;
       Apple Silicon Macs require emulation. Check the selected image tag's
@@ -165,7 +172,8 @@ Configure a node
                   CONCORDIUM_NODE_COLLECTOR_URL: https://dashboard.testnet.concordium.com/nodes/post
 
 
-   .. group-tab:: Windows
+   .. tab-item:: Windows
+      :sync: windows
 
       On Windows 10 and 11, run Docker Engine directly inside Ubuntu WSL2,
       without Docker Desktop. Create a separate directory for each network
