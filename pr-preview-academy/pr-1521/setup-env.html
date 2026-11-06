@@ -35,7 +35,6 @@
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/css/style.css?v=64f0e446" />
     <link rel="stylesheet" type="text/css" href="_static/css/tippy.css?v=056d489a" />
@@ -644,10 +643,6 @@
   <section id="set-up-the-development-environment">
 <span id="setup-env"></span><h1>Set up the development environment<a class="headerlink" href="#set-up-the-development-environment" title="Link to this heading">#</a></h1>
 <p>Before starting the tutorials, you must prepare your development environment by installing a number of tools. This topic covers the setup required for the tutorials.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can also watch a video about installing the smart contract tools.</p>
-<iframe src="https://www.youtube.com/embed/0UIyAlZjvLg?si=D0lguDkUjiHCKLcu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
 <p>First, you need to install <code class="docutils literal notranslate"><span class="pre">rustup</span></code> which installs Rust and Cargo to your computer. Go to <a class="reference external" href="https://rustup.rs/">Rustup</a> to install <code class="docutils literal notranslate"><span class="pre">rustup</span></code> for your platform.</p>
 <p>Type <strong>1</strong> to continue the installation.</p>
 <a class="reference internal image-reference" href="_images/mint-install-rustup.png"><img alt="_images/mint-install-rustup.png" src="_images/mint-install-rustup.png" style="width: 100%;" />
@@ -655,51 +650,27 @@
 <p>Finally, when Rust and Cargo are successfully installed in your system, you should see something similar to below.</p>
 <a class="reference internal image-reference" href="_images/mint-rust-install-done.png"><img alt="_images/mint-rust-install-done.png" src="_images/mint-rust-install-done.png" style="width: 100%;" />
 </a>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Currently, Rust toolchain versions up to <code class="docutils literal notranslate"><span class="pre">1.81</span></code> are and newer are not supported by older <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> versions ( &lt;= <code class="docutils literal notranslate"><span class="pre">4.0.0</span></code>). Update <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> if you see the error <code class="docutils literal notranslate"><span class="pre">Unexpected</span> <span class="pre">byte</span> <span class="pre">0x80.</span> <span class="pre">Expected</span> <span class="pre">0x00</span></code> as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cargo<span class="w"> </span>install<span class="w"> </span>cargo-concordium
-<span class="gp">$ </span>cargo<span class="w"> </span>concordium<span class="w"> </span>--version
-<span class="gp">$ </span>cargo-concordium<span class="w"> </span><span class="m">4</span>.1.1
-</pre></div>
-</div>
-<p>The minimum supported rust version is currently version <code class="docutils literal notranslate"><span class="pre">1.73</span></code></p>
-</div>
 <p>Copy and paste the commands in a terminal to install Wasm which will be used for building contracts.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">rustup target add wasm32-unknown-unknown</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">rustup target add wasm32v1-none</span>
 </pre></div>
 </div>
-<p>During Wasm installation in your system you should see something similar to below.</p>
-<a class="reference internal image-reference" href="_images/mint-wasm-install.png"><img alt="_images/mint-wasm-install.png" src="_images/mint-wasm-install.png" style="width: 100%;" />
-</a>
-<p>Now you need to install the Concordium software package. <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> is the tool for developing smart contracts for the Concordium blockchain. It can be used for <a class="reference external" href="https://developer.concordium.software/en/mainnet/how-to/smart-contracts/compile-module.html#compile-module" title="(in Concordium)"><span class="xref std std-ref">compiling</span></a> and <a class="reference external" href="https://developer.concordium.software/en/mainnet/how-to/smart-contracts/integration-test-contract.html#integration-test-contract" title="(in Concordium)"><span class="xref std std-ref">testing</span></a> smart contracts, and enables features such as <a class="reference external" href="https://developer.concordium.software/en/mainnet/how-to/smart-contracts/build-schema.html#build-schema" title="(in Concordium)"><span class="xref std std-ref">building contract schemas</span></a>. <a class="reference external" href="https://developer.concordium.software/en/mainnet/downloads.html#cargo-concordium-testnet" title="(in Concordium)"><span class="xref std std-ref">Click here</span></a> and download the version 2.2.0 or greater of <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> for your operating system. The tool is the same for both testnet and mainnet.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you are not using Ubuntu/Linux as your operating system, the following screenshots and commands will be different.
-Remember to adjust the following commands based on your operating system.</p>
-</div>
-<p>To install <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> run:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>install<span class="w"> </span>--locked<span class="w"> </span>cargo-concordium
+<p>Now you need to install the Concordium software package. <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> is the tool for developing smart contracts for the Concordium blockchain. It can be used for <a class="reference external" href="https://developer.concordium.software/en/mainnet/how-to/smart-contracts/compile-module.html#compile-module" title="(in Concordium)"><span class="xref std std-ref">compiling</span></a> and <a class="reference external" href="https://developer.concordium.software/en/mainnet/how-to/smart-contracts/integration-test-contract.html#integration-test-contract" title="(in Concordium)"><span class="xref std std-ref">testing</span></a> smart contracts, and enables features such as <a class="reference external" href="https://developer.concordium.software/en/mainnet/how-to/smart-contracts/build-schema.html#build-schema" title="(in Concordium)"><span class="xref std std-ref">building contract schemas</span></a>.
+To install <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cargo<span class="w"> </span>install<span class="w"> </span>--locked<span class="w"> </span>cargo-concordium
 </pre></div>
 </div>
 <p>For a description of how to use the <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> run:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>--help
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cargo<span class="w"> </span>concordium<span class="w"> </span>--help
 </pre></div>
 </div>
 <p>To use verifiable builds with cargo-concordium a container runtime such as <a class="reference external" href="https://www.docker.com/">Docker</a> is required.</p>
 <a class="reference internal image-reference" href="_images/cargo-help.png"><img alt="_images/cargo-help.png" src="_images/cargo-help.png" style="width: 100%;" />
 </a>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you have a warning on a Mac device that says “cargo-concordium cannot be opened because the developer cannot be verified” that means it requires permission to run and you should go to <strong>System Preferences → Security</strong> and unlock it with your password and click <strong>Allow Anyway</strong>.</p>
-<a class="reference internal image-reference" href="_images/mac-warning.png"><img alt="_images/mac-warning.png" src="_images/mac-warning.png" style="width: 100%;" />
-</a>
-</div>
 <section id="download-and-run-concordium-client">
 <span id="interact-with-your-contract"></span><h2>Download and run Concordium Client<a class="headerlink" href="#download-and-run-concordium-client" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool allows you to interact with a Concordium node. The tutorials use <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> as a command line tool to deploy, mint, and transfer. The tools is available for Windows, Mac, and Linux. <a class="reference external" href="https://developer.concordium.software/en/mainnet/downloads.html#concordium-node-and-client-download-testnet" title="(in Concordium)"><span class="xref std std-ref">Download it for your operating system here</span></a>. You find documentation of important commands that the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool provides <a class="reference external" href="https://developer.concordium.software/en/mainnet/technical-reference/concordium-client/concordium-client.html#concordium-client" title="(in Concordium)"><span class="xref std std-ref">here</span></a>.</p>
 <p>Rename the package to <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> in case it has some version annotation. Go to the folder where you downloaded the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>. You can check if you are in the correct folder when you see the output <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> from the command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;concordium-client&#39;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;concordium-client&#39;</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/pb_tutorial_10.png"><img alt="_images/pb_tutorial_10.png" src="_images/pb_tutorial_10.png" style="width: 70%;" />
@@ -716,67 +687,19 @@ The macOS distribution is an installer that places an alias to the binary into t
 </div>
 <p>On macOS or Linux, access the command line with the Terminal application. On Windows, use the Power Shell or Command Prompt application. If you run it outside of the command line (e.g., by double clicking in Windows Explorer), then the Concordium Client will exit immediately without doing anything useful.</p>
 <p>Before you can use the downloaded Concordium Client on Linux you have to make the downloaded file executable. Run the following command to make the file you download executable:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>chmod<span class="w"> </span>+x<span class="w"> </span>concordium-client
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>chmod<span class="w"> </span>+x<span class="w"> </span>concordium-client
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/pb_tutorial_8.png"><img alt="_images/pb_tutorial_8.png" src="_images/pb_tutorial_8.png" style="width: 50%;" />
 </a>
 <p>Check whether you can execute the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client<span class="w"> </span>--help
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>./concordium-client<span class="w"> </span>--help
 </pre></div>
 </div>
 <p>You should see some output that will help you in getting familiar with the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool.</p>
 <a class="reference internal image-reference" href="_images/pb_tutorial_9.png"><img alt="_images/pb_tutorial_9.png" src="_images/pb_tutorial_9.png" style="width: 100%;" />
 </a>
-<p>Your next task enables the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool to talk to a testnet node. There are two options to achieve this:</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text"><strong>Option 1 (beginners)</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">This option explains how to transfer the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool to your instance and execute commands from within the instance.</p>
-<p class="sd-card-text"><strong>Advantage</strong>: You can execute the commands within your instance.</p>
-<p class="sd-card-text"><strong>Disadvantage</strong>: You have to transfer files between your local machine and your instance.</p>
-<p class="sd-card-text">Transfer the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> package from your machine via a file-sharing tool (such as <a class="reference external" href="https://filezilla-project.org/">FileZilla</a> or the <code class="docutils literal notranslate"><span class="pre">sftp</span></code> command) to your instance.</p>
-<p class="sd-card-text">Connect to your instance and make your package executable again as you have done previously already:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>chmod<span class="w"> </span>+x<span class="w"> </span>concordium-client
-</pre></div>
-</div>
-<p class="sd-card-text">Check if everything is connected correctly by displaying the best/latest block.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client<span class="w"> </span>block<span class="w"> </span>show<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20001</span>
-</pre></div>
-</div>
-<p class="sd-card-text">You should see some block data output.</p>
-<a class="reference internal image-reference" href="_images/pb_tutorial_18.png"><img alt="_images/pb_tutorial_18.png" src="_images/pb_tutorial_18.png" style="width: 100%;" />
-</a>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p class="sd-card-text">Port 20001 is open by default on your testnet node to interact with it.</p>
-</div>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text"><strong>Option 2 (advanced users)</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">This option explains how you can use the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool locally on your machine and connect remotely to your node running on the server.</p>
-<p class="sd-card-text"><strong>Advantage</strong>: You don’t have to transfer files between your local machine and your instance later in the tutorial.</p>
-<p class="sd-card-text"><strong>Disadvantage</strong>: You have to use ssh with port forwarding when you run a command locally.</p>
-<p class="sd-card-text">Since you have a remote server your cloud provider usually gives you an option to ssh into it. Add the following port forwarding rule to your method to ssh into your instance in terminal A. The port 20001 on your localhost is forwarded to the port 20001 on your instance.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>ssh<span class="w"> </span>-NL<span class="w"> </span>localhost:20001:&lt;IP-address-of-your-instance&gt;:20001<span class="w"> </span>&lt;username&gt;@&lt;host&gt;
-</pre></div>
-</div>
-<a class="reference internal image-reference" href="_images/pb_tutorial_26.png"><img alt="_images/pb_tutorial_26.png" src="_images/pb_tutorial_26.png" style="width: 100%;" />
-</a>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p class="sd-card-text">Port 20001 is open by default on your testnet node to interact with it. Cloud providers often use <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> as the default &lt;username&gt; and the &lt;IP-address-of-your-instance&gt; as the default &lt;host&gt;.</p>
-</div>
-<p class="sd-card-text">Go in another terminal B to the folder where you downloaded the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>. Check if everything is connected correctly by displaying the best/latest block.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client<span class="w"> </span>block<span class="w"> </span>show<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20001</span>
-</pre></div>
-</div>
-<p class="sd-card-text">You should see some block data output.</p>
-<a class="reference internal image-reference" href="_images/pb_tutorial_17.png"><img alt="_images/pb_tutorial_17.png" src="_images/pb_tutorial_17.png" style="width: 100%;" />
-</a>
-</div>
-</details></section>
+</section>
 <section id="concordium-node-on-testnet">
 <h2>Concordium node on Testnet<a class="headerlink" href="#concordium-node-on-testnet" title="Link to this heading">#</a></h2>
 <p>For the purposes of these tutorials and for testing, a node is available on testnet to use when testing smart contracts and dApps so you do not need to run your own node. You can use this node for API calls of chain methods only with gRPC v2 and gRPC web. The address is <code class="docutils literal notranslate"><span class="pre">grpc.testnet.concordium.com</span></code> on port 20000 (gRPCv2 and gRPC-web). You can use this node for API calls of <em>chain methods only</em>. This node is maintained by Concordium, but Concordium does not guarantee availability. The status of this node is available on the <a class="reference external" href="https://status.testnet.concordium.software">Testnet status page</a>.</p>
