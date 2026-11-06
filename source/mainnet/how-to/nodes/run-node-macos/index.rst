@@ -19,7 +19,6 @@ Choose a topic below to learn how to install, configure, or troubleshoot your Co
 .. toctree::
    :maxdepth: 1
 
-   migrate-to-docker-image
    Install and manage a node on macOS (deprecated) <run-node-macos>
    Advanced node configuration on macOS (deprecated) <advanced-node-configuration-on-macos>
    Troubleshoot a node on macOS (deprecated) <troubleshoot-macos>

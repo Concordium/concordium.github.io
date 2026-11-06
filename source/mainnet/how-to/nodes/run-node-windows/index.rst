@@ -15,7 +15,6 @@ Choose a topic below to learn how to install, configure, or troubleshoot your Co
 .. toctree::
    :maxdepth: 1
 
-   Migrate to Docker <migrate-to-docker-image>
    Install and manage a node on Windows (deprecated) <run-node-windows>
    Advanced node configuration on Windows (deprecated) <advanced-node-configuration-on-windows>
    Concordium Windows node runner service configuration (deprecated) <node-runner-service-configuration>

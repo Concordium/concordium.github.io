@@ -19,7 +19,6 @@ Choose a topic below to learn how to install, configure, or troubleshoot your Co
 .. toctree::
    :maxdepth: 1
 
-   migrate-to-docker-image
    Install and manage a node on Docker (deprecated) <run-node-docker>
    Advanced node configuration on Docker (deprecated) <advanced-node-configuration-on-docker>
    Troubleshoot a node in Docker (deprecated) <troubleshoot-docker>

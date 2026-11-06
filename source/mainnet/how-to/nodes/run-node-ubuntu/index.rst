@@ -17,7 +17,6 @@ Choose a topic below to learn how to install, configure, or troubleshoot your Co
 .. toctree::
    :maxdepth: 1
 
-   migrate-to-docker-image
    Install and manage a node on Ubuntu (deprecated) <run-node-ubuntu>
    Advanced node configuration on Ubuntu (deprecated) <advanced-node-configuration-on-ubuntu>
    Troubleshoot a node on Ubuntu (deprecated) <troubleshoot-node-ubuntu>

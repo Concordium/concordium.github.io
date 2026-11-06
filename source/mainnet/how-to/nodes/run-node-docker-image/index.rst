@@ -10,12 +10,13 @@ Run a node using Docker
    You need Docker Engine and the Compose plugin.
    Select a guide below to install, configure, or troubleshoot your node.
 
-For an existing Debian installation, use :ref:`migrate-debian-to-docker`.
-For an existing network-specific image, use :ref:`migrate-network-specific-images`.
+For an existing installation, use :ref:`migrate-to-docker` and select the tab
+for your current distribution.
 
 .. toctree::
    :maxdepth: 1
 
    run-node-docker
+   migrate-to-docker-image
    advanced-node-configuration-on-docker
    troubleshoot-docker

@@ -53,6 +53,21 @@ Prerequisites
       inside Ubuntu. Docker Desktop is not required. Ensure WSL2 has
       sufficient resources to meet the node requirements.
 
+      Enable `systemd in WSL2
+      <https://learn.microsoft.com/en-us/windows/wsl/systemd>`_. Inside Ubuntu,
+      verify that PID 1 reports ``systemd`` and that Docker and Compose work:
+
+      .. code-block:: bash
+         :caption: Ubuntu WSL2 (Bash)
+
+         ps -p 1 -o comm=
+         sudo docker version
+         sudo docker compose version
+
+      Use ``sudo`` for Docker commands inside Ubuntu if your user does not
+      have Docker socket access. Systemd does not start WSL2 when Windows boots;
+      see :ref:`autostart-docker-image` for optional boot-time startup.
+
 .. _configure-docker-image:
 
 Configure a node
@@ -271,6 +286,140 @@ Start the node
    .. code-block:: console
 
      $ docker compose logs --follow
+
+.. _autostart-docker-image:
+
+Start automatically at system boot (optional)
+================================================
+
+The Compose configuration uses ``restart: unless-stopped``. This policy can
+restart the container when Docker starts, but it does not start Docker itself
+or a WSL2 distribution. A container you explicitly stop remains stopped until
+you start it again.
+
+Configure automatic startup only after verifying that your node runs correctly.
+
+.. tab-set::
+   :sync-group: os
+
+   .. tab-item:: Linux
+      :sync: linux
+
+      On a systemd-based host, enable Docker Engine at system boot:
+
+      .. code-block:: console
+
+         $sudo systemctl enable --now docker
+
+      After a reboot, confirm that Docker and the node are running. Check the
+      node logs, peer connections, and recent, advancing finalized blocks.
+      If enabled, check collector reporting and validator status as well.
+
+   .. tab-item:: macOS
+      :sync: macos
+
+      Docker Desktop must be running before the container can restart.
+      The container restart policy does not launch Docker Desktop after a
+      reboot. Starting Docker Desktop at user sign-in is not the same as
+      starting a node at system boot without a user signing in.
+
+   .. tab-item:: Windows
+      :sync: windows
+
+      Enable Docker Engine inside Ubuntu WSL2:
+
+      .. code-block:: bash
+         :caption: Ubuntu WSL2 (Bash)
+
+         sudo systemctl enable --now docker
+
+      This starts Docker when Ubuntu starts, not when Windows boots.
+      To run the node without requiring a user to sign in, configure a Windows
+      Task Scheduler task that starts Ubuntu WSL2 at system startup and keeps
+      the distribution running.
+
+      .. important::
+
+         The scheduled task must run under the Windows account that owns
+         the Ubuntu WSL2 distribution. Use the account password rather than
+         an interactive logon session. Run the following commands in an
+         elevated Windows PowerShell session.
+
+      Confirm that your Ubuntu distribution uses WSL version 2. Note its exact
+      name, as shown by ``wsl --list --verbose``. The examples below use
+      ``Ubuntu-24.04``; replace it with your registered distribution name.
+
+      Create the startup task:
+
+      .. code-block:: powershell
+         :caption: Windows PowerShell (Administrator)
+         :class: autostart-copy-raw
+
+         $taskName = "Concordium WSL Autostart"
+         $credential = Get-Credential -Message "Enter your Windows account credentials"
+
+         $action = New-ScheduledTaskAction `
+             -Execute "$env:WINDIR\System32\wsl.exe" `
+             -Argument "-d Ubuntu-24.04 -u root -- /usr/bin/tail -f /dev/null"
+
+         $trigger = New-ScheduledTaskTrigger -AtStartup
+
+         $settings = New-ScheduledTaskSettingsSet `
+             -ExecutionTimeLimit (New-TimeSpan -Seconds 0) `
+             -RestartCount 3 `
+             -RestartInterval (New-TimeSpan -Minutes 1) `
+             -MultipleInstances IgnoreNew
+
+         Register-ScheduledTask `
+             -TaskName $taskName `
+             -Action $action `
+             -Trigger $trigger `
+             -Settings $settings `
+             -User $credential.UserName `
+             -Password $credential.GetNetworkCredential().Password `
+             -RunLevel Highest
+
+      In Ubuntu WSL2, open the directory containing ``compose.yaml`` and verify
+      the container restart policy:
+
+      .. code-block:: bash
+         :caption: Ubuntu WSL2 (Bash)
+
+         sudo docker inspect $(sudo docker compose ps -q node) --format 'Status={{.State.Status}} RestartPolicy={{.HostConfig.RestartPolicy.Name}}'
+
+      The expected values are ``Status=running`` and
+      ``RestartPolicy=unless-stopped``.
+
+      Restart Windows and do not sign in immediately. Check collector reporting
+      from another device, if available. Once you sign in, check the node logs,
+      peer connections, and recent, advancing finalized blocks. For validators,
+      verify the expected identity and status.
+
+      Before stopping the node permanently, disable the startup task in an
+      elevated Windows PowerShell session:
+
+      .. code-block:: powershell
+         :caption: Windows PowerShell (Administrator)
+
+         Disable-ScheduledTask -TaskName "Concordium WSL Autostart"
+
+.. raw:: html
+
+   <script>
+   // Preserve PowerShell variables instead of stripping their leading '$'.
+   document.addEventListener('click', function (event) {
+      const button = event.target.closest('button.copybtn');
+      if (!button) return;
+      const selector = button.getAttribute('data-clipboard-target');
+      const target = selector && document.querySelector(selector);
+      if (!target?.closest('.autostart-copy-raw')) return;
+      event.stopImmediatePropagation();
+      event.preventDefault();
+      navigator.clipboard.writeText(target.innerText.replace(/\n+$/, '') + '\n')
+         .then(() => button.setAttribute('data-tooltip', 'Copied!'))
+         .catch(() => button.setAttribute('data-tooltip', 'Copy failed'));
+   }, true);
+   </script>
 
 .. _upgrade-docker-image:
 

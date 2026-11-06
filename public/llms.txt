@@ -39,6 +39,7 @@ Task-focused guides for completing specific goals on Concordium.
 - [Integrate Concordium in a crypto wallet](https://docs.concordium.com/en/mainnet/how-to/integrations/wallet-integration/wallet-integration.html): Add Concordium support to an existing wallet
 - [Implement Web3 ID](https://docs.concordium.com/en/mainnet/how-to/web3-id/index.html): Issue and verify Web3 ID credentials
 - [Run a Concordium node](https://docs.concordium.com/en/mainnet/how-to/nodes/node-requirements.html): Set up and operate a node on Ubuntu, macOS, Windows, or Docker
+- [Migrate from old distribution](https://docs.concordium.com/en/mainnet/how-to/nodes/run-node-docker-image/migrate-to-docker-image.html): Move an existing Ubuntu/Debian, macOS, Windows, or legacy Docker node to the current Docker image
 - [Set up smart contract development tools](https://docs.concordium.com/en/mainnet/how-to/smart-contracts/build-contract.html): Install cargo-concordium and set up your environment
 - [Deploy a smart contract module](https://docs.concordium.com/en/mainnet/how-to/smart-contracts/deploy-module.html): Deploy, initialize, and interact with smart contracts
 - [Become a validator](https://docs.concordium.com/en/mainnet/how-to/infrastructure/become-validator.html): Set up a validator node using the Concordium Client
