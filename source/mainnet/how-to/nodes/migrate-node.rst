@@ -25,9 +25,6 @@ native node and before Docker writes to it.
 .. warning::
 
    Never run two nodes with the same validator credentials simultaneously.
-   Stop the old node and disable automatic startup before starting Docker.
-   Reuse existing validator keys; do not generate or register new keys.
-   Stop if a command or access check fails.
 
 Prerequisites
 =============
@@ -333,9 +330,13 @@ The state mount depends on your existing distribution:
 
       Do not copy the ``Environment=`` prefix, systemd quoting, ``ExecStart``, or other
       systemd directives into YAML. This procedure covers the package's default
-      ``config/`` and ``data/`` directories and settings documented in
-      :ref:`advanced-node-configuration-on-ubuntu`. Migrate other custom settings
-      separately. Do not add data or configuration directory overrides: step 3 combines
+      ``config/`` and ``data/`` directories. The shared instructions above cover
+      inbound connections, catch-up, TLS, and the collector name. Read the
+      service's ``Environment=`` overrides and ``UnsetEnvironment=`` entries to
+      identify these settings; for example,
+      ``UnsetEnvironment=CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM`` means
+      catch-up was disabled. Migrate other custom settings separately.
+      Do not add data or configuration directory overrides: step 3 combines
       both directories in ``./data``.
 
    .. tab-item:: macOS
@@ -420,9 +421,7 @@ credential access checks below pass.
 ======================================
 
 Stop the original node cleanly and prevent automatic restart before copying or
-mounting its state. Do not copy a running database. Do not merge copied state
-into an existing Docker database. Stop if a destination already exists or a
-copy fails.
+mounting its state. Do not copy a database from a running node.
 
 The container runs with UID/GID ``10001:10001``. For state copies, change
 ownership only on the copy, not the original. Windows instead needs access to
@@ -1250,9 +1249,22 @@ configuration, and credentials according to your retention policy.
 
       Confirm a clean shutdown and that the container no longer runs. Restore any
       native settings you changed. Run **Concordium Node Start Mainnet** (or Testnet)
-      with the unchanged original state. Restore only automatic-start links that
-      existed before migration, following :ref:`change-node-settings`.
-      Check that the network still supports the old binary version.
+      with the unchanged original state. Check that the network still supports
+      the old binary version.
+
+      Restore only the automatic-start links recorded in step 1. For mainnet,
+      run each command only if its link existed before migration and is now
+      absent. Do not overwrite an existing link or file:
+
+      .. code-block:: console
+
+         $sudo ln -s "/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist" "/Library/LaunchDaemons/"
+         $sudo ln -s "/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node-collector.plist" "/Library/LaunchDaemons/"
+
+      For testnet, replace ``mainnet`` with ``testnet`` in both filenames.
+      Keep the source plists under ``/Library/Concordium Node/LaunchDaemons``
+      unchanged. These links restore native startup for rollback, not Docker
+      startup.
 
       After all checks pass, monitor Docker for your selected observation period.
       Then run **Concordium Node Uninstaller** and select **Yes** to retain data and

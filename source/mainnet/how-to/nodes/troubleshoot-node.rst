@@ -1,8 +1,8 @@
 .. _troubleshoot-docker-image:
 
-=============================
-Troubleshoot a node in Docker
-=============================
+===================
+Troubleshoot a node
+===================
 
 .. admonition:: At a glance
 
@@ -19,6 +19,8 @@ Troubleshoot a node in Docker
 Run the commands from the network directory that contains ``compose.yaml``.
 Use ``mainnet-node/`` for mainnet or ``testnet-node/`` for testnet.
 Both networks use service ``node`` and mount ``./data`` at ``/mnt/data``.
+
+.. _view-windows-node-log:
 
 View the node logs
 ==================

@@ -1,8 +1,8 @@
 .. _advanced-docker-image:
 
-=====================================
-Advanced node configuration on Docker
-=====================================
+===========================
+Advanced node configuration
+===========================
 
 .. admonition:: At a glance
 
@@ -75,6 +75,9 @@ Use the certificate domain and the container gRPC port, for example
 ``https://node.example.com:20000``.
 Make sure that this domain resolves to the node from inside the container.
 The host port mapping does not change the collector's internal endpoint.
+
+.. _changing-node-name-ubuntu:
+.. _node-collector-configuration-macos:
 
 Configure the collector
 =======================

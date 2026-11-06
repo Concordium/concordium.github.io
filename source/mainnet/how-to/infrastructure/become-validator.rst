@@ -121,7 +121,8 @@ The following arguments are optional. If no selection is made, earnings are rest
 
    ``concordium-client`` will offer to encrypt the generated ``validator-credentials.json`` file.
    Choose **not** to encrypt it since Concordium does not support easily starting a validator with encrypted validator credentials.
-   If this is a firm requirement for you, then you need to run the :ref:`debian package<run-node-ubuntu>` and configure it appropriately.
+   The supported Docker setup requires an unencrypted credentials file. Protect
+   it with restricted permissions as described in :ref:`import-validator-keys`.
 
 .. Warning::
    Do not stake all of your funds or you will not have enough funds to cover transaction fees.

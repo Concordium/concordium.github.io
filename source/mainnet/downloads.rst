@@ -206,11 +206,19 @@ To ease deployment and initialization, you can use the `Smart contract deploy an
 Concordium node distributions
 ==============================
 
-For the system requirements to run a node and installation instructions for each operating system, see :ref:`System requirements to run a node <node-requirements>`.
+Use the supported ``concordium/node`` Docker image on Linux, macOS, or Windows.
+See :ref:`node-requirements`, :ref:`install-node-docker-image`, and
+:ref:`upgrade-docker-image`.
 
 .. Note::
 
    When upgrading your Concordium node, it is generally possible to upgrade directly to the latest version without upgrading through each intermediate version. However, if you wish to download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
+
+Native node packages and network-specific Docker images are deprecated.
+The native package downloads below are retained for existing installations;
+do not use them for a new node. Follow :ref:`migrate-to-docker` to move an
+existing node to the supported distribution. AWS Marketplace products are
+also deprecated.
 
 .. dropdown:: Mainnet
 
@@ -226,19 +234,19 @@ For the system requirements to run a node and installation instructions for each
 
       To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
 
-      To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
+      For upgrades, follow :ref:`upgrade-docker-image`.
 
    .. dropdown:: Windows |mainnet-node-version|
 
       To run a node on Windows, `download a Mainnet Windows Installer package <https://distribution.concordium.software/windows/Node-10.0.12-6.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-      To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
+      For an existing Windows node, follow :ref:`migrate-windows-to-docker`.
 
    .. dropdown:: Mac |mainnet-node-version|
 
       To run a node on macOS, `download a Mainnet macOS installer package <https://distribution.concordium.software/macos/concordium-node-10.0.12-6.pkg>`_.
 
-      To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
+      For an existing macOS node, follow :ref:`migrate-macos-to-docker`.
 
 .. _concordium-node-and-client-download-testnet:
 .. _testnet-node-downloads:
@@ -251,7 +259,7 @@ For the system requirements to run a node and installation instructions for each
 
       - SHA256 checksum of the download: ``a0f16379c71b8bc1f6c5add21f105bcacd071bd9958775f6e8e25e1f05c58b18``
 
-      To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
+      For an existing Ubuntu node, follow :ref:`migrate-debian-to-docker`.
 
    .. dropdown:: Linux-Docker |testnet-node-version|
 
@@ -259,19 +267,19 @@ For the system requirements to run a node and installation instructions for each
 
       To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
 
-      To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
+      For upgrades, follow :ref:`upgrade-docker-image`.
 
    .. dropdown:: Windows |testnet-node-version|
 
       To run a node on Windows, `download a Testnet Windows Installer package <https://distribution.concordium.software/windows/Node-10.0.12-6.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-      To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
+      For an existing Windows node, follow :ref:`migrate-windows-to-docker`.
 
    .. dropdown:: Mac |testnet-node-version|
 
       To run a node on macOS, `download a Testnet macOS installer package <https://distribution.concordium.software/macos/concordium-node-10.0.12-6.pkg>`_.
 
-      To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS <run-node-macos>`.
+      For an existing macOS node, follow :ref:`migrate-macos-to-docker`.
 
 Node performance monitoring
 ---------------------------

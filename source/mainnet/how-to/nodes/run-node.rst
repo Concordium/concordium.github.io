@@ -1,12 +1,17 @@
 .. _install-node-docker-image:
+.. _run-node-docker-image:
+.. _run-a-node:
+.. _run-node-ubuntu:
+.. _run-node-macos:
+.. _run-node-windows:
 
-===================================
-Install and manage a node on Docker
-===================================
+=========================
+Install and manage a node
+=========================
 
 .. admonition:: At a glance
 
-   Use Docker Compose to run a mainnet or testnet node on Linux or macOS.
+   Use Docker Compose to run a mainnet or testnet node on Linux, macOS, or Windows.
    You need Docker Engine and the Compose plugin.
    After this procedure, your node runs in a Docker container.
 
@@ -422,6 +427,8 @@ Configure automatic startup only after verifying that your node runs correctly.
    </script>
 
 .. _upgrade-docker-image:
+.. _running-a-node:
+.. _upgrading-node-docker:
 
 Upgrade the node
 ================
@@ -441,6 +448,7 @@ Upgrade the node
      $ docker compose logs --follow
 
 .. _remove-docker-image:
+.. _remove-docker-node:
 
 Stop or remove the node
 =======================
@@ -463,6 +471,7 @@ Check the logs for a clean shutdown.
    Then, remove old state or backups only as permitted by your retention policy.
 
 .. _validator-docker-image:
+.. _configure-baker-docker:
 
 Run a validator node
 ====================
