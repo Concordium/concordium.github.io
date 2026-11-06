@@ -114,7 +114,7 @@ Install Python and pip
 You need to install Python and pip to proceed with installing the Concordium LEDGER app. The installation steps depend on your operating system.
 
 .. tab-set::
-   :sync-group: ledger-os
+   :sync-group: os
 
    .. tab-item:: Windows
       :sync: windows
@@ -179,7 +179,7 @@ You need to install Python and pip to proceed with installing the Concordium LED
             $pip3 install ledgerblue
 
    .. tab-item:: Ubuntu
-      :sync: ubuntu
+      :sync: linux
 
       .. _install-python-pip-ubuntu:
 
@@ -248,7 +248,7 @@ Install the custom certificate (Nano S only)
 You need to install a custom certificate to ensure that the LEDGER device trusts applications signed by Concordium's private key.
 
 .. tab-set::
-   :sync-group: ledger-os
+   :sync-group: os
 
    .. tab-item:: Windows
       :sync: windows
@@ -335,7 +335,7 @@ You need to install a custom certificate to ensure that the LEDGER device trusts
       #. Enter your PIN. The certificate has now been installed on the LEDGER device.
 
    .. tab-item:: Ubuntu
-      :sync: ubuntu
+      :sync: linux
 
       #. Close all applications that might be connected to the LEDGER device such as LEDGER LIVE and Concordium Desktop Wallet and keep them closed until you've completed the steps in this guide.
 
@@ -369,7 +369,7 @@ Install the Concordium Governance LEDGER app
 After installing the certificate, you can proceed to install the Concordium LEDGER app.
 
 .. tab-set::
-   :sync-group: ledger-os
+   :sync-group: os
 
    .. tab-item:: Windows
       :sync: windows
@@ -421,7 +421,7 @@ After installing the certificate, you can proceed to install the Concordium LEDG
       #. The LEDGER device says **Concordium**. Press both buttons. The LEDGER device says **Concordium is ready**. You can now use the LEDGER device with the Desktop Wallet.
 
    .. tab-item:: Ubuntu
-      :sync: ubuntu
+      :sync: linux
 
       .. _install-ledger-app-ubuntu:
 
@@ -441,7 +441,7 @@ Update the Concordium LEDGER app
 For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.
 
 .. tab-set::
-   :sync-group: ledger-os
+   :sync-group: os
 
    .. tab-item:: Windows
       :sync: windows
@@ -517,7 +517,7 @@ For the app to work properly with the current version of the Desktop Wallet, mak
       #. The LEDGER device says **Concordium**. Press both buttons. The LEDGER device says **Concordium is ready**. Press the left button to verify that you've installed the latest version of the LEDGER app.
 
    .. tab-item:: Ubuntu
-      :sync: ubuntu
+      :sync: linux
 
       .. _update-app-ubuntu:
 

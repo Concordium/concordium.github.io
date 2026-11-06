@@ -6,12 +6,16 @@ Run a Concordium node
 
 .. admonition:: At a glance
 
-   This page covers everything you need to know before running a Concordium node: hardware requirements, platform options (Ubuntu, Windows, macOS, Docker, AWS), and how to synchronize with the network. No account is required just to run a node. After reading this, you will be ready to choose your platform and follow the relevant installation guide.
+   This page covers everything you need to know before running a Concordium node: hardware requirements, platform specific guides, and how to synchronize with the network. No account is required just to run a node.
 
 Running a Concordium node is required for network validation, building custom services, or integrating directly with the blockchain.
 If you are a developer, operating your own node enables you to process events, access on-chain data, and build advanced integrations.
 You can choose to run a node yourself or have a third-party provider operate it for you.
-If you prefer to manage the node yourself, several options are available: :ref:`Ubuntu<run-node-ubuntu>`, :ref:`Windows<run-node-windows>`, :ref:`macOS<run-node-macos>`, :ref:`Docker<run-a-node>`, or cloud platforms such as :ref:`AWS<run-a-node-aws>`.
+If you manage the node yourself, use the ``concordium/node`` Docker image.
+Follow :ref:`install-node-docker-image` for a new installation or
+:ref:`migrate-to-docker` for an existing node. The native Ubuntu, macOS, and
+Windows distributions, network-specific Docker images, and AWS Marketplace
+products are deprecated.
 Alternatively, you can deploy your Concordium node through a decentralized Web3 provider like `Akash Network <https://akash.network/>`_.
 
 When you run a node on the Concordium blockchain as a validator, you participate in the network by producing blocks and validating transactions.
@@ -56,7 +60,10 @@ When you start a node for the first time, it will take a while to synchronize th
 
 To speed up this process, Concordium nodes use an out-of-band catch-up service to download blocks as soon as the node starts. While it will still take time to process the blocks, this method is typically faster than requesting them directly from peers.
 
-This feature is enabled by default in all distributions since version 6.1, and our packages are generally already set to use out-of-band catch-up. It is controlled by the ``CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM`` environment variable in the configuration file. To disable this feature, comment out the environment variable.
+The Docker Compose examples enable this feature with the
+``CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM`` environment variable.
+To disable it, remove that variable from ``compose.yaml`` and apply the change
+as described in :ref:`advanced-docker-image`.
 
 The speed of synchronization largely depends on the performance of your storage (NVMe drives are highly recommended).
 
@@ -116,12 +123,13 @@ Checking the Node synchronization status
    - If one or more peers are not marked as ``Up to date``, the node may still
      be in the process of synchronizing.
 
+Node guides
+===========
+
 .. toctree::
    :maxdepth: 1
-   :hidden:
 
-   run-node-ubuntu/index
-   run-node-macos/index
-   run-node-windows/index
-   run-node-docker/index
-   run-node-aws/index
+   run-node
+   migrate-node
+   advanced-node-configuration
+   troubleshoot-node
