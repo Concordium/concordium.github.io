@@ -117,7 +117,8 @@ Here you specify which node on the blockchain that you want to connect to.
 
 - Select **Set connection**. If the connection works, there's a message saying **Successfully connected**.
 
-You can run a node using :ref:`Windows<run-node-windows>`, :ref:`macOS <run-node-macos>`, and :ref:`with Docker <run-a-node>` or :ref:`a Debian package <run-node-ubuntu>` on Linux.
+You can run a node using the :ref:`supported Docker distribution
+<install-node-docker-image>` on Linux, macOS, or Windows.
 
 Terms and conditions
 --------------------

@@ -30,7 +30,7 @@ address index ``0``, run the following command:
 
 .. code-block:: console
 
-   $concordium-client contract show 0
+   $ concordium-client contract show 0
 
 The output should be similar to the following:
 

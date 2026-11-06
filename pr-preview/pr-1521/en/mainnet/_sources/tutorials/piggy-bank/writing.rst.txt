@@ -548,7 +548,7 @@ You now have all the parts for your piggy bank smart contract. Before you start 
 
 .. code-block:: console
 
-   $cargo concordium build
+   $ cargo concordium build
 
 This should succeed if everything is set up correctly. Otherwise, compare your
 code with the one found here_.

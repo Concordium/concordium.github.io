@@ -34,7 +34,6 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=0a2f49a1" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=056d489a" />
@@ -53,7 +52,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/counter/counter-contract.22a65c87-170c-440a-90ef-aa04dd9ff789.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/counter/counter-contract.078ac617-6fef-4c75-90dc-6c0ea0003547.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/counter/counter-contract';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/counter/counter-contract.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -681,7 +680,7 @@
 <p class="admonition-title">Note</p>
 <p>The template repository contains <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates">short GIFs</a> that show many of these commands.</p>
 </div>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>init
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cargo<span class="w"> </span>concordium<span class="w"> </span>init
 </pre></div>
 </div>
 <p>When prompted for which template to expand, select the <code class="docutils literal notranslate"><span class="pre">default</span></code> option. You will then be asked for a name for your project. In this example we’ll use “counter”, but you can choose whatever name you want.</p>
@@ -762,18 +761,18 @@
 <section id="build-deploy-and-initialize-the-contract">
 <h2>Build, deploy, and initialize the contract<a class="headerlink" href="#build-deploy-and-initialize-the-contract" title="Link to this heading">#</a></h2>
 <p>Create a <code class="docutils literal notranslate"><span class="pre">dist</span></code> folder for the compiled WASM contract. Then, run the build command.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--out<span class="w"> </span>dist/module.wasm.v1
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--out<span class="w"> </span>dist/module.wasm.v1
 </pre></div>
 </div>
 <p>You may get a warning about the build not being verifiable, which you may ignore.</p>
 <p>Now we can deploy the smart contract using the Concordium client CLI. If you are running your own node, you can use this command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>module<span class="w"> </span>deploy<span class="w"> </span>dist/module.wasm.v1<span class="w"> </span><span class="se">\</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>module<span class="w"> </span>deploy<span class="w"> </span>dist/module.wasm.v1<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--sender<span class="w"> </span>&lt;YOUR-ADDRESS&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--grpc-port<span class="w"> </span><span class="m">20001</span>
 </pre></div>
 </div>
 <p>Or, if you just want to try things out on testnet, you can use the testing nodes provided by Concordium:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>module<span class="w"> </span>deploy<span class="w"> </span>dist/module.wasm.v1<span class="w"> </span><span class="se">\</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>module<span class="w"> </span>deploy<span class="w"> </span>dist/module.wasm.v1<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--sender<span class="w"> </span>&lt;YOUR-TESTNET-ADDRESS&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span><span class="se">\</span>
@@ -783,7 +782,7 @@
 <p>The client may also ask you for the password you specified when you <a class="reference internal" href="../setup-env.html#import-client-key"><span class="std std-ref">imported your key into the Concordium client</span></a>. If successful, the command should respond with <code class="docutils literal notranslate"><span class="pre">Module</span> <span class="pre">successfully</span> <span class="pre">deployed</span> <span class="pre">with</span> <span class="pre">reference:</span> <span class="pre">&lt;MODULE-HASH&gt;</span></code>, where the module hash is a long hex string. Note down this hash, we’ll need it when we initialize a new contract instance below.</p>
 <p>Note that you will also pay a small fee from your account to pay for the deployment. If you followed the environment setup to create a testnet account, you should already have some CCD for testing purposes in that account.</p>
 <p>Finally, let’s initialize a contract instance, so you are ready to invoke the contract functions in the next section. Use this command if you are running your own node:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>init<span class="w"> </span>&lt;MODULE-HASH&gt;<span class="w"> </span><span class="se">\</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>init<span class="w"> </span>&lt;MODULE-HASH&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--sender<span class="w"> </span>&lt;YOUR-ADDRESS&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--energy<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--contract<span class="w"> </span>counter<span class="w"> </span><span class="se">\</span>
@@ -791,7 +790,7 @@
 </pre></div>
 </div>
 <p>Or, use this command to use the Concordium testnet node:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>init<span class="w"> </span>&lt;MODULE-HASH&gt;<span class="w"> </span><span class="se">\</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>init<span class="w"> </span>&lt;MODULE-HASH&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--sender<span class="w"> </span>&lt;YOUR-TESTNET-ADDRESS&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--energy<span class="w"> </span><span class="m">30000</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--contract<span class="w"> </span>counter<span class="w"> </span><span class="se">\</span>
@@ -808,13 +807,13 @@
 <section id="id1">
 <h3>View function<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>First, check the initial state of the contract. Use this command if you’re hosting your own node.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span>&lt;CONTRACT-INSTANCE-INDEX&gt;<span class="w"> </span><span class="se">\</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span>&lt;CONTRACT-INSTANCE-INDEX&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--entrypoint<span class="w"> </span>view<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--grpc-port<span class="w"> </span><span class="m">20001</span>
 </pre></div>
 </div>
 <p>Or, use this command to use the Concordium testnet node:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span>&lt;CONTRACT-INSTANCE-INDEX&gt;<span class="w"> </span><span class="se">\</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span>&lt;CONTRACT-INSTANCE-INDEX&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--entrypoint<span class="w"> </span>view<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span><span class="se">\</span>
@@ -830,7 +829,7 @@
 </pre></div>
 </div>
 <p>Now we can invoke the update function with that input by using a contract update transaction. This will mutate the smart contract state and store the new value. If you have your own node, you can invoke the update function like so:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>update<span class="w"> </span>&lt;CONTRACT-INSTANCE-INDEX&gt;<span class="w"> </span><span class="se">\</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>update<span class="w"> </span>&lt;CONTRACT-INSTANCE-INDEX&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--entrypoint<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--parameter-json<span class="w"> </span>input.json<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--sender<span class="w"> </span>&lt;YOUR-ADDRESS&gt;<span class="w"> </span><span class="se">\</span>
@@ -839,7 +838,7 @@
 </pre></div>
 </div>
 <p>Or, to use Concordium’s testnet node, use this command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>update<span class="w"> </span>&lt;CONTRACT-INSTANCE-INDEX&gt;<span class="w"> </span><span class="se">\</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>update<span class="w"> </span>&lt;CONTRACT-INSTANCE-INDEX&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--entrypoint<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--parameter-json<span class="w"> </span>input.json<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--sender<span class="w"> </span>&lt;YOUR-ADDRESS&gt;<span class="w"> </span><span class="se">\</span>

@@ -34,7 +34,6 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=0a2f49a1" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=056d489a" />
@@ -53,7 +52,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/piggy-bank/testing.e09e145e-50df-49be-83d2-b03272bc5868.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/piggy-bank/testing.ef62805c-1a18-49fe-950a-b62672f91321.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/piggy-bank/testing';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/piggy-bank/testing.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -685,11 +684,9 @@ example code for part 1 from <a class="reference external" href="https://github.
 <h2>Adding the testing library<a class="headerlink" href="#adding-the-testing-library" title="Link to this heading">#</a></h2>
 <p>Start by adding the <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/"><code class="docutils literal notranslate"><span class="pre">concordium-smart-contract-testing</span></code></a> library to the <code class="docutils literal notranslate"><span class="pre">Cargo.toml</span></code> located in the project root.
 Then, add the <a class="reference external" href="https://docs.rs/concordium-std-derive/latest/concordium_std_derive/"><code class="docutils literal notranslate"><span class="pre">concordium-std-derive</span></code></a> library as well, which contains useful macros for testing.
-You should add them under the section <code class="docutils literal notranslate"><span class="pre">[dev-dependencies]</span></code>, which are dependencies only needed during development, as it is only needed during testing.
-The libraries require the Rust edition <code class="docutils literal notranslate"><span class="pre">2021</span></code> or greater, which you must also set:</p>
+You should add them under the section <code class="docutils literal notranslate"><span class="pre">[dev-dependencies]</span></code>, which are dependencies only needed during development, as it is only needed during testing:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[package]</span>
 <span class="c1"># ...</span>
-<span class="n">edition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;2021&quot;</span>
 
 <span class="k">[dev-dependencies]</span>
 <span class="n">concordium-smart-contract-testing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;3.0&quot;</span>
@@ -771,7 +768,7 @@ In <a class="reference external" href="https://docs.rs/concordium-smart-contract
 Use <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span></code>, which you installed in preparation for this tutorial, to compile the piggy bank to <a class="reference external" href="https://webassembly.org/">WebAssembly (Wasm)</a>.</p>
 <p>Open a terminal and use <code class="docutils literal notranslate"><span class="pre">cd</span></code>, short for <em>change directory</em>, to go into the root of your piggy bank project.
 Then compile your contract with:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--out<span class="w"> </span>piggy_bank_part2.wasm.v1
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--out<span class="w"> </span>piggy_bank_part2.wasm.v1
 </pre></div>
 </div>
 <p>This produces the Wasm module <code class="docutils literal notranslate"><span class="pre">piggy_bank_part2.wasm.v1</span></code> in the root of your project, unless you have any typos or bugs in your code.
@@ -782,11 +779,10 @@ If that is the case, try to fix them using the helpful error messages from the c
 To circumvent this, cargo concordium’s test command both builds and tests you contract, which ensures that you always test the newest version of your code.
 By default it places the compiled Wasm module in the <code class="docutils literal notranslate"><span class="pre">target/</span></code> folder, but you can specify where you want it placed, so the location is easy to specify in your tests.
 To do so, use the <code class="docutils literal notranslate"><span class="pre">--out</span></code> parameter when testing:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--out<span class="w"> </span>piggy_bank_part2.wasm.v1
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cargo<span class="w"> </span>concordium<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--out<span class="w"> </span>piggy_bank_part2.wasm.v1
 </pre></div>
 </div>
-<p>Please note that the test command only builds your module in cargo concordium version 2.9.0+.
-Also note that for the highest assurance of correctness, you should <em>deploy the exact module</em> that you also tested.</p>
+<p>Note that for the highest assurance of correctness, you should <em>deploy the exact module</em> that you also tested.</p>
 </div>
 <p>Going back to your test case, use the function <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/fn.module_load_v1.html"><code class="docutils literal notranslate"><span class="pre">module_load_v1</span></code></a> to load the module.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// .. Imports and constants omitted for brevity</span>
@@ -933,7 +929,7 @@ To avoid duplicating code across the test cases, you will <em>refactor</em> near
 </pre></div>
 </div>
 <p>Run the test to check that it compiles and succeeds.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--out<span class="w"> </span>piggy_bank_part2.wasm.v1
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cargo<span class="w"> </span>concordium<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--out<span class="w"> </span>piggy_bank_part2.wasm.v1
 </pre></div>
 </div>
 <p>Note that the command recompiles the Wasm module and replaces the old module in the same location due to the <code class="docutils literal notranslate"><span class="pre">--out</span></code> parameter.</p>

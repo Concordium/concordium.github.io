@@ -1,0 +1,1342 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Install and manage a node &#8212; Concordium  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=0a2f49a1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=056d489a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=716d1818"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../../_static/tippy/how-to/nodes/run-node.6854e968-6e66-48c7-8f18-52d0c27a514e.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'how-to/nodes/run-node';</script>
+    <link rel="canonical" href="https://docs.concordium.com/en/mainnet/how-to/nodes/run-node.html" />
+    <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Migrate from old distribution" href="migrate-node.html" />
+    <link rel="prev" title="Run a Concordium node" href="node-requirements.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/concordium-logo-dark.svg" class="logo__image only-light" alt="Concordium  documentation - Home"/>
+    <img src="../../_static/concordium-logo.svg" class="logo__image only-dark pst-js-only" alt="Concordium  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../learn/index.html">
+    Explore
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    How‑to
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../technical-reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../downloads.html">
+    Downloads
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ccdscan.io" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.com/invite/GpKGE2hCFx" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discord fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discord</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@concordium" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../learn/index.html">
+    Explore
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    How‑to
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../technical-reference/index.html">
+    Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../downloads.html">
+    Downloads
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://ccdscan.io" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.com/invite/GpKGE2hCFx" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discord fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discord</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@concordium" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">About this documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../navigate-docs.html">Navigate this documentation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Concordium ID</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../concordium-id/verify-and-access/index.html">Implement Verify and Access</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../concordium-id/verify-and-access/how-it-works.html">How it works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concordium-id/verify-and-access/select-verification-method.html">Select verification method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concordium-id/verify-and-access/select-identity-provider.html">Select Identity Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concordium-id/verify-and-access/manage-transaction-costs.html">Manage transaction costs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concordium-id/verify-and-access/integrate-verification-flow.html">Integrate verification flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concordium-id/verify-and-access/access-the-concordium-network.html">Access the Concordium network</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../integrations/exchange-onboarding.html">Onboard as an exchange</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../integrations/wallet-sdk/wallet-sdk.html">Build a wallet with the Wallet SDK</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/wallet-sdk/wallet-sdk-identity-creation.html">Create an identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/wallet-sdk/wallet-sdk-identity-recovery.html">Recover an identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/wallet-sdk/wallet-sdk-credential-deployment.html">Create an account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/wallet-sdk/wallet-sdk-account-transaction.html">Submit a transaction to a Concordium node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/wallet-sdk/wallet-sdk-identity-provider.html">Get the list of identity providers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../integrations/wallet-integration/wallet-integration.html">Integrate Concordium in a crypto wallet</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/wallet-integration/integrating-identity-layer.html">Integrating Concordium’s ID layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/wallet-integration/supporting-zero-knowledge-proofs.html">Supporting zero-knowledge proofs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/wallet-integration/supporting-transactions.html">Supporting transactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/wallet-integration/supporting-staking.html">Supporting staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/wallet-integration/connecting-wallet-to-network.html">Connecting your wallet to the network</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../web3-id/index.html">Implement Web3 ID</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../web3-id/issuer.html">Web3 ID issuers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../web3-id/create-proofs.html">Create proofs</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/x402-integration.html">Implement X402 payments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/agent-registry.html">Use the Agent Registry</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Validation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/validation-with-wallets.html">Validate with Concordium wallets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/become-validator.html">Validate with the Concordium Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/add-baker-mw.html">Add a validator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/import-validator-keys.html">Import validator keys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/update-baker-mw.html">Change validator options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/suspend-unsuspend-validator.html">Suspend or unsuspend a validator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/stop-validator.html">Stop validating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infrastructure/delegation-faq.html">Delegation and validation FAQ</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Nodes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="node-requirements.html">Run a Concordium node</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Install and manage a node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrate-node.html">Migrate from old distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced-node-configuration.html">Advanced node configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshoot-node.html">Troubleshoot a node</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="run-local-chain/index.html">Run a local chain</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="run-local-chain/run-local-chain-docker.html">Using Docker (recommended)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run-local-chain/run-local-chain-source.html">Building from source</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Smart Contracts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../smart-contracts/build-contract.html">Set up smart contract development tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../smart-contracts/setup-contract.html">Set up a project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../smart-contracts/compile-module.html">Compile a module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../smart-contracts/build-schema.html">Build a contract schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../smart-contracts/custom-errors.html">Use custom errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../smart-contracts/json-params.html">Pass JSON parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../smart-contracts/fallback-entrypoints.html">Use fallback entrypoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../smart-contracts/upgradeable-contract.html">Write an upgradeable contract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../smart-contracts/factory-pattern.html">Implement the factory pattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../smart-contracts/integration-test-contract.html">Integration test a contract</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../smart-contracts/deploy-module.html">Deploy a smart contract module</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/initialize-contract.html">Initialize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/interact-instance.html">Interact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/inspect-instance.html">Inspect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/invoke-instance.html">Invoke</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../smart-contracts/best-practices/index.html">Best practices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/best-practices/development.html">Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/best-practices/costs.html">Cost reduction</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Governance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../governance/voting.html">Cast a vote</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../governance/guardians.html">Participate as an election guardian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../governance/verify-election-result.html">Verify election result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../governance/install-ledger-app.html">Install the Concordium Governance Ledger app</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="install-and-manage-a-node">
+<span id="run-node-windows"></span><span id="run-node-macos"></span><span id="run-node-ubuntu"></span><span id="run-a-node"></span><span id="run-node-docker-image"></span><span id="install-node-docker-image"></span><h1>Install and manage a node<a class="headerlink" href="#install-and-manage-a-node" title="Link to this heading">#</a></h1>
+<div class="admonition-at-a-glance admonition">
+<p class="admonition-title">At a glance</p>
+<p>Use Docker Compose to run a mainnet or testnet node on Linux, macOS, or Windows.
+You need Docker Engine and the Compose plugin.
+After this procedure, your node runs in a Docker container.</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">concordium/node</span></code> Docker image includes the node, the collector, and both
+network genesis files. Select the network in the Compose file.</p>
+<p>If you are running a node already, avoid catching up from scratch using the matching migration guide:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="migrate-node.html#migrate-debian-to-docker"><span class="std std-ref">Ubuntu package migration guide</span></a>.</p></li>
+<li><p><a class="reference internal" href="migrate-node.html#migrate-network-specific-images"><span class="std std-ref">Network-specific docker image migration guide</span></a>.</p></li>
+<li><p><a class="reference internal" href="migrate-node.html#migrate-macos-to-docker"><span class="std std-ref">macOS package migration guide</span></a> (Docker Desktop).</p></li>
+<li><p><a class="reference internal" href="migrate-node.html#migrate-windows-to-docker"><span class="std std-ref">Windows node migration guide</span></a> (Docker Engine in WSL2).</p></li>
+</ul>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Meet the <a class="reference internal" href="node-requirements.html#node-requirements"><span class="std std-ref">node requirements</span></a>.</p></li>
+<li><p>Make sure that the selected image is available for your host platform.</p></li>
+</ul>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="linux" for="sd-tab-item-0">
+Linux</label><div class="sd-tab-content docutils">
+<p>Install <a class="reference external" href="https://docs.docker.com/engine/install/">Docker Engine</a> and the
+<a class="reference external" href="https://docs.docker.com/compose/install/">Compose plugin</a>.</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="macos" for="sd-tab-item-1">
+macOS</label><div class="sd-tab-content docutils">
+<p>Install and start <a class="reference external" href="https://docs.docker.com/desktop/setup/install/mac-install/">Docker Desktop for Mac</a>.
+Allocate resources that meet the node requirements. Keep Docker Desktop
+running while the node runs; container restart policies do not start
+Docker Desktop itself after a reboot.</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="windows" for="sd-tab-item-2">
+Windows</label><div class="sd-tab-content docutils">
+<p>Install <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL2 with Ubuntu</a>,
+then install <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a>
+and the <a class="reference external" href="https://docs.docker.com/compose/install/linux/">Docker Compose plugin</a>
+inside Ubuntu. Docker Desktop is not required. Ensure WSL2 has
+sufficient resources to meet the node requirements.</p>
+<p>Enable <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/systemd">systemd in WSL2</a>. Inside Ubuntu,
+verify that PID 1 reports <code class="docutils literal notranslate"><span class="pre">systemd</span></code> and that Docker and Compose work:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps<span class="w"> </span>-p<span class="w"> </span><span class="m">1</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">comm</span><span class="o">=</span>
+sudo<span class="w"> </span>docker<span class="w"> </span>version
+sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>version
+</pre></div>
+</div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">sudo</span></code> for Docker commands inside Ubuntu if your user does not
+have Docker socket access. Systemd does not start WSL2 when Windows boots;
+see <a class="reference internal" href="#autostart-docker-image"><span class="std std-ref">Start automatically at system boot (optional)</span></a> for optional boot-time startup.</p>
+</div>
+</div>
+</section>
+<section id="configure-a-node">
+<span id="configure-docker-image"></span><h2>Configure a node<a class="headerlink" href="#configure-a-node" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Create a directory for storing node configuration and data, like <code class="docutils literal notranslate"><span class="pre">mainnet-node</span></code> or <code class="docutils literal notranslate"><span class="pre">testnet-node</span></code>.</p></li>
+<li><p>In the directory, create <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code> from one the network-configuration examples below.</p></li>
+<li><p>Replace the collector name with your desired node’s dashboard name, <em>note this name will be publicly visible</em>.</p></li>
+</ol>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="linux" for="sd-tab-item-3">
+Linux</label><div class="sd-tab-content docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Mainnet <code class="docutils literal notranslate"><span class="pre">mainnet-node/compose.yaml</span></code> example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">node</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/node:latest</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mainnet-node</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">stop_grace_period</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8888:8888&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;127.0.0.1:20000:20000&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/mnt/data</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/genesis/mainnet-genesis.dat</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bootstrap.mainnet.concordium.software:8888</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://catchup.mainnet.concordium.software/blocks.idx</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_ENABLED</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_NODE_NAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-mainnet-node</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://dashboard.mainnet.concordium.software/nodes/post</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Testnet <code class="docutils literal notranslate"><span class="pre">testnet-node/compose.yaml</span></code> example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">node</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/node:latest</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testnet-node</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">stop_grace_period</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8889:8889&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;127.0.0.1:20001:20000&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/mnt/data</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/genesis/testnet-genesis.dat</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bootstrap.testnet.concordium.com:8888</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://catchup.testnet.concordium.com/blocks.idx</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_LISTEN_PORT</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;8889&quot;</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_ENABLED</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_NODE_NAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-testnet-node</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://dashboard.testnet.concordium.com/nodes/post</span>
+</pre></div>
+</div>
+</div>
+</details></div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="macos" for="sd-tab-item-4">
+macOS</label><div class="sd-tab-content docutils">
+<p>The current image uses AMD64. <code class="docutils literal notranslate"><span class="pre">platform</span></code> selects that architecture;
+Apple Silicon Macs require emulation. Check the selected image tag’s
+architecture and verify that your node keeps up with the network.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Mainnet <code class="docutils literal notranslate"><span class="pre">mainnet-node/compose.yaml</span></code> example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">node</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/node:latest</span>
+<span class="w">    </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/amd64</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mainnet-node</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">stop_grace_period</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8888:8888&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;127.0.0.1:20000:20000&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/mnt/data</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/genesis/mainnet-genesis.dat</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bootstrap.mainnet.concordium.software:8888</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://catchup.mainnet.concordium.software/blocks.idx</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_ENABLED</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_NODE_NAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-mainnet-node</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://dashboard.mainnet.concordium.software/nodes/post</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Testnet <code class="docutils literal notranslate"><span class="pre">testnet-node/compose.yaml</span></code> example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">node</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/node:latest</span>
+<span class="w">    </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/amd64</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testnet-node</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">stop_grace_period</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8889:8889&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;127.0.0.1:20001:20000&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/mnt/data</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/genesis/testnet-genesis.dat</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bootstrap.testnet.concordium.com:8888</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://catchup.testnet.concordium.com/blocks.idx</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_LISTEN_PORT</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;8889&quot;</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_ENABLED</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_NODE_NAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-testnet-node</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://dashboard.testnet.concordium.com/nodes/post</span>
+</pre></div>
+</div>
+</div>
+</details></div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="windows" for="sd-tab-item-5">
+Windows</label><div class="sd-tab-content docutils">
+<p>On Windows 10 and 11, run Docker Engine directly inside Ubuntu WSL2,
+without Docker Desktop. Create a separate directory for each network
+and save the appropriate configuration as <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Mainnet <code class="docutils literal notranslate"><span class="pre">mainnet-node/compose.yaml</span></code> example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Docker Compose - compose.yaml (Mainnet)</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">node</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/node:latest</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mainnet-node</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">stop_grace_period</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8888:8888&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;127.0.0.1:20000:20000&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/mnt/data</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/genesis/mainnet-genesis.dat</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bootstrap.mainnet.concordium.software:8888</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://catchup.mainnet.concordium.software/blocks.idx</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_ENABLED</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_NODE_NAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-mainnet-node</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://dashboard.mainnet.concordium.software/nodes/post</span>
+</pre></div>
+</div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Testnet <code class="docutils literal notranslate"><span class="pre">testnet-node/compose.yaml</span></code> example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Docker Compose - compose.yaml (Testnet)</span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">node</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/node:latest</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testnet-node</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">stop_grace_period</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8889:8889&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;127.0.0.1:20001:20000&quot;</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/mnt/data</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/genesis/testnet-genesis.dat</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bootstrap.testnet.concordium.com:8888</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://catchup.testnet.concordium.com/blocks.idx</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_LISTEN_PORT</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;8889&quot;</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_ENABLED</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_NODE_NAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-testnet-node</span>
+<span class="w">      </span><span class="nt">CONCORDIUM_NODE_COLLECTOR_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://dashboard.testnet.concordium.com/nodes/post</span>
+</pre></div>
+</div>
+</div>
+</div>
+</details><p>The <code class="docutils literal notranslate"><span class="pre">./data</span></code> directory stores the blockchain database and node data
+persistently inside Ubuntu WSL2. Keep Mainnet and Testnet in separate
+directories, each with its own <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code> and <code class="docutils literal notranslate"><span class="pre">data</span></code> directory.</p>
+</div>
+</div>
+<p>The examples mount a local <code class="docutils literal notranslate"><span class="pre">./data</span></code> directory beside the <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code> ensuring the node data and configurations are persisted across restart and updates.</p>
+<p>The examples give public access to the P2P port and limit host gRPC access to the loopback interface.
+Testnet uses host port <code class="docutils literal notranslate"><span class="pre">20001</span></code> and container port <code class="docutils literal notranslate"><span class="pre">20000</span></code>.</p>
+<p>They setup the network specific genesis data and the concordium-provided bootstrapper nodes, source for out-of-band blocks (improves catchup time) and enables the collector handling telemetrics which allows the node to show up in the various blockchain explorers.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The image runs as a non-root user with user ID (UID) <code class="docutils literal notranslate"><span class="pre">10001</span></code> and group ID (GID) <code class="docutils literal notranslate"><span class="pre">10001</span></code>.
+This intentionally limits the process’s permissions inside the container.
+The container user must be able to write to the mounted <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory, therefore instructions below cover creating this directory and handing ownership to the container user.</p>
+</div>
+</section>
+<section id="start-the-node">
+<h2>Start the node<a class="headerlink" href="#start-the-node" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Open a terminal in the directory that contains <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code> from the previous section.</p></li>
+<li><p>For a new node, we first have to create the local state directory and give container user ownership:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir<span class="w"> </span>data
+<span class="gp">$ </span>sudo<span class="w"> </span>chown<span class="w"> </span><span class="m">10001</span>:10001<span class="w"> </span>data
+</pre></div>
+</div>
+</li>
+<li><p>Start the node using</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--detach
+</pre></div>
+</div>
+<p>For network and TLS settings, see <a class="reference internal" href="advanced-node-configuration.html#advanced-docker-image"><span class="std std-ref">Advanced node configuration</span></a>.
+For startup or reporting problems, see <a class="reference internal" href="troubleshoot-node.html#troubleshoot-docker-image"><span class="std std-ref">Troubleshoot a node</span></a>.</p>
+</li>
+<li><p>Verify the node is running by inspecing the logs:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>--follow
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="start-automatically-at-system-boot-optional">
+<span id="autostart-docker-image"></span><h2>Start automatically at system boot (optional)<a class="headerlink" href="#start-automatically-at-system-boot-optional" title="Link to this heading">#</a></h2>
+<p>The Compose configuration uses <code class="docutils literal notranslate"><span class="pre">restart:</span> <span class="pre">unless-stopped</span></code>. This policy can
+restart the container when Docker starts, but it does not start Docker itself
+or a WSL2 distribution. A container you explicitly stop remains stopped until
+you start it again.</p>
+<p>Configure automatic startup only after verifying that your node runs correctly.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="linux" for="sd-tab-item-6">
+Linux</label><div class="sd-tab-content docutils">
+<p>On a systemd-based host, enable Docker Engine at system boot:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>docker
+</pre></div>
+</div>
+<p>After a reboot, confirm that Docker and the node are running. Check the
+node logs, peer connections, and recent, advancing finalized blocks.
+If enabled, check collector reporting and validator status as well.</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="macos" for="sd-tab-item-7">
+macOS</label><div class="sd-tab-content docutils">
+<p>Docker Desktop must be running before the container can restart.
+The container restart policy does not launch Docker Desktop after a
+reboot. Starting Docker Desktop at user sign-in is not the same as
+starting a node at system boot without a user signing in.</p>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="windows" for="sd-tab-item-8">
+Windows</label><div class="sd-tab-content docutils">
+<p>Enable Docker Engine inside Ubuntu WSL2:</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>docker
+</pre></div>
+</div>
+</div>
+<p>This starts Docker when Ubuntu starts, not when Windows boots.
+To run the node without requiring a user to sign in, configure a Windows
+Task Scheduler task that starts Ubuntu WSL2 at system startup and keeps
+the distribution running.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The scheduled task must run under the Windows account that owns
+the Ubuntu WSL2 distribution. Use the account password rather than
+an interactive logon session. Run the following commands in an
+elevated Windows PowerShell session.</p>
+</div>
+<p>Confirm that your Ubuntu distribution uses WSL version 2. Note its exact
+name, as shown by <code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--list</span> <span class="pre">--verbose</span></code>. The examples below use
+<code class="docutils literal notranslate"><span class="pre">Ubuntu-24.04</span></code>; replace it with your registered distribution name.</p>
+<p>Create the startup task:</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Windows PowerShell (Administrator)</span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
+<div class="autostart-copy-raw highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$taskName</span> <span class="p">=</span> <span class="s2">&quot;Concordium WSL Autostart&quot;</span>
+<span class="nv">$credential</span> <span class="p">=</span> <span class="nb">Get-Credential</span> <span class="n">-Message</span> <span class="s2">&quot;Enter your Windows account credentials&quot;</span>
+
+<span class="nv">$action</span> <span class="p">=</span> <span class="nb">New-ScheduledTaskAction</span> <span class="p">`</span>
+    <span class="n">-Execute</span> <span class="s2">&quot;$env:WINDIR\System32\wsl.exe&quot;</span> <span class="p">`</span>
+    <span class="n">-Argument</span> <span class="s2">&quot;-d Ubuntu-24.04 -u root -- /usr/bin/tail -f /dev/null&quot;</span>
+
+<span class="nv">$trigger</span> <span class="p">=</span> <span class="nb">New-ScheduledTaskTrigger</span> <span class="n">-AtStartup</span>
+
+<span class="nv">$settings</span> <span class="p">=</span> <span class="nb">New-ScheduledTaskSettingsSet</span> <span class="p">`</span>
+    <span class="n">-ExecutionTimeLimit</span> <span class="p">(</span><span class="nb">New-TimeSpan</span> <span class="n">-Seconds</span> <span class="n">0</span><span class="p">)</span> <span class="p">`</span>
+    <span class="n">-RestartCount</span> <span class="n">3</span> <span class="p">`</span>
+    <span class="n">-RestartInterval</span> <span class="p">(</span><span class="nb">New-TimeSpan</span> <span class="n">-Minutes</span> <span class="n">1</span><span class="p">)</span> <span class="p">`</span>
+    <span class="n">-MultipleInstances</span> <span class="n">IgnoreNew</span>
+
+<span class="nb">Register-ScheduledTask</span> <span class="p">`</span>
+    <span class="n">-TaskName</span> <span class="nv">$taskName</span> <span class="p">`</span>
+    <span class="n">-Action</span> <span class="nv">$action</span> <span class="p">`</span>
+    <span class="n">-Trigger</span> <span class="nv">$trigger</span> <span class="p">`</span>
+    <span class="n">-Settings</span> <span class="nv">$settings</span> <span class="p">`</span>
+    <span class="n">-User</span> <span class="nv">$credential</span><span class="p">.</span><span class="n">UserName</span> <span class="p">`</span>
+    <span class="n">-Password</span> <span class="nv">$credential</span><span class="p">.</span><span class="n">GetNetworkCredential</span><span class="p">().</span><span class="n">Password</span> <span class="p">`</span>
+    <span class="n">-RunLevel</span> <span class="n">Highest</span>
+</pre></div>
+</div>
+</div>
+<p>In Ubuntu WSL2, open the directory containing <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code> and verify
+the container restart policy:</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Ubuntu WSL2 (Bash)</span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>docker<span class="w"> </span>inspect<span class="w"> </span><span class="k">$(</span>sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>ps<span class="w"> </span>-q<span class="w"> </span>node<span class="k">)</span><span class="w"> </span>--format<span class="w"> </span><span class="s1">&#39;Status={{.State.Status}} RestartPolicy={{.HostConfig.RestartPolicy.Name}}&#39;</span>
+</pre></div>
+</div>
+</div>
+<p>The expected values are <code class="docutils literal notranslate"><span class="pre">Status=running</span></code> and
+<code class="docutils literal notranslate"><span class="pre">RestartPolicy=unless-stopped</span></code>.</p>
+<p>Restart Windows and do not sign in immediately. Check collector reporting
+from another device, if available. Once you sign in, check the node logs,
+peer connections, and recent, advancing finalized blocks. For validators,
+verify the expected identity and status.</p>
+<p>Before stopping the node permanently, disable the startup task in an
+elevated Windows PowerShell session:</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Windows PowerShell (Administrator)</span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Disable-ScheduledTask</span> <span class="n">-TaskName</span> <span class="s2">&quot;Concordium WSL Autostart&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+// Preserve PowerShell variables instead of stripping their leading '$'.
+document.addEventListener('click', function (event) {
+   const button = event.target.closest('button.copybtn');
+   if (!button) return;
+   const selector = button.getAttribute('data-clipboard-target');
+   const target = selector && document.querySelector(selector);
+   if (!target?.closest('.autostart-copy-raw')) return;
+   event.stopImmediatePropagation();
+   event.preventDefault();
+   navigator.clipboard.writeText(target.innerText.replace(/\n+$/, '') + '\n')
+      .then(() => button.setAttribute('data-tooltip', 'Copied!'))
+      .catch(() => button.setAttribute('data-tooltip', 'Copy failed'));
+}, true);
+</script></section>
+<section id="upgrade-the-node">
+<span id="upgrading-node-docker"></span><span id="running-a-node"></span><span id="upgrade-docker-image"></span><h2>Upgrade the node<a class="headerlink" href="#upgrade-the-node" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Read the <a class="reference external" href="https://github.com/Concordium/concordium-node/releases">release notes</a>
+for any additional instructions.</p></li>
+<li><p>Stop the node by running <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">stop</span></code> from the directory that contains <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code>.</p></li>
+<li><p>Check the logs for a clean shutdown <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">logs</span></code>.</p></li>
+<li><p>If the Compose file uses a fixed tag, update the <code class="docutils literal notranslate"><span class="pre">image</span></code> entry to the new
+version. Then run <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">pull</span></code> to download the selected image.
+Run this command for both <code class="docutils literal notranslate"><span class="pre">latest</span></code> and fixed tags.</p></li>
+<li><p>Start the node with <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span> <span class="pre">--detach</span></code>.</p></li>
+<li><p>Verify the node is running by inspecing the logs:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>--follow
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="stop-or-remove-the-node">
+<span id="remove-docker-node"></span><span id="remove-docker-image"></span><h2>Stop or remove the node<a class="headerlink" href="#stop-or-remove-the-node" title="Link to this heading">#</a></h2>
+<p>To stop and take down the node run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>docker<span class="w"> </span>compose<span class="w"> </span>stop
+<span class="gp">$ </span>docker<span class="w"> </span>compose<span class="w"> </span>down
+</pre></div>
+</div>
+<p>The example configurations use 5 minute shutdown grace period for the node to stop.
+Check the logs for a clean shutdown.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you delete the local state directory, you lose its data and configuration.
+Do not delete this directory during migration or rollback.
+First, check that the new installation operates correctly.
+Then, remove old state or backups only as permitted by your retention policy.</p>
+</div>
+</section>
+<section id="run-a-validator-node">
+<span id="configure-baker-docker"></span><span id="validator-docker-image"></span><h2>Run a validator node<a class="headerlink" href="#run-a-validator-node" title="Link to this heading">#</a></h2>
+<p>For a new validator, see <a class="reference internal" href="../infrastructure/import-validator-keys.html#import-validator-keys"><span class="std std-ref">Import validator keys</span></a>.
+For an existing Debian validator, follow <a class="reference internal" href="migrate-node.html#migrate-debian-to-docker"><span class="std std-ref">Ubuntu</span></a>.
+For an existing macOS validator, follow <a class="reference internal" href="migrate-node.html#migrate-macos-to-docker"><span class="std std-ref">macOS</span></a>.
+Use the existing validator keys. Do not generate new keys or register them again.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><style>
+  legend {
+    font-size: 12px;
+    font-weight:bold ;
+  }
+
+  label {
+    font-size: 12px;
+  }
+</style>
+
+<fieldset>
+  <legend>Was this article helpful?</legend>
+  <input type="radio" id="Yes" name="rating" value="Yes" onclick="_paq.push(['trackEvent', 'Rating', 'ClickYes', 'Yes']);">
+  <label for="Yes">Yes</label>
+  <input type="radio" id="No" name="rating" value="No" onclick="_paq.push(['trackEvent', 'Rating', 'ClickNo', 'No']);">
+  <label for="No">No</label>
+</fieldset>
+
+<!-- Matomo Tag Manager -->
+<script>
+  var _mtm = window._mtm = window._mtm || [];
+  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  (function() {
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://cdn.matomo.cloud/concordium.matomo.cloud/container_8ZIoCz8b.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Tag Manager --></div>
+  
+</div>
+                </footer>
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="node-requirements.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Run a Concordium node</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="migrate-node.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Migrate from old distribution</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-a-node">Configure a node</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-the-node">Start the node</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-automatically-at-system-boot-optional">Start automatically at system boot (optional)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrade-the-node">Upgrade the node</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-or-remove-the-node">Stop or remove the node</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-a-validator-node">Run a validator node</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/main/source/mainnet/how-to/nodes/run-node.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  
+
+  <p class="copyright">
+    
+      © Copyright 2021 - 2026, Concordium Software ApS.
+      <br/>
+    
+  </p>
+
+  <style>
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding-left: 16px;
+      padding-bottom: 8px;
+      color: var(--pst-color-text-base);
+      font-size: 8px;
+      text-decoration: none;
+    }
+</style>
+
+<div class="cc">
+  <a text-decoration=none href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="../../_static/cc-sa-by.png" />
+  </a>
+  <a href="../../net/guides/legal.html" >
+    Legal information
+  </a>
+</div>
+  <div id="cookie-consent" class="consent">     
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>     
+    <button onclick="consentDenied()">Decline</button>     
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a> 
+</div>  
+
+<!-- Matomo --> 
+<script>   
+var _paq = window._paq = window._paq || [];  
+
+// Save the choice in a cookie with proper attributes
+function storeChoice(granted) {   
+    // Set cookie with 1 year expiration, path, and secure attributes
+    const expires = new Date();
+    expires.setFullYear(expires.getFullYear() + 1);
+    document.cookie = "cookie-consent=" + granted + "; expires=" + expires.toUTCString() + "; path=/; SameSite=Lax";
+}  
+
+// Look for a cookie storing the previous choice of the user. 
+// Returns null if no choice was stored, true if granted, false if denied
+function loadChoice() {   
+    if (!document.cookie.includes("cookie-consent=")) {       
+        return null;   
+    }   
+    return document.cookie.includes("cookie-consent=true");
+}  
+
+// Removes the cookie consent banner safely
+function removeCookieConsentBanner() {   
+    const banner = document.getElementById("cookie-consent");
+    if (banner) {
+        banner.remove();
+    }
+}  
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {   
+    storeChoice(true);
+    _paq.push(['setCookieConsentGiven']);   
+    removeCookieConsentBanner();
+}  
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {   
+    storeChoice(false);  // FIXED: Now correctly stores false
+    removeCookieConsentBanner();
+}  
+
+// Check for stored consent and act accordingly
+const stored = loadChoice(); 
+if (stored === true) {
+    // User previously granted consent
+    _paq.push(['setCookieConsentGiven']);
+    removeCookieConsentBanner();
+} else if (stored === false) {
+    // User previously denied consent
+    removeCookieConsentBanner();
+}
+// If stored === null, show the banner (do nothing)
+
+_paq.push(['requireCookieConsent']); 
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */ 
+_paq.push(['trackPageView']); 
+_paq.push(['enableLinkTracking']);  
+
+(function() {     
+    var u="https://concordium.matomo.cloud/";     
+    _paq.push(['setTrackerUrl', u+'matomo.php']);     
+    _paq.push(['setSiteId', '2']);     
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];     
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);   
+})();    
+
+// Only remember consent if it was actually granted
+if (stored === true) {
+    _paq.push(['rememberCookieConsentGiven']);
+}
+</script>   
+
+<!-- Start of HubSpot Embed Code --> 
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4771748.js"></script> 
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>

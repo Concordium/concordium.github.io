@@ -34,7 +34,6 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=0a2f49a1" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=056d489a" />
@@ -53,7 +52,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/voting/voting-dapp.c5cff0a2-94cb-47c3-baa2-3e7059183295.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/voting/voting-dapp.294f61bb-a1f2-4118-aa40-72e327b83563.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/voting/voting-dapp';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/voting/voting-dapp.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -727,38 +726,38 @@ and implements common flows to deal with the different states that the wallet co
 the frontend will display a <code class="docutils literal notranslate"><span class="pre">Connect</span></code> button that can be used to connect to the wallet extension. Furthermore, the frontend has flows
 to react to events, such as when the user switches accounts or connects/disconnects an account.</p>
 <p>Clone this <a class="reference external" href="https://github.com/Concordium/concordium-browser-wallet">repository</a>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Concordium/concordium-browser-wallet
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Concordium/concordium-browser-wallet
 </pre></div>
 </div>
 <p>Navigate to the <code class="docutils literal notranslate"><span class="pre">examples/voting</span></code> subdirectory, then build and run the frontend as described below:</p>
 <ul class="simple">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">yarn</span></code> in the root folder to install all dependencies.</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>yarn
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>yarn
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">yarn</span> <span class="pre">build</span></code> to build the package.</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>yarn<span class="w"> </span>build
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>yarn<span class="w"> </span>build
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Navigate to the voting example folder.</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span><span class="w"> </span>./examples/voting/
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>./examples/voting/
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">yarn</span> <span class="pre">watch</span></code> to enable hot-reload (useful for development) of the web frontend whenever you do any changes to the code.</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>yarn<span class="w"> </span>watch
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>yarn<span class="w"> </span>watch
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">yarn</span> <span class="pre">start</span></code> in another terminal to start the web frontend.</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>yarn<span class="w"> </span>start
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>yarn<span class="w"> </span>start
 </pre></div>
 </div>
 <p>The command will log a URL in the console. Open this URL in the Chrome browser.</p>

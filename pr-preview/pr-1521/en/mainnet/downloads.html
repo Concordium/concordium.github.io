@@ -34,7 +34,6 @@
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=0a2f49a1" />
     <link rel="stylesheet" type="text/css" href="_static/css/tippy.css?v=056d489a" />
@@ -53,7 +52,7 @@
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="_static/tippy/downloads.953dd464-847b-48c3-a8c7-155f2b780341.js"></script>
+    <script defer="defer" src="_static/tippy/downloads.2bd5cc65-2237-4f47-b801-f93316249aee.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'downloads';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/downloads.html" />
     <link rel="icon" href="_static/concordium-logo-no-text.svg"/>
@@ -769,15 +768,6 @@ into the folder <code class="docutils literal notranslate"><span class="pre">/us
 <section id="cargo-concordium">
 <span id="cargo-concordium-testnet"></span><h2>cargo-concordium<a class="headerlink" href="#cargo-concordium" title="Link to this heading">#</a></h2>
 <p>For information about installing <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code>, see <a class="reference internal" href="how-to/smart-contracts/build-contract.html#build-contract"><span class="std std-ref">Install tools for development</span></a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>From version 2.8.0 the distribution for <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> has been simplified. Now, once you have installed rustup, you can quickly and easily install <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> without downloading a separate package or going through many steps. If you already have <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> installed, you may need to remove the existing <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> from your PATH to be able to update versions in the future.</p>
-</div>
-<section id="vscode-extension">
-<h3>VSCode extension<a class="headerlink" href="#vscode-extension" title="Link to this heading">#</a></h3>
-<p>You can <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts">install the VSCode extension</a> for smart contract development from the VSCode marketplace.</p>
-<p>For information about using the VSCode extension, <a class="reference external" href="https://www.youtube.com/watch?v=9qjcsGDeveg">watch the video</a>.</p>
-</section>
 </section>
 <section id="smart-contract-deploy-and-initialize-tool">
 <h2>Smart contract deploy and initialize tool<a class="headerlink" href="#smart-contract-deploy-and-initialize-tool" title="Link to this heading">#</a></h2>
@@ -785,11 +775,18 @@ into the folder <code class="docutils literal notranslate"><span class="pre">/us
 </section>
 <section id="concordium-node-distributions">
 <span id="node-downloads"></span><h2>Concordium node distributions<a class="headerlink" href="#concordium-node-distributions" title="Link to this heading">#</a></h2>
-<p>For the system requirements to run a node and installation instructions for each operating system, see <a class="reference internal" href="how-to/nodes/node-requirements.html#node-requirements"><span class="std std-ref">System requirements to run a node</span></a>.</p>
+<p>Use the supported <code class="docutils literal notranslate"><span class="pre">concordium/node</span></code> Docker image on Linux, macOS, or Windows.
+See <a class="reference internal" href="how-to/nodes/node-requirements.html#node-requirements"><span class="std std-ref">Run a Concordium node</span></a>, <a class="reference internal" href="how-to/nodes/run-node.html#install-node-docker-image"><span class="std std-ref">Install and manage a node</span></a>, and
+<a class="reference internal" href="how-to/nodes/run-node.html#upgrade-docker-image"><span class="std std-ref">Upgrade the node</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When upgrading your Concordium node, it is generally possible to upgrade directly to the latest version without upgrading through each intermediate version. However, if you wish to download previous node versions, see <a class="reference internal" href="docs/installation/previous-node-downloads.html#previous-downloads"><span class="std std-ref">Previous node versions</span></a>.</p>
 </div>
+<p>Native node packages and network-specific Docker images are deprecated.
+The native package downloads below are retained for existing installations;
+do not use them for a new node. Follow <a class="reference internal" href="how-to/nodes/migrate-node.html#migrate-to-docker"><span class="std std-ref">Migrate from old distribution</span></a> to move an
+existing node to the supported distribution. AWS Marketplace products are
+also deprecated.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Mainnet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -807,20 +804,20 @@ into the folder <code class="docutils literal notranslate"><span class="pre">/us
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Linux-Docker 10.0.12</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">To learn how to run a node with Docker, see <a class="reference internal" href="how-to/nodes/run-node-docker/run-node-docker.html#run-a-node"><span class="std std-ref">Run a node with Docker</span></a>.</p>
-<p class="sd-card-text">To upgrade your Docker node either restart the service if you are using the <cite>:latest</cite> image tag, or change the image tag to the new version. See <a class="reference internal" href="how-to/nodes/run-node-docker/run-node-docker.html#running-a-node"><span class="std std-ref">Running/upgrading a node</span></a> for details.</p>
+<p class="sd-card-text">To learn how to run a node with Docker, see <a class="reference internal" href="how-to/nodes/run-node.html#run-a-node"><span class="std std-ref">Run a node with Docker</span></a>.</p>
+<p class="sd-card-text">For upgrades, follow <a class="reference internal" href="how-to/nodes/run-node.html#upgrade-docker-image"><span class="std std-ref">Upgrade the node</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Windows 10.0.12</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">To run a node on Windows, <a class="reference external" href="https://distribution.concordium.software/windows/Node-10.0.12-6.msi">download a Mainnet Windows Installer package</a>. <strong>Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.</strong></p>
-<p class="sd-card-text">To learn how to run a node on Windows, see <a class="reference internal" href="how-to/nodes/run-node-windows/run-node-windows.html#run-node-windows"><span class="std std-ref">Run and manage a node on Windows</span></a>.</p>
+<p class="sd-card-text">For an existing Windows node, follow <a class="reference internal" href="how-to/nodes/migrate-node.html#migrate-windows-to-docker"><span class="std std-ref">Windows</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Mac 10.0.12</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">To run a node on macOS, <a class="reference external" href="https://distribution.concordium.software/macos/concordium-node-10.0.12-6.pkg">download a Mainnet macOS installer package</a>.</p>
-<p class="sd-card-text">To learn how to run a node on Mac, see <a class="reference internal" href="how-to/nodes/run-node-macos/run-node-macos.html#run-node-macos"><span class="std std-ref">Run and manage a node on macOS</span></a>.</p>
+<p class="sd-card-text">For an existing macOS node, follow <a class="reference internal" href="how-to/nodes/migrate-node.html#migrate-macos-to-docker"><span class="std std-ref">macOS</span></a>.</p>
 </div>
 </details></div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" id="testnet-node-downloads">
@@ -833,25 +830,25 @@ into the folder <code class="docutils literal notranslate"><span class="pre">/us
 <ul class="simple">
 <li><p class="sd-card-text">SHA256 checksum of the download: <code class="docutils literal notranslate"><span class="pre">a0f16379c71b8bc1f6c5add21f105bcacd071bd9958775f6e8e25e1f05c58b18</span></code></p></li>
 </ul>
-<p class="sd-card-text">To learn how to run a node with Ubuntu, see <a class="reference internal" href="how-to/nodes/run-node-ubuntu/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Run a node on a server with Ubuntu</span></a>.</p>
+<p class="sd-card-text">For an existing Ubuntu node, follow <a class="reference internal" href="how-to/nodes/migrate-node.html#migrate-debian-to-docker"><span class="std std-ref">Ubuntu</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Linux-Docker 10.0.12</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text" id="concordium-docker-package-download-testnet">To learn how to run a node with Docker, see <a class="reference internal" href="how-to/nodes/run-node-docker/run-node-docker.html#run-a-node"><span class="std std-ref">Run a node with Docker</span></a>.</p>
-<p class="sd-card-text">To upgrade your Docker node either restart the service if you are using the <cite>:latest</cite> image tag, or change the image tag to the new version. See <a class="reference internal" href="how-to/nodes/run-node-docker/run-node-docker.html#running-a-node"><span class="std std-ref">Running/upgrading a node</span></a> for details.</p>
+<p class="sd-card-text" id="concordium-docker-package-download-testnet">To learn how to run a node with Docker, see <a class="reference internal" href="how-to/nodes/run-node.html#run-a-node"><span class="std std-ref">Run a node with Docker</span></a>.</p>
+<p class="sd-card-text">For upgrades, follow <a class="reference internal" href="how-to/nodes/run-node.html#upgrade-docker-image"><span class="std std-ref">Upgrade the node</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Windows 10.0.12</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">To run a node on Windows, <a class="reference external" href="https://distribution.concordium.software/windows/Node-10.0.12-6.msi">download a Testnet Windows Installer package</a>. <strong>Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.</strong></p>
-<p class="sd-card-text">To learn how to run a node on Windows, see <a class="reference internal" href="how-to/nodes/run-node-windows/run-node-windows.html#run-node-windows"><span class="std std-ref">Run and manage a node on Windows</span></a>.</p>
+<p class="sd-card-text">For an existing Windows node, follow <a class="reference internal" href="how-to/nodes/migrate-node.html#migrate-windows-to-docker"><span class="std std-ref">Windows</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Mac 10.0.12</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">To run a node on macOS, <a class="reference external" href="https://distribution.concordium.software/macos/concordium-node-10.0.12-6.pkg">download a Testnet macOS installer package</a>.</p>
-<p class="sd-card-text">To learn how to run a node on Mac, see <a class="reference internal" href="how-to/nodes/run-node-macos/run-node-macos.html#run-node-macos"><span class="std std-ref">Run and manage a node on macOS</span></a>.</p>
+<p class="sd-card-text">For an existing macOS node, follow <a class="reference internal" href="how-to/nodes/migrate-node.html#migrate-macos-to-docker"><span class="std std-ref">macOS</span></a>.</p>
 </div>
 </details></div>
 </details><section id="node-performance-monitoring">
@@ -1038,10 +1035,7 @@ For information about how to use the company identity management tool, see <a cl
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-ledger-app">Concordium LEDGER App</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-client-client-version">Concordium Client 10.0.0</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#genesis-creator-tool-genesis-creator-version">Genesis Creator Tool 0.8.1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cargo-concordium">cargo-concordium</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension">VSCode extension</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cargo-concordium">cargo-concordium</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smart-contract-deploy-and-initialize-tool">Smart contract deploy and initialize tool</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-distributions">Concordium node distributions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node-performance-monitoring">Node performance monitoring</a></li>
