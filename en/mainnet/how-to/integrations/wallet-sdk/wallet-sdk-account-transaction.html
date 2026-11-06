@@ -34,7 +34,6 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=0a2f49a1" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/tippy.css?v=056d489a" />
@@ -53,7 +52,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/how-to/integrations/wallet-sdk/wallet-sdk-account-transaction.a17f8d23-3660-4ec3-a0df-7182887758b0.js"></script>
+    <script defer="defer" src="../../../_static/tippy/how-to/integrations/wallet-sdk/wallet-sdk-account-transaction.970a33e7-1823-46a6-abaa-c76fc52c53b3.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'how-to/integrations/wallet-sdk/wallet-sdk-account-transaction';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/how-to/integrations/wallet-sdk/wallet-sdk-account-transaction.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -619,11 +618,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../smart-contracts/build-schema.html">Build a contract schema</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../smart-contracts/custom-errors.html">Use custom errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../smart-contracts/json-params.html">Pass JSON parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../smart-contracts/no-std.html">Use no_std</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../smart-contracts/fallback-entrypoints.html">Use fallback entrypoints</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../smart-contracts/upgradeable-contract.html">Write an upgradeable contract</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../smart-contracts/factory-pattern.html">Implement the factory pattern</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../smart-contracts/unit-test-contract.html">Unit test a contract</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../smart-contracts/integration-test-contract.html">Integration test a contract</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../smart-contracts/deploy-module.html">Deploy a smart contract module</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../smart-contracts/initialize-contract.html">Initialize</a></li>
@@ -632,7 +629,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../smart-contracts/invoke-instance.html">Invoke</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../../smart-contracts/migrate-contracts.html">Migrate contracts</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../smart-contracts/best-practices/index.html">Best practices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../smart-contracts/best-practices/development.html">Development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../smart-contracts/best-practices/costs.html">Cost reduction</a></li>
@@ -696,7 +692,7 @@ sending it to a Concordium node.</p>
 <p>Note that when the transaction has been signed anyone with the signature and the transaction will be able to send it to a Concordium node. Therefore it is very important that a wallet requests user approval before utilizing their signing keys.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-0">
+<label class="sd-tab-label" data-sync-group="wallet-sdk-platform" data-sync-id="typescript" for="sd-tab-item-0">
 TypeScript (Web)</label><div class="sd-tab-content docutils">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">AccountAddress</span><span class="p">,</span>
@@ -755,7 +751,7 @@ TypeScript (Web)</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-1">
+<label class="sd-tab-label" data-sync-group="wallet-sdk-platform" data-sync-id="kotlin" for="sd-tab-item-1">
 Kotlin (Android)</label><div class="sd-tab-content docutils">
 <div class="highlight-Kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nn">cash.z.ecc.android.bip39.Mnemonics</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">cash.z.ecc.android.bip39.toSeed</span>
@@ -815,7 +811,7 @@ Kotlin (Android)</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-2">
+<label class="sd-tab-label" data-sync-group="wallet-sdk-platform" data-sync-id="swift" for="sd-tab-item-2">
 Swift (macOS, iOS)</label><div class="sd-tab-content docutils">
 <div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span><span class="w"> </span><span class="nc">Concordium</span>
 <span class="kd">import</span><span class="w"> </span><span class="nc">GRPC</span><span class="w"> </span><span class="c1">// external dependency for gRPC client</span>
@@ -860,7 +856,7 @@ Swift (macOS, iOS)</label><div class="sd-tab-content docutils">
 <p>Finally, when the transaction has been constructed and signed, it is ready to be sent to a Concordium node. The output of the function sending a transaction to a Concordium node is the transaction hash. The transaction hash can then be used to monitor the status of the submitted transaction.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-3">
+<label class="sd-tab-label" data-sync-group="wallet-sdk-platform" data-sync-id="typescript" for="sd-tab-item-3">
 TypeScript (Web)</label><div class="sd-tab-content docutils">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">ConcordiumGRPCWebClient</span><span class="p">,</span>
@@ -872,7 +868,7 @@ TypeScript (Web)</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-4">
+<label class="sd-tab-label" data-sync-group="wallet-sdk-platform" data-sync-id="kotlin" for="sd-tab-item-4">
 Kotlin (Android)</label><div class="sd-tab-content docutils">
 <div class="highlight-Kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nn">com.concordium.sdk.ClientV2</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">com.concordium.sdk.Connection</span>
@@ -891,7 +887,7 @@ Kotlin (Android)</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-5">
+<label class="sd-tab-label" data-sync-group="wallet-sdk-platform" data-sync-id="swift" for="sd-tab-item-5">
 Swift (macOS, iOS)</label><div class="sd-tab-content docutils">
 <div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span><span class="w"> </span><span class="nc">Concordium</span>
 

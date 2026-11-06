@@ -34,7 +34,6 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=0a2f49a1" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=056d489a" />
@@ -53,7 +52,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/how-to/smart-contracts/initialize-contract.cb92a916-b46c-482e-bacf-b12558b83939.js"></script>
+    <script defer="defer" src="../../_static/tippy/how-to/smart-contracts/initialize-contract.f1a1169c-e188-421d-86a7-b127f072241f.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'how-to/smart-contracts/initialize-contract';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/how-to/smart-contracts/initialize-contract.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -619,11 +618,9 @@
 <li class="toctree-l1"><a class="reference internal" href="build-schema.html">Build a contract schema</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom-errors.html">Use custom errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="json-params.html">Pass JSON parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="no-std.html">Use no_std</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fallback-entrypoints.html">Use fallback entrypoints</a></li>
 <li class="toctree-l1"><a class="reference internal" href="upgradeable-contract.html">Write an upgradeable contract</a></li>
 <li class="toctree-l1"><a class="reference internal" href="factory-pattern.html">Implement the factory pattern</a></li>
-<li class="toctree-l1"><a class="reference internal" href="unit-test-contract.html">Unit test a contract</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integration-test-contract.html">Integration test a contract</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="deploy-module.html">Deploy a smart contract module</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Initialize</a></li>
@@ -632,7 +629,6 @@
 <li class="toctree-l2"><a class="reference internal" href="invoke-instance.html">Invoke</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="migrate-contracts.html">Migrate contracts</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="best-practices/index.html">Best practices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="best-practices/development.html">Development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best-practices/costs.html">Cost reduction</a></li>
@@ -713,7 +709,7 @@ from a deployed module with reference
 <code class="docutils literal notranslate"><span class="pre">9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2</span></code> while
 allowing up to 10000 NRG to be used, run the
 following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>init<span class="w"> </span><span class="se">\</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>init<span class="w"> </span><span class="se">\</span>
 <span class="w">         </span>9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2<span class="w"> </span><span class="se">\</span>
 <span class="w">         </span>--sender<span class="w"> </span>my_account<span class="w"> </span><span class="se">\</span>
 <span class="w">         </span>--contract<span class="w"> </span>my_contract<span class="w"> </span><span class="se">\</span>
@@ -748,7 +744,7 @@ The schema is used to serialize the JSON into binary. You can read more about JS
 module with reference
 <code class="docutils literal notranslate"><span class="pre">9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2</span></code> with a
 parameter file <code class="docutils literal notranslate"><span class="pre">my_parameter.json</span></code> in JSON format, run the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>init<span class="w"> </span><span class="se">\</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>init<span class="w"> </span><span class="se">\</span>
 <span class="w">         </span>9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2<span class="w"> </span><span class="se">\</span>
 <span class="w">         </span>--contract<span class="w"> </span>my_parameter_contract<span class="w"> </span><span class="se">\</span>
 <span class="w">         </span>--energy<span class="w"> </span><span class="m">10000</span><span class="w"> </span><span class="se">\</span>
@@ -794,7 +790,7 @@ using the <code class="docutils literal notranslate"><span class="pre">--amount<
 module with reference
 <code class="docutils literal notranslate"><span class="pre">9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2</span></code> with the
 parameter file <code class="docutils literal notranslate"><span class="pre">my_parameter.bin</span></code> in binary format, run the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>init<span class="w"> </span><span class="se">\</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>init<span class="w"> </span><span class="se">\</span>
 <span class="w">         </span>9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2<span class="w"> </span><span class="se">\</span>
 <span class="w">         </span>--contract<span class="w"> </span>my_parameter_contract<span class="w"> </span><span class="se">\</span>
 <span class="w">         </span>--energy<span class="w"> </span><span class="m">10000</span><span class="w"> </span><span class="se">\</span>
@@ -827,7 +823,7 @@ stored, see <a class="reference internal" href="../../technical-reference/smart-
 <p>Here, you are initializing the contract <code class="docutils literal notranslate"><span class="pre">my_contract</span></code> from the deployed module
 <code class="docutils literal notranslate"><span class="pre">9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2</span></code> and naming
 it <code class="docutils literal notranslate"><span class="pre">my_named_contract</span></code>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>init<span class="w"> </span><span class="se">\</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>init<span class="w"> </span><span class="se">\</span>
 <span class="w">         </span>9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2<span class="w"> </span><span class="se">\</span>
 <span class="w">         </span>--contract<span class="w"> </span>my_contract<span class="w"> </span><span class="se">\</span>
 <span class="w">         </span>--energy<span class="w"> </span><span class="m">10000</span><span class="w"> </span><span class="se">\</span>
@@ -841,7 +837,7 @@ it <code class="docutils literal notranslate"><span class="pre">my_named_contrac
 <p>Contract instances can also be named using the <code class="docutils literal notranslate"><span class="pre">name</span></code> command.
 To name an instance with the address index <code class="docutils literal notranslate"><span class="pre">0</span></code> as <code class="docutils literal notranslate"><span class="pre">my_named_contract</span></code>, run
 the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>name<span class="w"> </span><span class="m">0</span><span class="w"> </span>--name<span class="w"> </span>my_named_contract
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>name<span class="w"> </span><span class="m">0</span><span class="w"> </span>--name<span class="w"> </span>my_named_contract
 </pre></div>
 </div>
 <p>If successful, the output should be similar to the following:</p>

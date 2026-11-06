@@ -34,7 +34,6 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=0a2f49a1" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=056d489a" />
@@ -53,7 +52,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/technical-reference/concordium-client/concordium-client.cd3b4f01-a1c1-4518-be6f-1a2d4e283798.js"></script>
+    <script defer="defer" src="../../_static/tippy/technical-reference/concordium-client/concordium-client.2f616d82-6539-474a-b1ac-e74667d61f43.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-reference/concordium-client/concordium-client';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/technical-reference/concordium-client/concordium-client.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -790,7 +789,7 @@ etc.). The low-level commands are grouped in the <code class="docutils literal n
 CamelCase names.</p>
 <p>Invoke <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">--help</span></code> to see the full list of topics. Include the
 topic to see the available commands within that topic:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>--help
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>config<span class="w"> </span>--help
 <span class="go">Usage: concordium-client config COMMAND</span>
 <span class="go">  Commands for inspecting and changing local configuration.</span>
 
@@ -804,7 +803,7 @@ topic to see the available commands within that topic:</p>
 </pre></div>
 </div>
 <p>Give the full command to see available options related to that command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>import<span class="w"> </span>--help
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>import<span class="w"> </span>--help
 <span class="go">Usage: concordium-client config account import FILE [--name NAME]</span>
 <span class="go">  Import an account to persistent config.</span>
 
@@ -855,7 +854,7 @@ for some reason, it may also be able to repair it.</p>
 </section>
 <section id="display-contents">
 <span id="concordium-client-display"></span><h3>Display contents<a class="headerlink" href="#display-contents" title="Link to this heading">#</a></h3>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>show
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>config<span class="w"> </span>show
 </pre></div>
 </div>
 <p>Display the full contents of the persistent configuration. This will display the
@@ -864,7 +863,7 @@ section) and the stored key for decrypting its shielded balance (<a class="refer
 <code class="docutils literal notranslate"><span class="pre">Encryption</span> <span class="pre">secret</span> <span class="pre">key</span></code> section) when they are present.</p>
 <section id="example">
 <h4>Example:<a class="headerlink" href="#example" title="Link to this heading">#</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>show
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>config<span class="w"> </span>show
 <span class="go">Base configuration:</span>
 <span class="go">- Verbose:            no</span>
 <span class="go">- Account config dir: /var/lib/concordium/config/accounts</span>
@@ -929,7 +928,7 @@ container.</p>
 <p>See also the <a class="reference internal" href="../../learn/accounts/index.html#managing-accounts"><span class="std std-ref">Managing accounts</span></a> section.</p>
 <section id="add-named-account">
 <h4>Add named account<a class="headerlink" href="#add-named-account" title="Link to this heading">#</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>name<span class="w"> </span>ADDRESS<span class="w"> </span><span class="o">[</span>--name<span class="w"> </span>NAME<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>name<span class="w"> </span>ADDRESS<span class="w"> </span><span class="o">[</span>--name<span class="w"> </span>NAME<span class="o">]</span>
 </pre></div>
 </div>
 <p>Add an account address to persistent configuration, naming it. This name may now be used to refer to the account
@@ -939,7 +938,7 @@ considered as just creating an alias for an address.</p>
 </section>
 <section id="add-key-to-an-account">
 <h4>Add key to an account<a class="headerlink" href="#add-key-to-an-account" title="Link to this heading">#</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>add-keys<span class="w"> </span>--account<span class="w"> </span>ACCOUNT<span class="w"> </span>--keys<span class="w"> </span>KEYS
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>add-keys<span class="w"> </span>--account<span class="w"> </span>ACCOUNT<span class="w"> </span>--keys<span class="w"> </span>KEYS
 </pre></div>
 </div>
 <p>Add a sign/verify key-pair to a specific account. The <code class="docutils literal notranslate"><span class="pre">KEYS</span></code> parameter must be
@@ -971,7 +970,7 @@ were shown above when printing the configuration:</p>
 </section>
 <section id="update-keys-of-an-account">
 <h4>Update keys of an account<a class="headerlink" href="#update-keys-of-an-account" title="Link to this heading">#</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>update-keys<span class="w"> </span>--account<span class="w"> </span>ACCOUNT<span class="w"> </span>--keys<span class="w"> </span>KEYS
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>update-keys<span class="w"> </span>--account<span class="w"> </span>ACCOUNT<span class="w"> </span>--keys<span class="w"> </span>KEYS
 </pre></div>
 </div>
 <p>Update a sign/verify key-pair on a specific account. The <code class="docutils literal notranslate"><span class="pre">KEYS</span></code> parameter must be
@@ -979,7 +978,7 @@ a JSON file that contains the keys that will be added in the same format as for 
 </section>
 <section id="remove-keys-of-an-account">
 <h4>Remove keys of an account<a class="headerlink" href="#remove-keys-of-an-account" title="Link to this heading">#</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>remove-keys<span class="w"> </span>--account<span class="w"> </span>ACCOUNT<span class="w"> </span>--credential-index<span class="w"> </span>CREDENTIALINDEX<span class="w"> </span>KEYINDICES
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>remove-keys<span class="w"> </span>--account<span class="w"> </span>ACCOUNT<span class="w"> </span>--credential-index<span class="w"> </span>CREDENTIALINDEX<span class="w"> </span>KEYINDICES
 </pre></div>
 </div>
 <p>Remove sign/verify key-pairs from a specific credential of an account. The <code class="docutils literal notranslate"><span class="pre">CREDENTIALINDEX</span></code> specifies the credential that the key pairs should be removed from, and the space-seperated list of key indices specify which of the key pairs that should be removed.</p>

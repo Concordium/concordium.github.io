@@ -43,7 +43,7 @@ Display your keys with the following command:
 
 .. code-block:: console
 
-    $concordium-client config show
+    $ concordium-client config show
 
 Save the ``encryptedSignKey`` blob to a file named ``output.json``. The content of that file
 should look similar to the below content.

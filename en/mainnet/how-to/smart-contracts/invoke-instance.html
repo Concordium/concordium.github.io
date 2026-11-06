@@ -34,7 +34,6 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=0a2f49a1" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=056d489a" />
@@ -53,13 +52,13 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/how-to/smart-contracts/invoke-instance.50402bb8-868b-44b6-b38c-44a8c370c288.js"></script>
+    <script defer="defer" src="../../_static/tippy/how-to/smart-contracts/invoke-instance.6bf953e4-6acc-4a12-b589-a30482e31735.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'how-to/smart-contracts/invoke-instance';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/how-to/smart-contracts/invoke-instance.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Migrate contracts for concordium-std 8.1" href="migrate-contracts.html" />
+    <link rel="next" title="Best Practices" href="best-practices/index.html" />
     <link rel="prev" title="Inspect" href="inspect-instance.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -619,11 +618,9 @@
 <li class="toctree-l1"><a class="reference internal" href="build-schema.html">Build a contract schema</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom-errors.html">Use custom errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="json-params.html">Pass JSON parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="no-std.html">Use no_std</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fallback-entrypoints.html">Use fallback entrypoints</a></li>
 <li class="toctree-l1"><a class="reference internal" href="upgradeable-contract.html">Write an upgradeable contract</a></li>
 <li class="toctree-l1"><a class="reference internal" href="factory-pattern.html">Implement the factory pattern</a></li>
-<li class="toctree-l1"><a class="reference internal" href="unit-test-contract.html">Unit test a contract</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integration-test-contract.html">Integration test a contract</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="deploy-module.html">Deploy a smart contract module</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="initialize-contract.html">Initialize</a></li>
@@ -632,7 +629,6 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Invoke</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="migrate-contracts.html">Migrate contracts</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="best-practices/index.html">Best practices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="best-practices/development.html">Development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best-practices/costs.html">Cost reduction</a></li>
@@ -706,7 +702,7 @@ how to create an instance <a class="reference internal" href="initialize-contrac
 <h2>Invocation<a class="headerlink" href="#invocation" title="Link to this heading">#</a></h2>
 <p>To invoke an instance with address index <code class="docutils literal notranslate"><span class="pre">0</span></code> (the subindex defaults to <code class="docutils literal notranslate"><span class="pre">0</span></code>) using the parameterless
 entrypoint <code class="docutils literal notranslate"><span class="pre">my_receive</span></code>, run the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_receive
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_receive
 </pre></div>
 </div>
 <p>If successful, the output should be similar to the following:</p>
@@ -735,16 +731,16 @@ transaction on chain.</p>
 </div>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">invoker-account</span></code> parameter to invoke an entrypoint with a specific
 sender account:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_receive<span class="w"> </span>--invoker-account<span class="w"> </span>&lt;account-address&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_receive<span class="w"> </span>--invoker-account<span class="w"> </span>&lt;account-address&gt;
 </pre></div>
 </div>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">invoker-contract</span></code> parameter to invoke an entrypoint with a sender contract:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_receive<span class="w"> </span>--invoker-contract<span class="w"> </span>&lt;contract-index&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_receive<span class="w"> </span>--invoker-contract<span class="w"> </span>&lt;contract-index&gt;
 </pre></div>
 </div>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">amount</span></code> parameter to invoke an entrypoint with the specified amount
 of CCD.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_receive<span class="w"> </span>--amount<span class="w"> </span>&lt;CCD&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_receive<span class="w"> </span>--amount<span class="w"> </span>&lt;CCD&gt;
 </pre></div>
 </div>
 <div class="admonition note">
@@ -754,7 +750,7 @@ was an update transaction at the very end of the current best block on the chain
 </div>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">block</span></code> parameter to specify a different block to run the invocation
 in:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_receive<span class="w"> </span>--block<span class="w"> </span>&lt;block-hash&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_receive<span class="w"> </span>--block<span class="w"> </span>&lt;block-hash&gt;
 </pre></div>
 </div>
 <section id="passing-parameters-in-json-format">
@@ -768,7 +764,7 @@ The schema is used to serialize the JSON into binary. You can read more about JS
 <p>To invoke an instance with address index <code class="docutils literal notranslate"><span class="pre">0</span></code> using the receive function
 <code class="docutils literal notranslate"><span class="pre">my_parameter_receive</span></code> with a parameter file <code class="docutils literal notranslate"><span class="pre">my_parameter.json</span></code> in JSON
 format, run the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_parameter_receive<span class="w"> </span><span class="se">\</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_parameter_receive<span class="w"> </span><span class="se">\</span>
 <span class="w">         </span>--parameter-json<span class="w"> </span>my_parameter.json
 </pre></div>
 </div>
@@ -814,7 +810,7 @@ using the <code class="docutils literal notranslate"><span class="pre">--schema<
 <p>To invoke an instance with address index <code class="docutils literal notranslate"><span class="pre">0</span></code> using the receive function
 <code class="docutils literal notranslate"><span class="pre">my_parameter_receive</span></code> with a parameter file <code class="docutils literal notranslate"><span class="pre">my_parameter.bin</span></code> in binary
 format, run the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_parameter_receive<span class="w"> </span><span class="se">\</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_parameter_receive<span class="w"> </span><span class="se">\</span>
 <span class="w">         </span>--parameter-bin<span class="w"> </span>my_parameter.bin
 </pre></div>
 </div>
@@ -890,11 +886,11 @@ format, run the following command:</p>
       </div>
     </a>
     <a class="right-next"
-       href="migrate-contracts.html"
+       href="best-practices/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Migrate contracts for <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> 8.1</p>
+        <p class="prev-next-title">Best Practices</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

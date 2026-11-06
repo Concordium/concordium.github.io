@@ -34,7 +34,6 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=0a2f49a1" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=056d489a" />
@@ -53,7 +52,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/technical-reference/concordium-client/transactions.2cb67223-3f6e-4608-b167-8611bb35728e.js"></script>
+    <script defer="defer" src="../../_static/tippy/technical-reference/concordium-client/transactions.7d40c4ee-ba68-464b-938c-e4a77b5c62a7.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-reference/concordium-client/transactions';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/technical-reference/concordium-client/transactions.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -696,14 +695,14 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Concordium Foundation offers external developers access to a testnet node, which can be reached using <code class="docutils literal notranslate"><span class="pre">--grpc-ip</span> <span class="pre">grpc.testnet.concordium.com</span></code> and <code class="docutils literal notranslate"><span class="pre">--grpc-port</span> <span class="pre">20000</span></code>. Since the node is configured to use TLS, the <code class="docutils literal notranslate"><span class="pre">--secure</span></code> flag is required when running commands. For instance, to check the consensus status, you can query the Concordium testnet node as follows:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$concordium-client consensus status --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ concordium-client consensus status --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
 </pre></div>
 </div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you are querying your own testnet node, be sure to use <code class="docutils literal notranslate"><span class="pre">--grpc-port</span> <span class="pre">20001</span></code> flag (unless you changed it from defaults). Let’s assume that the node you are querying is running on testnet and is located on the local network at <code class="docutils literal notranslate"><span class="pre">192.168.0.10</span></code>. In this case, to query the account status, use the command:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$concordium-client account show 48XGRnvQoG92T1AwETvW5pnJ1aRSPMKsWtGdKhTqyiNZzMk3Qn --grpc-ip 192.168.0.10 --grpc-port 20001
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ concordium-client account show 48XGRnvQoG92T1AwETvW5pnJ1aRSPMKsWtGdKhTqyiNZzMk3Qn --grpc-ip 192.168.0.10 --grpc-port 20001
 </pre></div>
 </div>
 </div>
@@ -818,7 +817,7 @@ to be considered valid its sequence number must be the next available one for
 the account. The sequence number is maintained by all the validators in order to
 validate transactions.</p>
 <p>The sequence number can be looked up from an up to date node by running</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span><span class="o">[</span>ACCOUNT<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span><span class="o">[</span>ACCOUNT<span class="o">]</span>
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">[ACCOUNT]</span></code> is an optional argument that is either an address of an
@@ -837,7 +836,7 @@ the same account. Thus, accounts can be referred to by any address whose initial
 <p>This allows each account to have aliases for different uses and creates a kind of sub-account structure. An account owner can give out different aliases for different uses to keep track of transfers and assign them meaning.</p>
 <p>Each account still has one total account balance. Hence, transfers to and from aliases of an account add to and subtract from that total account balance, respectively. Transfers between different aliases of the same account do not change the balance of the account, apart from cost. Rewards are always received on the account’s canonical address.</p>
 <p>To show aliases, enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>show-alias<span class="w"> </span>3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5<span class="w"> </span>--alias<span class="w"> </span><span class="m">17</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>account<span class="w"> </span>show-alias<span class="w"> </span>3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5<span class="w"> </span>--alias<span class="w"> </span><span class="m">17</span>
 </pre></div>
 </div>
 <p>This generates the output:</p>
@@ -849,11 +848,11 @@ the same account. Thus, accounts can be referred to by any address whose initial
 <section id="commands-for-showing-identity-information">
 <span id="identity-commands"></span><h2>Commands for showing identity information<a class="headerlink" href="#commands-for-showing-identity-information" title="Link to this heading">#</a></h2>
 <p>To show the identity providers authorized by Concordium and a URL, enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>identity<span class="w"> </span>show<span class="w"> </span>identity-providers
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>identity<span class="w"> </span>show<span class="w"> </span>identity-providers
 </pre></div>
 </div>
 <p>To show the Privacy Guardians, enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>identity<span class="w"> </span>show<span class="w"> </span>anonymity-revokers
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>identity<span class="w"> </span>show<span class="w"> </span>anonymity-revokers
 </pre></div>
 </div>
 </section>
@@ -869,7 +868,7 @@ are described in the following table.</p>
 <section id="transfer-ccd">
 <h3>Transfer CCD<a class="headerlink" href="#transfer-ccd" title="Link to this heading">#</a></h3>
 <p>Use the following command for transfers:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>send
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>send
 </pre></div>
 </div>
 <p>Apart from the generic transaction flags above, the parameters are:</p>
@@ -892,7 +891,7 @@ are described in the following table.</p>
 </ul>
 <p>If the accounts have both been imported under these names, the command
 to transfer 25 CCD is:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>send<span class="w"> </span>--amount<span class="w"> </span><span class="m">25</span><span class="w"> </span>--sender<span class="w"> </span>A<span class="w"> </span>--receiver<span class="w"> </span>B
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>send<span class="w"> </span>--amount<span class="w"> </span><span class="m">25</span><span class="w"> </span>--sender<span class="w"> </span>A<span class="w"> </span>--receiver<span class="w"> </span>B
 </pre></div>
 </div>
 <p>The output will look similar to the following. Note that this example assumes that the
@@ -931,7 +930,7 @@ unshielding flow to recover already shielded funds.</p>
 <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">unshield</span></code>. For example, an interaction to unshield 7 CCD on
 account B looks like the following:</p>
 <p>The command is:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>unshield<span class="w"> </span>--sender<span class="w"> </span>B<span class="w"> </span>--amount<span class="w"> </span><span class="m">7</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>account<span class="w"> </span>unshield<span class="w"> </span>--sender<span class="w"> </span>B<span class="w"> </span>--amount<span class="w"> </span><span class="m">7</span>
 </pre></div>
 </div>
 <p>This</p>
@@ -981,7 +980,7 @@ There are two ways of specifying the release schedule, either at regular interva
 <li><p>starting on the 10th of February 2021 at 12:00:00 UTC</p></li>
 </ul>
 <p>use the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>send-scheduled<span class="w"> </span>--amount<span class="w"> </span><span class="m">100</span><span class="w"> </span>--every<span class="w"> </span>Day<span class="w"> </span>--for<span class="w"> </span><span class="m">10</span><span class="w"> </span>--starting<span class="w"> </span><span class="m">2021</span>-02-10T12:00:00Z<span class="w"> </span>--receiver<span class="w"> </span>B<span class="w"> </span>--sender<span class="w"> </span>A
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>send-scheduled<span class="w"> </span>--amount<span class="w"> </span><span class="m">100</span><span class="w"> </span>--every<span class="w"> </span>Day<span class="w"> </span>--for<span class="w"> </span><span class="m">10</span><span class="w"> </span>--starting<span class="w"> </span><span class="m">2021</span>-02-10T12:00:00Z<span class="w"> </span>--receiver<span class="w"> </span>B<span class="w"> </span>--sender<span class="w"> </span>A
 </pre></div>
 </div>
 <p>When you specify an explicit release schedule, you must use the option <code class="docutils literal notranslate"><span class="pre">--schedule</span></code>, which takes a comma-separated list of releases in the form of <code class="docutils literal notranslate"><span class="pre">&lt;amount&gt;</span> <span class="pre">at</span> <span class="pre">&lt;date&gt;</span></code>. For example, to send a transaction from A to B that:</p>
@@ -991,11 +990,11 @@ There are two ways of specifying the release schedule, either at regular interva
 <li><p>releases 200 on December 31st 2022 at 12:00:00 UTC</p></li>
 </ul>
 <p>Use the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>send-scheduled<span class="w"> </span>--schedule<span class="w"> </span><span class="s2">&quot;100 at 2021-01-01T12:00:00Z, 150 at 2021-02-15T12:00:00Z, 200 at 2021-12-31T12:00:00Z&quot;</span><span class="w"> </span>--receiver<span class="w"> </span>B<span class="w"> </span>--sender<span class="w"> </span>A
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>send-scheduled<span class="w"> </span>--schedule<span class="w"> </span><span class="s2">&quot;100 at 2021-01-01T12:00:00Z, 150 at 2021-02-15T12:00:00Z, 200 at 2021-12-31T12:00:00Z&quot;</span><span class="w"> </span>--receiver<span class="w"> </span>B<span class="w"> </span>--sender<span class="w"> </span>A
 </pre></div>
 </div>
 <p>If you query the account information of the recipient account afterwards, it will show the list of releases that are still pending to be released:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span>B
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span>B
 <span class="go">Local name:            B</span>
 <span class="go">Address:               3WbgGP2iE21HyrBg5kL429ZXWu2dNDXzzjZ7qwu9neop2bSCRJ</span>
 <span class="go">Balance:               550.000000 CCD</span>
@@ -1019,7 +1018,7 @@ release schedule.</p>
 <p>The command to add delegation on an account with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> is
 <code class="docutils literal notranslate"><span class="pre">delegator</span> <span class="pre">add</span></code>. For example, an interaction to add delegation on an account looks like the following:</p>
 <p>The command is:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>delegator<span class="w"> </span>add<span class="w"> </span>--sender<span class="w"> </span>EXAMPLEACCT<span class="w"> </span>--stake<span class="w"> </span><span class="m">5000</span><span class="w"> </span>--target<span class="w"> </span><span class="m">12345</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>delegator<span class="w"> </span>add<span class="w"> </span>--sender<span class="w"> </span>EXAMPLEACCT<span class="w"> </span>--stake<span class="w"> </span><span class="m">5000</span><span class="w"> </span>--target<span class="w"> </span><span class="m">12345</span>
 </pre></div>
 </div>
 <p>The command has the following required arguments:</p>
@@ -1049,7 +1048,7 @@ release schedule.</p>
 <section id="show-chain-parameters">
 <span id="consensus-show-chain-parameters"></span><h3>Show chain parameters<a class="headerlink" href="#show-chain-parameters" title="Link to this heading">#</a></h3>
 <p>Use the consensus command <code class="docutils literal notranslate"><span class="pre">show-chain-parameters</span></code> to show a number of parameters for the last known block or a specific block.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>consensus<span class="w"> </span>show-chain-parameters
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>consensus<span class="w"> </span>show-chain-parameters
 </pre></div>
 </div>
 <p>To see the chain parameters for a specific block use the <code class="docutils literal notranslate"><span class="pre">--block</span></code> flag to specify the block hash.</p>

@@ -34,7 +34,6 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=0a2f49a1" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=056d489a" />
@@ -53,7 +52,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/piggy-bank/deploying.8fd4bf5b-5da9-4a81-8ac5-89c42da10641.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/piggy-bank/deploying.1d90c4a3-45d7-4228-a75a-c62b31e7efa9.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/piggy-bank/deploying';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/piggy-bank/deploying.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -677,7 +676,7 @@ So far you have written and tested a piggy bank smart contract in the <a class="
 <h2>Building a Wasm module<a class="headerlink" href="#building-a-wasm-module" title="Link to this heading">#</a></h2>
 <p>You have already built a Wasm module from your piggy bank smart contract in a <a class="reference internal" href="writing.html#cargo-concordium-build"><span class="std std-ref">previous part</span></a> of this tutorial.</p>
 <p>Repeat this step since you might have done some changes to the smart contract code in <a class="reference internal" href="testing.html#piggy-bank-testing"><span class="std std-ref">part 2</span></a> of this tutorial. Go to the folder where you saved your piggy bank smart contract and use <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span></code> to create a Wasm module.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--out<span class="w"> </span>piggy_bank_part2.wasm.v1
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--out<span class="w"> </span>piggy_bank_part2.wasm.v1
 </pre></div>
 </div>
 <div class="admonition note">
@@ -686,7 +685,7 @@ So far you have written and tested a piggy bank smart contract in the <a class="
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When you use the above command <em>without</em> the <code class="docutils literal notranslate"><span class="pre">--out</span></code> flag, you can find the module in the folder <code class="docutils literal notranslate"><span class="pre">./target/concordium/wasm32-unknown-unknown/release/</span></code>.
+<p>When you use the above command <em>without</em> the <code class="docutils literal notranslate"><span class="pre">--out</span></code> flag, you can find the module in the folder <code class="docutils literal notranslate"><span class="pre">./concordium_out/</span></code>.
 Use the Wasm module file suffixed with <code class="docutils literal notranslate"><span class="pre">v1</span></code> when deploying to the chain. The <code class="docutils literal notranslate"><span class="pre">piggy_bank_part2.wasm</span></code> file (without the <code class="docutils literal notranslate"><span class="pre">v1</span></code> suffix) is not the <code class="docutils literal notranslate"><span class="pre">v0</span></code> module, but rather the raw Wasm module produced by cargo.
 The <code class="docutils literal notranslate"><span class="pre">v1</span></code> suffixed module has been stripped for debugging information, which makes it significantly smaller.</p>
 </div>
