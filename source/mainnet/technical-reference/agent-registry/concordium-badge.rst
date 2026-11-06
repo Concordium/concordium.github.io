@@ -183,6 +183,10 @@ If your agent is already registered you do not need to rebuild your card: fetch 
 
    Between hosting and pinning, the served card and the on-chain hash disagree for a moment. To avoid even that, host at a new versioned URL and pass ``agent_uri`` together with ``metadata_hash_hex`` in one transaction.
 
+.. note::
+
+   **Verifiers see what the CDN serves.** ``raw.githubusercontent.com`` is a CDN with a five-minute cache, and different edges can serve different versions of the same URL for that long after a push — so a check run right after you save can still see the previous card, even though your browser already shows the new one (a browser refresh or incognito window does not clear a CDN edge). The checker reports this: when checks fail on a cached copy, the verdict carries ``card_cache`` and a ``card_cache`` warning telling you to re-check within the cache window. Hosting the card on GitHub Pages or your own domain avoids the lag and lets you set your own cache headers.
+
 #. **Confirm.**
 
    .. code-block:: bash
