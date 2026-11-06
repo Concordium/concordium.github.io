@@ -23,8 +23,10 @@ This example constructs and signs a simple transfer, which is an account transac
 Note that when the transaction has been signed anyone with the signature and the transaction will be able to send it to a Concordium node. Therefore it is very important that a wallet requests user approval before utilizing their signing keys.
 
 .. tab-set::
+    :sync-group: wallet-sdk-platform
 
     .. tab-item:: TypeScript (Web)
+        :sync: typescript
 
         .. code-block:: javascript
 
@@ -83,6 +85,7 @@ Note that when the transaction has been signed anyone with the signature and the
             const signature = await signTransaction(accountTransaction, signer);
 
     .. tab-item:: Kotlin (Android)
+        :sync: kotlin
 
         .. code-block:: Kotlin
 
@@ -142,6 +145,7 @@ Note that when the transaction has been signed anyone with the signature and the
             }
 
     .. tab-item:: Swift (macOS, iOS)
+        :sync: swift
 
         .. code-block:: Swift
 
@@ -187,8 +191,10 @@ Send an account transaction to a Concordium node
 Finally, when the transaction has been constructed and signed, it is ready to be sent to a Concordium node. The output of the function sending a transaction to a Concordium node is the transaction hash. The transaction hash can then be used to monitor the status of the submitted transaction.
 
 .. tab-set::
+    :sync-group: wallet-sdk-platform
 
     .. tab-item:: TypeScript (Web)
+        :sync: typescript
 
         .. code-block:: javascript
 
@@ -200,6 +206,7 @@ Finally, when the transaction has been constructed and signed, it is ready to be
             const transactionHash = await client.sendAccountTransaction(accountTransaction, signature);
 
     .. tab-item:: Kotlin (Android)
+        :sync: kotlin
 
         .. code-block:: Kotlin
 
@@ -218,6 +225,7 @@ Finally, when the transaction has been constructed and signed, it is ready to be
             }
 
     .. tab-item:: Swift (macOS, iOS)
+        :sync: swift
 
         .. code-block:: Swift
 

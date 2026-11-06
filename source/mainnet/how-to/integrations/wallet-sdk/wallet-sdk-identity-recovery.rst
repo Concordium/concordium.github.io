@@ -22,8 +22,10 @@ The following example demonstrates the process of generating an identity recover
 In the example below, functionality for retrieving the list of identity providers is present. To see an example of how to implement this function, see :ref:`Identity Provider List`.
 
 .. tab-set::
+    :sync-group: wallet-sdk-platform
 
     .. tab-item:: TypeScript (Web)
+        :sync: typescript
 
         .. code-block:: javascript
 
@@ -58,6 +60,7 @@ In the example below, functionality for retrieving the list of identity provider
             const recoveryRequest: IdRecoveryRequest = createIdentityRecoveryRequestWithKeys(recoveryRequestInput);
 
     .. tab-item:: Kotlin (Android)
+        :sync: kotlin
 
         .. code-block:: Kotlin
 
@@ -102,6 +105,7 @@ In the example below, functionality for retrieving the list of identity provider
             }
 
     .. tab-item:: Swift (macOS, iOS)
+        :sync: swift
 
         .. code-block:: Swift
 
@@ -175,8 +179,10 @@ Send an identity recovery request
 The next step is to send the generated identity recovery request to the associated identity provider. If successful, the identity provider will return a redirect to the location from which the identity can be fetched.
 
 .. tab-set::
+    :sync-group: wallet-sdk-platform
 
     .. tab-item:: TypeScript (Web)
+        :sync: typescript
 
         .. code-block:: javascript
 
@@ -212,6 +218,7 @@ The next step is to send the generated identity recovery request to the associat
             }
 
     .. tab-item:: Kotlin (Android)
+        :sync: kotlin
 
         .. code-block:: Kotlin
 
@@ -253,6 +260,7 @@ The next step is to send the generated identity recovery request to the associat
             }
 
     .. tab-item:: Swift (macOS, iOS)
+        :sync: swift
 
         .. code-block:: Swift
 

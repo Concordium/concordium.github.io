@@ -21,8 +21,10 @@ Create a credential deployment transaction
 The following example demonstrates how a credential deployment transaction is created. Note that you must have saved the identity object and the identity provider that was used to create that identity, as they are required input for this transaction type.
 
 .. tab-set::
+    :sync-group: wallet-sdk-platform
 
     .. tab-item:: TypeScript (Web)
+        :sync: typescript
 
         .. code-block:: typescript
 
@@ -89,6 +91,7 @@ The following example demonstrates how a credential deployment transaction is cr
             );
 
     .. tab-item:: Kotlin (Android)
+        :sync: kotlin
 
         .. code-block:: Kotlin
 
@@ -179,6 +182,7 @@ The following example demonstrates how a credential deployment transaction is cr
             }
 
     .. tab-item:: Swift (macOS, iOS)
+        :sync: swift
 
         .. code-block:: Swift
 
@@ -227,8 +231,10 @@ With the credential deployment transaction created, the next step is to sign the
 is the signing key that corresponds to the public key used when creating the transaction. If they do not match, then the transaction will be rejected.
 
 .. tab-set::
+    :sync-group: wallet-sdk-platform
 
     .. tab-item:: TypeScript (Web)
+        :sync: typescript
 
         .. code-block:: javascript
 
@@ -257,6 +263,7 @@ is the signing key that corresponds to the public key used when creating the tra
             const signature = await signCredentialTransaction(credentialDeploymentTransaction, signingKey);
 
     .. tab-item:: Kotlin (Android)
+        :sync: kotlin
 
         .. code-block:: Kotlin
 
@@ -293,6 +300,7 @@ is the signing key that corresponds to the public key used when creating the tra
             }
 
     .. tab-item:: Swift (iOS)
+        :sync: swift
 
         .. code-block:: Swift
 
@@ -319,8 +327,10 @@ If successful, the credential will be deployed, and it is now possible to start 
 :ref:`wallet-sdk-account-transaction` for a guide about creating account transactions.
 
 .. tab-set::
+    :sync-group: wallet-sdk-platform
 
     .. tab-item:: TypeScript (Web)
+        :sync: typescript
 
         .. code-block:: javascript
 
@@ -340,6 +350,7 @@ If successful, the credential will be deployed, and it is now possible to start 
             );
 
     .. tab-item:: Kotlin (Android)
+        :sync: kotlin
 
         .. code-block:: Kotlin
 
@@ -375,6 +386,7 @@ If successful, the credential will be deployed, and it is now possible to start 
             }
 
     .. tab-item:: Swift (macOS, iOS)
+        :sync: swift
 
         .. code-block:: Swift
 
