@@ -52,7 +52,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/how-to/infrastructure/import-validator-keys.86d708cc-1910-409b-aa3f-e5b76af34858.js"></script>
+    <script defer="defer" src="../../_static/tippy/how-to/infrastructure/import-validator-keys.ab6636db-e7f8-4afb-800a-6fea4f8f24b9.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'how-to/infrastructure/import-validator-keys';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/how-to/infrastructure/import-validator-keys.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -573,35 +573,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Nodes</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../nodes/node-requirements.html">Run a Concordium node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../nodes/run-node-ubuntu/index.html">Run a node on Ubuntu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-ubuntu/run-node-ubuntu.html">Install and manage a node on Ubuntu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-ubuntu/advanced-node-configuration-on-ubuntu.html">Advanced node configuration on Ubuntu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-ubuntu/troubleshoot-node-ubuntu.html">Troubleshoot a node on Ubuntu</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../nodes/run-node-macos/index.html">Run a Node on macOS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-macos/run-node-macos.html">Install and manage a node on macOS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-macos/advanced-node-configuration-on-macos.html">Advanced node configuration on macOS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-macos/troubleshoot-macos.html">Troubleshoot a node on macOS</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../nodes/run-node-windows/index.html">Run a node on Windows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-windows/run-node-windows.html">Install and manage a node on Windows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-windows/advanced-node-configuration-on-windows.html">Advanced node configuration on Windows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-windows/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-windows/troubleshoot-windows.html">Troubleshoot a node on Windows</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../nodes/run-node-docker/index.html">Run a node using Docker</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-docker/run-node-docker.html">Install and manage a node on Docker</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-docker/advanced-node-configuration-on-docker.html">Advanced node configuration on Docker</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-docker/troubleshoot-docker.html">Troubleshoot a node in Docker</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../nodes/run-node-aws/index.html">Run a node on AWS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-aws/run-node-aws.html">Run a node on Amazon Web Services (AWS)</a></li>
-</ul>
-</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes/run-node.html">Install and manage a node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes/migrate-node.html">Migrate from old distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes/advanced-node-configuration.html">Advanced node configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes/troubleshoot-node.html">Troubleshoot a node</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../nodes/run-local-chain/index.html">Run a local chain</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -678,252 +653,105 @@
 <span id="id1"></span><h1>Import validator keys<a class="headerlink" href="#import-validator-keys" title="Link to this heading">#</a></h1>
 <div class="admonition-at-a-glance admonition">
 <p class="admonition-title">At a glance</p>
-<p>This guide explains how to import your validator keys into a running Concordium node. You will need a node already running on your platform (Windows, Docker, Ubuntu, or macOS) and a set of generated validator keys. After following this guide, your node will be configured as a validator and will start producing blocks within two epochs.</p>
+<p>Import validator keys into a running Concordium node. You need a node using
+the supported Docker image and a set of generated validator keys. After
+configuration, the node can validate when the network includes it in the
+validators for the current epoch.</p>
 </div>
-<p>This guide describes how to set up a node to run as a <a class="reference internal" href="../../learn/consensus/concepts-baker.html#baker-concept"><span class="std std-ref">validator</span></a> node that participates in the Concordium network on different platforms. A node receives blocks and transactions from other nodes and propagates information about blocks and transactions to the nodes in the Concordium network. In addition, a validator node also participates in the lottery and produces its own blocks. The validator node will start producing blocks two <a class="reference internal" href="../../technical-reference/glossary.html#term-Epoch"><span class="xref std std-term">epochs</span></a> after the transaction has been approved.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Validator credentials registered on mainnet will not work with a testnet node and vice versa.</p>
-</div>
-<section id="platform-specific-configuration">
-<h2>Platform-specific configuration<a class="headerlink" href="#platform-specific-configuration" title="Link to this heading">#</a></h2>
-<p>Select your platform below to configure your node with validator keys.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Windows</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text"><strong>Prerequisites</strong></p>
+<p>A validator node receives and propagates blocks and transactions and produces
+blocks when selected. See <a class="reference internal" href="../../learn/consensus/concepts-baker.html#baker-concept"><span class="std std-ref">Block production and validation</span></a> for validation requirements.
+Credentials registered on mainnet do not work with a testnet node, or vice versa.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p class="sd-card-text">Run Windows 10 or later or Windows Server 2019 or later</p></li>
-<li><p class="sd-card-text">Have the administrator password to your computer</p></li>
-<li><p class="sd-card-text"><a class="reference internal" href="../nodes/run-node-windows/run-node-windows.html#run-node-windows"><span class="std std-ref">Run a node on Windows</span></a></p></li>
-<li><p class="sd-card-text">Have generated validator keys, see <a class="reference internal" href="add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator</span></a> for details. For an overview of the process, see <a class="reference internal" href="../../learn/consensus/concepts-baker.html#baker-concept"><span class="std std-ref">Block production and validation</span></a>.</p></li>
+<li><p>Run a node with <a class="reference internal" href="../nodes/run-node.html#install-node-docker-image"><span class="std std-ref">the Docker image</span></a> on Linux,
+macOS, or Windows. On Windows, run Docker commands inside Ubuntu WSL2 using
+<code class="docutils literal notranslate"><span class="pre">sudo</span></code> if required for Docker socket access.</p></li>
+<li><p>Have generated validator keys. See <a class="reference internal" href="add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator</span></a> and <a class="reference internal" href="../../learn/consensus/concepts-baker.html#baker-concept"><span class="std std-ref">Block production and validation</span></a>.</p></li>
 </ul>
-<dl>
-<dt>Watch the video guide below to learn how to import validator keys to your Windows node:</dt><dd><iframe width="560" height="315" src="https://www.youtube.com/embed/DY_1nD2JgGM"
-title="YouTube video player" frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe></dd>
-</dl>
-<p class="sd-card-text"><strong>Configure a validator node on Windows</strong></p>
-<ol class="arabic">
-<li><p class="sd-card-text">Create validator keys in Concordium Wallet for Web, Concordium Wallet, Desktop Wallet or Concordium Client and associate them with an account either on mainnet or testnet. Follow <a class="reference internal" href="add-baker-mw.html#add-baker-mw"><span class="std std-ref">this</span></a> article for help.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p class="sd-card-text">The validator credentials file must be accessible by the SYSTEM user and can’t be encrypted.</p>
-</div>
+<p>These instructions use the setup in <a class="reference internal" href="../nodes/run-node.html#install-node-docker-image"><span class="std std-ref">Install and manage a node</span></a>. If your
+paths or service names differ, adjust the examples to match.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p class="sd-card-text">Do not edit the name or contents of the validator-credentials.json file.</p>
+<p>Never run two nodes with the same validator credentials simultaneously.
+For an existing native or network-specific Docker validator, follow
+<a class="reference internal" href="../nodes/migrate-node.html#migrate-to-docker"><span class="std std-ref">Migrate from old distribution</span></a>. Reuse its credentials and registration; do not
+register an existing validator again during migration.</p>
 </div>
-</li>
-<li><p class="sd-card-text">Once you’ve added validation to an account and exported the validator keys, you have to change the configuration file for the Concordium Node Service. Open <strong>Configure Concordium Node Service</strong> from the <strong>Start</strong> menu, and select <strong>Yes</strong> when you see the message <em>Do you want to allow this app to make changes to your device?</em>. The configuration file opens.</p></li>
-<li><p class="sd-card-text">Add the following in the <code class="docutils literal notranslate"><span class="pre">[node.mainnet]</span></code> section if the credentials are for mainnet, or the <code class="docutils literal notranslate"><span class="pre">[node.testnet]</span></code> section if they are for testnet. Make sure that you add the credentials to the network the account was created on.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">baker_credentials = &#39;C:\path\to\validator-credentials.json&#39;</span>
+</section>
+<section id="register-a-new-validator">
+<h2>Register a new validator<a class="headerlink" href="#register-a-new-validator" title="Link to this heading">#</a></h2>
+<p>If you already registered the keys with a wallet or Concordium Client, skip
+this step. Use the exported <code class="docutils literal notranslate"><span class="pre">validator-credentials.json</span></code> file.</p>
+<p>To register new keys with Concordium Client, send a <code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">add</span></code>
+transaction from a running node:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>validator<span class="w"> </span>add<span class="w"> </span>&lt;keys-file&gt;.json<span class="w"> </span>--sender<span class="w"> </span>validatorAccount<span class="w"> </span>--stake<span class="w"> </span>&lt;amount-to-stake&gt;<span class="w"> </span>--validator-credentials-out<span class="w"> </span>./validator-credentials.json
 </pre></div>
 </div>
-<p class="sd-card-text">where you replace <code class="docutils literal notranslate"><span class="pre">C:\path\to\validator-credentials.json</span></code> with the full path to the validator credentials file.</p>
-</li>
-<li><p class="sd-card-text">Save the file.</p></li>
-<li><p class="sd-card-text">Stop and restart the node runner service using the <strong>Stop Concordium Service Node</strong> and the <strong>Start Concordium Service Node</strong> shortcuts. Don’t use <em>End task</em> in the Task Manager as it might cause errors.</p></li>
-</ol>
-<p class="sd-card-text"><strong>View the node log</strong></p>
-<p class="sd-card-text">You can find the node logs here:</p>
-<ul class="simple">
-<li><p class="sd-card-text">Mainnet: <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Concordium\Node</span> <span class="pre">Runner\mainnet\logs</span></code></p></li>
-<li><p class="sd-card-text">Testnet: <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Concordium\Node</span> <span class="pre">Runner\testnet\logs</span></code></p></li>
-</ul>
-<p class="sd-card-text"><strong>Troubleshooting</strong></p>
-<p class="sd-card-text">If a node fails to start, for example because of a configuration issue, or stops unexpectedly, there will be an Error-level event in the <strong>Event Viewer</strong> that explains why. The following are common error scenarios and possible solutions.</p>
-<ul>
-<li><p class="sd-card-text">The node doesn’t restart after you’ve set the credentials in the configuration file. This error can occur when the specified location of the credentials file is incorrect. In the <strong>Event Viewer</strong> an error such as the following might appear. When this happens, change the path in the configuration file.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/Node-setup-win-10.png"><img alt="../../_images/Node-setup-win-10.png" src="../../_images/Node-setup-win-10.png" style="width: 60%;" />
-</a>
-</div></blockquote>
-</li>
-<li><p class="sd-card-text">The node doesn’t start validation, and in the log file you see the message <em>Validator keys are incorrect</em> repeatedly. It takes 1-2 hours after validator keys have been added to an account for the keys to be eligible to produce blocks. If this problem persists beyond two hours, then likely the keys are incorrect. Double check that you are not using keys from testnet on mainnet, or vice-versa.</p></li>
-</ul>
-<p class="sd-card-text">For more information on the logs, see <a class="reference internal" href="../nodes/run-node-windows/advanced-node-configuration-on-windows.html#view-windows-node-log"><span class="std std-ref">Run a node on Windows</span></a>.</p>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Ubuntu</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text"><strong>Prerequisites</strong></p>
-<ul class="simple">
-<li><p class="sd-card-text">Run Ubuntu 22.04 or later</p></li>
-<li><p class="sd-card-text">Have the administrator password to your computer</p></li>
-<li><p class="sd-card-text"><a class="reference internal" href="../nodes/run-node-ubuntu/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Run a node on Ubuntu</span></a></p></li>
-<li><p class="sd-card-text">Have generated validator keys, see <a class="reference internal" href="add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator</span></a> for details. For an overview of the process, see <a class="reference internal" href="../../learn/consensus/concepts-baker.html#baker-concept"><span class="std std-ref">Block production and validation</span></a>.</p></li>
-</ul>
-<dl>
-<dt>Watch the video guide below to learn how to import validator keys to your Ubuntu node:</dt><dd><iframe width="560" height="315" src="https://www.youtube.com/embed/UMnu8ADg5ig"
-title="YouTube video player" frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe></dd>
-</dl>
-<p class="sd-card-text"><strong>Configure the node with validator keys</strong></p>
-<ol class="arabic">
-<li><p class="sd-card-text">Move the JSON file with the validator keys you generated to the server that’s running the node. Store it, for example, in <code class="docutils literal notranslate"><span class="pre">/home/user/concordium/validator-credentials.json</span></code>.</p></li>
-<li><p class="sd-card-text">In the terminal, enter one of the following depending on your network:</p>
-<p class="sd-card-text">For <strong>Mainnet</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>systemctl<span class="w"> </span>edit<span class="w"> </span>concordium-mainnet-node.service
-</pre></div>
-</div>
-<p class="sd-card-text">For <strong>Testnet</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>systemctl<span class="w"> </span>edit<span class="w"> </span>concordium-testnet-node.service
-</pre></div>
-</div>
-</li>
-<li><p class="sd-card-text">Add the following snippet to the opened file (the file is empty the first time you open it):</p>
-<p class="sd-card-text">For <strong>Mainnet</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[Service]</span>
-
-<span class="go">Environment=CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/validator-credentials.json</span>
-<span class="go">BindReadOnlyPaths=/home/user/concordium/validator-credentials.json:%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/validator-credentials.json</span>
-</pre></div>
-</div>
-<p class="sd-card-text">For <strong>Testnet</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[Service]</span>
-
-<span class="go">Environment=CONCORDIUM_NODE_VALIDATOR_CREDENTIALS_FILE=%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/validator-credentials.json</span>
-<span class="go">BindReadOnlyPaths=/home/user/concordium/validator-credentials.json:%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/validator-credentials.json</span>
-</pre></div>
-</div>
-<p class="sd-card-text">Where you replace the path <cite>/home/user/concordium/validator-credentials.json</cite> with the actual location of the file.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p class="sd-card-text">The paths above contain the default paths to the validator’s state directory, where the long hash is the genesis hash for each network.</p>
-</div>
-</li>
-<li><p class="sd-card-text">Save the edited file.</p></li>
-<li><p class="sd-card-text">Restart the node for the changes to take effect. Enter:</p>
-<p class="sd-card-text">For <strong>Mainnet</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>concordium-mainnet-node.service
-</pre></div>
-</div>
-<p class="sd-card-text">For <strong>Testnet</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>concordium-testnet-node.service
-</pre></div>
-</div>
-</li>
-<li><p class="sd-card-text">To verify the node is running, enter:</p>
-<p class="sd-card-text">For <strong>Mainnet</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>concordium-mainnet-node.service
-</pre></div>
-</div>
-<p class="sd-card-text">For <strong>Testnet</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>concordium-testnet-node.service
-</pre></div>
-</div>
-</li>
-</ol>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">macOS</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text"><strong>Prerequisites</strong></p>
-<ul class="simple">
-<li><p class="sd-card-text">Run macOS 11 BigSur or later</p></li>
-<li><p class="sd-card-text">Have the administrator password to your computer</p></li>
-<li><p class="sd-card-text"><a class="reference internal" href="../nodes/run-node-macos/run-node-macos.html#run-node-macos"><span class="std std-ref">Run a node on macOS</span></a></p></li>
-<li><p class="sd-card-text">Have generated validator keys, see <a class="reference internal" href="add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator</span></a> for details. For an overview of the process, see <a class="reference internal" href="../../learn/consensus/concepts-baker.html#baker-concept"><span class="std std-ref">Block production and validation</span></a>.</p></li>
-</ul>
-<dl>
-<dt>Watch the video guide below to learn how to import validator keys to your macOS node:</dt><dd><iframe width="560" height="315" src="https://www.youtube.com/embed/ZWpMfIeTP6U"
-title="YouTube video player" frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe></dd>
-</dl>
-<p class="sd-card-text"><strong>Configure a node as a validator</strong></p>
-<p class="sd-card-text">Once you have generated validator keys, you need to move the generated validator keys file to a location accessible by the node, and finally specify this location in the service file for the Concordium Node.</p>
-<ol class="arabic">
-<li><p class="sd-card-text">Move the <code class="docutils literal notranslate"><span class="pre">validator-credentials.json</span></code> file to the node’s config folder:</p>
-<p class="sd-card-text">For <strong>Mainnet</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>cp<span class="w"> </span><span class="s2">&quot;/path/to/mainnet/validator-credentials.json&quot;</span><span class="w"> </span><span class="s2">&quot;/Library/Application Support/Concordium Node/Mainnet/Config/validator-credentials.json&quot;</span>
-</pre></div>
-</div>
-<p class="sd-card-text">For <strong>Testnet</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>cp<span class="w"> </span><span class="s2">&quot;/path/to/testnet/validator-credentials.json&quot;</span><span class="w"> </span><span class="s2">&quot;/Library/Application Support/Concordium Node/Testnet/Config/validator-credentials.json&quot;</span>
-</pre></div>
-</div>
-<p class="sd-card-text">(replacing the source path with the actual file path to your validator credentials).</p>
-</li>
-<li><p class="sd-card-text">Edit the service file as an administrator:</p>
-<p class="sd-card-text">For <strong>Mainnet</strong>: <code class="docutils literal notranslate"><span class="pre">&quot;/Library/Concordium</span> <span class="pre">Node/LaunchDaemons/software.concordium.mainnet.node.plist&quot;</span></code></p>
-<p class="sd-card-text">For <strong>Testnet</strong>: <code class="docutils literal notranslate"><span class="pre">&quot;/Library/Concordium</span> <span class="pre">Node/LaunchDaemons/software.concordium.testnet.node.plist&quot;</span></code></p>
-</li>
-<li><p class="sd-card-text">In the <em>EnvironmentVariables</em> section of the file add the following:</p>
-<p class="sd-card-text">For <strong>Mainnet</strong>:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;!--</span><span class="w"> </span><span class="n">Path</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">validator</span><span class="w"> </span><span class="n">credentials</span><span class="w"> </span><span class="n">file</span><span class="p">.</span><span class="w"> </span><span class="o">-</span><span class="p">-&gt;</span>
-<span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="n">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;/</span><span class="n">Library</span><span class="o">/</span><span class="n">Application</span><span class="w"> </span><span class="n">Support</span><span class="o">/</span><span class="n">Concordium</span><span class="w"> </span><span class="n">Node</span><span class="o">/</span><span class="n">Mainnet</span><span class="o">/</span><span class="n">Config</span><span class="o">/</span><span class="n">validator</span><span class="o">-</span><span class="n">credentials</span><span class="p">.</span><span class="n">json</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-<p class="sd-card-text">For <strong>Testnet</strong>:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;!--</span><span class="w"> </span><span class="n">Path</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">validator</span><span class="w"> </span><span class="n">credentials</span><span class="w"> </span><span class="n">file</span><span class="p">.</span><span class="w"> </span><span class="o">-</span><span class="p">-&gt;</span>
-<span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="n">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;/</span><span class="n">Library</span><span class="o">/</span><span class="n">Application</span><span class="w"> </span><span class="n">Support</span><span class="o">/</span><span class="n">Concordium</span><span class="w"> </span><span class="n">Node</span><span class="o">/</span><span class="n">Testnet</span><span class="o">/</span><span class="n">Config</span><span class="o">/</span><span class="n">validator</span><span class="o">-</span><span class="n">credentials</span><span class="p">.</span><span class="n">json</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-</li>
-<li><p class="sd-card-text">Restart your node:</p>
-<p class="sd-card-text">For <strong>Mainnet</strong>: Run <strong>Concordium Node Stop Mainnet</strong> (if running) and then <strong>Concordium Node Start Mainnet</strong>.</p>
-<p class="sd-card-text">For <strong>Testnet</strong>: Run <strong>Concordium Node Stop Testnet</strong> (if running) and then <strong>Concordium Node Start Testnet</strong>.</p>
-</li>
-</ol>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Docker</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text"><strong>Prerequisites</strong></p>
-<ul class="simple">
-<li><p class="sd-card-text"><a class="reference internal" href="../nodes/run-node-docker/run-node-docker.html#run-a-node"><span class="std std-ref">Run a node on Docker</span></a></p></li>
-<li><p class="sd-card-text">Have generated validator keys, see <a class="reference internal" href="add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator</span></a> for details. For an overview of the process, see <a class="reference internal" href="../../learn/consensus/concepts-baker.html#baker-concept"><span class="std std-ref">Block production and validation</span></a>.</p></li>
-</ul>
-<dl>
-<dt>Watch the video guide below to learn how to import validator keys to your Docker node:</dt><dd><iframe width="560" height="315" src="https://www.youtube.com/embed/jLJb8ZqU5Ng"
-title="YouTube video player" frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe></dd>
-</dl>
-<p class="sd-card-text"><strong>Configure a node as a validator</strong></p>
-<p class="sd-card-text">Once you have generated validator keys, you need to move the generated validator keys file to a location accessible by the node, and finally specify this location in the service file for the Concordium Node.</p>
-<p class="sd-card-text">To register the keys in the network you need to be <a class="reference internal" href="../nodes/run-node-docker/run-node-docker.html#running-a-node"><span class="std std-ref">running a node</span></a> and send a <code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">add</span></code> transaction to the network:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>validator<span class="w"> </span>add<span class="w"> </span>&lt;keys-file&gt;.json<span class="w"> </span>--sender<span class="w"> </span>validatorAccount<span class="w"> </span>--stake<span class="w"> </span>&lt;amount-to-stake&gt;<span class="w"> </span>--validator-credentials-out<span class="w"> </span>&lt;concordium-data-dir&gt;/validator-credentials.json
-</pre></div>
-</div>
-<p class="sd-card-text">where you replace</p>
-<ul class="simple">
-<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">&lt;amount-to-stake&gt;</span></code> with the CCD amount for the validator’s initial stake</p></li>
-<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">&lt;concordium-data-dir&gt;</span></code> with the directory specified as the volume mount for the node database. In the <a class="reference internal" href="../nodes/run-node-docker/run-node-docker.html#run-a-node"><span class="std std-ref">sample configuration file</span></a> this is <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-testnet</span></code> for the testnet node, and <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-mainnet</span></code> for the mainnet node.</p></li>
-</ul>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;keys-file&gt;.json</span></code> with your generated keys file.
+Replace <code class="docutils literal notranslate"><span class="pre">validatorAccount</span></code> with your validator account.
+Replace <code class="docutils literal notranslate"><span class="pre">&lt;amount-to-stake&gt;</span></code> with the initial stake in CCD.
+The command writes credentials to <code class="docutils literal notranslate"><span class="pre">./validator-credentials.json</span></code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p class="sd-card-text">Do not stake all of your funds or you will not have enough funds to cover transaction fees.</p>
+<p>Keep enough CCD to pay transaction fees. Do not stake all your funds.
+Do not give all users read access to credentials.
+Do not put credentials in a repository.</p>
 </div>
-<p class="sd-card-text">Provide a <code class="docutils literal notranslate"><span class="pre">--no-restake</span></code> flag to avoid automatically adding the rewards to the staked amount on the validator account. Read more about this behavior in the section <a class="reference internal" href="become-validator.html#restake-earnings"><span class="std std-ref">Restake earnings</span></a>.</p>
-<p class="sd-card-text">To start the node with these validator keys and produce blocks, do the following:</p>
+<p>To disable automatic restaking, add <code class="docutils literal notranslate"><span class="pre">--no-restake</span></code> to the command.
+See <a class="reference internal" href="become-validator.html#restake-earnings"><span class="std std-ref">Restake the earnings</span></a>.</p>
+</section>
+<section id="configure-the-node">
+<h2>Configure the node<a class="headerlink" href="#configure-the-node" title="Link to this heading">#</a></h2>
+<p>Run these commands in the network directory containing <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code>.
+Use <code class="docutils literal notranslate"><span class="pre">mainnet-node/</span></code> or <code class="docutils literal notranslate"><span class="pre">testnet-node/</span></code> from the installation guide.
+Put the exported credentials file in this directory.
+The steps below copy it into the existing <code class="docutils literal notranslate"><span class="pre">data/</span></code> mount.</p>
 <ol class="arabic">
-<li><p class="sd-card-text">Stop the currently running node. To do this, press <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code> on the terminal where the node is running or run</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker<span class="w"> </span>stop<span class="w"> </span>testnet-node
+<li><p>Stop the node:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker<span class="w"> </span>compose<span class="w"> </span>stop
 </pre></div>
 </div>
-<p class="sd-card-text">or</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker<span class="w"> </span>stop<span class="w"> </span>mainnet-node
+<p>Read the last 100 log lines to check for a clean shutdown:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>--tail<span class="w"> </span><span class="m">100</span><span class="w"> </span>node
 </pre></div>
 </div>
-<p class="sd-card-text">depending on the environment.</p>
+<p>Confirm a clean shutdown before continuing.</p>
 </li>
-<li><p class="sd-card-text">Update the configuration file for the node by adding</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/validator-credentials.json</span>
+<li><p>Copy the credentials into the existing <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory.
+Give the container’s UID <code class="docutils literal notranslate"><span class="pre">10001</span></code> read access:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>install<span class="w"> </span>-o<span class="w"> </span><span class="m">10001</span><span class="w"> </span>-g<span class="w"> </span><span class="m">10001</span><span class="w"> </span>-m<span class="w"> </span><span class="m">0400</span><span class="w"> </span>./validator-credentials.json<span class="w"> </span>./data/validator-credentials.json
 </pre></div>
 </div>
-<p class="sd-card-text">into the <code class="docutils literal notranslate"><span class="pre">environment</span></code> section of the <code class="docutils literal notranslate"><span class="pre">node</span></code> service section of the file.</p>
+<p>Protect the original credentials file separately.
+Include the credentials when you back up <code class="docutils literal notranslate"><span class="pre">data/</span></code>.
+Limit access to these backups.</p>
+</li>
+<li><p>Add this entry to the <code class="docutils literal notranslate"><span class="pre">node</span></code> service’s existing <code class="docutils literal notranslate"><span class="pre">environment</span></code> mapping
+in <code class="docutils literal notranslate"><span class="pre">compose.yaml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">CONCORDIUM_NODE_VALIDATOR_CREDENTIALS_FILE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/mnt/data/validator-credentials.json</span>
+</pre></div>
+</div>
+<p>The existing <code class="docutils literal notranslate"><span class="pre">./data:/mnt/data</span></code> mount gives the node access to the file.
+No separate credential mount is necessary.</p>
+</li>
+<li><p>Check the Compose file for configuration errors:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker<span class="w"> </span>compose<span class="w"> </span>config<span class="w"> </span>--quiet
+</pre></div>
+</div>
+<p>Start the node in the background:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--detach
+</pre></div>
+</div>
+<p>Follow the logs to check that the node loads the credentials without errors:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>--follow<span class="w"> </span>node
+</pre></div>
+</div>
+<p>The node produces blocks when the network includes it in the validators
+for the current epoch.</p>
 </li>
 </ol>
-<p class="sd-card-text">When you’ve placed the file in the appropriate directory, start the node again in the same way as the first time, e.g., <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">-f</span> <span class="pre">testnet-node.yaml</span> <span class="pre">up</span></code>. The node will automatically start producing blocks when the validator is included in the validators for the current epoch.</p>
-</div>
-</details></section>
+</section>
 <section id="verify-that-a-node-is-a-validator-node">
 <h2>Verify that a node is a validator node<a class="headerlink" href="#verify-that-a-node-is-a-validator-node" title="Link to this heading">#</a></h2>
 <p>Two <a class="reference internal" href="../../technical-reference/glossary.html#term-Epoch"><span class="xref std std-term">epochs</span></a> must have elapsed before you can see the validator ID of the node on the dashboard.</p>
@@ -1024,7 +852,9 @@ allowfullscreen></iframe></dd>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-specific-configuration">Platform-specific configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#register-a-new-validator">Register a new validator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-the-node">Configure the node</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-that-a-node-is-a-validator-node">Verify that a node is a validator node</a></li>
 </ul>
   </nav></div>

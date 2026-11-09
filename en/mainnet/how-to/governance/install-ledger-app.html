@@ -52,7 +52,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/how-to/governance/install-ledger-app.2a457d55-9abd-41e2-85bb-82eccc52ad00.js"></script>
+    <script defer="defer" src="../../_static/tippy/how-to/governance/install-ledger-app.394948f7-e6b2-4ff8-ad59-31421b690a23.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'how-to/governance/install-ledger-app';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/how-to/governance/install-ledger-app.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -573,35 +573,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Nodes</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../nodes/node-requirements.html">Run a Concordium node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../nodes/run-node-ubuntu/index.html">Run a node on Ubuntu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-ubuntu/run-node-ubuntu.html">Install and manage a node on Ubuntu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-ubuntu/advanced-node-configuration-on-ubuntu.html">Advanced node configuration on Ubuntu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-ubuntu/troubleshoot-node-ubuntu.html">Troubleshoot a node on Ubuntu</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../nodes/run-node-macos/index.html">Run a Node on macOS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-macos/run-node-macos.html">Install and manage a node on macOS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-macos/advanced-node-configuration-on-macos.html">Advanced node configuration on macOS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-macos/troubleshoot-macos.html">Troubleshoot a node on macOS</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../nodes/run-node-windows/index.html">Run a node on Windows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-windows/run-node-windows.html">Install and manage a node on Windows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-windows/advanced-node-configuration-on-windows.html">Advanced node configuration on Windows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-windows/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-windows/troubleshoot-windows.html">Troubleshoot a node on Windows</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../nodes/run-node-docker/index.html">Run a node using Docker</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-docker/run-node-docker.html">Install and manage a node on Docker</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-docker/advanced-node-configuration-on-docker.html">Advanced node configuration on Docker</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-docker/troubleshoot-docker.html">Troubleshoot a node in Docker</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../nodes/run-node-aws/index.html">Run a node on AWS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-aws/run-node-aws.html">Run a node on Amazon Web Services (AWS)</a></li>
-</ul>
-</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes/run-node.html">Install and manage a node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes/migrate-node.html">Migrate from old distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes/advanced-node-configuration.html">Advanced node configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes/troubleshoot-node.html">Troubleshoot a node</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../nodes/run-local-chain/index.html">Run a local chain</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -780,7 +755,7 @@ Nano S+</label><div class="sd-tab-content docutils">
 <p>You need to install Python and pip to proceed with installing the Concordium LEDGER app. The installation steps depend on your operating system.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" data-sync-group="ledger-os" data-sync-id="windows" for="sd-tab-item-4">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="windows" for="sd-tab-item-4">
 Windows</label><div class="sd-tab-content docutils">
 <ol class="arabic" id="install-python-pip-windows">
 <li><p>In the <strong>Start</strong> menu, type <em>store</em> to open the Microsoft store.</p></li>
@@ -808,7 +783,7 @@ Windows</label><div class="sd-tab-content docutils">
 </ol>
 </div>
 <input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" data-sync-group="ledger-os" data-sync-id="macos" for="sd-tab-item-5">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="macos" for="sd-tab-item-5">
 macOS</label><div class="sd-tab-content docutils">
 <ol class="arabic" id="install-python-pip-macos">
 <li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
@@ -831,7 +806,7 @@ macOS</label><div class="sd-tab-content docutils">
 </ol>
 </div>
 <input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" data-sync-group="ledger-os" data-sync-id="ubuntu" for="sd-tab-item-6">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="linux" for="sd-tab-item-6">
 Ubuntu</label><div class="sd-tab-content docutils">
 <ol class="arabic" id="install-python-pip-ubuntu">
 <li><p>Add udev rules. For more information, see the Linux section in <a class="reference external" href="https://support.ledger.com/article/115005165269-zd">LEDGER ‘s guide Fix connection history</a>.</p>
@@ -896,7 +871,7 @@ Nano S+</label><div class="sd-tab-content docutils">
 <p>You need to install a custom certificate to ensure that the LEDGER device trusts applications signed by Concordium’s private key.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
-<label class="sd-tab-label" data-sync-group="ledger-os" data-sync-id="windows" for="sd-tab-item-9">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="windows" for="sd-tab-item-9">
 Windows</label><div class="sd-tab-content docutils">
 <ol class="arabic simple">
 <li><p>Close all applications that might be connected to the LEDGER device such as LEDGER LIVE and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.</p></li>
@@ -919,7 +894,7 @@ Windows</label><div class="sd-tab-content docutils">
 </ol>
 </div>
 <input id="sd-tab-item-10" name="sd-tab-set-4" type="radio">
-<label class="sd-tab-label" data-sync-group="ledger-os" data-sync-id="macos" for="sd-tab-item-10">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="macos" for="sd-tab-item-10">
 macOS</label><div class="sd-tab-content docutils">
 <ol class="arabic">
 <li><p>Close all applications that might be connected to the LEDGER device such as LEDGER LIVE and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.</p></li>
@@ -952,7 +927,7 @@ macOS</label><div class="sd-tab-content docutils">
 </ol>
 </div>
 <input id="sd-tab-item-11" name="sd-tab-set-4" type="radio">
-<label class="sd-tab-label" data-sync-group="ledger-os" data-sync-id="ubuntu" for="sd-tab-item-11">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="linux" for="sd-tab-item-11">
 Ubuntu</label><div class="sd-tab-content docutils">
 <ol class="arabic">
 <li><p>Close all applications that might be connected to the LEDGER device such as LEDGER LIVE and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.</p></li>
@@ -985,7 +960,7 @@ Ubuntu</label><div class="sd-tab-content docutils">
 <p>After installing the certificate, you can proceed to install the Concordium LEDGER app.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-12" name="sd-tab-set-5" type="radio">
-<label class="sd-tab-label" data-sync-group="ledger-os" data-sync-id="windows" for="sd-tab-item-12">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="windows" for="sd-tab-item-12">
 Windows</label><div class="sd-tab-content docutils">
 <ol class="arabic simple" id="install-ledger-app-windows">
 <li><p>In the folder that you extracted the files to, double-click the <code class="docutils literal notranslate"><span class="pre">install.bat</span></code> file. If there’s a message saying <strong>Windows protected your PC</strong>, select <strong>More info</strong>, and then select <strong>Run anyway</strong>.</p></li>
@@ -994,7 +969,7 @@ Windows</label><div class="sd-tab-content docutils">
 </ol>
 </div>
 <input id="sd-tab-item-13" name="sd-tab-set-5" type="radio">
-<label class="sd-tab-label" data-sync-group="ledger-os" data-sync-id="macos" for="sd-tab-item-13">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="macos" for="sd-tab-item-13">
 macOS</label><div class="sd-tab-content docutils">
 <ol class="arabic" id="install-ledger-app-macos">
 <li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
@@ -1026,7 +1001,7 @@ Nano S+</label><div class="sd-tab-content docutils">
 </ol>
 </div>
 <input id="sd-tab-item-14" name="sd-tab-set-5" type="radio">
-<label class="sd-tab-label" data-sync-group="ledger-os" data-sync-id="ubuntu" for="sd-tab-item-14">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="linux" for="sd-tab-item-14">
 Ubuntu</label><div class="sd-tab-content docutils">
 <ol class="arabic" id="install-ledger-app-ubuntu">
 <li><p>Install the Concordium application on the LEDGER device by running the following script from the folder you extracted the files to:</p>
@@ -1047,7 +1022,7 @@ Ubuntu</label><div class="sd-tab-content docutils">
 <p>For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-17" name="sd-tab-set-7" type="radio">
-<label class="sd-tab-label" data-sync-group="ledger-os" data-sync-id="windows" for="sd-tab-item-17">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="windows" for="sd-tab-item-17">
 Windows</label><div class="sd-tab-content docutils">
 <div class="admonition note" id="update-app-windows">
 <p class="admonition-title">Note</p>
@@ -1068,7 +1043,7 @@ Windows</label><div class="sd-tab-content docutils">
 </ol>
 </div>
 <input id="sd-tab-item-18" name="sd-tab-set-7" type="radio">
-<label class="sd-tab-label" data-sync-group="ledger-os" data-sync-id="macos" for="sd-tab-item-18">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="macos" for="sd-tab-item-18">
 macOS</label><div class="sd-tab-content docutils">
 <p id="update-app-macos">When you update your LEDGER device, it should not be necessary to update the certificate.</p>
 <div class="admonition note">
@@ -1111,7 +1086,7 @@ Nano S+</label><div class="sd-tab-content docutils">
 </ol>
 </div>
 <input id="sd-tab-item-19" name="sd-tab-set-7" type="radio">
-<label class="sd-tab-label" data-sync-group="ledger-os" data-sync-id="ubuntu" for="sd-tab-item-19">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="linux" for="sd-tab-item-19">
 Ubuntu</label><div class="sd-tab-content docutils">
 <div class="admonition note" id="update-app-ubuntu">
 <p class="admonition-title">Note</p>
