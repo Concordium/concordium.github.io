@@ -604,13 +604,20 @@ Wallets
 |bw|
 -------------------------
 
-    Jun 16, 2026
+    Nov 09, 2026
 
-    Version 2.12.1
+    Version 2.12.2
 
-    -   Updated text area size for string message in binary display.
+    -   Updated ccd-token link at Onramp page.
+    -   Updated page title at Intro and Welcome pages.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.12.1 - Jun 16, 2026
+
+            Version 2.12.1 changes:
+
+            -   Updated text area size for string message in binary display.
 
         .. dropdown:: |bw| 2.12.0 - Jun 11, 2026
 
