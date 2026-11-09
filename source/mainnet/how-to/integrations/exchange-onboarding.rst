@@ -59,19 +59,13 @@ Hardware requirements
 
 Before setting up a node, ensure your hardware meets the :ref:`requirements for running a node <system-requirements-node-mainnet>`.
 
-Node distributions
-------------------
+Install a node
+--------------
 
-Node distributions for different platforms are available at the :ref:`Downloads page <node-downloads>`.
-
-Platform-specific setup instructions
-------------------------------------
-
-* :ref:`Ubuntu Node <run-node-ubuntu>`
-* :ref:`Docker Node <run-a-node>`
-* :ref:`Windows Node <run-node-windows>`
-* :ref:`macOS Node <run-node-macos>`
-* :ref:`AWS Node <run-a-node-aws>`
+Use the supported ``concordium/node`` Docker image on Linux, macOS, or Windows.
+Follow :ref:`install-node-docker-image` for a new installation or
+:ref:`migrate-to-docker` for an existing node. Native packages,
+network-specific Docker images, and AWS Marketplace products are deprecated.
 
 For custom node setups, contact `Concordium Support <mailto:support@concordium.software>`_.
 

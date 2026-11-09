@@ -22,7 +22,7 @@ Before you start, make sure you’ve completed the following steps:
 
 .. dropdown:: Step 1: Set up the node
 
-    The Desktop Wallet must be connected to a running **trusted** node on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions. A default ``grpc.mainnet.concordium.software`` is provided. Optionally, you can run a node yourself using :ref:`Windows<run-node-windows>`, :ref:`macOS <run-node-macos>`, :ref:`Docker <run-a-node>` or :ref:`a Debian package <run-node-ubuntu>` on Linux. You can also have a third-party provider run a node for you.
+    The Desktop Wallet must be connected to a running **trusted** node on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions. A default ``grpc.mainnet.concordium.software`` is provided. Optionally, you can run a node yourself using the :ref:`supported Docker distribution <install-node-docker-image>` on Linux, macOS, or Windows. You can also have a third-party provider run a node for you.
 
 .. dropdown:: Step 2: Install the Desktop Wallet
 

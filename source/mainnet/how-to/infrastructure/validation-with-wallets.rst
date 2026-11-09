@@ -31,7 +31,11 @@ This overview describes the recommended scenario for running a node and becoming
 
 .. dropdown:: Step 1: Set up the node
 
-   For validation you must be running a node on the Concordium blockchain. Synchronization of the node takes some time, depending on the performance of your hardware and the length of the chain. Before generating validator keys, you need to make sure that your node is fully synchronized. You can run a node :ref:`on Windows<run-node-windows>`, :ref:`on macOS<run-node-macos>`, :ref:`on Ubuntu<run-node-ubuntu>` or using :ref:`Docker<run-a-node>`. You can also have a third-party run a node on your behalf.
+   For validation, run a node on the Concordium blockchain and let it fully
+   synchronize before generating validator keys. Synchronization time depends
+   on your hardware and the length of the chain. Use the
+   :ref:`supported Docker distribution <install-node-docker-image>` on Linux,
+   macOS, or Windows, or have a third party run a node on your behalf.
 
 .. dropdown:: Step 2: Set up the Wallet
 
@@ -63,7 +67,11 @@ This overview describes the recommended scenario for running a node and becoming
 
 .. dropdown:: Step 1: Set up the node
 
-   For validation you must be running a node on the Concordium blockchain. Synchronization of the node takes some time, depending on the performance of your hardware and the length of the chain. Before generating validator keys, you need to make sure that your node is fully synchronized. You can run a node :ref:`on Windows<run-node-windows>`, :ref:`on macOS<run-node-macos>`, :ref:`on Ubuntu<run-node-ubuntu>` or using :ref:`Docker<run-a-node>`. You can also have a third-party run a node on your behalf.
+   For validation, run a node on the Concordium blockchain and let it fully
+   synchronize before generating validator keys. Synchronization time depends
+   on your hardware and the length of the chain. Use the
+   :ref:`supported Docker distribution <install-node-docker-image>` on Linux,
+   macOS, or Windows, or have a third party run a node on your behalf.
 
 .. dropdown:: Step 2: Set up the LEDGER device
 
