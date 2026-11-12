@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exchange Onboarding Guide &#8212; Concordium  documentation</title>
+    <title>Onboard as an exchange &#8212; Concordium  documentation</title>
   
   
   
@@ -52,7 +52,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/how-to/integrations/exchange-onboarding.9153f7e5-f8c1-4324-a3c1-4a1f493e9a31.js"></script>
+    <script defer="defer" src="../../_static/tippy/how-to/integrations/exchange-onboarding.1c1b75d7-c7db-4654-90b8-8bb7afe442c5.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'how-to/integrations/exchange-onboarding';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/how-to/integrations/exchange-onboarding.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -649,183 +649,172 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="exchange-onboarding-guide">
-<span id="exchangeonboarding"></span><h1>Exchange Onboarding Guide<a class="headerlink" href="#exchange-onboarding-guide" title="Link to this heading">#</a></h1>
+  <section id="onboard-as-an-exchange">
+<span id="exchangeonboarding"></span><h1>Onboard as an exchange<a class="headerlink" href="#onboard-as-an-exchange" title="Link to this heading">#</a></h1>
 <div class="admonition-at-a-glance admonition">
 <p class="admonition-title">At a glance</p>
-<p>This guide helps you add Concordium’s native token (CCD) to your cryptocurrency exchange. You will need to create identities, set up a Concordium node, and choose an integration method. After following this guide, you will have the accounts, node infrastructure, and SDK integration in place to list CCD and handle deposits and withdrawals.</p>
+<p>This guide shows you how to add CCD, the native token of Concordium, and Protocol-Level Tokens (PLTs), the other tokens issued natively on Concordium, to your exchange. You need a Concordium node, one of the Concordium SDKs or the gRPC API, and, before you go live on mainnet, one verified company identity. After following this guide, you can handle deposits and withdrawals of CCD and PLTs, which use the same accounts, addresses, and APIs.</p>
 </div>
-<p>This guide will help you add Concordium’s native token (CCD) to your cryptocurrency exchange.</p>
-<p>Before you start, it is a good idea to read about the core concepts of the Concordium blockchain,
-particularly <a class="reference internal" href="../../learn/identity/index.html#reference-identity"><span class="std std-ref">identities</span></a> and <a class="reference internal" href="../../learn/accounts/index.html#managing-accounts"><span class="std std-ref">accounts</span></a>. The <a class="reference external" href="https://docs.concordium.com/governance/whitepaper/Concordium%20White%20Paper.pdf">Concordium Whitepaper</a> provides a comprehensive overview of these concepts.</p>
-<section id="identity-creation">
-<h2>Identity creation<a class="headerlink" href="#identity-creation" title="Link to this heading">#</a></h2>
-<p>Concordium requires identity verification before account creation, which is a fundamental part of its regulatory compliance framework.</p>
-<section id="mainnet-identity-creation">
-<h3>Mainnet identity creation<a class="headerlink" href="#mainnet-identity-creation" title="Link to this heading">#</a></h3>
-<p><strong>For Individual Identities:</strong></p>
-<ul class="simple">
-<li><p>You can use any of the Concordium wallets by following the documentation at <a class="reference internal" href="../../technical-reference/wallets/guides/create-identity.html#create-initial-account"><span class="std std-ref">Create an identity</span></a></p></li>
-</ul>
-<p><strong>For Company Identities:</strong></p>
-<ul class="simple">
-<li><p>Follow the documentation at <a class="reference internal" href="../../tutorials/company-identity/company-identities.html#company-identities"><span class="std std-ref">Company Identity Creation</span></a></p></li>
-<li><p>This process involves identity verification through Concordium’s approved identity providers</p></li>
-</ul>
+<section id="integration-path">
+<h2>Integration path<a class="headerlink" href="#integration-path" title="Link to this heading">#</a></h2>
+<p>If you have integrated an account-based chain before, most of this integration is familiar. It has six steps:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#exchange-testnet"><span class="std std-ref">Start on testnet</span></a>. No identity verification is needed.</p></li>
+<li><p><a class="reference internal" href="#exchange-integration-method"><span class="std std-ref">Choose an integration method</span></a>.</p></li>
+<li><p><a class="reference internal" href="#exchange-deposits"><span class="std std-ref">Detect deposits</span></a>.</p></li>
+<li><p><a class="reference internal" href="#exchange-withdrawals"><span class="std std-ref">Process withdrawals</span></a>.</p></li>
+<li><p><a class="reference internal" href="#exchange-mainnet-accounts"><span class="std std-ref">Get a company identity and create mainnet accounts</span></a>. Start this step early and run it in parallel with steps 1 to 4. It involves document review by the identity provider, not engineering work.</p></li>
+<li><p><a class="reference internal" href="#exchange-node"><span class="std std-ref">Set up your mainnet node</span></a>.</p></li>
+</ol>
 </section>
-<section id="testnet-identity-creation">
-<h3>Testnet identity creation<a class="headerlink" href="#testnet-identity-creation" title="Link to this heading">#</a></h3>
-<p><strong>For Both Individual and Company Identities:</strong></p>
-<ul class="simple">
-<li><p>No formal verification is required</p></li>
-<li><p>For individual identities, use <a class="reference internal" href="../../technical-reference/wallets/guides/create-identity.html#create-initial-account"><span class="std std-ref">any of the Concordium wallets</span></a></p></li>
-<li><p>For company identities, follow the documentation at <a class="reference internal" href="../../tutorials/company-identity/company-identities.html#company-identities"><span class="std std-ref">Company Identity Creation</span></a></p></li>
-</ul>
-</section>
-</section>
-<section id="account-creation">
-<h2>Account creation<a class="headerlink" href="#account-creation" title="Link to this heading">#</a></h2>
-<p>Once you have a verified identity, you can create multiple accounts from it:</p>
-<ul class="simple">
-<li><p>Desktop Wallet: 1 initial account plus up to 25 additional accounts (26 total)</p></li>
-<li><p>Other wallets: Up to 26 accounts (numbered 0-25)</p></li>
-</ul>
-<p>Accounts can be created using any Concordium wallet, follow the documentation at <a class="reference internal" href="../../technical-reference/wallets/guides/create-account.html#create-account"><span class="std std-ref">create an account</span></a> for more information.</p>
-</section>
-<section id="node-setup">
-<h2>Node setup<a class="headerlink" href="#node-setup" title="Link to this heading">#</a></h2>
-<p>Running your own node is essential for exchange integration.</p>
-<section id="hardware-requirements">
-<h3>Hardware requirements<a class="headerlink" href="#hardware-requirements" title="Link to this heading">#</a></h3>
-<p>Before setting up a node, ensure your hardware meets the <a class="reference internal" href="../nodes/node-requirements.html#system-requirements-node-mainnet"><span class="std std-ref">requirements for running a node</span></a>.</p>
-</section>
-<section id="install-a-node">
-<h3>Install a node<a class="headerlink" href="#install-a-node" title="Link to this heading">#</a></h3>
-<p>Use the supported <code class="docutils literal notranslate"><span class="pre">concordium/node</span></code> Docker image on Linux, macOS, or Windows.
-Follow <a class="reference internal" href="../nodes/run-node.html#install-node-docker-image"><span class="std std-ref">Install and manage a node</span></a> for a new installation or
-<a class="reference internal" href="../nodes/migrate-node.html#migrate-to-docker"><span class="std std-ref">Migrate from old distribution</span></a> for an existing node. Native packages,
-network-specific Docker images, and AWS Marketplace products are deprecated.</p>
-<p>For custom node setups, contact <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">Concordium Support</a>.</p>
-</section>
-</section>
-<section id="integration-methods">
-<h2>Integration methods<a class="headerlink" href="#integration-methods" title="Link to this heading">#</a></h2>
-<p>Concordium offers several methods for integrating with the blockchain:</p>
-<section id="sdks">
-<h3>SDKs<a class="headerlink" href="#sdks" title="Link to this heading">#</a></h3>
-<p>You can use one of the official Concordium <a class="reference internal" href="../../technical-reference/index.html#sdks-apis"><span class="std std-ref">SDKs</span></a>:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/Concordium/concordium-node-sdk-js">Node.js SDK</a></p></li>
-<li><p><a class="reference external" href="https://github.com/Concordium/concordium-rust-sdk">Rust SDK</a></p></li>
-<li><p><a class="reference external" href="https://github.com/Concordium/concordium-net-sdk">.NET (C#) SDK</a></p></li>
-<li><p><a class="reference external" href="https://github.com/Concordium/concordium-java-sdk">Java SDK</a></p></li>
-<li><p><a class="reference external" href="https://github.com/Concordium/concordium-go-sdk">Go SDK</a></p></li>
-</ul>
-</section>
-<section id="rosetta-api">
-<h3>Rosetta API<a class="headerlink" href="#rosetta-api" title="Link to this heading">#</a></h3>
-<p>Concordium provides an adapter to expose the <a class="reference external" href="https://github.com/Concordium/concordium-rosetta">Rosetta API</a>, which is useful for exchanges already supporting this standard.</p>
-</section>
-<section id="grpc-v2-interface">
-<h3>gRPC V2 interface<a class="headerlink" href="#grpc-v2-interface" title="Link to this heading">#</a></h3>
-<p>Concordium provides a gRPC V2 interface as well, details can be found in this <a class="reference internal" href="../../technical-reference/api.html#grpc2-documentation"><span class="std std-ref">documentation article</span></a>.</p>
-</section>
-</section>
-<section id="transactions">
-<h2>Transactions<a class="headerlink" href="#transactions" title="Link to this heading">#</a></h2>
-<section id="checking-for-incoming-transactions">
-<h3>Checking for incoming transactions<a class="headerlink" href="#checking-for-incoming-transactions" title="Link to this heading">#</a></h3>
-<p><strong>Node Query Method</strong></p>
-<ul class="simple">
-<li><p>The most reliable method is to <a class="reference internal" href="../../technical-reference/concordium-client/query-node.html#testnet-query-node"><span class="std std-ref">query your node</span></a> directly</p></li>
-</ul>
-<p><strong>Transaction Logger</strong></p>
-<ul class="simple">
-<li><p>Alternatively, you can run a <a class="reference external" href="https://github.com/Concordium/concordium-transaction-logger">transaction logging service</a></p></li>
-<li><p>This service logs transactions to a database where you can efficiently lookup the transaction for a specific account</p></li>
-</ul>
-</section>
-<section id="transfer-ccd-on-withdrawal-request">
-<h3>Transfer CCD on withdrawal request<a class="headerlink" href="#transfer-ccd-on-withdrawal-request" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Use the <a class="reference internal" href="../../technical-reference/index.html#sdks-apis"><span class="std std-ref">SDK</span></a> of your choice to implement CCD transfers.</p></li>
-<li><p>Transfer of CCD is also possible with <a class="reference internal" href="../../technical-reference/api.html#grpc2-documentation"><span class="std std-ref">gRPC</span></a>.</p></li>
-</ul>
-</section>
-</section>
-<section id="faq">
-<h2>FAQ<a class="headerlink" href="#faq" title="Link to this heading">#</a></h2>
-<section id="account-aliases">
-<h3>Account aliases<a class="headerlink" href="#account-aliases" title="Link to this heading">#</a></h3>
-<p><strong>Q: Do we have to create a company identity for each account?</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li><p>No, one identity can have multiple accounts. Once you have a verified identity object, you can generate as many accounts as you need from it. It should not be necessary for you to have several identities, one will suffice.
-For your users, the recommended setup is to use <a class="reference internal" href="../../learn/accounts/account-aliases.html#account-aliasses"><span class="std std-ref">account aliases</span></a>:</p>
-<ul>
-<li><p>This means that you create one or more omnibus accounts and generate aliases/subaccounts for individual user transfers</p></li>
-<li><p>Subaccounts share the same private key but have different addresses, making it easy to organize user deposits and withdrawals</p></li>
-<li><p>Each account can have up to 2^24 aliases (approximately 16 million)</p></li>
-</ul>
-</li>
-</ul>
-</div></blockquote>
-</section>
-<section id="transfer-with-memo">
-<h3>Transfer with MEMO<a class="headerlink" href="#transfer-with-memo" title="Link to this heading">#</a></h3>
-<p><strong>Q: How can we include additional data with transactions?</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Concordium supports memo transfers, which allow you to attach additional data to a transaction. This is useful for exchange integrations to track user deposits:</p>
-<ul>
-<li><p>Memo transfers can be implemented through any of the Concordium <a class="reference internal" href="../../technical-reference/index.html#sdks-apis"><span class="std std-ref">SDKs</span></a> or through <a class="reference internal" href="../../technical-reference/api.html#grpc2-documentation"><span class="std std-ref">gRPC</span></a></p></li>
-</ul>
-</li>
-</ul>
-</div></blockquote>
-</section>
-<section id="transaction-confirmation">
-<h3>Transaction confirmation<a class="headerlink" href="#transaction-confirmation" title="Link to this heading">#</a></h3>
-<p><strong>Q: When is a transaction considered confirmed?</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Concordium has explicit finalization:</p>
-<ul>
-<li><p>Once a block is created, it usually takes 1-2 seconds to be finalized</p></li>
-<li><p>Average block time is about 2 seconds</p></li>
-<li><p>The node will report a transaction as finalized once it’s in a finalized block</p></li>
-<li><p>Finalization is not based on the number of successor blocks</p></li>
-</ul>
-</li>
-</ul>
-</div></blockquote>
-</section>
-<section id="getting-testnet-ccds">
-<h3>Getting testnet CCDs<a class="headerlink" href="#getting-testnet-ccds" title="Link to this heading">#</a></h3>
-<p><strong>Q: How do I get CCDs for testing on testnet?</strong></p>
-<blockquote>
-<div><ul>
-<li><p>For individual accounts:</p>
-<ul class="simple">
-<li><p>Request a CCD drop directly through the <a class="reference internal" href="../../technical-reference/wallets/guides/setup-wallets-lp.html#setup-wallets-lp"><span class="std std-ref">Concordium wallets</span></a></p></li>
-</ul>
-</li>
-<li><p>For company accounts:</p>
+<section id="start-on-testnet">
+<span id="exchange-testnet"></span><h2>Start on testnet<a class="headerlink" href="#start-on-testnet" title="Link to this heading">#</a></h2>
+<p>Testnet works like mainnet, but identities are issued without verification. You can start development immediately and use the public testnet node for steps 1 to 4.</p>
+<ol class="arabic">
+<li><p>Create an identity and an account in any Concordium wallet. See <a class="reference internal" href="../../technical-reference/wallets/guides/create-identity.html#create-initial-account"><span class="std std-ref">Create an identity</span></a> and <a class="reference internal" href="../../technical-reference/wallets/guides/create-account.html#create-account"><span class="std std-ref">Create an account</span></a>. To test with a company identity, follow <a class="reference internal" href="../../tutorials/company-identity/company-identities.html#company-identities"><span class="std std-ref">Company identity creation</span></a>.</p></li>
+<li><p>Request testnet CCD for the account in the wallet. You can also call the same faucet directly. Replace <code class="docutils literal notranslate"><span class="pre">YOUR_ACCOUNT_ADDRESS</span></code> with your account address:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>curl<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span>https://wallet-proxy.testnet.concordium.com/v0/testnetGTUDrop/YOUR_ACCOUNT_ADDRESS
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Replace <code class="docutils literal notranslate"><span class="pre">YOUR_ACCOUNT_ADDRESS</span></code> with your account address. You can only request one CCD drop per account.</p></li>
-</ul>
+<p>You can request one CCD drop per account.</p>
 </li>
+<li><p>Connect your integration to the public testnet node at <code class="docutils literal notranslate"><span class="pre">grpc.testnet.concordium.com</span></code>, port <code class="docutils literal notranslate"><span class="pre">20000</span></code>, with TLS enabled. You set up your own node for mainnet in step 6.</p></li>
+</ol>
+</section>
+<section id="choose-an-integration-method">
+<span id="exchange-integration-method"></span><h2>Choose an integration method<a class="headerlink" href="#choose-an-integration-method" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>If you</p></th>
+<th class="head"><p>Use</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Already use the Rosetta API for other chains</p></td>
+<td><p>The <a class="reference external" href="https://github.com/Concordium/concordium-rosetta">Concordium Rosetta adapter</a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Build a new integration</p></td>
+<td><p>One of the Concordium <a class="reference internal" href="../../technical-reference/index.html#sdks-apis"><span class="std std-ref">SDKs</span></a>: <a class="reference external" href="https://github.com/Concordium/concordium-node-sdk-js">Node.js</a>, <a class="reference external" href="https://github.com/Concordium/concordium-rust-sdk">Rust</a>, <a class="reference external" href="https://github.com/Concordium/concordium-net-sdk">.NET (C#)</a>, <a class="reference external" href="https://github.com/Concordium/concordium-java-sdk">Java</a>, or <a class="reference external" href="https://github.com/Concordium/concordium-go-sdk">Go</a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>Work in a language without an SDK</p></td>
+<td><p>The <a class="reference internal" href="../../technical-reference/api.html#grpc2-documentation"><span class="std std-ref">gRPC v2 API</span></a> directly.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="detect-deposits">
+<span id="exchange-deposits"></span><h2>Detect deposits<a class="headerlink" href="#detect-deposits" title="Link to this heading">#</a></h2>
+<p>The recommended setup gives each user a unique <a class="reference internal" href="../../technical-reference/glossary.html#term-Alias"><span class="xref std std-term">alias</span></a> of one deposit account. All aliases share the balance of that account.</p>
+<section id="assign-deposit-addresses">
+<h3>Assign deposit addresses<a class="headerlink" href="#assign-deposit-addresses" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Create one deposit account. See <a class="reference internal" href="#exchange-mainnet-accounts"><span class="std std-ref">Get a company identity and create mainnet accounts</span></a>.</p></li>
+<li><p>Derive one alias per user with the SDK, for example with <code class="docutils literal notranslate"><span class="pre">get_alias</span></code> in the Rust SDK or <code class="docutils literal notranslate"><span class="pre">AccountAddress.getAlias</span></code> in the Node.js SDK. Aliases exist from the moment the account exists and need no on-chain transaction.</p></li>
+<li><p>Store the mapping between each alias and the user it belongs to.</p></li>
+</ol>
+</section>
+<section id="watch-for-incoming-transfers">
+<h3>Watch for incoming transfers<a class="headerlink" href="#watch-for-incoming-transfers" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Subscribe to finalized blocks from your node with <code class="docutils literal notranslate"><span class="pre">GetFinalizedBlocks</span></code>.</p></li>
+<li><p>Process blocks in height order, and store the height of each block once you have processed it. If a block arrives more than one height above the last block you processed, first get the missing blocks with <code class="docutils literal notranslate"><span class="pre">GetBlocksAtHeight</span></code>. This also covers restarts and dropped connections: subscribe again, and fill the gap before you continue. In the Rust SDK, <code class="docutils literal notranslate"><span class="pre">get_finalized_blocks_from</span></code> does this for you from a given height.</p></li>
+<li><p>For each block, get the transaction outcomes with <code class="docutils literal notranslate"><span class="pre">GetBlockTransactionEvents</span></code>.</p></li>
+<li><p>Select the successful plain transfers, with or without a memo, of CCD or a PLT, where the first 29 bytes of the receiver address match your deposit account. The last 3 bytes identify the alias, and therefore the user.</p></li>
+<li><p>Credit the user. Blocks from <code class="docutils literal notranslate"><span class="pre">GetFinalizedBlocks</span></code> are already final, so no further confirmations are needed.</p></li>
+</ol>
+<p>Two other kinds of transfer can reach your deposit account. Do not credit them like a normal deposit:</p>
+<ul class="simple">
+<li><p>Transfers with schedule. The amount arrives locked and is released in steps over time. Credit each part only when it is released, or do not accept transfers with schedule.</p></li>
+<li><p>Transfers from smart contracts. These appear as a transfer event inside a contract update, not as an account transfer. Handle them separately, for example through manual review.</p></li>
 </ul>
-</div></blockquote>
+<p>Alternatively, run the <a class="reference external" href="https://github.com/Concordium/concordium-transaction-logger">transaction logging service</a>. It logs transactions to a database where you can look up the transactions for your deposit account. The same rules for what to credit apply.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>If your platform uses memos instead of aliases, read the memo from the transfer event. Memo transfers are available in all Concordium SDKs and through gRPC.</p></li>
+<li><p>Some PLTs have an <a class="reference internal" href="../../technical-reference/glossary.html#term-Allow-list"><span class="xref std std-term">allow list</span></a> or a <a class="reference internal" href="../../technical-reference/glossary.html#term-Deny-list"><span class="xref std std-term">deny list</span></a>. With an allow list, both the sender and the recipient must be on it for a transfer to succeed. With a deny list, neither may be on it. Before you list a token with an allow list, ask the token issuer to add your deposit account, or deposits and withdrawals of that token are rejected.</p></li>
+</ul>
+</div>
 </section>
 </section>
-<section id="additional-support">
-<h2>Additional support<a class="headerlink" href="#additional-support" title="Link to this heading">#</a></h2>
-<p>For specific help to integrate your exchange with the Concordium blockchain, contact <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>
-<p>Please start your subject line with “Approved Exchange” to prioritize your support request.</p>
+<section id="process-withdrawals">
+<span id="exchange-withdrawals"></span><h2>Process withdrawals<a class="headerlink" href="#process-withdrawals" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Get the next sequence number of your account with <code class="docutils literal notranslate"><span class="pre">GetNextAccountSequenceNumber</span></code>. All aliases of an account share one sequence number. If several workers send withdrawals from the same account, they must coordinate and use consecutive numbers.</p></li>
+<li><p>Create a CCD or PLT transfer, with or without a memo. Set an expiry time, which every transaction needs, and sign the transaction with the account key. Fees are paid in CCD, also for PLT transfers.</p></li>
+<li><p>Submit the transaction with <code class="docutils literal notranslate"><span class="pre">SendBlockItem</span></code>.</p></li>
+<li><p>Query <code class="docutils literal notranslate"><span class="pre">GetBlockItemStatus</span></code> until the transaction is finalized, then check its outcome.</p></li>
+</ol>
+</section>
+<section id="get-a-company-identity-and-create-mainnet-accounts">
+<span id="exchange-mainnet-accounts"></span><h2>Get a company identity and create mainnet accounts<a class="headerlink" href="#get-a-company-identity-and-create-mainnet-accounts" title="Link to this heading">#</a></h2>
+<section id="get-a-company-identity">
+<h3>Get a company identity<a class="headerlink" href="#get-a-company-identity" title="Link to this heading">#</a></h3>
+<p>A company identity belongs to your company, not to an individual employee. Global FinReg issues it, and you request it from Concordium Wallet for Web or Concordium Wallet. The Desktop Wallet does not support company identities. You need only one company identity.</p>
+<p>Before you start, prepare the following:</p>
+<ul class="simple">
+<li><p>Your company’s Legal Entity Identifier (LEI), or the company’s entity details.</p></li>
+<li><p>Business registry documents or documents from a financial supervisory authority, from a primary source and no older than three months.</p></li>
+<li><p>Details of an Ultimate Beneficial Owner (UBO) or an authorized signatory, who verifies their identity with a passport or driver’s license.</p></li>
+</ul>
+<p>Then follow <a class="reference internal" href="../../tutorials/company-identity/company-identities.html#company-identities"><span class="std std-ref">Company identity creation</span></a>.</p>
+</section>
+<section id="create-accounts">
+<h3>Create accounts<a class="headerlink" href="#create-accounts" title="Link to this heading">#</a></h3>
+<p>One identity can have up to 26 accounts. Because of aliases, an exchange rarely needs more than a few. Create the accounts from your company identity. See <a class="reference internal" href="../../technical-reference/wallets/guides/create-account.html#create-account"><span class="std std-ref">Create an account</span></a>.</p>
+<p>To sign transactions from your own systems, export the account keys from the wallet. See <a class="reference internal" href="../../technical-reference/wallets/guides/export-account-private-key.html#export-key"><span class="std std-ref">Export account private key</span></a>. Treat the exported key as a hot-wallet secret, and store it in a hardware security module (HSM) or a secrets manager.</p>
+</section>
+</section>
+<section id="set-up-your-mainnet-node">
+<span id="exchange-node"></span><h2>Set up your mainnet node<a class="headerlink" href="#set-up-your-mainnet-node" title="Link to this heading">#</a></h2>
+<p>Running your own node is essential for exchange integration.</p>
+<ul class="simple">
+<li><p>Check the <a class="reference internal" href="../nodes/node-requirements.html#system-requirements-node-mainnet"><span class="std std-ref">hardware requirements</span></a>.</p></li>
+<li><p>Use the supported <code class="docutils literal notranslate"><span class="pre">concordium/node</span></code> Docker image on Linux, macOS, or Windows. Follow <a class="reference internal" href="../nodes/run-node.html#install-node-docker-image"><span class="std std-ref">Install and manage a node</span></a> for a new installation or <a class="reference internal" href="../nodes/migrate-node.html#migrate-to-docker"><span class="std std-ref">Migrate from old distribution</span></a> for an existing node. Native packages, network-specific Docker images, and AWS Marketplace products are deprecated.</p></li>
+</ul>
+<p>For custom node setups, contact <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">Concordium Support</a>.</p>
+</section>
+<section id="how-concordium-compares-to-other-chains">
+<span id="exchange-compare"></span><h2>How Concordium compares to other chains<a class="headerlink" href="#how-concordium-compares-to-other-chains" title="Link to this heading">#</a></h2>
+<p>If you have integrated other chains, the table below summarizes what is specific to Concordium.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Topic</p></th>
+<th class="head"><p>On Concordium</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Accounts</p></td>
+<td><p>Account-based, similar to Ethereum. Every account is created from a verified <a class="reference internal" href="../../technical-reference/glossary.html#term-Identity"><span class="xref std std-term">identity</span></a>, and one company identity can have up to 26 accounts.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Finality</p></td>
+<td><p>Explicit. A transaction is final when the node reports it in a finalized block, usually within a few seconds. There is no number of confirmations to choose.</p></td>
+</tr>
+<tr class="row-even"><td><p>Deposit addresses</p></td>
+<td><p>Every account has 16,777,216 addresses, called <a class="reference internal" href="../../learn/accounts/account-aliases.html#account-aliases-details"><span class="std std-ref">account aliases</span></a>. They share one key and one balance, so you can give each user a unique deposit address without creating new accounts.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Memos</p></td>
+<td><p>Supported through transfers with memo. Optional if you use account aliases.</p></td>
+</tr>
+<tr class="row-even"><td><p>Tokens</p></td>
+<td><p>CCD and <a class="reference internal" href="../../tutorials/plt/index.html#plts"><span class="std std-ref">Protocol-Level Tokens (PLTs)</span></a>. PLTs use the same accounts, aliases, and node APIs as CCD.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="get-help">
+<h2>Get help<a class="headerlink" href="#get-help" title="Link to this heading">#</a></h2>
+<p>For help with your integration, contact <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>. Start the subject line with <code class="docutils literal notranslate"><span class="pre">Approved</span> <span class="pre">Exchange</span></code> to prioritize your request.</p>
 </section>
 </section>
 
@@ -912,36 +901,23 @@ For your users, the recommended setup is to use <a class="reference internal" hr
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identity-creation">Identity creation</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mainnet-identity-creation">Mainnet identity creation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testnet-identity-creation">Testnet identity creation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-path">Integration path</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-on-testnet">Start on testnet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-an-integration-method">Choose an integration method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detect-deposits">Detect deposits</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-deposit-addresses">Assign deposit addresses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#watch-for-incoming-transfers">Watch for incoming transfers</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#account-creation">Account creation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#node-setup">Node setup</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-requirements">Hardware requirements</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-a-node">Install a node</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-withdrawals">Process withdrawals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-a-company-identity-and-create-mainnet-accounts">Get a company identity and create mainnet accounts</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-a-company-identity">Get a company identity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-accounts">Create accounts</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-methods">Integration methods</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sdks">SDKs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rosetta-api">Rosetta API</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grpc-v2-interface">gRPC V2 interface</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transactions">Transactions</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-for-incoming-transactions">Checking for incoming transactions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-ccd-on-withdrawal-request">Transfer CCD on withdrawal request</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faq">FAQ</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#account-aliases">Account aliases</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-with-memo">Transfer with MEMO</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction-confirmation">Transaction confirmation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-testnet-ccds">Getting testnet CCDs</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-support">Additional support</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-your-mainnet-node">Set up your mainnet node</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-concordium-compares-to-other-chains">How Concordium compares to other chains</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-help">Get help</a></li>
 </ul>
   </nav></div>
 
